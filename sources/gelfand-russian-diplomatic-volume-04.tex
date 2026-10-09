@@ -227,6 +227,36 @@
 \newunicodechar{Ё}{\ifmmode\text{\char"401\relax}\else\char"401\relax\fi}
 \newunicodechar{ё}{\ifmmode\text{\char"451\relax}\else\char"451\relax\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -234,17 +264,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 04 из 34. Архивная глава 004}\par\bigskip
 Кадры GELFAND-P000237 -- GELFAND-P000334\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -1026,8 +1060,6 @@ $M$, если вып. св-ва
 1) каждое $K$ сод. в виде слоя в одном из сем-в $\pi_i$
 
 2) каждое $K$ сод. лишь дискр. число раз
-
-
 \SourcePage{GELFAND-P000247}{6}
 3) Аксиома продолжения. $\forall X$.
 
@@ -1613,8 +1645,6 @@ $A$ — самосопр. опер. с дискр. спектром.
 \min_{u\perp\mathcal P_n}R(u)
 \qquad \text{сущ. реш.:}\quad \det\ldots=0
 \end{equation*}
-
-
 \SourcePage{GELFAND-P000257}{unlabelled}
 \begin{equation*}
 \min_{u\perp\Unclear{GELFAND-P000257}{top-min-condition}{\Phi\ \text{или}\ P}}
@@ -2379,8 +2409,6 @@ M\to R
 Всё это следует из теоремы 2.
 
 \underline{След. раз}: Громов
-
-
 \SourcePage{GELFAND-P000267}{unlabelled}
 % Original scan 1984 x 2416; coordinates in the ledger are original pixels,
 % with origin at upper left and rectangles [x0,y0,x1,y1).
@@ -2935,8 +2963,6 @@ R\times C\times R
 \Unclear{GELFAND-P000276}{indicatrix-ending}{Закрывающая фигурная скобка после $x\ne0$ не видна.}
 
 [Справа, дважды подчёркнуто:] \underline{\underline{конус}}
-
-
 % GELFAND-0029. Дипломатическая транскрипция по десяти исходным PNG.
 % Координаты ниже заданы в пикселях оригинала: начало слева сверху,
 % bbox=(x0,y0,x1,y1), правая и нижняя границы исключены.
@@ -3785,8 +3811,6 @@ B&=C[[y_1,\ldots,y_\ell]] &&\text{форм. ряды.}
 Если [вставлено над строкой в обводке: у мн-зия] есть точка со знач. в $B$, то
 есть точка и со знач. в $A$.
 
-
-
 \SourcePage{GELFAND-P000287}{unlabelled}
 Индукция и по связн. компонентам. (\underline{числу их})
 
@@ -4411,8 +4435,6 @@ $\operatorname{Spec}A$\qquad Точки — простые идеалы
 \end{equation*}
 % Перечёркнутое включение воспроизведено без отсутствующей в источнике нижней черты.
 Мн-ва $U_I$ наз. открытыми.
-
-
 \SourcePage{GELFAND-P000297}{67}
 \underline{Задача:} пров., что получ. топология.
 
@@ -5087,8 +5109,6 @@ A^I\longrightarrow A^J\longrightarrow M\longrightarrow0.
 
 [Справа, за двумя вертикальными чертами:]
 \underline{На дом:}
-
-
 \SourcePage{GELFAND-P000307}{72}
 \underline{Я. Синай.} Некоммут. теория вероятностей.
 
@@ -5601,8 +5621,6 @@ $\underline{\mathrm{def}\ 0}$ в неч.-мерном не бывает.
 $\mathrm{def}(-1)$ быв. отнош.
 
 \underline{общ. положения} — без параметра, а вырожд. — с парам.
-
-
 \SourcePage{GELFAND-P000317}{77}
 \underline{Эти траектории.}
 
@@ -6164,8 +6182,6 @@ $\forall\mathcal F\ \exists k_0:$ при $k\ge k_0$ $\mathcal F(k)$ порожд
 \exists k:\quad\alpha\in\Gamma(P_{x_0},\mathcal F(k)).
 \end{equation*}
 % Source frame ends here; no subsequent mathematical conclusion supplied.
-
-
 \SourcePage{GELFAND-P000327}{82}
 что
 \Unclear{GELFAND-P000327}{top-continuation}{Знак перед «прод.» похож на $d$ или «2»: малая нижняя петля и высокий восходящий штрих.}
@@ -6551,7 +6567,5 @@ $Ad$ — самое плохое действие.
 \underline{Обыкн. ур-я} —
 \Unclear{GELFAND-P000334}{last-line}{Сокращение перед следующим тире похоже на «траект.» или «трансв.»; последняя вертикальная буква и её соединение не читаются уверенно.}
 — не однопар., а гр. матриц.
-
-
 
 \end{document}

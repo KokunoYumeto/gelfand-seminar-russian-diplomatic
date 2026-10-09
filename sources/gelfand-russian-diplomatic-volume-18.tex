@@ -231,6 +231,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -238,17 +268,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 18 из 34. Архивная глава 018}\par\bigskip
 Кадры GELFAND-P000919 -- GELFAND-P000953\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -1103,8 +1137,6 @@ $\Rightarrow$ оценив. соб. \Unclear{GELFAND-P000928}{eigenvalue-word}{�
 $V\longmapsto\varepsilon V$\quad
 \Unclear{GELFAND-P000928}{last-line-abbreviation}{пол. / пот.}, взяли $\varepsilon$ мало
 $\Rightarrow$ что-то оценивается.
-
-
 \SourcePage{GELFAND-P000929}{unlabelled}
 \underline{\underline{3/$\overline{\underline{\mathrm{XI}}}$-80 г.}}\qquad \underline{Сем.} \underline{Гельфанда.}
 
@@ -1798,8 +1830,6 @@ f^*(\mathcal D_Y)=\mathcal D_Y/\sum y_i\mathcal D_Y
 [Справа:] \Unclear{GELFAND-P000938}{freeze-coefficients}{Заморозить?} коэфф. $=$ примен. опер. к $\delta$-ф-и.
 
 ($\Rightarrow\mathcal D_Y$-модуль)
-
-
 \SourcePage{GELFAND-P000939}{unlabelled}
 2. \underline{Обобщим:}
 
@@ -2585,8 +2615,6 @@ $[H,\hat T_j^*]=0$ по-прежнему (подбор $f_j$ в (12)-(13)).
 В основе теории [над строкой вписано, со связкой после «теории»: факторов] фон Неймана — \underline{неприводимость эргодичность}.
 
 \underline{И.М.Г.} К следующему семестру знать: $G$-структуры, $D$-структуры и резольвенту Спенсера.
-
-
 \SourcePage{GELFAND-P000949}{51}
 % Original scan: 2440 x 3480 pixels. Coordinates below use a top-left origin.
 % Review boxes (x0,y0,x1,y1), nearest-neighbour enlargement:
@@ -3026,7 +3054,5 @@ M\underset{f_1,\ldots,f_n}{\longrightarrow}\mathbb R^n
 —\quad .\quad —
 \end{center}
 \underline{Задача}: связь с интегр. в квадратурах.
-
-
 
 \end{document}

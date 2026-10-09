@@ -231,6 +231,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -238,17 +268,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 32 из 34. Архивная глава 032}\par\bigskip
 Кадры GELFAND-P001425 -- GELFAND-P001490\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -915,8 +949,6 @@ z\to\lambda z\\
 \begin{equation*}
 \Delta_\alpha-\bar\Delta_\alpha=S_\alpha\text{ — спин }\phi_\alpha.
 \end{equation*}
-
-
 \SourcePage{GELFAND-P001435}{10}
 \Unclear{GELFAND-P001435}{heading-date}{22.2.88 / 22.2.82}
 \underline{Углы между подпространствами.}
@@ -1475,8 +1507,6 @@ $\mathcal D(\Lambda,\Omega)$ — производная категория эт�
 \begin{equation*}
 V_0\longrightarrow V_1\oplus V_2\oplus V_3
 \end{equation*}
-
-
 \SourcePage{GELFAND-P001445}{30}
 Построим комплекс по этим данным
 \begin{equation*}
@@ -2166,8 +2196,6 @@ $|T|=N$ следует, что $T$ раскрашивается.
 (т.к. не может пересечь путь из 1 и 3)
 
 и дальше опять сводим к 8б).
-
-
 
 \SourcePage{GELFAND-P001455}{49}
 % Original scan inspected directly. Reproducible review coordinates are retained in completion.json.
@@ -2893,8 +2921,6 @@ A^{m'_1\ldots m'_N}_{m_1\ldots m_L}
 
 [Справа внизу:]
 \SourceFigure{GELFAND-P001464}{diagram-02}{Прямоугольник с $A$ и тремя вертикальными выводами сверху и снизу, без стрелок. У верхних выводов: $j'_1$, $j'_2$, $j'_L$; над ними: $m'_1$, $m'_2$, многоточие, $m'$ с исправленным последним индексом ($L$ или $N$). У нижних выводов: $j_1$, $j_2$, $j_N$; ниже: $m_1$, $m_2$, $m_N$. Требует проверки исходный знак под исправленным верхним правым индексом.}
-
-
 \SourcePage{GELFAND-P001465}{65}
 Произведение $BA$ изображ. соединением:
 
@@ -3749,8 +3775,6 @@ T_{X,\nabla}=
 \tag{13}
 \end{equation*}
 Это верно для любой связности.
-
-
 \SourcePage{GELFAND-P001475}{70}
 Гессиан — квадр. форма на пр-ве (13), инвар.
 опред. в крит. точке.
@@ -4620,8 +4644,6 @@ $V_{N_j}$ — вершинные операторы
 (но такие превращ. остаются!)
 
 и получается теория своб. частиц.
-
-
 \SourcePage{GELFAND-P001485}{87}
 
 \begin{equation*}
@@ -5018,7 +5040,5 @@ e_ie_k=-e_ke_i,\quad i\ne k.$}
 и строим такое же расслоение.
 
 Тогда верна такая же теорема.
-
-
 
 \end{document}

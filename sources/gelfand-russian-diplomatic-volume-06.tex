@@ -227,6 +227,36 @@
 \newunicodechar{Ё}{\ifmmode\text{\char"401\relax}\else\char"401\relax\fi}
 \newunicodechar{ё}{\ifmmode\text{\char"451\relax}\else\char"451\relax\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -234,17 +264,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 06 из 34. Архивная глава 006}\par\bigskip
 Кадры GELFAND-P000459 -- GELFAND-P000500\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -924,8 +958,6 @@ $X\subset GMA$ наз. симплексом; если \Unclear{GELFAND-P000468}{
 Заметим, что $G\Theta A=\Theta A$ как множество (они \Unclear{GELFAND-P000468}{final-word}{нильпотентны}).
 
 [По правому краю кадра тонкая прерывистая вертикальная линия; внизу справа чёрный прямоугольник.]
-
-
 \SourcePage{GELFAND-P000469}{unlabelled}
 [Зачёркнутый знак перед первой строкой: \Unclear{GELFAND-P000469}{top-cancelled}{неразборчиво}.]
 На самом деле \underline{$GMA\supset\Theta A$}.
@@ -1763,8 +1795,6 @@ S^m\overset{i}{\subset}T_\xi
 
 $K_J(M^n)$ --- группа стаб. рассл. над $M^n$, каждое из
 к-рых $J$-тривиально
-
-
 \SourcePage{GELFAND-P000479}{unlabelled}
 \underline{Теор. Атьи:} (Мат. 10:5)
 
@@ -2513,8 +2543,6 @@ $\underline{\varphi\times\mathrm{id}}$ --- соб. гомот. экв.
 \begin{equation*}
 T(\xi+\nu_M)\longrightarrow T(N+\nu_M)\tag{*}
 \end{equation*}
-
-
 \SourcePage{GELFAND-P000489}{unlabelled}
 \underline{Замечание о св-вах комплекса Тома, норм. рассл.}
 
@@ -3271,8 +3299,6 @@ SL(2,R)/(\pm1)\supset\Gamma=SL(2,Z)/(\pm1)
  g=\begin{pmatrix}a&b\\c&d\end{pmatrix},\quad g\in\Gamma.
 \end{equation*}
 \Unclear{GELFAND-P000498}{automorphy-factor}{[В множителе написано $(az+c)^{-w}$; буквы $a$ и $c$ сохранены.]}
-
-
 % GELFAND-0052. Diplomatic transcription; no catalogue heading is supplied as handwriting.
 % Editorial descriptions are in Russian square brackets. The source remains authoritative.
 % Coordinates below are original PNG pixels: (left, top, right, bottom), half-open,
@@ -3507,7 +3533,5 @@ Hurwitz, Math. Ann., 1899, стр. 196–226
 (\underline{Über die Entwicklungskoeffizienten der Lemniskatischen}
 \newline
 \underline{\Unclear{GELFAND-P000500}{german-final-word-case}{functionen / Functionen}}).
-
-
 
 \end{document}

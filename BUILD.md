@@ -1,18 +1,18 @@
-# Building the chapter reader
+# Building the Russian chapter reader
 
-Each file in `sources/` is a standalone LuaLaTeX document. The original working master is not needed to build the reader chapters. Compile twice, with shell escape disabled:
+The 34 files in `sources/` are standalone LuaLaTeX documents. Keep the accompanying `sources/figures/` folder beside them. Compile from `sources/`, twice, with shell escape disabled:
 
 ```text
 lualatex --no-shell-escape --halt-on-error --interaction=nonstopmode gelfand-russian-diplomatic-volume-01.tex
 lualatex --no-shell-escape --halt-on-error --interaction=nonstopmode gelfand-russian-diplomatic-volume-01.tex
 ```
 
-The distributed PDFs were compiled with LuaHBTeX 1.25.7 (MiKTeX 26.5). Packages include fontspec, amsmath, amssymb, amsthm, mathtools, TikZ, tikz-cd, hyperref, ulem, newunicodechar and adjustbox.
+The rendering uses Noto Serif, Noto Sans, Noto Sans Mono, Segoe UI Symbol and MS Gothic. Refined chapter preambles can select installed files under `C:/Windows/Fonts/`. No font files are redistributed. Other platforms require corresponding installed fonts and renewed glyph/layout checks; pagination can change.
 
-The checked rendering uses the installed Noto Serif, Noto Sans, Noto Sans Mono, Segoe UI Symbol and MS Gothic fonts. Several refined chapters explicitly select the Noto Serif TrueType files under `C:/Windows/Fonts/`. These are system font locations, not project file references. No font files are redistributed. Building on another platform requires configuring corresponding installed fonts and repeating glyph/layout checks; identical pagination is not promised after a font change.
+The combined reader contains 1398 unchanged chapter page content streams and two introductory/catalog pages. Assembly prefixes 4953 named destinations, preserves 571 source-figure links, and provides 34 chapter bookmarks and catalogue links with chapter page labels.
 
-The combined reader adds two separately typeset introductory/catalog pages. It copies all 1374 chapter page content streams unchanged, prefixes each chapter's named destinations, preserves 568 figure links, adds 34 chapter bookmarks and catalog links, and retains chapter page numbering through viewer page labels.
+The reader is derived from the frozen effective accepted returns for all 165 packets and 1527 source-frame records. Reversible rendering edits preserve the original frame content and the full annotation arguments with their source associations. Some long annotations appear immediately after their own source frame. Six spaces repair TikZ ellipse-axis syntax without changing its radii or coordinates; one case-number position is separated from an adjacent index, retaining both labels and the graph strokes. These layout changes make no new manuscript-reading or mathematical-reconstruction claims.
 
-Renderer-only edits have an exact inverse to the held diplomatic master frame bodies: diagram width wrappers, breakable prose underlining, seven original syntax spans plus one diagram-label position adjustment, and 27 full annotation calls relocated into notes after their own source frames. The original annotation arguments and source mathematics remain recoverable; literal TeX layout-token identity is not claimed.
+The 25 PNG crops are additions to retained typed diagram content. Their manifest entries bind original source-scan hashes, crop coordinates, modes, dimensions and pixel hashes. PDF image checks use an explicit crop allowlist and compare decoded pixels. There are no full-page scan substitutions for written material.
 
-All 1527 frame slots are present. 24 lack imported returns; 6738 uncertainty-ledger entries remain unresolved. This is not completed manuscript quality assurance. The source archive is linked in README.md.
+Every chapter received current-source two-pass build checks, frame-identifier/text extraction checks, missing-glyph checks and all-page physical character-boundary checks. Bounded pages were actually rendered and viewed; this is not an all-page visual-overlap audit or completed manuscript comparison. The uncertainty ledger still contains 6820 unresolved entries.

@@ -241,6 +241,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -248,17 +278,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 27 из 34. Архивная глава 027}\par\bigskip
 Кадры GELFAND-P001219 -- GELFAND-P001252\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -803,8 +837,6 @@ $\alpha_+\alpha_-=-2$.
 \Unclear{GELFAND-P001228}{marginal-cancellation}{[зачёркнуто: она?]} ангарм. отношение 4-ки точек на $CP^1$.
 
 \Unclear{GELFAND-P001228}{correlation-order}{[Вверху написано «2-точечная», ниже — «$4^{\text{х}}$ точечной».]}
-
-
 \SourcePage{GELFAND-P001229}{unlabelled}
 \underline{11/XI–85г.}\qquad \underline{Сем. Гельфанда}
 
@@ -1513,8 +1545,6 @@ H^*(X,Q)=Q[x_1,\ldots,x_n]/J
 $2^{\circ}.$ Базис в гомологиях $H_*(X,Q)$ сост. клетки Шуберта $(c_w)$
 
 $w$ — перестановка чисел от 1 до $n$
-
-
 \SourcePage{GELFAND-P001239}{unlabelled}
 \begin{equation*}
 \begin{array}{cccc}
@@ -2129,8 +2159,6 @@ $\varepsilon(dz)^{-1}$ — инвар. величина.
 
 [На правой полосе соседнего листа, в нижней части кадра:]
 \Unclear{GELFAND-P001248}{right-edge}{Видимы фрагменты «(» и ниже «(1»; продолжение за правой границей изображения.}
-
-
 \SourcePage{GELFAND-P001249}{58}
 Для рода 2 квадр. дифф. 3 штуки:
 \begin{equation*}
@@ -2441,8 +2469,6 @@ $\longleftarrow$ производная $\theta$ в нуле.
 Всё это — вместе — квадратичный дифференциал.
 
 $\omega$ не сод. $dz$: $\omega_i\,dz$ — форма.
-
-
 
 \ReaderNotesStart{GELFAND-P001252}
 \ReaderNote{1}{\Incomplete{GELFAND-P001252}{theta-arg-cancel}{неразборчивый зачёркнутый знак после первого аргумента theta}}

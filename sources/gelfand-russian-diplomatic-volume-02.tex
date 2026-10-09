@@ -227,6 +227,36 @@
 \newunicodechar{Ё}{\ifmmode\text{\char"401\relax}\else\char"401\relax\fi}
 \newunicodechar{ё}{\ifmmode\text{\char"451\relax}\else\char"451\relax\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -234,17 +264,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 02 из 34. Архивная глава 002}\par\bigskip
 Кадры GELFAND-P000140 -- GELFAND-P000207\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -752,8 +786,6 @@ $g$-пучок $E\overset p\longrightarrow X$ — вект. пучок, то $E$
 
 \SourceFigure{GELFAND-P000149}{bottom-bundle}{Внизу слева $E$ над $B_g$, стрелка вниз, справа от неё малый петлеобразный $g$-подобный знак; различие между меткой $g$ и сходной петлёй не установлено.}
 $E$ — $g$-пр-во ($g$ действ. справа).
-
-
 \SourcePage{GELFAND-P000150}{14}
 Пусть $X$ — $G$-пр-во. Введём пр-во $X_G=E\times_G X$
 (в $E\times X$ склеены орбиты группы $G$).
@@ -1083,8 +1115,6 @@ $V$ — пучок на $Y$.
 \begin{equation*}M_x:\quad D_x\otimes1:\Gamma(N_1\otimes V)_{M_x}\longrightarrow\Gamma(N_2\otimes V)_{M_x}.\end{equation*}
 Эллиптич. опер.; $\operatorname{Ker},\operatorname{Coker}<\infty$.
 Разность элем. в $K$-функторе даёт нужный элемент.
-
-
 \SourcePage{GELFAND-P000160}{19}
 Если есть отобр. $X\longrightarrow F(H,H)$
 [Под $F(H,H)$: «фредм. опер.»]
@@ -1578,8 +1608,6 @@ $\nu=0$ — ур-я Эйлера (идеальная жидкость).
 \SourceFigure{GELFAND-P000169}{flow-sketch}{Слева у граничных условий открытая слева дуга, выпуклая вправо. Над и под дугой короткие штрихи и стрелки, направленные вправо; справа несколько отдельных штрихов. Подписей нет; точные направления всех коротких штрихов не установлены.}
 Всегда есть узкие окр., где сильно отлип.
 \Unclear{GELFAND-P000169}{last-word}{Последнее сокращение читается «отлип.» / «отлич.» / иной конец; видимые начальные буквы «от», далее соединённые штрихи.}
-
-
 \SourcePage{GELFAND-P000170}{unlabelled}
 \SourceFigure{GELFAND-P000170}{boundary-geometry}{Вверху слева незамкнутая закруглённая справа линия; у её верхней ветви стрелка вправо с $u$, из той же области стрелка вверх с $v$. Точное положение нормали и касательной дано только рисунком.}
 $v$ не мен. (гран. усл. сохр.)
@@ -1912,8 +1940,6 @@ $B\longrightarrow$ идеал в $A$.
 Это не зависит от координат (в действ. инвар. констр.)
 \begin{equation*}\frac{\partial f}{\partial x_i'}=\sum_j\frac{\partial f}{\partial x_j}\cdot\frac{\partial x_j}{\partial x_i'}.\end{equation*}
 \Unclear{GELFAND-P000179}{chain-index}{Справа «$(k=1$ выражаются)», под этой скобкой «друг через друга»; $k$ / $\kappa$-подобный знак, виден $=1$. Закрывающая скобка стоит в конце первой строки, вторая строка вплотную к нижней границе кадра.}
-
-
 \SourcePage{GELFAND-P000180}{unlabelled}
 \underline{Связь расшир. разных порядков.}
 $k\nearrow\ldots$ идеалы $\searrow\ldots$ (уменьшаются)
@@ -2434,8 +2460,6 @@ $z$ — централизатор [зачёркнуто] $a$ в алгебре.
 (для [зачёркнуто] — картановская подалгебра)
 [Над зачёркнутым фрагментом обведена вставка: «регул. элем.»]
 \Unclear{GELFAND-P000189}{cancelled-cartan}{В скобках после «для» под вставкой «регул. элем.» зачёркнута запись, похожая на $a$ / $x_0$ / иной символ; несколько исходных штрихов соединены с отменяющими чертами.}
-
-
 \SourcePage{GELFAND-P000190}{52}
 % Original: 2024 x 2415 px; reading order: single visible leaf, top to bottom.
 Провести сечение (пока ещё избыточное)
@@ -3004,8 +3028,6 @@ $\dfrac{|A|^{n/2}}{(\sqrt{2\pi})^n}$; от вставки к месту пере
 =\overline{\phi^A}_{p\to x}\,
 L(x,p,A^{-1})\,\phi^{A}_{x\to p}\,f(x)
 \end{equation*}
-
-
 \SourcePage{GELFAND-P000200}{60}
 % Исходный кадр 2024 x 2415. Координаты обзора — пиксели от левого верхнего угла, [x0,y0,x1,y1).
 % Увеличенные фрагменты: заголовок [80,10,860,162) x3; сокращение [980,135,1240,221) x4;
@@ -3565,7 +3587,5 @@ E(x)=c\int_{A_R}\operatorname{sgn}(x,\xi)(x,\xi)^{m-n-1}\omega_a
 
 (см. 1-й выпуск)
 [Под строкой: об. ф-й.]
-
-
 
 \end{document}

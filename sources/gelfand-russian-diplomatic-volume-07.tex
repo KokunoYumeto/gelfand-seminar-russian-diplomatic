@@ -241,6 +241,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -248,17 +278,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 07 из 34. Архивная глава 007}\par\bigskip
 Кадры GELFAND-P000501 -- GELFAND-P000553\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -1023,7 +1057,6 @@ w=10,\quad S_{12}=R\cdot e^{2\pi iz}\prod_{n=1}^{\infty}(1-e^{2\pi inz})^{24}
 \begin{equation*}
 \tau(n)\equiv\sum_{d\mid n}d^{11}\pmod{691}
 \end{equation*}
-
 \SourcePage{GELFAND-P000511}{unlabelled}
 % Original 2360 x 3400; inspected complete frame and strips (50,0,2310,920),
 % (50,875,2310,1730), (50,1660,2310,2510), (50,2440,2310,3390).
@@ -2019,8 +2052,6 @@ $p\Phi_1+q\Phi_2$, $p+q=1$ с вып. эквивариантности.
 $(\widetilde B_\pi\times H_i)/\pi\simeq B_\pi\times H_i$.
 После отождеств. имеем $B_\pi\times H_1\to B_\pi\times H_2$,
 задающее $\Phi_x:H_1\to H_2$.
-
-
 \SourcePage{GELFAND-P000521}{unlabelled}
 \underline{\underline{15/$\overline{\underline{X}}$-73}}\qquad \underline{Сем. Гельфанда.}
 
@@ -2778,8 +2809,6 @@ $\xi_T$ — рассл. на $M$
 
 [Ниже справа на пустом поле:]
 \Unclear{GELFAND-P000530}{lower-right-stroke}{Одиночный короткий штрих, похожий на «1».}
-
-
 \SourcePage{GELFAND-P000531}{37}
 \underline{12.11.73.} \underline{Сем. Гельфанда.}
 
@@ -3285,8 +3314,6 @@ $u(x)<0$ может быть — зоны устойчивости залез. �
 Тогда она — конечнозонный потенциал.
 [Зачёркнуто:] или наоборот.
 (На самом деле, верно и обратное).
-
-
 \SourcePage{GELFAND-P000541}{60}
 их по $1$ любого нечётного порядка.
 (и любая лин. комбинация)
@@ -3784,8 +3811,6 @@ c_k(\Unclear{GELFAND-P000550}{ck-t-overwrite}{t})=c_k(0)e^{2i\xi^3t},\qquad
 удовл. $4f_t+f_{xxx}+3(f^2+\xi^2)f_x=0$,
 а $f'+f^2=q$ удовлетвор. ур-ю $4q_t+q_{xxx}+6qq_x=0$.
 \Unclear{GELFAND-P000550}{spectral-letter}{Спектральная буква в формулах этой страницы допускает $\xi/\zeta$; $\xi$ оставлено предварительно.}
-
-
 \SourcePage{GELFAND-P000551}{unlabelled}
 [Большая верхняя область кадра свободна; запись внизу.]
 \underline{25/III−74. Сем. Гельфанда.}
@@ -3942,7 +3967,5 @@ $g_{ij}\sim\delta_{ij}$ — справ. теорема
 при нек. $t$ происх. бифуркации.
 \Unclear{GELFAND-P000553}{bifurcation-ending}{После читаемого «бифуркаци» два плотных переписанных штриха с правым крюком; окончание «и» в переданном «бифуркации» предположительно, прежние буквы не установлены.}
 Особ. движ. со скор. 1.
-
-
 
 \end{document}

@@ -231,6 +231,48 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Complete-corpus apparatus support; older per-volume style is retained above.
+\providecommand{\ReaderApparatusRef}[2]{%
+ \begingroup\ifnum#2=1\color{orange!65!black}\else\color{red!60!black}\fi%
+ \ifmmode\text{\scriptsize[прим.\,#1]}\else{\scriptsize[прим.\,#1]}\fi\endgroup%
+}
+\providecommand{\ReaderNotesStart}[1]{%
+ \par\addvspace{.4em}\begingroup\small%
+ \textbf{Примечания к кадру #1.}\par%
+}
+\providecommand{\ReaderNote}[2]{\par\noindent[#1]\quad#2\par}
+\providecommand{\ReaderNotesEnd}{\endgroup\par\addvspace{.4em}}
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -238,17 +280,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 29 из 34. Архивная глава 029}\par\bigskip
 Кадры GELFAND-P001297 -- GELFAND-P001358\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -1073,8 +1119,6 @@ $\delta_{ik}\delta_{kj}\delta_{km}\delta_{i\ell}\delta_{m\ell}\delta_{nn}$
 \end{adjustbox}
 \end{center}
 \SourceFigure{GELFAND-P001306}{lower-left-mark}{[В нижнем левом поле короткая тонкая волнистая черта, без подписи или видимой связи с диаграммами.]}
-
-
 \SourcePage{GELFAND-P001307}{unlabelled}
 \underline{20.10.86 г.}
 
@@ -1835,8 +1879,6 @@ v_i,\ i\ne0,\qquad &L_n=(\alpha n+\beta)v_n+\sum_{\substack{p+q=n\\p>q}}v_pv_q\\
 Квантование $=$ вложение в обёрт. алг. алгебры [окончание «ры» вписано ниже строки] Гейзенберга.
 
 Задача (интересная): написать все гамильтонианы
-
-
 \SourcePage{GELFAND-P001317}{unlabelled}
 $KdV$ связано с опер. \Unclear{GELFAND-P001317}{top-sturm-liouville}{Шт.-Лиувилля}:
 \begin{equation*}
@@ -2516,8 +2558,6 @@ $\varphi(\varrho_1(x))\subset\varrho_2(x)$.
 Предст. $\varrho$ наз. \underline{предпроективным}, если $\forall$ неразложимого предст. $\varrho(x)$
 
 \Unclear{GELFAND-P001326}{bottom-continuation}{На этом видимая запись обрывается; продолжение в назначенных кадрах отсутствует.}
-
-
 \SourcePage{GELFAND-P001327}{unlabelled}
 $\exists$ лишь конечное число \Unclear{GELFAND-P001327}{upper-line-noun}{наддувов} $\tau\colon\rho\longrightarrow\rho_0$
 
@@ -3310,8 +3350,6 @@ K_n(\underset{\uparrow H}{z},\underset{\uparrow H}{z'})
 \Unclear{GELFAND-P001336}{kernel-slash-normalization}{=
 \frac{1}{(z'+z)^k}\mid\gamma}.
 \end{equation*}
-
-
 % GELFAND-0145: diplomatic transcription of the ten assigned original PNG frames.
 % Review coordinates below are original PNG pixels: left, top, right, bottom (right/bottom exclusive).
 % scale records raster enlargement only; original scans remain authoritative.
@@ -4255,29 +4293,583 @@ G(z)&=\sum_{m=0}^\infty b(m)q^m\in M_{k-2n},\qquad n\ge2
 \Unclear{GELFAND-P001346}{bottom-factorial}{в числителе $(k-1)!$}
 \Unclear{GELFAND-P001346}{bottom-coefficient}{в (13) $a(m)b(m)$ без черты над $b(m)$}
 
-
-
-No validated return is available for this job.
 \SourcePage{GELFAND-P001347}{unlabelled}
-\Incomplete{GELFAND-P001347}{whole-page}{No return imported; source chapter\_029/29\_part\_000052.png}
-\SourcePage{GELFAND-P001348}{unlabelled}
-\Incomplete{GELFAND-P001348}{whole-page}{No return imported; source chapter\_029/29\_part\_000053.png}
+\begin{equation*}
+G=G_{k-2n}(z)=(*)+\sum_{m=1}^{\infty}\sigma_{k-1-2n}(m)q^m.
+\end{equation*}
+\begin{equation*}
+f=\sum_{m=1}^{\infty}a(m)q^m=\text{форма Гекке}.
+\end{equation*}
+[Зачёркнуто: $=\prod_p[1+\frac{a(p)}{p^s}+$]
+\begin{equation*}
+\left(\begin{gathered}
+a(mm')=a(m)a(m')\quad\text{при }(m,m')=1,\\
+a(2^a3^b5^c\ldots)=a(2^a)a(3^b)\ldots
+\end{gathered}\right.
+\end{equation*}
+Тогда
+\begin{equation*}
+\tag{14}\sum\frac{a(m)}{m^s}
+=\prod_p\left[1+\frac{a(p)}{p^s}+\frac{a(p^2)}{p^{2s}}+\ldots\right].
+\end{equation*}
+\begin{equation*}
+a(m)a(n)=\sum_{d\mid m,n}d^{k-1}a\left(\frac{mn}{d^2}\right),
+\qquad b(p)=1+p^{k-1-2n}.
+\end{equation*}
+$\Rightarrow$ ряд вычисляется
+\begin{equation*}
+\underbrace{\frac{(k-2)!}{(4\pi)^{k-1}}
+\sum_{m=1}^{\infty}\frac{a(m)\sigma_{k-1-2n}(m)}{m^{k-1}}}
+_{\displaystyle\Vert\quad L(f,k-1)L(f,2n)/\zeta(2n)}
+=\underbrace{-\frac{4n}{B_{2n}}(f,\overbrace{G_{k-2n}\cdot G_{2n}})}
+_{\displaystyle\Vert\quad\alpha\cdot(f,f)}.
+\end{equation*}
+[К скобке над $G_{k-2n}\cdot G_{2n}$:]
+$\alpha f+\beta f_1+\ldots$, $f_j$ --- базис.
+[Под $\alpha\cdot(f,f)$ зачёркнутый знак:]
+\Unclear{GELFAND-P001347}{pairing-overwrite}{нечитаемый знак}.
+$\Downarrow\quad\alpha\in\overline{\mathbb Q}^{*}$ (алгебрич.)
+
+Все коэфф. ряда Эйзеншт. --- рац. числа.
+
+Итак
+\begin{equation*}
+L(f,2n)/\zeta(2n)\quad\text{не зав. от }n
+\quad\Rightarrow\quad\text{теорема }
+\text{\ReaderApparatusRef{1}{1}}\text{ Делиня }D.
+\end{equation*}
+(Rankin, 1953)
+\begin{equation*}
+S_{2k}\quad\text{\ReaderApparatusRef{2}{1}}
+\quad S_{2k}^{\mathbb Q}=\{f=\sum a(n)q^n;\ a(n)\in\mathbb Q\}.
+\end{equation*}
+[Под левым $S_{2k}$:]
+\Unclear{GELFAND-P001347}{rational-left-margin}{$\eta^2$ / $\text{?}^{2}$}.
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d01-gelfand-p001347-original.png}{GELFAND-P001347}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}
+\node at (0,0) {$\mathbb C^d$};
+\node at (2.5,.7) {$S_{2k}^{+}\approx\mathbb Q^d$};
+\node at (2.5,-.7) {$S_{2k}^{-}\approx\mathbb Q^d$};
+\node[rotate=25] at (.9,.4) {$\supset$};
+\node[rotate=-25] at (.9,-.4) {$\supset$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+(хотя, 3 разные рац. структуры в $S_{2k}$)
+\begin{equation*}
+S_{2k}^{\pm,\mathbb Q}\otimes\mathbb C=S_{2k}.
+\end{equation*}
+
+
+\ReaderNotesStart{GELFAND-P001347}
+\ReaderNote{1}{\Unclear{GELFAND-P001347}{name-prefix}{(?) / (о)}}
+\ReaderNote{2}{\Unclear{GELFAND-P001347}{rational-separator}{перечёркнутый или подчёркнутый знак}}
+\ReaderNotesEnd
+\SourcePage{GELFAND-P001348}{76}
+\begin{equation*}
+S_{2k}^{+}:=\{f\in S_{2k}\mid\tau_n(f)\in\mathbb Q,\ n=0,2,4,\ldots,k-2\}.
+\end{equation*}
+\begin{equation*}
+S_{2k}^{-}:=\{\text{---||---}\quad n=1,3,5,\ldots\}.
+\end{equation*}
+\begin{equation*}
+k=12,\qquad\dim S_{12}=1.
+\end{equation*}
+\begin{equation*}
+S_{12}^{+}=\{f\mid\tau_0(f),\tau_2(f),\tau_4,\tau_6,\tau_8,\tau_{10}\in\mathbb Q\}.
+\end{equation*}
+Не очевидно, что размерность сохр!
+
+\underline{Лит-ра}: статья \underline{Kohnen} $+$ \underline{Zagier}
+
+Modular forms with rational coefficients
+
+(conf. Ed. \underline{Rankin} --- книга)
+
 \SourcePage{GELFAND-P001349}{unlabelled}
-\Incomplete{GELFAND-P001349}{whole-page}{No return imported; source chapter\_029/29\_part\_000054.png}
-\SourcePage{GELFAND-P001350}{unlabelled}
-\Incomplete{GELFAND-P001350}{whole-page}{No return imported; source chapter\_029/29\_part\_000055.png}
+\underline{2/III--87 г.}\qquad \underline{В. Казаков.}
+\underline{Задача о склейках пов. рода $g$ из $2n$-угольника.}
+
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d02-gelfand-p001349-original.png}{GELFAND-P001349}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw (0,0.6)--(0.55,1)--(1.1,0.6)--(1.1,-0.15)--(0.55,-0.55)--(0,-0.15)--cycle;
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+$2n$-угольник; склеив \Unclear{GELFAND-P001349}{header-hook}{галочка / $\gamma$}
+\Unclear{GELFAND-P001349}{opposite-word}{противоп. / противопол.} ориент. стороны (попарно).
+
+$g$ --- род возникш. мн-зия.
+Сколько различных способов, при к-рых получ. пов. рода $g$?
+$f_n^g$ --- число таких способов склейки.
+
+(Можно Запретить некоторые склейки.
+\underline{Запреты:} 1)
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d03-gelfand-p001349-original.png}{GELFAND-P001349}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node at (-0.5,0) {а)};
+\draw (0,0)--(0.75,0.5); \draw (0,0)--(0.55,-0.7);
+\fill (0,0) circle (0.035);
+\draw[<->] (0.37,0.2) to[bend left=18] (0.37,-0.38);
+\node at (1.7,0) {б)};
+\draw (2.3,0.15)--(2.8,0.5)--(3.2,0.15);
+\draw (2.8,0.5) circle (0.04);
+\draw (2.7,-1)--(3.2,-1.05)--(3.45,-0.35);
+\draw (3.2,-1.05) circle (0.04);
+\draw[<->] (2.45,0.05) to[bend left=15] (2.85,-0.85);
+\draw[<->] (3.02,0.1) to[bend right=8] (3.25,-0.65);
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+2) [Зачёркнуто: ИЛИ] Запрещ. только б)\qquad 3) Запр. только а)
+
+Всё сводится к случаю без запретов.)
+
+\SourcePage{GELFAND-P001350}{85}
+Произв. ф-я:
+\begin{equation*}
+(1)\quad f_n(N)=\text{\ReaderApparatusRef{1}{1}}\sum_{g=0}^{\infty}N^{-2g}f_n^g.
+\end{equation*}
+Тогда
+\begin{equation*}
+(2)\quad f_n(N)=(2\pi)^{-N^2/2}\int d^{N^2}\varphi\,\frac{\operatorname{tr}}{N}(\varphi^{2n})e^{-N\operatorname{tr}\varphi^2/2}
+=\left\langle\frac{\operatorname{tr}}{N}\varphi^{2n}\right\rangle,
+\end{equation*}
+где $\varphi^+=\varphi$ --- эрмитова матрица $N\times N$.
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d04-gelfand-p001350-original.png}{GELFAND-P001350}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node at (-1.5,0) {(3)};
+\draw[dashed] (-0.7,0.65)--(0.7,0.65)--(1.3,0)--(0.7,-0.65)--(-0.7,-0.65)--(-1.3,0)--cycle;
+\draw[thick] (-0.92,0.42)--(-0.7,0.65)--(-0.45,0.65);
+\draw[thick] (0.45,0.65)--(0.7,0.65)--(0.92,0.42);
+\draw[thick] (1.1,0.22)--(1.3,0)--(1.1,-0.22);
+\draw[thick] (0.92,-0.42)--(0.7,-0.65)--(0.45,-0.65);
+\draw[thick] (-0.45,-0.65)--(-0.7,-0.65)--(-0.92,-0.42);
+\draw[thick] (-1.1,-0.22)--(-1.3,0)--(-1.1,0.22);
+\node at (0,0.95) {$\varphi_{ij}$}; \node at (1.2,0.65) {$\varphi_{jk}$};
+\node at (1.2,-0.65) {$\varphi_{k\ell}$}; \node at (0,-0.95) {$\varphi_{\ell p}$};
+\node at (-1.4,-0.65) {$\varphi_{pq}$}; \node at (-1.4,0.65) {$\varphi_{qi}$};
+\draw[thick] (2.6,0.5)--(2.6,0.65);
+\draw (2.8,0.6)--(3.0,0.6); \node at (3.3,0.6) {$\delta_{jk}$};
+\node at (2.4,-0.4) {$\varphi_{ij}=$}; \draw[dashed] (3,-0.4)--(4.4,-0.4);
+\node at (3,-0.65) {$i$}; \node at (4.4,-0.65) {$j$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+Легко проверить, что
+\begin{equation*}
+(4)\quad \langle\varphi_{ij}\varphi_{k\ell}\rangle=\frac1N\delta_{i\ell}\delta_{jk},
+\end{equation*}
+или
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d05-gelfand-p001350-original.png}{GELFAND-P001350}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node at (-0.7,0) {$(4')$};
+\draw (0.15,0.6)--(0,0.3)--(0.15,0); \draw (2.65,0.6)--(2.8,0.3)--(2.65,0);
+\draw[dashed] (0.4,0.6)--(2.4,0.6); \draw[dashed] (0.4,0)--(2.4,0);
+\node at (0.25,0.85) {$i$}; \node at (2.45,0.85) {$j$};
+\node at (0.25,-0.25) {$\ell$}; \node at (2.45,-0.25) {$k$};
+\node at (3.2,0.3) {$=$}; \draw[thick] (3.7,0.6)--(3.7,0); \draw[thick] (4.4,0.6)--(4.4,0);
+\node at (3.7,0.85) {$i$}; \node at (3.7,-0.25) {$\ell$}; \node at (4.4,0.85) {$j$}; \node at (4.4,-0.25) {$k$};
+\node at (6,0.8) {\underline{Обозначение:}};
+\draw[thick] (5.7,0.35)--(5.6,-0.2); \node at (5.85,0.45) {$i$}; \node at (5.8,-0.3) {$k$}; \node at (6.5,0) {$=\delta_{ik}$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d06-gelfand-p001350-original.png}{GELFAND-P001350}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node at (-2.6,0) {(5)};
+\draw[dashed] (-0.6,0.7)--(0.6,0.7)--(1.2,0)--(0.6,-0.7)--(-0.6,-0.7)--(-1.2,0)--cycle;
+\node at (-0.65,0.95) {$i_3$}; \node at (-1.5,0) {$i_2$};
+\node at (-0.65,-1) {$i_1$}; \node at (0.65,-1) {$i_{2n}$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+(6) \underline{Теор. Вика:} Пусть есть $2n$ гауссовых величин $\xi_1,\xi_2,\ldots,\xi_{2n}$. Тогда
+([Зачёркнутая запись: \Incomplete{GELFAND-P001350}{wick-word}{короткая зачёркнутая запись под густыми штрихами; точное чтение не установлено}] [Вставлено сверху: линейные] ф-ии от $\varphi_{ik}$)
+\begin{equation*}
+\langle\xi_1\xi_2\cdots\xi_{2n}\rangle
+=\sum_{P(i_1,\ldots,i_{2n})}\langle\xi_{i_1}\xi_{i_2}\rangle\langle\xi_{i_3}\xi_{i_4}\rangle\cdots.
+\end{equation*}
+[Под суммой зачёркнуто: \Incomplete{GELFAND-P001350}{cancel-index-first}{короткая прежняя строка индексов; начальный индекс похож на $i_2$, чтение не установлено}.]
+Перестановки [зачёркнуто: $i_1,i_2,\ldots,i_{2n}$] $1,2,\ldots,2n$.
+Сумма по всем разб. на пары.
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d07-gelfand-p001350-original.png}{GELFAND-P001350}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node at (0,0) {$\varphi$}; \node at (0.6,0) {$\varphi$}; \node at (1.2,0) {$\varphi$}; \node at (2.6,0) {$\varphi$};
+\node at (1.8,0) {$\cdots$};
+\draw (0,0.2)--(0,0.6)--(1.2,0.6)--(1.2,0.2);
+\draw (0.6,0.2)--(0.6,0.48)--(1.12,0.48);
+\draw (1.3,0.5)--(2.6,0.5)--(2.6,0.2);
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+(\underline{Упражнение}: \Unclear{GELFAND-P001350}{exercise-word}{доказать? / оказать? / докажите? / окажите?})
+
+Более общая теорема: пусть $\xi$ --- гаусс. величина, тогда
+\begin{equation*}
+(7)\quad \langle\xi f(\xi)\rangle=\langle\xi\xi\rangle\left\langle\frac{\partial f}{\partial\xi}\right\rangle.
+\end{equation*}
+\begin{equation*}
+(8)\quad \langle\xi_i f(\xi)\rangle=\sum_j\langle\xi_i\xi_j\rangle\left\langle\frac{\partial f}{\partial\xi_j}\right\rangle.
+\end{equation*}
+
+
+\ReaderNotesStart{GELFAND-P001350}
+\ReaderNote{1}{\Unclear{GELFAND-P001350}{sum-prefix}{зачёркнутый одиночный знак}}
+\ReaderNotesEnd
 \SourcePage{GELFAND-P001351}{unlabelled}
-\Incomplete{GELFAND-P001351}{whole-page}{No return imported; source chapter\_029/29\_part\_000056.png}
-\SourcePage{GELFAND-P001352}{unlabelled}
-\Incomplete{GELFAND-P001352}{whole-page}{No return imported; source chapter\_029/29\_part\_000057.png}
+С пом. (7), (8) легко док. \underline{теор. Вика}
+(\Unclear{GELFAND-P001351}{induction-word}{воспользовавш.? по $\xi$-числу?}).
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d08-gelfand-p001351-original.png}{GELFAND-P001351}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node at (-1.6,0) {$(5')$};
+\draw[dashed] (-0.7,0.45)--(0,1)--(0.7,0.45);
+\draw[dashed] (-0.7,-0.45)--(0,-1)--(0.7,-0.45);
+\draw (-0.7,0.45)--(-0.7,-0.45); \draw (0.7,0.45)--(0.7,-0.45);
+\draw (0,1) circle (0.035); \draw (0,-1) circle (0.035);
+\draw (-0.7,0.45) circle (0.035); \draw (-0.7,-0.45) circle (0.035);
+\draw (0.7,0.45) circle (0.035); \draw (0.7,-0.45) circle (0.035);
+\node at (-1,0.45) {$i_2$}; \node at (-1,-0.45) {$i_1$}; \node at (0,-1.25) {$i_{2n}$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+Интеграл (2) вычислим с пом. теор. Вика. Ясно, что
+\begin{equation*}
+(9)\quad \langle\operatorname{tr}\varphi^{2n}\rangle=
+\langle\varphi_{i_1i_2}\varphi_{i_2i_3}\cdots\varphi_{i_{2n}i_1}\rangle.
+\end{equation*}
+[Между равенством и скобкой зачёркнуто: $\sum$.]
+Теперь применим теор. Вика.
+По ней надо стороны спаривать! (у многоугольника $(5')$)
+
+Склейка.
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d09-gelfand-p001351-original.png}{GELFAND-P001351}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node at (-1.3,0) {(10)};
+\draw[dashed] (-0.8,0.9)--(0,1.6)--(0.8,0.9); \draw[thick] (-0.8,0.9)--(0.8,0.9);
+\draw (-0.8,0.9)--(-0.8,0.7); \draw (0.8,0.9)--(0.8,0.7);
+\node at (-1.1,0.85) {$i_2$}; \node at (1.15,0.95) {$i_k$}; \node at (0,1.15) {$\delta_{i_2i_k}$};
+\draw[thick] (-0.8,-0.3)--(0.8,-0.3);
+\draw (-0.8,-0.3)--(-0.8,-0.1); \draw (0.8,-0.3)--(0.8,0.1);
+\draw[dashed] (-0.8,-0.3)--(0,-1)--(0.8,-0.3);
+\node at (-1.1,-0.35) {$i_1$}; \node at (1.2,-0.35) {$i_{k+1}$}; \node at (0,0) {$\delta_{i_1i_{k+1}}$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+[Справа от (10) зачёркнуто: $\varphi$ \Unclear{GELFAND-P001351}{cancel-phi}{нечитаемый второй зачёркнутый знак}.]
+$\varphi$-мы (4) обеспечивают правильную ориентацию при склейке
+(из-за эрмитовости!!)
+(По-другому выбрав матрицу, можно получить неориентир. пов.)
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d10-gelfand-p001351-original.png}{GELFAND-P001351}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node at (-1.5,0) {(11)};
+\draw[thick] (-1,0.7)--(1,0.7)--(0,-1.2)--cycle;
+\fill (-1,0.7) circle (0.04); \fill (1,0.7) circle (0.04); \fill (0,-1.2) circle (0.04);
+\draw (-0.55,0.85)--(0,1.55)--(0.4,0.85); \fill (0,1.55) circle (0.04);
+\draw[dashed] (-0.65,0.5)--(-0.8,0.2); \draw[dashed] (0.7,0.5)--(0.85,0.2);
+\draw (-0.75,-0.2)--(-1,-0.7); \draw (0.9,-0.2)--(1,-0.7);
+\draw[dashed] (-1,-0.7)--(1,-0.7); \fill (-1,-0.7) circle (0.04); \fill (1,-0.7) circle (0.04);
+\node at (-1.3,0.75) {$i_2$}; \node at (1.3,0.75) {$i_k$};
+\node at (-1.3,-0.75) {$i_1$}; \node at (1.45,-0.75) {$i_{k+1}$}; \node at (0.15,-1.5) {$i_{2n}$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+Замкнутые петли $\longrightarrow$ св-во символа Кронекера,
+т.е. всегда $N$! Например,
+\begin{equation*}
+N=\delta_{i_2i_k}\,\delta_{i_ki_{2n}}\,\delta_{i_{2n}i_2}.
+\end{equation*}
+$\forall$ замкн. цикл даёт $N$!
+
+(12) \underline{Число замкн. циклов = числу вершин в склеив. замкн. фигуре.}
+
+(13) Вклад каждого возможного склеивания (диаграммы)
+\begin{equation*}
+=N^{-(\#\text{ рёб.})+(\#\text{ вершин})-1}=N^{-2g}.
+\end{equation*}
+(из-за $\frac N2\operatorname{tr}\varphi^2$ в $\exp$)
+
+\SourcePage{GELFAND-P001352}{86}
+Вычислим интеграл (2). Приведём к \Unclear{GELFAND-P001352}{header-word}{диаг.? / сим.? / соб.?} виду:
+\begin{equation*}
+(14)\quad \varphi_{ij}=\sum_k\Omega^+_{ik}\lambda_k\Omega_{kj},\qquad \Omega\text{ --- унит. матрица}.
+\end{equation*}
+\begin{equation*}
+(15)\quad d^{N^2}\varphi=\left(\prod d\lambda_i\,[\Delta(\lambda)]^2\right)d\Omega,
+\end{equation*}
+где
+\begin{equation*}
+\Delta(\lambda)=\prod_{i>j}(\lambda_i-\lambda_j).
+\end{equation*}
+[Слева зачёркнут номер: \Unclear{GELFAND-P001352}{cancel-number}{$(14)$ / $(16)$}.]
+[Справа в рамке: См. Г. \underline{Вейль}: Класс. группы, их инвар. и предст.]
+(мера Дайсона).
+
+([Над началом списка: Brezin(?)], Itzykson, Zuber, \underline{Parisi},)
+[От Parisi черта вниз:] \underline{метод стох. квантования}
+
+кв. величина $\longmapsto$ марк. процесс.
+Среднее вычисляется с пом. уср. по траекториям.
+[Слева: работает здесь. Стрелка вниз к (16).]
+\begin{equation*}
+\begin{aligned}
+(16)\quad f_n(N)&\sim\int\prod\left(d\lambda_i\,e^{-N\lambda_i^2/2}\right)\Delta^2(\lambda)
+\left(\frac1N\sum_{i=1}^{N}\lambda_i^{2n}\right)=\\
+&=\text{\ReaderApparatusRef{1}{1}}
+\int\prod\left(d\lambda_i\,e^{-N\lambda_i^2/2}\right)\Delta^2(\lambda)\lambda_1^{2n}\\
+&\sim\int\prod\left(d\lambda_i\,e^{-\lambda_i^2/2}\right)\Delta^2(\lambda)\lambda_1^{2n}.
+\end{aligned}
+\end{equation*}
+[От второго равенства черта вниз: симм. по $\lambda_j$.]
+(перем. $\lambda_i$ --- выносим \Unclear{GELFAND-P001352}{cancel-rescale}{зачёркнутый одиночный знак} $\sqrt N$ в $\lambda_i$)
+\begin{equation*}
+(17)\quad \Delta(\lambda)=\det\|(\lambda_\ell)^k\|_{k,\ell}=\det\|H_k(\lambda_\ell)\|.
+\end{equation*}
+$H_k$ --- любой полином степ. $k$ со старш. коэфф. $1$.
+Выберем $H_k$ полиномами Эрмита!!
+(с некот. масштабом, чтобы старш. к-тфф. $=1$)
+(хорошо, т.к. $H_k$ и $H_\ell$ ортогональны)
+
+Отсюда:
+\begin{equation*}
+(18)\quad f_n(N)\sim\frac1C\int\prod_{i=1}^{N}\left(d\lambda_i\,e^{-\lambda_i^2/2}\right)\lambda_1^{2n}
+\left[\sum_p\prod_{k=1}^{N}H_k(\lambda_{p_k})(-1)^{\operatorname{sgn}(p)}\right]^2=
+\end{equation*}
+[Под $p$: перестан.]
+(Parisi придумали и Bessis приём с полиномами Эрмита)
+При возвед. в квадрат: $\forall$ перем. $\lambda_{p_k}$ встреч. ровно $2$ раза.
+
+
+\ReaderNotesStart{GELFAND-P001352}
+\ReaderNote{1}{\Unclear{GELFAND-P001352}{cancel-prefactor}{зачёркнутый одиночный знак перед интегралом}}
+\ReaderNotesEnd
 \SourcePage{GELFAND-P001353}{unlabelled}
-\Incomplete{GELFAND-P001353}{whole-page}{No return imported; source chapter\_029/29\_part\_000058.png}
-\SourcePage{GELFAND-P001354}{unlabelled}
-\Incomplete{GELFAND-P001354}{whole-page}{No return imported; source chapter\_029/29\_part\_000059.png}
+\begin{equation*}
+=\sum_{k=0}^{N-1}\frac{\int d\lambda\,e^{-\lambda^2}[H_k(\lambda)]^2\lambda^{2k}}
+{\int d\lambda\,e^{-\lambda^2}(H_k(\lambda))^2}.
+\end{equation*}
+Из справочника (напр. Абрамовица):
+\begin{equation*}
+(19)\quad \int d\lambda\,e^{i\lambda x}e^{-\lambda^2}[H_k(\lambda)]^2
+=\underbrace{\sqrt\pi\,2^n n!}_{\text{сократится со знаменателем}}
+e^{-x^2/4}\underbrace{L_n(x^2/2)}_{\text{полин. Лагерра}}.
+\end{equation*}
+В итоге получим [стрелка к (20)]:
+\begin{equation*}
+(20)\quad \sum_{n=0}^{\infty}\frac{(-x^2/2)^n}{(2n)!!}f_n(N)
+=e^{-x^2/4}\sum_{i=0}^{N-1}L_i(x^2/2)
+=e^{-x^2/4}\underbrace{L^1_{N-1}(x^2/2)}_{\text{присоед. полиномы Лагерра}}.
+\end{equation*}
+Нас здесь \Unclear{GELFAND-P001353}{asympt-word}{наиболее? / интерес.?} асимпт. при $N\to\infty$. Составим произв. ф-ю:
+[Зачёркнуто перед (21): $F(x,t)$\Unclear{GELFAND-P001353}{cancel-21}{последний одиночный знак}.]
+\begin{equation*}
+(21)\quad f_n(t)=\sum_N t^N f_n(N).
+\end{equation*}
+Для неё ответ:
+\begin{equation*}
+(22)\quad f_n(t)=\frac{(2n)!}{n!}\frac{(t+1)^n}{(1-t)^{n+2}}.
+\end{equation*}
+Нас интерес. разлож. в \underline{ряд} по \underline{$t$}.
+\underline{Захаревич: ответ (по D. Zagier'у)}
+\begin{equation*}
+(23)\quad \sum_{g=0}^{\infty}\frac{(n+1)!(n-2g)!}{(2n)!}\,f_g^n x^g
+=\left(\frac{\sqrt{x/2}}{\operatorname{th}\sqrt{x/2}}\right)^{n+1}.
+\end{equation*}
+[На левом поле отдельно: (]
+(при $n-2g<0$ надо домножить на $(2n)!$ и перенести в правую часть)
+$f_g^n(n-2g)!$ тем самым опред. и при $2g>n$(!).
+
+\underline{Вариант:}
+\underline{2 другие комбинат. задачи} (рассматривались Казаковым и Мигдалом).
+\tikz{\node[draw,circle,inner sep=1pt] {1};} Как замостить $2n$-уг. $k$ тр-ками, чтобы возникающая поверхность имела род $g$.
+[Зачёркнутая строка: Число \Unclear{GELFAND-P001353}{cancel-variant-line}{скл.?}.]
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d11-gelfand-p001353-original.png}{GELFAND-P001353}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[scale=1.4]
+\draw (-.60,.10)--(0,.70)--(.80,.60)--(1,0);
+\draw (.50,-.50)--(-.50,-.45)--(-.60,.10);
+\draw[dashed] (1,0)--(.50,-.50);
+\draw (0,.70)--(-.05,.02)--(.80,.60);
+\draw (-.50,-.45)--(.42,-.16)--(1,0);
+\draw (.42,-.16)--(.50,-.50);
+\draw[dashed] (-.60,.10)--(-.05,.02)--(-.50,-.45);
+\draw[dashed] (-.05,.02)--(.42,-.16)--(.80,.60);
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+(разреш. пришивать ручки!)
+(Симплиц. комплекс заданного рода) $f_k^{2n}(g)$ (Bessis).
+(Число Триангуляций \Incomplete{GELFAND-P001353}{cancel-bottom-word}{неразобранное зачёркнутое слово} пов. рода $g$ с $k$-ти треугол., [ниже слева продолжение:] $2n$-угольниками)
+
+\SourcePage{GELFAND-P001354}{87}
+(1971--79 г. Itzykson и др.)
+\tikz{\node[draw,circle,inner sep=1pt] {2};}
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0146-d12-gelfand-p001354-original.png}{GELFAND-P001354}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[scale=1.4]
+\draw (-.60,.10)--(0,.70)--(.80,.60)--(1,0)--(.50,-.50)--(-.50,-.45)--(-.60,.10);
+\draw (0,.70)--(-.05,.02)--(.80,.60);
+\draw (-.50,-.45)--(.10,-.10)--(1,0);
+\draw (-.60,.10)--(-.05,.02)--(.10,-.10);
+\draw[dashed] (.10,-.10)--(.50,-.50);
+\draw[dashed] (.10,-.10)--(.80,.60);
+\draw[dashed] (-.50,-.45)--(-.05,.02);
+\draw (-.38,-.28)--(-.34,-.03);
+\draw (-.23,-.22)--(-.19,.06);
+\draw (-.08,-.15)--(-.02,.15);
+\draw (.09,-.08)--(.16,.29);
+\draw (.27,.01)--(.36,.41);
+\draw (.44,.09)--(.56,.51);
+\draw (.26,-.17)--(.35,-.01);
+\draw (.43,-.24)--(.54,-.04);
+\draw (.60,-.27)--(.74,-.06);
+\draw (.76,-.18)--(.90,-.01);
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+То же, но раскрашиваем и фиксир. склейку границы, раскр. бел. и чёрный цвет.
+
 \SourcePage{GELFAND-P001355}{unlabelled}
-\Incomplete{GELFAND-P001355}{whole-page}{No return imported; source chapter\_029/29\_part\_000060.png}
+\underline{9/III--87.} Сем. Гельфанда.
+\underline{И. М. Г.} Есть работа, в к-рой сказано следующее; рассм.
+\begin{equation*}
+z\longmapsto\frac{\alpha z+\beta}{\gamma z+\delta},\qquad
+\alpha,\beta,\gamma,\delta\in\mathbb Z,
+\end{equation*}
+[После $\mathbb Z$ зачёркнуто: \Unclear{GELFAND-P001355}{cancel-after-z}{нечитаемая короткая математическая запись}.]
+в полупл., $\operatorname{Im}z>0$; $\alpha\delta-\gamma\beta>0$.
+[Зачёркнуто перед Есть: \Unclear{GELFAND-P001355}{cancel-before-exists}{в кр-ве?}.]
+Есть мн-ва ненулевой промежут. хаусд. меры,
+к-рые возникают в связ. с \underline{осн. серией}.
+
+\underline{Гипотеза}: факторы возникают у предст. $\infty$-мерных групп.
+В физике возник. факторы типа $\overline{III}_{\infty}$,
+среди них \Unclear{GELFAND-P001355}{physics-ending}{ровно 1 непрерывности?}.
+
+\underline{\Unclear{GELFAND-P001355}{list-heading}{Заболезненности?}}:
+а) \Unclear{GELFAND-P001355}{list-first-word}{фракторы? / фракталы?};
+б) атракторы; в) хаос; хаусдорфовые меры и \Unclear{GELFAND-P001355}{list-series}{осн. серии? / беск. серии?};
+г) характеристические функции.
+
+\underline{Бейлинсон А.}
+\underline{Основные факты о $\zeta$-функции Римана и её обобщениях.}
+\begin{equation*}
+\zeta(s)=\sum_{n=1}^{\infty}\frac1{n^s}.
+\end{equation*}
+1. Эйлерово произведение:
+\begin{equation*}
+\zeta(s)=\prod_p(1-p^{-s})^{-1}.
+\end{equation*}
+2. Аналитическое продолжение: простой полюс при $s=1$, в ост. точках голоморфна.
+
+3. Функциональное уравнение. Введём ещё такую $\zeta$-ф-ю:
+\begin{equation*}
+\zeta^*(s)=\underbrace{\pi^{-s/2}\Gamma(s/2)}_{\text{Эйлеров множитель с номером }\infty}\zeta(s),
+\end{equation*}
+тогда $\zeta^*(s)$ инвар. отн. замены $s\to1-s$.
+(в отличие от $p$-метрии)
+
+[На левом поле: \underline{Зам. 1.} \underline{Кириллова}.]
+\Unclear{GELFAND-P001355}{bottom-prefix}{$\pi$ / $\Pi$}
+[Зачёркнуто: \Unclear{GELFAND-P001355}{bottom-cancel}{нечитаемый короткий знак}.]
+множитель --- \Unclear{GELFAND-P001355}{bottom-word}{семей? / семья? / слой?} $s$-мерных мер.
+
 \SourcePage{GELFAND-P001356}{unlabelled}
-\Incomplete{GELFAND-P001356}{whole-page}{No return imported; source chapter\_029/29\_part\_000061.png}
+\begin{equation*}
+\mathbb R^*\qquad t^{-s}\qquad e^{-t^2}.
+\end{equation*}
+$\Gamma$ возникает как пр. Меллина.
+\begin{equation*}
+\mathbb Q_p^*\qquad |t|^s\qquad\underbrace{\text{хар. ф-я }(\mathbb Z_p\setminus0)}_{\text{откр. подгруппа}}\subset\mathbb Q_p^*.
+\end{equation*}
+её аналог в $\mathbb R^*$ \Unclear{GELFAND-P001356}{analogue-abbrev}{уд. / уб.} гауссовой \underline{exp}.
+
+4. Тривиальные нули: из функц. ур-я ясно, что $\zeta(s)$ имеет нули
+(1 кратные) при $s=-2k$, $k\in\mathbb Z$, $k>0$ (из-за $\Gamma$-множителя).
+[Ниже короткая зачёркнутая группа: \Unclear{GELFAND-P001356}{cancel-under-four}{нечитаемая короткая зачёркнутая группа}.]
+
+5. Рациональные значения:
+\begin{equation*}
+\zeta(1-n)=-\frac{B_n}{n}.
+\end{equation*}
+(в отриц. точках)
+[Перед $(t\,d/dt)^n$ зачёркнуто: \Unclear{GELFAND-P001356}{cancel-before-derivative}{нечитаемая короткая зачёркнутая группа}.]
+\begin{equation*}
+\zeta(-n)=\sum k^n=\left.\left(t\frac d{dt}\right)^n\frac1{1-t}\right|_{t=1}\qquad\star.
+\end{equation*}
+(точнее, надо взять знач. 1-го регул. члена)
+
+6. Формулы регуляторов: $\forall n$, $\exists$ естеств. подгруппа в $\mathbb R$,
+$\Gamma_n\subset\mathbb R$, такая что
+[Зачёркнута строка: $\zeta(1-2n)=(\operatorname{vol}\mathbb R/\Gamma_n)\cdot(\text{рац. число})$.]
+\begin{equation*}
+\zeta'(-2n)=(\operatorname{vol}\mathbb R/\Gamma_n)\cdot(\text{рац. число}).
+\end{equation*}
+$\Gamma_n$ --- образ $K_{4n+1}(\mathbb Z)$ в $\mathbb R$.
+
+7. Арифметич. св-ва чисел Бернулли: $p$-адич. св-ва $\zeta(1-n)$.
+\begin{equation*}
+\zeta(s)(1-p^{-s})
+\end{equation*}
+\begin{equation*}
+\zeta(1-n)(1-p^{-1+n})=\int_{\mathbb Z_p^*}x^{1-n}\,d\mu,
+\end{equation*}
+где $d\mu$ --- естеств. мера на $\mathbb Z_p^*$ (со знач. в $\mathbb Z_p$).
+[Слева от следующей строки зачёркнуто: \Unclear{GELFAND-P001356}{cancel-left-units}{знак, похожий на E}.]
+\begin{equation*}
+\mathbb Z_p^*=(1+p\mathbb Z_p)\times\sqrt[p-1]{1},\qquad ((p-1)\text{-ые корни}).
+\end{equation*}
+Мн-во характеров \Unclear{GELFAND-P001356}{character-word}{сил?} $\mathbb Z_p^*$ состоит из $(p-1)$ компонент.
+
+8. Гипотеза Римана.
+
+9. Связь с распределением простых чисел.
 \SourcePage{GELFAND-P001357}{91}
 % Прямой просмотр исходного PNG 2408 x 3448; OCR не применялось.
 % Координаты: (left, top, right, bottom), пиксели оригинала, начало (0,0)
@@ -4506,7 +5098,5 @@ L^*(\rho,s)=\varepsilon(\rho s)L^*(\rho^*,1-s)
 (Гаусс. суммы)
 
 Трив. нули и т. д.
-
-
 
 \end{document}

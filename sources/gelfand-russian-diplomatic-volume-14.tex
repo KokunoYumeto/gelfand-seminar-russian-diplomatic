@@ -227,6 +227,36 @@
 \newunicodechar{Ё}{\ifmmode\text{\char"401\relax}\else\char"401\relax\fi}
 \newunicodechar{ё}{\ifmmode\text{\char"451\relax}\else\char"451\relax\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -234,17 +264,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 14 из 34. Архивная глава 014}\par\bigskip
 Кадры GELFAND-P000786 -- GELFAND-P000820\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -1115,8 +1149,6 @@ A_\mu=g^{-1}\partial_\mu g(x);\qquad
 \varepsilon_{\mu\nu}\partial_\nu\right]\varphi=A_\mu\varphi,
 \qquad\mu=1,2,\,..
 \end{equation*}
-
-
 \SourcePage{GELFAND-P000796}{19}
 (31) — система ур-й, $z$ — спектр. параметр.
 
@@ -1791,8 +1823,6 @@ S=\int d\xi\,d\eta\,\operatorname{Sp}\Bigl[
 \end{equation*}
 \Unclear{GELFAND-P000805}{eq10-indices}{В первых двух суммах (10) написано $m=1$, а в множителях — $n$; в двойной сумме стоят $n=1$ под $N_1$, $m=1$ под $N_2$, и дробь $U_mV_n/(\lambda_m-\mu_n)$.}
 \Unclear{GELFAND-P000805}{eq10-end-sign}{В конце первой строки (10) видны две горизонтальные черты, переданные знаком $=$; следующая строка начинается с минуса.}
-
-
 \SourcePage{GELFAND-P000806}{unlabelled}
 % Обзор исходного PNG: 2440 x 3480; весь кадр и локальные области просмотрены непосредственно.
 % Координаты ниже: (x0,y0,x1,y1), начало в левом верхнем углу исходного PNG;
@@ -2737,8 +2767,6 @@ T^{\alpha_1,\beta_1,\ldots,\alpha_N,\beta_N}(\theta)
 На самом деле он точно решил.
 
 \SourceFigure{GELFAND-P000815}{margin-angle}{Внизу слева от последней строки — фрагмент углообразной пометы: длинный штрих поднимается вправо, затем коротко идёт вниз; под ним видна вершина малого уголка. Нижние части обрываются на общей горизонтальной границе. Полная форма и назначение не установлены.}
-
-
 \SourcePage{GELFAND-P000816}{unlabelled}
 % Осмотрен оригинал 2440 x 3480. Координаты: (x0,y0,x1,y1),
 % начало в левом верхнем углу, правая и нижняя границы исключены.
@@ -3295,7 +3323,5 @@ e^{J_1\sum\sigma_{n,m}\sigma_{n,m+1}+J_2\sum\sigma_{n,m}\sigma_{n+1,m}}
 
 $T(J_1,J_2)$ коммут.
 \Unclear{GELFAND-P000820}{bottom-fragment}{пр / при [запись обрывается]}
-
-
 
 \end{document}

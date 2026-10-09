@@ -227,6 +227,36 @@
 \newunicodechar{Ё}{\ifmmode\text{\char"401\relax}\else\char"401\relax\fi}
 \newunicodechar{ё}{\ifmmode\text{\char"451\relax}\else\char"451\relax\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -234,17 +264,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 01 из 34. Архивная глава 001}\par\bigskip
 Кадры GELFAND-P000001 -- GELFAND-P000139\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -905,8 +939,6 @@ $G$ — объ., об. внутри мал. циклов.
  \frac{G\cap S_\ell}{V_\ell}\le\frac1v(1-\delta).
 \end{gather*}
 \Unclear{GELFAND-P000010}{last-fraction}{В числителе перед $\cap S_\ell$ густой знак похож на $G$, в знаменателе явно похоже на $V_\ell$. Сохранён кандидат; мера пересечения и объём подкуба не подставлены по смыслу.}
-
-
 \SourcePage{GELFAND-P000011}{6}
 Пусть все большие циклы \Unclear{GELFAND-P000011}{top-line}{со / $\infty$ окружают. [двухпетлевой знак перед глаголом неуверен]}.
 
@@ -1363,8 +1395,6 @@ e^*\in E^*,\quad f\in E,\qquad
 e^*\in E^*;\qquad h\longmapsto(h\mid e^*)_{E,E^*}.
 \end{equation*}
 [Под правой частью: $e^*$ антилин.]
-
-
 \SourcePage{GELFAND-P000021}{11}
 Это непр. лин. ф-л и на самом $H$, т. к. влож. непр., но тогда $\exists He^*\in\mathcal H$ с пом. к-рого запис. это скал. произв.
 \begin{gather*}
@@ -1747,8 +1777,6 @@ S_\alpha e_k=e_{\alpha k}.
 \Unclear{GELFAND-P000030}{conjugation-eigenvalue}{Написаны и $S_\alpha T_\beta S_\alpha^{-1}=T_{\alpha\beta}$, и множитель $\alpha k\beta$ при $T_\beta S_\alpha e_k$; возможная несовместимость сохранена. Под знаменателем последнего показателя есть зачёркнутые знаки.}
 Внизу справа: множ. можно взять равными 1.
 \Unclear{GELFAND-P000030}{normalization-note}{Перед можно короткое слово: множ. / норм.; не добавлен невидимый коэффициент к $S_\alpha e_k=e_{\alpha k}$.}
-
-
 \SourcePage{GELFAND-P000031}{16}
 Останется $(p-1)$ вектор. Написано, как действует.
 Более красивая реализация.
@@ -2222,8 +2250,6 @@ $f(\theta_1,\theta_2)$ в шаре на известном идеале.
 \Unclear{GELFAND-P000040}{gleason-annotation}{Глисон / Глиссон --- шар и центр голом. [Фамилия и последняя краткая запись неуверенны; «центр» дважды подчёркнуто.]}
 \Unclear{GELFAND-P000040}{terminal-ideals}{Дост. стат. идеалы ф-й, обр. в 0 на 0-х коэф. / $\theta$-х коэф., члены полиномов. [Кандидаты последних двух строк; сокращение после «на» не установлено. Конец кадра.]
 }
-
-
 \SourcePage{GELFAND-P000041}{21}
 Gleason. \underline{Горин.}
 
@@ -2720,8 +2746,6 @@ $D$ — дифф. оператор в кольце элем. $x$.
 $\forall$ точке кольцо.
 Слой над каждой точкой — степ. ряд от $t$
 ($\forall$ точке степ. ряд от $t$).
-
-
 \SourcePage{GELFAND-P000051}{37}
 \begin{equation*}
 Da=b.
@@ -3227,8 +3251,6 @@ $A$ и $B$ перест., если \Unclear{GELFAND-P000060}{functional-calculus
 e^{iA}\quad\text{--- унит.}\qquad e^{iB}\quad\text{не перестановочны}.
 \end{equation*}
 [\Unclear{GELFAND-P000060}{final-cancellation}{Короткая густо зачёркнутая запись}; рядом $(\forall\text{ огр. опер.})$.]
-
-
 
 \SourcePage{GELFAND-P000061}{42}
 \underline{Пример Нелсона.}
@@ -3872,8 +3894,6 @@ U\times V=U\cap V=Z
 (Если $X$ — точка, то прямое произв.)
 
 
-
-
 \SourcePage{GELFAND-P000071}{unlabelled}
 \underline{Акс. 4.} (определено пересечение)
 
@@ -4319,8 +4339,6 @@ U_{\alpha\beta}&\to U,\\
 \end{align*}
 Опр. то же самое. $\ker/\operatorname{Im}$.
 Чеховские когом. покрытие.
-
-
 \SourcePage{GELFAND-P000081}{unlabelled}
 \begin{equation*}
 0\longrightarrow\prod(U_\alpha)
@@ -4959,8 +4977,6 @@ $u$ не продолжается.
 [Зачёркнуто справа от рисунка:
 \Unclear{GELFAND-P000090}{figure-cancel}{неразборчиво}.]
 Нужно учт. геом. структуру в целом всей области.
-
-
 \SourcePage{GELFAND-P000091}{62}
 $a^{p,q}$ — пр-во форм типа $p,q$.
 \begin{equation*}
@@ -5384,8 +5400,6 @@ $\exists$ $3$-й цикл $W\in X\times P^1$,
 Отобр. $K(X)\longrightarrow A(X)$ линейное.
 \underline{Аксиомы.}
 \Unclear{GELFAND-P000100}{first-axiom-cancel}{Последняя строка: «1.» и густо зачёркнутое продолжение. После него новых читаемых аксиом на этом кадре нет.}
-
-
 
 
 
@@ -6172,8 +6186,6 @@ $k[x]$ — ростки
 \Unclear{GELFAND-P000110}{lemma2-sum}{После «прямая» знак $\sum$ / $\Sigma$; не раскрыто до слова «сумма».}
 Пусть есть сечение $s$, опр. на $X_P$. Тогда при большом $m$
 $P^ms$ продолжается на всё $X$.
-
-
 \SourcePage{GELFAND-P000111}{72}
 (тоже теор. Гильберта).
 $\left(\frac{O_1}{p^k},\ldots,\frac{O_i}{p^k}\right)$ умн. на $p^k$, но
@@ -6755,8 +6767,6 @@ $\{N^p,d^p\}$, $F/N$ — комплекс.
 \Unclear{GELFAND-P000120}{homology-cancel}{После «гомологии» зачёркнуты несколько букв.}
 и обозн. $H^p$.
 (Теор. — они совп. с обычн. когом. Александрова—Спаниера.)
-
-
 
 
 
@@ -7357,8 +7367,6 @@ d\mathcal X\varphi\text{ должно }=0
 \end{gather*}
 (сист. дифф. ур-й —
 — ур-я семейства)
-
-
 \SourcePage{GELFAND-P000131}{unlabelled}
 Форма от $\alpha$ и $\beta$: $\psi(\alpha,\beta)\,d\alpha$.
 \Unclear{GELFAND-P000131}{form-greek-symbol}{$\psi$ / $\varphi$-подобная буква формы.}
@@ -7769,8 +7777,6 @@ $N(L)$ — число точек.
 \Unclear{GELFAND-P000139}{limit-first-variable}{Первый аргумент $f$: петлеобразная буква с нижним штрихом, $\theta$ / $\vartheta$ / $\rho$.}
 И т. д.
 \Unclear{GELFAND-P000139}{final-abbreviated-variables}{Короткая запись после «и т. д.»: «и т. п.» / «и $T$, $\lambda$» / «и $T$, $\rho$»; первый знак после «и» подчёркнут, последний имеет арку и две нисходящие ножки: п-/П-/$\Pi$-/n-подобный, также $\lambda$-/ $\Lambda$-подобный.}
-
-
 
 
 

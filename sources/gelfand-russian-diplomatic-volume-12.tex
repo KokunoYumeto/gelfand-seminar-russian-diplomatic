@@ -227,6 +227,36 @@
 \newunicodechar{Ё}{\ifmmode\text{\char"401\relax}\else\char"401\relax\fi}
 \newunicodechar{ё}{\ifmmode\text{\char"451\relax}\else\char"451\relax\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -234,17 +264,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 12 из 34. Архивная глава 012}\par\bigskip
 Кадры GELFAND-P000738 -- GELFAND-P000776\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -1098,8 +1132,6 @@ $M$ — энергия статич. солитона («масса» по оп�
 Солитоны дали вклад еще в классике. В квантовой
 % review bottom-hbar bbox=(745,3260,2090,3420), 6x.
 механике входит $\dfrac{M}{\hbar c}$; солитоны сохраняются при $\hbar\to+0$.
-
-
 % GELFAND-0080. Дипломатическая транскрипция назначенных кадров.
 % Оригинальные изображения просмотрены непосредственно; нерешённые чтения привязаны к журналу.
 % Комментарии с координатами сохраняют воспроизводимость проверки после удаления временных вырезок.
@@ -1951,8 +1983,6 @@ $\xi_i\xi_j+\xi_j\xi_i=0$, $\xi_i^2=0$,
 \begin{equation*}
 \Lambda_{-k}=\{\xi_{i_1}\ldots\xi_{i_k}\}
 \end{equation*}
-
-
 % GELFAND-0081. Дипломатическая транскрипция десяти исходных кадров.
 % Редакторские описания помещены в квадратные скобки или в общие маркеры неопределённости.
 % Координаты просмотров даны в пикселях оригинала [left,top,right,bottom);
@@ -2963,8 +2993,6 @@ $t$, $\lambda$ меняются соглас. с (Б)
 {\gamma(\gamma+1)\ldots(\gamma+n-1)\,n!}
 \end{equation*}
 
-
-
 \SourcePage{GELFAND-P000768}{unlabelled}
 % Original inspected at 2416 x 3472. Review rectangles are source pixels,
 % origin at upper left, format (x0,y0,x1,y1); enlargement does not add pixels.
@@ -3714,7 +3742,5 @@ $\beta_0=i\omega$ $\Rightarrow$ все величины периодич. по $
  =\delta(x')\delta_{j,m-1},\qquad
 j=0,1,\ldots,m-1 \tag{3}
 \end{equation}
-
-
 
 \end{document}

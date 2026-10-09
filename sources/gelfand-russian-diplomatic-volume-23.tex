@@ -231,6 +231,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -238,17 +268,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 23 из 34. Архивная глава 023}\par\bigskip
 Кадры GELFAND-P001074 -- GELFAND-P001132\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -1018,8 +1052,6 @@ $Q_\gamma(\Lambda)$ — рац. ф-я от соб. чисел
 Рассм. скоб. символ
 
 \underline{Заполнение его} — вставл. вершин колчана вместо букв.
-
-
 \SourcePage{GELFAND-P001084}{unlabelled}
 % Additional inspected crop review1084-heading-ending: [1280, 1390, 2010, 1535], 6x.
 % Original image: 2408 x 3448 pixels. Coordinates below refer to the original,
@@ -1899,8 +1931,6 @@ $M^n=S^2,\quad\displaystyle\int_{S^2}\Omega\ne0\quad\Rightarrow$ монопол�
 [Над $\mathrm{const}$ вписано и подчёркнуто «разность —»; косой указатель направлен к $\mathrm{const}$.]
 
 [Зачёркнуто: $\delta S$ замкнутая $1$-форма]
-
-
 \SourcePage{GELFAND-P001094}{unlabelled}
 $\exists$ покрытие $M=\bigcup_{\alpha}U_{\alpha}$.
 
@@ -2810,8 +2840,6 @@ $\theta$-ф-я:
 \begin{equation*}
 \tau_W:\Gamma_+\longrightarrow\mathbb{C}.
 \end{equation*}
-
-
 \SourcePage{GELFAND-P001104}{49}
 Связь --- ?
 \begin{equation*}
@@ -3487,8 +3515,6 @@ $X/\mathbb Z$ \Unclear{GELFAND-P001113}{bottom-reduction-abbreviation}{нера�
 
 [Справа от последней строки:]
 (если средуцируем ур-я $\operatorname{mod}p$, то получим снова гладкую кривую)
-
-
 \SourcePage{GELFAND-P001114}{unlabelled}
 \begin{equation*}
  (1)\quad \zeta(X,s):=\prod_p\zeta(X\otimes\mathbb Z/p\mathbb Z,s).
@@ -4352,8 +4378,6 @@ $H(\nu)$ --- ф-я на $g'$
  \qquad(\text{сопр. ур-е})
 \end{equation*}
 \Unclear{GELFAND-P001123}{final-operator}{[Знак в последней строке густо обведён; под крестообразными штрихами виден отдельный нижний горизонтальный штрих. $+$ в формуле оставлен условным кандидатом; возможны $+$, $\pm$ или плюс поверх прежнего минуса. История переправления не установлена.]}
-
-
 \SourcePage{GELFAND-P001124}{unlabelled}
 % Visual review: original 2408 x 3448 frame; full-frame inspection and crops.
 % Crop coordinates are original pixels [x0,y0,x1,y1]; scale is nearest-neighbour enlargement.
@@ -5036,7 +5060,5 @@ W:\quad
 \end{equation*}
 [Слева внизу, у горизонтального обреза письменной области:] \Unclear{GELFAND-P001132}{boundary-date}{26/…83… [нижние части знаков обрезаны]}
 \Incomplete{GELFAND-P001132}{boundary-date-loss}{Нижняя часть написанной даты срезана прямой горизонтальной границей письменной области; месяц и полная дата не восстановлены. Сохранённый предположительный фрагмент учтён отдельно в U038. Точная длина утраченного продолжения за срезом неизвестна; остальная нижняя область исходного кадра пуста.}
-
-
 
 \end{document}

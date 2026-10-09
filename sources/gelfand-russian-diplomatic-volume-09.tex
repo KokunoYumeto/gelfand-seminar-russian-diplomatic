@@ -231,6 +231,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -238,17 +268,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 09 из 34. Архивная глава 009}\par\bigskip
 Кадры GELFAND-P000603 -- GELFAND-P000658\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -963,8 +997,6 @@ A_\mu=A_\mu^3\cos\theta+B_\mu\sin\theta
 \end{adjustbox}
 
 [Разделитель: два горизонтальных штриха с точкой между ними.]
-
-
 \SourcePage{GELFAND-P000613}{unlabelled}
 \underline{\underline{29.9.75.}}\qquad\underline{\underline{Сем. Гельфанда.}}
 
@@ -1610,8 +1642,6 @@ $2^\circ$.
 \qquad\frac1k=z\text{ — лок. параметр в окр. }x_0.
 \end{equation*}
 [Под скобкой: «регулярная ф-я в окр. $P_0$».]
-
-
 \SourcePage{GELFAND-P000623}{unlabelled}
 Введём кольцо $\Lambda(X,P_0)$ ф-й, рац. на кривой $X$ с единств. особ. в т. $P_0$.
 
@@ -2211,8 +2241,6 @@ $\Rightarrow$ находятся все $u_i$ (однозн.) — почему �
 По \Unclear{GELFAND-P000632}{bottom-short}{[зачёркнутый знак]} $\Psi$ находятся $u_i$!!
 [Внизу справа зачёркнуто: $\forall$ ряда $\exists$ опер.; ниже виден фрагмент «р…».]
 \Incomplete{GELFAND-P000632}{bottom-cancelled-insert}{Короткая запись под левым концом зачёркнутой строки не восстановлена.}
-
-
 \SourcePage{GELFAND-P000633}{unlabelled}
 $\forall$ рода $\exists$ опер.:
 \begin{equation*}
@@ -2861,8 +2889,6 @@ $\mu_i$ — наим. числа, для к-рых сущ. полюс кр. $i+\
 $i=1,\ldots,n-1$.
 
 Тогда $\sum\mu_i=g$.
-
-
 \SourcePage{GELFAND-P000643}{unlabelled}
 \Incomplete{GELFAND-P000643}{cancel-top}{[Зачёркнутая фраза: С…; остальное неразборчиво.]}
 (Пропущено $g$ кратностей полюсов) [Звёздочка и стрелка к замечанию справа.]
@@ -3366,8 +3392,6 @@ $1)$ $\alpha_1$ можно прибл. рацион. \Incomplete{GELFAND-P000652
 \end{equation*}
 [На нижнем левом поле, подчеркнуто:] \underline{2 квант. числа} --- 2 индекса.
 [На нижнем левом поле:] [Густой A-подобный знак.] Беск. число ар. прогрессий.
-
-
 \SourcePage{GELFAND-P000653}{unlabelled}
 2)
 \begin{gather*}
@@ -3760,7 +3784,5 @@ c_{\text{зв}}^2\le c^2=1.
 
 Есть метрика \underline{Гёделя} (того самого) с замкнутой времениподобной
 линией (мнимая?).
-
-
 
 \end{document}

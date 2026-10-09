@@ -231,6 +231,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -238,17 +268,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 28 из 34. Архивная глава 028}\par\bigskip
 Кадры GELFAND-P001253 -- GELFAND-P001296\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -831,29 +865,648 @@ W_a/W_{a-1}\text{ — вект. пр-во над }\mathbb Q.
 фильтр. [зачёркнуто:
 \Unclear{GELFAND-P001262}{crossed-reference}{(3) [неуверенно].}]
 $(1)_3$ индуцирует фильтрацию:
-
-
-No validated return is available for this job.
 \SourcePage{GELFAND-P001263}{unlabelled}
-\Incomplete{GELFAND-P001263}{whole-page}{No return imported; source chapter\_028/28\_part\_000011.png}
-\SourcePage{GELFAND-P001264}{unlabelled}
-\Incomplete{GELFAND-P001264}{whole-page}{No return imported; source chapter\_028/28\_part\_000012.png}
+\begin{equation*}
+(4)\qquad F_{(a)}^j=\frac{F^j\cap(W_a)_{\mathbb C}}{(W_{a-1})_{\mathbb C}\cap F^j}
+\qquad\text{— фильтр. на }(W_a/W_{a-1})_{\mathbb C}.
+\end{equation*}
+Требуется: $\forall a,j$
+\begin{equation*}
+(5)\qquad F_{(a)}^j\oplus\bar F_{(a)}^{a+1-j}
+\overset{\sim}{\longrightarrow}(W_a/W_{a-1})_{\mathbb C}
+\end{equation*}
+или эквивалентно
+\begin{equation*}
+(6)\qquad\underbrace{(W_a/W_{a-1})_{\mathbb C}^{p,a-p}}_{\text{подпр.}}
+=F_{(a)}^p\cap\bar F_{(a)}^{a-p}
+\end{equation*}
+\underline{задают при изменении $p$} градуировку в $(W_a/W_{a-1})_{\mathbb C}$
+
+Другое определение:
+вместо $(1)_2$ и $(1)_3$ взять пару
+\begin{equation*}
+(7)_2\qquad\text{Биградуировка на }L_{\mathbb C}:\quad
+L_{\mathbb C}=\bigoplus L^{p,q}
+\end{equation*}
+\Unclear{GELFAND-P001263}{eq7-bigrading-sign}{$=$}
+\begin{equation*}
+(7)_3\qquad N\in\operatorname{End}L_{\mathbb C}
+\end{equation*}
+и должны быть вып. св-ва
+\begin{align*}
+(8)\quad\text{а)}\;&\bar L^{p,q}=L^{q,p}\\
+\text{б)}\;&\bar N=-N\\
+\text{в)}\;&N(L^{p,q})\subset\bigoplus_{a<p,\ b<q}L^{a,b}
+\end{align*}
+г) фильтрация
+[Зачёркнутый префикс: \Incomplete{GELFAND-P001263}{filtration-cancel}{неразборчиво}.]
+\begin{equation*}
+W_i:=\bigoplus_{p+q\leq i}L^{p,q}
+\end{equation*}
+рациональна (по усл. а) она вещественна), т.е. определена над $\mathbb Q$.
+
+(9) Пример 1. $C$ — гладкое компл. м-ие; на $H^a(C,\mathbb Z)$ есть
+чистая структ. Ходжа веса $a$, т.е. $W_a=H^a(C,\mathbb Z)$,
+$W_{a+1}=0$.
+\Unclear{GELFAND-P001263}{example1-w-index}{$a+1$}
+
+(10) (опр.: $L$ — чистая структ. Ходжа веса $a$, если
+$W_{a-1}=0;\ W_a=L_a$).
+
+В [зачёркнуто: \Incomplete{GELFAND-P001263}{example1-cancel}{неразборчиво}]
+примере 1 будет $N=0$.
+
+Переход от 2-го сл. [зачёркнуто: к] к 1-му:
+\begin{equation*}
+(11)\qquad F^i=\exp(N)\bigl(\bigoplus_{\substack{p\geq i\\q\text{ — любое}}}L^{p,q}\bigr)
+\end{equation*}
+$(10')$ опр. 10 во 2-м варианте:
+$L$ — чистая стр. веса $a$, если $L=\bigoplus_{p+q=a}L^{p,q}$
+
+(12) При этом $N=0$ (из условия (8) в) это следует).
+
+\SourcePage{GELFAND-P001264}{14}
+(13) Пример 2. $C$ — компактная рим. поверхность
+на к-рой зад. 4 точки $x_1,x_2,y_1,y_2$.
+На
+\begin{equation*}
+(14)\qquad H^1_{\mathbb Q}(C\setminus\{x_1,x_2\},\{y_1,y_2\})
+\end{equation*}
+есть смеш. структура Ходжа:
+\begin{equation*}
+(15)\qquad W_0\subset W_1\subset W_2
+\end{equation*}
+\begin{equation*}
+(16)\qquad W_0=\mathbb Z_{\mathbb Q},\quad
+W_1/W_0=H^1(C)_{\mathbb Q},\quad W_2/W_1=\mathbb Z_{\mathbb Q},
+\end{equation*}
+[Справа:]
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t01-gelfand-p001264-original.png}{GELFAND-P001264}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[scale=.65]
+\draw (0,0) .. controls (-1,2) and (1.5,3) .. (3,1.2)
+.. controls (3.5,0) and (2,-2) .. (0,0);
+\draw (.8,0) .. controls (.3,1) and (1.4,1.7) .. (3,1.2)
+.. controls (3,.3) and (1.7,-1) .. (.8,0);
+\draw (.03,.9)--(.15,1.02);\draw (.03,1.02)--(.15,.9);\node[above right] at (.09,.96) {$x_1$};
+\draw (1.28,-.72)--(1.4,-.6);\draw (1.28,-.6)--(1.4,-.72);\node[right] at (1.34,-.66) {$x_2$};
+\fill (3,1.2) circle(.065);\node[above right] at (3,1.2) {$y_1$};
+\node[below right] at (3,1.2) {$y_2$};
+\node at (1.7,-1.9) {(для $\mathbb{CP}^1$)};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+а именно
+\begin{equation*}
+(17)\qquad W_0=\operatorname{Ker}\bigl(\underbrace{H^1}_{\text{группа (14)}}
+\longrightarrow H^1(C\setminus\{x_1,x_2\})\bigr)
+\end{equation*}
+На языке форм:
+\begin{equation*}
+(18)\qquad H^1=\frac{\text{замкн. 1-формы на }C\setminus\{x_1,x_2\}}
+{\{d(f):f(y_1)=f(y_2)\}}
+\end{equation*}
+\begin{equation*}
+(19)\qquad W_1=\operatorname{Ker}(H^1\overset{\operatorname{Res}_{x_1}}{\longrightarrow}\mathbb Z)
+\end{equation*}
+\begin{equation*}
+(20)\qquad W_2=H^1
+\end{equation*}
+Переход ко 2-му опред.: На $W_0$ только тип $(0,0)$
+на $W_1/W_0=H^1(C)$ есть типы $(1,0)$ и $(0,1)$
+
+(21)
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t02-gelfand-p001264-original.png}{GELFAND-P001264}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node (a) at (0,0) {$H^1$};\node (b) at (3,0) {$H^1$};
+\node (c) at (0,-1.5) {$\mathbb Z=H^1/W_1$};\node (d) at (3,-1.5) {$W_0$};
+\draw[->] (a)--node[above] {$N$}(b);\draw[->] (a)--(c);\draw[->] (c)--(d);
+\node at (3,-.75) {$\cup$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+здесь тоже есть естеств. базис
+\begin{equation*}
+(22)\qquad \overset{p}{N}=\overset{q}{\sum}_{i,j=1,2}\pm G(x_i,y_j),
+\end{equation*}
+где $G$ — ф-я Грина поверхности $C$
+(ф-я Грина Лапласиана на ф-ях)
+для нек-рой метрики
+
+Станд. базисы:
+\begin{equation*}
+p:\quad\int p=1\qquad\text{баз. в }H^1/W_1
+\end{equation*}
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t03-gelfand-p001264-original.png}{GELFAND-P001264}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[scale=.45]
+\draw (0,0) ellipse(.55 and .43);\draw[->] (.43,.24) arc(29:110:.5);
+\node at (0,0) {$x_1$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+\begin{equation*}
+q:\quad\int_{y_1}^{y_2}q=1\qquad\text{— баз. в }W_0
+\end{equation*}
+$N$ записано в (22) в базисах $p,q$.
+
 \SourcePage{GELFAND-P001265}{unlabelled}
-\Incomplete{GELFAND-P001265}{whole-page}{No return imported; source chapter\_028/28\_part\_000013.png}
-\SourcePage{GELFAND-P001266}{unlabelled}
-\Incomplete{GELFAND-P001266}{whole-page}{No return imported; source chapter\_028/28\_part\_000014.png}
+Варченко применил это для вычисления асимптотики
+осциллирующих интегралов (см. его ст. в Изв АН, $\sim4$ года назад)
+
+\underline{\underline{Морозов.}}\qquad\underline{Струны} (продолжение)
+[Под заголовком зачёркнуто: \Incomplete{GELFAND-P001265}{heading-cancel}{неразборчиво}.]
+
+Размер предполаг. струны $\sim10^{-33}$ см
+(Ср.: размер протона [зачёркнуто: \Incomplete{GELFAND-P001265}{proton-cancel}{неразборчиво}]
+такой же $\sim10^{-35}$ см.
+— 〃 — электрона $\sim10^{-18}$ см)
+
+Все имеющиеся теории, кроме струнной, внутренне противоречивы из-за
+ультрафиолетовых расходимостей
+
+Измеримые величины не должны зависеть от перенормировок.
+Но: всюду на расст. $\sim10^{-33}$ см возникают расходимости
+(Обр. величина — масса Планка $M_P$)
+\begin{equation*}
+(1)\qquad V(k)=\int d^2\xi\,e^{ikx(\xi)}
+\end{equation*}
+\begin{equation*}
+(2)\qquad\langle V(k_1)\ldots V(k_n)\rangle
+=\int Dx\,Dg\ e^{-\sqrt g\,g^{ab}\partial x\partial x}
+V(k_1)\ldots V(k_n)
+\end{equation*}
+интерпрет. как амплитуду рассеяния
+
+(3)
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t04-gelfand-p001265-original.png}{GELFAND-P001265}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[scale=.65]
+\draw (-3.2,.9)--(-1.7,.9) .. controls(-.6,1.65)and(.6,1.65)..(1.4,.95)
+--(3.1,1.12)--(1.52,.19);
+\draw (1.51,.1) .. controls(1.73,.02)and(1.73,-.45)..(1.5,-.7);
+\draw (1.62,-.75)--(3.6,-1.25)--(1.0,-1.25)
+.. controls(.3,-1.9)and(-1.4,-1.85)..(-1.55,-1.04);
+\draw (-1.68,-1.04)--(-3.15,-1.0)--(-1.55,-.62)
+.. controls(-1.25,-.3)and(-1.3,.08)..(-1.55,.35)--(-3.2,.9);
+\draw (-3.2,.9) circle(.035);
+\draw (-2.43,.78) ellipse(.07 and .11);\draw (-2.5,-.93) ellipse(.07 and .08);
+\draw[->] (3.55,-1.25)--(2,-1.25);
+\node[right] at (3.85,0) {$\leftarrow$ физич. картинка};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+В крит. размерности можно спасть
+
+(4)
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t05-gelfand-p001265-original.png}{GELFAND-P001265}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[scale=.55]
+\draw (0,0) ellipse(1.3 and .9);
+\draw (-1,.5)--(-2.7,.82);\draw (-1,-.5)--(-2.4,-1.16);
+\draw (1,.5)--(2.55,1.0);\draw (1,-.5)--(2.55,-.62);
+\draw (-2.7,.82) circle(.05);\draw (-2.4,-1.16) circle(.05);
+\draw (2.55,1.0) circle(.05);\draw (2.55,-.62) circle(.05);
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+Ведёт себя как пружина, стремящаяся спасться в точку.
+
+\underline{Осн. радость}: корреляторы будут калибр. инвариантны.
+\begin{equation*}
+(5)\qquad V_\mu(k)=\int d^2\xi\,\partial x(\mu)e^{ikx(\xi)}
+\end{equation*}
+\begin{equation*}
+(6)\qquad\langle V_{\mu_1}(k_1)\ldots V_{\mu_n}(k_n)\rangle
+\qquad\text{облад. св-вами калибр. инвариантности}
+\end{equation*}
+и опис. взаимод. в теории Янга–Миллса
+
+(7) $+$ \Unclear{GELFAND-P001265}{mass-word}{сомассовых}
+с \underline{гравитацией}!
+
+$\Rightarrow$ верят, что это единая теория поля (т.е. пр-во 10-мерно, есть супер. и т.д.)
+
+\SourcePage{GELFAND-P001266}{15}
+(8) В теории поля: струна — беск. число частиц (гармоники).
+Это значит, что обычная теория поля вкладывается сюда.
+
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t06-gelfand-p001266-original.png}{GELFAND-P001266}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[scale=.6]
+\draw (0,0)--(1.2,.055)--(1.2,-.12)--cycle;
+\draw (1.55,-.04) circle(.12);
+\draw (1.9,.08)--(3.5,.12)--(1.9,-.13)--cycle;
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+\begin{align*}
+(9)\qquad&\int_p Dx\,Dg\ e^{-\int\sqrt g\,g^{ab}\partial_a x^\mu\partial_b x^\mu d^2\xi}
+\prod_\alpha\int e^{ik_\alpha x^\mu(\xi_\alpha)}d^2\xi_\alpha\sim\\
+&\sim\int_{M_p}\frac{|d\mu_p|^2}{|\det\operatorname{Im}T|^{13}}
+\underbrace{K(k_\alpha,y,\bar y)}_{\prod_\alpha\int d^2\xi_\alpha\prod_{\alpha,\beta}e^{k_\alpha k_\beta G_R(\xi_\alpha,\xi_\beta\mid y,\bar y)}}
+\end{align*}
+$y$ — модули $y_1,\ldots,y_{3p-3}$
+$\sum k_\alpha=0$,
+$G_R$ — \Unclear{GELFAND-P001266}{green-abbrev}{рел.} ф-я Грина поверхности.
+\begin{equation*}
+(10)\qquad\exp G(\xi_\alpha,\xi_\beta)\sim
+e^{-\pi\operatorname{Im}u\,\frac1{\operatorname{Im}T}}|\Theta(u,T)|^2,
+\qquad u_i=\int_{\xi_\alpha}^{\xi_\beta}\omega_i,
+\end{equation*}
+$T$ — матр. периодов данной кривой;
+$d\mu_p$ — нек-рая голом. мера на пр-ве модулей
+[Под этой строкой: см. прошлый раз.]
+
+[Над следующей строкой зачёркнуто:
+$p=1$.]
+\Unclear{GELFAND-P001266}{genus-cancel}{$p=1$}
+
+$d\mu_p$ сосчитано при $p\leq4$, дальше неизвестно (только менее
+явные ф-лы Манина)
+
+\underline{NB}: способ писать ф-ю Грина (метрики Бергмана) на кривой!
+— с пом. отобр. в якобиан [зачёркнуто: \Incomplete{GELFAND-P001266}{jacobian-cancel}{неразборчиво}]
+(Якоби)
+и дальше использовать $\Theta$-ф-и.
+
+С другой стороны
+\begin{equation*}
+(11)\qquad d\mu_p=\prod_i dy_i\,\frac{\det'\Delta_{-1}}{(\det'\Delta_0)^{13}}
+\end{equation*}
+\begin{equation*}
+(12)\qquad\delta_{\eta_\alpha}\ln\det'\Delta_0
+=\operatorname{Tr}(\partial\eta_\alpha)(\partial G)
+\overset{?}{=}\partial_\xi\eta_\alpha\partial_\xi G(\xi,\xi')\big|_{\xi'=\xi}
+\end{equation*}
+Полное исслед. не проведено.
+\begin{equation*}
+(13)\qquad\partial^2G(\xi,\xi')\big|_{\xi'=\xi}
+=\frac{\Theta_{,i}\omega_i''+\Theta_{,ijk}\omega_i\omega_j\omega_k}{\Theta_{,i}\omega_i}
+-\frac32\biggl(\frac{\Theta_{,i}\omega_i'}{\Theta_{,i}\omega_i}\biggr)^2,
+\end{equation*}
+$\omega'$ — производная $\omega$ по $\xi$.
+
 \SourcePage{GELFAND-P001267}{unlabelled}
-\Incomplete{GELFAND-P001267}{whole-page}{No return imported; source chapter\_028/28\_part\_000015.png}
+Реалистич. теория — суперструна.
+Есть впечатл., что станд. понятие суперпр-ва не вполне адекватно.
+\Unclear{GELFAND-P001267}{sum-prefix}{Списал.} сумма после интегр. по нечётным модулям?
+Должно быть
+\begin{equation*}
+(14)\qquad\int_{M_p}\frac{|d\mu_p^{SS}|^2}{(\det\operatorname{Im}T)^5}
+\end{equation*}
+(При модулярных преобр. $T\to(AT+B)/(CT+D)$)
+\begin{equation*}
+(15)\qquad\frac{d\mu_p^{SS}}{d\mu_p^{bos}}=f_8\qquad\text{— форма веса 8)}
+\end{equation*}
+Было бы хорошо, чтобы не было параб. форм веса 8
+Род 1,2,3 — их нет.
+Род 4 — есть
+
 \SourcePage{GELFAND-P001268}{unlabelled}
-\Incomplete{GELFAND-P001268}{whole-page}{No return imported; source chapter\_028/28\_part\_000016.png}
-\SourcePage{GELFAND-P001269}{unlabelled}
-\Incomplete{GELFAND-P001269}{whole-page}{No return imported; source chapter\_028/28\_part\_000017.png}
+\underline{10 III–86 г.}\qquad Сем. Гельфанда
+\underline{А. Морозов}
+
+Низкоэнергетический предел теории струн
+Лагранжиан калибр. теории
+\begin{equation*}
+(1)\qquad\operatorname{Tr}F_{\mu\nu}^2
+\end{equation*}
+\begin{equation*}
+(2)\qquad F_\mu^a=\partial_\mu A_\nu^a-\partial_\nu A_\mu^a
++i\underbrace{f^{abc}}_{\text{структ. const}}A_\mu^bA_\nu^c
+\end{equation*}
+или
+\begin{equation*}
+(2')\qquad F=dA+[A,A]
+\end{equation*}
+Калибр. преобразования:
+\begin{equation*}
+(3)\qquad A_\mu\to A_\mu+[A_\mu,\varepsilon]+\partial_\mu\varepsilon
+\end{equation*}
+Как погрузить это в теорию струн?
+Спишем струны в точечн. объекты
+
+(4)
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t07-gelfand-p001268-original.png}{GELFAND-P001268}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}
+\draw (0,0) ellipse(.18 and .32);\draw[->] (.55,0)--(1.55,0);\fill (1.9,0) circle(.05);
+\node[below] at (0,-.45) {струна};\node[below] at (1.9,-.45) {частица};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+(низкоэнергетический предел)
+
+(5)
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-ex01-gelfand-p001268-original.png}{GELFAND-P001268}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[left] at (0,0) {1) струны};
+\draw[->] (0,0)--(2,0);\fill (2.2,.18) circle(.07);
+\node[right] at (2.6,-.15) {частицы};
+\node[above] at (1.6,.28) {$E\ll M_P=10^{19}m_p$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+[К $m_p$ стрелка: масса протона]
+$M_P$ — масса Планка;
+([зачёркнуто: \Incomplete{GELFAND-P001268}{planck-cancel}{неразборчиво}]
+$M_P^2=\hbar c/\gamma$, $\gamma$ — гравит. пост.)
+
+2) частицы [Справа: разные поля; разные массы]
+
+3) безмассовые векторы (част. с массой 0) описываются
+как раз лагранжиан (1) (из дин. струны вытекает)
+
+Откуда калибр. группа в теории струн?
+Надо заставить струну жить [зачёркнуто: \Incomplete{GELFAND-P001268}{final-cancel}{неразборчиво}]
+в компактном пр-ве/времени.
+
+\SourcePage{GELFAND-P001269}{18}
+I. Если $x^\mu(\xi):C\to\underbrace{\mathbb R^{26}}_{\text{плоское}}$,
+то получатся векторы без значка $i$ $\Rightarrow$ аб. группа $U(1)$
+в $F_{\mu\nu}^i$
+\begin{equation*}
+(A)\qquad\int d^2\xi\sqrt g\,g^{ab}\partial_a x^\mu\partial_b x^\mu
+\end{equation*}
+II. Способ Chan–Paton даёт $\forall$ группу.
+
+III. [Зачёркнуто: A] Рассмотреть $C\to T^k\otimes\mathbb R^{26-k}$
+В интересном случае $k=16$ $\leadsto$ суперструны из бозонной струны
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t08-gelfand-p001269-original.png}{GELFAND-P001269}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}
+\draw[double,->] (0,.4)--(0,-.4);
+\node[left] at (-2.3,-.8) {решётки};\node at (-1.2,-.8) {$\Gamma_8\times\Gamma_8$};
+\node at (0,-.8) {$\ne$};\node at (1.2,-.8) {$\Gamma_{16}$};
+\node at (-1.2,-1.4) {$E_8\times E_8$};\node at (1.2,-1.4) {$SO_{32}$};
+\draw[->] (-.35,-1.4)--(.45,-1.4);
+\draw[double,->] (1.2,-1.7)--(1.2,-2.1);
+\node at (1.2,-2.5) {$Spin_{32}/\mathbb Z_2$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+\Unclear{GELFAND-P001269}{lattice-comparison-sign}{$\ne$}
+\ReaderDescriptionPair{figures/gelfand-0137-sf01-gelfand-p001269-original.png}{GELFAND-P001269}{%
+\SourceFigure{GELFAND-P001269}{spin-arrow-mark-full}{Слева от двойной стрелки от $SO_{32}$ к $Spin_{32}/\mathbb Z_2$ — два небольших штриха; один изогнутый, другой более вертикальный. Их точное значение не установлено.}
+}
+
+
+(6) $T^k$ по решётке корневых векторов ал. Ли
+[Над «ал. Ли» в рамке: гр. $G$.]
+$\Rightarrow$ получ. соответств. теория Янга–Миллса с калибр. гр. $G$
+
+[Зачёркнуто: Решётка \Incomplete{GELFAND-P001269}{roots-unclear-middle-tail}{продолжение неразборчиво}.]
+
+(7) В момент рожд. мира он был $\infty$-мерным, потом компактифицир. в тонкую
+плёнку около 4-мерного пр-ва (толщина $\sim10^{-33}$ см; разм. протона в $10^{19}$ раз больше).
+
+(8)
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t09-gelfand-p001269-original.png}{GELFAND-P001269}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[x=.8cm,y=.8cm]
+\node at (0,0) {26};\node at (0,-1.5) {10};\node at (0,-3) {4};
+\draw[->] (0,-.3)--(0,-1.1);\draw[->] (0,-1.8)--(0,-2.6);
+\node[right] at (.35,-.8) {16-мерн. тор};
+\node[right] at (.35,-2.2) {6-мерное «пр-во Калаби–Яо»};
+\draw[<-] (.65,0)--(2,0);\draw[<-] (.65,-1.5)--(2,-1.5);
+\node[right] at (2.1,0) {бозонная струна};\node[right] at (2.1,-1.5) {суперструна};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+[Перед «бозонная струна» зачёркнуто: \Incomplete{GELFAND-P001269}{bosonic-cancel-full}{неразборчиво}.]
+суперструна (точнее, «гетеротическая» струна)
+[Под «гетеротическая»:] гибрид с повышенной способностью к выживанию
+наш мир: никаких струн, теория частиц
+
+(9) \underline{Вопрос}: по каким ур-ям происх. компактификация?
+В диагр. (8) нечётные перем. не учтены (размерности — чётные)
+
+Читать: \underline{Kac, Frenkel} — Invent. или Adv. in Math.
+(о двойств. боз. и ферм. моделей)
+Физич. статьи: \underline{Freund P.}
+
+\underline{Gross, Harvey, Martinez, Rohm}
+Nucl. Phys. B, 1985.
+
+Рассм. отобр.
+\begin{equation*}
+(10)\qquad x^\mu(\xi):T^2\to T^{16}\times\mathbb R^{10}
+\end{equation*}
+(11)
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t10-gelfand-p001269-original.png}{GELFAND-P001269}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}
+\draw[->] (0,0)--(.7,1.0);\node[above right] at (.7,1.0) {$\tau$};
+\draw[->] (0,0)--(1.8,0);\node[right] at (1.8,0) {$1$};
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+— реш., опр. $T^2$ (однопетлевые диаграммы струны)
+
 \SourcePage{GELFAND-P001270}{unlabelled}
-\Incomplete{GELFAND-P001270}{whole-page}{No return imported; source chapter\_028/28\_part\_000018.png}
-\SourcePage{GELFAND-P001271}{unlabelled}
-\Incomplete{GELFAND-P001271}{whole-page}{No return imported; source chapter\_028/28\_part\_000019.png}
+Будем вычислять
+\begin{equation*}
+(12)\qquad Z=\int Dx\,Dg_{ab}\ \exp\int d^2\xi\sqrt g\,g^{ab}\partial_a x^\mu\partial_b x^\mu
+\end{equation*}
+[Зачёркнуто: $x\in\mathbb R^{26}\Rightarrow$]
+$x\in T^{16}\times\mathbb R^{10}\Rightarrow$
+\begin{equation*}
+(13)\qquad\begin{cases}
+x^\mu(\xi+1)=x^\mu(\xi)+\Lambda_2^\mu\\
+x^\mu(\xi+\tau)=x^\mu(\xi)+\Lambda_1^\mu
+\end{cases}
+\end{equation*}
+\Unclear{GELFAND-P001270}{boundary-sign}{$+$}
+\begin{equation*}
+(14)\qquad\Lambda_1^\mu=0,\quad\mu=1,\ldots,10;\quad
+\Lambda_1^\mu\in\text{решётке при }\mu=11,\ldots,26.
+\end{equation*}
+Ответы, к-рые получаются:
+\begin{equation*}
+(15)\qquad\text{для }\Gamma_{16}\quad
+\int_{M_p}Z[C\to T^{16}\times\mathbb R^{10}]
+=\int_{M_p}Z[C\to\mathbb R^{26}]\cdot\Phi(T,\bar T)
+\end{equation*}
+\begin{equation*}
+(16)\qquad\Phi(T,\bar T)=\sum_{\text{even charact. }m}|\theta_m^{16}(T)|^2
+\end{equation*}
+\begin{equation*}
+(17)\qquad F(T)=\sum_{\text{even charact.}}\theta_m^{16}(T)
+\end{equation*}
+Пусть
+\begin{equation*}
+(18)\qquad x^\mu(\xi)=\tilde x^\mu(\xi)
++\frac{\Lambda_1^\mu-\Lambda_2^\mu\tau}{2i\operatorname{Im}\tau}\bar\xi
++\frac{\Lambda_1^\mu-\Lambda_2^\mu\bar\tau}{2i\operatorname{Im}\tau}\xi
+\end{equation*}
+Тогда
+(19) $\tilde x^\mu$ удовл. (13) без $\Lambda_j^\mu$ (как для отобр. в $\mathbb R^{26}$).
+
+Интеграл (12) после интегр. по $x$ и $g$ превращается в
+\begin{equation*}
+(20)\qquad\int_M Z[T^2\to T^{16}\times\mathbb R^{10}]
+\end{equation*}
+($M$ — пр-во модулей рим. пов.)
+\begin{equation*}
+(21)\qquad Z[T^2\to T^{16}\times\mathbb R^{10}]
+=\sum_{\Lambda_1,\Lambda_2}Z[T^2\to\mathbb R^{26}]
+\exp\biggl(-\frac{|\Lambda_1-\Lambda_2\tau|^2}{\operatorname{Im}\tau}\biggr)
+\end{equation*}
+[В (20) и в левой части (21) знак $\times$ между $T^{16}$ и $\mathbb R^{10}$ зачёркнут; в (21) цифра 0 в 10 обведена.]
+
+Интегр. по $x$ (даёт det), по $g\to e^\varphi\tilde g$ и т.д.
+В разм. 26 зав. от $\varphi$ исчезает.
+
+\SourcePage{GELFAND-P001271}{19}
+Наивно от $\varphi$ зависимости нет, т.к. размерность $=2$.
+(Вклады $\sqrt g$ и $g^{ab}$ сокращаются)
+Итак, надо знать
+\begin{equation*}
+(22)\qquad\Phi(\tau,\bar\tau)=\sum_{\Lambda_1,\Lambda_2\in\Lambda}
+\exp-\frac{|\Lambda_1-\Lambda_2\tau|^2}{\operatorname{Im}\tau}
+\end{equation*}
+$\Lambda$ — реш., отвеч. 16-мерн. тору
+[Зачёркнуто: \Unclear{GELFAND-P001271}{properties-cancel}{чтоб}]
+не облад. никакими св-вами, но иногда
+Вообще говоря, свод. к кон. сумме квадр. модуля анал. ф-и.
+\begin{equation*}
+(23)\qquad\varphi(\tau,\bar\tau)=\sum_{i=1}^n|f_i(\tau)|^2,\qquad
+f_i\text{ — анал. ф-и}
+\end{equation*}
+Есть 2 примера
+Это выв., когда
+
+(24) [Зачёркнуто: \Unclear{GELFAND-P001271}{eq24-prefix}{2)}]
+реш. чётная и самодуальная
+
+Для $\Gamma_{16}$, видимо, верна ф-ла
+\begin{equation*}
+(25)\qquad\varphi(\tau,\bar\tau)=|\theta_{01}^{16}(\tau)|^2
++|\theta_{10}^{16}(\tau)|^2+|\theta_{00}^{16}(\tau)|^2
+\end{equation*}
+(Видимо, чётность не нужна)
+Положим еще
+\begin{equation*}
+(26)\qquad F(\tau)=\sum_{i=1}^n f_i(\tau)
+\end{equation*}
+Пусть (требуем), чтобы $F$ вела себя хорошо: Тогда опр. суперструна и гетерот. струна
+Интересно, сохр. ли что-то для несамодуальных решёток.
+Оказывается, что
+\begin{equation*}
+(27)\qquad F(\tau)=\sum_{\lambda\in\Lambda}e^{i\pi\lambda^2\tau}=\theta
+\end{equation*}
+Далее, получаются меры
+\begin{equation*}
+(28)\qquad\underbrace{|d\mu^{SS}(y)|^2}_{\text{(супер.)}}
+=|d\mu^{bos}(y)f^{ferm}(y)|^2
+\end{equation*}
+[После $d\mu^{bos}(y)$ зачёркнуто: $|^2$.]
+\begin{equation*}
+(29)\qquad d\mu^{het}(y,\bar y)=|d\mu^{bos}(y)|^2f^{ferm}(y)\bar F(\bar y)
+\end{equation*}
+Здесь
+\begin{equation*}
+(30)\qquad|d\mu^{bos}(y)|^2=Z[T^2\to\mathbb R^{26}]
+\end{equation*}
+(31) Для чётных самодвойств. реш. сумма (26) преобр. как модулярная форма
+(32) Неясно, верно ли то только для чётн. самодуальных
+
 \SourcePage{GELFAND-P001272}{unlabelled}
-\Incomplete{GELFAND-P001272}{whole-page}{No return imported; source chapter\_028/28\_part\_000020.png}
+(33) В $\mathbb R^{16}$ есть только 2 чётные самодуальные решётки
+(см. Серр, «Курс арифметики»)
+В терминах $F(\tau)$ эти решётки неразличимы.
+\begin{equation*}
+(34)\qquad F_{\Gamma_{16}}(T)=\sum_{\text{even }m}\theta_m^{16}(T),
+\end{equation*}
+\begin{equation*}
+(35)\qquad F_{\Gamma_8\times\Gamma_8}(T)=\biggl|\sum_{\text{even }m}\theta_m^8(T)\biggr|^2
+\end{equation*}
+Хотим:
+\begin{equation*}
+(36)\qquad\text{Струны}\to\text{частицы}\to\text{безмассовые частицы}
+\end{equation*}
+1 Нужны более общие интегралы:
+[Зачёркнуто: \Incomplete{GELFAND-P001272}{vertex-prefix-cancel}{неразборчиво}]
+Вершинные опер. — под конт. интегралом
+\begin{equation*}
+(37)\qquad V(k_\alpha)=\int d^2\xi\,e^{ik^\mu x^\mu(\xi)}
+\end{equation*}
+\begin{equation*}
+(38)\qquad V^\mu(k_\alpha)=\int d^2\xi\,\partial x^\mu(\xi)e^{ik^\mu x^\mu(\xi)}
+\end{equation*}
+(39)
+\begin{center}
+\ReaderDiagramPair{figures/gelfand-0137-t11-gelfand-p001272-original.png}{GELFAND-P001272}{%
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[scale=.65]
+\draw (-3,1.05) .. controls(-1.9,1.15)and(-1.1,1.18)..(-.6,.85)
+.. controls(.2,.25)and(1.35,.75)..(3.05,1.05)--(2.78,.65)--(1.1,-.35)
+.. controls(1.8,-.58)and(2.6,-.68)..(2.96,-1.05)
+.. controls(.5,-.83)and(-1.7,-1.08)..(-3.03,-1.12)
+--(-1.05,.18) .. controls(-1.02,.4)and(-1.15,.43)..(-1.52,.5)
+.. controls(-2.1,.55)and(-2.7,.88)..cycle;
+\draw (.05,-.42) ellipse(.46 and .23);
+\draw (-3.7,.52) rectangle(-2.28,1.62);
+\draw[->] (-2.43,1.1)--(-3,1.05);
+\draw[->] (-1.13,.12)--(-3.03,-1.12);
+\draw (-1.06,.17) .. controls(-1.8,-.2)and(-2.7,-.85)..(-3.17,-1.27);
+\end{tikzpicture}
+\end{adjustbox}
+}
+
+\end{center}
+В рамках можно добавить весы
+Рассм. $T^{16}\times\mathbb R^{10}$ вместо $\mathbb R^{26}$
+Берём вершины, отвеч. $\mathbb R^{10}$.
+\begin{equation*}
+(40)\qquad V^m(k)=\int d^2\xi\,\partial x^m e^{ik^m x^m}
+\underbrace{\cdot e^{ik^M x^M}}_{\text{Это отличает от 26-мерн. случая}}
+\end{equation*}
+[Стрелка от $V^m(k)$ к:] $(k^m,k^n)$: 10-мерн., 16-мерн.
+
+Надо знать новые корреляторы. Это прив. к коммут. соотношениям,
+\begin{equation*}
+(41)\qquad[e^{ik^M x^M},e^{ik'^M x^M}]\sim e^{i(k^M+k'^M)x^M},
+\end{equation*}
+если $k^2=k'^2=2$, $(k+k')^2=2$,
+и 0 в остальных случаях.
+(Kac, Frenkel)
 % GELFAND-0138. Diplomatic transcription of the ten assigned original scan frames.
 % Editorial annotations are enclosed in square brackets; original images remain authoritative.
 % No TeX compilation was performed.
@@ -1584,8 +2237,6 @@ Y^n=\mathbb{C}_{\text{\Unclear{GELFAND-P001282}{eq8-abbreviation}{некомму
 
 [Зачёркнуто: \Unclear{GELFAND-P001282}{bottom-cancelled}{Угл. / нечитаемое слово}.]
 Предел $\alpha'\to0$ $\Rightarrow$ Ян–Миллс или Эйнштейн
-
-
 \SourcePage{GELFAND-P001283}{unlabelled}
 Действие для струны:
 \begin{equation*}
@@ -2419,8 +3070,6 @@ H(\lambda)={}&\sum\operatorname{sgn}
 Если некоммутир. — то это правильный аналог характ. многочлена.
 
 Коммутируют: $\sum e_{ii}$, $\sum e_{ij}e_{ji}$ и т. д.
-
-
 \SourcePage{GELFAND-P001293}{unlabelled}
 % Review coordinates: source pixels [x0,y0,x1,y1), origin top-left; original 2432 x 3448.
 % Originals inspected directly at full source resolution; listed crops enlarged for inspection.
@@ -2863,7 +3512,5 @@ y_1^2y_i=y_i y_1^2\qquad(\text{т.к. }y_1^2=y_i^2)
 \end{gather*}
 $\Rightarrow\ h\in$ \underline{центру}!
 [Волнистое подчёркивание.]
-
-
 
 \end{document}

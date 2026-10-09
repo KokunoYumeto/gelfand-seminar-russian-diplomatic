@@ -231,6 +231,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -238,17 +268,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 05 из 34. Архивная глава 005}\par\bigskip
 Кадры GELFAND-P000335 -- GELFAND-P000458\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -839,8 +873,6 @@ $\Gamma$ свод. к станд. набору путей
 $P_n\supset V$ — мн-зие полюсов.
 
 Сущ. $Q$ — однор. форма степени $m$, минимальная.
-
-
 \SourcePage{GELFAND-P000345}{7}
 \begin{equation*}
 \Gamma\subset P_n\setminus V,\qquad \Gamma\in H_n(P_n\setminus V,Z).
@@ -1353,8 +1385,6 @@ A_p=p&p&2\text{ типа}\\
 A_p=p^2&p&3\text{ типа}
 \end{array}
 \end{equation*}
-
-
 \SourcePage{GELFAND-P000355}{unlabelled}
 
 $A=\prod_p A_p$ — кондуктор кривой.
@@ -1817,8 +1847,6 @@ $p,q$; $dq=0$ — подпр., ф-ии — только от $q$.
 \underline{Опер.} — ф-ии от $q$ — опер. умн., лин. ф-ии от $p$ — опер. 1-го пор.
 [Горизонтальная разделительная черта из двух частей.]
 \underline{След. раз}: \underline{\underline{Кириллов.}}
-
-
 \SourcePage{GELFAND-P000365}{unlabelled}
 \underline{13/IX-71 г.}
 
@@ -2427,8 +2455,6 @@ p(x)=p(gxg^{-1}).
 Пусть $\lambda_1\ge\lambda_2\ge\dots\ge\lambda_n\ge0$, — целые.
 
 $x$ — матр., $\alpha_1,\dots,\alpha_n$ — соб. числа. Надо взять
-
-
 \SourcePage{GELFAND-P000375}{unlabelled}
 \Unclear{GELFAND-P000375}{faint-note-complete}{симм. ф-и}
 [Мелкая бледная надпись над первым определителем.]
@@ -2939,8 +2965,6 @@ $\in Diff_m(M_1,M_2)$, $B\in Diff_n(M_2,M_3)$.
 \delta_k(B\circ A)=kBA-BAk=(kB-Bk)A+B(kA-Ak)
 =(\delta_kB)A+B(\delta_kA)\quad\blacksquare
 \end{equation*}
-
-
 \SourcePage{GELFAND-P000385}{unlabelled}
 
 \underline{Лемма 4.} Сущ. канонич. дифф. оператор пор. $n$:
@@ -3491,8 +3515,6 @@ $\dots$
 (обобщ. чисел вращ. Пуанкаре).
 
 \underline{Упражнение:} опр. числа вращ. как такой инвариант.
-
-
 \SourcePage{GELFAND-P000395}{43}
 \underline{\underline{14 февраля.}}
 
@@ -3942,8 +3964,6 @@ $\Psi(x,y)$ инв. отн. автом. Вейля.
 
 1) и 3) $\Longleftrightarrow\underline{\underline{\Psi(x,C\overline y)}}$ —
 \underline{полож. опр. эрм. форма}.
-
-
 \SourcePage{GELFAND-P000405}{49}
 Осн. идея \underline{Делиня} — можно забыть про мн-зия и оставить
 одну структ. Ходжа. Когом. — лин. пр-ва. \underline{Задача лин. алгебры}.
@@ -4337,8 +4357,6 @@ $tA[t]$ счит. стягиваемым.
 \begin{equation*}
 \underset{\text{пр-во петель }\Omega A}{t(t-1)A[t]}\longrightarrow tA[t]\overset{t=1}{\longrightarrow}A.
 \end{equation*}
-
-
 \SourcePage{GELFAND-P000415}{54}
 \underline{\underline{$K_{n+1}A=K_n\Omega A$.}} По Каруби.
 
@@ -4739,8 +4757,6 @@ $2\text{а})$ пусть \underline{\underline{$Y$ просто}}
 Такое $Y$ единственно ($\Rightarrow$ коммут. фунд.-гр., т. к.
 $\pi_1$ на себе действ. сопр.) — \underline{теор. Уайтхеда}.
 Известно, что H-пр-ва простые.
-
-
 \SourcePage{GELFAND-P000425}{59}
 \underline{Каждан} — \underline{$B_n$ — $H$-пр-во.} (но это не для любой $G$, а для этой).
 \begin{equation*}
@@ -5275,8 +5291,6 @@ h_{\Unclear{GELFAND-P000434}{final-action}{X}}(Y).
 \underline{$X$ — $G$-объект} [в отдельном маленьком контуре: «слева»].
 
 \underline{$TG$} — новая топ. Гротендика. Категория —
-
-
 \SourcePage{GELFAND-P000435}{64}
 — $G$-множества ($G$-объекты).
 
@@ -5831,8 +5845,6 @@ $\Gamma(R)\times A(R)\longrightarrow A(R)$.
 \Unclear{GELFAND-P000444}{bottom-old}{Первое нижнее A переписано плотными штрихами; нынешняя A-подобная буква различима, прежний слой не определён.}
 
 $(f,F)\longrightarrow F^f$.
-
-
 \SourcePage{GELFAND-P000445}{69}
 \underline{Каждан.}
 
@@ -6358,16 +6370,221 @@ $x\in \Unclear{GELFAND-P000454}{residue-representative}{L}$
 \end{equation*}
 $g\in\ker\varphi\Longleftrightarrow\Unclear{GELFAND-P000454}{kernel-quantifier}{\bar x\in\ell},\ \bar x^g=\bar x$,
 т.е. $\bar x^g-\bar x=0$, т.е.
+% UNACCEPTED joint source-review r2 draft; local baseline reconciled with the original human return.
+% Bracketed placement notes describe source ink and are editorial.
+\SourcePage{GELFAND-P000455}{74}
 
+\Unclear{GELFAND-P000455}{top-old-fragment}{Зачёркнуто: т.е.?}
+\Incomplete{GELFAND-P000455}{top-cancelled}{Остальная зачёркнутая запись в верхнем левом углу не восстановлена.}
 
-No validated return is available for this job.
-\SourcePage{GELFAND-P000455}{unlabelled}
-\Incomplete{GELFAND-P000455}{whole-page}{No return imported; source chapter\_005/05\_part\_000121.png}
+$x^g-x\in\mathfrak m_L$, т.е. $g\in G_1$.
+\begin{equation*}
+0\longrightarrow G_0/G_1\overset{\varphi}{\longrightarrow}\operatorname{Gal}(\ell:k)
+\end{equation*}
+\underline{Упражнение:} $\varphi$ — изоморфизм.
+
+2) $G_1/G_2$ — \Unclear{GELFAND-P000455}{quotient-question}{$?$}
+
+$G_1$ \Unclear{GELFAND-P000455}{ramification-label}{$\overset{\psi_1}{\longrightarrow}$} $\ell^*$
+\begin{equation*}
+g\sim\!\longrightarrow\overline{\tau^g/\tau}\qquad\text{(не зав. от выб. }\tau\text{)}
+\end{equation*}
+Ядро \Unclear{GELFAND-P000455}{kernel-pronoun}{его?} есть $G_2$.
+\begin{equation*}
+G_i/G_{i+1}\longrightarrow\ell^+\quad\text{(аддит. группа поля }\ell\text{).}
+\end{equation*}
+$g$ \Unclear{GELFAND-P000455}{higher-label}{$\overset{\psi_i}{\longrightarrow}$}
+$\displaystyle\overline{\left(\frac{\tau^g/\tau-1}{\tau^{i-1}}\right)}$.
+
+\underline{Теор.} $G_{i+1}=\operatorname{Ker}\psi_i$.
+\Unclear{GELFAND-P000455}{kernel-domain}{Сохранены написанные область $G_i/G_{i+1}$ и равенство $G_{i+1}=\operatorname{Ker}\psi_i$; уточнение области и диапазона $i$ здесь не дано.}
+
+$G_1$ наз. подгруппой инерции гр. Галуа.
+
+Неразветвлённое расширение $\underset{\mathrm{def}}{\Leftrightarrow}$ $G_1=\{e\}$;
+
+\Unclear{GELFAND-P000455}{weak-word}{слаборазветвл.} $G_2=\{e\}$;
+
+чисто разветвлённым $G_0=G_1$.
+
+\begin{center}\rule{25mm}{0.3pt}\quad$\cdot$\quad\rule{35mm}{0.3pt}\end{center}
+
 \SourcePage{GELFAND-P000456}{unlabelled}
-\Incomplete{GELFAND-P000456}{whole-page}{No return imported; source chapter\_005/05\_part\_000122.png}
-\SourcePage{GELFAND-P000457}{unlabelled}
-\Incomplete{GELFAND-P000457}{whole-page}{No return imported; source chapter\_005/05\_part\_000123.png}
+
+\underline{Семинар будет начинаться в $18^{\underline{00}}$.}
+
+\noindent \underline{\underline{2/X-72г.}}\qquad \underline{А. Габриэлов.}
+
+$S$ — компл. аналит. мн-зие.
+
+$H_Z$ — лок. своб. $Z$-пучок
+
+($Z$ — пост. пучок; сечение над св. обл. — пост. целое число;
+$H_Z$ — лок. своб. пучок $Z$-модулей.
+\Unclear{GELFAND-P000456}{modules-old}{Знак с наложенными штрихами: Я.? / $\mathcal F$? / скобка?}
+У $\forall$ точки $\exists$ окр.,
+у к-рой он изом. $Z\oplus\cdots\oplus Z$).
+
+\Unclear{GELFAND-P000456}{start-old-fragment}{Зачёркнуто: $H$?}
+\Incomplete{GELFAND-P000456}{start-cancelled}{Остальная короткая зачёркнутая запись перед скобкой не восстановлена.}
+($Z$-пучок, ассоц. с предпучком, к-рый
+\Incomplete{GELFAND-P000456}{presheaf-full-cancel}{Две соседние зачёркнутые записи после «к-рый» не восстановлены.}
+[Ниже вписано: $F(U)=Z$]).
+
+Пр-во лок. связно $\Rightarrow$ слой $=Z$.
+
+Пр-во пучка $Z$ гомеом. $S\times Z$.
+
+Лок. $H_Z|_U\cong U\times Z^n$.
+
+$\Gamma(U,H_Z)\cong Z^n$.
+
+$S$ связно $\Rightarrow n$ всюду одно.
+
+Покроем окрестностями и фиксир. изоморфизмы над окрестностями
+\newline (с точн. до $GL(n,Z)$).
+
+\SourceFigure{GELFAND-P000456}{overlap-sketch}{Два пересекающихся овала: левый шире, правый выше; в общей линзообразной области четыре коротких наклонных штриха. У верхнего левого края есть маленькое угловое окончание, его значение не установлено. Подписей внутри нет.}
+
+ф-и перехода из $GL(n,Z)$.
+
+Можно постр. \underline{лок. трив.} рассл. с такими ф-ями перехода.
+
+Это $H_R$ (или $H_C$ в зависимости от слоя)
+\newline [От $H_C$ проведена наклонная черта к подписи:] компл. вект. расслоение
+
+$H_{\mathcal O}$
+\Unclear{GELFAND-P000456}{o-old-fragment}{В зачёркнутой формуле: $H$ с индексом?}
+\Incomplete{GELFAND-P000456}{o-cancelled}{Остальная формула в прямоугольнике под плотным зачёркиванием не восстановлена.}
+\newline [Под $H_{\mathcal O}$, с вертикальной соединительной чертой:]
+\underline{пучок голом. сечений $H_C$}
+
+\begin{equation*}
+H_{\mathcal O}=H_Z\otimes_Z\mathcal O_S.
+\end{equation*}
+
+Имеется естеств. связность (Гаусса-Манина)
+\begin{equation*}
+\nabla:H_{\mathcal O}\longrightarrow\Omega_S^1\otimes_{\mathcal O_S}H_{\mathcal O}
+\quad\text{($C$-лин. гомом.)}
+\end{equation*}
+$\Omega_S^1$ — голом. дифф. формы пор. $1$.
+
+\SourcePage{GELFAND-P000457}{75}
+
+\underline{опр. связности.}
+
+1. $C$-линейность.
+
+2. $\varphi\in\mathcal O_{S,s}$ (ростки), $f\in H_{\mathcal O,s}\Rightarrow$
+\begin{equation*}
+\Rightarrow\nabla(\varphi f)=\varphi\nabla f+d\varphi\otimes f.
+\end{equation*}
+
+\underline{Наша связность.}
+
+Берём лок. тривиализацию
+\newline и базис из пост. сечений (рассл. $H_Z$) $u_i$.
+\begin{equation*}
+f=\sum\varphi_i u_i,\qquad\varphi_i\in\mathcal O_S.
+\end{equation*}
+Тогда $\nabla f=\sum d\varphi_i\otimes u_i$.
+
+Это опр. корректно и удовл. всем аксиомам.
+
+Кривизна этой связности равна \Unclear{GELFAND-P000457}{curvature-sign}{$0$?}.
+
+\underline{Требование на связность Г.-М.}
+[Справа:] (\underline{или на} \Unclear{GELFAND-P000457}{filter-old}{зачёркнутый знак: $H$? / $F$? / ф?}
+\underline{фильтрацию})
+\begin{equation*}
+\nabla(\mathcal F^p)\subset\Omega_S^1\otimes\mathcal F^{p-1}.
+\end{equation*}
+\noindent (Гриффитс).
+
+(Задана фильтрация $H_C=F^0\supset F^1\supset\cdots$)
+\newline [Под формулой:] голом. подрасслоениями
+
+$\mathcal F^p$ — пучки сечений $F^p$.
+
+\begin{center}\rule{15mm}{0.3pt}\quad$\cdot$\quad\rule{15mm}{0.3pt}\end{center}
+
+[Строка целиком волнисто подчёркнута:] Есть лок. постоянная билин. форма
+\Unclear{GELFAND-P000457}{form-letter}{$\psi(x,y)$} на $H_C$.
+
+\Incomplete{GELFAND-P000457}{mid-cancelled}{Короткая зачёркнутая запись перед следующей строкой не восстановлена.}
+и в $\forall$ точке $s\in S$ это структура Ходжа.
+
+\begin{center}\rule{15mm}{0.3pt}\quad$\cdot$\quad\rule{15mm}{0.3pt}\end{center}
+
+Пусть $0\le p\le n$, $k_p\ge k_{p+1}$ — послед. чисел.
+\begin{equation*}
+k_0\ge k_1\ge\cdots\ge k_n.
+\end{equation*}
+$Z$ — пр-во с элем. $F=\{F^0\supset F^1\supset\cdots\supset F^n\}$,
+\newline где \Unclear{GELFAND-P000457}{dimension-sup}{$\dim F^p=k_p$; показатель $p$ переписан.}
+
+Это проект. алг. мн-зие.
+
 \SourcePage{GELFAND-P000458}{unlabelled}
-\Incomplete{GELFAND-P000458}{whole-page}{No return imported; source chapter\_005/05\_part\_000124.png}
+
+\begin{equation*}
+H_C=F^0;\qquad H_Z\subset H_R\subset H_C.
+\end{equation*}
+
+Пусть на $H_C$ зад. билин. форма
+\Unclear{GELFAND-P000458}{first-form}{$\psi$} (невыр.),
+\newline симм. при неч. $n$ и кос. при чётн. $n$; целочисл.
+\Unclear{GELFAND-P000458}{parity-statement}{Сохранён порядок рукописи: симм. при неч. $n$ и кос. при чётн. $n$.}
+
+$\overline D$ — подмн. в $Z$ таких флагов, что
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}
+\node at (0,0) {$\psi(F^p,F^{n-p+1})=0$};
+\draw (-3,-0.1) -- (-3,-0.6) -- (3,-0.6) -- (3,-0.1);
+\end{tikzpicture}
+\end{adjustbox}
+\end{center}
+
+\noindent\rule{120mm}{0.3pt}
+
+\underline{Доп. усл.}
+\newline \underline{на флаги}
+
+1) \Unclear{GELFAND-P000458}{sum-formula}{$F^p\oplus\overline{F^{n-p+1}}\cong H_C$; последний показатель переписан.}
+
+2) По нему стр. градуировка и автом. Вейля $C$
+\Unclear{GELFAND-P000458}{weil-link-full}{и?} тогда
+\begin{equation*}
+\psi(x,C\overline y)\quad\text{полож. опр. эрм. форма на }H_C.
+\end{equation*}
+
+Эти условия выделяют $D\subset\overline D$.
+\newline [Под $D$:] (открытое).
+
+$D$ наз. классиф. пр-вом структур Ходжа.
+
+Зависит от набора размерностей и формы $\psi$.
+
+\underline{След. раз:} однородность.
+
+гр. компл. пр. $H_C$, сохр. $\psi$, транзит. на $\overline D$
+
+[Слева дописано:] \Unclear{GELFAND-P000458}{real-prefix}{Св. комп. ${}_1$}
+гр. вещ. пр. $H_R$, сохр. $\psi$, транзит. на $D$.
+
+\medskip\noindent\rule{120mm}{0.3pt}
+
+\underline{2-я лекция Манина.}
+
+\medskip\noindent\rule{120mm}{0.3pt}
+
+\underline{\underline{\Unclear{GELFAND-P000458}{footer-heading}{Д: Каждан.}}}
+Ещё о раб. Тэйта.
+
+\medskip\noindent\rule{120mm}{0.3pt}
+
+\SourceFigure{GELFAND-P000458}{bottom-mark}{Под нижней разделительной чертой слева — узкая высокая петля из нескольких почти вертикальных штрихов, с поперечным штрихом вверху, тёмным узлом внизу и наклонным нижним окончанием. Надёжной буквенной подписи или направления стрелки не установлено.}
 
 \end{document}

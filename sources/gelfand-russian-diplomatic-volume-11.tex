@@ -241,6 +241,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -248,17 +278,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 11 из 34. Архивная глава 011}\par\bigskip
 Кадры GELFAND-P000705 -- GELFAND-P000737\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -863,8 +897,6 @@ S=\ln\frac{V}{N}\qquad (\text{на одну молекулу}).
 При таком радиусе свет не покинет тело (и никакой сигнал)
 
 — оказывается, верно и в точной теории
-
-
 \SourcePage{GELFAND-P000715}{unlabelled}
 \begin{equation*}
 R_{\text{солнца}}=10^6\ \text{км}
@@ -1517,8 +1549,6 @@ b_{13}=b_{23}=c_{13}=c_{23}=0;\\
 b_{33}=c_{33}.
 \end{aligned}\right.
 \end{equation*}
-
-
 \SourcePage{GELFAND-P000725}{unlabelled}
 \underline{24/Х--77 г.}
 
@@ -2171,8 +2201,6 @@ $\Longleftrightarrow$ опер. $\dfrac{\partial}{\partial z}$ коммутат�
 Треб., чтобы они \underline{коммутировали}.
 
 Это и есть интегрир. квазикомпл. структуры.
-
-
 \SourcePage{GELFAND-P000735}{unlabelled}
 \noindent\underline{15/XI-77.}\hspace{2em}\underline{Сем. Гельфанда.}
 
@@ -2364,8 +2392,6 @@ u\frac{d}{dx}+u
 кольца дифф. опер. с полин. коэфф. от $n$ перем.)
 
 См. \Unclear{GELFAND-P000737}{bibliography-abbreviation}{раз} \underline{Ю. И. Манин}
-
-
 
 \ReaderNotesStart{GELFAND-P000737}
 \ReaderNote{1}{\Incomplete{GELFAND-P000737}{pole-argument-underink}{Прежние штрихи переписанного аргумента полюса неразборчивы.}}

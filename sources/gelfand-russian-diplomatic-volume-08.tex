@@ -231,6 +231,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -238,17 +268,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 08 из 34. Архивная глава 008}\par\bigskip
 Кадры GELFAND-P000554 -- GELFAND-P000602\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -703,8 +737,6 @@ P(E,x)=\prod(E-\gamma_i(x)),\qquad\gamma_i(x)\text{ — корни многоч�
 \frac\delta{\delta u}\left\{\sum c_nI_n\right\}=d\quad(=const).
 \end{equation*}
 [Ниже пунктирный разделитель; остальная область свободна.]
-
-
 \SourcePage{GELFAND-P000564}{unlabelled}
 [Верхняя область свободна; ниже два коротких штриха.]
 23/IX–74. Сем. Гельфанда.
@@ -1128,8 +1160,6 @@ E(\{B_{\tau\alpha}\})=\sum\mathrm{tr}\left(B_{\tau\alpha}B_{\tau+a_{\alpha},\bet
 \begin{equation*}
 \ln Z(\beta,V)=V\ln I_0(\beta)\quad(I_0(\beta)\text{ — ф-я Бесселя}).
 \end{equation*}
-
-
 \SourcePage{GELFAND-P000574}{unlabelled}
 \begin{equation*}
 B_{\tau\alpha}=e^{iA_{\tau\alpha}}.
@@ -1619,8 +1649,6 @@ f\left(x,\frac{\alpha(x)t+\delta(x)}{\beta(x)t+\delta(x)}\right)
 |\beta(x)t+\delta(x)|^{-2}.
 \end{equation*}
 \Unclear{GELFAND-P000583}{action-right}{Свободный член в числителе выглядит как $\delta(x)$, как и в знаменателе.}
-
-
 \SourcePage{GELFAND-P000584}{unlabelled}
 \underline{17/II -- 75 г.} \underline{Сем. Гельфанда.}
 
@@ -2094,8 +2122,6 @@ WF(u)\setminus WF(f)\subset\{p(x,\xi)=0\}
 \end{equation*}
 и инвар. отн. гам. поля $H_p$.
 След. раз Р. Л. Добрушин.
-
-
 \SourcePage{GELFAND-P000594}{unlabelled}
 \underline{И. Бернштейн.}
 
@@ -2556,7 +2582,5 @@ f^*\Omega_V\leq\Phi_B\text{ — форма объёма}
 Неприв. формулир. нужна в теории соб. ф-й.
 
 Griffits, Cowen
-
-
 
 \end{document}

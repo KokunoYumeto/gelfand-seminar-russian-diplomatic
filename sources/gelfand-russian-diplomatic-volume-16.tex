@@ -227,6 +227,36 @@
 \newunicodechar{Ё}{\ifmmode\text{\char"401\relax}\else\char"401\relax\fi}
 \newunicodechar{ё}{\ifmmode\text{\char"451\relax}\else\char"451\relax\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -234,17 +264,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 16 из 34. Архивная глава 016}\par\bigskip
 Кадры GELFAND-P000848 -- GELFAND-P000899\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -1120,8 +1154,6 @@ u_3-i u_4&u_1+u_0
 \end{pmatrix},\qquad u_j\in\mathbb{R}
 \tag{24}
 \end{equation*}
-
-
 % GELFAND-0092. Дипломатическая транскрипция исходных скан-кадров.
 % Координаты в примечаниях и журнале: пиксели исходника 2440 x 3480,
 % начало в левом верхнем углу; прямоугольники (x0,y0,x1,y1).
@@ -1899,8 +1931,6 @@ $S_{\text{ф.ч.}}$ строится по $S_{\text{кал}}$ так, чтобы
 [Зачёркнуто: В \Unclear{GELFAND-P000867}{cancelled-bottom}{неразборчиво; «грав.»?; «прибл.»?} зад]
 
 В суперграв. дост. ещё 1 члена.
-
-
 \SourcePage{GELFAND-P000868}{26}
 В произв. теории — беск. число членов.
 
@@ -2594,8 +2624,6 @@ $W_{\mathrm{eff}}$
 \tag{63}
 \end{equation*}
 След. раз \underline{12 ноября}.
-
-
 \SourcePage{GELFAND-P000878}{unlabelled}
 % Оригинал 2440 x 3480. Верхняя часть кадра пуста; запись начинается внизу.
 \underline{\underline{12/XI-79.}} \underline{\underline{Сем. Гельфанда.}}
@@ -3296,8 +3324,6 @@ Z=\int\left(\prod_{t,A,a}dq^A\,dp_A\,d\eta^a\,d\mathcal P_a\right)\exp\left\{i\i
 H_{\mathrm{complete}}=H_1-\{\Psi,\Omega\}.
 \tag{9}
 \end{equation}
-
-
 \SourcePage{GELFAND-P000888}{48}
 Здесь $H_1$ и $\Omega$ нах. из ур-й:
 \begin{equation}
@@ -4127,8 +4153,6 @@ t_3+\frac{y}{2p}=t_3-y',\qquad +y'=-\frac{y}{2p}
 $\gamma$-квант --- вектор, калибр.
 \Unclear{GELFAND-P000897}{final-word}{эту [густо переписано или зачёркнуто]}
 свободу.
-
-
 \SourcePage{GELFAND-P000898}{unlabelled}
 % Координаты ниже: исходные пиксели 2440 x 3480, начало в левом верхнем углу;
 % прямоугольники записаны как (x0,y0,x1,y1), правая и нижняя границы исключены.
@@ -4316,7 +4340,5 @@ $\varphi$ — Было 4 степ. своб.
 % Последняя строка: (280,1300,970,1435); ниже видимых записей нет.
 \underline{\underline{След. раз:}} \textbf{21} января.
 [Дата подчёркнута волнистой линией.]
-
-
 
 \end{document}

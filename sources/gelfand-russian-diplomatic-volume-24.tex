@@ -241,6 +241,36 @@
 \newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
 \newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
 
+
+% Reader-only pairing support; accepted raw bodies remain unchanged.
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\newcommand{\ReaderOriginalPanel}[2]{%
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}\par\smallskip
+    {\scriptsize Оригинал рукописного рисунка: #2}\par
+  \end{minipage}%
+}
+\newcommand{\ReaderDiagramPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\centering
+    {\scriptsize Типографское воссоздание}\par\smallskip
+    \begin{adjustbox}{max width=\linewidth}#3\end{adjustbox}\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+\newcommand{\ReaderDescriptionPair}[3]{%
+  \par\noindent\begingroup
+  \ReaderOriginalPanel{#1}{#2}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}\raggedright
+    {\scriptsize Типографское описание}\par\smallskip
+    #3\par
+  \end{minipage}%
+  \endgroup\par\smallskip
+}
+
+
 \begin{document}
 \begin{center}
 {\Large Семинар И. М. Гельфанда}\par\medskip
@@ -248,17 +278,21 @@
 {\large Рабочее русское издание}\par\medskip
 {\large Том 24 из 34. Архивная глава 024}\par\bigskip
 Кадры GELFAND-P001133 -- GELFAND-P001185\par
-
 \end{center}
 \medskip
 Сокращения, отменённые записи и сомнительные чтения сохранены.
 Неразобранные фрагменты отмечены в тексте. Математические утверждения
 источника переданы без молчаливых исправлений.
 
-Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
-учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
-отсутствующего возврата. Полный журнал чтений и происхождения данных
-сохранён в основном рабочем переплёте.
+В текущем комплекте приняты 165 из 165 возвратов; учтены 1527 из 1527 кадров. Кадров без принятого возврата: 0.
+Статусы кадров в отчётах о полноте: транскрибированы 1168, неразборчивы 357, частично прочитаны 1, недоступны 1.
+Нерешённых записей журнала чтений: 6820.
+Статус «неразборчивый» может отмечать локальную утрату зачёркнутой записи;
+он не означает отсутствия всего кадра.
+Сверка с рукописью продолжается. Рабочие журналы чтений и происхождения
+данных сохранены отдельно.
+
+Ограничения исходного комплекта: повреждённый исходный скан GELFAND-P000722; каталожные записи 603, 694 без сканов; в архивной главе 029 не перечислена часть 25.
 
 Границы кадров показаны небольшими синими указателями; печатный текст
 продолжается без обязательного разрыва страницы после каждого кадра.
@@ -978,8 +1012,6 @@ $K^0(S_n)$ — аддитивная группа характеров.
 Положительность — полож. комбинации характеров.
 
 Конус полож. эл. устроен нетривиально.
-
-
 \SourcePage{GELFAND-P001143}{unlabelled}
 
 \underline{28/$\overline{\underline{\mathrm{XI}}}$-83 г.}
@@ -1724,8 +1756,6 @@ $\Rightarrow$ на $n$-част. подпр-ве
 \tag{26}
 \end{equation}
 (в предст. первичного квантования)
-
-
 % Diplomatic Russian transcription; original scans remain authoritative.
 % Editorial descriptions of insertions and cancellations use square brackets.
 \SourcePage{GELFAND-P001153}{unlabelled}
@@ -2978,8 +3008,6 @@ e^{2ik_jL}=\prod_{\alpha=1}^{M}
 \tag{67}
 \end{equation}
 
-
-
 \ReaderNotesStart{GELFAND-P001162}
 \ReaderNote{1}{\Unclear{GELFAND-P001162}{eq64-overwritten-index}{$\lambda_M$}}
 \ReaderNotesEnd
@@ -3632,8 +3660,6 @@ $\{a_n\}\rightsquigarrow$ матр. Якоби.
 Сущ. самосопр. не всегда есть!
 
 $\rho$ неединств. $\Leftrightarrow$ опер. $L$ имеет инд. дефекта $\Leftrightarrow$
-
-
 
 \ReaderNotesStart{GELFAND-P001172}
 \ReaderNote{1}{\Unclear{GELFAND-P001172}{toda-symbol}{$(-$; $\Delta$; знак не установлен}}
@@ -4297,8 +4323,6 @@ N_-\oplus H\oplus N_+
 $2^{\underline{\text{х}}}$ компл. параметров.
 $M(\lambda_1,\lambda_2)$
 [Зачёркнуто: \Unclear{GELFAND-P001182}{lower-cancellation}{неразборчивый фрагмент}.]
-
-
 % GELFAND-0127. Дипломатическая транскрипция; оригинальные PNG являются источником.
 % Координаты проверки: (x0,y0,x1,y1), пиксели исходного PNG 2432 x 3480,
 % начало координат — левый верхний угол; правая и нижняя границы исключаются.
@@ -4647,8 +4671,6 @@ H_{\mathcal H}^{1}(M)
 
 \underline{Цель}: задать на когом. компл. мн-зий ту же структ., что
 [Вставлено над строкой: есть] на этальных когом.
-
-
 
 
 \end{document}
