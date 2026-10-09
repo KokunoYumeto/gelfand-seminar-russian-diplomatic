@@ -1,0 +1,1872 @@
+% Generated fragments require trusted human review before compilation.
+% This binder never requests shell escape or runs external tools.
+\documentclass[11pt]{article}
+% Trusted shared apparatus. Requires LuaLaTeX; never use shell escape.
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\IfFontExistsTF{Noto Serif}{\setmainfont{Noto Serif}}{%
+  \IfFontExistsTF{DejaVu Serif}{\setmainfont{DejaVu Serif}}{%
+    \IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{%
+      \PackageError{gelfand-binder}{No configured Cyrillic serif font installed}{Install Noto Serif or DejaVu Serif, or select an installed Cyrillic font.}%
+    }%
+  }%
+}
+\IfFontExistsTF{Noto Sans}{\setsansfont{Noto Sans}}{%
+  \IfFontExistsTF{DejaVu Sans}{\setsansfont{DejaVu Sans}}{\setsansfont{Arial}}%
+}
+\IfFontExistsTF{Noto Sans Mono}{\setmonofont{Noto Sans Mono}}{%
+  \IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}}{\setmonofont{Courier New}}%
+}
+\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{hyperref}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=blue,pdftitle={Gelfand transcription binder}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\emergencystretch}{3em}
+\newcommand{\SourcePage}[2]{%
+  \clearpage\phantomsection\label{#1:source-page}%
+  \addcontentsline{toc}{subsection}{#1}%
+  {\small\sffamily\color{blue!60!black}Source scan frame: #1; visible page/leaf label: #2}\par\medskip%
+}
+\newcommand{\Unclear}[3]{%
+  \begingroup\color{orange!70!black}%
+  [Unresolved reading #1/#2: #3]\endgroup%
+}
+\newcommand{\Incomplete}[3]{%
+  \par\begingroup\color{red!65!black}\textbf{Incomplete #1/#2:} #3\endgroup\par%
+}
+\newcommand{\SourceFigure}[3]{%
+  \par\begingroup\color{blue!60!black}\textbf{\hyperref[#1:source-page]{Source figure #1/#2}:} #3%
+  \par\textit{Consult the authoritative scan at this locator.}\endgroup\par%
+}
+
+
+
+% Reader layout only. Original diplomatic text is retained verbatim.
+\setlength{\parskip}{0.35em}
+\setlength{\emergencystretch}{4em}
+\renewcommand{\SourcePage}[2]{%
+  \par\addvspace{1em}\phantomsection\label{#1:source-page}%
+  \addcontentsline{toc}{subsection}{#1}%
+  {\footnotesize\sffamily\color{blue!55!black}#1%
+    \def\givenlabel{#2}\def\nolabel{unlabelled}%
+    \ifx\givenlabel\nolabel\else\quad[номер в источнике: #2]\fi
+  }\par\nobreak\smallskip%
+}
+\renewcommand{\Unclear}[3]{%
+  \begingroup\color{orange!65!black}%
+  \ifmmode\text{[неясно: #3]}\else[неясно: #3]\fi\endgroup%
+}
+\renewcommand{\Incomplete}[3]{%
+  \par\begingroup\color{red!60!black}\textbf{Неразобранный фрагмент:} #3%
+  \endgroup\par%
+}
+\renewcommand{\SourceFigure}[3]{%
+  \par\begingroup\color{blue!55!black}\textbf{Рисунок:} #3%
+  \par{\small\textit{Исходный рисунок: \hyperref[#1:source-page]{#1}, #2.}}%
+  \endgroup\par%
+}
+\hypersetup{pdftitle={Семинар И. М. Гельфанда. Дипломатическая транскрипция},pdfauthor={},pdfsubject={Русское рабочее издание с отмеченными сомнительными чтениями}}
+
+\usepackage[normalem]{ulem}
+\usepackage{newunicodechar}
+\usepackage{adjustbox}
+\newfontfamily\SourceSymbolFont{Segoe UI Symbol}
+\newfontfamily\SourceCJKFont{MS Gothic}
+\let\DiplomaticMathUnderline\underline
+\renewcommand{\underline}[1]{\ifmmode\DiplomaticMathUnderline{#1}\else\uline{#1}\fi}
+\newunicodechar{→}{\ifmmode\text{{\SourceSymbolFont\char"2192}}\else{\SourceSymbolFont\char"2192}\fi}
+\newunicodechar{⇒}{\ifmmode\text{{\SourceSymbolFont\char"21D2}}\else{\SourceSymbolFont\char"21D2}\fi}
+\newunicodechar{∀}{\ifmmode\text{{\SourceSymbolFont\char"2200}}\else{\SourceSymbolFont\char"2200}\fi}
+\newunicodechar{∂}{\ifmmode\text{{\SourceSymbolFont\char"2202}}\else{\SourceSymbolFont\char"2202}\fi}
+\newunicodechar{∈}{\ifmmode\text{{\SourceSymbolFont\char"2208}}\else{\SourceSymbolFont\char"2208}\fi}
+\newunicodechar{∌}{\ifmmode\text{{\SourceSymbolFont\char"220C}}\else{\SourceSymbolFont\char"220C}\fi}
+\newunicodechar{√}{\ifmmode\text{{\SourceSymbolFont\char"221A}}\else{\SourceSymbolFont\char"221A}\fi}
+\newunicodechar{∞}{\ifmmode\text{{\SourceSymbolFont\char"221E}}\else{\SourceSymbolFont\char"221E}\fi}
+\newunicodechar{∧}{\ifmmode\text{{\SourceSymbolFont\char"2227}}\else{\SourceSymbolFont\char"2227}\fi}
+\newunicodechar{∩}{\ifmmode\text{{\SourceSymbolFont\char"2229}}\else{\SourceSymbolFont\char"2229}\fi}
+\newunicodechar{∪}{\ifmmode\text{{\SourceSymbolFont\char"222A}}\else{\SourceSymbolFont\char"222A}\fi}
+\newunicodechar{∫}{\ifmmode\text{{\SourceSymbolFont\char"222B}}\else{\SourceSymbolFont\char"222B}\fi}
+\newunicodechar{∴}{\ifmmode\text{{\SourceSymbolFont\char"2234}}\else{\SourceSymbolFont\char"2234}\fi}
+\newunicodechar{∼}{\ifmmode\text{{\SourceSymbolFont\char"223C}}\else{\SourceSymbolFont\char"223C}\fi}
+\newunicodechar{≈}{\ifmmode\text{{\SourceSymbolFont\char"2248}}\else{\SourceSymbolFont\char"2248}\fi}
+\newunicodechar{≠}{\ifmmode\text{{\SourceSymbolFont\char"2260}}\else{\SourceSymbolFont\char"2260}\fi}
+\newunicodechar{≤}{\ifmmode\text{{\SourceSymbolFont\char"2264}}\else{\SourceSymbolFont\char"2264}\fi}
+\newunicodechar{≥}{\ifmmode\text{{\SourceSymbolFont\char"2265}}\else{\SourceSymbolFont\char"2265}\fi}
+\newunicodechar{⊕}{\ifmmode\text{{\SourceSymbolFont\char"2295}}\else{\SourceSymbolFont\char"2295}\fi}
+\newunicodechar{⊗}{\ifmmode\text{{\SourceSymbolFont\char"2297}}\else{\SourceSymbolFont\char"2297}\fi}
+\newunicodechar{①}{\ifmmode\text{{\SourceSymbolFont\char"2460}}\else{\SourceSymbolFont\char"2460}\fi}
+\newunicodechar{②}{\ifmmode\text{{\SourceSymbolFont\char"2461}}\else{\SourceSymbolFont\char"2461}\fi}
+\newunicodechar{③}{\ifmmode\text{{\SourceSymbolFont\char"2462}}\else{\SourceSymbolFont\char"2462}\fi}
+\newunicodechar{④}{\ifmmode\text{{\SourceSymbolFont\char"2463}}\else{\SourceSymbolFont\char"2463}\fi}
+\newunicodechar{Ⓗ}{\ifmmode\text{{\SourceSymbolFont\char"24BD}}\else{\SourceSymbolFont\char"24BD}\fi}
+\newunicodechar{〃}{\ifmmode\text{{\SourceCJKFont\char"3003}}\else{\SourceCJKFont\char"3003}\fi}
+
+
+% Reader revision 3. Annotation wording and candidates remain unchanged.
+\setmainfont{NotoSerif-Regular.ttf}[Path=C:/Windows/Fonts/,ItalicFont=NotoSerif-Italic.ttf,BoldFont=NotoSerif-Bold.ttf,BoldItalicFont=NotoSerif-BoldItalic.ttf]
+\usetikzlibrary{shapes.geometric,decorations.pathreplacing,decorations.markings,patterns,fit}
+\newsavebox{\ReaderAnnotationBox}
+\newcommand{\ReaderAnnotation}[1]{%
+  \sbox{\ReaderAnnotationBox}{[неясно: #1]}%
+  \ifdim\wd\ReaderAnnotationBox>.70\linewidth
+    \parbox[t]{.70\linewidth}{\raggedright[неясно: #1]}%
+  \else\usebox{\ReaderAnnotationBox}\fi%
+}
+\ExplSyntaxOn
+\cs_new_protected:Npn \reader_unclear_candidate:n #1
+ {
+  \tl_set:Nx \l_tmpa_tl { \tl_to_str:n {#1} }
+  % Text explicitly guarded inside a mathematical candidate remains math-safe.
+  \regex_replace_all:nnN { \\(?:text|textrm|textnormal|textbf|operatorname)\s*\{[^{}]*\} } { } \l_tmpa_tl
+  \regex_match:nVTF { [\x{0400}-\x{052F}] | \$ } \l_tmpa_tl
+   { \ifmmode \text{\ReaderAnnotation{#1}} \else \ReaderAnnotation{#1} \fi }
+   {
+    \ifmmode
+      [\text{неясно:~}#1]
+    \else
+      \regex_match:nVTF { [_^] | \\ } \l_tmpa_tl
+       { \ensuremath{[\text{неясно:~}#1]} }
+       { \ReaderAnnotation{#1} }
+    \fi
+   }
+ }
+\RenewDocumentCommand \Unclear { m m m }
+ { \begingroup\color{orange!65!black}\reader_unclear_candidate:n{#3}\endgroup }
+\ExplSyntaxOff
+\newsavebox{\ReaderIncompleteBox}
+\newcommand{\ReaderIncompleteNote}[1]{%
+ \sbox{\ReaderIncompleteBox}{\textbf{Неразобранный фрагмент:} #1}%
+ \ifdim\wd\ReaderIncompleteBox>.70\linewidth
+  \parbox[t]{.70\linewidth}{\raggedright\textbf{Неразобранный фрагмент:} #1}%
+ \else\usebox{\ReaderIncompleteBox}\fi%
+}
+\renewcommand{\Incomplete}[3]{%
+ \ifmmode\text{\color{red!60!black}\ReaderIncompleteNote{#3}}%
+ \else\leavevmode\begingroup\color{red!60!black}\ReaderIncompleteNote{#3}\endgroup\fi%
+}
+% Ragged right avoids stretching long untranslated abbreviations into margins.
+\AtBeginDocument{\raggedright}
+\newunicodechar{А}{\ifmmode\text{\char"410\relax}\else\char"410\relax\fi}
+\newunicodechar{Б}{\ifmmode\text{\char"411\relax}\else\char"411\relax\fi}
+\newunicodechar{В}{\ifmmode\text{\char"412\relax}\else\char"412\relax\fi}
+\newunicodechar{Г}{\ifmmode\text{\char"413\relax}\else\char"413\relax\fi}
+\newunicodechar{Д}{\ifmmode\text{\char"414\relax}\else\char"414\relax\fi}
+\newunicodechar{Е}{\ifmmode\text{\char"415\relax}\else\char"415\relax\fi}
+\newunicodechar{Ж}{\ifmmode\text{\char"416\relax}\else\char"416\relax\fi}
+\newunicodechar{З}{\ifmmode\text{\char"417\relax}\else\char"417\relax\fi}
+\newunicodechar{И}{\ifmmode\text{\char"418\relax}\else\char"418\relax\fi}
+\newunicodechar{Й}{\ifmmode\text{\char"419\relax}\else\char"419\relax\fi}
+\newunicodechar{К}{\ifmmode\text{\char"41A\relax}\else\char"41A\relax\fi}
+\newunicodechar{Л}{\ifmmode\text{\char"41B\relax}\else\char"41B\relax\fi}
+\newunicodechar{М}{\ifmmode\text{\char"41C\relax}\else\char"41C\relax\fi}
+\newunicodechar{Н}{\ifmmode\text{\char"41D\relax}\else\char"41D\relax\fi}
+\newunicodechar{О}{\ifmmode\text{\char"41E\relax}\else\char"41E\relax\fi}
+\newunicodechar{П}{\ifmmode\text{\char"41F\relax}\else\char"41F\relax\fi}
+\newunicodechar{Р}{\ifmmode\text{\char"420\relax}\else\char"420\relax\fi}
+\newunicodechar{С}{\ifmmode\text{\char"421\relax}\else\char"421\relax\fi}
+\newunicodechar{Т}{\ifmmode\text{\char"422\relax}\else\char"422\relax\fi}
+\newunicodechar{У}{\ifmmode\text{\char"423\relax}\else\char"423\relax\fi}
+\newunicodechar{Ф}{\ifmmode\text{\char"424\relax}\else\char"424\relax\fi}
+\newunicodechar{Х}{\ifmmode\text{\char"425\relax}\else\char"425\relax\fi}
+\newunicodechar{Ц}{\ifmmode\text{\char"426\relax}\else\char"426\relax\fi}
+\newunicodechar{Ч}{\ifmmode\text{\char"427\relax}\else\char"427\relax\fi}
+\newunicodechar{Ш}{\ifmmode\text{\char"428\relax}\else\char"428\relax\fi}
+\newunicodechar{Щ}{\ifmmode\text{\char"429\relax}\else\char"429\relax\fi}
+\newunicodechar{Ъ}{\ifmmode\text{\char"42A\relax}\else\char"42A\relax\fi}
+\newunicodechar{Ы}{\ifmmode\text{\char"42B\relax}\else\char"42B\relax\fi}
+\newunicodechar{Ь}{\ifmmode\text{\char"42C\relax}\else\char"42C\relax\fi}
+\newunicodechar{Э}{\ifmmode\text{\char"42D\relax}\else\char"42D\relax\fi}
+\newunicodechar{Ю}{\ifmmode\text{\char"42E\relax}\else\char"42E\relax\fi}
+\newunicodechar{Я}{\ifmmode\text{\char"42F\relax}\else\char"42F\relax\fi}
+\newunicodechar{а}{\ifmmode\text{\char"430\relax}\else\char"430\relax\fi}
+\newunicodechar{б}{\ifmmode\text{\char"431\relax}\else\char"431\relax\fi}
+\newunicodechar{в}{\ifmmode\text{\char"432\relax}\else\char"432\relax\fi}
+\newunicodechar{г}{\ifmmode\text{\char"433\relax}\else\char"433\relax\fi}
+\newunicodechar{д}{\ifmmode\text{\char"434\relax}\else\char"434\relax\fi}
+\newunicodechar{е}{\ifmmode\text{\char"435\relax}\else\char"435\relax\fi}
+\newunicodechar{ж}{\ifmmode\text{\char"436\relax}\else\char"436\relax\fi}
+\newunicodechar{з}{\ifmmode\text{\char"437\relax}\else\char"437\relax\fi}
+\newunicodechar{и}{\ifmmode\text{\char"438\relax}\else\char"438\relax\fi}
+\newunicodechar{й}{\ifmmode\text{\char"439\relax}\else\char"439\relax\fi}
+\newunicodechar{к}{\ifmmode\text{\char"43A\relax}\else\char"43A\relax\fi}
+\newunicodechar{л}{\ifmmode\text{\char"43B\relax}\else\char"43B\relax\fi}
+\newunicodechar{м}{\ifmmode\text{\char"43C\relax}\else\char"43C\relax\fi}
+\newunicodechar{н}{\ifmmode\text{\char"43D\relax}\else\char"43D\relax\fi}
+\newunicodechar{о}{\ifmmode\text{\char"43E\relax}\else\char"43E\relax\fi}
+\newunicodechar{п}{\ifmmode\text{\char"43F\relax}\else\char"43F\relax\fi}
+\newunicodechar{р}{\ifmmode\text{\char"440\relax}\else\char"440\relax\fi}
+\newunicodechar{с}{\ifmmode\text{\char"441\relax}\else\char"441\relax\fi}
+\newunicodechar{т}{\ifmmode\text{\char"442\relax}\else\char"442\relax\fi}
+\newunicodechar{у}{\ifmmode\text{\char"443\relax}\else\char"443\relax\fi}
+\newunicodechar{ф}{\ifmmode\text{\char"444\relax}\else\char"444\relax\fi}
+\newunicodechar{х}{\ifmmode\text{\char"445\relax}\else\char"445\relax\fi}
+\newunicodechar{ц}{\ifmmode\text{\char"446\relax}\else\char"446\relax\fi}
+\newunicodechar{ч}{\ifmmode\text{\char"447\relax}\else\char"447\relax\fi}
+\newunicodechar{ш}{\ifmmode\text{\char"448\relax}\else\char"448\relax\fi}
+\newunicodechar{щ}{\ifmmode\text{\char"449\relax}\else\char"449\relax\fi}
+\newunicodechar{ъ}{\ifmmode\text{\char"44A\relax}\else\char"44A\relax\fi}
+\newunicodechar{ы}{\ifmmode\text{\char"44B\relax}\else\char"44B\relax\fi}
+\newunicodechar{ь}{\ifmmode\text{\char"44C\relax}\else\char"44C\relax\fi}
+\newunicodechar{э}{\ifmmode\text{\char"44D\relax}\else\char"44D\relax\fi}
+\newunicodechar{ю}{\ifmmode\text{\char"44E\relax}\else\char"44E\relax\fi}
+\newunicodechar{я}{\ifmmode\text{\char"44F\relax}\else\char"44F\relax\fi}
+\newunicodechar{Ё}{\ifmmode\text{\char"401\relax}\else\char"401\relax\fi}
+\newunicodechar{ё}{\ifmmode\text{\char"451\relax}\else\char"451\relax\fi}
+
+\newunicodechar{æ}{\ifmmode\text{\char"E6\relax}\else\char"E6\relax\fi}
+\newunicodechar{−}{\ifmmode\mathbin{\text{\SourceSymbolFont\char"2212\relax}}\else{\SourceSymbolFont\char"2212\relax}\fi}
+
+\begin{document}
+\begin{center}
+{\Large Семинар И. М. Гельфанда}\par\medskip
+{\LARGE Дипломатическая транскрипция}\par\bigskip
+{\large Рабочее русское издание}\par\medskip
+{\large Том 30 из 34. Архивная глава 030}\par\bigskip
+Кадры GELFAND-P001359 -- GELFAND-P001384\par
+
+\end{center}
+\medskip
+Сокращения, отменённые записи и сомнительные чтения сохранены.
+Неразобранные фрагменты отмечены в тексте. Математические утверждения
+источника переданы без молчаливых исправлений.
+
+Это рабочее издание: сверка с рукописью продолжается. В текущем комплекте
+учтены 1503 из 1527 кадров; 24 кадра пока представлены явными указателями
+отсутствующего возврата. Полный журнал чтений и происхождения данных
+сохранён в основном рабочем переплёте.
+
+Границы кадров показаны небольшими синими указателями; печатный текст
+продолжается без обязательного разрыва страницы после каждого кадра.
+\bigskip\hrule\bigskip
+\SourcePage{GELFAND-P001359}{unlabelled}
+\underline{23.3.87 г.}\qquad \underline{Сем. Гельфанда.}
+
+\underline{\underline{В. Е. Захаров.}}\qquad \underline{$\bar{\partial}$-задачи и интегрируемые системы.}
+
+Построение интегрируемых ур-й методом обратной задачи.
+(на самом деле не интегрируемых и не методом обр. зад.)
+
+1973\quad А. Б. Шабат сформулировал метод одевания.
+
+Нелин. ур-я рассм. как усл. совм. переопр. лин. систем
+\begin{equation*}
+u_t+6uu_x+u_{xxx}=0\qquad (\text{КдФ}) \tag{1}
+\end{equation*}
+--- усл. совместности ур-й
+\begin{equation*}
+\begin{cases}
+\psi_{xx}+u\psi=k^2\psi,\\
+\psi_t=4\psi_{xxx}+6u\psi_x+3u_x\psi.
+\end{cases} \tag{2}
+\end{equation*}
+\Unclear{GELFAND-P001359}{eq2-signs}{Знаки в (1), (2) и показателе экспоненты (7) сохранены по рукописи; их согласованность требует проверки.}
+
+Метод сост. в рассмотрении ур-я
+\begin{equation*}
+F(x+z,t)+\int K(x,s,t)F(s+z,t)\,ds+K(x,z,t)=0. \tag{3}
+\end{equation*}
+[В аргументах $K$ зачёркнуты знаки $+$, под ними поставлены запятые. Буквы $K$ и $F$ под интегралом наведены поверх прежней записи:
+\Unclear{GELFAND-P001359}{eq3-overwriting}{первоначальные буквы неразборчивы}.]
+
+для любой ф-и $F$, для к-рой
+\begin{equation*}
+\frac{\partial}{\partial t}F(\xi,t)=8\frac{\partial^3F}{\partial\xi^3}. \tag{4}
+\end{equation*}
+В (3) интеграл понимается одним из $3^{\text{х}}$ способов:
+\begin{equation*}
+\int=\int_x^\infty\quad\text{или}\quad\int_{-\infty}^x
+\quad\text{или}\quad
+\frac12\left(\int_x^\infty\ldots-\int_{-\infty}^x\ldots\right). \tag{5}
+\end{equation*}
+Тогда
+\begin{equation*}
+u=2\frac{d}{dx}K(x,x,t)\quad\text{--- решение (1)}. \tag{6}
+\end{equation*}
+Беря
+\begin{equation*}
+\psi_0(x,t)=e^{ikx+4ik^3t}, \tag{7}
+\end{equation*}
+и затем
+\begin{equation*}
+\psi=\psi_0(x)+\int K(x,s)\psi_0(s)\,ds, \tag{8}
+\end{equation*}
+получим [зачёркнуто: \Unclear{GELFAND-P001359}{after-eq8-cancelled}{неразборчиво, возможно $\psi$}]
+--- решение [вставлено над строкой: системы] (2), откуда находится $u$.
+
+Рассм. также более общие ф-и $F$, удовл. ур-ям
+\begin{equation*}
+\begin{cases}
+\dfrac{\partial^2F}{\partial x^2}-\dfrac{\partial^2F}{\partial z^2}=0,\\[6pt]
+\dfrac{\partial F}{\partial t}=4\left(\dfrac{\partial^3F}{\partial x^3}+\dfrac{\partial^3F}{\partial z^3}\right).
+\end{cases} \tag{9}
+\end{equation*}
+
+\SourcePage{GELFAND-P001360}{24}
+Тогда всё будет выполнено по-прежнему.
+
+\underline{Обобщение.} [Волнистое подчёркивание.] Вместо $(9)_1$ напишем:
+\begin{equation*}
+\frac{\partial^2F}{\partial x^2}-\frac{\partial^2F}{\partial z^2}
+=\alpha\frac{\partial F}{\partial y}. \tag{10}
+\end{equation*}
+Тогда
+\begin{equation*}
+\begin{cases}
+\psi_{xx}+u\psi=\alpha\dfrac{\partial\psi}{\partial y},\\[4pt]
+\psi_t=4\psi_{xxx}+6u\psi_x+3u_x\psi
+\end{cases} \tag{11}
+\end{equation*}
+\Unclear{GELFAND-P001360}{eq11-coefficient}{Коэффициент перед $\partial\psi/\partial y$: $\alpha$ или $2$.}
+
+и для $u$ получаем:
+\begin{equation*}
+\frac{\partial}{\partial x}\left[u_t+6uu_x+u_{xxx}\right]=3\alpha^2u_{yy}. \tag{12}
+\end{equation*}
+$y$ становится новым параметром в (3).
+
+Это было в 1974 г. в работе Захарова--Шабата.
+
+3-й интеграл в (5) определён, когда ф-я убыв. в обе стороны.
+Однако можно по-другому [зачёркнуто:
+\Unclear{GELFAND-P001360}{before-eq13-short-cancelled}{неразборчивое начало слова}]
+понимать интеграл:
+
+[Строкой ниже зачёркнуто:
+\Unclear{GELFAND-P001360}{before-eq13-words-cancelled}{неразборчиво; возможно «как Фурье»}.]
+\begin{equation*}
+\int e^{\lambda x}\,dx=\frac1\lambda e^{\lambda x}\qquad\text{и т. п.} \tag{13}
+\end{equation*}
+Будем понимать интеграл 3-м способом в (5).
+Введём ф-ю $T$ по ф-ле
+\begin{equation*}
+F(x,z)=\frac1{2\pi}\iint
+T(\lambda',\bar\lambda',\lambda,\bar\lambda,t,y)
+ e^{i(\lambda'x-\lambda z)}\,d\lambda'\,d\bar\lambda'\,d\lambda\,d\bar\lambda. \tag{14}
+\end{equation*}
+[После $\bar\lambda'$ зачёркнуто:
+\Unclear{GELFAND-P001360}{eq14-cancelled-argument}{неразборчивый символ}.
+Аргументы $t,y$ вписаны над строкой перед закрывающей скобкой.]
+
+а ф-ю $K$ определим как
+\begin{equation*}
+K(x,z)=-\frac1{2\pi}\int K(\lambda,\bar\lambda,x,t,y)
+ e^{i\lambda(x-z)}\,d\lambda\,d\bar\lambda. \tag{15}
+\end{equation*}
+[В левой части второй аргумент наведён:
+\Unclear{GELFAND-P001360}{eq15-overwritten-argument}{конечное $z$; прежняя запись неразборчива}.
+Аргументы $t,y$ справа вставлены над строкой.]
+
+Это способ находить растущие решения ур-я Г.-Л.-М.
+
+Если $K$ и $F$ удовлетворяют интегр. ур-ю, то всё хорошо
+(пользуемся соглашением (13)).
+
+[Зачёркнуто: $\chi(x,y)$.] Положим:
+\begin{equation*}
+\chi(\lambda,\bar\lambda,x,y,t)=1+\frac1{2\pi i}
+\int\frac{K(\eta,\bar\eta,x,y,t)}{\lambda-\eta}\,d\eta\,d\bar\eta. \tag{16}
+\end{equation*}
+Здесь:
+\begin{equation*}
+\frac1{\lambda-\eta}=\lim_{\varepsilon\to0}
+\frac{\bar\lambda-\bar\eta}{|\lambda-\eta|^2+\varepsilon^2}. \tag{17}
+\end{equation*}
+Напишем уравнение:
+
+\SourcePage{GELFAND-P001361}{unlabelled}
+\begin{equation*}
+\frac{\partial\chi}{\partial\bar\lambda}
+=\int\chi(\eta,\bar\eta,x_i)T(\eta,\bar\eta,\lambda,\bar\lambda,x_i)\,d\eta\,d\bar\eta. \tag{18}
+\end{equation*}
+\begin{equation*}
+x_i=(x,y,t)
+\end{equation*}
+Это эквивалентно исходному подходу.
+
+\underline{Метод одевания на языке $\bar\partial$-задач.}
+\Unclear{GELFAND-P001361}{heading-ending}{Окончание заголовка: «задач.» или «задачи.».}
+
+Пусть $T$ удовл. системе.
+\begin{equation*}
+\begin{cases}
+\dfrac{\partial T}{\partial x}=-i(\lambda-\eta)T,\\[5pt]
+\dfrac{\partial T}{\partial y}=-\alpha(\lambda^2-\eta^2)T,\\[5pt]
+\dfrac{\partial T}{\partial t}=-4(\lambda^3-\eta^3)T,
+\end{cases} \tag{19}
+\end{equation*}
+из которой
+\begin{equation*}
+T=T_0(\eta,\bar\eta,\lambda,\bar\lambda)
+ e^{-i(\lambda-\eta)x-\alpha(\lambda^2-\eta^2)y-4(\lambda^3-\eta^3)t}. \tag{20}
+\end{equation*}
+Вместо (19) можно ввести $x=x_i=(x_1,x_2,x_3)$ и ф-и
+
+$K_i(\lambda)$ и $I_i(\lambda)$:
+
+[В (21) зачёркнуто:
+\Unclear{GELFAND-P001361}{eq21-cancelled}{возможно $[K_i(\lambda),K_i(\eta)]=0$; индексы неуверенны}.]
+\begin{equation*}
+[I_i(\lambda),I_j(\eta)]=0. \tag{21}
+\end{equation*}
+\begin{equation*}
+\frac{\partial T}{\partial x_i}=I_i(\eta)T-TI_i(\lambda). \tag{22}
+\end{equation*}
+В примере
+\begin{equation*}
+I_1=i\lambda,\quad I_2=\alpha\lambda^2,\quad I_3=4\lambda^3. \tag{23}
+\end{equation*}
+\Unclear{GELFAND-P001361}{time-coefficient}{В (19), (20), (23) при кубических степенях написано $4$, без $i$; это сохранено.}
+
+Теперь надо решить нелок. $\bar\partial$-задачу (18) с условием
+нормировки $\chi(\infty)=1$.
+
+Пусть
+\begin{equation*}
+\chi=1+\frac{\chi_0(x,y,t)}{\lambda}+\ldots \tag{24}
+\end{equation*}
+[В числителе, перед $x,y,t$, зачёркнуто:
+\Unclear{GELFAND-P001361}{eq24-cancelled-argument}{неразборчивый аргумент, возможно $\lambda$}.]
+
+Тогда
+\begin{equation*}
+u=2i\frac{\partial\chi_0}{\partial x} \tag{25}
+\end{equation*}
+удовлетворяет [зачёркнуто:
+\Unclear{GELFAND-P001361}{eq25-cancelled-word}{возможно «ф-ле»}]
+ур-ю КП: (12).
+
+\SourcePage{GELFAND-P001362}{25}
+(26)\quad \underline{Осн. утверждение:} [Волнистое подчёркивание.]
+
+В качестве $K_j$ можно взять любые три коммутирующие
+рац. матричные ф-и.
+
+Можно брать и ф-и на римановой поверхности.
+
+(27)\quad \underline{Новое предложение.} [Волнистое подчёркивание.]
+
+считать $K_i(\lambda)$ коммутирующими дифф. опер. с коэфф.,
+рац. по $\lambda$.
+\begin{equation*}
+L_i=\frac{\partial}{\partial x_i}+K_i(\lambda)+f_i(\lambda)\frac{\partial}{\partial\lambda}. \tag{28}
+\end{equation*}
+[Под $f_i(\lambda)$ скобка с подписью: скал. ф-и, рацион. с свобод.
+движущими \Unclear{GELFAND-P001362}{eq28-caption-ending}{полюсов / полюсами}.]
+
+(29)\quad $[L_i,L_j]=0\ \Rightarrow$ условия на $K_i$, в к-рых число ур-й =
+\newline
+= числу неизв.
+
+Среди получающихся ур-й много новых (если всё с переменными коэфф.)
+
+Это же можно делать на эллипт. кривой.
+
+В раб. Белинского/Захарова (1978) частн. случай --- гравитация.
+
+\underline{Новинка этого года:}
+\begin{equation*}
+L_i=\frac{\partial}{\partial x_i}+M_i\left(\lambda,\frac{\partial}{\partial\lambda}\right). \tag{30}
+\end{equation*}
+\begin{equation*}
+[L_i,L_j]=0\quad\Longleftrightarrow\quad[M_i,M_j]=0. \tag{31}
+\end{equation*}
+(32)\quad \underline{Пример:} [Волнистое подчёркивание.]
+\begin{equation*}
+\begin{gathered}
+M_1=I\frac{\partial}{\partial\lambda}+\frac A\lambda,
+\qquad I^2=1,\quad A^2=-1,\quad IA+AI=0;\\[4pt]
+M_2=M_1\frac{\partial}{\partial\lambda}+\frac C{\lambda^2},
+\qquad C=-\frac12(I+A).
+\end{gathered}
+\end{equation*}
+[Справа, за вертикальной чертой:]
+
+($I,A$ --- матрицы, например,
+\begin{equation*}
+I=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
+A=\begin{pmatrix}0&i\\i&0\end{pmatrix}
+\end{equation*}
+\Unclear{GELFAND-P001362}{eq32-matrix-a}{Внедиагональные элементы $A$: $i,i$ или $1,1$.})
+
+\begin{equation*}
+L_1=\frac{\partial}{\partial x_1}+M_1,\qquad
+L_2=\frac{\partial}{\partial x_2}+M_1^2,\qquad
+L_3=\frac{\partial}{\partial x_3}+M_2.
+\end{equation*}
+Нужен большой объём вычислений.
+
+Нахождение решений ур-й:
+\begin{equation*}
+L_i y=0. \tag{33}
+\end{equation*}
+
+\SourcePage{GELFAND-P001363}{unlabelled}
+Начать с инт. ур-й Г.-Л.-М. по $\lambda$, взять $n$-солит. решений и
+выродить их в рациональные.
+
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzcd}
+M_i(\lambda,\frac{\partial}{\partial\lambda},x_i)\arrow[d]\\
+M_i^0(\frac{\partial}{\partial\lambda})
+\end{tikzcd}
+\end{adjustbox}
+\end{center}
+строим $K(\lambda,\lambda',x_i)$, $F(\lambda,\lambda',x_i)$
+
+и затем \Unclear{GELFAND-P001363}{after-diagram-verb}{остаётся / осталось}
+строить рациональные решения.
+
+Здесь содержатся и диссипативные системы.
+
+Следующее обобщение:
+\begin{equation*}
+L_i=R_i\left(\lambda,\frac{\partial}{\partial\lambda}\right)
+\frac{\partial}{\partial x_i}
+-M_i\left(\lambda,\frac{\partial}{\partial\lambda}\right). \tag{34}
+\end{equation*}
+\Unclear{GELFAND-P001363}{eq34-number}{Номер (34) со сверхположенными штрихами.}
+
+\underline{\underline{А. А. Мигдал.}}
+
+\underline{Другой смысл}
+[зачёркнуто: \Unclear{GELFAND-P001363}{title-cancelled}{неразборчивое короткое начало}]
+\underline{вычисления матричных интегралов и переход}
+\newline
+\underline{от матричных интегралов --- к континуальным}
+
+[«матричных» вставлено над строкой перед «интегралов».]
+
+Некоммутирующий аналог
+\Unclear{GELFAND-P001363}{analog-phrase}{возможно, символа Карасева}.
+
+(Вместо $N\times N$ матриц сразу операторы)
+\begin{equation*}
+\int dA\,\exp\left(-\frac N\lambda\operatorname{tr}V(A)\right),
+\qquad A^+=-A,\quad N\to\infty. \tag{1}
+\end{equation*}
+[Выноска от $V(A)$: полином от $A$ (произвольный); эти
+интегралы при $N\to\infty$ вычисл. точно.]
+
+\underline{Способ их считать.} [Волнистое подчёркивание.] рассмотрим
+\begin{equation*}
+\psi(t)=\frac1N\operatorname{tr}(\exp(At)) \tag{2}
+\end{equation*}
+и выведем ур-е дв-ния (Швинг.-Дайсона). Очевидно, что
+\begin{equation*}
+0=\int dA\,\frac1{N^2}\operatorname{tr}\left(
+\frac{\partial}{\partial A}\left[e^{At}
+\exp\left(-\frac N\lambda\operatorname{tr}V(A)\right)\right]\right). \tag{3}
+\end{equation*}
+[Между $e^{At}$ и $\exp$ зачёркнуто:
+\Unclear{GELFAND-P001363}{eq3-cancelled-brackets}{скобка или несколько скобок}.]
+
+(интеграл полной производной $=0$). Это эквивалентно тому, что
+\begin{equation*}
+0=\int_0^t d\tau\,\psi(\tau)\psi(t-\tau)
+-\frac1\lambda V'\left(\frac{\partial}{\partial t}\right)\psi(t), \tag{4}
+\end{equation*}
+\begin{equation*}
+R(\omega)=\psi^2(\omega)-\frac1\lambda V'(\omega)\psi(\omega). \tag{5}
+\end{equation*}
+
+Интересен не сам интеграл, а задаваемое им среднее $\langle f(A)\rangle$
+\begin{equation*}
+\langle f(A)\rangle=
+\frac{\int dA\,\exp(\ldots)f(A)}{\int dA\,\exp(\ldots)} \tag{6}
+\end{equation*}
+[Справа:]
+
+($f(A)$ --- некая инвариант. ф-я ---
+\newline
+--- ф-я от соб. знач.
+
+\SourcePage{GELFAND-P001364}{26}
+И. М. Г. \underline{Зад.}
+(Т. \Unclear{GELFAND-P001364}{top-name}{Алексеевская / Алексиевская})
+(\Unclear{GELFAND-P001364}{top-parenthesis}{сделал / сделала / неразборчиво})
+
+Дан куб (3-мерн.). Через каждые 3 вершины его провести
+плоскость. На сколько частей они бьют куб.
+
+(\underline{Ответ:} 96)
+
+Предел при $N\to\infty$ один и тот же для всех классич. групп:
+\begin{equation*}
+O(\infty)=SU(\infty)=SP(\infty). \tag{7}
+\end{equation*}
+\begin{equation*}
+0=\int dA\,\frac1{N^2}\frac{\partial}{\partial A_{ij}}
+\left\{(e^{At})^{ji}\exp\left(-\frac N\lambda\operatorname{tr}V(A)\right)\right\}. \tag{3'}
+\end{equation*}
+[После $1/N^2$ зачёркнуто:
+\Unclear{GELFAND-P001364}{eq3-prime-cancelled}{возможно, $\operatorname{tr}$}.]
+
+Использовалась ф-ла:
+\begin{equation*}
+\frac{\partial}{\partial A_{ij}}(e^{At})_{ji}
+=\int_0^t d\tau\,(e^{A\tau})_{jj}(e^{A(t-\tau)})_{ii}. \tag{8}
+\end{equation*}
+Вывод: дифференцируем
+\begin{equation*}
+\prod(1+A\Delta t)=T\exp\left(\int A\,dt\right)
+\end{equation*}
+и получ. интеграл (поочерёдно
+\Unclear{GELFAND-P001364}{proof-verb}{выдерг. / неразборчиво}
+каждый матр. элем. на своём месте)
+
+Другая ф-ла из теор. матриц, к-рая использовалась:
+\begin{equation*}
+\frac{\partial}{\partial A_{ij}}\operatorname{Tr}V(A)=(V'(A))_{ji}. \tag{9}
+\end{equation*}
+Из (8) и (9) следует (4):
+\begin{equation*}
+\begin{aligned}
+(e^{At})^{ji}\frac{\partial}{\partial A_{ij}}\operatorname{Tr}V(A)
+&={}\\
+&=(V'(A))_{ji}(e^{At})_{ij}
+=V'\left(\frac{\partial}{\partial t}\right)\operatorname{tr}(e^{At}).
+\end{aligned}
+\end{equation*}
+В (4) надо было бы среднее писать ($\int dA$ опущен).
+
+Было сказано, что
+\begin{equation*}
+0=\int_0^t d\tau\,\langle\psi(\tau)\psi(t-\tau)\rangle
+-\frac1\lambda V'\left(\frac{\partial}{\partial t}\right)\langle\psi(t)\rangle. \tag{10}
+\end{equation*}
+
+\SourcePage{GELFAND-P001365}{unlabelled}
+[Далее надо рассмотреть
+
+[«Далее» вставлено над зачёркнутым
+\Unclear{GELFAND-P001365}{top-cancelled}{Теперь}.]
+\begin{equation*}
+\int\mathcal D A_\mu\,\exp\left(+\int d^4x\,\frac N\lambda
+\operatorname{tr}F_{\mu\nu}^2\right) \tag{11}
+\end{equation*}
+]
+
+Используем формулу
+\begin{equation*}
+\left\langle\frac{\operatorname{tr}A}N\frac{\operatorname{tr}B}N\right\rangle
+=\left\langle\frac{\operatorname{tr}A}N\right\rangle
+\left\langle\frac{\operatorname{tr}B}N\right\rangle
++O\left(\frac1{N^2}\right). \tag{12}
+\end{equation*}
+Применяя, получим
+\begin{equation*}
+0=\int_0^t d\tau\,\langle\psi(\tau)\rangle\langle\psi(t-\tau)\rangle
+-\frac1\lambda V'\left(\frac{\partial}{\partial t}\right)\langle\psi(t)\rangle. \tag{13}
+\end{equation*}
+Теперь введём пр. Лапласа:
+\begin{equation*}
+f(\omega)=\int_0^\infty dt\,e^{-\omega t}\langle\psi(t)\rangle; \tag{14}
+\end{equation*}
+тогда из (13) (свёртка!)
+\newline
+[зачёркнуто: а] получаем ур-е
+\begin{equation*}
+\underbrace{R(\omega)}_{\text{полином от }\omega}
+=f^2(\omega)-\frac1\lambda V'(\omega)f(\omega) \tag{15}
+\end{equation*}
+или (беря скачки):
+\begin{equation*}
+0=2\operatorname{Im}f\left(\operatorname{Re}f-\frac1{2\lambda}V'(\omega)\right). \tag{16}
+\end{equation*}
+Здесь
+\begin{equation*}
+\operatorname{Im}f=\frac12\bigl(f(x+i0)-f(x-i0)\bigr). \tag{17}
+\end{equation*}
+Но легко видеть, что
+\begin{equation*}
+f(\omega)=\frac1N\left\langle\operatorname{tr}\frac1{\omega-A}\right\rangle. \tag{18}
+\end{equation*}
+\begin{equation*}
+f^2(x+i0)-f^2(x-i0)=2\operatorname{Im}f\cdot\operatorname{Re}f. \tag{19}
+\end{equation*}
+\Unclear{GELFAND-P001365}{jump-normalization}{В (17) стоит $1/2$, в (19) --- множитель $2$; обозначения сохранены.}
+
+(20)\quad $f$
+\Unclear{GELFAND-P001365}{eq20-description}{аналитич. продолж. в левую полуплоскость / полностью предст. в левой полуплоскости}.
+
+$f(\omega)$ имеет скачки в точках спектра опер. $A$
+(это \Unclear{GELFAND-P001365}{last-parenthesis}{беск. / вещ.} матрица)
+
+\SourcePage{GELFAND-P001366}{27}
+Теперь получается старое (французское) ур-е
+\begin{equation*}
+f(\omega)=\int\frac{\varrho(\lambda)\,d\lambda}{\omega-\lambda}. \tag{21}
+\end{equation*}
+\begin{equation*}
+f=\frac1{2\lambda}V'(\omega)+M(\omega)\sqrt{(\omega-a)(\omega-b)}. \tag{22}
+\end{equation*}
+[\underline{Захаревич.}
+\begin{equation*}
+A(x)(B(x)-\alpha(x))=0,\qquad
+ iA(x)+B(x)\quad\text{аналит. прод. в }\operatorname{Im}x>0
+\end{equation*}
+и т. д.]
+
+Вместо этого можно решать квадр. ур-е (15):
+\begin{equation*}
+f=\frac1{2\lambda}V'(\omega)-\sqrt{\left(\frac{V'}{2\lambda}\right)^2-R}. \tag{23}
+\end{equation*}
+[Выноска к $R$: полином подбирается!]
+\Unclear{GELFAND-P001366}{eq23-radicand}{В подкоренном выражении записано $-R$.}
+\begin{equation*}
+f(\omega)\underset{\omega\to\infty}{\longrightarrow}
+\frac1\omega-M(\omega)\sqrt{(\omega-a)(\omega-b)} \tag{24}
+\end{equation*}
+[Над последним выражением: (из вып. гран. условий).]
+\Unclear{GELFAND-P001366}{eq24-asymptotic}{Правая часть после стрелки сохранена целиком, включая $-M(\omega)\sqrt{(\omega-a)(\omega-b)}$.}
+
+[Зачёркнута строка:
+\Unclear{GELFAND-P001366}{crossed-heading}{Дальше задача / Данное уравнение / неразборчиво}.]
+
+Для теории поля способ Карасева не проходит:
+
+[зачёркнуто: \Unclear{GELFAND-P001366}{short-crossed}{ур / при}]
+компоненты не коммутируют и одновр. не привес. к диаг. виду.
+
+Рассм. интеграл (11).
+\begin{equation*}
+A_\mu(x):\ \longrightarrow\ W(c)=\frac1N\operatorname{tr}
+ P\exp\left(\oint_c A_\mu\,dx_\mu\right) \tag{25}
+\end{equation*}
+и повт. те же рассуждения
+
+$F_{\mu\nu}$ --- тензор по $\mu,\nu$ и матрица в алг. Ли группы $SU(N)$.
+\begin{equation*}
+x_\mu=u_\mu(t),\qquad t\in(0,2\pi)
+\end{equation*}
+\Unclear{GELFAND-P001366}{curve-parameter}{Буква справа от равенства: $u_\mu(t)$ или $x_\mu(t)$.}
+\begin{equation*}
+\int A_\mu(x(t))\dot x_\mu\,dt
+\end{equation*}
+\begin{equation*}
+\sim\exp At\qquad\text{раньше}
+\end{equation*}
+Цепочка тождеств: $\ldots$
+
+\SourcePage{GELFAND-P001367}{unlabelled}
+\begin{equation*}
+\int\mathcal D A\,\hat P\,\frac{\partial}{\partial A}
+\exp\left(\oint_c A\,dy\right) \tag{26}
+\end{equation*}
+[Две короткие разделительные черты.]
+
+30 \underline{марта} неизвестно, будет ли семинар
+(если отмен., то
+[зачёркнуто: \Unclear{GELFAND-P001367}{announcement-cancelled}{с\ldots}]
+узнать в лаб. 139-53-57)
+
+\SourcePage{GELFAND-P001368}{unlabelled}
+\underline{$13/\overline{\mathrm{IV}}$-87г.}\quad \underline{Сем. Гельфанда}
+
+\underline{\underline{Синай}}
+
+\underline{О спиновых стеклах (по Пари́зи)}
+[Волнистое подчёркивание.]
+\begin{equation*}
+H=\sum_{\langle i,j\rangle}J_{ij}\sigma_i\sigma_j;\qquad
+J_{ij}\ \text{случайны}. \tag{1}
+\end{equation*}
+(мод. Изинга спинового стекла)
+
+$\langle i,j\rangle$ --- пара соседей
+
+\underline{Спиновое стекло:} [Волнистое подчёркивание.]
+когда силы взаимод. дальнодействующие и сильно осциллируют
+
+[Зачёркнуто: \Unclear{GELFAND-P001368}{before-parizi-cancelled}{Пар / Теор / неразборчиво}.]
+Паризи: все взаимодействуют, а именно:
+\begin{equation*}
+H=\frac1{\sqrt N}\sum J_{ij}\sigma_i\sigma_j \tag{2}
+\end{equation*}
+[Справа:] $J_{ij}$ --- гауссовская случ. велич.
+(все с одной дисперсией)
+
+Есть большое число \underline{осн. состояний}
+(отлич. по энергии $\sim1/N$);
+[«осн. состояний» подчёркнуто волнистой линией.]
+\begin{equation*}
+\sigma_i=\pm1.
+\end{equation*}
+Надо изучать случай $N\to\infty$ и $\displaystyle\lim_{N\to\infty}\min H$
+
+[Под пределом, с короткой соединительной чертой: считается.]
+
+\underline{Энтропия мн. ва конфигураций} $>0$ (в пределе $N\to\infty$)
+[Над строкой между «мн. ва» и «конфигураций» вставлено: (основных).
+Волнистое подчёркивание.]
+\begin{equation*}
+\frac{\ln\# [O(N)]}{N}\underset{N\to\infty}{\longrightarrow}h>0. \tag{3}
+\end{equation*}
+Св-во \underline{ультраметричности} осн. сост. (Паризи, Вирасоро): если
+[«ультраметричности» подчёркнуто волнистой линией.]
+
+$\sigma',\sigma'',\sigma'''$ --- 3 осн. состояния, то из чисел
+\begin{equation*}
+\frac1N(\sigma',\sigma'');\quad
+\frac1N(\sigma',\sigma''');\quad
+\frac1N(\sigma'',\sigma''') \tag{4}
+\end{equation*}
+два обязат. равны, а третье --- больше.
+
+
+% GELFAND-0149. Дипломатическая транскрипция; источник остаётся авторитетным.
+% Неуверенные чтения и замечания о математике связаны с uncertainties.json.
+
+\SourcePage{GELFAND-P001369}{unlabelled}
+Фазовый переход к спиновому стеклу.
+
+Паризи изобрёл стох. квантование.
+
+\underline{А.С. Шварц.}
+
+\underline{Суперконформные преобр. и суперконформное мн-зие.}
+
+Сущ. очень полное и красивое обобщ. компл. анализа на $(1,1)$-мерные
+суперконф. мн-зия.
+
+\underline{Определение}
+
+Пусть есть суперобласть $(x,\theta)$; введём ковар. производную:
+\begin{equation*}
+D=\frac{\partial}{\partial\theta}+\theta\frac{\partial}{\partial x}.
+\tag{1}
+\end{equation*}
+В размерности $(1,1)$.
+
+Отобр. $(x,\theta)\to(\widetilde x,\widetilde\theta)$ наз. суперконф., если
+$\widetilde D=FD$ [под $F$: функция].
+
+($D$ сохр. с точн. до множителя); здесь
+$\widetilde D=\frac{\partial}{\partial\widetilde\theta}
++\widetilde\theta\frac{\partial}{\partial\widetilde x}$.
+
+Они параметризуются [вписано: парами]
+\Unclear{GELFAND-P001369}{even-parameter}{$u(z)$ или $w(z)$}
+[подпись: четн.],
+[зачёркнуто: \Unclear{GELFAND-P001369}{parameter-cancellation}{неразборчивый знак}]
+$\varepsilon(z)$ [подпись: неч.] — аналит. ф-и.
+
+\underline{Суперконф. мн-зие}: склеено из таких суперобластей.
+
+Для них можно постр. теорию
+[зачёркнуто: \Unclear{GELFAND-P001369}{theory-cancellation}{неразборчивое слово}]
+суперконф. кривых,
+пр-во модулей имеет размерность
+[зачёркнуто: \Unclear{GELFAND-P001369}{dimension-cancellation}{$(3g-3\mid2g+2)$?}]
+$(3g-3\mid2g-2)$
+($g$ — род подстилающей поверхности).
+
+Есть аналог абелевых дифференциалов и более высоких дифф.
+
+Для обычных конформных:
+\begin{equation*}
+\widetilde\partial=F\partial,\qquad
+F=\frac{\partial\widetilde z}{\partial z},\qquad
+\partial=\frac{\partial}{\partial z},\qquad
+\widetilde\partial=\frac{\partial}{\partial\widetilde z}.
+\end{equation*}
+\Unclear{GELFAND-P001369}{ordinary-conformal-factor}{Соотношения с $F$ переданы как в рукописи.}
+
+\underline{Вопр. И.М.Г.}: аналог теоремы Римана о конф. отобр.?
+
+\underline{Ответ (А.С.Ш.)} если подстилка односвязна, то свод. к стандартному.
+
+\underline{Вопр. И.М.Г.}: опис. кольца ф-й
+[зачёркнуто: \Unclear{GELFAND-P001369}{function-ring-cancellation}{неразборчивый знак}]
+на комп. суперконф. мн-зии.
+
+\underline{Ответ (А.С.Ш.)}: есть теор. Римана--Роха, если
+[зачёркнуто: \Unclear{GELFAND-P001369}{riemann-roch-cancellation}{неразборчивое слово}]
+размерности всех объектов имеют смысл.
+
+(2) \underline{Опр.} Суперпр-во: своб. $\Lambda$-модуль, где $\Lambda$ — грассманова алгебра.
+
+$(x_1,\ldots,x_n,\theta_1,\ldots,\theta_n)$ — чётные и неч. элементы
+$\Lambda=\Lambda(e_1,\ldots,e_k)$.
+
+\SourcePage{GELFAND-P001370}{49}
+Зададим лин. ур-е в этом модуле; оно выделит подмодуль
+[под «ур-е»: $\sum a_k v_k=0$].
+\Unclear{GELFAND-P001370}{linear-equation-symbol}{Обозначение $v_k$ в подстрочной формуле.}
+Он не будет свободным и не будет иметь
+[зачёркнуто: \Unclear{GELFAND-P001370}{dimension-word-cancellation}{неразборчивый знак}]
+размерности.
+
+[Между строками: ф-и с
+данными
+особ. могут не иметь размерности.]
+
+Но: в [зачёркнуто: \Unclear{GELFAND-P001370}{generic-case-cancellation}{общей?}]
+типичной ситуации это своб. модуль и есть станд. форма теоремы Римана--Роха.
+
+\underline{Абелевы дифференциалы.}
+
+[На узком левом поле: \Unclear{GELFAND-P001370}{left-edge-mark}{е, 2 или $\varepsilon$?}]
+
+Если $\Phi$ — скал. ф-я, то $D\Phi$ в разных лок. коорд. преобразуется соотв. образом.
+
+Так преобр. поля — сеч. $\Omega$ — аналоги абелевых дифференциалов.
+[Над строкой: сеч. расслоения $\Omega$.]
+
+Пусть есть абелев. дифференциал $V$.
+
+Для односвязной подст. $V=D\Phi$.
+
+Период: берём универс. накрыв., там $\Phi$, сдвиги и т.д.
+
+Есть якобиан, мн-зие Пикара и т.д.
+
+Статсумма струны выраж. через аналог $\zeta$-ф-и Сельберга
+(совм. раб. с Маниным).
+
+[Разделительная черта.]
+
+Фермионная струна \quad $g_{\alpha\beta}$; $X^a$.
+
+\underline{Супераналог рим. метрики}: неч. векторное поле $\widehat e$, для к-рого
+\begin{equation*}
+\{\widehat e,\overline{\widehat e}\}
+=\tau\widehat e+\overline\tau\,\overline{\widehat e}.
+\tag{3}
+\end{equation*}
+
+(4) \underline{Пример}: $\widehat e=\lambda D$.
+
+(5) \underline{Утв.} Всегда $\exists$ мест. координат, в к-рой суперрим. метрика имеет вид (4).
+
+\underline{Пояснение}: обычн. рим. метр. зад. полем
+$\lambda\frac{\partial}{\partial z}$, $\lambda$ опр. с точн. до фазы $e^{i\alpha}$.
+
+(Это для любого $(2\mid2)$-мерного мн-зия.)
+
+\underline{Фермионная струна}
+\begin{equation*}
+S=\langle\widehat eX,\widehat eX\rangle.
+\tag{6}
+\end{equation*}
+\Unclear{GELFAND-P001370}{action-conjugation}{В обоих множителях видна только «шляпка» над $e$.}
+[Под формулой зачёркнуто:
+\Unclear{GELFAND-P001370}{action-cancellation}{неразборчивый знак}.]
+
+\begin{equation*}
+\int(\det\Delta_0)^{-13}(\det\Delta_2)\,dV,
+\qquad\text{для бозонной струны}.
+\tag{7}
+\end{equation*}
+\begin{equation*}
+\int(\det\Delta_0)^{-5}(\det\Delta_2)\,dV
+\qquad\text{— для фермионной струны}.
+\tag{8}
+\end{equation*}
+\Unclear{GELFAND-P001370}{integration-measure}{$dV$ или $d\nu$ в (7), (8).}
+
+Мера (7) облад. св-вами асимпт. (Белавин--Книжник).
+
+\SourcePage{GELFAND-P001371}{unlabelled}
+\underline{Баранов, Шварц}: перенос на фермионный случай, использована
+раб. \Unclear{GELFAND-P001371}{voronov-initial}{Ф.?} Воронова
+(\Unclear{GELFAND-P001371}{super-abbreviation}{суперМаниф.?}; вычисление мер).
+
+Другой сюжет:
+
+\underline{Некоммутативный аналог кручения Рэя--Зингера.}
+
+(Пока не обещано.)
+
+\underline{Алексеевский Д.}
+
+\underline{Кватернионные многообразия}
+
+\underline{Пусть}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[baseline=0cm]
+\draw (0,0) ellipse (0.40cm and 0.48cm);
+\draw (0.48,0) ellipse (0.57cm and 0.51cm);
+\end{tikzpicture}
+\end{adjustbox}
+\quad $U\subset\mathbb H^n$, $V\subset\mathbb H^n$.
+\begin{equation*}
+f:U\to V.
+\end{equation*}
+\begin{equation*}
+\forall x\in U\quad df_x:\mathbb H^n\to\mathbb H^n
+\tag{1}
+\end{equation*}
+морфизм левых модулей
+([зачёркнуто: \Unclear{GELFAND-P001371}{morphism-cancellation}{матр.?}]
+умн. на матр. справа).
+
+Если оно односвязно, то получится только линейное пр-во.
+[Под строкой: открывающая скобка без продолжения.]
+
+Все автоморфизмы линейны.
+
+Можно написать алг. Ли инфинитезим. преобразований, которые её сохраняют.
+
+(2) \underline{Утв.}: тогда ф-и перехода будут обязательно линейными.
+
+1-е приближение \Unclear{GELFAND-P001371}{approximation-ending}{тривиальн.?}.
+
+Вект. поле, у к-рого дифференциал — кватернионная матрица
+[зачёркнуто: \Unclear{GELFAND-P001371}{matrix-cancellation}{неразборчивый знак}].
+
+\underline{Опр-е (1) неверно}, т.к. тогда проективное пр-во не будет
+иметь кватернионную структуру.
+
+$\mathbb C P^n$ — пр-во 1-мерных кватернионных подпр-в в $\mathbb H^{n+1}$.
+
+$\mathbb C P^1$ — пары $(\lambda_1,\lambda_2)$ с точн. до левого умн.
+$(\lambda\lambda_1,\lambda\lambda_2)$.
+\Unclear{GELFAND-P001371}{projective-space-letter}{В обозначениях проективных пространств видна буква $\mathbb C$.}
+
+2 карты \quad $(\lambda_1,1)$,\quad $(1,\lambda_2)$.
+\begin{equation*}
+(\lambda_1,1)\sim(1,\lambda_1^{-1}).
+\end{equation*}
+$\lambda\to\lambda^{-1}$ — функция перехода.
+
+\SourcePage{GELFAND-P001372}{50}
+$\lambda^{-1}$
+\begin{equation*}
+(\lambda_0+i\lambda_1+j\lambda_2+k\lambda_3)^{-1}
+=\frac{\lambda_0-i\lambda_1-j\lambda_2-k\lambda_3}
+{\lambda_0^2+\lambda_1^2+\lambda_2^2+\lambda_3^2}.
+\end{equation*}
+\begin{equation*}
+d(\lambda^{-1})=-\lambda^{-1}d\lambda\,\lambda^{-1}.
+\end{equation*}
+
+\underline{Топ. объяснение}: если бы было, то на $S^3$ было бы 3 комплексных структуры.
+
+$V=\mathbb R^{4n}$.
+
+(3) \underline{Кватернионная структура} — подалгебра $Q\subset$
+[зачёркнуто: \Unclear{GELFAND-P001372}{endomorphism-cancellation}{неразборчивый знак}]
+$\operatorname{End}(V)$, изоморфная $\mathbb H$.
+
+(Или подалг., натянутая на 3 антикоммутир. компл. структуры
+\begin{equation*}
+Q=\langle I,J,K,E\rangle,\qquad
+I^2=J^2=K^2=-1,\quad IJ=-JI=K
+\end{equation*}
+и т.д.
+
+$\Rightarrow$ можно умножать слева на кватернионы.
+
+\underline{Иначе}: изоморфизм не фиксирован; не надо выделять $I$, $J$ и $K$.
+
+($\mathbb H$ имеет нетривиальные автоморфизмы.)
+
+\underline{Кватернионная структура} на мн-зии: поле кватернионных структур
+(в каждом касательном пр-ве). (Или: почти кватерн. структура.)
+
+Chern (1945) рассматривал такие.
+
+($\forall$ 4-мерн. рим. мн-зие обладает двумя, т.к.
+$\operatorname{SO}(4)=\text{произвед.}$
+
+$M^{4n}$, $Q:x\mapsto Q_x$.
+
+\underline{Интегрируемость}: вместо атласа — ур-я Коши--Римана.
+
+(С точн. до малых 2-го порядка
+[зачёркнуто: \Unclear{GELFAND-P001372}{integrability-cancellation}{неразборчивое слово}]
+как кватернионное преобр.)
+
+\underline{Автоморфизмы, сохр. кватерн. структуру}
+\begin{equation*}
+G=\operatorname{GL}(1,\mathbb H)\cdot\operatorname{GL}(n,\mathbb H)
+\qquad\text{— гр. автом. кватернионной структ.}
+\end{equation*}
+\begin{equation*}
+G=\operatorname{Sp}(1)\cdot\operatorname{Sp}(n)
+\end{equation*}
+— для [зачёркнуто:
+\Unclear{GELFAND-P001372}{sp-word-cancellation}{обычного?}]
+опред. (1).
+[Над зачёркнутым словом также зачёркнуто:
+\Unclear{GELFAND-P001372}{sp-upper-cancellation}{неразборчивый знак}.]
+\Unclear{GELFAND-P001372}{automorphism-groups}{Группы и ссылка на опред. (1) переданы буквально.}
+
+\begin{equation*}
+y_i=\sum x_k a_{ki}
+\end{equation*}
+[Между $\sum$ и $x_k$ зачёркнуто:
+\Unclear{GELFAND-P001372}{summation-cancellation}{неразборчивый символ}.]
+$\Vert$ сохр. кватерн. структуру (правую).
+\Unclear{GELFAND-P001372}{right-structure}{Слово «правую» сохранено.}
+
+\begin{equation*}
+(x_1,\ldots,x_n)\to(\lambda x_1,\ldots,\lambda x_n)
+\end{equation*}
+тоже сохраняет.
+
+[В правой скобке перед первой $\lambda$ зачёркнуто:
+\Unclear{GELFAND-P001372}{tuple-first-cancellation}{$x_1$?};
+между этой $\lambda$ и $x_1$ зачёркнуто:
+\Unclear{GELFAND-P001372}{tuple-second-cancellation}{неразборчивый знак}.]
+
+[Под формулой, со стрелкой к месту между первой $\lambda$ и $x_1$:]
+(С другой стороны!)
+
+\SourcePage{GELFAND-P001373}{unlabelled}
+\underline{Условие 1-интегрируемости:}
+
+$\exists$ связность $\nabla$ без кручения, сохр. кватернионную структуру.
+
+(Лин. связность, не обяз. метрическая.)
+
+[Зачёркнуто в скобках:
+\Unclear{GELFAND-P001373}{cancelled-parenthesis}{неразборчивая фраза}.]
+Или: $\nabla Q=0$.
+
+Кватернионное подпр-во $\longrightarrow$ кватернионное подпр-во при пар. переносе.
+
+[Разделительная черта.]
+
+\underline{Гончаров А.}
+
+Пусть есть вещ.-аналит. мн-зие с [вписано: почти] кватернионной структурой.
+\begin{equation*}
+M_{\mathbb R}^{4n}\subset M_{\mathbb C}^{4n}.
+\end{equation*}
+\begin{equation*}
+T_xM_{\mathbb C}^{4n}\supset K_x
+=\bigcup\{v+\sqrt{-1}\,Jv\},\qquad v\in TM_{\mathbb R}^{4n},
+\end{equation*}
+[Над $K_x$: конус.]
+\begin{equation*}
+J\in Q_x,\qquad J^2=-1.
+\end{equation*}
+И должна быть интегрируемость.
+
+[Разделительная черта.]
+
+Д.А.
+\begin{equation*}
+\gamma\text{ — кривая}\quad\Rightarrow\quad
+\tau_\gamma Q_{\gamma(0)}=Q_{\gamma(1)}.
+\end{equation*}
+\begin{equation*}
+\gamma:[0,1]\to M.
+\end{equation*}
+($\tau_\gamma$ — пар. перенос вдоль $\gamma$.)
+
+$Q_x$ — подалгебра в $\operatorname{Aut}T_xM$,
+её тоже можно переносить.
+\Unclear{GELFAND-P001373}{algebra-in-aut}{В рукописи: «подалгебра в $\operatorname{Aut}T_xM$».}
+
+\SourcePage{GELFAND-P001374}{unlabelled}
+\underline{20/IV-87г.}\qquad\underline{Сем. Гельфанда.}
+
+\underline{И.М.Г.} Вопрос: есть 2 коммутир. изометрии в $n$-мерном пр-ве;
+[приписка над строкой с указателем: не всюду опр.]
+как из них сделать 2 коммутир. унит. оператора? Какие препятствия?
+
+Частично это сделано у Каспарова.
+
+\underline{Кириллов о раб. Джонса.}
+
+\underline{Различение}
+[зачёркнуто: \Unclear{GELFAND-P001374}{knot-cancellation}{узлов?}]
+\underline{узлов с помощью факторов.}
+
+Рассм. алгебру, порождённую образ. $T_i$ (беск. числом) с соотношениями
+\begin{equation*}
+\begin{cases}
+(T_i+1)(T_i-q)=0,\\
+T_iT_{i+1}T_i=T_{i+1}T_iT_{i+1},\\
+T_iT_j=T_jT_i,\quad |i-j|>1.
+\end{cases}
+\tag{1}
+\end{equation*}
+(Алг. Гекке серии $A$.)
+
+$\Rightarrow$ [зачёркнуто:
+\Unclear{GELFAND-P001374}{series-cancellation}{неразборчивый знак}]
+в Ленинграде \Unclear{GELFAND-P001374}{leningrad-verb}{приложили?}
+так же серию $B$.
+
+1. Узел $\longrightarrow$ многочлен, эквив. узлы $\longrightarrow$ равные многочлены.
+
+2. Фактор $\longrightarrow$ подфактор.
+
+\SourcePage{GELFAND-P001375}{unlabelled}
+Рассм. $\coprod_n B_n$
+([зачёркнуто: \Unclear{GELFAND-P001375}{union-cancellation}{неразборчивое сокращение}]
+дизъюнктное объединение).
+[Под $B_n$ с указателем: гр. кос.]
+
+\underline{Зацепление}: ориентир. 1-мерное комп. мн-зие, погруженное в $\mathbb R^3$.
+\Unclear{GELFAND-P001375}{link-immersion}{В определении написано «погруженное».}
+
+[Слева от схемы: \Unclear{GELFAND-P001375}{left-isolated-mark}{короткий изолированный штрих}.]
+
+\SourceFigure{GELFAND-P001375}{braids-links-diagram}{Сверху $\coprod_n B_n$.
+От него стрелка вниз-влево к $H$ и стрелка вправо-вниз к рисунку двух
+перекрывающихся ориентированных петель. Слева от $H$ написано «фактор»;
+под $H$ с коротким указателем — «алгебра Гекке (1)».
+От $H$ стрелка вниз-вправо к слову «многочлены».
+На рисунке петель обе видимые стрелки направлены вверх по правым ветвям;
+верхние дуги бледны и прерваны, соединения и верхнее пересечение требуют проверки по скану.}
+
+Коса $\longrightarrow$ зацепление (соед. начало с концом).
+
+Един. коса $\longrightarrow$
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[baseline=-0.1cm]
+\draw (0,0) circle (0.12cm);
+\draw (0.65,0) circle (0.12cm);
+\draw (1.08,0) circle (0.11cm);
+\draw (1.50,0) circle (0.10cm);
+\end{tikzpicture}
+\end{adjustbox}
+
+(2) $b\subset B_n$ и $\widetilde b\subset B_n$ задают эквив. зацепления.
+[Под $\widetilde b$:] $\widetilde b=cbc^{-1}$.
+[Справа, за вертикальной чертой:] $B_n\subset B_{n+1}$.
+\Unclear{GELFAND-P001375}{braid-membership}{В (2) перед $B_n$ стоят знаки, похожие на $\subset$.}
+
+(3) $b\in B_n$, $\widetilde b\in B_{n+1}$,
+$\widetilde b=b\cdot\sigma_n^{\pm1}$
+(дописывание одной образ. из $B_{n+1}$).
+
+Тогда $b$ и $\widetilde b$ порожд.
+[зачёркнуто: \Unclear{GELFAND-P001375}{equivalence-cancellation}{экв.?}]
+эквив. зацепления.
+
+% Source diagram: bbox [385,1760,705,2150], original pixels.
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[baseline=0cm]
+\draw (-0.65,2) -- (1.50,2);
+\fill (-0.65,2) circle (0.02cm);
+\draw[->] (-0.65,0) -- (1.40,0);
+\draw (0.80,2) .. controls (0.80,1.62) and (0.60,1.25) .. (0.37,1.12);
+\draw (-0.03,0) .. controls (-0.03,0.38) and (0.16,0.66) .. (0.29,0.85);
+\draw (0,2) .. controls (-0.06,0.90) and (0.80,1.10) .. (0.80,0);
+\node[above] at (0,2) {$k$};
+\node[above] at (0.80,2) {$k+1$};
+\node[below] at (-0.03,0) {$k$};
+\node[below] at (0.80,0) {$k+1$};
+\node[right] at (1.03,1.03) {$\sigma_k$ — образующие};
+\end{tikzpicture}
+\end{adjustbox}
+
+(4) \underline{Теор. Маркова} (трудная): опис. операции достаточны
+для перехода к любому эквив. зацеплению.
+
+Идея: построить инвариантную отн. этих операций ф-ю.
+
+Отобр. $\coprod_n B_n$ в $H$ строится так:
+$\sigma_i\to T_i$, $\sigma_i^{-1}\to T_i^{-1}$.
+[К $T_i^{-1}$ снизу: найденное из квадр. ур-я $(1)_1$.]
+
+$(1)_{2,3}$ — полный набор соотношений в группе кос.
+\begin{equation*}
+\sigma_i^{-1}\longrightarrow\frac{T_i+(1-q)}{q}=T_i^{-1}.
+\end{equation*}
+
+Набор образ. (1) [вписано: $\forall q$] имеет единственное фактор-представление
+со следом, причём
+[зачёркнуто: \Unclear{GELFAND-P001375}{trace-cancellation}{неразборчивый фрагмент}]
+след — многочлен от $q$, $q^{-1}$.
+\begin{equation*}
+\mathbb Z[q,q^{-1}].
+\end{equation*}
+\Unclear{GELFAND-P001375}{factor-claim-parameter}{Приписка $\forall q$ и утверждение о единственности оставлены без дополнений.}
+
+\SourcePage{GELFAND-P001376}{57}
+\underline{Упражнение}. Взять $q=\pm1$ и посмотреть, какой здесь
+получается инвариант группы кос (отношение значений многочлена
+Джонса при этих значениях).
+
+\underline{Джонс} специально исключал из рассмотрения
+[зачёркнуто: \Unclear{GELFAND-P001376}{roots-cancellation}{неразборчивый фрагмент}]
+корни из $1$.
+
+\underline{Идея И.М.Г.}: рассмотреть именно корни из $1$.
+Может оказаться, что факторов вообще нет, а нужно корни из $1$.
+
+А.М. Вершик что-то уже сделал по этому поводу.
+
+\paragraph*{\underline{А. Бейлинсон.}}
+О раб. Бейлинсона, МакФерсона и В. Шехтмана.
+
+\underline{Заметки о мотивных когомологиях}
+
+Пусть $X$ — ан. мн-зие, $E$ — вект. расслоение на $X$.
+[Под характеристикой $X$:] (или \Unclear{GELFAND-P001376}{x-parenthesis}{компл.?})
+(компактное).
+\begin{equation*}
+c_i(E)\in H^{2i}(X,\mathbb C)
+=H^{2i}(X,\mathcal O\to\Omega^1\to\ldots).
+\end{equation*}
+[Над последним аргументом, с указателем: когом. с коэфф. в комплексе пучков.]
+
+Они целочисленны и удовл. усл. Ходжа
+([зачёркнуто: \Unclear{GELFAND-P001376}{hodge-cancellation}{неразборчивое слово}]
+$c_i\in i$-му члену фильтр. Ходжа).
+
+(Т.к. можно вычислить через $\log$ произв. в коциклах Чеха.)
+
+Будем вычислять когомологии мн-зия из компл. де Рама.
+\begin{equation*}
+(1)\qquad 0\to\mathbb C\to
+\text{[зачёркнуто: }\Unclear{GELFAND-P001376}{de-rham-cancellation}{неразборчивый знак}\text{]}
+\mathcal O\to\Omega^1\to\Omega^2\to\ldots
+\end{equation*}
+[Справа:] $\Omega^i$ — голом. $i$-формы (пучок).
+
+$\{U_i\}$ — покрытие $X$ маленькими откр. мн-вами.
+
+Сопоставим:
+\begin{center}
+$(*)\quad$
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzcd}
+C^{2i}(\mathcal O)\arrow[r] & C^{2i}(\Omega^1) \\
+ & C^{2i-1}(\Omega^1)\arrow[u]\arrow[r] & \ldots
+\end{tikzcd}
+\end{adjustbox}
+\end{center}
+
+Фильтрация Ходжа на $H^k(X,\mathbb C)$:
+\begin{equation*}
+F^j H^k(X,\mathbb C)
+=H^k(X,0\to\ldots\to0\to\Omega^j\to\Omega^{j+1}\to\ldots).
+\end{equation*}
+\underline{Констр. Атьи хар. класса, из к-рой следует, что $c_j\in F^j$}.
+
+$g_{ij}$ — ф-и переклейки.
+\begin{equation*}
+g_{ij}\colon U_i\cap U_j\longrightarrow GL_n(\mathbb C).
+\end{equation*}
+\begin{equation*}
+A=g_{ij}^{-1}dg_{ij}\in
+\Omega^1(U_i\cap U_j,\operatorname{Mat}_n(\mathbb C))
+\in C^1(X,\Omega^1\otimes\operatorname{Mat}_n).
+\end{equation*}
+[Под $g_{ij}^{-1}dg_{ij}$: 1-форма со знач. в алг. Ли.]
+\Unclear{GELFAND-P001376}{cochain-membership}{В формуле для $A$ сохранены два последовательных знака $\in$.}
+
+Надо взять $(g_{ij}^{-1}dg_{ij})^k$ — коцепь со знач. в $k$-формах.
+[Под степенью: (перемн. коцепей; закрывающая скобка не видна. Справа — двойная черта.]
+
+Берём след $\operatorname{Tr}$ $\longrightarrow$ получ. форма с одной компонентой.
+
+\SourcePage{GELFAND-P001377}{unlabelled}
+\begin{equation*}
+c_i(E)=\operatorname{Tr}(A^i).
+\end{equation*}
+[Справа:] $A^i$ — форма степ. $i$ на пересеч. $(i+1)$-го мн-ва.
+\Unclear{GELFAND-P001377}{chern-trace}{Обозначение $c_i(E)$ перед следом степени сохранено.}
+
+[Зачёркнуто: \Unclear{GELFAND-P001377}{element-cancellation}{Вид?}]
+$\Rightarrow$ элемент $2i$-мерных когомологий (см. диагр. $(*)$).
+
+\underline{Задача}: явно построить гомотопию в целочисл. хар. класс.
+
+Для
+\begin{equation*}
+c_1=d\log(\det g_{ij}).
+\end{equation*}
+
+Надо отбросить $d$:
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[baseline=0cm]
+\node at (0,0) {$\log(\det g_{ij})$};
+\node[right] at (1.3,0) {на малом мн-ве};
+\node[rotate=-90] at (0,-0.60) {$\in$};
+\node at (0,-1.15) {$C^1(\mathcal O)$};
+\end{tikzpicture}
+\end{adjustbox}
+
+\SourcePage{GELFAND-P001378}{unlabelled}
+\underline{27.4.87 г.}\qquad \underline{Сем. Гельфанда}
+
+\paragraph*{\underline{А. Бейлинсон}}
+\underline{Когомологии Делиня} [над концом заголовка вписано: — Бейлинсона]:
+см. \Unclear{GELFAND-P001378}{soule-reference}{обз.?} Soulé,
+сем. Бурбаки, фев. 85.
+[Под фамилией:] (Regulateurs).
+
+\underline{H. Esnault, E. Viehweg} (препринт).
+[Под словом «препринт»: есть у Манина.]
+
+Deligne--Beilinson cohomology
+
+\underline{Бейлинсон}: Совр. пробл. матем. т. 24.
+
+Contempor. math. \Unclear{GELFAND-P001378}{bibliography-number}{$\sim$ № 25?}
+
+\underline{Комплекс пучков} на любом мн-зии (компл. аналитич. схем).
+\begin{equation*}
+(1)\qquad
+\mathbb Z(i)_{\mathcal D}:=
+\mathbb Z\overset{(2\pi\sqrt{-1})^i}{\longrightarrow}
+\mathcal O\longrightarrow\Omega^1\longrightarrow\ldots
+\longrightarrow\Omega^{i-1}.
+\end{equation*}
+
+($i$ — целое.)
+
+В частности
+\begin{equation*}
+\mathbb Z(0)_{\mathcal D}=\mathbb Z,
+\end{equation*}
+\begin{equation*}
+\mathbb Z(1)_{\mathcal D}=
+\bigl(\mathbb Z\overset{2\pi\sqrt{-1}}{\longrightarrow}\mathcal O\bigr)
+\overset{\exp}{\longrightarrow}\mathcal O^*[-1].
+\end{equation*}
+[Под $\mathcal O^*$ скобка и подпись: степ. 1.]
+
+[Справа:]
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzcd}
+\mathbb Z\arrow[r]\arrow[d] & \mathcal O\arrow[d,"\exp"] \\
+0\arrow[r] & \mathcal O^*
+\end{tikzcd}
+\end{adjustbox}
+
+[Под диаграммой:] морф. комплексов.
+
+Пучок когом. есть
+\begin{equation*}
+H^1(\mathbb Z(1))=\mathcal O^*.
+\end{equation*}
+\begin{equation*}
+\mathbb Z(2)_{\mathcal D}=
+\bigl(\mathbb Z\overset{-4\pi^2}{\longrightarrow}\mathcal O
+\longrightarrow\Omega^1\bigr).
+\end{equation*}
+\begin{equation*}
+H^1(\mathbb Z(2)_{\mathcal D})=
+\mathbb C/(2\pi\sqrt{-1})^2\mathbb Z.
+\end{equation*}
+[Под правой частью:]
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}[baseline=0cm]
+\node[rotate=-90] at (0,0) {$\cong$};
+\node[right] at (0.5,0) {$\exp\bigl(\frac{1}{2\pi i}\,\bullet\bigr)$};
+\node at (0,-0.9) {$\mathbb C^*$};
+\end{tikzpicture}
+\end{adjustbox}
+\Unclear{GELFAND-P001378}{exponential-placeholder}{Последний знак в аргументе экспоненты похож на точку или кружок.}
+
+\begin{equation*}
+H^2(\mathbb Z(2)_{\mathcal D})=\Omega^1/d\mathcal O.
+\end{equation*}
+
+
+\SourcePage{GELFAND-P001379}{67}
+имеется отобр
+\begin{equation*}
+\mathbb{Z}(i)_{\mathcal D}\longrightarrow\mathbb{Z}
+\qquad\text{(0-я компонента)}\tag{2}
+\end{equation*}
+\begin{equation*}
+\mathbb{Z}(i)_{\mathcal D}\longrightarrow\Omega^i[-i]\tag{3}
+\end{equation*}
+(0 на всех формах, последняя — в ее дифференциал)
+\begin{equation*}
+\mathbb{Z}(i)_{\mathcal D}\otimes\mathbb{Z}(j)_{\mathcal D}
+\longrightarrow\mathbb{Z}(i+j)_{\mathcal D}\tag{4}
+\end{equation*}
+\begin{equation*}
+z_i\star\omega_j=z_i\omega_j
+\end{equation*}
+[Справа от (4):] стрелки (2) и (3) переводят это умн. в обычное умн. на числах и формах.
+
+Пусть $z_j$ из 0-й комп.
+\begin{equation*}
+z_1\star z_2=z_1z_2\qquad\text{(обычное произв-е.)}\tag{5'}
+\end{equation*}
+\begin{equation*}
+z_1\star\omega_2=z_1\omega_2\tag{5''}
+\end{equation*}
+\begin{equation*}
+\omega_1\star z_2=z_2\omega_1\tag{5'''}
+\end{equation*}
+\begin{equation*}
+\omega_1\star\omega_2=
+\begin{cases}
+0, & \text{если }\omega_2\notin\Omega^{j-1},\\
+\omega_1\wedge d\omega_2, & \text{если }\omega_2\in\Omega^{j-1}
+\end{cases}\tag{6}
+\end{equation*}
+(7) С точн. до \underline{гомотопии} это умн. коммутативно.
+[Под «гомотопии»: (цепных комплексов).]
+
+(8) Оба отображения (2), (3) коммутируют с умножением.
+
+(9) Пусть $E$ — голом. векторное расслоение [вставлено: на $X$]. Тогда определены его классы Черня
+\begin{equation*}
+c_i(E)\in H^{2i}(X,\mathbb{Z}(i)_{\mathcal D})
+\end{equation*}
+[Справа:] (гр. когом. с коэфф. в комплексе пучков).
+[Над началом примечания приписано:
+\Unclear{GELFAND-P001379}{eq09-insertion}{абелевых}.]
+
+(10) При отобр. (2) они перейдут в обычные топ. классы Черня;
+этим св-вом и св-вом функториальности эти кл. (9) опр. однозначно.
+
+\underline{Описание группы} $H^{2i}(X,\mathbb{Z}(i)_{\mathcal D})$.
+
+Пусть $X$ компактно.
+
+Определение когом. в (9) по Чеху.
+
+$C^{ij}$ — $i$-мерные коцепи с коэфф. в $j$-м пучке.
+
+[Слева от схемы зачеркнуто:
+\Unclear{GELFAND-P001379}{cochain-cancellation}{неразборчивый знак}.]
+\begin{equation*}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzcd}[column sep=large,row sep=large]
+C^{ij}\arrow[r,"d"]\arrow[dr,"\delta"'] & C^{i,j+1}\\
+& C^{i+1,j}
+\end{tikzcd}
+\end{adjustbox}
+\end{equation*}
+[Справа:] $d$ — дифф. в комплексе (де Рам).
+
+Теперь для $d+\delta$ нас есть обычные когомологии.
+
+(Это получается при $C^*$ [зачеркнуто:
+\Unclear{GELFAND-P001379}{bottom-cancellation}{неразборчивый знак}]
+$X$ (целочисленные)).
+
+\SourcePage{GELFAND-P001380}{unlabelled}
+Для компактного $X$
+\begin{equation*}
+H^n(X,\mathbb{C})=\bigoplus_{a+b=n}H^{a,b}(X)
+\qquad\text{(разл. Ходжа)}\tag{11}
+\end{equation*}
+\begin{equation*}
+F^iH^n(X,\mathbb{C})=\bigoplus_{a\ge i}H^{a,b}
+\qquad\text{(фильтрация Ходжа)}\tag{12}
+\end{equation*}
+Известно, что
+\begin{equation*}
+H^{a,b}(X)=H^b(X,\Omega^a)\tag{13}
+\end{equation*}
+Тогда
+\begin{equation*}
+\begin{gathered}
+0\longrightarrow
+\frac{H^{n-1}(X,\mathbb{C})}
+{H^{n-1}(X,\mathbb{Z})+F^iH^{n-1}(X,\mathbb{C})}
+\longrightarrow H^n\bigl(X,\mathbb{Z}(i)_{\mathcal D}\bigr)\\
+\longrightarrow H^n(X,\mathbb{Z})\cap F^iH^n(X,\mathbb{C})\longrightarrow0
+\end{gathered}\tag{14}
+\end{equation*}
+[В среднем члене (14), после $X,$ и перед $\mathbb Z(i)_{\mathcal D}$, зачеркнуто:
+\Unclear{GELFAND-P001380}{eq14-cancellation}{неразборчивый знак}.]
+Класс когомологий Делиня $\sim$ (разность целочисл. коцикла и коцикла де Рама) $+$ (соед. их гомотопия).
+
+\underline{Коцепь с коэфф. в комплексе Делиня.}
+
+Коцикл $\alpha$ [зачеркнут или переправлен нижний знак:
+\Unclear{GELFAND-P001380}{cocycle-index}{неразборчиво}]
+$\in Z^n(X;\mathbb{Z}(i)_{\mathcal D})$ состоит из набора
+\begin{equation*}
+\begin{cases}
+\alpha_0\in Z^n(X,\mathbb{Z}),\\
+\alpha_1\in C^{n-1}(X,\mathcal O),\\
+\alpha_2\in C^{n-2}(X,\Omega^1),\\
+\vdots\\
+\alpha_i\in C^{n-i}(X,\Omega^{i-1}),
+\end{cases}\tag{15}
+\end{equation*}
+согласованного в том смысле, что
+\begin{equation*}
+\begin{cases}
+\alpha_0=\delta\alpha_1,\\
+d\alpha_1=\delta\alpha_2,\\
+\vdots\\
+\delta\alpha_i=d\alpha_{i-1}
+\end{cases}\tag{16}
+\end{equation*}
+Отсюда
+\begin{equation*}
+d\alpha_i\in Z^{n-i}(X,\Omega^{i,\mathrm{cl}})
+\qquad\text{(со знач. в замкн. формах)}\tag{17}
+\end{equation*}
+Поэтому можно рассмотреть
+\begin{equation*}
+\alpha_0-d\alpha_i\in Z^n(X,\Omega^\bullet)\tag{18}
+\end{equation*}
+(Остальное — гомотопия, \Unclear{GELFAND-P001380}{bottom-abbreviation}{устанавл.}
+
+\SourcePage{GELFAND-P001381}{unlabelled}
+[Номер справа вверху: \Unclear{GELFAND-P001381}{page-label}{68 / 62}.]
+
+$\alpha_1+\alpha_2+\ldots+\alpha_i$
+[зачеркнуто: \Unclear{GELFAND-P001381}{top-cancellation}{неразборчиво}]
+$\in C$.
+\begin{equation*}
+d(\alpha_0+\alpha_1+\ldots+\alpha_i)=\alpha_0-d\alpha_i\tag{19}
+\end{equation*}
+\Unclear{GELFAND-P001381}{eq19-first-index}{В скобках первый индекс читается как $0$; в строке выше сумма начинается с $\alpha_1$.}
+
+Пока это общие вещи в $\forall$ двойном комплексе.
+
+(см. также раб. Габриэлова, Гельфанда и Лосика)
+
+Опишем гр. $H^{2i}(X,\mathbb{Z}(i)_{\mathcal D})$ исходя из (14).
+\begin{equation*}
+\begin{gathered}
+0\longrightarrow
+\underbrace{\frac{H^{2i-1}(X,\mathbb C)}{H^{2i-1}(X,\mathbb Z)+F^i}}_{\substack{\Vert\\ J^i}}
+\longrightarrow H^{2i}(X,\mathbb Z(i)_{\mathcal D})\\
+\longrightarrow
+\underbrace{H^{2i}(X,\mathbb Z)\cap F^iH^{2i}(X,\mathbb C)}_{\substack{\Vert\\ \mathrm{Hg}^i(X,\mathbb Z)}}
+\longrightarrow0
+\end{gathered}\tag{20}
+\end{equation*}
+[Под $J^i$:] (компл. тор, называемый $i$-м якобианом Гриффитса).
+\begin{equation*}
+H^{2i-1}=F^i\oplus\overline F^{\,i}
+\end{equation*}
+$\Rightarrow$ отсюда компл. структура в $J^i$.
+
+(21) \underline{Пример.}
+\begin{equation*}
+c_1(\mathcal E)=c_1(\det\mathcal E)
+\end{equation*}
+$g_{ij}$ — ф-и перехода расслоения
+[зачеркнуто: \Unclear{GELFAND-P001381}{transition-cancellation}{неразборчивый знак перед $\mathcal E$}]
+$\mathcal E$
+
+(со знач. в $\mathbb C^*$).
+\begin{equation*}
+c_1(\mathcal E)\in H^2(X,\mathbb Z(1)_{\mathcal D})
+\end{equation*}
+\begin{equation*}
+c_1(\mathcal E)_0\in Z^2(X,\mathbb Z)\tag{22}
+\end{equation*}
+[В (22) у $\mathcal E$ перед закрывающей скобкой зачеркнут или переправлен нижний знак:
+\Unclear{GELFAND-P001381}{eq22-correction}{неразборчиво}.]
+\begin{equation*}
+c_1(\mathcal E)_1\in C^1(X,\mathcal O),\tag{23}
+\end{equation*}
+причем
+\begin{equation*}
+\delta[c_1(\mathcal E)_1]=c_1(\mathcal E)_0\tag{23'}
+\end{equation*}
+(24) $c_1(\mathcal E)_1=$
+\Unclear{GELFAND-P001381}{eq24-factor}{$\log(\operatorname{deg}g_{ij})$ / $\log(\det g_{ij})$}
+— любое опрд. $\log$.
+
+($c_1(\mathcal E)_0$ — нах. из (23')
+[зачеркнуто: \Unclear{GELFAND-P001381}{eq24-comment-cancellation}{неразборчивый знак}]
+и задаёт рассогласование).
+
+Получается изоморф.
+\begin{equation*}
+c_1:\operatorname{Pic}(X)\overset{\sim}{\longrightarrow}H^2(X,\mathbb Z(1)_{\mathcal D})\tag{25}
+\end{equation*}
+
+\SourcePage{GELFAND-P001382}{unlabelled}
+\underline{Построение $c_2$} (это уже связано с дилогарифмом).
+
+$c_1$ строилось в 2 шага
+\begin{equation*}
+\mathcal E\overset{\det}{\longmapsto}
+c_{1\,\mathrm{alg}}(\mathcal E)\in H^1(X,\mathcal O^*)
+\overset{\text{«}\log\text{»}}{\longrightarrow}
+H^2(X,\mathbb Z(1)_{\mathcal D})\tag{26}
+\end{equation*}
+В принципе должно было бы быть
+\begin{equation*}
+\begin{gathered}
+c_i:\mathcal E\longmapsto
+\underset{\substack{\Vert\\c_{iM}(\mathcal E)\\\text{(мотивные)}}}{c_{i\,\mathrm{alg}}(\mathcal E)}
+=H^{2i}(X,\mathbb Z(i)_M)\\
+\underset{\substack{\uparrow\\\text{полилогарифм}}}{\overset{\mathcal L i_i}{\longrightarrow}}
+H^{2i}(X,\mathbb Z(i)_{\mathcal D})
+\end{gathered}\tag{27}
+\end{equation*}
+\Unclear{GELFAND-P001382}{eq27-equality}{Между $c_{i\,\mathrm{alg}}(\mathcal E)$ и $H^{2i}$ в источнике стоит $=$.}
+
+С точн. до кручения эта теория существует.
+
+[Зачеркнуто: \Unclear{GELFAND-P001382}{before-vnei-cancellation}{неразборчиво}.]
+в ней $\mathbb Z(1)_M=\mathcal O^*[-1]$.
+
+\underline{Несколько требований.}
+
+(28) а) $\mathbb Z(\text{отр. число})_M=0$
+
+б) $\mathbb Z(0)_M=\mathbb Z$
+
+в) $\mathbb Z(1)_M=\mathcal O^*[-1]$
+
+г)
+\begin{equation*}
+\mathbb Z(2)_M=(\mathbb Z(2)_M^1\longrightarrow
+\underset{\substack{\Vert\\\wedge^2(\mathcal O^*)}}{\mathbb Z(2)_M^2}
+\qquad\text{(с точн. до 2-кручения)}
+\end{equation*}
+\Unclear{GELFAND-P001382}{eq28-parenthesis}{После второго члена внешняя круглая скобка не видна.}
+\begin{equation*}
+i\ge1:\ H^j(\mathbb Z(i)_M)=0\quad\text{при }j\notin[1,i]\tag{29}
+\end{equation*}
+\begin{equation*}
+H^i(\mathbb Z(i)_M)=\mathcal K_i^{\mathrm{Milnor}}
+\qquad\text{(пучок $K$-функторов Милнора)}\tag{30}
+\end{equation*}
+\underline{$K$-функтор Милнора.}
+
+Для гладкого мн-зия (алгебраич.) это пучки.
+
+(31) а) $\mathcal K_0^{\mathrm{Mil}}=\mathbb Z$,
+
+б) $\mathcal K_1^{\mathrm{Mil}}=\mathcal O^*$.
+
+в) [На левом поле: (соотн. Стейнберга).]
+пусть $t\in\mathcal O^*$ и $1-t\in\mathcal O^*$, тогда
+\begin{equation*}
+\overset{\substack{\text{символ Стейнберга}\\\swarrow}}
+{\underbrace{\{t,1-t\}}_{\text{произвед. в алгебре Милнора}}}=0
+\end{equation*}
+\Unclear{GELFAND-P001382}{milnor-degree}{$\mathcal K_0^{\mathrm{Mil}}$ / $\mathcal K_\circ^{\mathrm{Mil}}$ / $\mathcal K_\bullet^{\mathrm{Mil}}$}
+$=$ своб. градуир. алгебра с обр.
+[зачеркнуто: $\mathcal O^*$]
+$\mathcal O^*=\mathcal K_1^{\mathrm{Mil}}$ и соотн. Стейнберга.
+
+$\{ab,c\}=$ [зачеркнуто:
+\Unclear{GELFAND-P001382}{bottom-product-cancellation}{$\{a,c\}\{b,c\}$ / $\{a,c\}+\{b,c\}$}]
+$?$.
+
+[Справа:] $\{\ \}$ — сложение.
+
+\SourcePage{GELFAND-P001383}{69}
+(32) Операция $\{\ \}$ суперкоммутативна в $\mathcal K^{\mathrm{Mil}}$.
+
+В (28) г)
+
+[На левом поле зачеркнут номер: \Unclear{GELFAND-P001383}{cancelled-number}{(33)?}.]
+[Зачеркнута вся строка:
+$\mathbb Z(2)_M^1=\mathbb Z[\mathbb P^1(X)]$.]
+\begin{equation*}
+\mathbb Z(2)_M^1=
+\mathbb Z[(\mathbb P^1\setminus\{0,1,\infty\})(X)]/(\text{соотнош.})
+\tag{33}
+\end{equation*}
+[От выражения с $\mathbb P^1$ вниз проведена линия к приписке:]
+пучок ф-й на $X$, не приним. знач. $0,1,\infty$.
+
+Дифференциал:
+\begin{equation*}
+\begin{aligned}
+\mathbb Z(2)_M^1&\longrightarrow\mathbb Z(2)_M^2\\
+t&\longmapsto t\wedge(1-t)
+\end{aligned}\tag{34}
+\end{equation*}
+Соотношение из сообр., что лежит в ядре симв. Ст.
+
+(5-чл. соотношение для дилогарифма)
+
+Пусть $f,g$ — 2 ф-и, нигде не равные друг другу и не приним. значений $0,1,\infty$.
+\begin{equation*}
+(f,g,0,1,\infty)\tag{35}
+\end{equation*}
+(36) \underline{5 разных точек на} $\mathbb P^1$;
+\underline{выбрасывая по 1-му, получим 5 двойных}
+\underline{отнош. и надо взять их знакоперем.}
+\Unclear{GELFAND-P001383}{eq36-abbreviation}{ф-ю};
+это и есть 5-чл. соотн.
+
+Вместо этого можно взять 5 независ. ф-й.
+
+(37) \underline{Утв.} Соотн. (36) лежит в ядре дифференциала.
+
+Впервые придумали Спенсер, Блох; Суслин установил связь с $K$-теорией.
+
+Комплекс наз. комплексом Блоха — Суслина.
+
+Надо построить отобр.
+\begin{equation*}
+\mathcal E\longmapsto c_2(\mathcal E)_M\in H^4(X,\mathbb Z(2)_M)\tag{38}
+\end{equation*}
+[В (38) между $c_2(\mathcal E)_M$ и знаком $\in$ зачеркнуто:
+\Unclear{GELFAND-P001383}{eq38-cancellation}{неразборчивый математический фрагмент}.]
+
+и ф-ю
+\begin{equation*}
+\mathbb Z(2)_M\longrightarrow\mathbb Z(2)_{\mathcal D}\tag{39}
+\end{equation*}
+
+\SourcePage{GELFAND-P001384}{unlabelled}
+Построим отобр. (39).
+
+(40)
+\begin{equation*}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzcd}[column sep=large,row sep=large]
+&\mathbb Z(2)_M^1\arrow[r]\arrow[d,"\mathrm{dilog}"]
+&\mathbb Z(2)_M^2\arrow[d]\\
+\mathbb Z\arrow[r]&\mathcal O\arrow[r]&\Omega^1
+\end{tikzcd}
+\end{adjustbox}
+\end{equation*}
+[Справа от схемы:]
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tikzpicture}
+\node (upper) at (0,1.2) {$f\wedge g$};
+\node (lower) at (0,-0.25) {$\frac12(\log f\,d\log g-\log g\,d\log f)$};
+\draw[->] (0,0.85)--(0,0.15);
+\draw (-0.12,0.85)--(0.12,0.85);
+\end{tikzpicture}
+\end{adjustbox}
+\end{center}
+\underline{Класс Черня.}
+\begin{equation*}
+\mathcal E\longmapsto c_2(\mathcal E)_M\in H^4(X,\mathbb Z(2)_M),\tag{41}
+\end{equation*}
+$\dim\mathcal E=2$, $\{U_i\}$, $s_i$ — сечение $\mathcal E$ над $U_i$.
+
+2 компоненты.
+\begin{equation*}
+c_2(\mathcal E)_M^2\in C^2(\{U_i\},\mathbb Z(2)_M^2)
+\end{equation*}
+\begin{equation*}
+c_2(\mathcal E)_M^1\in C^3(\{U_i\},\mathbb Z(2)_M^1)
+\end{equation*}
+$(s_1,\ldots,s_4)$ — 4 сечения $\mathcal E$.
+
+Рассм. 4 точки $\mathbb P(\mathcal E)\ni s_1,\ldots,s_4$.
+
+и т. д.
+
+[Зачеркнуто: \Unclear{GELFAND-P001384}{bottom-cancellation}{двойное отнош.}.]
+
+Строится с пом. двойного отношения.
+
+
+
+\end{document}
