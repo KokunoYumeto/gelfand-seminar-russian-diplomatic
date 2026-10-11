@@ -1,0 +1,708 @@
+\EnglishSourceFrame{GELFAND-P001359}{unlabelled}
+\underline{23.3.87}\qquad \underline{Gelfand seminar.}
+
+\underline{\underline{V. E. Zakharov.}}\qquad \underline{$\bar{\partial}$-problems and integrable systems.}
+
+Construction of integrable equations by the inverse-problem method.
+(actually neither integrable nor by the inverse-problem method)
+
+1973\quad A. B. Shabat formulated the dressing method.
+
+Nonlinear equations are considered as compatibility conditions for overdetermined linear systems
+\begin{equation*}
+u_t+6uu_x+u_{xxx}=0\qquad (\text{KdV}) \tag{1}
+\end{equation*}
+--- the compatibility condition for the equations
+\begin{equation*}
+\begin{cases}
+\psi_{xx}+u\psi=k^2\psi,\\
+\psi_t=4\psi_{xxx}+6u\psi_x+3u_x\psi.
+\end{cases} \tag{2}
+\end{equation*}
+\EnglishUnclear{GELFAND-P001359}{eq2-signs}{The signs in (1), (2) and the exponent in (7) are retained as written in the manuscript; their consistency requires checking.}
+
+The method consists in considering the equation
+\begin{equation*}
+F(x+z,t)+\int K(x,s,t)F(s+z,t)\,ds+K(x,z,t)=0. \tag{3}
+\end{equation*}
+[In the arguments of $K$, plus signs $+$ are crossed out, with commas placed beneath them. The letters $K$ and $F$ under the integral are written over earlier writing:
+\EnglishUnclear{GELFAND-P001359}{eq3-overwriting}{the original letters are illegible}.]
+
+for any function $F$ for which
+\begin{equation*}
+\frac{\partial}{\partial t}F(\xi,t)=8\frac{\partial^3F}{\partial\xi^3}. \tag{4}
+\end{equation*}
+In (3), the integral is understood in one of three ways:
+\begin{equation*}
+\int=\int_x^\infty\quad\text{or}\quad\int_{-\infty}^x
+\quad\text{or}\quad
+\frac12\left(\int_x^\infty\ldots-\int_{-\infty}^x\ldots\right). \tag{5}
+\end{equation*}
+Then
+\begin{equation*}
+u=2\frac{d}{dx}K(x,x,t)\quad\text{--- a solution of (1)}. \tag{6}
+\end{equation*}
+Taking
+\begin{equation*}
+\psi_0(x,t)=e^{ikx+4ik^3t}, \tag{7}
+\end{equation*}
+and then
+\begin{equation*}
+\psi=\psi_0(x)+\int K(x,s)\psi_0(s)\,ds, \tag{8}
+\end{equation*}
+we obtain [crossed out: \EnglishUnclear{GELFAND-P001359}{after-eq8-cancelled}{illegible, possibly $\psi$}]
+--- a solution of [inserted above the line: the system] (2), from which $u$ is found.
+
+Consider also more general functions $F$ satisfying the equations
+\begin{equation*}
+\begin{cases}
+\dfrac{\partial^2F}{\partial x^2}-\dfrac{\partial^2F}{\partial z^2}=0,\\[6pt]
+\dfrac{\partial F}{\partial t}=4\left(\dfrac{\partial^3F}{\partial x^3}+\dfrac{\partial^3F}{\partial z^3}\right).
+\end{cases} \tag{9}
+\end{equation*}
+
+
+\par\smallskip\noindent\textit{Reading notes.}\par
+\noindent\texttt{GELFAND-0148-U001} (eq2-signs): In (1), the signs before 6uu\_x and u\_xxx are plus signs; (2) reads psi\_xx+u psi=k\textasciicircum{}2 psi and psi\_t=4 psi\_xxx+6u psi\_x+3u\_x psi. In (7), region [400,2320,1160,2480], the exponent is ikx+4ik\textasciicircum{}3t.\par
+Candidates: The literal writing of (1), (2) and (7), with the visible plus signs. Unresolved in the diplomatic source.\par
+For u=0, the function in (7) gives psi\_xx=-k\textasciicircum{}2 psi and psi\_t=+4ik\textasciicircum{}3 psi, whereas 4 psi\_xxx=-4ik\textasciicircum{}3 psi. This is an internal mathematical check, not a correction to the source. The sign contradiction is retained. \par
+\noindent\texttt{GELFAND-0148-U002} (eq3-overwriting): In (3), the first K and following F are retraced or corrected with dense strokes. Between x and s, and between x and z, crossed-out plus signs have commas beneath them.\par
+Candidates: Originally F beneath the final K and K beneath the final F; The original letters are illegible. Unresolved in the diplomatic source.\par
+The final writing K(x,s,t)F(s+z,t) and K(x,z,t) is readable; the underlying letters have not been recovered. An interchange of letters is not asserted.\par
+\noindent\texttt{GELFAND-0148-U003} (after-eq8-cancelled): After "we obtain" and before the dash, there is short densely crossed-out writing.\par
+Candidates: psi; an illegible crossed-out symbol. Unresolved in the diplomatic source.\par
+The individual strokes do not permit confident recovery of the cancelled writing.\par
+
+
+\EnglishSourceFrame{GELFAND-P001360}{24}
+Then everything still holds as before.
+
+\underline{Generalization.} [Wavy underlining.] In place of $(9)_1$, write:
+\begin{equation*}
+\frac{\partial^2F}{\partial x^2}-\frac{\partial^2F}{\partial z^2}
+=\alpha\frac{\partial F}{\partial y}. \tag{10}
+\end{equation*}
+Then
+\begin{equation*}
+\begin{cases}
+\psi_{xx}+u\psi=\alpha\dfrac{\partial\psi}{\partial y},\\[4pt]
+\psi_t=4\psi_{xxx}+6u\psi_x+3u_x\psi
+\end{cases} \tag{11}
+\end{equation*}
+\EnglishUnclear{GELFAND-P001360}{eq11-coefficient}{The coefficient of $\partial\psi/\partial y$: $\alpha$ or $2$.}
+
+and for $u$ we obtain:
+\begin{equation*}
+\frac{\partial}{\partial x}\left[u_t+6uu_x+u_{xxx}\right]=3\alpha^2u_{yy}. \tag{12}
+\end{equation*}
+$y$ becomes a new parameter in (3).
+
+This was in the 1974 paper of Zakharov--Shabat.
+
+The third integral in (5) is defined when the function decays in both directions.
+However, one may [crossed out:
+\EnglishUnclear{GELFAND-P001360}{before-eq13-short-cancelled}{an illegible beginning of a word}]
+understand the integral differently:
+
+[Crossed out on the line below:
+\EnglishUnclear{GELFAND-P001360}{before-eq13-words-cancelled}{illegible; possibly "as Fourier"}.]
+\begin{equation*}
+\int e^{\lambda x}\,dx=\frac1\lambda e^{\lambda x}\qquad\text{and so on} \tag{13}
+\end{equation*}
+We shall understand the integral in the third way in (5).
+Introduce the function $T$ by the formula
+\begin{equation*}
+F(x,z)=\frac1{2\pi}\iint
+T(\lambda',\bar\lambda',\lambda,\bar\lambda,t,y)
+ e^{i(\lambda'x-\lambda z)}\,d\lambda'\,d\bar\lambda'\,d\lambda\,d\bar\lambda. \tag{14}
+\end{equation*}
+[Crossed out after $\bar\lambda'$:
+\EnglishUnclear{GELFAND-P001360}{eq14-cancelled-argument}{an illegible symbol}.
+The arguments $t,y$ are inserted above the line before the closing parenthesis.]
+
+and define the function $K$ as
+\begin{equation*}
+K(x,z)=-\frac1{2\pi}\int K(\lambda,\bar\lambda,x,t,y)
+ e^{i\lambda(x-z)}\,d\lambda\,d\bar\lambda. \tag{15}
+\end{equation*}
+[On the left-hand side, the second argument is overwritten:
+\EnglishUnclear{GELFAND-P001360}{eq15-overwritten-argument}{the final $z$; the earlier writing is illegible}.
+The arguments $t,y$ on the right are inserted above the line.]
+
+This is a way to find growing solutions of the G.-L.-M. equation.
+
+If $K$ and $F$ satisfy the integral equation, everything is in order
+(using convention (13)).
+
+[Crossed out: $\chi(x,y)$.] Set:
+\begin{equation*}
+\chi(\lambda,\bar\lambda,x,y,t)=1+\frac1{2\pi i}
+\int\frac{K(\eta,\bar\eta,x,y,t)}{\lambda-\eta}\,d\eta\,d\bar\eta. \tag{16}
+\end{equation*}
+Here:
+\begin{equation*}
+\frac1{\lambda-\eta}=\lim_{\varepsilon\to0}
+\frac{\bar\lambda-\bar\eta}{|\lambda-\eta|^2+\varepsilon^2}. \tag{17}
+\end{equation*}
+Write the equation:
+
+
+\par\smallskip\noindent\textit{Reading notes.}\par
+\noindent\texttt{GELFAND-0148-U004} (eq11-coefficient): Before the y derivative of psi in the first line of (11), a sign has a small upper loop and crossing lower strokes; it resembles both alpha and 2.\par
+Candidates: alpha; 2. Unresolved in the diplomatic source.\par
+Alpha is readable in (10) and (12), making alpha contextually likely without resolving the graphical ambiguity in (11). The formula displays the candidate alpha with an explicit marker; this is not a correction.\par
+\noindent\texttt{GELFAND-0148-U005} (before-eq13-short-cancelled): Between "differently" and "understand", a short beginning of a word is crossed out.\par
+Candidates: ob; op; illegible. Unresolved in the diplomatic source.\par
+The earlier writing has not been recovered.\par
+\noindent\texttt{GELFAND-0148-U006} (before-eq13-words-cancelled): Beneath the line beginning "However, one may...", two short words are crossed out. The second has a loop resembling the Cyrillic letter Ф and a descender.\par
+Candidates: as Fourier; by Fourier; two illegible words. Unresolved in the diplomatic source.\par
+Both verbal candidates are conjectural; the crossed-out text has not been silently omitted.\par
+\noindent\texttt{GELFAND-0148-U007} (eq14-cancelled-argument): In (14), between the arguments lambda-bar-prime and lambda, a cancelled symbol is crossed by several slanted strokes.\par
+Candidates: lambda; chi; an illegible symbol. Unresolved in the diplomatic source.\par
+Analysis of the arguments of T does not recover the cancelled symbol; it is recorded separately from the final formula.\par
+\noindent\texttt{GELFAND-0148-U008} (eq15-overwritten-argument): On the left-hand side of (15), the second argument of K is densely retraced. The final z is visible, with additional strokes beneath it.\par
+Candidates: z over x; a retraced z. Unresolved in the diplomatic source.\par
+The final z is preserved; the original writing is not asserted.\par
+
+
+\EnglishSourceFrame{GELFAND-P001361}{unlabelled}
+\begin{equation*}
+\frac{\partial\chi}{\partial\bar\lambda}
+=\int\chi(\eta,\bar\eta,x_i)T(\eta,\bar\eta,\lambda,\bar\lambda,x_i)\,d\eta\,d\bar\eta. \tag{18}
+\end{equation*}
+\begin{equation*}
+x_i=(x,y,t)
+\end{equation*}
+This is equivalent to the original approach.
+
+\underline{The dressing method in the language of $\bar\partial$-problems.}
+\EnglishUnclear{GELFAND-P001361}{heading-ending}{The heading ending reads "zadach." or "zadachi." [different Russian endings for "problem(s)"].}
+
+Let $T$ satisfy the system.
+\begin{equation*}
+\begin{cases}
+\dfrac{\partial T}{\partial x}=-i(\lambda-\eta)T,\\[5pt]
+\dfrac{\partial T}{\partial y}=-\alpha(\lambda^2-\eta^2)T,\\[5pt]
+\dfrac{\partial T}{\partial t}=-4(\lambda^3-\eta^3)T,
+\end{cases} \tag{19}
+\end{equation*}
+from which
+\begin{equation*}
+T=T_0(\eta,\bar\eta,\lambda,\bar\lambda)
+ e^{-i(\lambda-\eta)x-\alpha(\lambda^2-\eta^2)y-4(\lambda^3-\eta^3)t}. \tag{20}
+\end{equation*}
+In place of (19), one may introduce $x=x_i=(x_1,x_2,x_3)$ and the functions
+
+$K_i(\lambda)$ and $I_i(\lambda)$:
+
+[Crossed out in (21):
+\EnglishUnclear{GELFAND-P001361}{eq21-cancelled}{possibly $[K_i(\lambda),K_i(\eta)]=0$; the subscripts are uncertain}.]
+\begin{equation*}
+[I_i(\lambda),I_j(\eta)]=0. \tag{21}
+\end{equation*}
+\begin{equation*}
+\frac{\partial T}{\partial x_i}=I_i(\eta)T-TI_i(\lambda). \tag{22}
+\end{equation*}
+In the example
+\begin{equation*}
+I_1=i\lambda,\quad I_2=\alpha\lambda^2,\quad I_3=4\lambda^3. \tag{23}
+\end{equation*}
+\EnglishUnclear{GELFAND-P001361}{time-coefficient}{In (19), (20) and (23), the coefficient of the cubic powers is written as $4$, without $i$; this is preserved.}
+
+Now solve the nonlocal $\bar\partial$-problem (18), with the normalization condition $\chi(\infty)=1$.
+
+Let
+\begin{equation*}
+\chi=1+\frac{\chi_0(x,y,t)}{\lambda}+\ldots \tag{24}
+\end{equation*}
+[Crossed out in the numerator, before $x,y,t$:
+\EnglishUnclear{GELFAND-P001361}{eq24-cancelled-argument}{an illegible argument, possibly $\lambda$}.]
+
+Then
+\begin{equation*}
+u=2i\frac{\partial\chi_0}{\partial x} \tag{25}
+\end{equation*}
+satisfies [crossed out:
+\EnglishUnclear{GELFAND-P001361}{eq25-cancelled-word}{possibly "formula" [source abbreviation]}]
+the KP equation: (12).
+
+
+\par\smallskip\noindent\textit{Reading notes.}\par
+\noindent\texttt{GELFAND-0148-U009} (heading-ending): The last word of the underlined heading after d-bar has an ending in which the last stroke of ch is difficult to distinguish from an additional i.\par
+Candidates: zadach.; zadachi. Unresolved in the diplomatic source.\par
+The grammatical preference for the plural is not treated as resolution of the graphical doubt.\par
+\noindent\texttt{GELFAND-0148-U010} (eq21-cancelled): To the left of the final commutator (21), a commutator of two K entries with arguments lambda and eta, an equality sign and a final digit are crossed out. Strokes cross the subscripts.\par
+Candidates: [K\_i(lambda),K\_i(eta)]=0; [K\_i(lambda),K\_j(eta)]=0. Unresolved in the diplomatic source.\par
+In both K entries the clearest subscript resembles i; replacement of the second by j by analogy with the final formula is not asserted.\par
+\noindent\texttt{GELFAND-0148-U011} (time-coefficient): The third line of (19) visibly has the coefficient -4 without i. The same occurs in the exponent (20), region [1510,1310,1810,1450], and in I\_3=4 lambda\textasciicircum{}3 in (23), region [1135,2400,1420,2530].\par
+Candidates: -4(lambda\textasciicircum{}3-eta\textasciicircum{}3) in (19),(20); I\_3=4 lambda\textasciicircum{}3 in (23). Unresolved in the diplomatic source.\par
+Formulas (19),(20),(22),(23) agree with one another, but the connection of the time normalization to (7),(14) and the claimed KP equation (12) requires separate checking. No factor i was added from mathematical expectation.\par
+\noindent\texttt{GELFAND-0148-U012} (eq24-cancelled-argument): After the opening parenthesis of chi\_0 and before x,y,t, an additional argument is densely crossed out.\par
+Candidates: lambda; eta; an illegible argument. Unresolved in the diplomatic source.\par
+The remaining arguments x,y,t are readable; the cancelled sign has not been recovered.\par
+\noindent\texttt{GELFAND-0148-U013} (eq25-cancelled-word): Between "satisfies" and "the equation", a short word or abbreviation is crossed out; its first letter has a descender.\par
+Candidates: formula [abbreviated]; function [abbreviated]; illegible. Unresolved in the diplomatic source.\par
+The conjectural "formula" abbreviation is not asserted as an established reading.\par
+
+
+\EnglishSourceFrame{GELFAND-P001362}{25}
+(26)\quad \underline{Main assertion:} [Wavy underlining.]
+
+For $K_j$, one may take any three commuting rational matrix-valued functions.
+
+One may also take functions on a Riemann surface.
+
+(27)\quad \underline{New proposal.} [Wavy underlining.]
+
+take $K_i(\lambda)$ to be commuting differential operators with coefficients rational in $\lambda$.
+\begin{equation*}
+L_i=\frac{\partial}{\partial x_i}+K_i(\lambda)+f_i(\lambda)\frac{\partial}{\partial\lambda}. \tag{28}
+\end{equation*}
+[A bracket beneath $f_i(\lambda)$ has the caption: scalar functions, rational, with freely moving \EnglishUnclear{GELFAND-P001362}{eq28-caption-ending}{poles [genitive ending] / poles [instrumental ending]}.]
+
+(29)\quad $[L_i,L_j]=0\ \Rightarrow$ conditions on $K_i$ in which the number of equations =
+\newline
+= the number of unknowns.
+
+Many of the resulting equations are new (if everything has variable coefficients)
+
+The same can be done on an elliptic curve.
+
+In the work of Belinsky/Zakharov (1978), a special case is gravitation.
+
+\underline{New this year:}
+\begin{equation*}
+L_i=\frac{\partial}{\partial x_i}+M_i\left(\lambda,\frac{\partial}{\partial\lambda}\right). \tag{30}
+\end{equation*}
+\begin{equation*}
+[L_i,L_j]=0\quad\Longleftrightarrow\quad[M_i,M_j]=0. \tag{31}
+\end{equation*}
+(32)\quad \underline{Example:} [Wavy underlining.]
+\begin{equation*}
+\begin{gathered}
+M_1=I\frac{\partial}{\partial\lambda}+\frac A\lambda,
+\qquad I^2=1,\quad A^2=-1,\quad IA+AI=0;\\[4pt]
+M_2=M_1\frac{\partial}{\partial\lambda}+\frac C{\lambda^2},
+\qquad C=-\frac12(I+A).
+\end{gathered}
+\end{equation*}
+[On the right, beyond a vertical line:]
+
+($I,A$ are matrices, for example,
+\begin{equation*}
+I=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
+A=\begin{pmatrix}0&i\\i&0\end{pmatrix}
+\end{equation*}
+\EnglishUnclear{GELFAND-P001362}{eq32-matrix-a}{The off-diagonal entries of $A$: $i,i$ or $1,1$.})
+
+\begin{equation*}
+L_1=\frac{\partial}{\partial x_1}+M_1,\qquad
+L_2=\frac{\partial}{\partial x_2}+M_1^2,\qquad
+L_3=\frac{\partial}{\partial x_3}+M_2.
+\end{equation*}
+A large amount of calculation is needed.
+
+Finding solutions of the equations:
+\begin{equation*}
+L_i y=0. \tag{33}
+\end{equation*}
+
+
+\par\smallskip\noindent\textit{Reading notes.}\par
+\noindent\texttt{GELFAND-0148-U014} (eq28-caption-ending): The last word of the caption beneath f\_i(lambda), following "with freely moving", ends with dense strokes resembling "ov"; the beginning "polyus" (pole) is readable.\par
+Candidates: poles [genitive ending]; poles [instrumental ending]. Unresolved in the diplomatic source.\par
+The grammatically expected instrumental ending is not substituted for the possible genitive ending. The text ends before the image edge; this is not loss at the edge.\par
+\noindent\texttt{GELFAND-0148-U015} (eq32-matrix-a): Both off-diagonal signs in A have a slanted upper part and a lower horizontal stroke; a separate dot on i is unclear and merges with the paper grid. A\textasciicircum{}2=-1 is explicitly written nearby.\par
+Candidates: A=((0,i),(i,0)); A=((0,1),(1,0)). Unresolved in the diplomatic source.\par
+The i candidate gives A\textasciicircum{}2=-1 and, with I=diag(1,-1), satisfies IA+AI=0; the 1 candidate gives A\textasciicircum{}2=+1. This check supports i without resolving the graphical doubt. The body explicitly marks i as a candidate. Under the abstract identities I\textasciicircum{}2=1, A\textasciicircum{}2=-1 and IA+AI=0, the example commutator of M\_1 and M\_2 vanishes; no corrected matrix is asserted.\par
+
+
+\EnglishSourceFrame{GELFAND-P001363}{unlabelled}
+Start with the G.-L.-M. integral equations in $\lambda$, take $n$-soliton solutions, and degenerate them into rational ones.
+
+\begin{center}
+\begin{tikzcd}
+M_i(\lambda,\frac{\partial}{\partial\lambda},x_i)\arrow[d]\\
+M_i^0(\frac{\partial}{\partial\lambda})
+\end{tikzcd}
+\end{center}
+construct $K(\lambda,\lambda',x_i)$ and $F(\lambda,\lambda',x_i)$
+
+and then \EnglishUnclear{GELFAND-P001363}{after-diagram-verb}{it remains / it remained}
+to construct rational solutions.
+
+Dissipative systems are also included here.
+
+The next generalization:
+\begin{equation*}
+L_i=R_i\left(\lambda,\frac{\partial}{\partial\lambda}\right)
+\frac{\partial}{\partial x_i}
+-M_i\left(\lambda,\frac{\partial}{\partial\lambda}\right). \tag{34}
+\end{equation*}
+\EnglishUnclear{GELFAND-P001363}{eq34-number}{The number (34) has superimposed strokes.}
+
+\underline{\underline{A. A. Migdal.}}
+
+\underline{Another meaning of}
+[crossed out: \EnglishUnclear{GELFAND-P001363}{title-cancelled}{an illegible short beginning}]
+\underline{the evaluation of matrix integrals and the passage}
+\newline
+\underline{from matrix integrals to continuum integrals}
+
+["matrix" is inserted above the line before "integrals".]
+
+A noncommutative analogue of
+\EnglishUnclear{GELFAND-P001363}{analog-phrase}{possibly Karasev's symbol}.
+
+(Operators directly, in place of $N\times N$ matrices)
+\begin{equation*}
+\int dA\,\exp\left(-\frac N\lambda\operatorname{tr}V(A)\right),
+\qquad A^+=-A,\quad N\to\infty. \tag{1}
+\end{equation*}
+[Callout from $V(A)$: a polynomial in $A$ (arbitrary); these integrals are evaluated exactly as $N\to\infty$.]
+
+\underline{A way to evaluate them.} [Wavy underlining.] Consider
+\begin{equation*}
+\psi(t)=\frac1N\operatorname{tr}(\exp(At)) \tag{2}
+\end{equation*}
+and derive the equation of motion (Schwinger--Dyson). Clearly,
+\begin{equation*}
+0=\int dA\,\frac1{N^2}\operatorname{tr}\left(
+\frac{\partial}{\partial A}\left[e^{At}
+\exp\left(-\frac N\lambda\operatorname{tr}V(A)\right)\right]\right). \tag{3}
+\end{equation*}
+[Crossed out between $e^{At}$ and $\exp$:
+\EnglishUnclear{GELFAND-P001363}{eq3-cancelled-brackets}{a bracket or several brackets}.]
+
+(the integral of a total derivative $=0$). This is equivalent to
+\begin{equation*}
+0=\int_0^t d\tau\,\psi(\tau)\psi(t-\tau)
+-\frac1\lambda V'\left(\frac{\partial}{\partial t}\right)\psi(t), \tag{4}
+\end{equation*}
+\begin{equation*}
+R(\omega)=\psi^2(\omega)-\frac1\lambda V'(\omega)\psi(\omega). \tag{5}
+\end{equation*}
+
+The object of interest is the expectation $\langle f(A)\rangle$ defined by the integral, rather than the integral itself.
+\begin{equation*}
+\langle f(A)\rangle=
+\frac{\int dA\,\exp(\ldots)f(A)}{\int dA\,\exp(\ldots)} \tag{6}
+\end{equation*}
+[On the right:]
+
+($f(A)$ is some invariant function ---
+\newline
+--- a function of the eigenvalues
+
+
+\par\smallskip\noindent\textit{Reading notes.}\par
+\noindent\texttt{GELFAND-0148-U016} (after-diagram-verb): The word between "and then" and "construct" has a joined ending; its stem "osta..." is readable.\par
+Candidates: it remains; it remained. Unresolved in the diplomatic source.\par
+Neither a grammatical correction nor a confident reading of the ending was introduced.\par
+\noindent\texttt{GELFAND-0148-U017} (eq34-number): The number (34) is readable to the left of the formula, with slanted and descending strokes over its digits.\par
+Candidates: (34), retraced number; (34), crossed-out or corrected number. Unresolved in the diplomatic source.\par
+The value 34 is preserved; the purpose of the additional strokes is not established.\par
+\noindent\texttt{GELFAND-0148-U018} (title-cancelled): In Migdal's heading, after "Another meaning" and before "evaluation", a short beginning is crossed by several horizontal strokes.\par
+Candidates: po; pod; illegible. Unresolved in the diplomatic source.\par
+"Matrix" is inserted above the line; the final "continuum" was checked at 6x.\par
+\noindent\texttt{GELFAND-0148-U019} (analog-phrase): After "A noncommutative analogue", there are two words. The first resembles "symbol"; the second begins with capital K and has the outline of "Karasev".\par
+Candidates: Karasev's symbol; Karasev's meaning. Unresolved in the diplomatic source.\par
+Context or external biographical information did not replace the reading. At final comparison, the surname was compared with the clear "Karasev's method" on P001366; uncertainty in the preceding word remains.\par
+\noindent\texttt{GELFAND-0148-U020} (eq3-cancelled-brackets): After e\textasciicircum{}\{At\} in (3), a tall crossed-out sign resembles a closing bracket, possibly with an additional round parenthesis.\par
+Candidates: ]; ]); illegible brackets. Unresolved in the diplomatic source.\par
+The final outer round and square brackets are reproduced from the right-hand part of the line; the cancelled material is described separately.\par
+
+
+\EnglishSourceFrame{GELFAND-P001364}{26}
+I. M. G. \underline{Problem.}
+(T. \EnglishUnclear{GELFAND-P001364}{top-name}{Alekseevskaya / Aleksievskaya})
+(\EnglishUnclear{GELFAND-P001364}{top-parenthesis}{did [masculine] / did [feminine] / illegible})
+
+Given a cube (3-dimensional). Pass a plane through each three of its vertices. Into how many parts do they divide the cube?
+
+(\underline{Answer:} 96)
+
+The limit as $N\to\infty$ is the same for all classical groups:
+\begin{equation*}
+O(\infty)=SU(\infty)=SP(\infty). \tag{7}
+\end{equation*}
+\begin{equation*}
+0=\int dA\,\frac1{N^2}\frac{\partial}{\partial A_{ij}}
+\left\{(e^{At})^{ji}\exp\left(-\frac N\lambda\operatorname{tr}V(A)\right)\right\}. \tag{3'}
+\end{equation*}
+[Crossed out after $1/N^2$:
+\EnglishUnclear{GELFAND-P001364}{eq3-prime-cancelled}{possibly $\operatorname{tr}$}.]
+
+The formula used was:
+\begin{equation*}
+\frac{\partial}{\partial A_{ij}}(e^{At})_{ji}
+=\int_0^t d\tau\,(e^{A\tau})_{jj}(e^{A(t-\tau)})_{ii}. \tag{8}
+\end{equation*}
+Derivation: differentiate
+\begin{equation*}
+\prod(1+A\Delta t)=T\exp\left(\int A\,dt\right)
+\end{equation*}
+and obtain the integral (successively
+\EnglishUnclear{GELFAND-P001364}{proof-verb}{pulling out [abbreviated] / illegible}
+each matrix entry in its own place)
+
+Another formula from matrix theory that was used:
+\begin{equation*}
+\frac{\partial}{\partial A_{ij}}\operatorname{Tr}V(A)=(V'(A))_{ji}. \tag{9}
+\end{equation*}
+From (8) and (9), (4) follows:
+\begin{equation*}
+\begin{aligned}
+(e^{At})^{ji}\frac{\partial}{\partial A_{ij}}\operatorname{Tr}V(A)
+&={}\\
+&=(V'(A))_{ji}(e^{At})_{ij}
+=V'\left(\frac{\partial}{\partial t}\right)\operatorname{tr}(e^{At}).
+\end{aligned}
+\end{equation*}
+In (4), the expectation should have been written ($\int dA$ is omitted).
+
+It was stated that
+\begin{equation*}
+0=\int_0^t d\tau\,\langle\psi(\tau)\psi(t-\tau)\rangle
+-\frac1\lambda V'\left(\frac{\partial}{\partial t}\right)\langle\psi(t)\rangle. \tag{10}
+\end{equation*}
+
+
+\par\smallskip\noindent\textit{Reading notes.}\par
+\noindent\texttt{GELFAND-0148-U021} (top-name): In parentheses after "I. M. G. Problem", the initial T. and a surname beginning "Aleks..." and ending "...vskaya" are written; two middle vowels are joined.\par
+Candidates: T. Alekseevskaya; T. Aleksievskaya. Unresolved in the diplomatic source.\par
+The surname was not recovered from information about the seminar; the source writing is retained as candidates.\par
+\noindent\texttt{GELFAND-0148-U022} (top-parenthesis): After the surname, separate parentheses contain a short word with an unclear initial combination and an ending resembling "...lal" or "...lan".\par
+Candidates: did [masculine]; did [feminine]; done; illegible. Unresolved in the diplomatic source.\par
+This note belongs to the visible upper block and was not supplied from the catalogue. The answer 96 was checked separately at 8x in [600,305,755,435].\par
+\noindent\texttt{GELFAND-0148-U023} (eq3-prime-cancelled): Between 1/N\textasciicircum{}2 and the partial derivative, a crossed-out cluster of two narrow signs may be an earlier tr.\par
+Candidates: tr; illegible. Unresolved in the diplomatic source.\par
+The upper ji on the exponential in (3-prime) and lower ji,jj,ii in (8) are reproduced in their respective positions, without standardizing the indices.\par
+\noindent\texttt{GELFAND-0148-U024} (proof-verb): In the explanation of the product after "successively", an abbreviated word begins "vy..." and ends "...rg." or a similar combination.\par
+Candidates: pulling out [abbreviated]; illegible. Unresolved in the diplomatic source.\par
+The possible colloquial abbreviation for "pulling out" was not expanded to the complete Russian word or replaced by a mathematical explanation.\par
+
+
+\EnglishSourceFrame{GELFAND-P001365}{unlabelled}
+[Next, consider
+
+["Next" is inserted above the crossed-out
+\EnglishUnclear{GELFAND-P001365}{top-cancelled}{Now}.]
+\begin{equation*}
+\int\mathcal D A_\mu\,\exp\left(+\int d^4x\,\frac N\lambda
+\operatorname{tr}F_{\mu\nu}^2\right) \tag{11}
+\end{equation*}
+]
+
+Use the formula
+\begin{equation*}
+\left\langle\frac{\operatorname{tr}A}N\frac{\operatorname{tr}B}N\right\rangle
+=\left\langle\frac{\operatorname{tr}A}N\right\rangle
+\left\langle\frac{\operatorname{tr}B}N\right\rangle
++O\left(\frac1{N^2}\right). \tag{12}
+\end{equation*}
+Applying it, we obtain
+\begin{equation*}
+0=\int_0^t d\tau\,\langle\psi(\tau)\rangle\langle\psi(t-\tau)\rangle
+-\frac1\lambda V'\left(\frac{\partial}{\partial t}\right)\langle\psi(t)\rangle. \tag{13}
+\end{equation*}
+Now introduce the Laplace transform:
+\begin{equation*}
+f(\omega)=\int_0^\infty dt\,e^{-\omega t}\langle\psi(t)\rangle; \tag{14}
+\end{equation*}
+then, from (13) (convolution!)
+\newline
+[crossed out: a] we obtain the equation
+\begin{equation*}
+\underbrace{R(\omega)}_{\text{a polynomial in }\omega}
+=f^2(\omega)-\frac1\lambda V'(\omega)f(\omega) \tag{15}
+\end{equation*}
+or (taking jumps):
+\begin{equation*}
+0=2\operatorname{Im}f\left(\operatorname{Re}f-\frac1{2\lambda}V'(\omega)\right). \tag{16}
+\end{equation*}
+Here
+\begin{equation*}
+\operatorname{Im}f=\frac12\bigl(f(x+i0)-f(x-i0)\bigr). \tag{17}
+\end{equation*}
+But it is easy to see that
+\begin{equation*}
+f(\omega)=\frac1N\left\langle\operatorname{tr}\frac1{\omega-A}\right\rangle. \tag{18}
+\end{equation*}
+\begin{equation*}
+f^2(x+i0)-f^2(x-i0)=2\operatorname{Im}f\cdot\operatorname{Re}f. \tag{19}
+\end{equation*}
+\EnglishUnclear{GELFAND-P001365}{jump-normalization}{In (17), $1/2$ is written; in (19), the factor is $2$. The notation is preserved.}
+
+(20)\quad $f$
+\EnglishUnclear{GELFAND-P001365}{eq20-description}{analytically continues into the left half-plane / is completely represented in the left half-plane}.
+
+$f(\omega)$ has jumps at points in the spectrum of the operator $A$
+(this is \EnglishUnclear{GELFAND-P001365}{last-parenthesis}{an infinite [abbreviated] / a real [abbreviated]} matrix)
+
+
+\par\smallskip\noindent\textit{Reading notes.}\par
+\noindent\texttt{GELFAND-0148-U025} (top-cancelled): Beneath the word "Next", inserted above the line, a crossed-out word has a tall initial stroke and a final descending stroke, resembling "Now".\par
+Candidates: Now; illegible. Unresolved in the diplomatic source.\par
+The left square bracket before "Next" and the closing bracket after (11) are reproduced. The plus sign in the exponent of (11) was checked and not corrected.\par
+\noindent\texttt{GELFAND-0148-U026} (jump-normalization): In (17), Im f is defined as (1/2)(f(x+i0)-f(x-i0)); the denominator has no i. In (19), the difference of squares equals 2 Im f Re f.\par
+Candidates: literal coefficients 1/2 and 2; a special unspecified normalization of Im and Re; a possible authorial inaccuracy in the coefficient or notation. Unresolved in the diplomatic source.\par
+With the usual Re f=(f\_++f\_-)/2, definition (17) would give f\_+\textasciicircum{}2-f\_-\textasciicircum{}2=4 Im f Re f. Neither i nor the factor 4 was substituted in the text. The source may use another normalization, but none is explicitly defined on this page. Formula (16) is also retained literally.\par
+\noindent\texttt{GELFAND-0148-U027} (eq20-description): In line (20), two closely written words or abbreviations follow f, then "into/in the left... half-plane...". The word for "left" has dense superimposed strokes.\par
+Candidates: f analytically continues into the left half-plane; f is completely represented in the left half-plane. Unresolved in the diplomatic source.\par
+Only f, the preposition "in/into" and the stem "half-plane" are securely distinguishable; candidates for the remaining phrase are not asserted. An expected property of the resolvent was not substituted.\par
+\noindent\texttt{GELFAND-0148-U028} (last-parenthesis): In the final parentheses after "this is", a short abbreviation precedes "matrix"; a loop, an upper line and fine final strokes are visible.\par
+Candidates: infinite [abbreviated]; real [abbreviated]. Unresolved in the diplomatic source.\par
+Properties of A from preceding pages were not used to select a reading; contradictions were not removed.\par
+
+
+\EnglishSourceFrame{GELFAND-P001366}{27}
+Now the old (French) equation is obtained
+\begin{equation*}
+f(\omega)=\int\frac{\varrho(\lambda)\,d\lambda}{\omega-\lambda}. \tag{21}
+\end{equation*}
+\begin{equation*}
+f=\frac1{2\lambda}V'(\omega)+M(\omega)\sqrt{(\omega-a)(\omega-b)}. \tag{22}
+\end{equation*}
+[\underline{Zakharevich.}
+\begin{equation*}
+A(x)(B(x)-\alpha(x))=0,\qquad
+ iA(x)+B(x)\quad\text{analytically continues into }\operatorname{Im}x>0
+\end{equation*}
+and so on]
+
+Instead, one may solve the quadratic equation (15):
+\begin{equation*}
+f=\frac1{2\lambda}V'(\omega)-\sqrt{\left(\frac{V'}{2\lambda}\right)^2-R}. \tag{23}
+\end{equation*}
+[Callout to $R$: the polynomial is chosen!]
+\EnglishUnclear{GELFAND-P001366}{eq23-radicand}{The expression under the radical is written with $-R$.}
+\begin{equation*}
+f(\omega)\underset{\omega\to\infty}{\longrightarrow}
+\frac1\omega-M(\omega)\sqrt{(\omega-a)(\omega-b)} \tag{24}
+\end{equation*}
+[Above the final expression: (from satisfaction of the boundary conditions).]
+\EnglishUnclear{GELFAND-P001366}{eq24-asymptotic}{The right-hand side following the arrow is preserved in full, including $-M(\omega)\sqrt{(\omega-a)(\omega-b)}$.}
+
+[Crossed-out line:
+\EnglishUnclear{GELFAND-P001366}{crossed-heading}{Next, the problem / This equation / illegible}.]
+
+For field theory, Karasev's method does not work:
+
+[crossed out: \EnglishUnclear{GELFAND-P001366}{short-crossed}{ur [unexpanded abbreviation] / when}]
+the components do not commute and cannot be brought simultaneously to diagonal form.
+
+Consider the integral (11).
+\begin{equation*}
+A_\mu(x):\ \longrightarrow\ W(c)=\frac1N\operatorname{tr}
+ P\exp\left(\oint_c A_\mu\,dx_\mu\right) \tag{25}
+\end{equation*}
+and repeat the same reasoning
+
+$F_{\mu\nu}$ is a tensor in $\mu,\nu$ and a matrix in the Lie algebra of $SU(N)$.
+\begin{equation*}
+x_\mu=u_\mu(t),\qquad t\in(0,2\pi)
+\end{equation*}
+\EnglishUnclear{GELFAND-P001366}{curve-parameter}{The letter on the right of the equality: $u_\mu(t)$ or $x_\mu(t)$.}
+\begin{equation*}
+\int A_\mu(x(t))\dot x_\mu\,dt
+\end{equation*}
+\begin{equation*}
+\sim\exp At\qquad\text{earlier}
+\end{equation*}
+A chain of identities: $\ldots$
+
+
+\par\smallskip\noindent\textit{Reading notes.}\par
+\noindent\texttt{GELFAND-0148-U029} (eq23-radicand): In (23), the sign before the radical is minus; its radicand is (V-prime/(2 lambda))\textasciicircum{}2-R. In the preceding frame, (15) reads R=f\textasciicircum{}2-V-prime f/lambda.\par
+Candidates: literal reading of (23): minus R; a possible change in the sign convention for R or a source error. Unresolved in the diplomatic source.\par
+The vertical stroke belongs to the grid. Quadratic equation (15), with its written definition of R, gives the radicand (V-prime/(2 lambda))\textasciicircum{}2+R. This plus was not inserted into the body. A nearby callout "the polynomial is chosen!" points to R.\par
+\noindent\texttt{GELFAND-0148-U030} (eq24-asymptotic): After the arrow with omega tending to infinity beneath it, the consecutive expression is 1/omega-M(omega)sqrt((omega-a)(omega-b)). Above the second part is the caption "from satisfaction of the boundary conditions".\par
+Candidates: the whole right-hand side belongs to the arrow; the condition f(omega) tends to 1/omega, followed by a separately added term containing M. Unresolved in the diplomatic source.\par
+No visible separator lies between 1/omega and the minus, so the M term is retained in this formula rather than moved to (22). The meaning of the asymptotic condition remains unspecified.\par
+\noindent\texttt{GELFAND-0148-U031} (crossed-heading): Before "For field theory", an entire two-word line is crossed out; the first word begins with D and the second has a low initial loop.\par
+Candidates: Next, the problem; This equation; illegible. Unresolved in the diplomatic source.\par
+These candidates are not a recovered heading; the cancelled source line is represented explicitly as crossed out.\par
+\noindent\texttt{GELFAND-0148-U032} (short-crossed): Before "the components", a short crossed-out combination has a long lower stroke.\par
+Candidates: ur [unexpanded abbreviation]; when; illegible. Unresolved in the diplomatic source.\par
+The remaining text about noncommuting components, simultaneous reduction and diagonal form was read separately at 5x and 6x.\par
+\noindent\texttt{GELFAND-0148-U033} (curve-parameter): In the parametrization x\_mu=...\_mu(t), the letter on the right consists of two thin slanted strokes resembling u; x(t) appears below in the argument of A.\par
+Candidates: x\_mu=u\_mu(t); x\_mu=x\_mu(t). Unresolved in the diplomatic source.\par
+The later x(t) was not used to replace the ambiguous letter. The lower parameter bound reads as an open 0, like other zeros in the manuscript.\par
+
+
+\EnglishSourceFrame{GELFAND-P001367}{unlabelled}
+\begin{equation*}
+\int\mathcal D A\,\hat P\,\frac{\partial}{\partial A}
+\exp\left(\oint_c A\,dy\right) \tag{26}
+\end{equation*}
+[Two short separator strokes.]
+
+30 \underline{March} it is unknown whether the seminar will take place
+(if cancelled, then
+[crossed out: \EnglishUnclear{GELFAND-P001367}{announcement-cancelled}{s\ldots [initial Cyrillic s]}]
+enquire at the laboratory, 139-53-57)
+
+
+\par\smallskip\noindent\textit{Reading notes.}\par
+\noindent\texttt{GELFAND-0148-U034} (announcement-cancelled): In the announcement, after "if cancelled, then" and before "enquire", a word is densely crossed out. Its initial Cyrillic s is readable at the left edge of the cancellation.\par
+Candidates: s...; information; notify; illegible. Unresolved in the diplomatic source.\par
+The rest of the announcement was read at 4x and 6x; the phone digits 139 were checked at 8x. The initial s is included in the cancelled material because the word boundary and cancellation do not coincide exactly. The rest of the frame is blank; no new date or speaker was added from catalogue associations.\par
+
+
+\EnglishSourceFrame{GELFAND-P001368}{unlabelled}
+\underline{$13/\overline{\mathrm{IV}}$-87}\quad \underline{Gelfand seminar}
+
+\underline{\underline{Sinai}}
+
+\underline{On spin glasses (following Parisi)}
+[Wavy underlining.]
+\begin{equation*}
+H=\sum_{\langle i,j\rangle}J_{ij}\sigma_i\sigma_j;\qquad
+J_{ij}\ \text{are random}. \tag{1}
+\end{equation*}
+(Ising model of a spin glass)
+
+$\langle i,j\rangle$ is a pair of neighbours
+
+\underline{Spin glass:} [Wavy underlining.]
+when the interaction forces are long-range and strongly oscillatory
+
+[Crossed out: \EnglishUnclear{GELFAND-P001368}{before-parizi-cancelled}{Par / Theor / illegible}.]
+Parisi: all interact, namely:
+\begin{equation*}
+H=\frac1{\sqrt N}\sum J_{ij}\sigma_i\sigma_j \tag{2}
+\end{equation*}
+[On the right:] $J_{ij}$ is a Gaussian random variable
+(all with the same variance)
+
+There is a large number of \underline{ground states}
+(differing in energy by $\sim1/N$);
+["ground states" is underlined with a wavy line.]
+\begin{equation*}
+\sigma_i=\pm1.
+\end{equation*}
+Study the case $N\to\infty$ and $\displaystyle\lim_{N\to\infty}\min H$
+
+[Beneath the limit, with a short connecting stroke: is calculated.]
+
+\underline{Entropy of the set of configurations} $>0$ (in the limit $N\to\infty$)
+[Inserted above the line between "set" and "configurations": (ground-state). Wavy underlining.]
+\begin{equation*}
+\frac{\ln\# [O(N)]}{N}\underset{N\to\infty}{\longrightarrow}h>0. \tag{3}
+\end{equation*}
+Property of \underline{ultrametricity} of ground states (Parisi, Virasoro): if
+["ultrametricity" is underlined with a wavy line.]
+
+$\sigma',\sigma'',\sigma'''$ are three ground states, then of the numbers
+\begin{equation*}
+\frac1N(\sigma',\sigma'');\quad
+\frac1N(\sigma',\sigma''');\quad
+\frac1N(\sigma'',\sigma''') \tag{4}
+\end{equation*}
+two must be equal, while the third is larger.
+
+\par\smallskip\noindent\textit{Reading notes.}\par
+\noindent\texttt{GELFAND-0148-U035} (before-parizi-cancelled): Immediately before "Parisi: all interact, namely", a short word is densely crossed out. A tall initial letter and several loops are visible, but the cancellation crosses all letters.\par
+Candidates: Par; Theor; illegible. Unresolved in the diplomatic source.\par
+The cancelled word is not established. The readable "Parisi" on the right was not copied into the crossed-out region by conjecture. Number (1) was checked at 8x and is securely 1; O(N) in (3) was checked at 6x and is an oval O without an inner stroke; the caption "is calculated" beneath the limit was checked at 5x. These latter places were not replaced by mathematically expected expressions.\par

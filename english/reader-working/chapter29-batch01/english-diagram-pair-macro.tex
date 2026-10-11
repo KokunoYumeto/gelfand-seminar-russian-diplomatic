@@ -1,0 +1,18 @@
+% A4 flowing-reader presentation. Required package: adjustbox.
+% Original excerpts supplement typed source diagrams and written labels.
+\providecommand{\EnglishDiagramPair}[3]{%
+  \par\medskip\noindent
+  \begin{minipage}[t]{.48\linewidth}
+    \vspace{0pt}\centering
+    #2\par\smallskip
+    {\footnotesize Original manuscript detail: \texttt{#1}.}\par
+  \end{minipage}\hfill
+  \begin{minipage}[t]{.48\linewidth}
+    \vspace{0pt}\centering
+    \begin{adjustbox}{max width=\linewidth}
+      #3
+    \end{adjustbox}\par\smallskip
+    {\footnotesize Proposed typeset recreation.}\par
+  \end{minipage}
+  \par\medskip
+}
