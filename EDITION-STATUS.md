@@ -1,0 +1,11 @@
+# Editions in progress
+
+The current source/transcription audit release contains 22 of the 34 chapter volumes: 01–13, 15, 16, 20, 24, 26, 30, 32, 33 and 34. These volumes contain 1,286 A3 pages and account for 1,086 source frames. The original page and diplomatic LaTeX transcription appear beside each other to support checking against the manuscript. The combined audit PDF and the other twelve volumes remain in production.
+
+The final reading editions will be separate Russian and English A4 readers. Each will have chapter volumes and a complete combined PDF, with no page-count cap. English translation has started. The previously published 1,400-page Russian reader is an earlier working release; it still needs illustration work, layout refinement and source review.
+
+Both readers retain the complete content and explicit uncertainties. Written text, formulas and diagram labels are typeset. Useful original diagram excerpts supplement faithful recreations where practical; diagrams with unresolved details retain the original evidence and typed explanations. Mathematical interpretation is distinguished from diplomatic transcription.
+
+The audit release verifies layout and mechanical source/PDF bindings. It does not claim that every difficult manuscript reading is settled. Existing source gaps, cancelled fragments and unresolved notes remain explicit.
+
+Read or download the reviewed audit volumes: https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-11-reviewed22. Each upload has been verified against its accepted local SHA-256 and size. The public manifest records the chapter/frame coverage and remaining scope. Earlier releases are preserved.
