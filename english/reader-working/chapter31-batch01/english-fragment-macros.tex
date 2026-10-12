@@ -1,0 +1,6 @@
+% Flowing English source fragment; include before the body and appendix.
+% Requirements: LuaLaTeX with Cyrillic-capable fonts; amsmath, amssymb,
+% graphicx, tikz, tikz-cd, xcolor, hyperref. No forced source-frame page breaks.
+\providecommand{\EnglishSourceFrame}[2]{\par\addvspace{1em}\noindent\leavevmode\phantomsection\label{#1:source-page}{\footnotesize\texttt{#1} [source label: #2]}\par\nobreak\smallskip}
+\providecommand{\EnglishUnclear}[3]{\begingroup\color{orange!65!black}[unclear: #3]\endgroup}
+\providecommand{\EnglishSourceFigure}[3]{\par\noindent\textit{Source detail #1/#2: #3}\par}
