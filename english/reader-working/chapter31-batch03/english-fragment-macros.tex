@@ -1,0 +1,6 @@
+% Flowing fragments need LuaLaTeX, Unicode/Cyrillic fonts, amsmath,
+% amssymb,graphicx,tikz,tikz-cd,xcolor,hyperref. No source-frame page break.
+\providecommand{\EnglishSourceFrame}[2]{\par\addvspace{1em}\noindent\leavevmode\phantomsection\label{#1:source-page}{\footnotesize\texttt{#1} [source label: #2]}\par\nobreak\smallskip}
+\providecommand{\EnglishUnclear}[3]{\begingroup\color{orange!65!black}\ifmmode\text{[unclear: }#3\text{]}\else[unclear: #3]\fi\endgroup}
+\providecommand{\EnglishIncomplete}[3]{\par\noindent\textbf{Undeciphered fragment: }#3\par}
+\providecommand{\EnglishSourceFigure}[3]{\par\noindent\textit{Source detail #1/#2: #3}\par}

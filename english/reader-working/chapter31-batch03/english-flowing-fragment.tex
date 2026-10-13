@@ -1,0 +1,764 @@
+\EnglishSourceFrame{GELFAND-P001405}{unlabelled}
+Then
+\begin{equation*}
+(Y_I,Y_J)=\text{\EnglishUnclear{GELFAND-P001405}{pairing-value}{0 or C}}
+\quad\text{for }J\ne I'.\tag{35}
+\end{equation*}
+(everything in the quotients)
+
+\underline{Theorem:}
+
+(36) $Z[x_1,x_2,x_3]$ is a free module [inserted above the line: over]
+$\underline{\operatorname{Sym}}(x_1,x_2,x_3)$
+with the Schubert polynomials as a basis.
+
+Not all Schubert polynomials are determinants, so divided differences
+$\partial_i$ are used instead.
+
+\underline{Problem from I. M. G.} Generalise the theorem on characters: irreducible representations, characters
+\EnglishUnclear{GELFAND-P001405}{characters-line-ending}{s-...- [unresolved source fragment]}
+-Schubert functions.
+
+\underline{Next time, Takhtajan will speak on quantum groups.}
+
+\underline{\underline{Kapranov (Misha)}}
+
+\underline{2-categories.}
+
+This is an algebraic structure with objects of four types:
+\begin{description}
+\item[a)] objects $\bullet$
+\item[b)] horizontal morphisms $\bullet\longrightarrow\bullet$
+\item[c)] vertical morphisms $\uparrow$
+\item[d)] squares
+\begin{tikzpicture}[baseline=0.3cm]
+\draw[->] (0,0)--(1,0);
+\draw[->] (0,1)--(1,1);
+\draw[->] (0,0)--(0,1);
+\draw[->] (1,0)--(1,1);
+\end{tikzpicture}
+\end{description}
+
+[In the right margin:]
+Here $\begin{matrix}\longrightarrow\\\longrightarrow\end{matrix}$ are horizontal morphisms,
+$\uparrow\ \uparrow$ vertical morphisms.
+(Their beginnings and ends are 1-morphisms.)
+
+One can compose:
+\begin{description}
+\item[1)] $\longrightarrow\ \longrightarrow$ two horizontal morphisms
+\item[2)] $\begin{matrix}\uparrow\\\uparrow\end{matrix}$ two vertical morphisms
+\item[3)] squares are multiplied in two ways
+\end{description}
+\begin{center}
+\begin{tikzpicture}
+\draw[->] (0,0)--(1,0);
+\draw[->] (1,0)--(2,0);
+\draw[->] (0,1)--(1,1);
+\draw[->] (1,1)--(2,1);
+\draw[->] (0,0)--(0,1);
+\draw[->] (1,0)--(1,1);
+\draw[->] (2,0)--(2,1);
+\node at (0.5,0.5) {$A$};
+\node at (1.5,0.5) {$B$};
+\draw[->] (4,0)--(5,0);
+\draw[->] (4,1)--(5,1);
+\draw[->] (4,2)--(5,2);
+\draw[->] (4,0)--(4,1);
+\draw[->] (4,1)--(4,2);
+\draw[->] (5,0)--(5,1);
+\draw[->] (5,1)--(5,2);
+\node at (4.5,1.5) {$A$};
+\node at (4.5,0.5) {$B$};
+\end{tikzpicture}
+\end{center}
+(See Gabriel's book.)
+
+
+\EnglishSourceFrame{GELFAND-P001406}{33}
+\underline{The main nontrivial axiom}: two-dimensional associativity
+
+(1)
+\EnglishSourceFigure{GELFAND-P001406}{interchange-diagram}{On the left are two vertical rectangles: the first has $A$ above $B$, the second $C$ above a heavily retraced sign resembling $D$; the middle horizontal arrow in each points to the right. Between the rectangles is a composition circle, followed by an equals sign. On the right, the upper row contains $A$, $C$, the lower $B$ and a sign resembling $D$; between the rows is a narrow band with a circle. At the ends of the band are arrow-like and retraced strokes whose exact connections are unclear.}
+
+\input{interchange-pair-English-r1.tex}
+
+\underline{An example in which}
+[crossed out: \EnglishUnclear{GELFAND-P001406}{example-cancel-left}{illegible}]
+axiom
+[crossed out: \EnglishUnclear{GELFAND-P001406}{example-cancel-right}{illegible}]
+(1) \underline{does not hold}
+
+\underline{Tensors:}
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+\node at (0.5,0.5) {$A$};
+\node at (-0.25,1.15) {$k$};
+\node at (1.25,1.15) {$\ell$};
+\node at (-0.25,-0.25) {$i$};
+\node at (1.25,-0.25) {$j$};
+\draw (2,0)--(3,0)--(3,1)--(2,1)--cycle;
+\node at (2.5,0.5) {$B$};
+\node at (1.75,1.25) {$\ell$};
+\node at (3.25,1.15) {$r$};
+\node at (1.75,-0.25) {$j$};
+\node at (3.25,-0.05) {$s$};
+\node at (5,0.5) {contraction};
+\end{tikzpicture}
+\end{center}
+\begin{equation*}
+(AB)_{ik}^{rs}=\sum A_{ij}^{k\ell}B_{js}^{\ell r}
+\end{equation*}
+\EnglishUnclear{GELFAND-P001406}{tensor-indices}{The positions of the indices are retained from the manuscript.}
+
+\begin{tikzpicture}
+\draw (0,1.3)--(0.8,1.3)--(0.8,2.1)--(0,2.1)--cycle;
+\node at (0.4,1.7) {$A$};
+\draw (0,0)--(0.8,0)--(0.8,0.8)--(0,0.8)--cycle;
+\node at (0.4,0.4) {$B$};
+\end{tikzpicture}
+
+Axiom (1) will not hold.
+
+\underline{Another definition} (M. Kontsevich) (a competing one)
+
+\begin{tikzpicture}[baseline=0cm]
+\fill (0,0) circle (1.5pt);
+\draw (2,0) circle (1.5pt);
+\draw[->] (0,0) to[bend left=35] (2,0);
+\draw[->] (0,0) to[bend right=35] (2,0);
+\draw[->] (0.8,0.35)--(0.8,-0.35);
+\end{tikzpicture}
+Morphisms between morphisms with the same endpoints.
+
+\underline{Example:} $Cat$ (the category of categories; there is a morphism
+of functors)
+
+This is a special case of the preceding definition (contract the vertical arrows).
+
+\underline{I. M. G.}
+
+\EnglishSourceFigure{GELFAND-P001406}{boundary-diagram}{Inside the square is written $\Delta u=0$. Along the upper and lower sides, horizontal arrows point to the right; beside the left side, two interior vertical arrows point upwards. On the left are the labels $u$ and $\frac{\partial u}{\partial n}$; above that label is another unclear notation.}
+
+\input{boundary-pair-English-r1.tex}
+Boundary conditions
+
+A request to Keldysh--Chentsov--Gelfand
+
+\underline{K.} Higher fundamental groups.
+$X_0\subset X_1\subset X$ is a topological space.
+
+Objects are points $x\in X_0$.
+
+Morphisms
+$\bigl(\underset{\text{interval}}{I},\partial I\bigr)\longrightarrow(X_1,X_0)$;
+homotopic ones $(\mathrm{mod}\ \partial I)$ are considered equivalent.
+
+Bimorphisms
+$(I^2,\partial I^2)\longrightarrow(X,X_1)$
+\qquad $(\mathrm{mod}\ \text{\underline{homotopy}})$
+
+
+\EnglishSourceFrame{GELFAND-P001407}{44}
+\underline{\underline{23/XI-87.}} \qquad \underline{Gelfand seminar.}
+
+\underline{Beilinson} (continued)
+
+\underline{Derived categories.}
+
+(1) \underline{Lemma:}
+\begin{equation*}
+\begin{tikzcd}[column sep=small,row sep=small]
+X^\bullet && Y^\bullet\\
+& Z^\bullet \arrow[ul,"{\text{quasi-isomorphism}}"] \arrow[ur] &
+\end{tikzcd}
+\quad\Rightarrow\quad\exists\quad
+\begin{tikzcd}[column sep=small,row sep=small]
+& Z'^\bullet &\\
+X^\bullet \arrow[ur,"{\text{quasi-isomorphism}}"] && Y^\bullet \arrow[ul]
+\end{tikzcd}
+\end{equation*}
+
+The lemma is proved using the mapping-cone construction.
+
+\underline{Reminder:}
+
+$\mathcal{A}$ is an abelian category.
+\begin{equation*}
+\begin{array}{ccccc}
+C(\mathcal{A}) & \longrightarrow & K(\mathcal{A}) & \longrightarrow & D(\mathcal{A})\\
+\text{complexes} && \substack{\text{homotopy}\\\text{category}\\\text{of complexes}} &&
+\substack{\text{derived}\\\text{category}}
+\end{array}
+\end{equation*}
+[On the right:] (the objects are complexes throughout).
+
+$f:X^\bullet\to Y^\bullet$ is homotopic to $0$ if
+$\exists g^i:X^i\to Y^{i-1}$,
+\begin{equation*}
+f^i=dg^i+g^{i+1}d
+\end{equation*}
+
+$D(\mathcal{A})$ is $K(\mathcal{A})$ with the
+\underline{quasi-isomorphisms} inverted
+(morphisms inducing isomorphisms of cohomology).
+
+A morphism from $X^\bullet$ to $Y^\bullet$ is a diagram in $K(\mathcal{A})$:
+\begin{equation*}
+\begin{tikzcd}[column sep=small,row sep=small]
+X^\bullet && Y^\bullet\\
+& Z^\bullet \arrow[ul,"\sim"] \arrow[ur] &
+\end{tikzcd}
+\tag{2}
+\end{equation*}
+(The left arrow is a quasi-isomorphism.)
+
+More precisely, an equivalence class of such diagrams: diagram (2) is equivalent to
+the diagram obtained using any quasi-isomorphism
+$\chi:Z'^\bullet\to Z^\bullet$:
+\begin{equation*}
+\begin{tikzcd}[column sep=small,row sep=small]
+X^\bullet && Y^\bullet\\
+& Z^\bullet \arrow[ul,"\varphi"',"\sim"] \arrow[ur,"\psi"] &\\
+& Z'^\bullet \arrow[u,"\chi"',"\sim"] &
+\end{tikzcd}
+\qquad
+\begin{tikzcd}[column sep=small,row sep=small]
+X^\bullet && Y^\bullet\\
+& Z' \arrow[ul,"{\varphi\circ\chi}"',"\sim"] \arrow[ur,"{\psi\circ\chi}"'] &
+\end{tikzcd}
+\tag{3}
+\end{equation*}
+
+(Extend this relation to the smallest equivalence relation containing it.)
+
+The cone of a morphism and exact triangles were defined
+[crossed out: \EnglishUnclear{GELFAND-P001407}{last-line-cancellation}{illegible}]
+also [source final word: ``eshchyo''].
+
+
+\EnglishSourceFrame{GELFAND-P001408}{unlabelled}
+\underline{I. Zakharevich}
+[crossed out: \EnglishUnclear{GELFAND-P001408}{cancelled-title}{illegible}]
+\underline{Improvisation \EnglishUnclear{GELFAND-P001408}{title-preposition}{about / with} chaos.}
+
+\underline{Examples}
+
+$1^{\circ}$. Apparently there is a morphism from one example to the other.
+\begin{equation*}
+M=(\mathbb{Z}/2\mathbb{Z})^{\mathbb{Z}}
+\qquad\text{(a sequence infinite in both directions)}
+\end{equation*}
+$T\colon M\to M$. On $M$ is the standard topology (a Cantor set).
+\begin{equation*}
+a_i\to a_{i-1}\qquad\text{(the shift transformation; the Bernoulli transformation)}
+\end{equation*}
+Consider the iterates: $T^N$.
+
+There is a measure on $M$. The baker transformation coincides with this
+[inserted above the line: (up to measure $0$)]
+[crossed out after ``this'' and in the line below:
+\EnglishUnclear{GELFAND-P001408}{baker-cancellations}{illegible}].
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2cm]
+\draw[->] (0,0) -- (2.08,0);
+\draw[->] (0,0) -- (0,1.27);
+\draw (0,1) -- (1,1) -- (1,0);
+\draw (2,0) -- (2,0.5);
+\draw[dashed] (0,0.5) -- (2,0.5);
+\draw (0.03,0.12) -- (0.23,0.42);
+\draw (0.27,0.08) -- (0.53,0.44);
+\draw (0.64,0.08) -- (0.87,0.4);
+\draw (1.08,0.1) -- (1.3,0.4);
+\draw (1.45,0.09) -- (1.67,0.4);
+\draw (1.75,0.05) -- (1.91,0.3);
+\draw[->] (1.37,0.31) .. controls (1.57,0.86) and (1.26,0.87) .. (0.74,0.85);
+\node[below left] at (0,0) {$0$};
+\node[left] at (0,1) {$1$};
+\node[below] at (1,0) {$1$};
+\end{tikzpicture}
+\end{center}
+
+\EnglishSourceFigure{GELFAND-P001408}{baker-sequence}{Three drawings from left to right: a square with a closed rounded curve and a horizontal dashed line; a square with two elongated bends entering from opposite sides; a square with several nearly horizontal strips and short loop-shaped bends at the edges. The third drawing has a distinguishable left-pointing arrow on its lower long line; the directions of small strokes in the first and third drawings are not entirely clear.}
+
+\input{baker-sequence-pair-English-r1.tex}
+And so on.
+
+\underline{Correspondence}: write the coordinates of a point of the square in binary
+and take $1$ digit to the left, another to the right.
+
+In what sense is this chaos?
+
+Consider $T^k x$, $k\leq 0$; suppose this is known (to within $1$ mm).
+\begin{equation*}
+T^k x,\qquad k>0
+\end{equation*}
+In finite time, all this information will be lost.
+
+$2^{\circ}$. \underline{Hyperbolic transformation}:
+geodesic flows on \EnglishUnclear{GELFAND-P001408}{manifold-abbreviation}{mn-ziyakh / mn-iyakh [unexpanded source abbreviations]} of negative curvature.
+
+\EnglishSourceFigure{GELFAND-P001408}{hyperbolic-surface}{A closed contour with two expanded parts and a constriction between them. Inside, on the left and right, arcs resemble indications of two handles of a surface; the middle contains a short slanting segment with marked endpoints and a branching arrow upwards to the right. Small directions and the exact connections of the interior arcs require comparison with the original.}
+
+\input{hyperbolic-surface-pair-English-r1.tex}
+
+
+\EnglishSourceFrame{GELFAND-P001409}{45}
+\underline{G. Margulis.}
+\underline{Iterates of maps of the complex plane.}
+
+Consider the transformation $z\to P(z)$, where $P$ is a polynomial
+
+(more generally, a rational function).
+
+$\operatorname{deg}P=1$
+[crossed out: \EnglishUnclear{GELFAND-P001409}{degree-one-cancellation}{illegible}]
+is an uninteresting case.
+
+$(1)\quad z\mapsto az+b$
+
+\underline{Iterates}:
+\begin{equation*}
+z_{i+1}=P(z_i)
+\end{equation*}
+$|a|>1\Rightarrow$ one fixed point;
+
+\EnglishUnclear{GELFAND-P001409}{unit-modulus-claim}{$|a|=1\Rightarrow$ everything splits into invariant circles, on which there is a rotation.}
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) circle (0.4);
+\draw (0,0) circle (0.66);
+\draw (0,0) circle (0.93);
+\fill (0,0) circle (0.035);
+\end{tikzpicture}
+\end{center}
+
+\underline{I. M. G.}: 1) The question of when a transformation of the circle is diffeomorphic to a rotation
+is nontrivial: Denjoy, Arnold, Herman.
+
+2) What is a representation of a discrete infinite group?
+
+There is no satisfactory answer.
+
+Von Neumann theory is not aesthetically pleasing.
+
+Chaos arises on the circle.
+
+\underline{Conjecture}: if one works with sets of intermediate Hausdorff
+dimension, some classical theory will be restored!!
+
+\underline{Question for schoolchildren}: cover the $n$th rational number by an interval
+of length $\varepsilon/2^n$. Give an example of a number which will not be covered.
+
+\underline{Problem}: find the Hausdorff dimension of the Cantor perfect set.
+
+\tikz\node[draw,circle,inner sep=2pt] {!};
+\underline{Problem}. \underline{Construct a representation theory of discrete groups on functions on}
+\underline{sets of intermediate Hausdorff dimension.}
+
+To begin with, look at physics---string theory and so on.
+
+\underline{G. M.}:
+$z\to z^2$
+\qquad $|z|=1$ maps to itself.
+
+\begin{center}
+\begin{tikzpicture}[x=1.2cm,y=1.2cm]
+\draw (0,0) circle (0.95);
+\draw (0,0) circle (0.04);
+\node[below] at (0,-0.03) {$0$};
+\fill (0.95,0) circle (0.035);
+\node[right] at (0.97,0) {$1$};
+\draw[->] (-0.28,0.63) -- (-0.14,0.24);
+\draw[->] (0.43,0.61) -- (0.16,0.26);
+\draw[->] (0.52,-0.31) -- (0.16,-0.1);
+\draw[->] (-0.73,-0.31) -- (-0.22,-0.12);
+\draw[->] (1.38,0.63) -- (2.35,0.36);
+\draw[->] (1.35,-0.88) -- (2.31,-0.47);
+\fill (2.7,0) circle (0.025);
+\node[right] at (2.77,0) {$\infty$};
+\end{tikzpicture}
+\end{center}
+On the circle, this is an analogue of the (one-sided)
+baker transformation.
+
+
+\EnglishSourceFrame{GELFAND-P001410}{unlabelled}
+\begin{equation*}
+f_n=\underbrace{f\circ f\circ\cdots\circ f}_{n\ \text{times}}
+\end{equation*}
+\underline{Definition}
+
+$U$ is a [crossed out: set; inserted above the line: neighbourhood]
+of normality if $\left.f_n\right|_U$ is a compact set
+
+(a normal family of analytic functions).
+
+[On a separate short line, crossed out:
+\EnglishUnclear{GELFAND-P001410}{isolated-cancellation}{illegible}.]
+
+The set of normality [inserted above the line: $X$] consists of points $x$ for which
+$\exists$ a neighbourhood $U$---[crossed out:
+\EnglishUnclear{GELFAND-P001410}{normality-cancellation}{illegible}]
+a neighbourhood of normality.
+
+[Beneath ``set of normality'': (it is open).]
+
+The complement of the set of normality is the \underline{Julia set}.
+
+(It is closed.)
+
+The set of normality may be empty.
+
+\begin{equation*}
+X=X_1\cup\cdots\cup X_n\cup\cdots
+\end{equation*}
+(connected components)
+
+of the set of normality
+
+[crossed out beneath this caption:
+\EnglishUnclear{GELFAND-P001410}{components-cancellation}{illegible}]
+
+\begin{equation*}
+\begin{aligned}
+f\colon (\text{connected components})&\to(\text{connected components})\\
+X_i&\mapsto X_{j(i)}
+\end{aligned}
+\end{equation*}
+\underline{Sullivan} proved that in the resulting
+
+[crossed out: \EnglishUnclear{GELFAND-P001410}{sullivan-cancellation}{illegible}]
+transformation of a discrete set (countable or finite),
+
+a) every orbit stabilises,
+
+b) the set of fixed points is finite.
+
+\underline{Idea of the proof}. Suppose that there is an infinite orbit.
+
+\begin{center}
+\begin{tikzpicture}[x=1.1cm,y=1cm]
+\draw (0,0) ellipse (0.19 and 0.24);
+\draw (0.01,0.01) circle (0.035);
+\draw (1,0) ellipse (0.18 and 0.23);
+\draw (1.01,0.01) circle (0.035);
+\draw (2,0) ellipse (0.18 and 0.24);
+\draw (2.01,0.01) circle (0.035);
+\draw (3,0) ellipse (0.17 and 0.22);
+\draw (3.01,0.01) circle (0.035);
+\draw (4.3,0) ellipse (0.18 and 0.23);
+\draw (4.31,0.01) circle (0.035);
+\node at (5.4,0) {$\cdots$};
+\node at (0,-0.55) {$1$};
+\node at (1,-0.55) {$2$};
+\node at (2,-0.55) {$3$};
+\node at (3,-0.55) {$4$};
+\draw[->] (0.27,-0.55) -- (0.74,-0.55);
+\draw[->] (1.27,-0.55) -- (1.74,-0.55);
+\draw[->] (2.27,-0.55) -- (2.74,-0.55);
+\draw[->] (3.27,-0.55) -- (3.85,-0.55);
+\node at (5.4,-0.55) {$\cdots$};
+\end{tikzpicture}
+\end{center}
+
+Make a change of conformal
+[crossed out: \EnglishUnclear{GELFAND-P001410}{structure-cancellation}{transf. [source abbreviation] / illegible}]
+structure, so that the transformation remains
+conformal.
+
+\underline{Problem}:
+
+\EnglishSourceFigure{GELFAND-P001410}{circle-packing}{Inside a square are four large rounded contours, two in the upper and two in the lower row; smaller closed curves occupy the gaps and border. On the right, a horizontal arrow points towards the square, with the caption ``inscribe''. Exact tangencies and which contours contain small boundary arcs are not entirely distinguishable.}
+
+\input{circle-packing-pair-English-r1.tex}
+
+1) Prove that the remainder has measure $0$.
+
+2) Prove that the remainder has Hausdorff dimension $<2$.
+
+
+\EnglishSourceFrame{GELFAND-P001411}{46}
+\underline{\underline{I. M. Gelfand}}. \underline{Matroids.}
+
+In a $K$-dimensional space, consider $n$ vectors;
+enumerate them and compile a list of which are linearly dependent and which are not.
+Specifying this list gives a \underline{matroid}.
+
+What conditions must this list satisfy?
+
+\underline{Example}:
+[Crossed out: \EnglishUnclear{GELFAND-P001411}{example-cancelled}{illegible}.]
+
+\input{fano-points-pair-English-r1.tex}
+
+If three points lie on one line, the vectors
+are linearly dependent.
+
+The whole space is three-dimensional (there are no four linearly independent vectors).
+
+(1) \underline{Problem}: 1) Prove that such vectors do not exist over $\mathbb{R}$ and $\mathbb{C}$!
+
+2) Such vectors do exist over $\mathbb{Z}/2\mathbb{Z}$.
+
+(All nonzero vectors in $(\mathbb{Z}/2\mathbb{Z})^3$!)
+
+\underline{General} (\underline{unsolved problem}): which matroids are realised
+a) over $\mathbb{R}$,
+b) over $\mathbb{C}$.?
+
+\underline{Solved problem}: which matroids are realised over $\forall$ fields?
+
+\underline{In Rota's book} \EnglishUnclear{GELFAND-P001411}{book-after-rota}{e.. [source Cyrillic sign]}
+[On the right: see \EnglishUnclear{GELFAND-P001411}{book-overwritten-noun}{book? [uncertain source ending]} \underline{Aigner} (?)]
+there are fifteen different equivalent definitions of a matroid.
+
+(2) \underline{Axioms}.
+
+Certain subsets are distinguished and \underline{called bases}.
+
+$B_1,B_2$ are two bases.
+
+$y\in B_2,\ y\notin B_1\ \Rightarrow\ \exists x\in B_1;$
+$(B_1\setminus x)\cup y$
+[Crossed out: \EnglishUnclear{GELFAND-P001411}{basis-exchange-cancelled}{illegible}],
+$(B_2\setminus y)\cup x$ are
+\newline
+bases.
+
+\underline{Exercise in linear algebra}: verify this for a set of vectors in a vector space.
+
+(3) \underline{Bimatroid}: consider a matrix; it defines two matroids, from its columns
+and rows:
+
+$S$ and $T$.
+
+Another notion: list all minors $\ne0$.
+
+Bimatroid: a family of subsets with the same number of elements.
+
+(4) [Crossed out: \EnglishUnclear{GELFAND-P001411}{problem-four-cancelled}{illegible}.]
+\underline{Problem}: state axioms for a bimatroid.
+
+
+\EnglishSourceFrame{GELFAND-P001412}{unlabelled}
+(5) \underline{Problem}: how is the bimatroid notion from
+[Crossed out: \EnglishUnclear{GELFAND-P001412}{top-cancelled}{illegible}]
+Gelfand--Serganova (UMN)
+related to \EnglishUnclear{GELFAND-P001412}{knuth-name}{Kunt [source candidate: «Кунтом»]}?
+
+\underline{Problem}: prove that
+
+\begin{equation*}
+\text{(6)}\quad
+[x_1,\ldots,x_d][y_1,\ldots,y_d]
+=\sum(-1)^{d-i}[y_1,x_2,\ldots,x_d]
+[y_1,\ldots,y_{i-1},x_i,y_{i+1},\ldots,y_d]
+\end{equation*}
+\EnglishUnclear{GELFAND-P001412}{determinant-formula-source}{The indices $y_1$, $x_i$ and sign $(-1)^{d-i}$ are as in the manuscript.}
+
+$[x_1,\ldots,x_d]$ is the determinant formed from the vectors.
+
+(7) \underline{Remark}: if $[x_1,\ldots,x_d]$, $[y_1,\ldots,y_d]$ are bases, the right side has
+a nonzero summand; this gives the exchange axiom
+\EnglishUnclear{GELFAND-P001412}{basis-axiom-reference}{(3)}.
+
+(\EnglishUnclear{GELFAND-P001412}{overwritten-eight}{8})
+\underline{Problem} (tedious). Hilbert's chain of syzygies:
+\begin{equation*}
+(\text{ring})\longmapsto
+\underset{\text{--- determinants}}{(\text{generators})}
+\longmapsto (\text{relations between generators})
+\end{equation*}
+
+(9) (\underline{Assertion}: (6) gives all relations between the generators.)
+
+(10) a) Write the whole chain!
+
+b) Discretise the whole chain (write combinatorial relations).
+
+(11) \underline{Problem}. A bimatroid---a list of minors $\longrightarrow$
+[Crossed out: \EnglishUnclear{GELFAND-P001412}{problem-eleven-cancelled}{illegible}]
+two matroids
+(rows and columns).
+
+A bimatroid is constructed from two matroids.
+
+\EnglishSourceFigure{GELFAND-P001412}{basis-grid}{A grid of four vertical and four horizontal lines; braces on the left and below carry labels ``baz...'' [source beginnings]; an arrow on the right points leftwards towards the grid.}
+
+\input{basis-grid-pair-English-r1.tex}
+
+by the definition of \EnglishUnclear{GELFAND-P001412}{basis-construction-word}{baza? [unresolved source form]}.
+
+But this is not necessarily so.
+
+A bimatroid contains more information.
+
+What is the additional information in a bimatroid?
+
+This is an important cohomological notion.
+
+\underline{Remark}. Algebraic topology is a small island in familiar
+combinatorial techniques.
+
+
+\EnglishSourceFrame{GELFAND-P001413}{unlabelled}
+\underline{\underline{30/XI-87.}}\qquad \underline{Gelfand seminar.}
+
+\underline{I. M. Gelfand.} Problem: find the characters of the symmetric group.
+
+(Following Frobenius.)
+
+\underline{On the paper by} \underline{Kerov}: ``\underline{Realisation of representations of the Hecke algebra}, etc.''
+
+Hint: these are characters of the symmetric group.
+
+The Hecke algebra is the algebra with generators $\{e_k\}$
+[above the line: $k=1,\ldots,N-1$] and relations
+\begin{equation*}
+\text{(1)}\quad
+\left\{\begin{aligned}
+e_k e_{k+1}e_k-\tau e_k&=e_{k+1}e_k e_{k+1}-\tau e_{k+1}\\
+e_{k+j}e_k&=e_k e_{k+j},\quad j\geq 2;\\
+e_k^2&=e_k
+\end{aligned}\right.
+\end{equation*}
+Other generators
+\begin{equation*}
+\text{(2)}\quad \sigma_k=(q+1)e_k-1,\qquad \tau=\frac{q}{(q+1)^2}
+\end{equation*}
+This algebra is denoted by $H_N(q)$.
+
+\underline{Exercise}: write the relations for $\sigma_k$.
+
+(3) For $q=1$ (or $\tau=\frac14$), one obtains the group algebra of the symmetric group.
+
+(4) \underline{Problem}: $\dim H_N(q)=N!$
+
+[In the left margin: a circled ``!''.]
+In the paper by \EnglishUnclear{GELFAND-P001413}{citation-name}{Tipper / Dipper} and James,
+
+Proc. London Math. Soc.\qquad 1986, v. 52, p. 20--52
+
+Recommended!!
+
+it is proved that the representation theory of $H_N(q)$ is analogous to the theory of modular
+representations of the symmetric group.
+
+This works even in the complex case (see the paper by Bernsh.--Gelf.--Gelf.
+on Verma modules).
+
+Here it is assumed that $q\ne\sqrt[m]{1}$.
+
+\underline{Construction of representations.}
+
+A Young diagram\quad $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_k)$
+
+\begin{center}
+(5)\qquad
+\begin{tikzpicture}[x=0.42cm,y=0.42cm]
+\draw (0,0)--(3,0)--(3,-2)--(2,-2)--(2,-3)--(1,-3)--(1,-5)--(0,-5)--cycle;
+\draw (1,0)--(1,-5);
+\draw (2,0)--(2,-3);
+\draw (0,-1)--(3,-1);
+\draw (0,-2)--(3,-2);
+\draw (0,-3)--(2,-3);
+\draw (0,-4)--(1,-4);
+\end{tikzpicture}
+\qquad
+$\begin{gathered}\sum\lambda_j=|\lambda|\\[8pt]\lambda_{i+1}\leq\lambda_i\end{gathered}$
+\end{center}
+
+($\lambda_i$ is the number of cells in the $i$th column.)
+
+This corresponds to a conjugacy class of elements.
+
+
+\EnglishSourceFrame{GELFAND-P001414}{52}
+A Young tableau:
+\begin{equation*}
+\text{(6)}\quad t=\{\lambda^{(k)}\}_{k=1}^{N}
+\quad\text{--- a family of diagrams in which}
+\end{equation*}
+\begin{equation*}
+|\lambda^{(k)}|=k.
+\end{equation*}
+
+The usual definition (a different one): the tableau is filled with the numbers $1,2,\ldots,|\lambda|$, with
+\begin{equation*}
+\begin{matrix}\rightarrow\\\downarrow\end{matrix}
+\quad\text{increase in these directions}
+\end{equation*}
+
+\input{young-tableau-pair-English-r1.tex}
+
+In (6), they must increase.
+
+\begin{center}
+\begin{tikzpicture}[x=0.45cm,y=0.45cm]
+\node at (0.5,1.05) {$\lambda^{(1)}$};
+\draw (0,0) rectangle (1,-1);
+\node at (0.5,-0.5) {$1$};
+\node at (5,1.05) {$\lambda^{(2)}$};
+\draw (4,0) rectangle (6,-1);
+\draw (5,0)--(5,-1);
+\node at (4.5,-0.5) {$1$};
+\node at (5.5,-0.5) {$2$};
+\node at (10.5,1.05) {$\lambda^{(3)}$};
+\draw (9.5,0)--(11.5,0)--(11.5,-1)--(10.5,-1)--(10.5,-2)--(9.5,-2)--cycle;
+\draw (10.5,0)--(10.5,-1);
+\draw (9.5,-1)--(10.5,-1);
+\node at (10,-0.5) {$1$};
+\node at (11,-0.5) {$2$};
+\node at (10,-1.5) {$3$};
+\end{tikzpicture}
+\end{center}
+
+\begin{equation*}
+\text{(7)}\quad r_k(t)=(i_{k+1}-j_{k+1})-(i_k-j_k)
+\end{equation*}
+The point $k$ has coordinates $(i_k,j_k)$.
+
+For a diagram:
+\begin{equation*}
+\text{(8)}\quad h(\lambda)=r_\lambda+1
+\end{equation*}
+\begin{equation*}
+\text{(9)}\quad r_\lambda=\max_{t\in T(\lambda)}\max_{1\leq k<N}|r_k(t)|,
+\end{equation*}
+where $T(\lambda)$ is the set of tableaux constructed from the diagram $\lambda$, i.e.
+having shape $\lambda$.
+
+Let $s=(\mu^{(k)})_{k=1}^{N}$,\quad $t=(\lambda^{(k)})_{k=1}^{N}$.
+
+(10) \underline{Definition.}\quad $s\underset{n}{\approx}t$ if $\lambda^{(k)}=\mu^{(k)}$, $k\ne n$.
+
+\underline{Assertion.}
+
+(11) [Crossed out: \EnglishUnclear{GELFAND-P001414}{eq11-cancelled-word}{if?};
+inserted above the line: Let]
+$r_n(t)=\pm1$; then $s\underset{n}{\approx}t\Rightarrow s=t$;
+
+(12) Let $|r_n(t)|>1$; then $\exists!\ s:\quad s\underset{n}{\approx}t$, $s\ne t$.
+
+\begin{equation*}
+\text{(13)}\quad S_\lambda^{(k)}=\Vert S_{s,t}^{(k)}(\tau)\Vert_{s,t\in T(\lambda)}
+\quad\text{--- a matrix};
+\end{equation*}
+[After the matrix index, below the line:
+\EnglishUnclear{GELFAND-P001414}{eq13-terminal-mark}{an illegible sign; $q$ / a corrected comma}.]
+
+\begin{equation*}
+\text{(14)}\quad
+S_{s,t}^{(k)}(\tau)=\bigl(W_{r_k(s)}(\tau)\ W_{r_k(t)}(\tau)\bigr)^{1/2}
+\quad\text{for }s\underset{k}{\approx}t
+\end{equation*}
+[After the first factor, below the line:
+\EnglishUnclear{GELFAND-P001414}{eq14-blotted-mark}{a blotted or crossed-out sign}.]
+
+[Crossed out: \EnglishUnclear{GELFAND-P001414}{eq14-cancelled-condition}{for $s\underset{k}{\approx}t$?}]
+and $S_{s,t}^{(k)}(\tau)=0$ otherwise.
+
