@@ -1,0 +1,6 @@
+% Flowing fragments need LuaLaTeX, Unicode/Cyrillic fonts, amsmath,
+% amssymb,graphicx,tikz,tikz-cd,xcolor,hyperref. No source-frame page break.
+\providecommand{\RussianSourceFrame}[2]{\par\addvspace{1em}\noindent\leavevmode\phantomsection\label{#1:source-page}{\footnotesize\texttt{#1} [номер в источнике: #2]}\par\nobreak\smallskip}
+\providecommand{\RussianUnclear}[3]{\begingroup\color{orange!65!black}\ifmmode\text{[неясно: }#3\text{]}\else[неясно: #3]\fi\endgroup}
+\providecommand{\RussianIncomplete}[3]{\par\noindent\textbf{Неразобранный фрагмент: }#3\par}
+\providecommand{\RussianSourceFigure}[3]{\par\noindent\textit{Исходный рисунок #1/#2: #3}\par}
