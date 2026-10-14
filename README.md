@@ -76,3 +76,7 @@
 ## Attribution and rights
 
 The historical source is identified above. A modern creator/editor credit and a redistribution license have not yet been established for this working edition. No new license or rights over the historical notes are asserted by this release. The GitHub publishing account is a distribution destination, not an inferred creator credit.
+
+## Chapter 31 A4 readers
+
+[Separate Russian and English readers of chapter 31](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/readers-chapter31-working-2026-10-14) are now available: 72 Russian pages and 70 English pages, all 40 held frames, complete 158-record reading appendices and selected original diagrams beside typed recreations. Full editions in both languages remain in preparation.

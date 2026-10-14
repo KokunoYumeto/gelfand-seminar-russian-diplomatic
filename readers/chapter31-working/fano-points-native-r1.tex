@@ -1,0 +1,17 @@
+\begin{tikzpicture}[scale=1.15]
+\coordinate (a) at (0,1.96);
+\coordinate (b) at (-1.48,0);
+\coordinate (c) at (1.55,0);
+\coordinate (d) at (-0.71,1.04);
+\coordinate (e) at (0.78,1.12);
+\coordinate (f) at (0,0);
+\coordinate (g) at (0,0.68);
+\draw (a)--(d)--(b)--(f)--(c)--(e)--cycle;
+\draw (a)--(g)--(f) (b)--(g)--(e) (d)--(g)--(c);
+\draw (d) .. controls (-0.40,1.48) and (0.30,1.55) .. (e)
+ .. controls (1.05,0.55) and (0.83,0.03) .. (f)
+ .. controls (-0.92,-0.03) and (-1.02,0.75) .. (d);
+\draw (a) circle (0.06) (b) circle (0.07) (c) circle (0.07)
+ (e) circle (0.06) (f) circle (0.06);
+\fill (d) circle (0.06) (g) circle (0.075);
+\end{tikzpicture}
