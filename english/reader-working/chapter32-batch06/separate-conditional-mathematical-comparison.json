@@ -1,0 +1,427 @@
+{
+  "schema": "chapter32-sixth10-separate-explicit-mathematics-r1",
+  "manuscript_math_unchanged": true,
+  "canonical_Russian_frames_unchanged": true,
+  "English_formula_repairs": 0,
+  "checks": [
+    {
+      "name": "Flat Hessian, gauge quotient and the coefficient system in (16)",
+      "assumptions": "Assume an oriented closed 3-manifold, a flat connection A, an invariant nondegenerate trace pairing and a regular local gauge quotient. Boundary conditions would be needed if M has boundary. No such missing hypotheses are added to the source.",
+      "derivation": [
+        "The covariant exterior derivative D satisfies D²s=[F_A,s]=0 at flat A. Hence D(B+Dε)=DB and the map on Ω¹/im D is independent of representative.",
+        "For Q(B)=∫Tr(DB∧B), replacing B by B+Dε changes Q by ∫Tr(DB∧Dε). Since D(DB)=0, this is the integral of an exact form, and is zero on closed M. Polarization is 2∫Tr(DB∧C), so its kernel on the quotient is ker(D:Ω¹→Ω²)/im(D:Ω⁰→Ω¹).",
+        "This is H¹(M;ad A) for the particular flat connection. Requiring vanishing for every representation is a stronger quantifier and is not obtained by computing this one Hessian."
+      ],
+      "result": "The source says “any representation” and “all local systems”; those words and the literal X in (17) remain. The local Hessian calculation does not prove the stated global equivalence.",
+      "diplomatic_source_emended": false
+    },
+    {
+      "name": "Integral homology versus all characteristic-zero local systems",
+      "assumptions": "Interpret “all local systems” as finite-dimensional complex local systems. Use M=RP³, universal cover S³ and deck group C₂, as in Hatcher examples 1.43 and 2.42. The coefficient field is essential: this test is not a claim about all integral local systems.",
+      "derivation": [
+        "The cellular integer chain maps of RP³ in degrees 3,2,1 are 0,2,0, so H₁(RP³;Z)=Z/2.",
+        "For any complex representation of C₂, let G²=I. A crossed homomorphism is determined by a=f(g), with (I+G)a=0. Coboundaries are (G−I)v. Conversely, if Ga=−a, choose v=−a/2; then (G−I)v=a. Thus H¹(C₂;V)=0 for every such representation.",
+        "Degree-one local-system cohomology of RP³ is this cocycle quotient: the simply connected S³ cover contributes no degree-one cohomology. Therefore all these H¹ groups vanish although integral H₁ is nonzero."
+      ],
+      "result": "Under the stated complex-coefficient reading, the implication to an integral homology sphere fails. It does not decipher the source intention or replace the written equivalence.",
+      "diplomatic_source_emended": false,
+      "primary_source": {
+        "title": "Allen Hatcher, Algebraic Topology, examples 1.43 and 2.42",
+        "url": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+        "printed_pages": [
+          74,
+          144
+        ],
+        "PDF_pages_one_based": [
+          83,
+          153
+        ]
+      },
+      "own_derivation": true
+    },
+    {
+      "name": "Spectral flow is a signed crossing count",
+      "assumptions": "A finite-dimensional real symmetric model with nondegenerate endpoints and two isolated transverse simple crossings; index counts negative eigenvalues. This is a local comparison with (18), not a proof of its infinite-dimensional index theorem or the mod-8 claim.",
+      "derivation": [
+        "Take H(t)=diag(t+1/2,−t+1/2), −1≤t≤1. A zero eigenvalue occurs at each of t=−1/2 and t=1/2, but the endpoint negative indices are both 1.",
+        "The two derivative signs are +1 and −1, so their signed sum is zero. The unsigned number of zero-mode points is 2. Thus the unsigned count alone does not determine the index difference."
+      ],
+      "result": "The literal “number of points” and “spectral asymmetry” remain. A crossing convention and signs are needed for a precise formula.",
+      "diplomatic_source_emended": false,
+      "exact_endpoints": [
+        {
+          "t": "-1",
+          "eigenvalues": [
+            "-1/2",
+            "3/2"
+          ],
+          "negative_index": 1
+        },
+        {
+          "t": "1",
+          "eigenvalues": [
+            "3/2",
+            "-1/2"
+          ],
+          "negative_index": 1
+        }
+      ]
+    },
+    {
+      "name": "Zero section, graph df and the Morse intersection example",
+      "assumptions": "Let L be a closed compact smooth manifold and f a Morse function. Put N=T*L with its usual symplectic form. Use ordinary Euler characteristic, not compactly supported Euler characteristic.",
+      "derivation": [
+        "The zero section and graph(df) intersect exactly at df=0. Their tangent difference there is the Hessian, so nondegeneracy is equivalent to transversality.",
+        "Fiber scaling retracts T*L to L, hence χ(N)=χ(L). The alternating Morse count is χ(L), giving the written (23) under these hypotheses. Without compactness/properness, an arbitrary finite critical set alone does not justify this equality."
+      ],
+      "result": "No error is asserted in (23) under the stated standard example. The source does not explicitly list these hypotheses.",
+      "diplomatic_source_emended": false
+    },
+    {
+      "name": "The literal four-dimensional cut",
+      "assumptions": "Interpret “two three-dimensional ones” specifically as two embedded smooth 3-dimensional submanifolds whose union is a nonempty smooth 4-manifold. This interpretation is an added test hypothesis; the missing noun in the manuscript is not determined.",
+      "derivation": [
+        "In a local 4-dimensional coordinate chart, an embedded 3-dimensional submanifold is locally a graph over a 3-dimensional coordinate plane and has 4-dimensional measure zero.",
+        "A finite union of two such submanifolds cannot contain an open 4-dimensional coordinate ball. Cutting a 4-manifold along a hypersurface instead leaves 4-dimensional pieces with 3-dimensional boundary."
+      ],
+      "result": "The tested union interpretation cannot hold. This does not establish what object the author intended, and neither a noun nor a dimension is inserted.",
+      "diplomatic_source_emended": false
+    },
+    {
+      "name": "Eliminating one component of the first-order differential system",
+      "assumptions": "Work on an interval with smooth scalar coefficients and q_12 nonzero. D=d/dx acts on everything to its right; multiplication by variable coefficients does not commute with D.",
+      "derivation": [
+        "The first equation gives φ₂=−q_12^(-1)(D+q_11)φ₁. Substitution in the second yields [(D+q_22)q_12^(-1)(D+q_11)−q_21]φ₁=0.",
+        "For constant scalar coefficients, multiply by q_12 to obtain D²+(q_11+q_22)D+q_11 q_22−q_12 q_21, exactly (2).",
+        "For variable coefficients a=q_11,b=q_12,c=q_21,d=q_22, the normalized operator is D²+(a+d−b′/b)D+(a′−a b′/b+da−bc). The derivative terms explain why the constant determinant cannot simply be copied.",
+        "For the explicit variable example a=d=0,b=exp(x),c=1, the normalized equation is φ₁″−φ₁′−exp(x)φ₁=0, rather than D²−exp(x)."
+      ],
+      "result": "The source elimination discussion and constant formula are retained. The inverse of q_12 and locality are conditions of this calculation, not supplied handwritten content.",
+      "diplomatic_source_emended": false
+    },
+    {
+      "name": "Typed Schur complement and noncommutative factor order",
+      "assumptions": "Let A_ij:E_j→E_i and assume A_22 is invertible. No common domain is silently identified between E₁ and E₂.",
+      "derivation": [
+        "The composition A_11 A_22 has incompatible intermediate spaces in general. The composition A_12 A_21:E₁→E₁ is defined, but this does not make their written difference a typed endomorphism.",
+        "S=A_11−A_12 A_22^(-1) A_21 is a well-defined endomorphism of E₁. Direct block multiplication gives A=[[I,A_12 A_22^(-1)],[0,I]] [[S,0],[A_21,A_22]].",
+        "Elimination of the lower component therefore explains the literal (3) without commuting factors or requiring E₁=E₂."
+      ],
+      "result": "The source’s question about four determinants and formula (3) are preserved; this check certifies only the displayed Schur-complement construction.",
+      "diplomatic_source_emended": false
+    },
+    {
+      "name": "Eta and theta products under explicit standard conventions",
+      "assumptions": "Assume Im τ>0, standard theta constants θ_j(0|τ), q=exp(iπτ), Q=q²=exp(2πiτ), and analytic roots chosen positive on the positive imaginary axis. Use DLMF 20.5.2–4 and 27.14.12. The manuscript may employ different conventions; no missing arguments or limits are supplied to it.",
+      "derivation": [
+        "DLMF gives θ₂=2 q^(1/4)∏(1−q^(2n))(1+q^(2n))², θ₃=∏(1−q^(2n))(1+q^(2n−1))², θ₄=∏(1−q^(2n))(1−q^(2n−1))², and η=Q^(1/24)∏(1−Q^n). Products here run over positive integers.",
+        "Canceling the common products and taking the stated roots gives sqrt(θ₂/η)=sqrt(2) Q^(1/24)∏(1+Q^n), sqrt(θ₃/η)=Q^(−1/48)∏(1+Q^(n−1/2)), sqrt(θ₄/η)=Q^(−1/48)∏(1−Q^(n−1/2)).",
+        "Thus the literal P001481 exponent 1/8, absent prefactors, and the two signs differ from these stated conventions. Finite numerical products at Q=1/16 independently agree with the theta series to below 1e−13; this numerical agreement is a check, not the proof.",
+        "On P001479, q^(1/24)∏(1−q^n) with q=exp(iπτ) instead equals standard η(τ/2), while the written θ₃ sum uses standard τ. The two sheets therefore cannot be silently normalized with one unnoticed substitution."
+      ],
+      "result": "Both source nome definitions, all visible exponents and signs, and the unresolved θ₁/θ₄ reading remain literal.",
+      "diplomatic_source_emended": false,
+      "primary_sources": [
+        {
+          "title": "NIST DLMF theta products 20.5.2–4",
+          "url": "https://dlmf.nist.gov/20.5"
+        },
+        {
+          "title": "NIST DLMF Dedekind eta 27.14.12",
+          "url": "https://dlmf.nist.gov/27.14.E12"
+        }
+      ],
+      "own_derivation": true,
+      "numerical_absolute_errors": [
+        6.661338147750939e-16,
+        2.220446049250313e-16,
+        0.0
+      ]
+    },
+    {
+      "name": "Modular matrices versus their action on the parameter",
+      "assumptions": "Use S=[[0,−1],[1,0]] and T=[[1,1],[0,1]] acting by fractional linear maps. Distinguish matrices in SL₂ from maps in PSL₂.",
+      "derivation": [
+        "Exact multiplication gives S²=−I and (ST)³=−I. Since −I sends τ to τ, both induced parameter transformations are the identity.",
+        "Consequently the source statements S²=1 and (ST)³=I are consistent as transformations of τ; they need not be changed to −I.",
+        "The preceding τ+2πi can be changed into u→u+1 by u=τ/(2πi). But S:τ→−1/τ then becomes u→1/(4π²u), not u→−1/u. A single rescaling does not preserve all written formulas in the same form."
+      ],
+      "result": "The literal periods and relations remain. This distinguishes a valid projective relation from a separate unresolved coordinate-convention issue.",
+      "diplomatic_source_emended": false,
+      "exact_S_squared": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "exact_ST_cubed": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "Genus-two relations: an exact conditional homology check",
+      "assumptions": "Assume the five named twists act on H₁ by symplectic transvections along v=(e₁,f₁,e₁+e₂,f₂,e₂), with basis (e₁,f₁,e₂,f₂), J the two standard skew blocks and T_v(x)=x+v(v^T J x). This model is additional mathematical data; it does not recover the uncertain drawn connections.",
+      "derivation": [
+        "The five exact integer matrices preserve J. Direct multiplication verifies all three written braid relations and the two displayed commutations.",
+        "The same multiplication gives (ABC)^4=E² and (EDCBA²BCDE)²=I, with A=alpha₁,B=beta₁,C=alpha₂,D=beta₂,E=alpha₃.",
+        "The final conjugation identity also follows directly from ABA=BAB: multiplying on the left by B^(-1) and on the right by A^(-1) gives B^(-1)AB=ABA^(-1). The integer matrices agree."
+      ],
+      "result": "These tests find no homological obstruction under the chosen model. They do not prove mapping-class-group equality, since a homology action does not detect every mapping class, and do not establish the uncertain figure topology.",
+      "diplomatic_source_emended": false,
+      "exact_vectors": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "exact_matrices": [
+        [
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            -1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      ],
+      "exact_chain_power": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "exact_long_word_squared": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Planck exponent and the visible meter unit",
+      "assumptions": "Use the NIST 2022 CODATA SI value 1.616255(18)×10^(−35) m as a modern comparison. This is not a reconstruction of what the 1988 speaker intended.",
+      "derivation": [
+        "The literal 10^(−33) m divided by the tabulated central value is 100/1.616255, approximately 61.871.",
+        "Converting the tabulated value into centimeters gives 1.616255×10^(−33) cm. This explains a possible scale/unit slip, but cannot supply a Cyrillic s absent from the handwriting."
+      ],
+      "result": "The source unit remains m and the exponent remains −33. Its intended unit is unresolved.",
+      "diplomatic_source_emended": false,
+      "primary_source": {
+        "title": "NIST 2022 CODATA complete listing, Planck length",
+        "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+      },
+      "exact_scale_ratio": "20000000/323251",
+      "own_calculation": true
+    },
+    {
+      "name": "The cubic term and the label free action",
+      "assumptions": "For this calculation only, interpret both terms using ordinary flat volume d^26x and compactly supported smooth variations, and contract derivatives with a fixed constant metric. The literal first source measure partial^26x is not silently defined as this volume.",
+      "derivation": [
+        "For S[φ]=∫((∂φ)²+φ³) dx, integration by parts yields δS[h]=∫(−2□φ+3φ²)h dx.",
+        "The third mixed variation is δ³S[h₁,h₂,h₃]=6∫h₁h₂h₃ dx. For a nonzero nonnegative compactly supported h, taking all three h_i=h gives a nonzero result.",
+        "A quadratic Gaussian free-field action has identically zero third variation. Thus the uncancelled cubic term is an interaction under this conventional meaning of free. No removal of the cubic or measure replacement follows from decipherment."
+      ],
+      "result": "The action, unusual first measure, positive exponential and “free particle” wording remain diplomatic. This conditional calculation records their tension without selecting a repaired action.",
+      "diplomatic_source_emended": false
+    }
+  ]
+}
