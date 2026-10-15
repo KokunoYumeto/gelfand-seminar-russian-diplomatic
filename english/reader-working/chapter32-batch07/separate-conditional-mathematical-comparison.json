@@ -1,0 +1,269 @@
+{
+  "schema": "chapter32-final6-separate-conditional-mathematics-r1",
+  "no_diplomatic_corrections": true,
+  "not_a_proof_of_source_theorems": true,
+  "checks": [
+    {
+      "name": "Stationarity of the surviving action in P1485 (10)",
+      "assumptions": "Treat q=x-dot squared and m as positive constants at a parameter value, and lambda>0. This comparison does not recover the cancelled sign or assume an unwritten measure factor.",
+      "derivation": [
+        "For f(lambda)=q/lambda+m lambda, f-prime=-q/lambda^2+m and f-double-prime=2q/lambda^3>0. Stationarity gives lambda^2=q/m and f at that point is 2 sqrt(m q).",
+        "To obtain the separately written lambda^2=q/m^2, a different coefficient such as m^2 lambda would be needed. Even that choice gives 2m sqrt(q), so an additional factor 1/2 would be needed to give m times length. These are possible modified expressions, not decipherments."
+      ],
+      "result": "The surviving m lambda, the source denominator m^2 and exp(+mL) are all retained without adding m, 1/2 or a minus sign.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true,
+      "exact_samples": [
+        {
+          "q": "9",
+          "m": "4",
+          "literal_lambda_squared": "9/4",
+          "written_lambda_squared": "9/16"
+        },
+        {
+          "q": "16",
+          "m": "1",
+          "literal_lambda_squared": "16",
+          "written_lambda_squared": "16"
+        }
+      ]
+    },
+    {
+      "name": "The last differential in P1485 (11)",
+      "assumptions": "If x is a scalar differentiable function of t, dx=x-dot dt. The manuscript also uses vector-valued x elsewhere, so a bare dx can require additional interpretation.",
+      "derivation": [
+        "The parameter-length expression is integral sqrt(x-dot squared) dt. Replacing dt by dx would instead give integral sqrt(x-dot squared) x-dot dt in the scalar case.",
+        "For x(t)=2t on [0,1], the two ordinary scalar integrals are 2 and 4. Thus the differential cannot be changed as mere typography."
+      ],
+      "result": "Visual dx remains in the diplomatic text with dt as a reading alternative. Parameter invariance does not decipher the last letter.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true,
+      "exact_test": {
+        "x": "2t",
+        "dt_integral": 2,
+        "dx_integral": 4
+      }
+    },
+    {
+      "name": "An explicitly convergent interpretation of the integral in P1485 (12)",
+      "assumptions": "For this comparison only, take lambda on (0,infinity), a=-A, b=-B and A,B>0. The source supplies no contour, limits or sign conditions.",
+      "derivation": [
+        "Substitute lambda=sqrt(B/A) exp(u), so d lambda/lambda=du and A lambda+B/lambda=2 sqrt(AB) cosh(u). The resulting integral on the real u-axis is twice the integral from 0 to infinity of exp(-2 sqrt(AB) cosh(u)) du.",
+        "Using DLMF 10.32.9 at nu=0, this equals 2 K_0(2 sqrt(AB)). If instead a,b>0 on the same positive-real contour, the integral diverges at both ends."
+      ],
+      "result": "The written exp(sqrt(ab)) is not established by either real-contour example. No Bessel function, contour or normalization replaces the literal formula.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true,
+      "primary_source": {
+        "title": "NIST DLMF 10.32.9, real integral for K_nu",
+        "url": "https://dlmf.nist.gov/10.32.E9",
+        "consulted_utc": "2026-10-15"
+      }
+    },
+    {
+      "name": "The KPZ radicand and the four source sample dimensions",
+      "assumptions": "Use the principal nonnegative real square root in the displayed algebraic expression; this is not a claim about a physical branch or a proof of the KPZ theorem.",
+      "derivation": [
+        "The radicand (D-1)(D-25) is nonnegative exactly for D<=1 or D>=25. At 25 it is zero; 26 is not this polynomial boundary.",
+        "Direct rational evaluation gives gamma(-2)=-1, gamma(0)=-1/2, gamma(1/2)=-1/3 and gamma(1)=0."
+      ],
+      "result": "The source sentence with “and” and 26 is retained. Algebra alone does not explain its intended restriction.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true,
+      "exact_samples": [
+        {
+          "D": "-2",
+          "radicand": "81",
+          "gamma": "-1"
+        },
+        {
+          "D": "0",
+          "radicand": "25",
+          "gamma": "-1/2"
+        },
+        {
+          "D": "1/2",
+          "radicand": "49/4",
+          "gamma": "-1/3"
+        },
+        {
+          "D": "1",
+          "radicand": "0",
+          "gamma": "0"
+        }
+      ]
+    },
+    {
+      "name": "Asymptotics of the retained factorial quotient in P1487 (8)",
+      "assumptions": "Let k tend to positive infinity and initially omit the separately ambiguous factor 9^k/g^k. Compare the literal quotient, without identifying boundary-rooted and spherical graph conventions.",
+      "derivation": [
+        "Write a_k=2 Gamma(4k-2)/(Gamma(3k) Gamma(k+1)). Stirling expansion yields a_k asymptotic to [sqrt(3)/(16 sqrt(2 pi))] (256/27)^k k^(-5/2). The k power is (4k-5/2)-(3k-1/2)-(k+1/2)=-5/2.",
+        "The source (7) with gamma=-1/2 has power -7/2. A change of marked-vertex or boundary convention can introduce a factor proportional to k; the two counts are not identified by this calculation. A literal 9^k would multiply the exponential base by 9, while a formal g^k could have another role. Neither observation determines the glyph."
+      ],
+      "result": "The cancelled fraction, retained quotient, source asymptotic and both factor candidates remain unchanged.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true,
+      "numerical_sanity_checks": [
+        {
+          "k": 20,
+          "ratio_to_leading_term": 1.0339465225148725
+        },
+        {
+          "k": 100,
+          "ratio_to_leading_term": 1.0066348105820475
+        },
+        {
+          "k": 1000,
+          "ratio_to_leading_term": 1.0006600962916783
+        }
+      ],
+      "primary_source": {
+        "title": "NIST DLMF 5.11.1, asymptotic expansion of log Gamma",
+        "url": "https://dlmf.nist.gov/5.11.E1",
+        "consulted_utc": "2026-10-15"
+      }
+    },
+    {
+      "name": "Gaussian graph integrals and the inner-vertex qualification in P1488",
+      "assumptions": "Use each undirected edge once, D independent Euclidean coordinates and ordinary Lebesgue measures. The source measure normalization is unspecified. Its separate words “inner vertices” can mean a fixed outer boundary.",
+      "derivation": [
+        "For a closed trivalent graph, the edge action is x^T L x with L=3I-G. Each row sums to zero, so translations give a zero mode and the ordinary unpinned Gaussian integral is divergent.",
+        "With boundary values b fixed, write the inner action x^T L_II x-2x^T c+s_B. If L_II is positive definite, completing the square gives pi^(ND/2) det(L_II)^(-D/2) times exp(-s_B+c^T L_II^(-1)c), separately in each target coordinate.",
+        "For K4 the full L=4I-J has determinant 0. Pin one vertex at zero; the 3 by 3 minor has determinant 16, and its D=1 integral is pi^(3/2)/4. Thus inner vertices and boundary data matter, and the closed-graph counterexample cannot simply be applied to every version of (9)."
+      ],
+      "result": "The source determinant formula is preserved. A normalization and treatment of boundary values or zero modes would be needed to make the equality precise.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true,
+      "exact_matrices": {
+        "closed": [
+          [
+            3,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            3,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            3,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            3
+          ]
+        ],
+        "pinned_minor": [
+          [
+            3,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            3,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            3
+          ]
+        ],
+        "pinned_determinant": "16"
+      }
+    },
+    {
+      "name": "Exterior multiplication and exactness of the full exterior module",
+      "assumptions": "Work over a field with v nonzero, and choose a linear functional ell with ell(v)=1. The exact computation uses dimension 4, v=(1,2,0,-1), ell=e_1 dual.",
+      "derivation": [
+        "Exterior multiplication d_v=v wedge satisfies d_v^2=0. The contraction identity i_ell(v wedge alpha)+v wedge i_ell(alpha)=ell(v) alpha=alpha gives a contracting homotopy.",
+        "Consequently ker(d_v)=im(d_v) for the full exterior algebra at every nonzero v. The program verifies both identities on all 16 exterior-basis elements with exact rational coefficients. General identity follows by the contraction rule."
+      ],
+      "result": "The source example of the zero bundle for the full exterior module is consistent with this fiberwise calculation.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true,
+      "exact_basis_tests": 16
+    },
+    {
+      "name": "The truncated-algebra example and its written twist",
+      "assumptions": "Interpret the displayed kernel literally as a subbundle of the trivial bundle with fiber Lambda^k V on P(V), without an additional unstated twist or degree-shift convention.",
+      "derivation": [
+        "For k=1, ker(v wedge: V -> Lambda^2 V)=Cv for each nonzero v. Over the space of lines this is the tautological O(-1). The source defines O(-1) this way on the preceding page.",
+        "The displayed right side for k=1 is Omega^0 tensor O(1)=O(1). On P^1, choose frames (1,z) and (w,1), with w=1/z. The latter is z^(-1) times the former, whereas the dual transitions have the inverse factor. The two literal line bundles therefore have opposite degree.",
+        "This isolates a mismatch under the stated untwisted interpretation. Regrading, dualizing or inserting twists is a possible change of construction, not source text."
+      ],
+      "result": "The written Omega^(k-1) tensor O(k) is retained. The calculation does not select an intended correction.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true,
+      "exact_case": {
+        "dimV": 2,
+        "k": 1,
+        "kernel": "O(-1)",
+        "written_right_side": "O(1)"
+      }
+    },
+    {
+      "name": "The symplectic three-term module and the inserted “symm.”",
+      "assumptions": "Assume a nondegenerate alternating form on V in characteristic different from 2, as required by the source word “symplect.”. This assumption is not assigned to the inserted abbreviation.",
+      "derivation": [
+        "The composition C -> V -> C is 1 -> v -> [v,v]=0 for an alternating form. The middle cohomology is v-perp/Cv.",
+        "Nondegeneracy gives (v-perp)-perp=Cv, so the radical of the form restricted to v-perp is Cv. Its quotient is nondegenerate and has dimension dimV-2.",
+        "For the symmetric identity form and v=e_1 the composition is 1, so a symmetric form does not define this complex for all projective v. It would require restricting to isotropic v or changing the setup."
+      ],
+      "result": "Both the symplectic wording and inserted symm. remain. The computation does not silently supply a missing skew- prefix.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true
+    },
+    {
+      "name": "Clifford form normalization in P1490",
+      "assumptions": "Use characteristic different from 2 and treat h as the displayed degree-2 element. No diagonal value for the source pairing is assumed.",
+      "derivation": [
+        "Putting v-prime=v in vv-prime+v-prime-v=<v,v-prime>h gives 2v^2=<v,v>h. Thus diagonal pairing 1 gives e_i^2=h/2, while diagonal pairing 2 gives the separately written e_i^2=h.",
+        "Off-diagonal pairing zero gives anticommutation of distinct basis vectors. The uncertain orthon./orthog. abbreviation does not independently establish the diagonal value."
+      ],
+      "result": "The two literal relations can agree at diagonal 2. The comparison therefore records a convention question rather than asserting an unconditional factor error.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true
+    },
+    {
+      "name": "A precise quaternion comparison for r=3",
+      "assumptions": "For comparison only specialize to the real algebra with h=1 and e_i^2=+1. This does not interpret the source approximation sign or specify its field.",
+      "derivation": [
+        "Anticommutation reduces products to 8 ordered monomials. The exact signed-XOR multiplication table on these 8 symbols is associative (all 512 triples checked), providing an 8-dimensional algebra realizing those relations.",
+        "Its even part has basis 1,e_1e_2,e_2e_3,e_1e_3. Set i=e_1e_2,j=e_2e_3,k=e_1e_3: all three square to -1 and ij=k,jk=i,ki=j, with reversed products negated. This even subalgebra has the quaternion multiplication table.",
+        "The full 8-dimensional algebra is not the 4-dimensional real quaternion algebra. The even-part comparison is a valid conditional reading of the nearby idea, not an expansion inserted into the manuscript."
+      ],
+      "result": "The source “approximately quaternions” remains verbatim in translation.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true,
+      "exact_associativity_tests": 512,
+      "even_masks": [
+        0,
+        3,
+        6,
+        5
+      ],
+      "specialization": "real, h=1, e_i^2=+1"
+    },
+    {
+      "name": "The null-vector differential on the quadric",
+      "assumptions": "Characteristic different from 2; use the literal Clifford relation and a vector with <v,v>=0.",
+      "derivation": [
+        "The literal relation gives 2v^2=<v,v>h=0, hence v^2=0. Multiplication by v therefore squares to zero on any graded module.",
+        "For non-isotropic vectors this conclusion need not hold. The restriction to the quadric matters; no claimed general classification theorem is proved by this elementary calculation."
+      ],
+      "result": "The null-vector construction is consistent under these assumptions; the source theorem remains a historical assertion, not certified here.",
+      "diplomatic_source_emended": false,
+      "own_derivation": true
+    }
+  ]
+}
