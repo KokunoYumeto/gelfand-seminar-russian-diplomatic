@@ -1,0 +1,424 @@
+{
+  "schema": "chapter32-fourth10-separate-conditional-mathematics-r1",
+  "manuscript_math_unchanged": true,
+  "canonical_Russian_frames_unchanged": true,
+  "English_formula_repairs": 0,
+  "checks": [
+    {
+      "page_id": "GELFAND-P001455",
+      "region_id": "Euler-charge-identity",
+      "assumptions": "A finite closed spherical triangulation with degree counts ν_i, no boundary contribution, the displayed Euler and incidence equalities.",
+      "derivation": "V−E+F=2 and 3F=2E give6V−2E=12. Substituting V=Σν_i and2E=Σiν_i yields Σ(6−i)ν_i=12, exactly the written identity. Multiplication by60 gives total charge720. If all ν3,ν4,ν5 vanish and degrees are at least3, every summand is nonpositive, a contradiction. The three explicit count substitutions below verify the arithmetic only; they do not certify arbitrary scan diagrams as closed triangulations.",
+      "russian": "Из V−E+F=2 и 3F=2E следует 6V−2E=12, затем Σ(6−i)ν_i=12. При умножении на60 сумма зарядов720. Если ν3=ν4=ν5=0 и степени не меньше3, все слагаемые неположительны, что противоречит12. Это не утверждение о замкнутости произвольного рисунка.",
+      "exact_count_substitutions": [
+        {
+          "degree_counts": {
+            "3": 4
+          },
+          "V": 4,
+          "E": "6",
+          "F": "4",
+          "Euler_value": "2",
+          "charge_sum": 720
+        },
+        {
+          "degree_counts": {
+            "4": 6
+          },
+          "V": 6,
+          "E": "12",
+          "F": "8",
+          "Euler_value": "2",
+          "charge_sum": 720
+        },
+        {
+          "degree_counts": {
+            "5": 12
+          },
+          "V": 12,
+          "E": "30",
+          "F": "20",
+          "Euler_value": "2",
+          "charge_sum": 720
+        }
+      ]
+    },
+    {
+      "page_id": "GELFAND-P001456",
+      "region_id": "case24-charge-inequality",
+      "assumptions": "Use exactly procedure22: transfer30 from each degree5 vertex to each adjacent vertex of degree at least7; initial charge is60(6−i).",
+      "derivation": "Each transfer preserves the total. A degree5 vertex with r high-degree neighbours ends with60−30r, positive for r=0 or1. A degree7 vertex with k degree5 neighbours ends with−60+30k; for the written k≤2 it is nonpositive. Thus that inequality alone does not yield positive charge at the depicted degree7 vertex. The source’s heading says positive charge remains somewhere; these local examples alone do not verify its full unavoidable-set argument. The3×/5×/10× original-pixel views show≤2, so it is retained in Russian and English. It is not silently changed to≥3 to match the positive local-charge calculation.",
+      "russian": "Перенос30 сохраняет общую сумму. Для вершины степени5 итог60−30r положителен при r=0,1. Для степени7 итог−60+30k неположителен при записанном k≤2. Само это не дает положительного заряда у изображенной вершины степени7 и не доказывает весь аргумент о неизбежном наборе. На увеличениях3×,5×,10× виден знак≤2; он не заменен на≥3.",
+      "degree5_cases": [
+        {
+          "degree": 5,
+          "high_degree_neighbours": 0,
+          "final_charge": 60
+        },
+        {
+          "degree": 5,
+          "high_degree_neighbours": 1,
+          "final_charge": 30
+        },
+        {
+          "degree": 5,
+          "high_degree_neighbours": 2,
+          "final_charge": 0
+        },
+        {
+          "degree": 5,
+          "high_degree_neighbours": 3,
+          "final_charge": -30
+        },
+        {
+          "degree": 5,
+          "high_degree_neighbours": 4,
+          "final_charge": -60
+        },
+        {
+          "degree": 5,
+          "high_degree_neighbours": 5,
+          "final_charge": -90
+        }
+      ],
+      "degree7_cases": [
+        {
+          "degree": 7,
+          "degree5_neighbours": 0,
+          "final_charge": -60
+        },
+        {
+          "degree": 7,
+          "degree5_neighbours": 1,
+          "final_charge": -30
+        },
+        {
+          "degree": 7,
+          "degree5_neighbours": 2,
+          "final_charge": 0
+        },
+        {
+          "degree": 7,
+          "degree5_neighbours": 3,
+          "final_charge": 30
+        },
+        {
+          "degree": 7,
+          "degree5_neighbours": 4,
+          "final_charge": 60
+        },
+        {
+          "degree": 7,
+          "degree5_neighbours": 5,
+          "final_charge": 90
+        },
+        {
+          "degree": 7,
+          "degree5_neighbours": 6,
+          "final_charge": 120
+        },
+        {
+          "degree": 7,
+          "degree5_neighbours": 7,
+          "final_charge": 150
+        }
+      ],
+      "charge_transfer_examples": [
+        {
+          "initial_pair": [
+            60,
+            -60
+          ],
+          "transferred": 0,
+          "final_pair": [
+            60,
+            -60
+          ],
+          "sum_before": 0,
+          "sum_after": 0
+        },
+        {
+          "initial_pair": [
+            60,
+            -60
+          ],
+          "transferred": 30,
+          "final_pair": [
+            30,
+            -30
+          ],
+          "sum_before": 0,
+          "sum_after": 0
+        },
+        {
+          "initial_pair": [
+            60,
+            -60
+          ],
+          "transferred": 60,
+          "final_pair": [
+            0,
+            0
+          ],
+          "sum_before": 0,
+          "sum_after": 0
+        }
+      ],
+      "actual_source_views": {
+        "path": "C:\\Users\\Floris\\Documents\\Codex\\2026-10-06\\gelfand-pro-transcription-packets-20261006\\work\\english-reader-translation-r1\\chapter32-batch04-root-r1\\charge-inequality-zooms-r1\\ACTUAL-CHARGE-INEQUALITY-VIEWS-CLOSED-r1.json",
+        "bytes": 6332,
+        "sha256": "78e0373c51a7720e3129c83e54754db5347d0f9552a65368f3efc5bf72bc411e"
+      }
+    },
+    {
+      "id": "literal-antipode-versus-written-coproduct",
+      "scope": "Compatibility test of P001461–1462 with the same generators; no source repair.",
+      "assumptions": "q=16, H=diag(1,-1), X+ and X- the usual 2x2 raising/lowering matrices, q^(H/4)=diag(2,1/2), S(q^(H/4))=q^(-H/4). These matrices satisfy the first-page displayed commutator and H relations.",
+      "calculations": [
+        {
+          "generator": "X+",
+          "literal_S": [
+            [
+              "0",
+              "16"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "m_S_id_Delta": [
+            [
+              "0",
+              "10"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "m_id_S_Delta": [
+            [
+              "0",
+              "10"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "epsilon_required": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "conditional_solution_in_this_representation": [
+            [
+              "0",
+              "-4"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ]
+        },
+        {
+          "generator": "X-",
+          "literal_S": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "1/16",
+              "0"
+            ]
+          ],
+          "m_S_id_Delta": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "5/8",
+              "0"
+            ]
+          ],
+          "m_id_S_Delta": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "5/8",
+              "0"
+            ]
+          ],
+          "epsilon_required": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "conditional_solution_in_this_representation": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "-1/4",
+              "0"
+            ]
+          ]
+        }
+      ],
+      "result": "Both antipode composites are nonzero although the written counit vanishes. This is a mathematical discrepancy in the literal formulas, not a recovered minus sign."
+    },
+    {
+      "id": "fixed-generator-commutator-normalization",
+      "scope": "Compare the two adjacent source denominators without a generator redefinition.",
+      "q": "16",
+      "first_page_commutator": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "bottom_formula_rhs": [
+        [
+          "4/17",
+          "0"
+        ],
+        [
+          "0",
+          "-4/17"
+        ]
+      ],
+      "denominator_ratio": "(q-q^-1)/(q^1/2-q^-1/2)=q^1/2+q^-1/2=17/4",
+      "result": "The displayed formulas are incompatible for these fixed generators. An unstated normalization change could explain them; none is inserted."
+    },
+    {
+      "id": "literal-R-coefficient-conditional-test",
+      "assumptions": "Use the same first-page 2x2 representation at q=16 and additionally assume [1]_q=1, [0]_q!=1. Higher terms vanish because e^2=f^2=0. The excerpt defines only the factorial product, so the [1]_q convention is an explicit additional assumption.",
+      "e": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "f": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "2",
+          "0"
+        ]
+      ],
+      "literal_R": [
+        [
+          "2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/2",
+          "32",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "2"
+        ]
+      ],
+      "test": "R Delta(X+) - Delta^op(X+) R",
+      "residual": [
+        [
+          "0",
+          "0",
+          "-241/4",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "241/4"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "result": "This residual is nonzero under the stated convention. It does not certify any replacement coefficient or rule out a different unstated convention; q^n/[n]_q! remains literal."
+    },
+    {
+      "id": "tensor-input-output-index-count",
+      "source": "P001464 writes N input factors and L output factors but ends the upper coefficient indices with N and the lower ones with L.",
+      "example": {
+        "input_dimensions": [
+          2,
+          3
+        ],
+        "output_dimensions": [
+          5
+        ],
+        "linear_map_matrix_shape": [
+          5,
+          6
+        ],
+        "coefficient_tensor_shape": [
+          5,
+          2,
+          3
+        ],
+        "upper_output_indices": 1,
+        "lower_input_indices": 2
+      },
+      "result": "For N=2,L=1 the output coefficient has one upper label and two lower labels in the usual convention. The literal opposite N/L endings are retained; the example is a compatibility observation, not an emendation."
+    },
+    {
+      "id": "Morse-normalization-literal-zero",
+      "source": "P001458: df(x)=nu, f(0)=0.",
+      "calculation": "In a local coordinate chart u centered at x, u(x)=0. A function satisfying f(0)=0 in that chart satisfies f(x)=0 at the same geometric point. Without the chart identification, the two evaluation points need not agree.",
+      "result": "This supplies a possible coordinate explanation, not evidence that the handwritten zero was x. The visible zero remains."
+    }
+  ]
+}
