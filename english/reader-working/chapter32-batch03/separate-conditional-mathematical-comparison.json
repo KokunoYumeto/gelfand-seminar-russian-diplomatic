@@ -1,0 +1,653 @@
+{
+  "schema": "chapter32-third10-separate-conditional-mathematics-r1",
+  "manuscript_math_unchanged": true,
+  "canonical_Russian_frames_unchanged": true,
+  "English_formula_repairs": 0,
+  "checks": [
+    {
+      "page_id": "GELFAND-P001446",
+      "region_id": "hall-insertion",
+      "assumptions": "Finite sets; the matroid on the groom set M is free; interpret φ(B) as the set of grooms related to brides in B.",
+      "derivation": "The displayed Rado expression becomes min_{B⊆N}(|φ(B)|+|N−B|). The empty subset gives |N|. Equality to |N| is therefore equivalent to |φ(B)|≥|B| for every B⊆N, the written Hall condition. For neighbours x↦{a,b}, y↦{b,c}, direct enumeration gives minimum2. This consistency calculation cannot tell whether the inserted looped sign is a Cyrillic initial or φ.",
+      "russian": "Для свободного матроида выражение Радо равно min(|φ(B)|+|N−B|). Пустое B дает |N|, поэтому равенство |N| эквивалентно |φ(B)|≥|B| для всех B. Проверен конкретный конечный пример; это не читает знак вставки.",
+      "exact_finite_example": [
+        {
+          "B": [],
+          "image": [],
+          "image_cardinality": 0,
+          "complement_cardinality": 2,
+          "rank_term": 2
+        },
+        {
+          "B": [
+            "x"
+          ],
+          "image": [
+            "a",
+            "b"
+          ],
+          "image_cardinality": 2,
+          "complement_cardinality": 1,
+          "rank_term": 3
+        },
+        {
+          "B": [
+            "y"
+          ],
+          "image": [
+            "b",
+            "c"
+          ],
+          "image_cardinality": 2,
+          "complement_cardinality": 1,
+          "rank_term": 3
+        },
+        {
+          "B": [
+            "x",
+            "y"
+          ],
+          "image": [
+            "a",
+            "b",
+            "c"
+          ],
+          "image_cardinality": 3,
+          "complement_cardinality": 0,
+          "rank_term": 3
+        }
+      ],
+      "source_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001445",
+      "region_id": "complex-versus-quotient",
+      "assumptions": "View the outgoing linear map A:V0→V1⊕V2⊕V3 as a two-term complex, without selecting a degree shift not written in the source.",
+      "derivation": "The cohomology of a two-term map consists of its kernel and cokernel in successive degrees. For A:R²→R, A(x,y)=x, the kernel is one-dimensional and the cokernel is zero. Retaining only the quotient forgets the kernel. The calculation supports the source motivation for keeping the map as a complex; it does not establish the uncertain surname or an unstated degree convention.",
+      "russian": "Двухчленный комплекс сохраняет и ядро, и коядро. Для A(x,y)=x из R² в R ядро одномерно, коядро нулевое. Это поясняет мотив источника, но не устанавливает фамилию или ненаписанный сдвиг степени.",
+      "source_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001454",
+      "region_id": "colour-swap-and-path",
+      "assumptions": "A proper colouring of a graph with colours1,2,3,4; K is the subgraph induced by colours1 and3.",
+      "derivation": "Swap1 and3 on one connected component of K. An edge inside the component keeps different colours. An edge from the component to a vertex of colour1 or3 outside it cannot exist, since it would join that same component. Edges to colours2 or4 remain proper. Thus the swap preserves properness. If the four neighbours of a degree4 centre use at most three colours, a fourth is available for the centre. These elementary checks do not prove the whole four-colour theorem, establish the overwritten 3/8 digit or fill the broken path strokes.",
+      "russian": "Перестановка цветов1 и3 в одной компоненте индуцированного подграфа сохраняет правильность раскраски: ребро к внешней вершине цвета1 или3 присоединило бы ее к той же компоненте. При не более чем трех цветах четырех соседей центра остается свободный четвертый цвет. Это не доказывает всю теорему и не читает переписанную цифру.",
+      "source_math_unchanged": true
+    },
+    {
+      "page_ids": [
+        "GELFAND-P001449",
+        "GELFAND-P001453",
+        "GELFAND-P001454"
+      ],
+      "region_id": "ambiguous-diagram-joins",
+      "assumptions": "Only the visible strokes and typed readable labels are admitted as evidence.",
+      "derivation": "A close pair of endpoints can describe retracing or different graph vertices; joining a gap can change adjacency and face structure. The problem context alone therefore does not select a unique graph from these incomplete strokes. Native drafts preserve visible segments and explicit uncertainty rather than adding a mathematically convenient triangulation, curve closure or edge. The loop annotation remains an edge annotation, not an added vertex.",
+      "russian": "Сближение концов не определяет, повторена ли линия или различны вершины; добавление соединения может изменить смежность и грани. Поэтому контекст не определяет единственный граф. В частичных рисунках сохраняются видимые штрихи, разрывы и явные оговорки.",
+      "source_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001447",
+      "region_id": "hall-membership",
+      "assumptions": "A point-valued injective choice f:N→M, with B(n)⊆M. Do not identify a point with its singleton without an added convention.",
+      "derivation": "For N={x,y}, M={a,b,c}, B(x)={a,b}, B(y)={b,c}, the choice f(x)=a, f(y)=b is injective and f(n)∈B(n). Its values are points, so f(n)⊂B(n) is not the same assertion. The corresponding subset statement would be {f(n)}⊆B(n), with braces added. This explains the mathematical expectation, but does not change the handwritten ⊂ or decide any cancelled word. The source’s later reduction literally says to declare all subsets of N independent; the free-matroid calculation in the earlier conditional note uses its own explicitly stated groom-side convention, not a correction of that source sentence.",
+      "russian": "В примере N={x,y}, M={a,b,c}, B(x)={a,b}, B(y)={b,c}, f(x)=a, f(y)=b имеем инъективный выбор и f(n)∈B(n). Для включения потребовалась бы запись {f(n)}⊆B(n). Фигурные скобки и знак принадлежности в источник не внесены. Условный расчет свободного матроида не исправляет фразу источника о независимости подмножеств N.",
+      "finite_choice": {
+        "f": {
+          "x": "a",
+          "y": "b"
+        },
+        "neighbours": {
+          "x": [
+            "a",
+            "b"
+          ],
+          "y": [
+            "b",
+            "c"
+          ]
+        },
+        "injective": true,
+        "membership_verified": true
+      },
+      "source_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001451",
+      "region_id": "condition-ending",
+      "assumptions": "A smooth local coordinate model X=C², Z={y=0}; use the graph of df and the conormal to this smooth Z. This is a local calculation, not a proof of all singular-support assertions.",
+      "derivation": "For f=c x²+a y+b y², intersection with N*Z imposes y=0 and p_x=2cx=0. At the origin the conormal point is (0,0,0,a). The graph tangent vectors are (1,0,2c,0),(0,1,0,2b); conormal tangent vectors are (1,0,0,0),(0,0,0,1). Their four-column matrix has full rank exactly when 2c≠0, the nondegeneracy of the Hessian of f|Z=cx². Exact rational elimination checks all12 cases below. In particular c=1,a=0 gives a transverse intersection even though df(0)=0. Thus an additional df≠0 condition is unnecessary in this model. This does not decipher the overwritten condition ending; the crossed-out second condition and author’s (?) remain in both editions.",
+      "russian": "Для X=C², Z={y=0}, f=cx²+ay+by² пересечение графика df с N*Z задается y=0, 2cx=0. Четыре касательных вектора имеют полный ранг ровно при 2c≠0, то есть невырожденности гессиана f|Z. При c=1,a=0 пересечение трансверсально, хотя df(0)=0. Это не читает переписанное окончание и не удаляет зачеркнутое условие с вопросительным знаком.",
+      "exact_rational_tangent_examples": [
+        {
+          "c": 0,
+          "a": 0,
+          "b": 0,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "rank": 3,
+          "transverse": false,
+          "df_at_origin": [
+            0,
+            0
+          ],
+          "restricted_hessian": 0
+        },
+        {
+          "c": 0,
+          "a": 0,
+          "b": 5,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              10,
+              0,
+              1
+            ]
+          ],
+          "rank": 3,
+          "transverse": false,
+          "df_at_origin": [
+            0,
+            0
+          ],
+          "restricted_hessian": 0
+        },
+        {
+          "c": 0,
+          "a": 3,
+          "b": 0,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "rank": 3,
+          "transverse": false,
+          "df_at_origin": [
+            0,
+            3
+          ],
+          "restricted_hessian": 0
+        },
+        {
+          "c": 0,
+          "a": 3,
+          "b": 5,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              10,
+              0,
+              1
+            ]
+          ],
+          "rank": 3,
+          "transverse": false,
+          "df_at_origin": [
+            0,
+            3
+          ],
+          "restricted_hessian": 0
+        },
+        {
+          "c": 1,
+          "a": 0,
+          "b": 0,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "rank": 4,
+          "transverse": true,
+          "df_at_origin": [
+            0,
+            0
+          ],
+          "restricted_hessian": 2
+        },
+        {
+          "c": 1,
+          "a": 0,
+          "b": 5,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              10,
+              0,
+              1
+            ]
+          ],
+          "rank": 4,
+          "transverse": true,
+          "df_at_origin": [
+            0,
+            0
+          ],
+          "restricted_hessian": 2
+        },
+        {
+          "c": 1,
+          "a": 3,
+          "b": 0,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "rank": 4,
+          "transverse": true,
+          "df_at_origin": [
+            0,
+            3
+          ],
+          "restricted_hessian": 2
+        },
+        {
+          "c": 1,
+          "a": 3,
+          "b": 5,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              10,
+              0,
+              1
+            ]
+          ],
+          "rank": 4,
+          "transverse": true,
+          "df_at_origin": [
+            0,
+            3
+          ],
+          "restricted_hessian": 2
+        },
+        {
+          "c": 2,
+          "a": 0,
+          "b": 0,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "rank": 4,
+          "transverse": true,
+          "df_at_origin": [
+            0,
+            0
+          ],
+          "restricted_hessian": 4
+        },
+        {
+          "c": 2,
+          "a": 0,
+          "b": 5,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              10,
+              0,
+              1
+            ]
+          ],
+          "rank": 4,
+          "transverse": true,
+          "df_at_origin": [
+            0,
+            0
+          ],
+          "restricted_hessian": 4
+        },
+        {
+          "c": 2,
+          "a": 3,
+          "b": 0,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "rank": 4,
+          "transverse": true,
+          "df_at_origin": [
+            0,
+            3
+          ],
+          "restricted_hessian": 4
+        },
+        {
+          "c": 2,
+          "a": 3,
+          "b": 5,
+          "combined_tangent_matrix": [
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              10,
+              0,
+              1
+            ]
+          ],
+          "rank": 4,
+          "transverse": true,
+          "df_at_origin": [
+            0,
+            3
+          ],
+          "restricted_hessian": 4
+        }
+      ],
+      "source_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001450",
+      "region_id": "covector-letter",
+      "assumptions": "The symbol denotes a covector in T*xX; its handwritten shape could be Greek ν or Latin v.",
+      "derivation": "Renaming every occurrence of a bound covector variable ν to v does not change the displayed membership or differential equalities. The mathematical role therefore cannot distinguish these letter shapes. The provisional ν and explicit ν/v uncertainty remain; the quantifiers, local-neighbourhood wording and source assertion of independence of f are not strengthened into a new theorem.",
+      "russian": "Равномерная замена имени переменной ковектора ν на v не меняет записанных равенств и включений. Математический смысл не различает эти начертания. Условное ν и оговорка ν/v сохранены; кванторы источника не усилены.",
+      "source_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001452",
+      "region_id": "vanishing-degree",
+      "assumptions": "For the source’s point-supported example, take the skyscraper C_x, f(x)=0 and a nonzero nearby ε. The fibre f⁻¹(ε) has no support of this sheaf; use the unshifted relative complex convention.",
+      "derivation": "The small-neighbourhood sections form C in degree0, and the restriction to the nonzero fibre is zero. The relative mapping cone shifted by −1 is therefore C in degree0. Its cohomology dimensions are1 at j=0 and0 otherwise, as verified by the zero-differential dimension calculation below. A complex placed instead in degree1 has its nonzero cohomology there; a grading convention matters. Neither example determines whether the handwritten “1st degree” was intended literally or as a single degree. Formula (10) keeps j≠0 and the following phrase keeps “1st”. No general perversity or vanishing-cycle theorem is claimed.",
+      "russian": "Для пучка C_x при f(x)=0 и ε≠0 на соседнем слое нет носителя. В несдвинутой относительной конвенции получается C в степени0; коумологии нулевые при j≠0. Перемещение комплекса в степень1 меняет индекс. Это не устанавливает смысл слов «в 1-й степени»; формула (10) и исходная фраза сохранены.",
+      "cohomology_dimensions": {
+        "-2": 0,
+        "-1": 0,
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "alternative_placement_degree1": {
+        "-2": 0,
+        "-1": 0,
+        "0": 0,
+        "1": 1,
+        "2": 0
+      },
+      "source_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001448",
+      "region_id": "integer-solutions-convention",
+      "assumptions": "The formula is the written Markov equation; bundle dimensions/ranks cannot be negative. The spoken integer-solutions statement may use an implicit positive-solution convention.",
+      "derivation": "Direct substitution gives (1,1,1):3=3, (−1,−1,1):3=3, and (0,0,0):0=0. Thus “all integer solutions” without an implicit sign convention includes triples that cannot all be ordinary bundle ranks. The source wording is translated literally; no positive qualifier is inserted and no exceptional-bundle classification is proved here.",
+      "russian": "Прямой подстановкой (−1,−1,1) дает 3=3, хотя отрицательные числа не являются рангами обычных расслоений. Возможно неявное соглашение о положительных решениях. Слова источника о целочисленных решениях сохранены без добавления условия положительности.",
+      "exact_substitutions": [
+        {
+          "triple": [
+            1,
+            1,
+            1
+          ],
+          "lhs": 3,
+          "rhs": 3,
+          "has_negative_entry": false
+        },
+        {
+          "triple": [
+            -1,
+            -1,
+            1
+          ],
+          "lhs": 3,
+          "rhs": 3,
+          "has_negative_entry": true
+        },
+        {
+          "triple": [
+            0,
+            0,
+            0
+          ],
+          "lhs": 0,
+          "rhs": 0,
+          "has_negative_entry": false
+        }
+      ],
+      "source_math_unchanged": true
+    }
+  ]
+}

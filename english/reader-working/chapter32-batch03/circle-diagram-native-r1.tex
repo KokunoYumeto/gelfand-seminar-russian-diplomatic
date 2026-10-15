@@ -1,0 +1,22 @@
+% Partial stroke comparison: nearby right-hand endings are not identified as one vertex.
+\begin{tikzpicture}[x=0.02cm,y=-0.02cm,line width=0.55pt]
+\path[use as bounding box] (0,0) rectangle (290,240);
+\draw (110,35)..controls(64,34)and(24,61)..(16,111)
+ ..controls(4,155)and(32,190)..(69,211)
+ ..controls(122,239)and(195,227)..(245,189)
+ ..controls(277,161)and(278,104)..(251,70)
+ ..controls(213,24)and(166,20)..(110,35);
+\draw (110,35)..controls(139,96)and(127,155)..(69,211);
+\draw (110,35)..controls(157,100)and(209,147)..(261,163);
+\draw (69,211)..controls(120,178)and(208,158)..(261,176);
+\draw (69,211)..controls(110,181)and(146,192)..(180,220);
+\draw (180,220)..controls(211,190)and(229,177)..(254,173);
+\draw (110,35)..controls(143,69)and(158,58)..(180,30);
+\draw (180,30)..controls(201,66)and(218,66)..(242,60);
+\draw (110,35)..controls(148,84)and(216,83)..(242,60);
+\draw (242,60)..controls(223,98)and(230,137)..(254,157);
+\draw (110,35)..controls(101,87)and(60,110)..(23,112);
+\draw (23,112)..controls(75,111)and(82,159)..(69,211);
+\draw (232,86)..controls(242,98)and(249,99)..(261,99);
+\draw (261,99)..controls(239,115)and(249,126)..(259,141);
+\end{tikzpicture}

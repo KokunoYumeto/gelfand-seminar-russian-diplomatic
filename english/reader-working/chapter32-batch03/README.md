@@ -1,0 +1,13 @@
+# Russian and English reader source: chapter 32, frames 21–30
+
+These separate flowing fragments cover **GELFAND-P001445–GELFAND-P001454**: derived quiver representations, matroids and Hall’s theorem, vector bundles and braid groups, singular support and perverse sheaves, and the beginning of Fuchs’s four-colour discussion.
+
+All **32 displays, 162 inline expressions, ten existing native diagrams and 42 full historical reading records** are retained. Every uncertain passage links to the full record in its own language. The Russian observations, candidates and notes remain exact; the English appendix translates them completely. Historical note order and source-body order are separately preserved where they differ.
+
+Four illustrations have **exact original detail crops beside partial native LaTeX recreations**. These retain ambiguous circle joins, gaps in the disk diagram, a disputed lower path label marked [3/8 ?], separate continuation strokes and the looped edge-exclusion annotation. All written prose, formulas, clear labels and the readable exclusion caption are typed. The four original crops supplement illustrations; they do not replace transcription. The scans are binary and already high contrast, so no additional processing erases strokes.
+
+All ten whole originals, four retained crops and 133 temporary detail views were inspected, using 3×, 5× and 10× original-pixel enlargement for uncertainty. The final wide context view confirms the separately written “only” in an unfinished annotation; its other uncertain ending remains open. Names, cancellations, nu/v, the subset-shaped Hall sign, page42/48 and the literal “1st degree” phrase remain explicit uncertainties.
+
+Separate conditional mathematics checks the finite Hall example, a local conormal/Morse tangent calculation, a point-supported degree-zero example and the elementary colouring swap. It also records why the literal all-integer Markov wording may require a sign convention. These comparisons do not change the diplomatic formulas, prove the general source assertions or establish a new decipherment.
+
+Use one language’s macros, flowing fragment and reading appendix in a LuaLaTeX A4 document with amsmath, amssymb, tikz, tikz-cd, graphicx, xcolor, hyperref and Unicode/Cyrillic fonts. Keep the four native modules, eight pair modules and figures directory beside the fragments. **These are reviewed sources; their PDF layout and new native diagram rendering have not yet been accepted.** With the preceding batches, 30 of chapter32’s 66 frames have reviewed translations; 36 remain. The separate complete Russian and English readers, including a full PDF for each language, remain in preparation.
