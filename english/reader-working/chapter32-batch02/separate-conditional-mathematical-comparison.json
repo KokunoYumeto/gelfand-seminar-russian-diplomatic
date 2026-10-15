@@ -1,0 +1,117 @@
+{
+  "schema": "chapter32-second10-separate-conditional-mathematical-comparison-r1",
+  "manuscript_math_unchanged": true,
+  "canonical_Russian_frames_unchanged": true,
+  "English_formula_repairs": 0,
+  "checks": [
+    {
+      "page_id": "GELFAND-P001438",
+      "region_id": "operator-coefficient",
+      "assumptions": "Read the operator as left-coefficient differential notation, with i=0,...,N-1, and compare N=2 only.",
+      "derivation": "The literal N−1 gives L=∂²+u1+u1∂. Candidate N−i would give L=∂²+u2+u1∂, so the later example u1=0, L=∂²+u2 is compatible with the latter convention. This exhibits a possible source index inconsistency; it does not identify whether the written final subscript is 1 or i.",
+      "russian": "При N=2 буквальный индекс N−1 дает ∂²+u1+u1∂; кандидат N−i дает ∂²+u2+u1∂. Это лишь отдельная проверка согласованности с позднейшим примером, не доказательство чтения штриха.",
+      "manuscript_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001440",
+      "region_id": "laurent-indices",
+      "assumptions": "Interpret the displayed sum as an ordinary formal Laurent sum, with the summand exactly as written.",
+      "derivation": "In sum_{j=-∞}^N c_i(z)ξ^i, the summand has no bound j and contains a free i. Using i consistently would bind that index, but the mathematical expectation does not identify the handwriting. C(z)[[ξ]] and the literal j/i mismatch remain unchanged.",
+      "russian": "При буквальном j в сумме индекс i остается свободным. Математическая естественность одинаковых индексов не устанавливает чтение; j/i и C(z)[[ξ]] сохранены.",
+      "manuscript_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001440",
+      "region_id": "symbol-composition",
+      "assumptions": "Use exactly the displayed symbol composition A∘B=sum_{n>=0}(∂ξ^n A)(∂z^n B)/n!, with coefficients to the left.",
+      "derivation": "For A=ξ and B=b(z), only n=0,1 survive: ξ∘b=ξb+b′. For A=ξ^-1, (∂ξ^n ξ^-1)/n!=(-1)^n ξ^(-n-1), hence ξ^-1∘b=sum_n(-1)^n b^(n)ξ^(-n-1). Left composition by ξ cancels each differentiated coefficient against its neighbour, leaving b. An exact rational-coefficient check with b=z^5+2z^3−z+7 verifies all terms and the terminal cancellation. This checks the stated symbol convention, not the overwritten coefficient argument in (6).",
+      "russian": "Из написанного правила следует ξ∘b=ξb+b′ и ξ^-1∘b=Σ(-1)^n b^(n)ξ^(-n-1). При левом умножении на ξ соседние производные сокращаются. Точная проверка для b=z^5+2z^3−z+7 подтверждает это правило, но не читает переписанный аргумент.",
+      "exact_check": {
+        "polynomial_coefficients_low_to_high": [
+          "7",
+          "-1",
+          "0",
+          "2",
+          "0",
+          "1"
+        ],
+        "inverse_symbol_coefficients": {
+          "-1": [
+            "7",
+            "-1",
+            "0",
+            "2",
+            "0",
+            "1"
+          ],
+          "-2": [
+            "1",
+            "0",
+            "-6",
+            "0",
+            "-5"
+          ],
+          "-3": [
+            "0",
+            "12",
+            "0",
+            "20"
+          ],
+          "-4": [
+            "-12",
+            "0",
+            "-60"
+          ],
+          "-5": [
+            "0",
+            "120"
+          ],
+          "-6": [
+            "-120"
+          ]
+        },
+        "left_composition_equals_polynomial": true,
+        "all_nonzero_powers_cancelled": true
+      },
+      "manuscript_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001442",
+      "region_id": "quadratic-isomorphism-wording",
+      "assumptions": "Suppose “isomorphic Lie algebras” means a bijective linear bracket-preserving map φ, under the usual definition.",
+      "derivation": "For yj=φ(xj), the Jacobi sum [y1,[y2,y3]]+cyclic equals φ([x1,[x2,x3]]+cyclic)=0. Thus under this meaning a bracket-preserving isomorphic image is Lie. The written contrast with a quadratic algebra may involve nonlinear coordinates, generators or another meaning of isomorphism. The note does not decide that interpretation or repair the manuscript.",
+      "russian": "При обычном линейном сохраняющем скобку изоморфизме сумма Якоби переносится в нуль. Нелинейные координаты или иной смысл изоморфизма требуют отдельного уточнения; исходная формулировка сохранена.",
+      "manuscript_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001443",
+      "region_id": "operator-and-boundedness-readings",
+      "assumptions": "Only the displayed formulas and their provisional operator name are used; no additional analytic domain or regularization is supplied.",
+      "derivation": "Renaming the same operator consistently r or τ does not distinguish the handwriting. The expression O(1) would assert boundedness, whereas a literal zero would assert a stronger vanishing condition. These are different claims; neither the retraced sign nor the quantum relation is proved from context here. Both the earlier layer and the provisional reading remain uncertain.",
+      "russian": "Последовательное переименование r в τ не устанавливает букву. O(1) и буквальный нуль имеют разный смысл; из контекста здесь не доказывается ни аналитическое утверждение, ни чтение нижнего слоя.",
+      "manuscript_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001444",
+      "region_id": "derived-exponent",
+      "assumptions": "The question concerns the visible superscript, not a choice of notation for a reconstructed exposition.",
+      "derivation": "A familiar category-theoretic convention cannot establish a looped handwritten character. No inference from expected boundedness to b is used. The literal provisional ℓ, alternatives e/b and cancelled expression all remain separately represented.",
+      "russian": "Ожидание привычного обозначения производной категории не устанавливает рукописный индекс. ℓ остается условным чтением; e/b и отмененное выражение сохранены.",
+      "manuscript_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001438",
+      "assumptions": "F[u]=integral f(x,u,u-prime,...,u^(k)) dx, with two smooth increments having disjoint closed supports and a finite local jet order.",
+      "derivation": "At every x, at least one increment and all its derivatives vanish. Thus the pointwise integrand difference for adding both increments is exactly the sum of the two separate differences; integrating proves locality. This calculation supplies no shape, join, label or arrow for the sketch.",
+      "source_math_unchanged": true,
+      "manuscript_math_unchanged": true
+    },
+    {
+      "page_id": "GELFAND-P001444",
+      "assumptions": "The outgoing-arrow map A:V_alpha→direct_sum V_beta is the usual linear map indicated by the source.",
+      "derivation": "Take V_alpha=R^2, one target R and the other targets zero, with A(x,y)=x. Its kernel contains (0,1), but its cokernel is zero. Therefore the written caution about vectors sent to zero matters: replacing the source space merely by the cokernel can lose that information. This example cannot identify the cancelled edge label.",
+      "source_math_unchanged": true,
+      "manuscript_math_unchanged": true
+    }
+  ]
+}

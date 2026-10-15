@@ -1,0 +1,17 @@
+% Partial recreation of five visible directed edges and readable vertex labels.
+% The lower vertex is unlabelled in the source. The bracketed edge label is uncertain.
+\begin{tikzpicture}[line width=0.55pt]
+\coordinate (a) at (0,0);
+\coordinate (b) at (1.65,1.10);
+\coordinate (c) at (3.70,0.18);
+\coordinate (d) at (0.85,-1.25);
+\draw[->] (a)--node[above left]{$f$}(b);
+\draw[->] (b)--(c);
+\draw[->] (a)--(c);
+\draw[->] (a)--(d);
+\draw[->] (d)--(c);
+\node[left] at (a) {$V_\alpha$};
+\node[above] at (b) {$V_\beta$};
+\node[right] at (c) {$V_\gamma$};
+\node[above] at (1.85,0.15) {$[g/\varphi\,?]$};
+\end{tikzpicture}

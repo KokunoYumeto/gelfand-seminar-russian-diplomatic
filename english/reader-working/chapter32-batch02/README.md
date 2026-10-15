@@ -1,0 +1,11 @@
+# Russian and English reader source: chapter 32, frames 11–20
+
+These separate flowing fragments cover **GELFAND-P001435–GELFAND-P001444**. They continue the problems about angles and invariants, Radul's Gelfand–Dickey and Miura discussion, Gelfand's digression on local functionals, and Kapranov's quiver and derived-category discussion.
+
+All **36 displays, 132 inline expressions, two existing native diagrams and 31 full historical reading records** are retained. Each uncertainty links to its complete record in the same language. The original Russian observations, candidates and notes remain exact; the English edition includes full translations of them.
+
+Two illustrations now have **exact original detail crops beside partial native LaTeX recreations**. The locality sketch retains its broken strokes. The reflection quiver retains the five clear arrow directions and legible labels; its middle label remains explicitly uncertain and the lower vertex stays unlabelled. Every written passage, formula and readable label is typed. These crops supplement the illustrations and do not substitute for transcription. The scans are already binary and high contrast; no source strokes were erased by further processing.
+
+All ten whole originals and 103 temporary detail views at 3×, 5× and 10× were inspected; both retained original diagram crops were also inspected. Unresolved dates, abbreviations, cancellations and overwritten symbols remain open. Separate mathematical checks compare the operator indices, verify the symbol-composition convention and explain the kernel/cokernel warning without changing the diplomatic formulas. They do not claim a proof of the quantum relation or a new decipherment.
+
+Use one language's macros, flowing fragment and reading appendix in a LuaLaTeX A4 document with amsmath, amssymb, tikz, tikz-cd, graphicx, xcolor, hyperref and Unicode/Cyrillic fonts. Keep the two native and four pair modules and the figures directory beside the fragments. **These are reviewed source fragments; their PDF layout and the new native diagram rendering have not yet been accepted.** Together with the first batch, 20 of chapter 32's 66 source frames have reviewed translation; 46 remain. Both complete reader editions remain in preparation.
