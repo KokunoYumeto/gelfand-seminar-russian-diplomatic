@@ -2,11 +2,11 @@
 
 The complete improved Russian and English readers are **still in preparation**. Production starts at **chapter 1** and proceeds in source order. The chapter 30 and 31 releases were produced earlier; they are partial working volumes.
 
-[Chapter 1: Russian and English PDFs](readers/chapter01-first3-working/README.md) cover the **first three original frames**, P000001–P000003. Each language has 13 A4 pages, including all 19 full reading notes and a separate mathematical commentary. Every uncertain entry has its original detail beside the typed reading. The remainder of chapter 1 is in production.
+[Chapter 1: Russian and English PDFs](readers/chapter01-first5-working/README.md) cover the **first five original frames**, P000001–P000005. Each language has 25 checked A4 pages, all 33 full reading notes, original details beside every uncertainty, and separate mathematical commentary. Source page 4 includes all five drawings with native or explicitly partial recreations. The remainder of chapter 1 is in production.
 
 | Chapters | Current coverage of the improved readers |
 |---|---|
-| 1 | First three original frames available as checked Russian and English excerpts; remainder in production. |
+| 1 | First five original frames available as checked Russian and English excerpts; remainder in production. |
 | 2–28 | Awaiting this reader treatment and English translation. |
 | 29 | Reviewed English source for the last ten frames; complete reader pending. |
 | 30–31 | Russian and English working PDFs published; uncertainty-crop backfill required. |
