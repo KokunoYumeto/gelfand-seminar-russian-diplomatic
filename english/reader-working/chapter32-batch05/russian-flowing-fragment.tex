@@ -1,0 +1,820 @@
+\RussianSourceFrame{GELFAND-P001465}{65}
+Произведение $BA$ изображ. соединением:
+
+(18) \RussianSourceFigure{GELFAND-P001465}{eq18-composition}{Слева прямоугольник с надписью $BA$, с тремя нитями сверху и тремя снизу. Над верхними концами стоят $m'_1,m'_2,m'_M$; у верхних нитей — $j'_1,j'_2,j'_M$; у нижних — $j_1,j_2,j_L$, ниже — $m_1,m_2,m_L$. После знака равенства два прямоугольника, $B$ над $A$, соединённые тремя нитями. У верхних нитей $B$ видны $j''_1,j''_2$ и $j_M$ с неуверенно читаемым штрихом; над правой нитью — $m'_M$. Первые два верхних конца подходят к строке заголовка. На соединяющих нитях — $j'_1,j'_2,j'_L$. У нижних нитей $A$ — $j_1,j_2$ и знак, похожий на $j_M$; ниже — $m_1,m_2,m_L$. Далее равенство, сумма с подписью $m'_1\ldots m'_L$ и два раздельных, не подписанных внутри прямоугольника один над другим. У каждого по три конца сверху и снизу; между прямоугольниками подписи $m'_1,m'_2,m'_L$. Число штрихов при части $j$ и последний нижний индекс у $A$ требуют сверки с оригиналом.}
+
+\input{eq18-composition-pair-Russian-r1.tex}
+
+\begin{equation*}
+V^j\overset{id}{\longrightarrow}V^j
+\quad\text{изображ. ниткой}\quad
+\begin{tikzpicture}[baseline=(current bounding box.center),x=1cm,y=1cm]
+\draw (0,0)--(0.12,1);
+\node[left] at (0,0.45) {$j$};
+\end{tikzpicture}
+\tag{19}
+\end{equation*}
+
+(20) \RussianSourceFigure{GELFAND-P001465}{eq20-crossing}{Две пересекающиеся нити. Сверху слева $j_2$, сверху справа $j_1$; снизу слева $j_1$, снизу справа $j_2$. Нить от верхнего левого к нижнему правому концу непрерывна; другая прервана у пересечения. У нижнего правого конца есть утолщённый острый штрих, направление стрелки по нему не установлено.}
+
+\input{eq20-crossing-pair-Russian-r1.tex}
+\RussianUnclear{GELFAND-P001465}{eq20-v-indices}{$R^{j_1j_2}:V^{j_1}\otimes V^{j_1}\longrightarrow V^{j_1}\otimes V^{j_1}$}
+
+\begin{equation*}
+\begin{tikzpicture}[baseline=(current bounding box.center),x=1cm,y=1cm]
+\draw (-0.8,-0.7)--(0.8,0.7);
+\draw (-0.65,0.8)--(-0.24,0.30);
+\draw (0.18,-0.23)--(0.8,-0.9);
+\node[left] at (-0.65,0.7) {$j_1$};
+\node[right] at (0.8,0.7) {$j_2$};
+\node[left] at (-0.8,-0.7) {$j_2$};
+\node[right] at (0.8,-0.9) {$j_1$};
+\end{tikzpicture}
+\qquad (R^{j_2j_1})^{-1}\qquad\text{в том же пр-ве.}
+\tag{20'}
+\end{equation*}
+
+\begin{equation*}
+RR^{-1}=I\qquad
+\begin{tikzpicture}[baseline=(current bounding box.center),x=1cm,y=1cm]
+\draw (-0.55,1.15).. controls (0.8,0.8) and (1.0,-0.45)..(-0.8,-0.75);
+\draw (0.75,1.3)--(0.23,1.02);
+\draw (-0.15,0.72).. controls (-0.75,0.4) and (-0.65,0.05)..(-0.38,-0.25);
+\draw (-0.15,-0.69)--(0.30,-1.12);
+\node[above] at (-0.55,1.15) {$j_2$};
+\node[above] at (0.75,1.3) {$j_1$};
+\node[left] at (-0.50,0.24) {$j_1$};
+\node[right] at (0.69,0.16) {$j_2$};
+\node[below] at (-0.8,-0.75) {$j_2$};
+\node[right] at (0.30,-1.12) {$j_1$};
+\node at (1.65,0) {$=$};
+\draw (2.2,-1)--(2.35,1);
+\draw (3.2,-1)--(3.35,1);
+\node[right] at (2.28,0) {$j_2$};
+\node[right] at (3.28,0) {$j_1$};
+\end{tikzpicture}
+\end{equation*}
+
+$j_1,j_2$ — цвета ниток
+
+% В источнике заголовок подчёркнут волнистой линией.
+\underline{Соотн. Янга-Бакстера}
+
+\begin{equation*}
+\begin{tikzpicture}[baseline=(current bounding box.center),x=0.006cm,y=-0.006cm]
+\draw (70,10).. controls (62,65) and (45,106)..(78,132)
+ --(365,390)--(365,420);
+\draw (200,0).. controls (243,28) and (286,78)..(308,106)
+ .. controls (319,130) and (314,195)..(304,242)--(283,262);
+\draw (243,305).. controls (160,350) and (170,365)..(166,420);
+\draw (1,420).. controls (16,385) and (12,330)..(34,291)
+ .. controls (64,257) and (86,234)..(119,208);
+\draw (164,171)--(251,104);
+\draw (296,67).. controls (333,46) and (350,20)..(365,0);
+\node[left] at (5,389) {$j_3$};
+\node[right] at (170,396) {$j_2$};
+\node[right] at (365,414) {$j_1$};
+\end{tikzpicture}
+\quad =\quad
+\begin{tikzpicture}[baseline=(current bounding box.center),x=0.006cm,y=-0.006cm]
+\draw (90,20).. controls (164,86) and (212,141)..(250,203)
+ .. controls (292,280) and (292,360)..(278,440);
+\draw (191,0)--(144,38);
+\draw (102,75).. controls (28,112) and (45,161)..(32,230)
+ .. controls (12,294) and (96,331)..(181,432);
+\draw (14,419)--(68,378);
+\draw (104,339)--(226,247);
+\draw (280,189).. controls (352,139) and (365,73)..(402,29);
+\node[left] at (25,200) {$j_2$};
+\node at (121,268) {$j_3$};
+\node[right] at (291,364) {$j_1$};
+\end{tikzpicture}
+\tag{21}
+\end{equation*}
+
+Доп. вершины
+
+\begin{equation*}
+\begin{tikzpicture}[baseline=(current bounding box.center),x=0.8cm,y=0.8cm]
+\draw (-0.9,1.1)--(0,0)--(0,-1.2);
+\draw (1.2,1.1)--(0,0);
+\draw[->] (-0.75,0.92)--(-0.38,0.46);
+\draw[->] (0.97,0.89)--(0.48,0.44);
+\draw[->] (0,-0.2)--(0,-0.72);
+\node[above] at (-0.9,1.1) {$m_1$};
+\node[above] at (1.2,1.1) {$m_2$};
+\node[left] at (-0.45,0.45) {$j_1$};
+\node[right] at (0.65,0.43) {$j_2$};
+\node[right] at (0,-0.7) {$j_3$};
+\node[below] at (0,-1.2) {$m_3$};
+\end{tikzpicture}
+\overset{\text{изобр.}}{\longrightarrow}
+\begin{bmatrix}j_1&j_2&j_3\\m_1&m_2&m_3\end{bmatrix}_q
+\overset{\text{или}}{\longleftarrow}
+\begin{tikzpicture}[baseline=(current bounding box.center),x=0.8cm,y=0.8cm]
+\draw (0,1.2)--(0,0);
+\draw[->] (0,0.95)--(0,0.45);
+\draw[->] (0,0)--(-1.1,-1.3);
+\draw[->] (0,0)--(0.9,-1.3);
+\node[above] at (0,1.2) {$m_3$};
+\node[right] at (0,0.65) {$j_3$};
+\node[left] at (-0.45,-0.60) {$j_1$};
+\node[right] at (0.43,-0.59) {$j_2$};
+\node[below] at (-1.1,-1.3) {$m_1$};
+\node[below] at (0.9,-1.3) {$m_2$};
+\end{tikzpicture}
+\tag{22}
+\end{equation*}
+
+
+\RussianSourceFrame{GELFAND-P001466}{unlabelled}
+\begin{equation*}
+\begin{tikzpicture}[baseline=(current bounding box.center),x=0.75cm,y=0.75cm]
+\draw (-0.5,2.6)--(1.45,-0.9);
+\draw[->] (-0.44,2.49)--(-0.10,1.88);
+\draw (0.35,2.85)--(0.04,2.02);
+\draw (-0.35,1.31)--(-0.84,-0.25)--(-1.4,-1.65);
+\draw[->] (-1.02,-0.70)--(-1.29,-1.38);
+\draw (2.40,1.98)--(0.73,0.81);
+\draw[->] (1.75,1.52)--(1.20,1.14);
+\draw (0.18,0.50)--(-0.84,-0.25);
+\draw (-0.84,-0.25) ellipse (0.055 and 0.10);
+\node[left] at (-0.52,2.54) {$j_1$};
+\node[right] at (0.20,2.20) {$j_2$};
+\node[right] at (1.90,1.28) {$j_3$};
+\node[below] at (-1.30,-1.66) {$j_4$};
+\end{tikzpicture}
+\quad =\quad
+\begin{tikzpicture}[baseline=(current bounding box.center),x=0.75cm,y=0.75cm]
+\draw (-1.4,1.8)--(0.62,-0.9);
+\draw[->] (-1.18,1.51)--(-0.89,1.12);
+\draw (0.65,2.35)--(0.45,1.44);
+\draw[->] (0.63,2.24)--(0.50,1.64);
+\draw (2.18,2.02)--(0.45,1.44)--(-0.19,0.57);
+\draw[->] (1.61,1.83)--(1.03,1.63);
+\draw (-0.52,0.08)--(-1.63,-1.41);
+\draw[->] (-0.83,-0.34)--(-1.20,-0.83);
+\node[above] at (-0.67,1.50) {$j_1$};
+\node[right] at (0.65,2.25) {$j_2$};
+\node[below] at (1.74,1.71) {$j_3$};
+\node[right] at (-1.26,-1.13) {$j_4$};
+\end{tikzpicture}
+\tag{23}
+\end{equation*}
+
+\begin{equation*}
+\begin{tikzpicture}[baseline=(current bounding box.center),x=1cm,y=1cm]
+\draw (-1.2,0.8).. controls (-1.2,-0.3) and (-1.05,-0.7)..(-0.2,-0.7)
+ .. controls (0.6,-0.7) and (1.04,0.01)..(1.55,0.8);
+\node[left] at (-1.2,0.1) {$m_1$};
+\node[right] at (1.22,0.17) {$m_2$};
+\node at (-0.10,-0.20) {$j$};
+\end{tikzpicture}
+\longrightarrow (-1)^{m_1}q^{m_1}\delta_{m_1,-m_2}
+\tag{24}
+\end{equation*}
+$-j\le m_i\le j,\quad i=1,2.$
+
+(25)
+\begin{center}
+\begin{tikzpicture}[baseline=(current bounding box.center),x=1cm,y=1cm]
+\draw[->] (0.9,-0.1).. controls (0.7,1.2) and (-0.1,0.7)..(-0.9,-0.1);
+\node[below] at (-0.9,-0.1) {$m_1$};
+\node[below] at (0.9,-0.1) {$m_2$};
+\end{tikzpicture}
+$\longrightarrow$
+\RussianUnclear{GELFAND-P001466}{eq25-cancelled-exponent}{$(-1)^{m_1}q^{-m_1/2}\delta_{m_1,-m_2}$}
+\end{center}
+[В показателе степени при $(-1)$ справа от $m$ — густо перечёркнутый знак.]
+
+Имеют место рв-ва:
+
+(26) \RussianSourceFigure{GELFAND-P001466}{eq26-vertex-arrow}{Равенство двух трёхвалентных рисунков. Слева к вершине сверху слева идёт $j_1$ со стрелкой вниз вправо; $j_2$ поднимается справа, загибается влево дугой и приходит в вершину, со стрелками вверх на правом участке и влево на дуге; $j_3$ выходит из вершины вниз со стрелкой вниз. Справа $j_1$ идёт сверху вниз в вершину; $j_3$ выходит вниз влево со стрелкой от вершины. Ветвь $j_2$ направлена геометрически вниз вправо, но её стрелка густо обведена. Видимые выступающие штрихи допускают стрелку к вершине, вверх влево; окончательное направление по оригиналу не установлено.}
+
+\input{eq26-vertex-arrow-pair-Russian-r1.tex}
+
+\begin{equation*}
+\begin{tikzpicture}[baseline=(current bounding box.center),x=0.9cm,y=0.9cm]
+\draw (-0.4,1.65).. controls (0.05,0.8) and (0.4,-0.7)..(1.15,-0.8)
+ .. controls (2.9,-1.0) and (2.7,2.45)..(1.05,1.3)--(0.40,0.85);
+\draw[->] (-0.32,1.49)--(-0.09,1.04);
+\draw[->] (0.80,-0.69)--(1.24,-0.83);
+\draw[->] (1.29,1.44)--(0.91,1.20);
+\draw (-0.02,0.45).. controls (-0.58,0.06) and (-0.91,-0.50)..(-1.50,-0.90);
+\draw[->] (-0.52,-0.01)--(-0.96,-0.48);
+\node[left] at (-0.66,0.30) {$j$};
+\end{tikzpicture}
+=(-1)^j q^{\frac{j(j+1)}{2}}\quad
+\begin{tikzpicture}[baseline=(current bounding box.center),x=0.9cm,y=0.9cm]
+\draw (0.05,1.1).. controls (0.15,0.3) and (0,-0.3)..(-0.25,-1.0);
+\draw[->] (0.05,0.35)--(-0.02,-0.16);
+\node[right] at (0.04,0) {$j$};
+\end{tikzpicture}
+\tag{27}
+\end{equation*}
+
+(28)
+\begin{center}
+\begin{tikzpicture}[baseline=(current bounding box.center),x=0.85cm,y=0.85cm]
+\draw (-0.45,2.2).. controls (0.28,1.5) and (0.65,0.65)..(0.14,-0.10)
+ --(-0.35,-0.9)--(-0.40,-2.1);
+\draw[->] (-0.28,1.98)--(0.06,1.53);
+\draw[->] (0.36,0.52)--(0.21,0.04);
+\draw[->] (-0.36,-1.23)--(-0.38,-1.74);
+\draw (1.15,1.88)--(0.38,1.32);
+\draw[->] (1.01,1.78)--(0.56,1.45);
+\draw (-0.09,1.03).. controls (-1.08,0.43) and (-0.86,-0.30)..(-0.35,-0.9);
+\draw[->] (-0.45,0.76)--(-0.70,0.34);
+\node[left] at (-0.39,1.68) {$j_1$};
+\node[above] at (1.03,1.87) {$j_2$};
+\node[right] at (-0.36,-1.59) {$j_3$};
+\end{tikzpicture}
+$=$
+\RussianUnclear{GELFAND-P001466}{eq28-coefficient-j}{$(-1)^{j_1+j_2-j}q^{\frac{j(j+1)-j_1(j_1+1)-j_2(j_2+1)}{4}}$}
+\begin{tikzpicture}[baseline=(current bounding box.center),x=0.85cm,y=0.85cm]
+\draw (-0.55,1.15)--(0,0)--(-0.05,-1.25);
+\draw (1.55,1.15)--(0,0);
+\draw[->] (-0.48,1.01)--(-0.21,0.43);
+\draw[->] (1.09,0.81)--(0.52,0.39);
+\draw[->] (-0.01,-0.36)--(-0.035,-0.88);
+\node[left] at (-0.34,0.53) {$j_1$};
+\node[right] at (0.95,0.62) {$j_2$};
+\node[right] at (-0.04,-0.80) {$j_3$};
+\end{tikzpicture}
+\end{center}
+
+Это дает возм. строить инвар. зацеплений, кос,
+заузленных ленточек.
+
+
+\RussianSourceFrame{GELFAND-P001467}{66}
+\underline{Инв. зацеплений.}
+
+Фикс. ориентацию и направл. $t$.
+
+(29)
+\RussianSourceFigure{GELFAND-P001467}{x58-y247-x646-y638}{Слева вертикальная стрелка вверх с подписью $t$. Справа криволинейная петля: верхний и нижний изгибы и два места в верхней средней части обведены овалами. Над левым средним местом стоит $m_i$, справа от петли --- $j$. На кривой видны стрелки; в средней части линии пересекаются, справа имеются разрывы. Точное прохождение ветвей и всех стрелок в наложенных штрихах не установлено.}
+
+\input{x58-y247-x646-y638-pair-Russian-r1.tex}
+
+\underline{Элементарные фрагменты:}
+
+1) фикс. точки, где нормаль $\parallel$ оси $t$ (выбранному напр.)
+
+2) точки пересеч.
+
+Расставляем числа $m_i$ в соединениях элем. фрагментов так, что
+\begin{equation*}
+-j\leq m_i\leq j \qquad (j\ \text{выб. любое})
+\end{equation*}
+
+\begin{equation*}
+\sum_{\{m\}}\prod_{\substack{\text{по всем}\\\text{элем.}\\\text{фрагментам}}}
+v(\{m\})=\varphi_{j_1\ldots j_k}(D_L,q)
+\tag{30}
+\end{equation*}
+\RussianUnclear{GELFAND-P001467}{x656-y1355-x935-y1489}{В (30) буква перед $(\{m\})$: $v$ или $\nu$.}
+
+\textit{[От этой буквы отведён указатель к подписи:]} вычисл. выше матр. элементы
+
+(31) \underline{Теорема}
+\begin{equation*}
+I_{j_1\ldots j_k}(L,q)
+=q^{\sum_i N_+^i(D_L)-N_-^i(D_L)}\varphi_{\{j\}}(D_L,q)
+\end{equation*}
+\RussianUnclear{GELFAND-P001467}{x1935-y1670-x2000-y1726}{[После $N_-^i(D_L)$ в показателе степени зачёркнут небольшой надстрочный знак; его чтение не установлено.]}
+
+--- инвариант зацепления (не зав. от проекции узла на плоскость)
+
+$N_\pm^i$ --- сколько раз $i$-я нитка прох. \underline{под} и \underline{над}
+
+Здесь сод. инвар. Джонса.
+
+Можно \RussianUnclear{GELFAND-P001467}{x520-y2610-x734-y2730}{[Зачёркнутое слово неразборчиво]} строить инв. узлов по $\forall$ пр. алгебре Ли.
+
+Есть гипотеза, что $SL_2$-инвариантов достаточно
+
+Есть ещё $6j$-символы.
+
+
+\RussianSourceFrame{GELFAND-P001468}{unlabelled}
+\underline{25.4.88.}\quad\underline{Сем. Гельфанда}
+\qquad
+\underline{Ушверидзе}
+\RussianUnclear{GELFAND-P001468}{x1260-y33-x1400-y148}{[Зачёркнутые знаки неразборчивы]}
+\underline{Александр Григорьевич.}
+\RussianUnclear{GELFAND-P001468}{x2040-y40-x2310-y150}{[Зачёркнутая запись неразборчива]}
+
+\underline{Уравнение Риккати и квазиточнорешаемые задачи.}
+
+\begin{equation*}
+y'(\lambda)+y^2(\lambda)+2B(\lambda)y(\lambda)+C(\lambda)=0,
+\tag{1}
+\end{equation*}
+\begin{equation*}
+B(\lambda)=\sum_{\alpha=1}^N b_\alpha\Delta(\lambda-a_\alpha),
+\tag{2}
+\end{equation*}
+\begin{equation*}
+C(\lambda)=\sum_{\alpha=1}^N c_\alpha\Delta(\lambda-a_\alpha).
+\tag{3}
+\end{equation*}
+
+Ищем решение (1) в виде
+\begin{equation*}
+y(\lambda)=\sum_{i=1}^M\Delta(\lambda-\lambda_i)
+\tag{4}
+\end{equation*}
+
+Тогда при нек-рых
+\textit{[вставка над строкой:]} условиях на $\Delta$
+\RussianUnclear{GELFAND-P001468}{x1000-y1240-x1248-y1328}{нахожд.}
+\textit{[конец вставки]}
+знач. параметров свод. к алгебр. ур-ям:
+\begin{equation*}
+\left\{
+\begin{aligned}
+&\sum_{i=1}^{M}{}'\Delta(\lambda_i-\lambda_k)
+ +\sum_{\alpha=1}^{N}b_\alpha(\lambda_i-a_\alpha)=0\\
+&\text{(сумма по }i\neq k\text{)}\\
+&c_\alpha=2b_\alpha\sum_{i=1}^{M}\Delta(\lambda_i-a_\alpha)
+\end{aligned}
+\right.
+\tag{5}
+\end{equation*}
+\RussianUnclear{GELFAND-P001468}{x350-y1390-x1615-y1675}{[В первой строке (5) после $b_\alpha$ непосредственно стоят $(\lambda_i-a_\alpha)$; в первом суммировании написано $i=1$, в аргументе $\Delta$ --- $\lambda_i-\lambda_k$. Так в источнике.]}
+
+(6) \underline{Св-ва $\Delta$ и $\Omega$}
+\qquad (обобщ. теор. слож. для элл. ф-й)
+
+\begin{equation*}
+\begin{aligned}
+1)\quad &\Delta(\lambda_1)\Delta(\lambda_2)+\Delta(\lambda_2)\Delta(\lambda_3)
++\Delta(\lambda_3)\Delta(\lambda_1)\\
+&\qquad +\Omega(\lambda_1)+\Omega(\lambda_2)+\Omega(\lambda_3)=0\\
+&\text{при }\lambda_1+\lambda_2+\lambda_3=0
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+2)\quad \Delta(\lambda)+\Delta(-\lambda)=0
+\end{equation*}
+
+3) \RussianUnclear{GELFAND-P001468}{x435-y2450-x570-y2578}{[Зачёркнутая формула; различим знак, похожий на $\Delta$, остальное не установлено]}
+$\Omega(\lambda)-\Omega(-\lambda)=0$
+
+(7) \underline{Примеры решений сист. (6)}
+
+\begin{equation*}
+1)\quad \Delta(\lambda)=\frac{1}{\lambda},\qquad \Omega(\lambda)=0;
+\end{equation*}
+\RussianUnclear{GELFAND-P001468}{x1335-y2810-x1494-y2960}{[Справа от первой пары формул зачёркнуты знаки; различим треугольный знак, похожий на $\Delta$.]}
+
+\begin{equation*}
+2)\quad \Delta(\lambda)=\omega\operatorname{ctg}\omega\lambda,
+\qquad \Omega(\lambda)=\frac{\omega^2}{3}
+\end{equation*}
+\begin{equation*}
+3)\quad \Delta(\lambda)=\zeta(\lambda),
+\qquad \Omega(\lambda)=\zeta^2(\lambda)-\wp(\lambda)
+\end{equation*}
+\textit{[Под $\zeta(\lambda)$, с коротким указателем:]} ф-я Вейерштрасса
+\qquad (квазиперио
+
+
+\RussianSourceFrame{GELFAND-P001469}{67}
+\underline{Прилож.}
+
+А. $y=\dfrac{f'}{f}\quad\Rightarrow$ ур-е Шредингера для $f$;
+
+Решение (6) с сингулярностью в $0$ удовлетворяет ур-ю
+\begin{equation*}
+\Delta'(\lambda)+\Delta^2(\lambda)=2\Omega(\lambda)+\Omega(0)
+\tag{8}
+\end{equation*}
+
+\begin{center}
+\begin{tikzpicture}
+\node[draw,inner sep=8pt] (cancelled) at (0,0) {$\begin{aligned}
+\Omega(\lambda)&=\frac{\omega^2}{3}\\
+\Omega(\lambda)&=\zeta^2(\lambda)-\wp(\lambda)
+\end{aligned}$};
+\draw (cancelled.north west) -- (cancelled.south east);
+\draw (cancelled.south west) -- (cancelled.north east);
+\end{tikzpicture}
+\end{center}
+
+(9) $\Delta_0(b\lambda)+a\lambda$ --- общее решение сист. (6), где
+
+$\Delta_0$ --- одна из ф-й примера (6)
+\RussianUnclear{GELFAND-P001469}{x438-y860-x2110-y1115}{[В (9) перед $\Delta_0(b\lambda)$ внешнего множителя нет; в следующей строке написано «примера (6)». Так в источнике.]}
+
+Б. Отсюда ещё получ. реш. Бете-анзаца для спин. систем.
+
+В. $(5)\Leftrightarrow$
+\textit{[вставка над строкой:]} в случае
+\RussianUnclear{GELFAND-P001469}{x825-y1238-x1030-y1340}{[Зачёркнутая запись перед $(7)_1$ неразборчива]}
+$(7)_1$ \textit{[конец вставки]}
+усл. равновесия классич. сист. заряж. частиц, к-рых
+\underline{2 сорта:} неподв. частицы с коорд. $a_\alpha$ и зарядами $b_\alpha$;
+подвижные с
+\RussianUnclear{GELFAND-P001469}{x800-y1425-x1005-y1558}{[Зачёркнутое слово неразборчиво; над ним вписано «коорд.»]}
+$\lambda_i$ и зарядом $1$.
+
+\textit{[Справа:]} \underline{Потенциал:}
+$q_iq_k\ln|\lambda_i-\lambda_k|$
+
+В случае $(7)_2$
+частицы на окружности с потенциалом
+\begin{equation*}
+q_iq_k\ln|\sin(\lambda_i-\lambda_k)|
+\end{equation*}
+
+В случае $(7)_3$ потенц. взаимодействия
+\begin{equation*}
+q_iq_k\ln\theta(\lambda_i-\lambda_k)
+\end{equation*}
+
+(10) \underline{Для ур-я Шредингера}
+
+$\lambda_i$ --- узлы волновой ф-и
+
+В кулоновской сист.
+
+\RussianUnclear{GELFAND-P001469}{x500-y2640-x570-y2745}{[Перед $\lambda_i$ зачёркнут знак; его чтение не установлено]}
+$\lambda_i$ --- коорд. заряж. частиц
+
+В ур-и Бете $\lambda_i$ --- быстроты
+
+\begin{center}
+\rule{2cm}{0.4pt}\quad$\cdot$\quad\rule{2cm}{0.4pt}
+\end{center}
+
+Устойчивость квантовомех. сист. $\Leftrightarrow$ устойч. кулоновской системы
+
+\begin{center}
+\rule{2cm}{0.4pt}\quad$\cdot$\quad\rule{2cm}{0.4pt}
+\end{center}
+
+\underline{Что делать с частичной интегрируемостью?}
+(с неполн. сист. интегралов)
+
+\begin{equation*}
+H=H_0+L_1(H_1-c_1)+L_2(H_2-c_2),
+\qquad L_j\text{ --- операторы}
+\tag{11}
+\end{equation*}
+Пусть $H_j$ коммутируют $j=0,1,2$.
+
+
+\RussianSourceFrame{GELFAND-P001470}{unlabelled}
+\RussianUnclear{GELFAND-P001470}{top-left-label}{[зачёркнутая помета на левом поле; неразборчиво]}
+
+Рассм. общ. соб. вектор $H_0,H_1,H_2$; тогда
+\RussianUnclear{GELFAND-P001470}{top-line-cancellation}{[зачёркнуто; неразборчиво]}
+
+Если $c_j$ — соб. знач. $H_j$, то по ним строится соб. знач.
+\RussianUnclear{GELFAND-P001470}{top-right-cancellation}{[зачёркнуто; неразборчиво]} $H$
+(и \RussianUnclear{GELFAND-P001470}{top-eigenvectors-verb}{знаем} соб. вект. — \underline{столько, какова} кратность вырождения)
+
+На этом языке
+\begin{equation*}
+\begin{aligned}
+\text{квант. нелин. Шредингер}&\ \Longleftrightarrow\ \text{гарм. осциллятору}\\
+\text{[зачёркнуто: опер.] энергия}&\ \Longleftrightarrow\ \text{опер. числа частиц}
+\end{aligned}
+\end{equation*}
+
+\begin{center}— . —\end{center}
+
+Спектр $H_i$ нах. из ур-й анзаца Бете
+
+\begin{center}— . —\end{center}
+
+\underline{Ссылка:}
+
+Краткие сообщ. по физике ФИАН.
+
+\underline{Переход от ур-я Риккати к ур-ю Шредингера}
+
+Это можно бесчисл. кол-вом способов
+\begin{equation*}
+y=\frac{f'}{f}\quad\Longrightarrow
+\end{equation*}
+\begin{equation*}
+f''+2Bf'+Cf=0
+\qquad\text{(незав. перем. здесь $\lambda$)}
+\tag{12}
+\end{equation*}
+
+Умножим [вставлено над строкой: (12)] на произвольную ф-ю $A$ и потом избавл. от $f'$
+$\Longrightarrow$ [под строкой: (заменой независ. перем.!)]
+$\Longrightarrow$ получ. ур-е Шредингера
+\begin{equation*}
+\left[-\frac{\partial^2}{\partial x^2}+V(x)\right]\Psi(x)=0
+\tag{13}
+\end{equation*}
+
+По каждому $A$ получ. свой потенциал $V$.
+
+Ф-ю $A$ можно подобрать так, чтобы информация о числах
+\RussianUnclear{GELFAND-P001470}{lower-number-cancellation}{[зачёркнуто; неразборчиво]}
+$c_\alpha,\lambda_i$ сосредот. в не зав. от $x$ части потенциала:
+\begin{equation*}
+V(x)=U(x)-E(\lambda_i)
+\tag{14}
+\end{equation*}
+
+Тогда (13) \RussianUnclear{GELFAND-P001470}{lower-equation-cancellation}{[зачёркнуто; неразборчиво]}
+$\sim$ ур-ю Шредингера
+
+Для этого нужно, чтобы было
+\begin{equation*}
+A(\lambda)=\prod_{\alpha=1}^{N}\Xi(\lambda-a_\alpha),
+\qquad\frac{\Xi'(\lambda)}{\Xi(\lambda)}=\Delta(\lambda)
+\tag{15}
+\end{equation*}
+
+Переход к $x$;
+\begin{equation*}
+x=\int^{\lambda(x)}\frac{d\lambda}{\sqrt{A(\lambda)}}
+\tag{16}
+\end{equation*}
+
+
+\RussianSourceFrame{GELFAND-P001471}{68}
+(17) \RussianUnclear{GELFAND-P001471}{top-initial-cancellation}{[зачёркнуто; неразборчиво]}
+В случае $(7)_1$:
+\begin{equation*}
+A(\lambda)=\prod_{\alpha=1}^{N}(\lambda-a_\alpha)
+\end{equation*}
+\RussianUnclear{GELFAND-P001471}{top-line-cancellation}{[зачёркнуто: лин. ф-я от $\lambda$]}
+
+($\Xi$ — лин. ф-я от $\lambda$)
+
+отсюда получ. преобр. Якоби (16)
+
+\underline{Использ. кулон. аналогию для классификации}
+точно реш. и квазиточно решаемых зад.
+
+Пусть $N=2$ в (2)–(3)
+
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw (0,0) -- (5.2,0);
+\draw (1.2,-0.10) -- (1.2,0.10);
+\draw (3.2,-0.10) -- (3.2,0.10);
+\node[above] at (1.2,0.20) {$b_1$};
+\node[above] at (3.2,0.20) {$b_2$};
+\node[below] at (1.2,-0.15) {$a_1$};
+\node[below] at (3.2,-0.15) {$a_2$};
+\node[right] at (5.35,-0.28) {$\lambda$};
+\end{tikzpicture}
+\end{center}
+
+$a_1,a_2$ — коорд. неподв. частиц (классических)
+
+Подв. частицы $\underset{\text{коорд.}}{\{\lambda_i\}}$ — их $M$ штук
+
+(18) \RussianUnclear{GELFAND-P001471}{middle-potential-cancellation}{[зачёркнуто; неразборчиво]}
+Потенц. $V$ не содержит $M$ (!) $\Longrightarrow$ имеем точно реш. модель.
+
+(19) Пусть $b_1,b_2>0$
+
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw (0,0) -- (4.2,0);
+\draw (0,-0.16) -- (0,0.18);
+\draw (4.06,-0.18) -- (4.22,0.19);
+\node[above] at (0,0.22) {$b_1$};
+\node[above] at (4.2,0.22) {$b_2$};
+\draw (1.08,-0.12) -- (1.10,0.17);
+\draw (1.62,-0.13) -- (1.68,0.16);
+\draw (2.12,-0.13) -- (2.20,0.12);
+\draw (2.47,-0.13) -- (2.56,0.12);
+\draw (2.85,-0.13) -- (2.95,0.10);
+\draw (3.25,-0.15) -- (3.37,0.17);
+\end{tikzpicture}
+\end{center}
+
+Частицы внутри не выйдут из-за отталкивания
+$\Longrightarrow\ \exists\min\ \Longrightarrow\ \exists$ реш. ур-я Шредингера
+с $M$ узлами $\Longrightarrow$ интегрируемость!!!
+
+(находятся все волн. ф-и!!)
+
+Другой случай
+
+(20)
+\begin{center}
+\input{diagram20-faint-strokes-pair-Russian-r1.tex}
+\end{center}
+\RussianSourceFigure{GELFAND-P001471}{diagram20-faint-strokes}{В схеме (20) левый конец горизонтальной линии утолщён и снабжён наклонными штрихами; уверенно выделить наконечник стрелки нельзя. Под этим концом и под левой тёмной точкой видны слабые штрихи вниз влево; их точное назначение и связь с жирными штрихами неясны.}
+\RussianUnclear{GELFAND-P001471}{margin-below20}{[на левом поле под (20): короткий отдельный наклонный штрих]}
+
+Усл. устойчивости системы $M$ частиц справа от $b_2$:
+\begin{equation*}
+\underline{b_1+b_2+M<0}
+\tag{21}
+\end{equation*}
+
+(не подх. к $b_2$, но и не уходят на $\infty$)
+
+Но это усл. нарушится при большом $M$!
+$\Longrightarrow$ возникает лишь конеч. число уровней.
+
+
+\RussianSourceFrame{GELFAND-P001472}{unlabelled}
+Выбирая по разному интервалы, получим разные задачи.
+
+Здесь получ. точно реш. модели (магнетики).
+
+\underline{\underline{Бейлинсон А.}}
+
+\underline{о раб. \RussianUnclear{GELFAND-P001472}{upper-atiya-name}{Ати}}
+
+\underline{Новые инварианты 3-х и 4-хмерных мн-зий}
+
+(полубеск. теор. Морса)
+
+\begin{equation*}
+\underset{\substack{\text{естеств.}\\\infty\text{-мерн. мн-зия}}}{X}
+\overset{f}{\longrightarrow}\mathbb{R}
+\qquad\text{— морсовская ф-я.}
+\end{equation*}
+
+Критич. точки будут сод. $\infty$ число $+$ и $-$ квадратов, но
+у разных точек отличие — на конечное число.
+
+Возникают новые гомологии.
+
+На мн-зии $X$ зададим рим. метрику
+
+Пусть сначала $\dim X<\infty$ и $X$ компактно
+
+$g$ — метрика,
+\begin{equation*}
+\tau=\operatorname{grad}f
+\end{equation*}
+
+Рассм. \RussianUnclear{GELFAND-P001472}{middle-flow-cancellation}{[зачёркнуто; неразборчиво]}
+[вставлено над строкой: траектории] поля $\tau$
+
+Они 2-х типов: точки [под строкой: (крит.)] и траект., соединяющие 2 крит. точки.
+
+Если метрика — общего положения, то рассм. пр-во $T(x_1,x_2)$
+всех траект., идущих из $x_1$ в $x_2$. Тогда
+\begin{equation*}
+\dim T(x_1,x_2)=\operatorname{ind}_{x_1}f-\operatorname{ind}_{x_2}f-1
+\tag{1}
+\end{equation*}
+
+В частности, \underline{если индексы отл. на 1, то дискретное мн-во.}
+
+Пусть
+\begin{equation*}
+\operatorname{ind}_{x_1}f=\operatorname{ind}_{x_2}f+1
+\tag{2}
+\end{equation*}
+
+Тогда с $\forall$ траект., соед. $x_1$ и $x_2$, связывают число $\pm1$,
+завис. от данных ориентац.
+\RussianUnclear{GELFAND-P001472}{bottom-orientation-cancellation}{[зачёркнуто; неразборчиво]}
+[вставлено над строкой: $T(x_1,x_2)$] Теперь строим комплекс
+
+
+\RussianSourceFrame{GELFAND-P001473}{69}
+\begin{equation*}
+\longrightarrow C_i\overset{d}{\longrightarrow}C_{i-1}\longrightarrow\ldots
+\tag{3}
+\end{equation*}
+
+$C_i$ — вект. пр-во с базисом $\{x_\alpha\}$, $\operatorname{ind}x_\alpha=i$
+
+$d$ зад. матрицей;
+
+индекс элем. = пара точек соседн. индекса $x_1,x_2$
+\begin{equation*}
+d=\Vert d_{x_1x_2}\Vert,
+\end{equation*}
+\begin{equation*}
+d_{x_1x_2}=\sum_{\substack{\text{траект.,}\\\text{соед. }x_1,x_2}}\pm1
+\tag{4}
+\end{equation*}
+
+\begin{center}
+\rule{12mm}{0.4pt}\quad$\cdot$\quad\rule{12mm}{0.4pt}
+\end{center}
+
+Пусть $M$ — 3-мерное компактное мн-ие.
+
+Рассм. пр-во всех [вставка над строкой: неприводимых] связностей $C$
+[зачёркнуто: \RussianUnclear{GELFAND-P001473}{mid-cancelled-after-c}{неразборчиво}]
+
+[Под словом «связностей»: (эрмитовых)]
+
+на тривиальном 2-мерном расслоении на $M$
+
+Такая связность имеет вид $d+A$, где
+\begin{equation*}
+A\in\Omega^1(M)\otimes\mathrm{su}_2
+\end{equation*}
+
+Будем их рассм. с точн. до калибр. эквивалентности
+\begin{equation*}
+G\text{ — калибр. группа }SU_2^M;\qquad
+X=C/G\text{ — пр-во орбит}
+\end{equation*}
+$X$ — основное мн-ие.
+
+На $X$ зададим ф-ю Морса, точнее её дифференциал
+$\nu$ — 1-форму на $C$.
+
+% В источнике слова «Касат. вектор к C» подчёркнуты волнистой линией.
+\underline{Касат. вектор к $C$}: матричнозначная 1-форма
+
+($C$ — аффинное пр-во)
+\begin{equation*}
+B\in\Omega^1(M)\otimes\mathrm{su}_2.
+\end{equation*}
+\begin{equation*}
+\langle\nu,B_\nabla\rangle
+=\int_M\operatorname{Tr}(F_\nabla\cdot B),
+\qquad B\in\Omega^1(M)\otimes\mathrm{su}_2
+\tag{5}
+\end{equation*}
+[Под $F_\nabla$ с указателем: кривизна $A$]
+
+[Справа:] $F_\nabla\cdot B$ — внешнее произв-о, (3-форма !!)
+\begin{equation*}
+F_\nabla=dA+\frac{1}{2}[A,A]
+\tag{6}
+\end{equation*}
+
+
+\RussianSourceFrame{GELFAND-P001474}{unlabelled}
+% В источнике «Св-ва ν» подчёркнуто волнистой линией.
+(7) \underline{Св-ва $\nu$}.
+
+1. $\nu$ поднимается с $X$
+
+2. $\nu$ — замкнутая 1-форма
+
+3. [Вставка над строкой перед $\nu$: Первообр.] $\nu$ — вторичный хар. класс для
+\RussianUnclear{GELFAND-P001474}{upper-class-symbol}{$c_2$} (кл. Чжена)
+
+— класс Черна-Саймонса для $c_2$:
+\begin{equation*}
+\int_{M\times[0,1]}\operatorname{Tr}(F_{\widetilde\nabla})^2
+\tag{8}
+\end{equation*}
+где
+
+(9) [Зачёркнуто: \RussianUnclear{GELFAND-P001474}{mid-cancelled-notation}{$A_\nabla$}]
+$\widetilde\nabla$ — связность на трив. расслоении на $M\times[0,1]$
+
+с потенциалом в точке $(x,t)$, равным $tA$.
+
+Эта связность на $C$, а не на $X$.
+
+[Мелкая вставка между строками:]
+\underline{Замеч. \RussianUnclear{GELFAND-P001474}{mid-remark-initials}{И. М. Г.}}:
+Это все сод. в «простой» части раб. Габр.-Гельф.-Лосик
+
+Посмотрим на критич. точки.
+
+[Зачёркнута короткая строка:
+\RussianUnclear{GELFAND-P001474}{mid-cancelled-line}{неразборчиво}]
+
+Это связности с кривизной 0, т.е. интегрируемые, т.е.
+представления $\pi_1(M)$
+
+% В источнике «Гессиан» подчёркнут волнистой линией.
+\underline{Гессиан}.
+\begin{equation*}
+\nabla\in C,\qquad
+T_{C,\nabla}=\Omega^1(M)\otimes\mathrm{su}_2
+\overset{\text{проекция}}{\longrightarrow}T_{X,\overline\nabla}
+\tag{10}
+\end{equation*}
+Введем
+
+[Номер формулы переправлен:
+(\RussianUnclear{GELFAND-P001474}{lower-equation-label}{11})]
+\begin{center}
+\RussianUnclear{GELFAND-P001474}{lower-m-x-notation}{$\nabla_{ad}:\Omega^0(X)\otimes\mathrm{su}_2
+\longrightarrow\Omega^1(X)\otimes\mathrm{su}_2,$}
+\end{center}
+по ф-ле
+\begin{equation*}
+\nabla_{ad}(\varphi)=d\varphi+[A,\varphi]
+\tag{12}
+\end{equation*}
+и тогда
+\begin{equation*}
+T_{X,\nabla}=
+\frac{\Omega^1(X)\otimes\mathrm{su}_2}
+{\nabla_{ad}\bigl(\Omega^0(X)\otimes\mathrm{su}_2\bigr)}
+\tag{13}
+\end{equation*}
+Это верно для любой связности.
+

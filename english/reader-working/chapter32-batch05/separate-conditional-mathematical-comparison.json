@@ -1,0 +1,184 @@
+{
+  "schema": "chapter32-fifth10-separate-explicit-mathematics-r1",
+  "manuscript_math_unchanged": true,
+  "canonical_Russian_frames_unchanged": true,
+  "English_formula_repairs": 0,
+  "checks": [
+    {
+      "name": "Composition and colored crossing: typed domains, not repaired indices",
+      "assumptions": "Choose vector spaces of dimensions 2 and 3 for two distinct colors; no assertion that these are the dimensions of the manuscript representations. Use ordinary matrix composition only.",
+      "derivation": [
+        "A 2×3 matrix times a 3×2 matrix is 2×2; the displayed exact example gives [[4,5],[10,11]]. Thus a contraction requires matching intermediate spaces, but cannot decide overwritten primes or M/L labels.",
+        "For dimensions dim(V^{j_1})=2 and dim(V^{j_2})=3, the four literal V^{j_1} factors in (20) describe a map 4→4. A color-permuting crossing would describe a map 6→6. These are different typed statements."
+      ],
+      "result": "The repeated index 1 in all four factors is directly legible and remains. No repaired R domain, prime count or M/L index is asserted.",
+      "diplomatic_source_emended": false,
+      "exact_matrix_product": [
+        [
+          "4",
+          "5"
+        ],
+        [
+          "10",
+          "11"
+        ]
+      ]
+    },
+    {
+      "name": "Conditional cup/cap contraction of literal (24) and candidate (25)",
+      "assumptions": "Take integer weights m=−1,0,1, q=4, the candidate exponent m_1 on (-1) in (25), and identify both arrays with matrices on the same ordered basis. This identification and orientation are additional assumptions; the excerpt does not fix all dual-basis conventions.",
+      "derivation": [
+        "C_{mn}=(-1)^m q^m δ_{m,-n}; D_{nk}=(-1)^n q^{-n/2} δ_{n,-k}.",
+        "(CD)_{mk}=q^{3m/2}δ_{mk}; at q=4 the diagonal is (1/8,1,8), not the identity."
+      ],
+      "result": "The two q exponents cannot simply be unified under this chosen contraction. Different duality/orientation conventions could change the test; it does not establish a universally correct replacement or decipher the cancelled index.",
+      "diplomatic_source_emended": false,
+      "exact_CD": [
+        [
+          "1/8",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "8"
+        ]
+      ]
+    },
+    {
+      "name": "Riccati poles and the literal first line of (5)",
+      "assumptions": "Rational example Δ(z)=1/z; distinct roots λ_k and poles a_α; all residues are computed from equations (1)–(4), not inferred from handwriting.",
+      "derivation": [
+        "Near λ_k, y=1/t+s_k+O(t), with s_k=Σ_{i≠k}1/(λ_k−λ_i). The double poles of y′+y² cancel; its residue is 2s_k. Thus the root condition is s_k+Σ_α b_α/(λ_k−a_α)=0.",
+        "At a_α, the residue of 2By+C is 2b_α y(a_α)+c_α. Hence c_α=−2b_α y(a_α)=2b_αΣ_i1/(λ_i−a_α), compatible with the second line of (5).",
+        "The literal first line instead sums 1/(λ_i−λ_k), has no Δ after b_α, and leaves λ_i in the second sum. It is retained as written.",
+        "Example M=1,N=2,a=(0,2),b=(1,3),λ_1=1/2 gives B(λ_1)=0 and c=(4,−4). The rational Riccati residual has no finite poles and tends to zero at infinity, hence vanishes identically. Five exact evaluations also give zero. Interpreting the free i as 1, the literal second sum b_α(λ_i−a_α) equals −4 rather than 0."
+      ],
+      "result": "The test demonstrates a discrepancy under explicit rational assumptions; it does not insert a missing Δ, change λ_i to λ_k, or reverse a sign in the source.",
+      "diplomatic_source_emended": false,
+      "exact_evaluations": [
+        {
+          "lambda_value": "-2",
+          "residual": "0"
+        },
+        {
+          "lambda_value": "-1",
+          "residual": "0"
+        },
+        {
+          "lambda_value": "1",
+          "residual": "0"
+        },
+        {
+          "lambda_value": "3",
+          "residual": "0"
+        },
+        {
+          "lambda_value": "5",
+          "residual": "0"
+        }
+      ],
+      "literal_first_line_residual_under_i_equals_1": "-4"
+    },
+    {
+      "name": "Addition identity, the pole limit (8), and the trigonometric example",
+      "assumptions": "For the limit, assume Δ is odd with Laurent expansion Δ(ε)=1/ε+O(ε) and Ω is even and finite at zero. These regularity and residue-one assumptions are explicit additions to the written symmetry statements.",
+      "derivation": [
+        "Set λ_1=x,λ_2=ε,λ_3=−x−ε in (6). The ε^{-1} terms cancel. The constant term is −Δ′(x)−Δ(x)^2+2Ω(x)+Ω(0)=0, giving (8).",
+        "For Δ(x)=ω cot(ωx), direct differentiation gives Δ′+Δ²=−ω². With the literal Ω=+ω²/3, (8) instead gives +ω² on the right.",
+        "An exact addition-identity test at ω=1 and (λ_1,λ_2,λ_3)=(π/4,π/4,−π/2) uses cot values (1,1,0): the pair-product sum is 1; adding the three literal Ω values gives residual 2. Taking Ω=−1/3 would give 0 in this test."
+      ],
+      "result": "The positive sign is visibly written and preserved. The negative constant is a conditional mathematical comparison, not a transcription correction.",
+      "diplomatic_source_emended": false,
+      "exact_literal_addition_residual": "2",
+      "exact_conditional_addition_residual": "0"
+    },
+    {
+      "name": "Conditional elliptic factor comparison",
+      "assumptions": "Assume the functions named ζ and wp obey ζ′=−wp and the local expansions ζ(x)=1/x+O(x^3), wp(x)=1/x²+O(x²). This check is conditional on those identities; no external identification of a handwritten symbol is made.",
+      "derivation": [
+        "Then Δ′+Δ²=ζ²−wp=:H and H(0)=0. The literal Ω=H makes the right-hand side of (8) equal 2H, rather than H.",
+        "With the same functions and residue-one convention, Ω=H/2 would satisfy (8). This comparison does not claim to derive the full elliptic addition theorem or the asserted generality of (9)."
+      ],
+      "result": "A factor discrepancy is recorded under the stated assumptions. The original Ω=ζ²−wp, including the later cancelled box containing it, remains unchanged.",
+      "diplomatic_source_emended": false
+    },
+    {
+      "name": "Scaling in (9): addition symmetry versus residue-one normalization",
+      "assumptions": "Use the rational Δ_0(z)=1/z, b=2,a=0, so the literal Δ_0(bλ)+aλ=1/(2λ). Keep Ω=0. Distinguish system (6) from the extra normalization used to derive (8).",
+      "derivation": [
+        "For x+y+z=0, 1/(xy)+1/(yz)+1/(zx)=0; multiplying by 1/4 proves the pair-product identity for Δ=1/(2λ). Oddness and even Ω=0 also hold. Thus this scaling example does satisfy (6).",
+        "But Δ′+Δ²=−1/(4λ²), while 2Ω+Ω(0)=0. The pole residue is 1/2, not 1. An outside b would restore residue one for bΔ_0(bλ), if that additional normalization is intended.",
+        "More generally, Δ=c/λ+dλ satisfies (6) with Ω=cd+(d²/2)λ²: Σsym(x/y)=−3 and Σpair xy=−(Σx²)/2 under x+y+z=0. The residual of (8) is (c²−c)/λ²+d(1−c)."
+      ],
+      "result": "No outside factor is asserted necessary merely for (6). The unqualified connection to (8) needs a normalization hypothesis. The visible reference “example (6)” also remains literal.",
+      "diplomatic_source_emended": false,
+      "exact_residual_at_lambda_1": "-1/4"
+    },
+    {
+      "name": "Coordinate and gauge changes from (12) to a Schrodinger equation",
+      "assumptions": "Work locally with smooth nonzero A, a chosen square root and x_λ=A^{-1/2}. All statements are local differential algebra; no global interval or boundary spectrum is asserted.",
+      "derivation": [
+        "A f_{λλ}+2AB f_λ+AC f=0 becomes f_{xx}+P f_x+ACf=0, where P=2√A B−A′/(2√A).",
+        "For arbitrary A, the coordinate change alone does not in general remove f_x. It does so when A′=4AB. A further gauge f=exp(−(1/2)∫P dx)ψ=A^{1/4} exp(−∫B dλ)ψ gives −ψ_{xx}+Vψ=0, V=P_x/2+P²/4−AC.",
+        "Exact elementary example A=1,B=λ,C=0 has x=λ,P=2x,V=1+x². The original solution f=1 corresponds to ψ=exp(x²/2), for which ψ″=(1+x²)ψ. The untransformed coordinate equation still contains 2x f_x."
+      ],
+      "result": "The inserted source claim about changing the independent variable is retained. The additional gauge and its assumptions are stated separately, without repairing the source sentence.",
+      "diplomatic_source_emended": false
+    },
+    {
+      "name": "Coulomb escape: what the literal bound does and does not imply",
+      "assumptions": "Use the rational logarithmic expression Φ=Σ_{i,α}b_α log|λ_i−a_α|+Σ_{i<j}log|λ_i−λ_j|, energy E=−Φ to implement the stated repulsion, and hold the other particles bounded while one escapes. This is an asymptotic channel test, not a complete stability proof.",
+      "derivation": [
+        "One particle at L→∞ has Φ=(b_1+b_2+M−1)log L+O(1). E rises in this channel when b_1+b_2+M−1<0.",
+        "The literal bound b_1+b_2+M<0 is stronger, so it is sufficient for this channel. The difference by 1 is not by itself a proof that the manuscript condition is false or needs correction.",
+        "If r particles separate at comparable scale L, the coefficient is r(b_1+b_2+M−(r+1)/2). The r=1 bound is the strongest among these particular channels. Collisions, other scales and boundary conditions require their own analysis."
+      ],
+      "result": "The literal <0 and +M remain. No necessary-and-sufficient global stability criterion or spectral conclusion is certified.",
+      "diplomatic_source_emended": false,
+      "illustrative_coefficients_for_M_3_bsum_minus_3_over_2": [
+        {
+          "escaping_particles": 1,
+          "log_coefficient": "1/2"
+        },
+        {
+          "escaping_particles": 2,
+          "log_coefficient": "0"
+        },
+        {
+          "escaping_particles": 3,
+          "log_coefficient": "-3/2"
+        }
+      ]
+    },
+    {
+      "name": "Gradient-flow direction and Morse trajectory dimension",
+      "assumptions": "Assume finite-dimensional Morse critical points, transverse stable/unstable manifolds, and index defined as the number of negative Hessian eigenvalues. A nonconstant trajectory is quotiented by translation in time.",
+      "derivation": [
+        "For τ=+grad f, d f(γ(t))/dt=||grad f||²≥0. The unstable dimension at p is n−ind(p), and the stable dimension at q is ind(q). Their transverse intersection has dimension ind(q)−ind(p), and division by time gives ind(q)−ind(p)−1.",
+        "The source dimension ind(x_1)−ind(x_2)−1 for trajectories from x_1 to x_2 agrees instead with negative gradient or reversed endpoint convention.",
+        "On the circle, f(θ)=cos θ and τ=−sin θ ∂_θ. The explicit positive-gradient trajectory θ(t)=2 arctan(e^{-t}) goes from the minimum at π (index 0) to the maximum at 0 (index 1); the unparametrized branch is zero-dimensional. The written endpoint order would give −2 under these conventions."
+      ],
+      "result": "No minus is inserted before grad, and no endpoints or differential direction are reversed in the diplomatic editions.",
+      "diplomatic_source_emended": false
+    },
+    {
+      "name": "Connection-space notation and the Chern–Simons normalization",
+      "assumptions": "Assume additionally that M is oriented and closed, or impose boundary conditions killing all integration-by-parts terms. Use matrix-valued differential forms, F=dA+A∧A and invariant trace. Discuss local quotient tangents only; no assertion of global smoothness of C/G or single-valuedness on X.",
+      "derivation": [
+        "The path tA on M×[0,1] gives F_t=t dA+t²A² and mixed term dt∧A. Integrating Tr(F_tilde²) over t gives CS(A)=∫_M Tr(A∧dA+(2/3)A³).",
+        "On closed M, δCS(A)[B]=2∫_M Tr(F_A∧B)=2ν_A(B). Thus the exact expression (8) is a primitive of 2ν with these trace/wedge conventions; half of it would be a primitive of ν. The written phrase and normalization remain untouched.",
+        "Infinitesimal gauge variations are d_A φ=dφ+[A,φ], with φ a zero-form on M and d_Aφ a one-form on M. The infinitesimal quotient tangent is Ω¹(M,su_2)/im d_A under regular local assumptions. Written Ω⁰(X),Ω¹(X) in (11)/(13) are different spaces; their literal X is clear.",
+        "At a flat connection, the linearization of F is d_A B; the flat-moduli tangent would additionally impose d_A B=0 before quotienting. It must not be confused with the tangent to all connections modulo gauge in (13)."
+      ],
+      "result": "M/X and the normalization are treated as mathematical comparisons, not illegible letters. The compact-only manuscript statement supplies no automatic boundary or orientation hypotheses.",
+      "diplomatic_source_emended": false
+    }
+  ]
+}
