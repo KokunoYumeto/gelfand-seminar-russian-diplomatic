@@ -1,84 +1,77 @@
-# Семинар И. М. Гельфанда: русская дипломатическая транскрипция
+# Семинар И. М. Гельфанда: рабочие издания
 
-Рабочее русское издание рукописных записей семинара. Текст и математические формулы набраны в LaTeX; сокращения, зачёркнутые записи, сомнительные чтения и неразобранные фрагменты отмечены в тексте. Математика источника передана без молчаливого исправления.
+Рабочие издания исторических рукописных записей семинара И. М. Гельфанда. Современная транскрипция выполнена ИИ; английский текст переведён ИИ, типографские воссоздания рисунков созданы ИИ, набор выполнен ИИ. Авторство исторических докладов, записей и рисунков остаётся за их авторами. Первичный источник — [электронный архив МЦНМО](https://old.mccme.ru/gelfand/notes/all-links.html); каталожные ассоциации и идентификаторы исходных кадров сохранены. Это не официальное издание архива.
 
-## Читать и скачать
+## Состав и пределы изданий
 
-- [Объединённый PDF: 1400 страниц](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/working-2026-10-09-complete/gelfand-russian-diplomatic-reader.pdf) (1398 страниц в томах и две вводные страницы).
-- [34 отдельных тома в ZIP](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/working-2026-10-09-complete/gelfand-russian-diplomatic-volumes.zip).
-- [Исходники LaTeX и описание сборки](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/working-2026-10-09-complete/gelfand-russian-diplomatic-sources.zip).
-- [Все файлы текущего выпуска](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/working-2026-10-09-complete).
+- **Русское рабочее издание:** объединённый PDF на 1400 страниц, 34 отдельных тома и редактируемые исходники LaTeX. Сокращения, зачёркивания и сомнительные чтения отмечены; некоторые рисунки представлены набранными описаниями. Это рабочая транскрипция, а не окончательно выверенное издание.
+- **Сопоставительное издание для сверки:** объединённый PDF на 1855 страниц A3, охватывающий 34 архивные главы и 1527 исходных кадров, с 328 страницами продолжения. Исходное изображение расположено слева, русский набор — справа. Этот комплект предназначен для сверки по рукописи; наличие изображений не означает завершённого прочтения всех записей.
+- **Отдельные читательские издания A4:** русский и английский PDF первых двадцати кадров главы 1 (P000001–P000020: 86 и 85 страниц), рабочие тома главы 30 (45 и 43 страницы) и главы 31 (72 и 70 страниц). Полные читательские издания на обоих языках ещё не завершены. Глава 1 начинается с первого исходного кадра. [Точные пределы опубликованных читательских материалов](READERS-STATUS.md).
 
-Тома соответствуют 34 архивным главам. В объединённом PDF есть содержание, закладки томов и ссылки от описаний рисунков к своим исходным кадрам. Синие указатели GELFAND-P… сохраняют связь с исходными кадрами. Печатный текст течёт без обязательного разрыва страницы после каждого кадра.
+Доступны также английские исходники последней десятки кадров главы 29, главы 30, четырёх частей главы 31 и всех 66 кадров главы 32. Эти исходники не следует принимать за полный английский читательский PDF. Некоторые рабочие загрузки содержат полные примечания о чтениях и отдельно выделенный математический комментарий; математическое пояснение следует отличать от свидетельства рукописи.
 
-## Сопоставительное издание для сверки
+В читательских фрагментах исходные вырезки сопровождают сомнительные чтения и рисунки. Степень воссоздания рисунков различается; неполные схемы и неустановленные подписи требуют обращения к оригиналу. В рабочих томах 30–31 дополнение оригинальными фрагментами при сомнительных чтениях ещё не завершено.
 
-Опубликованы **все 34 проверенных рабочих тома**: главы 01–34. Семь проверенных выпусков содержат **1855 страниц A3, 1527 исходных кадров и 328 страниц продолжения**. Полный оригинал находится слева; дипломатическая русская транскрипция набрана справа. Такой комплект предназначен для проверки по рукописи.
+Кадр GELFAND-P000722 повреждён; каталожные записи 603 и 694 не содержат сканов, а в главе 29 отсутствует часть 25. Эти пробелы не восполнены вымышленным текстом. Проверка вёрстки или извлекаемости текста не устанавливает правильность каждого чтения. Для состава файлов и сборки см. `manifest.json` и `BUILD.md`.
 
-- [Полный объединённый сопоставительный PDF: 1855 страниц](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/audit-working-2026-10-12-complete/gelfand-complete-audit.pdf).
-- [Состав полного PDF, главы, кадры и контрольные суммы](comparison/audit-complete-manifest.json).
-- [Скачать PDF первых 22 проверенных томов](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-11-reviewed22).
-- [Состав, номера исходных кадров и контрольные суммы](comparison/audit-reviewed22-manifest.json).
-- [Ещё четыре проверенных тома: главы 14, 22, 23 и 25](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-11-chapters14-22-23-25).
-- [Состав и контрольные суммы четырёх новых томов](comparison/audit-chapters14-22-23-25-manifest.json).
-- [Ещё четыре проверенных тома: главы 27, 28, 29 и 31](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-11-chapters27-28-29-31).
-- [Состав и контрольные суммы томов 27, 28, 29 и 31](comparison/audit-chapters27-28-29-31-manifest.json).
-- [Проверенный том 17: 30 страниц и 19 исходных кадров](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-chapter17).
-- [Состав и контрольные суммы тома 17](comparison/audit-chapter17-manifest.json).
-- [Проверенный том 18: 49 страниц и 35 исходных кадров](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-chapter18).
-- [Состав и контрольные суммы тома 18](comparison/audit-chapter18-manifest.json).
-- [Проверенный том 19: 34 страницы и 27 исходных кадров](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-chapter19).
-- [Состав и контрольные суммы тома 19](comparison/audit-chapter19-manifest.json).
-- [Проверенный том 21: 35 страниц и 25 исходных кадров](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-chapter21).
-- [Состав и контрольные суммы тома 21](comparison/audit-chapter21-manifest.json).
-- [Ранее опубликованные главы 01–05](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-10-chapters01-05).
+## Происхождение и права
 
-Проверены все физические страницы этих томов и выполнены механические проверки источников и PDF. Это не означает завершённой смысловой сверки всех чтений. Исторические оговорки о проверке и повреждённый кадр GELFAND-P000722 сохранены явно. Полный объединённый сопоставительный PDF опубликован. При сборке сохранены текст, формулы, графика и геометрия всех 1855 страниц; лично проверены первые и последние страницы всех 34 глав и все 33 перехода между главами, с увеличенными видами 300 DPI там, где это требовалось. Принятие вёрстки не означает завершённого воссоздания всех рисунков: например, положение дуг углов в главе 23 ещё требует уточнения для читательского издания A4.
+Исторические авторы и докладчики указаны в первичном каталоге МЦНМО. Современная транскрипция, перевод, воссоздания рисунков и набор выполнены ИИ. Права на оригиналы и охраняемые части производных произведений сохраняются за соответствующими правообладателями. Открытая лицензия или разрешение на распространение и перевод этих материалов не установлены; свободный доступ к источнику сам по себе не является таким разрешением.
 
-В главе 17 проверены все 30 физических страниц и полные увеличенные виды 300 DPI. Одиннадцать рисунков пока переданы набранными описаниями; для читательских изданий A4 сохраняется задача добавить полезные исходные вырезки с пояснениями и верные воссоздания, где это практически осуществимо. Граница сохранившегося изображения GELFAND-P000914 отмечена явно.
+## English description
 
-В главе 18 проверены все 49 физических страниц, все переходы продолжений и 21 полный увеличенный вид 300 DPI. Шестнадцать рисунков пока переданы набранными описаниями и остаются задачами читательских изданий. Механические проверки PDF завершились; последующая ошибка очистки процесса записана отдельно.
+Working editions of historical manuscript notes from the I. M. Gelfand Seminar. The modern text is **AI-transcribed**; the English text is **AI-translated**, diagram recreations are **AI-created**, and typesetting is **AI-produced**. Historical lectures, manuscripts and drawings remain the work of their human authors. The primary source is the [MCCME digital archive](https://old.mccme.ru/gelfand/notes/all-links.html); catalogue associations and source-frame identifiers are retained. This is not an official archive edition.
 
-В главе 19 проверены все 34 физические страницы и все переходы продолжений, с 30 полными увеличенными видами 300 DPI. Четыре рисунка пока переданы набранными описаниями и остаются задачами читательских изданий.
+### Contents and limits
 
-В главе 21 проверены все 35 физических страниц и все переходы продолжений, с 33 полными увеличенными видами 300 DPI. Пятнадцать рисунков пока переданы набранными описаниями и остаются задачами читательских изданий.
+- **Russian working edition:** a 1400-page combined PDF, 34 individual volumes and editable LaTeX sources. Abbreviations, cancellations and uncertain readings are marked; some diagrams are represented by typed descriptions. This is a working transcription, not a finally established text.
+- **Source/transcription audit edition:** a combined 1855-page A3 PDF covering 34 archive chapters and 1527 source frames, with 328 continuation pages. Original images appear on the left and the Russian transcription on the right. It is intended for comparison with the manuscripts; image coverage does not establish every reading.
+- **Separate A4 readers:** Russian and English PDFs for the first twenty frames of chapter 1 (P000001–P000020: 86 and 85 pages), chapter 30 working volumes (45 and 43 pages), and chapter 31 working volumes (72 and 70 pages). The complete readers in both languages remain unfinished. Chapter 1 begins at the first source frame. [Exact coverage of the published reader material](READERS-STATUS.md).
 
-## Отдельные читательские издания A4
+English sources are also available for the last ten frames of chapter 29, chapter 30, four parts of chapter 31, and all 66 frames of chapter 32. These sources do not constitute a complete English reader PDF. Some working downloads contain full reading notes and separately identified mathematical commentary; explanations should be distinguished from the manuscript evidence.
 
-**Текущая работа начинается с главы 1 и продолжается по порядку.** [Опубликованы первые двадцать исходных страниц главы 1 на русском и английском](readers/chapter01-first20-working/README.md): P000001–P000020, все 103 исторических примечания и одно новое примечание к обрезанному фрагменту, 86 страниц A4 на русском и 85 на английском. При каждом сомнительном чтении показан оригинальный фрагмент; рисунки сопоставлены с наборными схемами, ограничения указаны явно. Математический комментарий отделён от дипломатического текста. Это ещё не вся глава. Прежние выпуски и загрузки сохранены. Ранее опубликованные главы 30–31 — частичные рабочие выпуски; им также требуется дополнение оригинальными вырезками при сомнительных чтениях. [Полная таблица готовности](READERS-STATUS.md).
+Reader excerpts include original fragments beside uncertain readings and diagrams. Diagram recreations vary in completeness; partial sketches and undeciphered labels require consultation of the originals. The chapter 30–31 working volumes still need additional original fragments beside uncertain readings.
 
-Сопоставительные тома и полный объединённый PDF завершены как рабочий комплект для сверки. Продолжается подготовка **двух самостоятельных читательских изданий: русского и английского**. Для каждого предусмотрены тома по архивным главам и полный PDF без ограничения количества страниц.
+Source frame GELFAND-P000722 is damaged; catalogue records 603 and 694 have no scans, and part 25 of chapter 29 is missing. These gaps have not been filled with invented text. Layout or text-extraction checks do not establish the correctness of every reading. See `manifest.json` and `BUILD.md` for file contents and build information.
 
-Опубликованы [два самостоятельных читательских PDF главы 30](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/readers-chapter30-working-2026-10-12): **45 страниц по-русски** и **43 страницы по-английски**, все 26 кадров и полные 109 примечаний в каждом языке. Все 88 физических страниц проверены. Доступны также [исходник английского перевода главы 30](english/reader-working/chapter30-complete/README.md) и [последние десять кадров главы 29](english/reader-working/chapter29-batch01/README.md).
+### Sources and rights
 
-Все **40 кадров главы 31** переведены, проверены и опубликованы: [первая десятка](english/reader-working/chapter31-batch01/README.md), [вторая](english/reader-working/chapter31-batch02/README.md), [третья](english/reader-working/chapter31-batch03/README.md) и [последняя](english/reader-working/chapter31-batch04/README.md). Сохранены все 158 исторических примечаний главы. Последний фрагмент содержит 54 формулы, 152 внутритекстовых выражения и 5 исходных типографских рисунков; одна ранее описанная схема воссоздана частично рядом с исходной вырезкой.
+Historical authors and speakers are identified in the MCCME source catalogue. Modern transcription, translation, diagram recreations and typesetting are AI-produced. Rights in the originals and protected derivative contributions remain with their respective rights holders. An open licence or permission for redistribution and translation has not been established; free access to source material does not itself provide permission.
 
-Всего проверены **142 переведённых кадра GELFAND-P001349–GELFAND-P001490**; сохранены все формулы и **555 полных исторических записей о сомнительных чтениях**. [Читательские PDF главы 31 опубликованы](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/readers-chapter31-working-2026-10-14): 72 страницы по-русски и 70 по-английски; проверены все 142 физические страницы. [Первая десятка главы 32](english/reader-working/chapter32-batch01/README.md) содержит 62 формулы, 156 внутритекстовых выражений, девять исходных типографских рисунков и все 23 исторических примечания. Это проверенные исходники; читательские PDF главы 32 ещё не приняты. [Вторая десятка главы 32](english/reader-working/chapter32-batch02/README.md) содержит 36 формул, 132 внутритекстовых выражения, два исходных типографских рисунка, две новые частичные реконструкции с оригинальными фрагментами и все 31 историческое примечание. [Третья десятка главы 32](english/reader-working/chapter32-batch03/README.md) содержит 32 формулы, 162 внутритекстовых выражения, десять исходных типографских рисунков, четыре частичных воссоздания рядом с оригинальными фрагментами и все 42 исторических примечания. [Четвёртая десятка главы 32](english/reader-working/chapter32-batch04/README.md) содержит 51 формулу, 150 внутритекстовых выражений, двенадцать исходных типографских рисунков, четыре частичных воссоздания с оригинальными фрагментами, все 37 исторических примечаний и два отдельных редакторских сопоставления. [Пятая десятка главы 32](english/reader-working/chapter32-batch05/README.md) содержит 50 формул, 247 внутритекстовых выражений, девятнадцать исходных типографских рисунков, четыре частичных воссоздания, пять оригинальных фрагментов и все 41 историческое примечание. [Шестая десятка главы 32](english/reader-working/chapter32-batch06/README.md) содержит 67 формул, 161 внутритекстовое выражение, четырнадцать исходных типографских рисунков, восемь частичных воссозданий с оригинальными фрагментами и все 46 исторических примечаний. [Последние шесть кадров главы 32](english/reader-working/chapter32-batch07/README.md) содержат 32 формулы, 107 внутритекстовых выражений, три частичных воссоздания с оригинальными фрагментами и все 29 исторических примечаний. Проверены исходники всех 66 кадров главы 32; сборка и проверка двух читательских PDF ещё не завершены. Полные издания обеих языковых версий продолжают готовиться.
+## Читать и скачать / Read and download
 
-В читательском издании текст и формулы текут в формате A4. Полные примечания о сомнительных чтениях, зачёркиваниях и пробелах сохраняются. Полезные вырезки исходных рисунков сопровождают набранные объяснения и, где это осуществимо с соразмерными усилиями, верные типографские воссоздания. Изображения не заменяют письменный текст, формулы или подписи. Математическая реконструкция обозначается отдельно от свидетельства рукописи.
+| Материал / Material | Русский / Russian | English | Исходники / Sources |
+|---|---|---|---|
+| Рабочее издание, главы 1–34 / Working edition, chapters 1–34 | [PDF · 1400 pages](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/working-2026-10-09-complete/gelfand-russian-diplomatic-reader.pdf) | Полного PDF нет / No complete PDF | [LaTeX ZIP](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/working-2026-10-09-complete/gelfand-russian-diplomatic-sources.zip) |
+| Глава 1, кадры 1–20 / Chapter 1, frames 1–20 | [PDF · 86 pages](readers/chapter01-first20-working/gelfand-russian-chapter01-first20-crops.pdf) | [PDF · 85 pages](readers/chapter01-first20-working/gelfand-english-chapter01-first20-crops.pdf) | [LaTeX, figures and notes](readers/chapter01-first20-working/README.md) |
+| Глава 30 / Chapter 30 | [PDFs and sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/readers-chapter30-working-2026-10-12) | [PDFs and sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/readers-chapter30-working-2026-10-12) | [English source](english/reader-working/chapter30-complete/README.md) |
+| Глава 31 / Chapter 31 | [PDFs and sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/readers-chapter31-working-2026-10-14) | [PDFs and sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/readers-chapter31-working-2026-10-14) | [Part 1](english/reader-working/chapter31-batch01/README.md) · [Part 2](english/reader-working/chapter31-batch02/README.md) · [Part 3](english/reader-working/chapter31-batch03/README.md) · [Part 4](english/reader-working/chapter31-batch04/README.md) |
+| Сопоставительное издание / Audit edition | [PDF · 1855 pages](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/audit-working-2026-10-12-complete/gelfand-complete-audit.pdf) | — | [Contents and digests](comparison/audit-complete-manifest.json) |
 
-Ранее опубликованный 1400-страничный русский PDF остаётся рабочим выпуском. Завершение иллюстраций, уточнение вёрстки и сверка продолжаются; этот выпуск не объявляется окончательным читательским изданием.
+### Томовые загрузки и английские исходники / Volume downloads and English sources
 
-## Статус рабочего издания
-
-Импортированы все **165** пакетов; учтены все **1527** исходных кадров. В журнале чтений остаются **6820** нерешённых записей. Повреждённые, зачёркнутые и неразобранные фрагменты отмечены явно. Наличие кадра не означает завершённого прочтения или законченной сверки с рукописью. Статус «unreadable» в таблице кадров может обозначать локальный неразобранный зачёркнутый фрагмент; он не означает автоматически, что весь кадр не прочитан. Кадр GELFAND-P000722 повреждён. Каталожные записи 603 и 694 не содержат сканов; в главе 29 отсутствует часть 25. Эти пробелы сохранены без выдуманных страниц.
-
-Некоторые длинные пояснения к формулам и рисункам вынесены в нумерованные примечания непосредственно после своего кадра. Полные тексты примечаний сохранены. Исправления синтаксиса TeX и размещения примечаний служат читаемости; они не утверждают нового прочтения рукописи.
-
-Письменный текст, формулы и подписи набраны в LaTeX. В томах 28 и 29 добавлены **25 проверенных исходных вырезок рисунков** рядом с сохранённым набранным материалом: 24 схемами и одним полным описанием неустановленного рукописного знака. Эти изображения дополняют транскрипцию. Для остальных рисунков сохраняются набранные схемы или явные описания с указателями исходных кадров; их сопоставление с вырезками ещё не завершено. Сопоставительный комплект для сверки публикуется отдельно по мере проверки томов.
-
-## Происхождение и проверка
-
-Источник: [МЦНМО, рукописные записи семинара И. М. Гельфанда](https://old.mccme.ru/gelfand/notes/all-links.html). Идентификаторы и относительные архивные пути кадров сохранены в `manifest.json`. Это новая рабочая транскрипция исторического материала; этот репозиторий не является официальным изданием архива.
-
-34 тома собраны в два прохода LuaLaTeX. Проверены присутствие идентификаторов кадров, извлекаемый текст, отсутствие растровых подстановок и предупреждений о пропавших знаках. Выполнены проверки границ страниц и выборочная проверка реальных отрисованных страниц. Эти проверки не заменяют полную сверку с рукописью.
-
-В объединённом PDF потоки содержимого всех страниц томов сохранены при сборке. Внутренние ссылки получили отдельные пространства имён для каждого тома. Контрольные суммы доступны в файлах выпуска; сведения о составе и пределах проверки находятся в `manifest.json` и `BUILD.md`.
-
-## Attribution and rights
-
-The historical source is identified above. A modern creator/editor credit and a redistribution license have not yet been established for this working edition. No new license or rights over the historical notes are asserted by this release. The GitHub publishing account is a distribution destination, not an inferred creator credit.
-
-## Chapter 31 A4 readers
-
-[Separate Russian and English readers of chapter 31](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/readers-chapter31-working-2026-10-14) are now available: 72 Russian pages and 70 English pages, all 40 held frames, complete 158-record reading appendices and selected original diagrams beside typed recreations. Full editions in both languages remain in preparation.
+- [Русские тома 1–34 / Russian volumes 1–34 (ZIP)](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/working-2026-10-09-complete/gelfand-russian-diplomatic-volumes.zip).
+- [Файлы русского рабочего издания / Russian working-edition files](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/working-2026-10-09-complete).
+- [Сопоставительные тома, группа из 22 глав / Audit volume group: 22 chapters](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-11-reviewed22).
+- [Состав группы из 22 томов / Contents of the 22-volume group](comparison/audit-reviewed22-manifest.json).
+- [Сопоставительные тома / Audit volumes: chapters14-22-23-25](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-11-chapters14-22-23-25).
+- [Состав сопоставительных томов / Audit contents: chapters14-22-23-25](comparison/audit-chapters14-22-23-25-manifest.json).
+- [Сопоставительные тома / Audit volumes: chapters27-28-29-31](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-11-chapters27-28-29-31).
+- [Состав сопоставительных томов / Audit contents: chapters27-28-29-31](comparison/audit-chapters27-28-29-31-manifest.json).
+- [Сопоставительные тома / Audit volumes: chapter17](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-chapter17).
+- [Состав сопоставительных томов / Audit contents: chapter17](comparison/audit-chapter17-manifest.json).
+- [Сопоставительные тома / Audit volumes: chapter18](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-chapter18).
+- [Состав сопоставительных томов / Audit contents: chapter18](comparison/audit-chapter18-manifest.json).
+- [Сопоставительные тома / Audit volumes: chapter19](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-chapter19).
+- [Состав сопоставительных томов / Audit contents: chapter19](comparison/audit-chapter19-manifest.json).
+- [Сопоставительные тома / Audit volumes: chapter21](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-chapter21).
+- [Состав сопоставительных томов / Audit contents: chapter21](comparison/audit-chapter21-manifest.json).
+- [Сопоставительные тома / Audit volumes: chapters01-05](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-10-chapters01-05).
+- [Глава 29, последние 10 кадров / Chapter 29, last 10 frames](english/reader-working/chapter29-batch01/README.md).
+- [Глава 32, исходники, часть 1 / Chapter 32 sources, part 1](english/reader-working/chapter32-batch01/README.md).
+- [Глава 32, исходники, часть 2 / Chapter 32 sources, part 2](english/reader-working/chapter32-batch02/README.md).
+- [Глава 32, исходники, часть 3 / Chapter 32 sources, part 3](english/reader-working/chapter32-batch03/README.md).
+- [Глава 32, исходники, часть 4 / Chapter 32 sources, part 4](english/reader-working/chapter32-batch04/README.md).
+- [Глава 32, исходники, часть 5 / Chapter 32 sources, part 5](english/reader-working/chapter32-batch05/README.md).
+- [Глава 32, исходники, часть 6 / Chapter 32 sources, part 6](english/reader-working/chapter32-batch06/README.md).
+- [Глава 32, исходники, часть 7 / Chapter 32 sources, part 7](english/reader-working/chapter32-batch07/README.md).
