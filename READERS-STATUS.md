@@ -1,6 +1,8 @@
 # Reader coverage
 
-The complete improved Russian and English readers are **still in preparation**. Production starts at **chapter 1** and proceeds in source order. The chapter 30 and 31 releases were produced earlier; they are partial working volumes.
+The two cumulative A4 editions begin at **chapter 1** and follow the order of the manuscript. Separate chapter 30 and 31 working volumes are also available.
+
+[Russian PDF](readers/chapters01-09-first612/gelfand-russian-chapters01-09-first612.pdf) (1346 A4 pages), [English PDF](readers/chapters01-09-first612/gelfand-english-chapters01-09-first612.pdf) (1352 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-06-frames0001-0612/gelfand-chapters01-09-first612-latex.zip) cover frames **P000001–P000612**, all source frames in chapters 1–8 and the opening of chapter 9. Manuscript details accompany uncertain readings and diagrams.
 
 [Russian PDF](readers/chapters01-08-first602/gelfand-russian-chapters01-08-first602.pdf) (1327 A4 pages), [English PDF](readers/chapters01-08-first602/gelfand-english-chapters01-08-first602.pdf) (1333 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-06-frames0001-0602/gelfand-chapters01-08-first602-latex.zip) cover frames **P000001–P000602**, all source frames in chapters 1–8. Manuscript details accompany uncertain readings and diagrams.
 
@@ -12,16 +14,10 @@ The complete improved Russian and English readers are **still in preparation**. 
 
 [The earlier chapter 1 excerpt](readers/chapter01-first20-working/README.md) remains available for frames P000001–P000020.
 
-| Chapters | Current coverage of the improved readers |
+| Chapters | Coverage in these two readers |
 |---|---|
-| 1–7 | Both A4 working readers cover all source frames. |
-| 8 | Both A4 working readers cover all source frames through P000602. |
-| 9–28 | Awaiting this reader treatment and English translation. |
-| 29 | Reviewed English source for the last ten frames; complete reader pending. |
-| 30–31 | Russian and English working PDFs published; uncertainty-crop backfill required. |
-| 32 | All 66 source frames reviewed and translated. Both draft PDFs compiled; layout/glyph fixes, uncertainty-crop backfill and complete visual review pending. |
-| 33 | Ten complete English body drafts preserved; detailed review and complete notes pending. Work deferred to preserve chapter order. |
-| 34 | Awaiting this reader treatment and English translation. |
+| 1–8 | All source frames through P000602. |
+| 9 | Opening ten source frames, P000603–P000612. |
 
 The older [1400-page Russian working transcription](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/working-2026-10-09-complete) and the [1855-page source/transcription audit](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-complete) already cover chapters 1–34. They remain distinct from these improved readers. There is no complete English reader yet.
 
