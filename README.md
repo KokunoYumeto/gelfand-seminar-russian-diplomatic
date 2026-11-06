@@ -17,7 +17,11 @@
 
 ## Происхождение и права
 
-Исторические авторы и докладчики указаны в первичном каталоге МЦНМО. Современная транскрипция, перевод, воссоздания рисунков и набор выполнены ИИ. Права на оригиналы и охраняемые части производных произведений сохраняются за соответствующими правообладателями. Открытая лицензия или разрешение на распространение и перевод этих материалов не установлены; свободный доступ к источнику сам по себе не является таким разрешением.
+Исторические авторы и докладчики указаны в первичном каталоге МЦНМО. Современная транскрипция, перевод, воссоздания рисунков и набор выполнены ИИ.
+
+Права на оригинальные записи, сканы и другие материалы третьих лиц сохраняются за авторами и соответствующими правообладателями, включая наследников. В той мере, в какой проекту принадлежат авторские или смежные права на его собственный вклад, проект отказывается от этих прав на условиях [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). Этот отказ распространяется только на права, принадлежащие проекту.
+
+Издания доступны бесплатно и публикуются исключительно в некоммерческих образовательных целях. Если правообладатель или его представитель возражает против публикации, просим указать затронутый материал в [GitHub Issues](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/issues), чтобы мы могли снять его с публикации.
 
 ## English description
 
@@ -38,7 +42,11 @@ Source frame GELFAND-P000722 is damaged; catalogue records 603 and 694 have no s
 
 ### Sources and rights
 
-Historical authors and speakers are identified in the MCCME source catalogue. Modern transcription, translation, diagram recreations and typesetting are AI-produced. Rights in the originals and protected derivative contributions remain with their respective rights holders. An open licence or permission for redistribution and translation has not been established; free access to source material does not itself provide permission.
+Historical authors and speakers are identified in the MCCME source catalogue. Modern transcription, translation, diagram recreations and typesetting are AI-produced.
+
+Rights in the original notes, scans and other third-party material remain with their authors and respective rights holders, including heirs. To the extent that the project holds copyright or related rights in its own contributions, it dedicates those rights under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). The dedication applies only to rights held by the project.
+
+These editions are freely available and are published solely for non-commercial educational purposes. If a rights holder or their representative objects to publication, please identify the affected material in [GitHub Issues](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/issues) so we can take it down.
 
 ## Читать и скачать / Read and download
 
