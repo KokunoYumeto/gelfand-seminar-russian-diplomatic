@@ -2,12 +2,15 @@
 
 The complete improved Russian and English readers are **still in preparation**. Production starts at **chapter 1** and proceeds in source order. The chapter 30 and 31 releases were produced earlier; they are partial working volumes.
 
-[Chapter 1: Russian and English PDFs](readers/chapter01-first20-working/README.md) cover the **first twenty original frames**, P000001–P000020. The Russian PDF has 86 A4 pages and the English PDF has 85, including 103 complete historical reading notes and one new source-fragment note, original details beside every uncertainty, native or explicitly partial diagram recreations, and separate mathematical commentary. The remainder of chapter 1 is in production.
+[Russian PDF](readers/chapters01-08-first571/gelfand-russian-chapters01-08-first571.pdf) (1269 A4 pages), [English PDF](readers/chapters01-08-first571/gelfand-english-chapters01-08-first571.pdf) (1275 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-06-frames0001-0571/gelfand-chapters01-08-first571-latex.zip) cover frames **P000001–P000571**, all source frames in chapters 1–7 and the opening of chapter 8. These are working editions with manuscript details beside uncertain readings and diagrams.
+
+[The earlier chapter 1 excerpt](readers/chapter01-first20-working/README.md) remains available for frames P000001–P000020.
 
 | Chapters | Current coverage of the improved readers |
 |---|---|
-| 1 | First twenty original frames available as checked Russian and English excerpts; remainder in production. |
-| 2–28 | Awaiting this reader treatment and English translation. |
+| 1–7 | Both A4 working readers cover all source frames. |
+| 8 | Both A4 working readers cover the opening through P000571. |
+| 9–28 | Awaiting this reader treatment and English translation. |
 | 29 | Reviewed English source for the last ten frames; complete reader pending. |
 | 30–31 | Russian and English working PDFs published; uncertainty-crop backfill required. |
 | 32 | All 66 source frames reviewed and translated. Both draft PDFs compiled; layout/glyph fixes, uncertainty-crop backfill and complete visual review pending. |
