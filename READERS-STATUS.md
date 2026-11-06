@@ -2,6 +2,8 @@
 
 The complete improved Russian and English readers are **still in preparation**. Production starts at **chapter 1** and proceeds in source order. The chapter 30 and 31 releases were produced earlier; they are partial working volumes.
 
+[Russian PDF](readers/chapters01-08-first593/gelfand-russian-chapters01-08-first593.pdf) (1314 A4 pages), [English PDF](readers/chapters01-08-first593/gelfand-english-chapters01-08-first593.pdf) (1320 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-06-frames0001-0593/gelfand-chapters01-08-first593-latex.zip) cover frames **P000001–P000593**, all source frames in chapters 1–7 and chapter 8 through P000593. Manuscript details accompany uncertain readings and diagrams.
+
 [Russian PDF](readers/chapters01-08-first583/gelfand-russian-chapters01-08-first583.pdf) (1294 A4 pages), [English PDF](readers/chapters01-08-first583/gelfand-english-chapters01-08-first583.pdf) (1300 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-06-frames0001-0583/gelfand-chapters01-08-first583-latex.zip) cover frames **P000001–P000583**, all source frames in chapters 1–7 and chapter 8 through P000583. Manuscript details accompany uncertain readings and diagrams.
 
 [Russian PDF](readers/chapters01-08-first571/gelfand-russian-chapters01-08-first571.pdf) (1269 A4 pages), [English PDF](readers/chapters01-08-first571/gelfand-english-chapters01-08-first571.pdf) (1275 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-06-frames0001-0571/gelfand-chapters01-08-first571-latex.zip) cover frames **P000001–P000571**, all source frames in chapters 1–7 and the opening of chapter 8. These are working editions with manuscript details beside uncertain readings and diagrams.
@@ -11,7 +13,7 @@ The complete improved Russian and English readers are **still in preparation**. 
 | Chapters | Current coverage of the improved readers |
 |---|---|
 | 1–7 | Both A4 working readers cover all source frames. |
-| 8 | Both A4 working readers cover the opening through P000583. |
+| 8 | Both A4 working readers cover the opening through P000593. |
 | 9–28 | Awaiting this reader treatment and English translation. |
 | 29 | Reviewed English source for the last ten frames; complete reader pending. |
 | 30–31 | Russian and English working PDFs published; uncertainty-crop backfill required. |
