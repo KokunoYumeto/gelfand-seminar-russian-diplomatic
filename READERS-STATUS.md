@@ -2,6 +2,8 @@
 
 The two cumulative A4 editions begin at **chapter 1** and follow the order of the manuscript. Separate chapter 30 and 31 working volumes are also available.
 
+[Russian PDF](https://raw.githubusercontent.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/refs/tags/readers-a4-2026-11-09-frames0001-1384/readers/chapters01-30-first1384/gelfand-russian-chapters01-30-first1384.pdf) (2840 A4 pages), [English PDF](https://raw.githubusercontent.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/refs/tags/readers-a4-2026-11-09-frames0001-1384/readers/chapters01-30-first1384/gelfand-english-chapters01-30-first1384.pdf) (2848 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-09-frames0001-1384/gelfand-chapters01-30-first1384-latex.zip?raw=1) cover frames **P000001–P001384**, archive chapters 1–30. Manuscript details accompany uncertain readings and diagrams.
+
 [Russian PDF](https://raw.githubusercontent.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/refs/tags/readers-a4-2026-11-09-frames0001-1358/readers/chapters01-29-first1358/gelfand-russian-chapters01-29-first1358.pdf) (2798 A4 pages), [English PDF](https://raw.githubusercontent.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/refs/tags/readers-a4-2026-11-09-frames0001-1358/readers/chapters01-29-first1358/gelfand-english-chapters01-29-first1358.pdf) (2806 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-09-frames0001-1358/gelfand-chapters01-29-first1358-latex.zip?raw=1) cover frames **P000001–P001358**, archive chapters 1–29. Manuscript details accompany uncertain readings and diagrams.
 
 [Russian PDF](https://raw.githubusercontent.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/refs/tags/readers-a4-2026-11-09-frames0001-1346/readers/chapters01-29-first1346/gelfand-russian-chapters01-29-first1346.pdf) (2779 A4 pages), [English PDF](https://raw.githubusercontent.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/refs/tags/readers-a4-2026-11-09-frames0001-1346/readers/chapters01-29-first1346/gelfand-english-chapters01-29-first1346.pdf) (2787 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-09-frames0001-1346/gelfand-chapters01-29-first1346-latex.zip?raw=1) cover frames **P000001–P001346**, archive chapters 1–28 and the first fifty frames of chapter 29. Manuscript details accompany uncertain readings and diagrams.
@@ -189,6 +191,7 @@ The two cumulative A4 editions begin at **chapter 1** and follow the order of th
 | 27 | All 34 source frames P001219–P001252. |
 | 28 | All 44 source frames P001253–P001296. |
 | 29 | Source frames P001297–P001358. |
+| 30 | Source frames P001359–P001384. |
 
 The older [1400-page Russian working transcription](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/working-2026-10-09-complete) and the [1855-page source/transcription audit](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-complete) already cover chapters 1–34. They remain distinct from these improved readers. There is no complete English reader yet.
 
