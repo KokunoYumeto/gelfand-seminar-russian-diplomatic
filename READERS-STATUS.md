@@ -2,6 +2,8 @@
 
 The two cumulative A4 editions begin at **chapter 1** and follow the order of the manuscript. Separate chapter 30 and 31 working volumes are also available.
 
+[Russian PDF](readers/chapters01-19-first980/gelfand-russian-chapters01-19-first980.pdf) (2062 A4 pages), [English PDF](readers/chapters01-19-first980/gelfand-english-chapters01-19-first980.pdf) (2068 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-09-frames0001-0980/gelfand-chapters01-19-first980-latex.zip) cover frames **P000001–P000980**, archive chapters 1–19. Manuscript details accompany uncertain readings and diagrams.
+
 [Russian PDF](readers/chapters01-19-first973/gelfand-russian-chapters01-19-first973.pdf) (2047 A4 pages), [English PDF](readers/chapters01-19-first973/gelfand-english-chapters01-19-first973.pdf) (2053 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-09-frames0001-0973/gelfand-chapters01-19-first973-latex.zip) cover frames **P000001–P000973**, archive chapters 1–18 and the first twenty frames of chapter 19. Manuscript details accompany uncertain readings and diagrams.
 
 [Russian PDF](readers/chapters01-19-first963/gelfand-russian-chapters01-19-first963.pdf) (2031 A4 pages), [English PDF](readers/chapters01-19-first963/gelfand-english-chapters01-19-first963.pdf) (2037 A4 pages) and [editable LaTeX sources](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-09-frames0001-0963/gelfand-chapters01-19-first963-latex.zip) cover frames **P000001–P000963**, archive chapters 1–18 and the first ten frames of chapter 19. Manuscript details accompany uncertain readings and diagrams.
@@ -104,7 +106,7 @@ The two cumulative A4 editions begin at **chapter 1** and follow the order of th
 | 16 | All source frames P000848–P000899. |
 | 17 | All source frames P000900–P000918. |
 | 18 | All source frames P000919–P000953. |
-| 19 | First twenty source frames P000954–P000973. |
+| 19 | All source frames P000954–P000980. |
 
 The older [1400-page Russian working transcription](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/working-2026-10-09-complete) and the [1855-page source/transcription audit](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/tag/audit-working-2026-10-12-complete) already cover chapters 1–34. They remain distinct from these improved readers. There is no complete English reader yet.
 
