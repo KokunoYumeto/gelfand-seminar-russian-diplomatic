@@ -1,0 +1,64 @@
+\subsection{Audit of the assertion that changing the complex structure merges any two packets}
+
+The notebook, P000702, third line from the bottom before the final diagram, says
+\ru{Любые два неприв. предст. эквивал. относит. нек-рой рим. пов. (вх. в какой-то пакет).}
+The scan confirms the two universal quantifiers; the word abbreviated as
+\ru{неприв.} is overwritten but is the diplomatic transcription's reading.
+The definition earlier on the same page makes equivalence mean
+\(E_{\rho_1}\cong E_{\rho_2}\) as holomorphic bundles.  The assertion therefore
+includes the following rank-one case, in which it is false.  The author's own
+survey explicitly gives uniqueness of the unitary representation in a packet
+as an exercise \citep[Ch.~II, \S2, Exercise~10, p.~204]{tyurin1978periods}.
+This is an audit
+of a literal assertion, not the development of a C or D problem.
+
+\begin{proposition}[Distinct unitary characters remain in distinct packets]\ours{}
+Let \(\Sigma\) be a connected, closed, oriented surface of genus \(g\geq1\),
+and let \(\chi_1,\chi_2:\pi_1(\Sigma)\to U(1)\) be two distinct characters.
+For every complex structure \(J\) compatible with the orientation, the
+holomorphic line bundles obtained from the two unitary flat bundles on
+\(X=(\Sigma,J)\) are nonisomorphic.  In particular, the notebook's assertion
+about arbitrary pairs of irreducible representations is false.
+\end{proposition}
+
+\begin{proof}
+Write \(L_i\) for the flat line bundle with monodromy \(\chi_i\), with its
+parallel Hermitian metric and holomorphic structure given by the
+\((0,1)\)-part of the flat connection.  Suppose that
+\(\Phi:L_1\to L_2\) is a holomorphic bundle isomorphism.  It is a nowhere-zero
+holomorphic section \(s\) of the unitary flat line bundle
+\(L=L_2\otimes L_1^{-1}\), whose monodromy is
+\(\delta=\chi_2\chi_1^{-1}\).
+
+On any simply connected coordinate neighbourhood choose a parallel frame
+\(e\) of norm one for \(L\).  Because the \((0,1)\)-connection defines the
+holomorphic structure, \(e\) is holomorphic.  Thus \(s=f e\) with \(f\)
+holomorphic and nowhere zero.  The real function
+\(u=\log\lVert s\rVert=\log|f|\) is harmonic on that neighbourhood.  Unitary
+transition functions make \(u\) a globally defined harmonic function on the
+compact connected Riemann surface \(X\); hence \(u\) is constant.  Each
+holomorphic function \(f\) therefore has constant modulus and is constant.
+Consequently \(s\) is a nonzero parallel section of \(L\).  Parallel
+transport around every loop fixes its nonzero value, so \(\delta=1\) and
+\(\chi_1=\chi_2\), a contradiction.
+
+For an explicit pair, use the presentation in the notebook.  Take
+\(\chi_1=1\), let \(\chi_2(a_1)=e^{i\theta}\) for
+\(\theta\notin2\pi\mathbb Z\), and send every other standard generator to
+\(1\).  The surface relation holds because \(U(1)\) is abelian.  Both are
+one-dimensional complex representations and therefore irreducible.  The
+argument applies to every compatible \(J\), including genus \(g\geq2\)
+if that was the intended range.  Even allowing a change of marking cannot
+turn the nontrivial character into the trivial character.
+\end{proof}
+
+\begin{remark}[Independent check]
+The proof was checked again by working on the universal cover.  A
+holomorphic isomorphism there is multiplication by a nowhere-zero
+holomorphic function \(F\) with
+\(F(\gamma u)=\delta(\gamma)F(u)\).  Since \(|\delta(\gamma)|=1\),
+\(\log|F|\) descends to a harmonic function on \(X\), hence is constant;
+the open mapping theorem then makes \(F\) constant and forces
+\(\delta=1\).  This check uses neither the higher-rank stability theorem
+nor an assumption that all flat holomorphic bundles are stable.
+\end{remark}

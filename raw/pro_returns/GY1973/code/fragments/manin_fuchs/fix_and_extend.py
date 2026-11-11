@@ -1,0 +1,18 @@
+from pathlib import Path
+P=Path(__file__).resolve().parent
+p=P/'build_fragment.py'; s=p.read_text()
+s=s.replace('The notebook says analytic set; its local-ball definition actually means a smooth analytic manifold.', 'The English translation says analytic set, but the Russian abbreviation and scan say analytic manifold.')
+s=s.replace(r'\citet[\S3, applications]{serre1965classification}',r'\citet[example (i), p.~410]{serre1965classification}')
+s=s.replace(r'\citet[\S3]{serre1965classification}',r'\citet[example (ii), p.~410]{serre1965classification}')
+s=s.replace(r'\S2, Theorem~2.3',r'\S2, Proposition~2.3')
+s=s.replace('Conjecture~1.1.1 and', 'Conjectures~1.0.1--1.0.2 and')
+s=s.replace(r'formula~(1\textprime)',r'formula~\((1^{\prime})\)')
+s=s.replace("'The arithmetic nature of Euler\\u2019s constant'",'"The arithmetic nature of Euler\'s constant"')
+s=s.replace("'Transcendence of Euler\\u2019s constant (elliptical notebook occurrence)'",'"Transcendence of Euler\'s constant (elliptical notebook occurrence)"')
+p.write_text(s)
+p=P/'records_operator.py';s=p.read_text().replace(r"C^*(\text{``}ax+b\text{''})",r'C^*(ax+b)');p.write_text(s)
+p=P/'records_fuchs.py';s=p.read_text().replace("reconstruction='The category ","reconstruction=r'The category ");p.write_text(s)
+p=P/'write_bibliography.py';s=p.read_text().replace('Sugahara, Katsunori','Sugahara, Yuto')
+s=s.replace('url={https://mi-ras.ru/index.php?c=pubs&id=8599&l=1&showall=show&showmode=years}, note={verified},','url={https://www.mathnet.ru/eng/rm4875}, note={verified},')
+s=s.replace("Author's institute publication list opened, entry 121 confirms announcement in March--April 1973 issue. This is metadata verification only; substantive exact construction checked in the full 1974 paper received 8 December 1972.","Full two-page Russian announcement opened and read. Sections 1--3 give Fredholm triples, K(Bpi) and the signature; Theorems 1--3 state the index and parameterized results. Received 10 October 1972; published in the March--April 1973 issue, so this is public pre-talk evidence independent of the full paper's submission date.")
+p.write_text(s)

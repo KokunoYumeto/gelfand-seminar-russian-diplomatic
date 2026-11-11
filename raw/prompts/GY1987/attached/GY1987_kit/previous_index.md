@@ -1,0 +1,5202 @@
+# Items and problems of the earlier years
+
+For linking only: when a question of this year recurs from an earlier year, reuse the earlier item ids
+in the problem's occurrences and the earlier problem id if there is one.
+
+## 1964-65 (first run; items are `1964-<record>.<n>`)
+
+- 1964-2.1 [F] Cartesian and Boolean products of groups
+- 1964-2.2 [E] Hironaka resolution of singularities
+- 1964-2.3 [E] Universal blowup and invertibility of an ideal
+- 1964-2.4 [E] Proj and its local structure sheaf
+- 1964-2.5 [E] Blowing up the origin of the plane
+- 1964-2.6 [E] Blowup of the crossing ideal (z,xy)
+- 1964-3.1 [E] Canonical lattice gas and its Ising energy
+- 1964-3.2 [E] Thermodynamic limit and independence of the region
+- 1964-3.3 [E] Coexistence plateau and the one-transition hypothesis
+- 1964-3.4 [E] No one-dimensional finite-temperature transition
+- 1964-3.5 [E] Exact special models: Onsager and Kac–Helfand
+- 1964-3.6 [A] Macroscopic density deviations as a coexistence criterion
+- 1964-3.7 [A] Boundary-energy factorization of canonical sums
+- 1964-3.8 [A] Large and small contours: geometric separation
+- 1964-3.9 [A] Contour entropy versus Boltzmann cost
+- 1964-3.10 [A] Explicit low-temperature window Q(T)
+- 1964-3.11 [C] Expected displacement of a walk forbidden to return
+- 1964-3.12 [B] Conjectured exponential walk count e to the n
+- 1964-4.1 [E] Quotient algebra of a nonlinear equation and generalized solutions
+- 1964-4.2 [E] Semilinear evolution in Duhamel form
+- 1964-4.3 [E] Energy space for the Klein–Gordon equation
+- 1964-4.4 [A] Smooth structure on the manifold of global solutions
+- 1964-4.5 [A] Tangent vectors as solutions of the variational equation
+- 1964-4.6 [A] Canonical symplectic form, Poisson bracket, and vector fields
+- 1964-4.7 [E] Canonical commutation relations and explicit operator realization
+- 1964-5.1 [F] Renormalized cubic field equation: existence and uniqueness outline
+- 1964-5.2 [A] Classical scattering operator
+- 1964-5.3 [F] Nonlinear generalized probability and particle interpretation
+- 1964-5.4 [E] Equal-time commutation relations
+- 1964-6.1 [E] Abstract measures versus Radon measures
+- 1964-6.2 [E] Completion of a pushforward measure
+- 1964-6.3 [E] A non-Radon measure whose image loses measurability
+- 1964-6.4 [E] Inner compact regularity and compactification
+- 1964-6.5 [E] Radon spaces and universal measurability
+- 1964-6.6 [E] Function and operator spaces as Radon spaces
+- 1964-6.7 [E] Continuity of sample paths as a measurable event
+- 1964-6.8 [E] Tightness, compact sets, and a common modulus of continuity
+- 1964-7.1 [E] Hilbert subspaces of a locally convex space
+- 1964-7.2 [E] Scalar multiplication and the quotient norm on a Hilbert sum
+- 1964-7.3 [E] Contractive order and cancellative cone structure
+- 1964-7.4 [E] The positive-kernel correspondence
+- 1964-7.5 [E] Mackey boundedness and the topological completion step
+- 1964-7.6 [E] Positive distribution kernels and Sobolev examples
+- 1964-7.7 [E] Weak solutions from Hilbert-space representation
+- 1964-8.1 [E] Local rigidity of cocompact semisimple lattices
+- 1964-8.2 [E] The H1 criterion for rigidity
+- 1964-8.3 [F] The nondiscrete rigidity remark
+- 1964-8.4 [E] Dimension of surface-group cohomology
+- 1964-9.1 [E] An unattributed reference to Kostant’s multiplicity formula
+- 1964-9.2 [E] Canonical free energy and thermodynamic derivatives
+- 1964-9.3 [E] Microcanonical entropy from phase-space volume
+- 1964-9.4 [E] Wigner phase-space quasidistribution
+- 1964-10.1 [E] Metric entropy from finite measurable partitions
+- 1964-10.2 [B] Kushnirenko finite-entropy bound from hypersurface expansion
+- 1964-10.3 [B] The boundary/isoperimetric method and the invertible refinement
+- 1964-10.4 [F] Entropy as forgetting and mixing strength
+- 1964-11.1 [E] Thoma characters of countable groups and the affine group
+- 1964-12.1 [E] Smooth vectors and smoothing by convolution
+- 1964-12.2 [E] Distribution vectors and extension of the representation
+- 1964-12.3 [E] Lorentz-invariant solutions of the inhomogeneous wave equation
+- 1964-12.4 [E] Extension across the origin and a finite-dimensional cohomological obstruction
+- 1964-12.5 [E] Does solvability with invariant data imply an invariant solution?
+- 1964-12.6 [E] Fundamental solutions for polynomials in invariant vector fields
+- 1964-12.7 [B] Torus small divisors and irrational slopes
+- 1964-13.1 [E] Normalized positive-definite class functions and finite factors
+- 1964-13.2 [E] Irreducible representations of the finite affine group
+- 1964-13.3 [E] Permutation realization and explicit affine characters
+- 1964-13.4 [E] The rational affine group and the limiting regular character
+- 1964-13.5 [E] Spectral decomposition and dynamical systems for affine representations
+- 1964-13.6 [F] Restriction to a normal subgroup and extreme points
+- 1964-13.7 [E] Thoma characters of the infinite symmetric group
+- 1964-13.8 [E] Type I countable discrete groups
+- 1964-13.9 [B] Characters of rational two-by-two matrix groups
+- 1964-13.10 [F] A field-uniform functor of characters
+- 1964-13.11 [E] Complex rank-one distribution characters
+- 1964-13.12 [E] Real rank-one principal and discrete series
+- 1964-13.13 [E] Non-Archimedean principal-series characters
+- 1964-13.14 [E] Finite-field split and nonsplit character formulae
+- 1964-13.15 [E] Trace as a proposed conjugacy coordinate
+- 1964-13.16 [E] Adeles as a framework for local-field analogies
+- 1964-14.1 [E] Admissible integers represented by three squares
+- 1964-14.2 [E] Linnik angular equidistribution with a fixed splitting prime
+- 1964-14.3 [E] Arithmetic dynamics from rational orthogonal matrices
+- 1964-15.1 [E] Fredholm index and perturbation invariance
+- 1964-15.2 [E] Is the integer index the only homotopy invariant?
+- 1964-15.3 [B] Interpretation of index for nonlinear elliptic equations
+- 1964-15.4 [B] Stable families and the index bundle
+- 1964-16.1 [E] A reading programme in mathematical statistical mechanics
+- 1964-16.2 [F] Confinement of pair-potential minimizing configurations
+- 1964-17.1 [C] The falsely announced solution of the Hilbert invariant-subspace problem
+- 1964-17.2 [E] Schur generalized determinants and positivity
+- 1964-18.1 [E] Semiclassical propagation away from caustics
+- 1964-18.2 [A] Caustics and the characteristic class of semiclassical quantization
+- 1964-19.1 [E] Experiments, statistics and sufficiency
+- 1964-19.2 [E] Randomized, similar and optimal tests
+- 1964-19.3 [E] Behrens–Fisher testing with nuisance variances
+- 1964-19.4 [A] Bayes-weighted similar tests and cotest ideals
+- 1964-19.5 [E] Analytic sheaf methods for statistical ideals
+- 1964-19.6 [F] Unspecified primary ideals in a ball algebra
+- 1964-20.1 [B] Coordinate generation of the ball-algebra maximal ideal
+- 1964-20.2 [E] One variable and product-domain division
+- 1964-20.3 [E] Holomorphic ideal generation without boundary restrictions
+- 1964-21.1 [E] WKB propagation and Hamilton–Jacobi characteristics
+- 1964-21.2 [E] Transported half-densities and classical action
+- 1964-21.3 [A] Global continuation across caustics and Maslov index
+- 1964-21.4 [E] Optical caustic phase and turning-point illustration
+- 1964-21.5 [E] Morse index and conjugate points
+- 1964-22.1 [E] Phase-space estimate for Schrödinger eigenvalue counts
+- 1964-22.2 [E] Sturm nodal count and interlacing
+- 1964-22.3 [E] Zeros of linear combinations of first eigenfunctions
+- 1964-22.4 [B] Slater determinant proof through a fermionic ground state
+- 1964-24.1 [E] Congruence subgroup property of SL(n,Z)
+- 1964-24.2 [E] Elementary transvections and finite-index reduction
+- 1964-24.3 [E] Rank-one power quotients and modular curves
+- 1964-24.4 [F] An incompletely specified elementary congruence transformation
+- 1964-25.1 [E] SU(6) as the spin-flavour combination
+- 1964-25.2 [E] Lorentz and Poincaré groups in Hermitian matrix coordinates
+- 1964-25.3 [B] Nontrivial unification of space-time and internal symmetries
+- 1964-25.4 [F] The 108- and 144-parameter proposals
+- 1964-26.1 [B] Primary ideals described by differential conditions
+- 1964-26.2 [E] Conormal modules and derivations
+- 1964-26.3 [E] Lifting across a square-zero ideal
+- 1964-26.4 [E] Polynomial derivations, localization and formal flow
+- 1964-26.5 [F] A solution should be an ideal
+- 1964-27.1 [A] Holomorphic quotient by a primary polynomial ideal
+- 1964-27.2 [F] Growth-controlled quotient theorem
+- 1964-28.1 [E] Local linear sheaf maps are differential operators
+- 1964-28.2 [E] Principal symbols and overdetermined ellipticity
+- 1964-28.3 [F] Finiteness of every cohomology group of the solution sheaf
+- 1964-28.4 [E] Determined elliptic operators as two-term fine resolutions
+- 1964-28.5 [E] De Rham and coherent-analytic finiteness as examples
+- 1964-28.6 [E] Compact comparison maps between resolutions
+- 1964-29.1 [E] The point case: identity plus compact
+- 1964-29.2 [F] A finite-index criterion for topological sheaf endomorphisms
+- 1964-29.3 [F] Elliptic operators of infinite order
+- 1964-29.4 [F] Hypoellipticity and merely continuous coefficients
+- 1964-30.1 [E] Elementary vector-field obstructions and parallelizable spheres
+- 1964-30.2 [E] Block extension of independent fields
+- 1964-30.3 [E] The exact Hurwitz–Radon–Adams bound
+- 1964-30.4 [E] Stable real vector bundles and the KO ring
+- 1964-30.5 [E] Real Bott periodicity
+- 1964-30.6 [E] KO of real projective space and the tautological relation
+- 1964-30.7 [E] Reflection map from stunted projective space to a Stiefel manifold
+- 1964-31.1 [A] Noetherian-jet description and Kazhdan algebraic proof
+- 1964-32.1 [E] Essential selfadjointness and boundary conditions
+- 1964-32.2 [E] Commutation on a common core need not be strong commutation
+- 1964-32.3 [E] A punctured translation surface realizes the counterexample
+- 1964-32.4 [E] The Nelson Laplacian obstructs integration
+- 1964-32.5 [E] Spectral, resolvent and evolution descriptions of a unitary group
+- 1964-33.1 [E] Simplicity of eigenvalues in an ergodic system
+- 1964-33.2 [E] Absolutely continuous spectral measures and homogeneous Lebesgue multiplicity
+- 1964-33.3 [C] Inferred question on finite or simple Lebesgue spectrum
+- 1964-33.4 [E] Hyperbolic toral automorphisms as countable Lebesgue spectrum
+- 1964-33.5 [E] Bernoulli shifts and countable Lebesgue spectrum
+- 1964-33.6 [E] Tensor-product spectral measures are convolutions
+- 1964-34.1 [E] Spectral invariants of actions of arbitrary groups
+- 1964-34.2 [E] Compact ergodic actions are essentially homogeneous
+- 1964-34.3 [F] Finite-support binary group and uncertain attribution
+- 1964-34.4 [E] The dyadic circle subgroup and its Pontryagin dual
+- 1964-34.5 [F] Unclear spectral-decomposition remark for the dyadic example
+- 1964-34.6 [E] Unitary dual of the full real affine group
+- 1964-34.7 [E] Compact hyperbolic quotients and the spectrum of the full group action
+- 1964-34.8 [E] Multiplicative cocycles and coboundaries of an action
+- 1964-34.9 [E] Cocycles of transitive actions and stabilizer representations
+- 1964-34.10 [E] Virtual subgroups as a programme for ergodic actions
+- 1964-34.11 [F] Claim that cohomology determines the dynamical system
+- 1964-34.12 [E] Multiplication of eigenfunctions and a symmetric 2-cocycle
+- 1964-34.13 [E] Finite-group spectral reconstruction has counterexamples
+- 1964-34.14 [E] Icosahedral rotations and the missing central quotient
+- 1964-34.15 [E] Recovering an action from its multiplicative algebra of observables
+- 1964-35.1 [F] Algebraic geometry over noncommutative rings
+- 1964-35.2 [F] An algebraic theory of differential equations
+- 1964-35.3 [F] Povzner’s small-parameter suggestion
+- 1964-35.4 [F] Several-variable special functions from representation theory and statistical physics
+- 1964-36.1 [E] Ergodic eigenfunctions have constant modulus
+- 1964-37.1 [B] Enveloping algebras and the primitive-envelope problem
+- 1964-37.2 [E] Two-dimensional examples distinguishing primitive envelopes
+- 1964-37.3 [E] Associative simplicity versus Lie ideals
+- 1964-37.4 [F] Uniform nilpotence on a generating Lie algebra
+- 1964-38.1 [A] Weyl algebras in different numbers of variables
+- 1964-39.1 [E] Circular orthogonal ensemble as a symmetric space
+- 1964-39.2 [E] Circular unitary ensemble and eigenvalue repulsion
+- 1964-39.3 [E] Circular beta-ensemble gap probability and logarithmic gas
+- 1964-39.4 [E] Continuum density and local free-energy approximation
+- 1964-39.5 [B] Claimed exact cosine-power formula
+- 1964-40.1 [E] Finite-field points as Frobenius fixed points
+- 1964-40.2 [E] Slice categories and relative products
+- 1964-40.3 [E] Grothendieck coverage axioms
+- 1964-40.4 [E] Presheaves, sheaf descent, and Galois cohomology over a point
+- 1964-41.1 [F] Desired curriculum for seminar participants
+- 1964-41.2 [B] Dyson ensembles on general symmetric spaces
+- 1964-42.1 [B] Repeated cosine-power gap claim and an unnamed substitute model
+- 1964-42.2 [E] Nearest-neighbour spacing from empty-interval probability
+- 1964-42.3 [B] Even sine-kernel determinant and large-gap asymptotic
+- 1964-43.1 [A] A torsion-group action with continuous spectral component
+- 1964-44.1 [E] Recovering a symmetric body from central sections
+- 1964-44.2 [E] Recovering a body from projection areas
+- 1964-45.1 [E] Dvoretzky’s almost-Euclidean sections
+- 1964-45.2 [B] Gromov’s spherical-harmonic and Grassmannian method
+- 1964-46.1 [E] Gaussian Hermitian matrices and eigenvalue Brownian motion
+- 1964-46.2 [E] What is the angle between two higher-dimensional subspaces?
+- 1964-47.1 [E] Characteristic determinants on a finite interval
+- 1964-47.2 [E] Half-line Jost function as a relative determinant
+- 1964-47.3 [E] Branching of free kernels and analytic continuation
+- 1964-47.4 [E] Whole-line Jost Wronskian
+- 1964-47.5 [E] Argument-principle trace identities and analytic regularization
+- 1964-47.6 [F] Regularized Neumann trace and an unidentified endpoint symbol
+- 1964-47.7 [F] Formal delta-diagonal trace and boundary corrections
+- 1964-47.8 [B] When does a commutator have trace zero?
+- 1964-48.1 [E] Product Cauchy formula and analytic polyhedra
+- 1964-48.2 [E] Hefer decomposition on a domain of holomorphy
+- 1964-48.3 [E] Cauchy–Weil boundary skeleton integral
+- 1964-48.4 [E] Approximation by Weil polyhedra and analytic decomposition
+- 1964-48.5 [F] Continuous family of Weil defining functions
+- 1964-48.6 [A] Linear defining functions and holomorphic Radon inversion
+- 1964-49.1 [E] Review of fiber products and sheaf descent
+- 1964-49.2 [E] The Čech complex of a cover
+- 1964-49.3 [E] Refinements and the Čech direct limit
+- 1964-49.4 [E] Why Čech cohomology does not always give the desired long exact sequence
+- 1964-49.5 [E] Abelian categories of sheaves and presheaves
+- 1964-49.6 [E] Two-point ideal on the Riemann sphere
+- 1964-49.7 [F] Differential-form example of local exactness
+- 1964-49.8 [E] Derived functors as sheaf cohomology
+- 1964-50.1 [C] The invariant-subspace problem on complex Hilbert space
+- 1964-50.2 [E] Normal and self-adjoint positive cases
+- 1964-50.3 [E] Compact operators have invariant subspaces
+- 1964-50.4 [E] Subnormality and the unilateral shift
+- 1964-50.5 [B] Invariant subspaces for subnormal operators
+- 1964-50.6 [E] The single-commutator test does not characterize subnormality
+- 1964-50.7 [A] Polynomially compact invariant-subspace theorem
+- 1964-50.8 [A] Cyclic Hessenberg form and approximate finite-dimensional invariance
+- 1964-50.9 [A] Polynomial approximation by compressions
+- 1964-50.10 [A] Adjacent invariant flags and weak projection limits
+- 1964-50.11 [A] Compactness of an entire function of A reduces to polynomial compactness
+- 1964-50.12 [F] Strict contraction with compact defect: a vacuous infinite-dimensional hypothesis
+- 1964-50.13 [F] Self-adjoint operators with a small imaginary part
+- 1964-50.14 [E] A contraction with neither forward nor adjoint powers strongly stable
+- 1964-50.15 [E] Donoghue’s countable invariant-subspace chain
+- 1964-50.16 [C] Exact conditions on the Donoghue weights
+- 1964-50.17 [B] An invariant-subspace chain indexed by all integers
+- 1964-50.18 [E] The continuous Volterra invariant-subspace chain
+- 1964-50.19 [B] Generalized Volterra integration against a measure
+- 1964-50.20 [C] Bishop weighted rotations as possible invariant-subspace counterexamples
+- 1964-50.21 [C] Existence of a cyclic vector for every Bishop operator
+- 1964-50.22 [F] Ornstein’s alleged L2+ε cyclicity example
+- 1964-50.23 [F] Gelfand’s question about the role of invariant subspaces
+- 1964-50.24 [E] Analytic contractive characteristic functions and Hardy-space models
+
+## GY1965: items
+
+- 1965-53.1 [E] Compatibility and global solvability of the d-bar equation
+- 1965-53.2 [E] The complex tangent space and Levi form
+- 1965-53.3 [E] A local holomorphic support function
+- 1965-53.4 [E] Globalizing the local pole
+- 1965-53.5 [E] The Dolbeault complex
+- 1965-53.6 [E] The Neumann quadratic form and canonical solution
+- 1965-53.7 [E] The boundary estimate and its limitations
+- 1965-53.8 [F] A reference to general overdetermined systems
+- 1965-53.9 [E] The Kohn-Rossi extension reference
+- 1965-54.1 [E] Complete surfaces need not satisfy the closed Gauss-Bonnet equality
+- 1965-54.2 [E] Cohn-Vossen's inequality
+- 1965-54.3 [F] Finn's proposed equality with a defect term
+- 1965-55.1 [E] Brouwer's theorem among the fixed-point applications
+- 1965-55.2 [E] Lefschetz's fixed-point theorem in the applications list
+- 1965-55.3 [E] The eigenvector application
+- 1965-55.4 [E] Weyl's character formula in the applications list
+- 1965-55.5 [E] Differential complexes of vector bundles
+- 1965-55.6 [E] Coordinate-free principal symbols
+- 1965-55.7 [E] The factor two in the Laplace symbol
+- 1965-55.8 [E] Ellipticity of a complex
+- 1965-55.9 [E] The Laplace operator as a two-term elliptic complex
+- 1965-55.10 [E] The de Rham symbol is an exact Koszul complex
+- 1965-55.11 [E] The Dolbeault elliptic complex
+- 1965-56.1 [E] The symbol formula recalled
+- 1965-56.2 [E] Elliptic operators beyond differential operators
+- 1965-56.3 [E] Complex endomorphisms and induced cohomology maps
+- 1965-56.4 [E] Finiteness of elliptic-complex cohomology
+- 1965-56.5 [E] The Lefschetz number of an elliptic complex
+- 1965-56.6 [E] Geometric lifts of a map to the complex
+- 1965-56.7 [E] Simple fixed points and transversality
+- 1965-56.8 [E] The local Lefschetz contribution
+- 1965-56.9 [E] The Atiyah-Bott fixed-point formula
+- 1965-56.10 [E] Formal adjoints and the Hodge Laplacian
+- 1965-56.11 [E] Discrete spectrum and harmonic representatives
+- 1965-56.12 [E] Positive-eigenvalue complexes are acyclic
+- 1965-56.13 [E] Formal trace cancellation
+- 1965-58.1 [E] The announced characteristic classes of a vector bundle
+- 1965-58.2 [E] Affine algebraic sets and their coordinate rings
+- 1965-58.3 [E] Regular functions on principal open sets
+- 1965-58.4 [E] Prevarieties as locally affine ringed spaces
+- 1965-58.5 [E] The structure sheaf and its restriction maps
+- 1965-58.6 [E] Morphisms respect functions contravariantly
+- 1965-58.7 [E] The punctured affine plane is not affine
+- 1965-58.8 [E] Realizing a principal open as a closed affine variety
+- 1965-58.9 [E] Products and tensor-product coordinate rings
+- 1965-58.10 [E] The Zariski topology on a product is not the product topology
+- 1965-58.11 [E] Separation and the closed diagonal
+- 1965-58.12 [E] The affine line with doubled origin
+- 1965-58.13 [E] Algebraic cycles
+- 1965-58.14 [E] Equivalence through a family over the projective line
+- 1965-58.15 [E] Linear equivalence of divisors and the graph of a rational function
+- 1965-58.16 [F] The unfinished additive map from K-theory to cycle classes
+- 1965-59.1 [E] Repeated symbol and ellipticity setup
+- 1965-59.2 [E] Repeated geometric endomorphisms
+- 1965-59.3 [E] Repeated finite-dimensionality theorem
+- 1965-59.4 [E] Densities, duality, and formal adjoints
+- 1965-59.5 [E] The repeated Laplacian and finite eigenspaces
+- 1965-59.6 [E] Commutation with the Laplacian
+- 1965-59.7 [E] Cohomology of the eigenspace complexes
+- 1965-60.1 [E] Acyclicity and the invalid shifted-Laplacian shortcut
+- 1965-62.1 [E] Bernstein's direct proof of acyclicity
+- 1965-61.1 [E] The harmonic subcomplex and spectral expansion
+- 1965-61.2 [E] Compression of a chain map to each eigenspace
+- 1965-61.3 [E] Hopf trace cancellation on eigenspaces
+- 1965-61.4 [E] The weighted trace series and its half-plane of convergence
+- 1965-61.5 [E] Constancy of the regularized supertrace
+- 1965-61.6 [F] An unassigned warning about a pole at zero
+- 1965-61.7 [E] The circle model and the Laplacian sign
+- 1965-61.8 [E] Oscillatory asymptotics for pseudodifferential operators
+- 1965-63.1 [E] The repeated positive-eigenvalue decomposition
+- 1965-63.2 [E] The index as the Euler characteristic of a two-term complex
+- 1965-63.3 [E] Compression does not presume invariance under T
+- 1965-63.4 [E] The finite-dimensional trace lemma by splitting cycles and boundaries
+- 1965-63.5 [E] Eigenvalue growth and trace regularization
+- 1965-63.6 [E] Entire continuation for transverse geometric operators
+- 1965-63.7 [E] The distribution kernel and flat trace
+- 1965-63.8 [E] The delta trace is a weighted fixed-point sum
+- 1965-64.1 [E] Sheaves of modules of finite type
+- 1965-64.2 [E] Coherence requires finite relations for every finite local tuple
+- 1965-64.3 [E] Finite-type submodules of coherent sheaves
+- 1965-64.4 [E] The two-out-of-three property for coherent sheaves
+- 1965-64.5 [E] Generators at one stalk generate nearby
+- 1965-66.1 [E] K0 from finitely generated projective modules
+- 1965-66.2 [E] The exact sequences of projectives split
+- 1965-66.3 [F] Replacing projectives by all finite-type modules
+- 1965-66.4 [E] Vector bundles and projective modules of continuous functions
+- 1965-66.5 [E] Projective modules are locally free
+- 1965-67.1 [E] The Campbell-Hausdorff nilpotent group
+- 1965-67.2 [F] Which convex set of positive-definite functions is intended?
+- 1965-65.1 [E] The weighted delta-kernel fixed-point trace
+- 1965-65.2 [E] The finite-complex trace lemma repeated
+- 1965-65.3 [E] Recovery of the ordinary Lefschetz formula
+- 1965-65.4 [E] Exterior-power traces give the de Rham numerator
+- 1965-65.5 [F] The unresolved complex-case specialization
+- 1965-65.6 [E] Real and complex traces and determinants
+- 1965-65.7 [E] Projective transformations and eigenlines
+- 1965-68.1 [E] Injective objects and the extension property
+- 1965-68.2 [E] Enough injectives
+- 1965-68.3 [E] Right derived functors of a left exact functor
+- 1965-68.4 [E] The long exact sequence of derived functors
+- 1965-68.5 [E] Naturality of the connecting maps
+- 1965-68.6 [E] Existence and uniqueness through effaceable delta-functors
+- 1965-69.1 [E] Lefschetz number of a geometric endomorphism
+- 1965-69.2 [E] Transverse fixed-point formula
+- 1965-69.3 [E] Kernel proof and its trace-class obstruction
+- 1965-69.4 [E] Complex-power regularization and eigenspace cancellation
+- 1965-69.5 [E] Off-diagonal regularity and the value at zero
+- 1965-69.6 [B] Multiplying distributions conormal to transverse submanifolds
+- 1965-69.7 [E] The transverse delta product
+- 1965-70.1 [E] Principal affine opens and localization
+- 1965-70.2 [E] Finite type and coherent algebraic sheaves
+- 1965-70.3 [E] Coherence of structure sheaves by Noetherianity
+- 1965-70.4 [E] Closed subvarieties and quotient sheaves
+- 1965-70.5 [E] Global generation and acyclicity on an affine variety
+- 1965-70.6 [E] Computing cohomology with an affine cover
+- 1965-70.7 [F] The unfinished converse to affine acyclicity
+- 1965-70.8 [E] Hilbert Nullstellensatz and the coordinate ring
+- 1965-70.9 [E] A section supported on a principal divisor is killed by a power
+- 1965-70.10 [E] The ideal of the origin on the affine line
+- 1965-70.11 [E] Clearing denominators in a coherent subsheaf
+- 1965-71.1 [E] Picard omission and the Nevanlinna defect relation
+- 1965-71.2 [E] Higher-dimensional hyperplane omission requires general position
+- 1965-71.3 [E] The endpoint analytic curve for Sturm--Liouville problems
+- 1965-71.4 [F] A value-distribution route to spectral completeness
+- 1965-71.5 [F] Distribution of simultaneous zeros in several complex variables
+- 1965-71.6 [E] Bundle-valued forms and a connection
+- 1965-71.7 [E] Curvature in the notebook frame convention
+- 1965-71.8 [E] Chern forms, normalization and cohomology classes
+- 1965-71.9 [E] Change of frame and invariant determinant
+- 1965-72.1 [E] Left--right equivalence and structural stability of map germs
+- 1965-72.2 [E] Morse normal form and genericity
+- 1965-72.3 [E] Whitney fold and cusp normal forms for surface maps
+- 1965-72.4 [E] Cusp critical curve and its image
+- 1965-72.5 [A] The perturbation of a complex square by a conjugate-linear term
+- 1965-72.6 [E] Rank strata and their expected codimension
+- 1965-72.7 [E] Iterated coranks and the fold--cusp Boardman symbols
+- 1965-72.8 [B] Boardman strata in jet space and generic transversality
+- 1965-72.9 [E] Smooth, analytic and formal equivalence are different categories
+- 1965-72.10 [B] Smooth moduli and the incompleteness of Boardman symbols
+- 1965-72.11 [B] Thom topological classification outside infinite codimension
+- 1965-72.12 [B] Infinitesimal stability and the source--target linearization
+- 1965-72.13 [F] The unreadable finite-degree test for stability
+- 1965-72.14 [B] The low-dimensional stability range and generic immersions
+- 1965-73.1 [E] Repeated moving-frame construction of Chern forms
+- 1965-73.2 [E] Bianchi identity and closed characteristic forms
+- 1965-73.3 [E] Connection variation and transgression
+- 1965-73.4 [E] Natural metric tensors from curvature and its derivatives
+- 1965-73.5 [E] Relations among covariant derivatives of curvature
+- 1965-73.6 [E] Normal-coordinate metric coefficients and their identities
+- 1965-74.1 [E] Structural stability of a flow and parameter-dependent families
+- 1965-74.2 [F] A centre and the unspecified degree of instability
+- 1965-74.3 [F] Thom strata transferred from map germs to differential equations
+- 1965-74.4 [E] Planar desingularization by point blow-ups
+- 1965-74.5 [F] The unspecified three-variable reduction problem
+- 1965-74.6 [E] Distinguished Weierstrass polynomials
+- 1965-74.7 [E] Analytic and formal Weierstrass division
+- 1965-74.8 [E] Smooth division and its loss of uniqueness
+- 1965-74.9 [E] Interpolation when the roots are real
+- 1965-74.10 [E] The flat-function counterexample to unique division
+- 1965-74.11 [E] Preparation of a germ regular in one variable
+- 1965-74.12 [E] An essential circle meets its area-preserving image
+- 1965-74.13 [E] Globally canonical transformations and exactness
+- 1965-74.14 [B] Arnold torus-intersection bound and the missing transversality
+- 1965-74.15 [E] The graph argument reduces intersections to Morse critical points
+- 1965-75.1 [E] Connections and bundle-valued differential forms
+- 1965-75.2 [E] Curvature and the connection-independent Chern classes
+- 1965-75.3 [E] Type decomposition on a holomorphic bundle
+- 1965-75.4 [E] Existence and uniqueness of the Chern connection
+- 1965-75.5 [E] Hermitian pairing of bundle-valued forms
+- 1965-75.6 [E] The metric matrix determines the Chern connection matrix
+- 1965-75.7 [E] The Maurer--Cartan identity and the mistaken minus sign
+- 1965-75.8 [E] Curvature of type (1,1), Bianchi, and Chern-form types
+- 1965-75.9 [E] Curvature of a Hermitian holomorphic line bundle
+- 1965-75.10 [E] Watts tensor complex and its differential
+- 1965-75.11 [E] Algebraic germs along the diagonal
+- 1965-75.12 [E] The quotient by functions locally zero at the diagonal
+- 1965-75.13 [E] Recovering Alexander--Spanier cohomology from C(X)
+- 1965-75.14 [E] Levinson polynomial form in one distinguished variable
+- 1965-75.15 [E] Polynomialization of analytic functions of two variables
+- 1965-75.16 [E] Whitney example with five branches
+- 1965-75.17 [E] The pair of cross-ratios obstructs algebraic realization
+- 1965-76.1 [E] Vorticity and its transport in an ideal incompressible flow
+- 1965-76.2 [E] The curl of a cross product and the bracket sign
+- 1965-76.3 [E] Steady Euler flow, commuting vorticity, and global pressure
+- 1965-76.4 [E] Arnold analytic decomposition of a stationary flow
+- 1965-76.5 [E] A common first integral for two commuting divergence-free fields
+- 1965-76.6 [E] A compact regular joint orbit is a torus
+- 1965-76.7 [E] The assertion that every joint orbit is compact is false
+- 1965-76.8 [E] Boundary components give annuli with closed streamlines
+- 1965-76.9 [F] The everywhere-collinear or Beltrami exception
+- 1965-77.1 [E] Material acceleration and the incompressible equations
+- 1965-77.2 [E] Yudovich global two-dimensional existence and uniqueness
+- 1965-77.3 [F] Large-viscosity convergence to one equilibrium
+- 1965-77.4 [F] What happens as viscosity decreases?
+- 1965-77.5 [E] Hamiltonian spectral symmetry in the inviscid limit
+- 1965-77.6 [F] The unreadable conditional spectral-stability theorem
+- 1965-77.7 [E] Inertia operator and the left-invariant Riemannian metric
+- 1965-77.8 [E] Free rigid-body motion as a geodesic on SO(3)
+- 1965-77.9 [A] Euler flow as a geodesic of the right-invariant L2 metric
+- 1965-77.10 [E] The affine group realizes the hyperbolic plane
+- 1965-77.11 [E] The bilinear metric-adjoint operation B
+- 1965-77.12 [E] Left and right trivializations of tangent and cotangent vectors
+- 1965-80.1 [E] A Noetherian domain satisfies the Ore condition
+- 1965-80.2 [E] The ideal-chain proof and its missing first nonzero coefficient
+- 1965-80.3 [E] The Ore division ring of fractions
+- 1965-80.4 [F] The unresolved Green-operator remark
+- 1965-80.5 [E] Weyl algebras with central parameters and their fraction fields
+- 1965-80.6 [A] Different Weyl ranks and parameter counts give nonisomorphic division rings
+- 1965-80.7 [E] Commutative leading symbols
+- 1965-80.8 [A] A well-defined multiplicative symbol of an Ore fraction
+- 1965-80.9 [E] A universal determinant over a division ring
+- 1965-80.10 [C] Determine all automorphisms of the Weyl division ring
+- 1965-80.11 [E] Fourier transforms and multiplication as automorphism constructions
+- 1965-80.12 [A] Growth dimension and the missing logarithm
+- 1965-80.13 [A] Growth dimension of the parameterized Weyl algebra
+- 1965-81.1 [E] Homogeneous symbol and Fourier quantization
+- 1965-81.2 [E] Differential operators, multiplication and the square-root Laplacian
+- 1965-81.3 [E] Low-frequency regularization of negative orders
+- 1965-81.4 [E] Spherical harmonic expansion and homogeneous kernels
+- 1965-81.5 [E] Cancellation and the missing multiplication term
+- 1965-81.6 [E] Fourier-side kernel and stabilization at infinity
+- 1965-81.7 [E] Smooth equivalence and rough-symbol inequivalence
+- 1965-81.8 [E] Sobolev scale and order convention
+- 1965-81.9 [E] Angular Sobolev regularity sufficient for L2 boundedness
+- 1965-81.10 [E] Addition theorem and the boundedness proof
+- 1965-81.11 [E] Endpoint and absence of base-variable smoothness
+- 1965-81.12 [E] Kernel version of the angular criterion
+- 1965-81.13 [E] Planar Riesz-transform example
+- 1965-81.14 [E] A complementary criterion using base-variable derivatives
+- 1965-81.15 [E] First symbolic composition rule
+- 1965-81.16 [E] Pseudolocality and localization
+- 1965-81.17 [E] Left and right quantizations differ below principal order
+- 1965-81.18 [E] Adjoint principal symbol
+- 1965-81.19 [F] Gelfand asks about replacing polynomials in the algebra
+- 1965-81.20 [E] Cotangent location of the principal symbol
+- 1965-82.1 [A] Reconstruction from k-plane integrals and economical families
+- 1965-82.2 [A] Affine-plane bundle and translation-incidence section
+- 1965-82.3 [A] Determinant of vector entries paired with a symmetric form
+- 1965-82.4 [A] Translation derivatives define a differential form on directions
+- 1965-82.5 [A] Closedness characterizes the range with restricted k and decay
+- 1965-82.6 [A] Cycle inversion and its homological coefficient
+- 1965-82.7 [A] Nonzero complex coefficient is an existence statement
+- 1965-82.8 [A] Delta-current form of the inversion identity
+- 1965-82.9 [A] Complex-line coordinates and the (1,1)-form
+- 1965-82.10 [F] Incomplete delta-kernel calculation at the lecture boundary
+- 1965-83.1 [E] Euler angles and a curve in SO(3)
+- 1965-83.2 [E] Rotations as fractional linear transformations
+- 1965-83.3 [E] Normalized spherical-top Lagrangian
+- 1965-83.4 [E] Correct cyclic momenta
+- 1965-83.5 [E] The cubic governing nutation
+- 1965-83.6 [E] Elliptic quadrature and degenerate limits
+- 1965-84.1 [E] Right-quantized symbol and order
+- 1965-84.2 [E] Product symbol and scalar commutator order
+- 1965-84.3 [E] Multiplication cutoffs and the ambiguous dash
+- 1965-84.4 [E] Separated cutoffs eliminate the principal symbol
+- 1965-84.5 [E] Vanishing principal symbol does not annihilate every operator
+- 1965-84.6 [E] Change of coordinates and cotangent transformation
+- 1965-84.7 [E] Historical attributions in the calculus
+- 1965-84.8 [E] Global operators from local representatives
+- 1965-84.9 [E] Quantizing a global homogeneous symbol
+- 1965-84.10 [E] The Sobolev mapping line loses an order shift
+- 1965-84.11 [E] Local proof of global composition
+- 1965-84.12 [E] Ellipticity and the Fredholm property
+- 1965-84.13 [E] Parametrix and compact remainders
+- 1965-84.14 [E] Fredholm estimate forces ellipticity
+- 1965-84.15 [E] Elliptic regularity and the incorrect remainder argument
+- 1965-84.16 [E] Homotopy invariance of the index
+- 1965-84.17 [E] Reducing the order without changing the index
+- 1965-84.18 [E] Seeley degree formula and the lower-rank obstruction
+- 1965-84.19 [E] External product of elliptic operators
+- 1965-84.20 [E] Hörmander oscillatory characterization
+- 1965-85.1 [E] Schemes and Spec as the algebraic-geometric language
+- 1965-85.2 [E] Prime ideals of the affine plane: the omitted generic point
+- 1965-85.3 [E] Algebraic groups and linear algebraic groups
+- 1965-85.4 [E] Chevalley structure theorem
+- 1965-85.5 [E] Complete connected group varieties are abelian varieties
+- 1965-85.6 [E] Homomorphisms between affine groups and abelian varieties
+- 1965-85.7 [E] An algebraic torus is not an abelian variety
+- 1965-85.8 [E] The additive and multiplicative groups
+- 1965-85.9 [E] Solvable groups and one-dimensional factors
+- 1965-85.10 [E] Radical and unipotent radical
+- 1965-85.11 [E] Reductive and semisimple groups
+- 1965-85.12 [E] GLn and SLn as the basic examples
+- 1965-85.13 [E] Root-system classification and its scope
+- 1965-85.14 [E] A real nonsplit torus
+- 1965-85.15 [E] Conjugacy of maximal tori and the rational-field caveat
+- 1965-86.1 [E] Double boundary cosine integral for planar area
+- 1965-86.2 [F] Gelfand slice-area formula and the missing directional average
+- 1965-87.1 [A] The exponential-asymptotic class of entire functions
+- 1965-87.2 [A] All-zero zeta sum and its logarithm branch
+- 1965-87.3 [A] Entire continuation by a Cauchy contour
+- 1965-87.4 [A] Why this does not contradict the Riemann zeta pole
+- 1965-89.1 [A] Hyperbolic time operator generalizing the heat equation
+- 1965-89.2 [A] V-elliptic mappings and the hyperbolicity cone
+- 1965-89.3 [A] The associated family of operators is a cone semigroup
+- 1965-89.4 [E] A random walk on a line and the heat equation
+- 1965-88.1 [E] Lattice configurations, occupied-neighbor energy and partition sum
+- 1965-88.2 [E] Thermodynamic pressure and the normalization ambiguity
+
+## GY1965: problems
+
+- GP-1965-01 [2026-11] Solving d-bar globally to construct a holomorphic boundary singularity
+- GP-1965-02 [2026-11] Multiplication of distributions conormal to transverse submanifolds
+- GP-1965-03 [2026-11] The folds and cusps of z squared plus epsilon conjugate z
+- GP-1965-04 [2026-11] Algebraic realization of finite curvature jets
+- GP-1965-05 [2026-11] Intersections of the zero torus with its Hamiltonian image
+- GP-1965-06 [2026-11] Distinguishing Weyl rank and central parameters
+- GP-1965-07 [2026-11] Universal determinant for a division ring
+- GP-1965-08 [2026-11] Automorphisms of Weyl division rings
+- GP-1965-09 [2026-11] Range and cycle inversion for the affine k-plane transform
+
+## GY1966: items
+
+- 1966-92.1 [E] A seven-dimensional hypersurface link
+- 1966-92.2 [E] Twenty-eight oriented seven-sphere classes
+- 1966-92.3 [E] The analogous eleven-dimensional enumeration
+- 1966-93.1 [B] Local rigidity of the standard higher-rank lattice
+- 1966-93.2 [E] The first-cohomology criterion
+- 1966-93.3 [E] Passing from an integral adjoint lattice to real coefficients
+- 1966-93.4 [B] Reduction modulo a prime and the missing restriction term
+- 1966-94.1 [E] A U-system is uniformly hyperbolic on the whole manifold
+- 1966-94.2 [E] Hyperbolic toral automorphisms
+- 1966-94.3 [E] An arithmetic six-dimensional nilmanifold example
+- 1966-94.4 [C] Are all Anosov examples algebraic?
+- 1966-94.5 [E] Structural stability and the choice of equivalence
+- 1966-94.6 [E] The two-dimensional structural-stability model
+- 1966-94.7 [E] Morse--Smale systems
+- 1966-94.8 [B] Does Morse--Smale imply structural stability?
+- 1966-94.9 [E] Must a structurally stable system be Morse--Smale?
+- 1966-94.10 [E] Are Morse--Smale systems dense?
+- 1966-94.11 [E] Are structurally stable systems dense?
+- 1966-94.12 [E] A hyperbolic invariant set
+- 1966-94.13 [E] Nonwandering points and Axiom A
+- 1966-94.14 [E] Nonwandering does not imply periodic
+- 1966-94.15 [B] Generic density of periodic points in the nonwandering set
+- 1966-94.16 [B] Density of Axiom A systems
+- 1966-94.17 [B] Does hyperbolicity of the nonwandering set imply dense periodic points?
+- 1966-94.18 [B] Spectral decomposition into basic sets
+- 1966-95.1 [A] The regular uniform algebra on a Hilbert ball
+- 1966-95.2 [A] A compactification and its nonevaluation characters
+- 1966-95.3 [A] Limiting spherical and ball means coincide
+- 1966-95.4 [A] The mean is multiplicative
+- 1966-95.5 [A] The mean-defined first-order derivation
+- 1966-95.6 [A] A regular Dirichlet problem
+- 1966-95.7 [A] A Poisson inverse for the regular operator
+- 1966-95.8 [A] Semilinear equations by a fixed point
+- 1966-96.1 [E] Hyperbolicity requires more than a real spectrum
+- 1966-96.2 [E] Scalar convexity does not select a unique weak solution
+- 1966-96.3 [F] Hydrodynamics, magnetohydrodynamics, and an unspecified Godunov class
+- 1966-96.4 [E] Convexity along an eigenvector field
+- 1966-96.5 [E] Conservation form and the meaning of a shock
+- 1966-96.6 [B] Uniqueness selected by identity viscosity
+- 1966-96.7 [E] Travelling-wave reduction is local information
+- 1966-97.1 [E] The representation ring and associated universal bundles
+- 1966-97.2 [E] The uncompleted map need not be an embedding
+- 1966-97.3 [E] Augmentation completion gives K of the classifying space
+- 1966-97.4 [E] The circle completion is a formal power-series ring
+- 1966-97.5 [E] Projective space and its tautological line bundle
+- 1966-97.6 [E] K of finite and infinite complex projective space
+- 1966-98.1 [E] Skeletal inverse limits
+- 1966-98.2 [F] Gelfand’s noncompact completion programme
+- 1966-98.3 [F] A Plancherel factor in place of dimension
+- 1966-98.4 [E] Equivariant K-theory of vector bundles
+- 1966-98.5 [E] The Borel construction
+- 1966-98.6 [B] The equivariant completion theorem
+- 1966-98.7 [E] Completion by tensoring with the completed coefficient ring
+- 1966-98.8 [E] Induction to a unitary group
+- 1966-98.9 [E] Maximal-torus splitting by a family index
+- 1966-99.1 [E] Classical phase space and a Hamiltonian
+- 1966-99.2 [E] Ordered pair interactions and identical systems
+- 1966-99.3 [E] Integrating out momenta
+- 1966-99.4 [E] A hard-core lattice gas
+- 1966-99.5 [E] Repulsion, decay, and the Lennard--Jones example
+- 1966-99.6 [E] Thermodynamic scaling and vessel regularity
+- 1966-99.7 [E] The finite canonical Gibbs law
+- 1966-99.8 [E] Factorial correlation densities
+- 1966-99.9 [E] Expectations of summatory observables
+- 1966-99.10 [E] Local mean particle density
+- 1966-99.11 [E] Probability of exactly one point in a small region
+- 1966-100.1 [E] Two-cell probabilities and the second correlation density
+- 1966-100.2 [F] Bulk-correlation hypotheses with an unspecified exceptional set
+- 1966-100.3 [E] An order-dependent effective specific volume
+- 1966-100.4 [F] The exponential wall-rate claim and its missing regime
+- 1966-100.5 [E] Translation invariance, continuity, and the density parameter
+- 1966-100.6 [F] Can arbitrary initial distributions lead to Gibbs laws?
+- 1966-100.7 [E] Representativity is concentration of a normalized sequence
+- 1966-100.8 [E] An integrable pair observable
+- 1966-100.9 [A] The mean per particle has a correlation-integral limit
+- 1966-100.10 [E] The multiplicative cluster property
+- 1966-100.11 [A] The claimed linear variance and its integrability gap
+- 1966-100.12 [E] The exact ordered-pair square expansion
+- 1966-101.1 [A] Finite abelianization of the lattice
+- 1966-101.2 [A] Finite generation of the lattice
+- 1966-101.3 [A] Isolation of the trivial unitary representation
+- 1966-101.4 [F] A rational-group representation fragment
+- 1966-102.1 [E] Monotonicity of zero spacing and its alleged converse
+- 1966-102.2 [E] Higher monotonicity needs a nondegeneracy condition
+- 1966-102.3 [E] The Bessel and Airy examples
+- 1966-102.4 [E] Higher monotonicity of wave integrals
+- 1966-102.5 [F] The divergent endpoint and reciprocal derivatives
+- 1966-103.1 [E] Equivariant K-theory as a contravariant ring functor
+- 1966-103.2 [E] The Borel construction is not the ordinary orbit space
+- 1966-103.3 [B] The approximate identification means I-adic completion
+- 1966-104.1 [E] Twisting a vertical elliptic family
+- 1966-104.2 [E] The direct image obeys the projection formula
+- 1966-104.3 [E] Kernels and cokernels need not form vector bundles
+- 1966-104.4 [E] A rigorous finite-dimensional stabilization
+- 1966-105.1 [E] Analytic expressions for topological index data
+- 1966-105.2 [E] Positive spectra of the two Laplacians
+- 1966-105.3 [E] Spectral complex powers and traces
+- 1966-105.4 [E] Regularized trace difference and index
+- 1966-105.5 [B] Contour powers with a spectral cut
+- 1966-105.6 [B] Holomorphic kernels in a left half-plane
+- 1966-105.7 [B] Entire continuation off the diagonal
+- 1966-105.8 [B] Meromorphic continuation of the diagonal density
+- 1966-105.9 [E] Exponent zero versus diagonal continuation
+- 1966-105.10 [B] Local resolvent coefficient and index density
+- 1966-105.11 [B] Complex powers remain pseudodifferential
+- 1966-106.1 [E] Unlabelled finite configurations
+- 1966-106.2 [A] Counting-cylinder sigma algebra
+- 1966-106.3 [A] Dilute limiting Gibbs distribution
+- 1966-106.4 [A] Uniform mixing and its quantifiers
+- 1966-106.5 [E] Ergodic mean density
+- 1966-106.6 [B] Characterizing correlation hierarchies
+- 1966-106.7 [E] Partition function and thermodynamic limit
+- 1966-107.1 [E] Mean energy and temperature differentiation
+- 1966-107.2 [F] Limiting wall pressure
+- 1966-107.3 [E] Pressure normalization
+- 1966-107.4 [E] Entropy sign and temperature factor
+- 1966-107.5 [E] Entropy per particle
+- 1966-108.1 [E] Three compatible linear structures
+- 1966-108.2 [E] Isotropic and Lagrangian spaces
+- 1966-108.3 [E] Generating functions for Lagrangian graphs
+- 1966-108.4 [A] Lagrangian Grassmannian as a homogeneous space
+- 1966-108.5 [A] Determinant-square fibration
+- 1966-108.6 [A] Maslov cohomology class
+- 1966-108.7 [A] Morse index and quantization
+- 1966-109.1 [E] Tensor decomposition and intertwiner data
+- 1966-109.2 [E] Fusion multiplicities do not determine even a finite group
+- 1966-109.3 [E] Tannaka reconstruction requires unit and reality conditions
+- 1966-109.4 [F] An unspecified extension to SL(2,R)
+- 1966-110.1 [B] Short-time heat kernel and intrinsic distance
+- 1966-110.2 [E] Gaussian normalization and subleading powers of time
+- 1966-110.3 [F] Unspecified elliptic-eigenvalue analogy
+- 1966-111.1 [F] Kohn--Nirenberg definition: heading only
+- 1966-111.2 [F] Boundedness theorem: heading only
+- 1966-112.1 [E] Composition expansion with a controlled remainder
+- 1966-112.2 [E] Fourier-space proof of the composition formula
+- 1966-112.3 [E] Formal asymptotic symbol
+- 1966-112.4 [E] Zero formal symbol and smoothing operators
+- 1966-112.5 [E] Uniqueness of the formal homogeneous expansion
+- 1966-112.6 [E] Realization of a formal symbol
+- 1966-112.7 [E] Filtered algebra of pseudodifferential operators
+- 1966-113.1 [E] Planar incompressible Navier--Stokes and Euler systems
+- 1966-113.2 [E] Why vanishing viscosity is singular at a wall
+- 1966-113.3 [E] The Prandtl system and outer pressure
+- 1966-113.4 [E] Correctly posed initial and inflow data
+- 1966-113.5 [E] Local existence and uniqueness in the monotone class
+- 1966-113.6 [E] All-time existence on a short inflow interval
+- 1966-113.7 [F] The scope of stability of a boundary layer
+- 1966-114.1 [F] Third pseudodifferential lecture: heading only
+- 1966-114.2 [C] Helgason's support problem for geodesic spheres
+- 1966-114.3 [E] Constant-curvature support theorem
+- 1966-114.4 [B] Entire convex solutions of the constant Monge--Ampere equation
+- 1966-114.5 [E] The known low-dimensional Monge--Ampere cases
+- 1966-114.6 [B] The dimension-dependent Bernstein problem
+- 1966-114.7 [B] Recovering the metric from a Sobolev pullback isometry
+- 1966-114.8 [E] Laplace eigenvalues are invariants, not complete metric data
+- 1966-114.9 [E] Evaluation map from the first Laplace eigenspace
+- 1966-114.10 [F] The unrecorded noncompact eigenfunction question
+- 1966-114.11 [B] Infinite volume under positive Ricci curvature
+- 1966-114.12 [F] An ambiguous infinite-geodesic question
+- 1966-114.13 [C] Smooth type of a manifold with equally long closed geodesics
+- 1966-114.14 [E] Nonround metrics with all geodesics closed
+- 1966-114.15 [E] Bott--Samelson cohomology restriction
+- 1966-114.16 [B] Contact structures on compact three-manifolds
+- 1966-115.1 [E] Smooth and topological left--right stability
+- 1966-115.2 [E] A stable square and an unstable cube
+- 1966-115.3 [E] Maximal rank and the Morse local normal forms
+- 1966-115.4 [E] Global stability and density for functions on a compact manifold
+- 1966-115.5 [E] Whitney regular, fold, and cusp local forms
+- 1966-115.6 [E] Global stability of maps between surfaces
+- 1966-115.7 [E] The critical parabola and cusp discriminant
+- 1966-115.8 [A] Resolving the complex square into folds and three cusps
+- 1966-115.9 [F] Large-circle winding and the trefoil caption
+- 1966-115.10 [B] Failure of density of smoothly stable maps in dimension nine
+- 1966-115.11 [F] The unspecified infinity of invariants from dimension twelve
+- 1966-115.12 [B] Thom topological discreteness outside infinite codimension
+- 1966-115.13 [E] Finite jets and their bundle
+- 1966-115.14 [E] The truncation exponent in the jet algebra
+- 1966-115.15 [E] Admissible finite-codimension conditions on germs
+- 1966-115.16 [E] Rank strata and their generic codimension
+- 1966-115.17 [E] Transversality of two maps
+- 1966-115.18 [E] Transverse inverse images and perturbation
+- 1966-115.19 [E] Iterating the corank of restrictions
+- 1966-115.20 [B] Boardman universal strata and simultaneous genericity
+- 1966-115.21 [B] Boardman symbols are not complete smooth invariants
+- 1966-116.1 [E] Nested corank loci and the limitation of the naive definition
+- 1966-116.2 [B] Jacobian extension of an ideal and source-coordinate invariance
+- 1966-116.3 [B] Critical Jacobian extension: the first proper ideal
+- 1966-116.4 [E] Successive extensions of the cubic ideal
+- 1966-116.5 [B] Target-coordinate independence of the Boardman ideal construction
+- 1966-116.6 [B] Boardman codimension formula and two missing conventions
+- 1966-116.7 [B] Generic agreement of intrinsic and geometric Boardman loci
+- 1966-116.8 [B] First dimensions of transverse Boardman symbols
+- 1966-116.9 [E] Morin normal forms for corank-one singularities
+- 1966-116.10 [E] The intrinsic quadratic differential
+- 1966-116.11 [E] Why a cubic differential is not defined by the same recipe
+- 1966-116.12 [E] Binary quadratic pencils and seven linear orbit types
+- 1966-116.13 [A] Two transverse corank-two germs in four dimensions
+- 1966-116.14 [E] Real signs, complexification, and variation along a corank-two curve
+- 1966-116.15 [B] The overstatement that every corank-two germ is stable
+- 1966-116.16 [B] Dimension count forcing moduli of quadratic maps
+- 1966-116.17 [B] The announced dimension-dependent density classification
+- 1966-116.18 [E] The local algebra of a map germ
+- 1966-116.19 [E] Dual numbers as two coalescing points
+- 1966-116.20 [E] Local algebra length and multiplicity
+- 1966-116.21 [B] Stable germs are classified by their local algebras
+- 1966-116.22 [B] Infinitesimal stability and the source--target linearization
+- 1966-116.23 [E] Smooth preparation as finite generation over the target
+- 1966-116.24 [B] Five families of stable real corank-two local algebras
+- 1966-116.25 [B] Finite-codimension algebra types and the exceptional remainder
+- 1966-119.1 [E] Polynomial algebra of bi-invariant differential operators
+- 1966-119.2 [E] Gelfand’s cyclic trace generators
+- 1966-119.3 [E] Centrally finite invariant distributions
+- 1966-119.4 [E] Local integrability and regular-set analyticity
+- 1966-119.5 [F] Unidentified normalization of characters at infinity
+- 1966-119.6 [E] Regular transverse sections and elliptic regularity
+- 1966-119.7 [E] Induction through semisimple centralizers and the Lie algebra
+- 1966-119.8 [E] The conjugation map is a submersion on the descent domain
+- 1966-119.9 [E] Fiber integration and distributional pullback under a submersion
+- 1966-119.10 [E] Mixed differential notation for conjugation
+- 1966-120.1 [E] Pseudodifferential operators between vector bundles
+- 1966-120.2 [E] The Hodge–de Rham operator and its square
+- 1966-120.3 [E] Harmonic representatives for de Rham cohomology
+- 1966-121.1 [E] Local centralizer slice and pointwise enveloping-algebra description
+- 1966-121.2 [E] The representation sigma and the transfer operator Gamma
+- 1966-121.3 [E] PBW leading term and the transverse decomposition
+- 1966-121.4 [E] Radial part as the constant transverse coefficient
+- 1966-122.1 [E] Continuity of fiber integration
+- 1966-122.2 [E] Translation-invariant distributions are Haar measures
+- 1966-122.3 [E] The descended distribution sigma_T
+- 1966-122.4 [E] The rejected explicit formula for descent
+- 1966-122.5 [E] Intertwining radial operators with descended distributions
+- 1966-122.6 [E] Finite central codimension survives descent
+- 1966-122.7 [E] Recovering local integrability after descent
+- 1966-123.1 [E] Local integrability of Lorentz-invariant polynomial wave solutions
+- 1966-123.2 [E] Why the invariant system is elliptic away from the null cone
+- 1966-124.1 [E] Diffeomorphisms of the sphere fixing three points
+- 1966-124.2 [E] Diffeomorphisms of the torus fixing one point
+- 1966-124.3 [E] Contractibility in genus at least two
+- 1966-124.4 [E] Quasiconformal uniformization and the Teichmüller fibration
+- 1966-124.5 [E] The diffeomorphism group as an infinite-dimensional Lie group
+- 1966-124.6 [E] Semiclassical Fourier transformation of the Schrödinger operator
+- 1966-124.7 [E] A Fourier transform with a self-adjoint operator as reciprocal Planck constant
+- 1966-124.8 [F] Formal operator-valued quantization of L(x,p,A inverse)
+- 1966-125.1 [E] Regular algebraic actions and orbits
+- 1966-125.2 [E] When does an orbit set admit an algebraic quotient?
+- 1966-125.3 [F] Unlabelled orbit-space counterexample sketch
+- 1966-125.4 [E] Semicontinuity of stabilizer and orbit dimensions
+- 1966-125.5 [E] Necessary conditions on a regular morphism with orbit fibers
+- 1966-125.6 [E] Closed orbits and the affine reductive geometric quotient
+- 1966-126.1 [E] Compactly supported stable symbol classes
+- 1966-126.2 [E] Homotopy invariance and direct-sum additivity do not determine the index
+- 1966-126.3 [E] Multiplicativity under external products
+- 1966-126.4 [E] Excision for compactly supported index classes
+- 1966-126.5 [E] Symbols pulled back from the base have zero index
+- 1966-126.6 [E] One-dimensional winding normalization
+- 1966-126.7 [E] A normalized index characterization on stably parallelizable manifolds
+- 1966-127.1 [E] Normal matrix factorization and partial indices
+- 1966-127.2 [B] Fredholm normal families despite jumping kernel dimensions
+- 1966-127.3 [B] Auxiliary potentials and boundary equations
+- 1966-127.4 [B] Homogeneous lifting and localization of normal inverses
+- 1966-127.5 [B] Normal jump logarithms and admissible Sobolev orders
+- 1966-127.6 [E] Diagonal systems and the limitation of a common ordinary space
+- 1966-127.7 [B] Global completion of the boundary Fredholm family
+- 1966-129.1 [E] Strict hyperbolicity of the homogeneous symbol
+- 1966-129.2 [E] The retarded fundamental solution
+- 1966-129.3 [E] Analyticity away from the dual characteristic hypersurface
+- 1966-129.4 [E] Lacunas and stability under perturbation
+- 1966-129.5 [E] Reduction to a nonsingular complex characteristic hypersurface
+- 1966-129.6 [E] The real hyperplane-section cycle beta
+- 1966-129.7 [E] The wave operator: an empty real section, not an empty complex quadric
+- 1966-129.8 [E] The signed relative cycle alpha and its boundary
+- 1966-129.9 [E] Constancy of Petrovsky classes within a chamber
+- 1966-129.10 [E] Stable-lacuna criterion below the dimension
+- 1966-129.11 [E] Stable-lacuna criterion at or above the dimension
+- 1966-129.12 [E] The projective canonical bundle and Euler form
+- 1966-129.13 [E] Poincare residue with the required homogeneity
+- 1966-129.14 [E] The Herglotz–Petrovsky residue integral
+
+## GY1966: problems
+
+- GP-1965-03 [2026-11-09] The folds and cusps of the perturbed complex square
+- GP-1966-01 [2026-11] Algebraic classification of Anosov diffeomorphisms
+- GP-1966-02 [2026-11] Structural stability of Morse--Smale systems
+- GP-1966-03 [2026-11] Necessity of Morse--Smale conditions
+- GP-1966-04 [2026-11] Density of Morse--Smale systems
+- GP-1966-05 [2026-11] Density of structurally stable fields
+- GP-1966-06 [2026-11] Density of Axiom A
+- GP-1966-07 [2026-11] Periodic density from hyperbolic nonwandering set
+- GP-1966-08 [2026-11] Uniqueness of the vanishing identity-viscosity limit
+- GP-1966-09 [2026-11] Representative pair observables: moment hypotheses and concentration
+- GP-1966-10 [2026-11] Realizability of a full correlation hierarchy
+- GP-1966-11 [2026-11] Helgason spherical support problem on a smooth Hadamard manifold
+- GP-1966-12 [2026-11] Entire convex Monge--Ampere rigidity
+- GP-1966-13 [2026-11] Entire minimal-graph Bernstein problem
+- GP-1966-14 [2026-11] Metric rigidity of a Sobolev composition isometry
+- GP-1966-15 [2026-11] Infinite volume of a complete noncompact positive-Ricci three-manifold
+- GP-1966-16 [2026-11] Diffeomorphism type of equal-period closed-geodesic manifolds
+- GP-1966-17 [2026-11] Existence of contact structures in dimension three
+- GP-1966-18 [2026-11] Invariant distributions for the Lorentz form
+- GP-1966-19 [2026-11] Geometric orbit quotients for affine reductive actions
+- GP-1966-20 [2026-11] Global boundary completion with trivial auxiliary bundles
+
+## GY1967: items
+
+- 1967-131.1 [A] Local orbit formula for characters
+- 1967-131.2 [E] Distribution character and the missing trace
+- 1967-131.3 [E] Canonical form and measure on a coadjoint orbit
+- 1967-131.4 [E] Integrality and the shifted compact orbit
+- 1967-131.5 [E] Exponential Haar density for the rotation example
+- 1967-131.6 [E] Fourier transform of the spherical orbital measure
+- 1967-131.7 [E] The irreducible characters of SO(3)
+- 1967-132.1 [E] Ordinary universal principal bundles and characteristic classes
+- 1967-132.2 [E] Loss of noncompact information under homotopy equivalence
+- 1967-132.3 [A] A classifying theory retaining the noncompact group
+- 1967-132.4 [A] The rejected cone test and Kazhdan's obstruction
+- 1967-132.5 [A] Global fiberwise linear charts over Hausdorff bases
+- 1967-132.6 [E] Recovering the principal bundle requires its reduction
+- 1967-132.7 [A] The Hausdorff ray quotient with no nonconstant scalar functions
+- 1967-132.8 [E] The proposed weighted cross-section is not a section of all rays
+- 1967-132.9 [A] Universal targets indexed by sufficiently large products
+- 1967-133.1 [E] Two-denominator Feynman parametrization
+- 1967-133.2 [E] Three denominators and the missing factorial
+- 1967-133.3 [E] Commuting continuous interval maps need not share a fixed point
+- 1967-133.4 [E] A fixed point of one map that is periodic for the other
+- 1967-134.1 [A] The bundle category and its characteristic operations
+- 1967-134.2 [A] Cohomology with the sheaf of continuous real functions
+- 1967-134.3 [A] Compact-dual calculation in the semisimple case
+- 1967-134.4 [A] The linear-group example and the sphere ambiguity
+- 1967-134.5 [A] Invariant forms compute the characteristic cohomology
+- 1967-134.6 [A] Compact groups and the additive real group
+- 1967-134.7 [A] Natural principal H-bundles are induced by homomorphisms
+- 1967-134.8 [A] Frames in a product and universal bundle morphisms
+- 1967-134.9 [A] A countable-coordinate lemma for frame spaces
+- 1967-135.1 [A] A pointed G-space with an admissible semigroup
+- 1967-135.2 [A] Linear and cone elementary objects
+- 1967-135.3 [A] Universal embeddings versus the published coordinate-invertible model
+- 1967-135.4 [A] Finite products are finite approximations, not universal EG
+- 1967-135.5 [A] Local T-triviality and universal pullback representation
+- 1967-135.6 [A] Independence of the elementary object
+- 1967-136.1 [E] Analytic linearization of a semisimple action at a fixed point
+- 1967-136.2 [F] Programme labels that do not specify mathematical assertions
+- 1967-137.1 [E] Interpolation pairs of compatible Banach couples
+- 1967-137.2 [E] Symmetric function spaces and basic inclusions
+- 1967-137.3 [E] Lorentz, associate Marcinkiewicz, and Orlicz examples
+- 1967-137.4 [E] Riesz--Thorin interpolation
+- 1967-137.5 [E] Weak endpoint bounds and Marcinkiewicz interpolation
+- 1967-137.6 [E] The Dikarev--Matsaev Lorentz improvement and optimality
+- 1967-137.7 [E] Mityagin exact interpolation and symmetric norms
+- 1967-137.8 [E] Fundamental function and dyadic ratios
+- 1967-137.9 [E] The fundamental-function criterion fails in full generality
+- 1967-137.10 [B] The improving symmetric-space criterion and its limitation
+- 1967-137.11 [E] Hausdorff--Young with the conjugate exponent
+- 1967-137.12 [E] Paley's rearranged-coefficient inequality
+- 1967-137.13 [E] Hardy--Littlewood for monotone Fourier coefficients
+- 1967-137.14 [E] No Hilbert interpolation space between L1 and L3/2
+- 1967-137.15 [F] Gelfand's request for an abstract description
+- 1967-138.1 [E] Hyperbolic toral automorphisms and Lebesgue spectrum
+- 1967-138.2 [E] Entropy classifies hyperbolic two-torus automorphisms metrically
+- 1967-138.3 [E] Topological conjugacies are affine under ergodicity
+- 1967-138.4 [E] A primitive two-sided shift of finite type
+- 1967-138.5 [E] The identity, full-shift, and golden-mean examples
+- 1967-138.6 [E] The Parry transition probabilities need both Perron vectors
+- 1967-138.7 [E] Entropy and uniqueness of the maximal stationary measure
+- 1967-138.8 [E] Gelfand on second-order minors and one sign change
+- 1967-138.9 [E] The four-block symbolic matrix
+- 1967-138.10 [E] Recoding to a full matrix with one forbidden transition
+- 1967-138.11 [B] The parenthetical extension to all equal-entropy Markov shifts
+- 1967-139.1 [E] Projective relative periods
+- 1967-139.2 [A] The degeneracy locus of a moving hyperplane arrangement
+- 1967-139.3 [A] Iterated residues and the cycle on the complete intersection
+- 1967-139.4 [A] Algebraic singular support of the period
+- 1967-140.1 [E] Uniform hyperbolicity and the compact-distance caveat
+- 1967-140.2 [E] Stable manifolds and the choice of contraction constants
+- 1967-140.3 [E] Linear examples and structural stability
+- 1967-140.4 [E] Lattice-preserving Lie-group automorphisms
+- 1967-140.5 [E] Nilpotence does not guarantee an Anosov lattice automorphism
+- 1967-140.6 [C] Are all Anosov diffeomorphisms algebraic up to conjugacy?
+- 1967-140.7 [F] Hyperbolicity on the nonwandering set: an incomplete quantifier
+- 1967-140.8 [E] Absolute continuity of holonomy
+- 1967-140.9 [A] Rectangles from the local product structure
+- 1967-140.10 [A] Markov boundary inclusions
+- 1967-140.11 [A] Existence of arbitrarily fine Markov partitions
+- 1967-140.12 [A] Reducing an iterate-Markov partition to one step
+- 1967-140.13 [A] Coding by admissible itineraries
+- 1967-140.14 [A] Primitivity and density of the invariant leaves
+- 1967-140.15 [A] Holonomy-invariant measures on stable and unstable leaves
+- 1967-140.16 [A] An invariant measure with a finite Markov model
+- 1967-140.17 [E] Entropy, the Perron root, and the repeated metric classification
+- 1967-140.18 [E] The two-rectangle torus partition and its connected refinement
+- 1967-142.1 [E] Countably normed algebra and continuity of multiplication
+- 1967-142.2 [E] Positive functionals as integrals over Hermitian characters
+- 1967-142.3 [F] Axioms ensuring moment representations in countably normed algebras
+- 1967-142.4 [E] Convolution algebra and Bochner representation
+- 1967-143.1 [E] Fibre product by its universal property
+- 1967-143.2 [E] Grothendieck pretopology
+- 1967-143.3 [E] Local-homeomorphism site of a space
+- 1967-143.4 [E] Fibre products of circular coverings
+- 1967-143.5 [E] Presheaves and the sheaf equalizer condition
+- 1967-143.6 [E] Augmented Cech complex
+- 1967-143.7 [E] Derived-functor cohomology of a site
+- 1967-143.8 [F] An announced finite-group example
+- 1967-144.1 [E] Enveloping algebra, centre and differential-operator realization
+- 1967-144.2 [E] Faithfulness on the basic affine space
+- 1967-144.3 [E] Finite-translation functions and the compact-group completeness theorem
+- 1967-144.4 [E] Affinization and rationality of the basic affine space
+- 1967-144.5 [E] Ore fractions of an enveloping algebra
+- 1967-144.6 [E] Weyl division rings with central parameters
+- 1967-144.7 [B] The unextended Gelfand--Kirillov conjecture for semisimple algebras
+- 1967-144.8 [E] Nilpotent and algebraic solvable cases
+- 1967-144.9 [A] Central extension by virtual Laplace operators
+- 1967-144.10 [A] The Weyl fraction field after central extension
+- 1967-144.11 [F] Algebraic extensions of Weyl division rings
+- 1967-144.12 [F] Global holomorphic differential operators on compact complex manifolds
+- 1967-144.13 [E] Global vector fields on the projective line
+- 1967-145.1 [E] The first Weyl algebra
+- 1967-145.2 [E] Polynomial shears generate the automorphism group of A1
+- 1967-145.3 [C] Automorphisms of the Weyl division ring
+- 1967-145.4 [E] Arnold: polynomial canonical maps and the Poisson bracket
+- 1967-145.5 [E] The qualified relationship with associated graded Poisson algebras
+- 1967-145.6 [E] Strictly semisimple elements and the missing affine parameters
+- 1967-145.7 [E] Eigenvalues of the Euler element under the stated commutator convention
+- 1967-145.8 [E] Commutative centralizers of nonscalar Weyl elements
+- 1967-145.9 [E] Elliptic and cuspidal centralizers
+- 1967-146.1 [E] Weighted Dolbeault spaces and plurisubharmonic exhaustion
+- 1967-146.2 [E] A weighted L2 solution with logarithmic loss
+- 1967-146.3 [F] Density of entire functions with weighted growth
+- 1967-146.4 [E] Martineau: realization of regularized growth indicators
+- 1967-147.1 [E] Convexity of weights depending only on real parts
+- 1967-147.2 [E] Solving d-bar with exponential type and polynomial growth
+- 1967-147.3 [E] The bounded right-hand-side assertion on the unit disc
+- 1967-147.4 [F] A measure-growth condition of Carleson type
+- 1967-147.5 [E] The boundary signature condition aq
+- 1967-147.6 [E] Pseudoconvexity and the incorrect index a0
+- 1967-147.7 [E] Finite-dimensional weighted cohomology and closed range
+- 1967-147.8 [F] Gelfand asks about domains of regularity
+- 1967-147.9 [E] Global exhaustion and vanishing in a fixed degree
+- 1967-147.10 [E] Andreotti--Grauert extension to complex spaces
+- 1967-147.11 [E] Runge restriction and extension of solvability
+- 1967-147.12 [E] Weighted integration by parts and boundary Levi form
+- 1967-147.13 [E] Approximation of closed forms across a Runge exhaustion
+- 1967-147.14 [E] Existence on a Levi-pseudoconvex bounded domain
+- 1968-149.1 [E] Dwork rationality and the missing global hypothesis
+- 1968-149.2 [E] Zeta functions through p-adic completely continuous operators
+- 1968-149.3 [F] Plane distributions and the foliation existence slogan
+- 1968-149.4 [B] Germs, jets and a weak homotopy equivalence
+- 1968-150.1 [E] Genus zero and genus one uniformization
+- 1968-150.2 [E] Lattice homothety and the modular group action
+- 1968-150.3 [E] Fundamental region and the coarse j-line
+- 1968-150.4 [E] A family listing isomorphism classes is not yet universal
+- 1968-150.5 [E] Pullback of an analytic family
+- 1968-150.6 [E] Kirillov: representability of the moduli functor
+- 1968-150.7 [E] Fine universality versus weaker parameter families
+- 1968-150.8 [E] Nonexistence of a fine moduli space for all pointed elliptic curves
+- 1968-150.9 [E] Rigidification by a homology basis, not merely polarization
+- 1968-150.10 [E] The moduli object represented by a topology of families
+- 1968-150.11 [E] Automorphism groups of pointed elliptic curves
+- 1968-151.1 [E] Pretopology axioms and base change revisited
+- 1968-151.2 [E] The site of Gamma-sets
+- 1968-151.3 [E] Sheaves on the group site are modules
+- 1968-151.4 [E] The value on a disjoint union is a product
+- 1968-151.5 [E] Cohomology of the terminal group-site object
+- 1968-151.6 [E] H2 with integer coefficients and one-dimensional characters
+- 1968-151.7 [E] The analytic local-isomorphism topology
+- 1968-151.8 [E] Comparison with ordinary analytic sheaf cohomology
+- 1968-151.9 [E] The site of families and cohomology of an individual family
+- 1968-151.10 [E] Products over the formal moduli object are isomorphism spaces
+- 1968-151.11 [E] Coverings of the formal terminal object
+- 1968-152.1 [E] Analytic spaces are required for general fibre products
+- 1968-152.2 [E] Fibre products and the three covering axioms repeated
+- 1968-152.3 [E] Abelian presheaves and effective gluing
+- 1968-152.4 [E] Canonical sheafification
+- 1968-152.5 [E] Derived cohomology, exact sequences and injective acyclicity
+- 1968-152.6 [E] Local-acyclicity criterion for comparison of sites
+- 1968-152.7 [E] A terminal moduli object and its candidate atlas
+- 1968-152.8 [E] Local extension property of a modular family
+- 1968-153.1 [E] Resolving compatibility conditions for a differential system
+- 1968-153.2 [E] Finite jet bundles and an injective map of sheaves
+- 1968-153.3 [E] Holonomic jet sections are characterized by derivative compatibility
+- 1968-153.4 [E] The Spencer operator as actual minus formal differentiation
+- 1968-153.5 [E] The one-form formula requires a wedge-order correction
+- 1968-153.6 [E] The finite exact Spencer sequence for unrestricted jets
+- 1968-153.7 [F] The unresolved comparison with a higher-order pseudo-object
+- 1968-154.1 [E] Pointed elliptic families and Cartesian morphisms
+- 1968-154.2 [E] The coarse j-line has no smooth family realizing its identity parameter
+- 1968-154.3 [E] The marked universal family and its modular action
+- 1968-154.4 [E] Three marked boundary points represent two exceptional orbits
+- 1968-154.5 [E] Constant coefficients and the cohomology of one family
+- 1968-154.6 [E] The level-three subsite and comparison with group cohomology
+- 1968-154.7 [E] Integral cohomology of the elliptic moduli site is periodic
+- 1968-154.8 [B] The assertion over other fields concerns the Picard group
+- 1968-154.9 [E] What the invariant modulo twelve means for a family
+- 1968-154.10 [B] Shafarevich: a site of transverse patches and holonomy
+- 1968-154.11 [E] For a genuine leaf fibration the transverse cohomology is that of the base
+- 1968-154.12 [F] Euler characteristic as a difference of cycle and singular-point counts
+- 1968-155.1 [E] Hyperbolic uniformization and unramified coverings
+- 1968-155.2 [E] Coordinate rings, closed points, and contravariance
+- 1968-155.3 [E] Reduced fibres as a criterion for unramifiedness
+- 1968-156.1 [E] Jet bundles and holonomic jet sections
+- 1968-156.2 [E] Jets from a power of the diagonal ideal
+- 1968-156.3 [E] Many-point jets and the first-order splitting
+- 1968-156.4 [E] Two Taylor descriptions of a first jet
+- 1968-156.5 [E] The trivial Spencer resolution
+- 1968-156.6 [E] Extension from trivial jets to linear PDE systems
+- 1968-157.1 [E] Operator-valued integral kernels
+- 1968-157.2 [E] Diagonal trace formula and positive converse
+- 1968-157.3 [E] Why the almost-everywhere diagonal statement matters
+- 1968-159.1 [E] Rayleigh quotients and constrained extrema
+- 1968-159.2 [E] Finite constraint determinants and intermediate lower bounds
+- 1968-159.3 [E] Extension to Schrödinger operators
+- 1968-159.4 [F] The Rolewicz periodic delay-equation notice
+- 1968-160.1 [E] Distribution characters and their test-function domain
+- 1968-160.2 [E] The affine group and a restricted test-function ideal
+- 1968-160.3 [E] The symplectic form on a coadjoint orbit
+- 1968-160.4 [E] Liouville measure and the orbital Fourier distribution
+- 1968-160.5 [F] The unqualified universal orbital character formula
+- 1968-160.6 [F] Haar-density factors in generic character formulas
+- 1968-160.7 [E] The simply connected nilpotent orbit formula
+- 1968-160.8 [E] Compact characters require the rho-shifted regular orbit
+- 1968-160.9 [F] The proposed product of modified hyperbolic sines
+- 1968-160.10 [F] Integrality and characters of the orbit fundamental group
+- 1968-160.11 [E] The SU(2) sphere calculation and normalization
+- 1968-160.12 [E] The scope of the displayed Plancherel formula
+- 1968-160.13 [E] Extracting the polynomial square root of a skew determinant
+- 1968-160.14 [F] Matrix spectra and tensor products: an unspecified duality
+- 1968-160.15 [E] Rodrigues formulas for Legendre and Jacobi polynomials
+- 1968-160.16 [F] Fractional Rodrigues operations and hypergeometric functions
+- 1968-161.1 [E] Representation theory organized by prerequisites and examples
+- 1968-161.2 [F] Berezin and the phrase existence of all representations
+- 1968-161.3 [E] Enveloping algebras and the continuing orbit programme
+- 1968-162.1 [E] Differential relations and holonomic solutions
+- 1968-162.2 [E] Open and closed differential relations
+- 1968-162.3 [E] The metric pullback equation and the immersion condition
+- 1968-162.4 [A] Parametric solvability as homotopy lifting
+- 1968-162.5 [E] Nash inversion as the local analytic input
+- 1968-162.6 [E] C1 isometric approximation and the embedding distinction
+- 1968-162.7 [A] Local extension and microflexibility
+- 1968-162.8 [A] The open invariant relation theorem
+- 1968-162.9 [A] Parallelizability and nonempty fibres
+- 1968-162.10 [E] Plateau surfaces and reparametrization invariance
+- 1968-162.11 [E] Why an open manifold has no top-dimensional handles
+- 1968-162.12 [E] The analytic local embedding dimension
+- 1968-162.13 [F] Approximation by two maps with the same induced metric
+- 1968-162.14 [F] Large-dimension approximation with homothetic induced metric
+- 1968-164.1 [E] Hypoellipticity and the second-order class
+- 1968-164.2 [E] Hörmander brackets imply hypoellipticity and a positive Sobolev gain
+- 1968-164.3 [F] The unproved necessity comment has ambiguous scope
+- 1968-164.4 [A] An elliptic commutator system built from symbol derivatives
+- 1968-164.5 [A] Toward a formulation containing Hörmander’s theorem
+- 1968-164.6 [F] When are all generalized solutions locally integrable?
+- 1968-163.1 [E] Scheme points, closed points, and geometric points
+- 1968-163.2 [E] Reduced schemes and the word variety
+- 1968-163.3 [E] Finite fields and Frobenius
+- 1968-163.4 [E] The closed-point Euler product
+- 1968-163.5 [E] Dwork rationality
+- 1968-163.6 [E] Affine-line closed points and irreducible-polynomial counts
+- 1968-163.7 [E] Poles of formal Euler factors are not poles of the continued zeta function
+- 1968-163.8 [E] Uniqueness of formal Euler factorization
+- 1968-163.9 [E] The exponential point-counting formula
+- 1968-163.10 [E] Spec Z and the usual Riemann zeta function
+- 1968-163.11 [E] The Borel–Dwork rationality criterion needs compatible radii
+- 1968-163.12 [E] The p-adic valuation ring, residue field, and convergence criterion
+- 1968-163.13 [E] Completely continuous operators and p-adic Fredholm determinants
+- 1968-163.14 [E] C_p and Teichmüller representatives
+- 1968-163.15 [E] Nonzero entire p-adic functions have finitely many zeros on bounded discs
+- 1968-163.16 [E] The unit ball in Q_p is compact
+- 1968-163.17 [E] Integral power-series coefficients force integral reciprocal roots in reduced form
+- 1968-166.1 [A] Hyperbolic orbit counting and the leading asymptotic
+- 1968-166.2 [C] The square-root remainder and the hyperbolic circle problem
+- 1968-166.3 [A] Horocycle ergodicity in counting
+- 1968-166.4 [F] The analogy with Linnik’s integer points on spheres
+- 1968-167.1 [E] Left-infinite digits and the 3-adic topology
+- 1968-167.2 [E] The ternary expansions of minus one and one half
+- 1968-167.3 [E] Decimal identifications and the nonfield of 10-adic integers
+- 1968-168.1 [E] The spectral function of a positive elliptic realization
+- 1968-168.2 [E] The local Weyl remainder
+- 1968-168.3 [E] Off-diagonal leading term
+- 1968-168.4 [E] Spherical harmonics and the spectral jump
+- 1968-168.5 [E] Why a universal smaller unsmoothed remainder is impossible
+- 1968-168.6 [E] Higher spectral terms after averaging
+- 1968-168.7 [F] The trace-formula reading pointer
+- 1968-168.8 [E] Reduction to a first-order pseudodifferential root
+- 1968-168.9 [E] Half-wave evolution and propagation of singularities
+- 1968-168.10 [E] A short-time phase and transport amplitude
+- 1968-168.11 [E] Fourier cutoff, smoothed spectral density and the Tauberian step
+- 1968-170.1 [E] A pair without a common isotropic vector has a definite combination
+- 1968-170.2 [E] The arc of normalized values and separation
+- 1968-170.3 [E] Simultaneous diagonalization by congruence
+- 1968-169.1 [E] Operators as linear relations
+- 1968-169.2 [E] Norm ratios, numerical range and point spectrum
+- 1968-169.3 [E] The indicatrix cone
+- 1968-169.4 [E] The shell in the closed unit ball
+- 1968-169.5 [E] Boundary points recover eigenvalues
+- 1968-169.6 [E] Height bounds encode an upper norm bound
+- 1968-169.7 [E] Fractional linear transformations of relations
+- 1968-169.8 [E] Möbius equivariance of the shell
+- 1968-169.9 [E] Spectral sets and the rational functional calculus
+- 1968-169.10 [E] Disk spectral sets are detected by spherical caps
+- 1968-171.1 [E] Finitely many smooth manifolds of torus homotopy type
+- 1968-171.2 [E] Simply connected finiteness with fixed characteristic data
+- 1968-171.3 [E] Homotopy spheres as the simply connected model
+- 1968-171.4 [E] h-cobordism
+- 1968-171.5 [E] The s-cobordism classification
+- 1968-171.6 [E] Stable general linear groups, K1 and Whitehead groups
+- 1968-171.7 [E] The Whitehead group of a free abelian group vanishes
+- 1968-171.8 [E] Invertible polynomial and Laurent-polynomial matrices
+- 1968-171.9 [E] Stabilization at sufficiently large matrix size
+- 1968-171.10 [E] Stable normal data under a homotopy equivalence
+- 1968-171.11 [E] Pontryagin classes and parallelizability of homotopy tori
+- 1968-171.12 [E] Infinitely many manifolds with the homotopy type of S2 times S4
+- 1968-171.13 [E] Pontryagin--Thom collapse and the degree-one fibre
+- 1968-171.14 [E] Stable torus splitting and finiteness of H inverse of one
+- 1968-171.15 [E] From normal cobordism to h-cobordism by surgery
+- 1968-172.1 [E] An equal-rank homogeneous complex manifold
+- 1968-172.2 [E] The Weyl-group count concerns invariant structures
+- 1968-172.3 [E] Homogeneous line bundles from Cartan characters
+- 1968-172.4 [E] Reduced L2 Dolbeault cohomology as harmonic forms
+- 1968-172.5 [E] The compact specialization is Borel--Weil--Bott
+- 1968-172.6 [B] Vanishing away from one degree for sufficiently regular weights
+- 1968-172.7 [B] The remaining harmonic space realizes a discrete series
+- 1968-172.8 [E] The cohomological degree counts signed positive roots
+- 1968-172.9 [F] The unspecified decay-at-infinity comparison
+- 1968-173.1 [E] Finitely many h-cobordism classes of homotopy tori
+- 1968-173.2 [E] How many diffeomorphism types occur in one h-cobordism class?
+- 1968-173.3 [E] Morse modifications of cobordisms
+
+## GY1967: problems
+
+- GP-1967-01 [2026-11] Classifying noncompact groups over Hausdorff bases
+- GP-1967-02 [2026-11] Common fixed and periodic points of commuting interval maps
+- GP-1967-03 [2026-11] Metric classification of hyperbolic two-torus automorphisms
+- GP-1966-01 [2026-11] Algebraic classification of Anosov diffeomorphisms
+- GP-1967-21 [2026-11] The unextended semisimple Gelfand--Kirillov conjecture
+- GP-1965-08 [2026-11] Automorphisms of Weyl division rings
+- GP-1968-01 [2026-11] A universal family for the elliptic moduli problem
+- GP-1968-20 [2026-11] The pointwise hyperbolic circle remainder
+- GP-1968-40 [2026-11] Higher spectral asymptotics with a specified smoothing order
+- GP-1968-41 [2026-11] The Langlands harmonic realization of the discrete series
+- GP-1968-42 [2026-11] Finiteness for smooth homotopy tori
+
+## GY1969: items
+
+- 1969-174.1 [F] Superpositions on a characteristic cone
+- 1969-174.2 [F] Homogeneous powers and normalized distributions
+- 1969-174.3 [F] Boundary values of reciprocal symbols
+- 1969-174.4 [E] Dimension threshold for entire minimal graphs
+- 1969-175.1 [E] Pointwise spectral measure and projector kernel
+- 1969-175.2 [F] Spectral convergence under domain exhaustion
+- 1969-175.3 [E] Analytic approximation of formal solutions
+- 1969-176.1 [E] Unilateral frictionless elastic contact
+- 1969-176.2 [E] Strain, constitutive law and equilibrium
+- 1969-176.3 [E] Energy minimization and complementarity
+- 1969-176.4 [E] Weak existence and rigid-motion compatibility
+- 1969-176.5 [E] Scalar boundary-obstacle problem
+- 1969-176.6 [E] Necessary sign of total load
+- 1969-176.7 [F] Failure of classical regularity at a contact interface
+- 1969-177.1 [E] Formal points and finite-jet approximation
+- 1969-177.2 [E] Parametrizing the cusp
+- 1969-177.3 [E] Reduction to irreducible components
+- 1969-177.4 [F] Earlier Soviet work on formal implicit functions
+- 1969-178.1 [E] Symplectic phase space and Liouville measure
+- 1969-178.2 [E] Hamiltonian vector fields and the Poisson bracket
+- 1969-178.3 [E] Van Hove prequantization operator
+- 1969-178.4 [E] Dependence on the prequantization parameter
+- 1969-178.5 [E] Polarization and the free-particle example
+- 1969-178.6 [E] Stereographic sphere and holomorphic generators
+- 1969-178.7 [E] Integrality of the sphere representation
+- 1969-179.1 [E] Von Neumann algebras and factors
+- 1969-179.2 [E] Matrix factors and type I tensor decompositions
+- 1969-179.3 [E] Central decomposition into factors
+- 1969-179.4 [E] Projections generate a von Neumann algebra
+- 1969-179.5 [E] Murray--von Neumann comparison and dimension
+- 1969-179.6 [E] Factor types and projection-dimension ranges
+- 1969-179.7 [E] Trace, determinant and the limits of matrix analogy
+- 1969-179.8 [E] Uniqueness of the separable hyperfinite II1 factor
+- 1969-179.9 [F] Named earlier nonisomorphic factor constructions
+- 1969-179.10 [E] A continuum of pairwise nonisomorphic II1 factors
+- 1969-180.1 [C] Classifying irreducible representations of an interval current group
+- 1969-180.2 [C] An irreducible representation with interval support
+- 1969-180.3 [E] Single-point evaluation representations
+- 1969-180.4 [E] Finite tensor products at distinct points
+- 1969-180.5 [F] The countably many evaluation points remark
+- 1969-180.6 [E] Exponential Hilbert space and coherent vectors
+- 1969-180.7 [E] Fock factorization over orthogonal sums
+- 1969-180.8 [E] A reducible direct-integral Fock representation
+- 1969-180.9 [E] Abelian characters from linear functionals
+- 1969-183.1 [F] Unspecified singular-value inequalities
+- 1969-183.2 [E] Weighted Schatten norms for the compact-group Fourier transform
+- 1969-183.3 [E] Peter--Weyl--Plancherel identity
+- 1969-183.4 [E] Compact-group Riemann--Lebesgue lemma
+- 1969-183.5 [E] Kunze--Hausdorff--Young inequality
+- 1969-183.6 [E] Equality on the circle
+- 1969-183.7 [A] Compact-group Hausdorff--Young extremizers
+- 1969-183.8 [E] Interpolation behind Fourier norm inequalities
+- 1969-182.1 [E] Quasi-unipotence and the monodromy exponent
+- 1969-182.2 [E] The cohomology local system and Gauss--Manin bundle
+- 1969-182.3 [E] Picard--Fuchs equations in a local frame
+- 1969-182.4 [E] Periods pair moving cycles with cohomology
+- 1969-182.5 [E] Regular singularity of the Gauss--Manin connection
+- 1969-182.6 [E] Puiseux--logarithmic local expansions
+- 1969-182.7 [E] Moderate growth of periods near a puncture
+- 1970-184.1 [E] Affine spectra as ringed spaces
+- 1970-184.2 [E] Zariski topology and principal-open basis
+- 1970-184.3 [E] The spectrum is a T0 space
+- 1970-184.4 [E] Localization and the equality of fractions
+- 1970-184.5 [E] The structure sheaf from localizations
+- 1970-184.6 [E] The sheaf equalizer and its two restriction arrows
+- 1970-184.7 [E] Stalks and canonical sheafification
+- 1970-184.8 [E] Constructing a sheaf from a basis
+- 1970-184.9 [E] Principal-open inclusions, radicals and restriction maps
+- 1970-184.10 [E] Local affine models and the older word prescheme
+- 1970-184.11 [E] Principal opens are affine schemes
+- 1970-184.12 [E] Affine fibre products and tensor products of rings
+- 1970-184.13 [E] The empty product of the two residue-field spectra
+- 1970-184.14 [E] Kirillov: gluing products from affine charts
+- 1970-184.15 [E] Separatedness and the affine diagonal exercise
+- 1970-184.16 [E] Quasi-coherent modules by local free presentations
+- 1970-184.17 [E] An example of a non-quasi-coherent module sheaf
+- 1970-184.18 [E] The affine module--sheaf equivalence
+- 1970-184.19 [E] Vanishing of positive-degree quasi-coherent cohomology on affines
+- 1970-187.1 [E] Direct image of a sheaf
+- 1970-187.2 [E] Sections on the empty open set
+- 1970-187.3 [E] Inverse image characterized by adjunction
+- 1970-187.4 [E] The inverse-image presheaf and its sheafification
+- 1970-187.5 [E] Why the two-point pullback presheaf is not a sheaf
+- 1970-187.6 [E] Morphisms of sheaves as natural transformations
+- 1970-187.7 [E] The universal property of the associated sheaf
+- 1970-187.8 [E] Sheaves of abelian groups form an abelian category
+- 1970-187.9 [E] Enough injective sheaves
+- 1970-187.10 [E] Cohomology as derived global sections
+- 1970-187.11 [E] Cech cohomology on acyclic covers
+- 1970-188.1 [F] Solvability of an unspecified elliptic system
+- 1970-188.2 [F] The unexplained Laplace comparison
+- 1970-188.3 [F] Parity of solutions and an unspecified topological principle
+- 1970-189.1 [E] Regularity is minimal centralizer dimension
+- 1970-189.2 [E] Subregular centralizers have dimension rank plus two
+- 1970-189.3 [E] Regularity and smoothness of the adjoint quotient
+- 1970-191.1 [B] Monochromatic subspaces over a finite field
+- 1970-191.2 [E] The line case and its projective interpretation
+- 1970-190.1 [E] The sheaf associated to a module
+- 1970-190.2 [E] Equivalent definitions of quasi-coherence
+- 1970-190.3 [E] Free presentations need not have finite rank
+- 1970-190.4 [E] Every quasi-coherent sheaf on an affine is a module sheaf
+- 1970-190.5 [E] Quasi-compactness of affine spectra
+- 1970-190.6 [E] The canonical localization map and clearing denominators
+- 1970-192.1 [E] Quadratic pairs
+- 1970-192.2 [E] The central-product and Lie-type classification for odd primes at least five
+- 1970-192.3 [B] The small-characteristic continuation of quadratic-pair theory
+- 1970-192.4 [E] The rootless even unimodular lattice in dimension twenty-four
+- 1970-192.5 [E] Conway's simple group requires a central quotient
+- 1970-192.6 [E] Divisibility of the signature for even unimodular lattices
+- 1970-193.1 [F] The proposed point-supported counterexample
+- 1970-193.2 [E] Localization kills elements annihilated by the denominator
+- 1970-194.1 [E] A globally defined rational expression on an affine variety is polynomial modulo its ideal
+- 1970-194.2 [E] Ideal sheaves and the closed affine subscheme
+- 1970-194.3 [E] Gluing a supported section before taking global sections
+- 1970-194.4 [E] Recovering a quasi-coherent sheaf from its global module
+- 1970-195.1 [E] The quasi-local spin algebra
+- 1970-195.2 [E] States and local density matrices
+- 1970-195.3 [E] Product-diagonal states and cylinder measures
+- 1970-195.4 [E] Finite-volume Gibbs functionals
+- 1970-195.5 [E] The one-dimensional Gibbs limit
+- 1970-195.6 [E] The analogy with Markov chains
+- 1970-195.7 [E] The GNS Hilbert space and generated von Neumann algebra
+- 1970-195.8 [E] When is the GNS algebra a factor, and what type occurs?
+- 1970-196.1 [E] Vanishing of higher cohomology on an affine scheme
+- 1970-196.2 [E] The Nullstellensatz proof of Bernstein's rational-function example
+- 1970-196.3 [E] The localization Čech complex
+- 1970-196.4 [E] Alternating cochains and the failed single-chart contraction
+- 1970-196.5 [E] Uniform denominator clearing and a partition of unity in the ring
+- 1970-196.6 [E] Bernstein's annihilator proof of affine acyclicity
+- 1970-197.1 [E] Tensor-product local systems and compatible density operators
+- 1970-197.2 [E] Commuting finite marginals need not have a common product eigenbasis
+- 1970-197.3 [E] Consistent eigenvalue tables and the infinite product probability space
+- 1970-197.4 [E] GNS representation and the role of type III factors
+- 1970-198.1 [A] The category of ordered four-subspace systems
+- 1970-198.2 [A] The four-armed quiver and its injectivity condition
+- 1970-198.3 [A] Encoding similarity of an operator by four subspaces
+- 1970-198.4 [A] Opposite maps, matrix pencils, and linear relations
+- 1970-198.5 [E] Four lines and the cross-ratio parameter
+- 1970-198.6 [A] Indecomposable classification and the five possible defects
+- 1970-198.7 [A] The two even-dimensional defect-one normal forms
+- 1970-198.8 [A] The exceptional and one-parameter even-dimensional defect-zero forms
+- 1970-198.9 [A] Odd-dimensional defect-two forms and duality
+- 1970-198.10 [A] The notebook incorrectly excludes odd-dimensional defect zero
+- 1970-198.11 [E] Parameters and local rigidity are not interchangeable
+- 1970-198.12 [C] A direct sum of rigid systems need not be rigid
+- 1970-198.13 [E] Uniqueness of decomposition into indecomposables
+- 1970-199.1 [E] Decomposing a Čech cocycle into pieces with a local primitive
+- 1970-199.2 [E] The sheaf of units is not a quasi-coherent module sheaf
+- 1970-199.3 [E] Nonzero first cohomology of units on a punctured elliptic curve
+- 1970-199.4 [E] Cohomology of punctured affine space
+- 1970-199.5 [E] Deligne's logarithmic de Rham description of an open variety
+- 1970-200.1 [E] The uniform relative-commutant criterion for a factor state
+- 1970-200.2 [E] The classical tail-independence form of the criterion
+- 1970-200.3 [E] Product states satisfy the factor criterion
+- 1970-200.4 [E] The finite-temperature one-dimensional Gibbs state is primary
+- 1970-201.1 [E] The principal-open cover of punctured affine space
+- 1970-201.2 [E] Global functions extend across the zero section in dimension at least two
+- 1970-201.3 [E] The three-variable one-cocycle calculation is a Koszul syzygy
+- 1970-201.4 [E] Vanishing in all intermediate degrees
+- 1970-201.5 [E] The top cohomology as negative Laurent monomials
+- 1970-201.6 [E] Residue pairing with the restricted linear dual
+- 1970-201.7 [E] General base-ring version and the limits of the duality slogan
+- 1970-201.8 [F] Commuting operators and the announced Koszul complex
+- 1970-203.1 [E] The character quotient as a commutative symbol algebra
+- 1970-203.2 [E] The algebra of all bounded Hilbert-space operators has no scalar characters
+- 1970-203.3 [E] The group-valued Arens–Royden index
+- 1970-203.4 [E] Hardy-space Toeplitz operators with piecewise continuous symbols
+- 1970-203.5 [E] The completed-symbol curve and the Fredholm index
+- 1970-204.1 [E] Projective space as the scalar quotient of the punctured affine space
+- 1970-204.2 [E] Homogeneous primes and the degree-zero localization sheaf
+- 1970-204.3 [E] Affine charts on projective space
+- 1970-204.4 [E] Twisting sheaves and the Hopf-bundle convention
+- 1970-204.5 [E] Coherence and finite presentations
+- 1970-204.6 [E] Finiteness and cohomological dimension of coherent sheaves
+- 1970-204.7 [E] Serre vanishing for large positive twists
+- 1970-204.8 [E] Global generation after twisting
+- 1970-204.9 [E] Clearing a section’s poles along a coordinate hyperplane
+- 1970-204.10 [E] Cohomology of the twists from the graded punctured-affine complex
+- 1970-204.11 [E] Descending induction through a coherent kernel
+- 1970-204.12 [E] The Euler characteristic is the Hilbert polynomial
+- 1970-204.13 [E] Hyperplane induction requires an injective multiplication map
+- 1970-206.1 [E] Can every tangent distribution be deformed to an integrable one?
+- 1970-206.2 [E] Bott vanishing concerns the normal Pontryagin ring
+- 1970-206.3 [F] The compressed CP² example cannot be reconstructed as stated
+- 1970-206.4 [E] The stronger dimension bound for a foliation by submersion fibres
+- 1970-206.5 [F] Planned analytic fundamental solutions and finite-dimensional branching
+- 1970-206.6 [E] The quartic anharmonic-oscillator spectral problem
+- 1970-206.7 [E] Accumulating branch points and the three-sheeted description
+- 1970-208.1 [E] Linearization at an isolated holomorphic zero
+- 1970-208.2 [E] The isolated-zero Bott formula computes Chern numbers
+- 1970-208.3 [E] Lower-degree residue sums vanish
+- 1970-208.4 [E] The infinitesimal fixed-point interpretation
+- 1970-208.5 [E] The real analogue and the comparison with Morse inequalities
+- 1970-209.1 [F] Announcement of work with Kazhdan
+- 1970-210.1 [E] Bibliographical route from holomorphic to meromorphic residues
+- 1970-211.1 [E] Polar divisor of a meromorphic vector field
+- 1970-211.2 [E] Regularized Chern classes of the meromorphic field
+- 1970-211.3 [E] Residues for meromorphic one-dimensional foliations
+- 1970-212.1 [E] Killing field and skew linearization
+- 1970-212.2 [E] Real localization formula with a signed Pfaffian
+- 1970-213.1 [A] Equivalence and induced matrix deformations
+- 1970-213.2 [A] Transverse slices as versal parameter families
+- 1970-213.3 [F] Gelfand’s proposed local model for general group actions
+- 1970-213.4 [F] Invariant distributions as motivation
+- 1970-214.1 [E] Reference to Griffiths’s rational-period papers
+- 1970-215.1 [E] Weighted homogeneity and the isolated singularity
+- 1970-215.2 [E] Milnor number of a weighted homogeneous hypersurface
+- 1970-215.3 [E] The group-ring divisor calculation for monodromy
+- 1970-215.4 [F] Polynomial-power distributions and cycles
+- 1970-215.5 [E] The Ray–Singer preprint and analytic torsion
+- 1970-215.6 [B] Equality of analytic and Reidemeister torsion
+- 1970-216.1 [E] Schur determinant factorization
+- 1970-216.2 [E] Positivity through the Schur complement
+- 1970-217.1 [E] Determinant of an exact based complex
+- 1970-217.2 [E] Cancellation of auxiliary determinants
+- 1970-217.3 [E] Twisted cellular complex of a lens space
+- 1970-217.4 [E] Lens-space determinant and the torsion convention
+- 1970-218.1 [A] Versality is not a categorical final object
+- 1970-218.2 [A] Nine parameters for Jordan blocks of sizes three and two
+- 1970-218.3 [A] Centralizer codimension and the dimension of a miniversal base
+- 1970-219.1 [E] KdV through an evolving Schrödinger operator
+- 1970-219.2 [E] Reflection, transmission, and complete scattering data
+- 1970-219.3 [E] Reflectionless potentials and solitons
+- 1970-219.4 [E] Conservation laws and the absence of shock formation
+- 1970-219.5 [E] Gardner’s Poisson bracket and a symplectic leaf
+- 1970-219.6 [A] Trace identities and scattering expressions for local integrals
+- 1970-219.7 [A] Canonical scattering coordinates
+- 1970-219.8 [E] Three-dimensional scattering amplitude and the unitary operator
+- 1970-219.9 [E] Volterra factorization of the multidimensional scattering operator
+- 1970-219.10 [F] The discrete-spectrum obstruction in the inverse problem
+- 1970-220.1 [E] Periods of rational differential forms
+- 1970-220.2 [E] One-variable pole reduction and residues
+- 1970-220.3 [E] Middle-dimensional complement cycles vanish in projective space
+- 1970-220.4 [E] The tube map and its surjectivity in middle dimension
+- 1970-221.1 [E] Harnack’s bound and real sextic configurations
+- 1970-221.2 [E] Petrovskii’s inequalities for even-degree plane curves
+- 1970-221.3 [B] Gudkov’s congruence modulo eight
+- 1970-221.4 [A] Arnold–Varchenko’s modulo-four result
+- 1970-221.5 [E] Characteristic squares are well defined modulo eight
+- 1970-221.6 [A] Branched double covers connect real curves with intersection forms
+- 1970-222.1 [E] The integral tube exact sequence and the kernel question
+- 1970-222.2 [E] A closed chain need not bound
+- 1970-222.3 [E] Homogeneous rational forms on projective space
+- 1970-222.4 [E] Lower-degree basic forms by contraction with the Euler field
+- 1970-222.5 [E] Griffiths reduction of a Jacobian numerator
+- 1970-223.1 [E] Characteristics must use the differential module of the system
+- 1970-223.2 [F] The displayed two-equation example is inconsistent
+- 1970-223.3 [E] Underdetermined divergence separates existence from uniqueness
+- 1970-224.1 [E] Finite-dimensional orbit alternatives
+- 1970-224.2 [E] Rolewicz’s hypercyclic multiple of the backward shift
+- 1970-224.3 [E] Concatenating small blocks to obtain a dense orbit
+- 1970-224.4 [E] Topological conjugacy preserves a dense orbit
+- 1970-224.5 [F] An algebraic operator unbounded in every norm
+- 1970-225.1 [E] Unimodular lattices, parity, and characteristic elements
+- 1970-225.2 [E] Van der Blij’s characteristic-signature congruence
+- 1970-225.3 [E] Classification of indefinite integral unimodular forms
+- 1970-225.4 [E] Finiteness in the positive-definite case
+- 1970-225.5 [F] What kind of stabilization erases parity?
+- 1970-226.1 [E] Fiber products and their universal property
+- 1970-226.2 [E] Covering families define a Grothendieck pretopology
+- 1970-226.3 [E] The sheaf axiom is an equalizer condition
+- 1970-226.4 [E] Čech cohomology and associated sheaves
+- 1970-226.5 [E] Geronimus’s site of smooth group actions
+- 1970-226.6 [E] Finite-group representations as sheaves on the group-set site
+- 1970-226.7 [E] A Lie-group representation gives an equivariant-function sheaf
+- 1970-226.8 [E] Classifying-space and differentiable cohomology comparisons
+- 1970-226.9 [F] Representation theory and the classification of particles
+- 1970-227.1 [E] The elliptic curve and the handwritten cubic exponent
+- 1970-227.2 [E] The congruence subgroup and compact modular curve
+- 1970-227.3 [B] Modularity of every elliptic curve over the rationals
+- 1970-227.4 [F] There are not finitely many unrestricted maps to a torus
+- 1970-227.5 [E] Reduction types and conductor exponents
+- 1970-227.6 [E] Local Euler factors of the elliptic-curve L-function
+- 1970-227.7 [B] From Dirichlet coefficients to a weight-two modular form
+- 1970-227.8 [B] Integrating the modular differential gives the parametrization
+- 1970-228.1 [E] A positive compatible complex structure and a principal lattice
+- 1970-228.2 [E] Quadratic refinements of the integral symplectic pairing
+- 1970-228.3 [E] Theta automorphy and its one-dimensional solution space
+- 1970-228.4 [F] The idempotent anecdote attributed to Pauli
+- 1970-228.5 [E] Coherent states, the Bargmann space, and its evaluation kernel
+- 1970-228.6 [E] The critical area and the exact deletion threshold
+- 1970-228.7 [E] Perelomov’s critical-lattice theta identity
+- 1970-228.8 [B] Can an orthonormal basis have a uniformly bounded uncertainty product?
+- 1970-228.9 [E] Odd theta characteristics give the higher-dimensional identities
+- 1970-228.10 [E] Weyl operators and the central lattice cocycle
+- 1970-228.11 [E] The lattice model is irreducible after fixing the central character
+- 1970-228.12 [C] Completeness for an arbitrary sequence of coherent states
+- 1970-228.13 [F] A proposed group-orbit generalization
+- 1970-228.14 [E] Finite-deletion overcompleteness
+- 1970-228.15 [E] The unnormalized complex-shift Gaussian series needs correction
+
+## GY1969: problems
+
+- GP-1966-13 [2026-11] Entire minimal-graph Bernstein problem
+- GP-1969-01 [2026-11] Irreducible representations of an interval current group
+- GP-1969-02 [2026-11] Interval support of an irreducible current-group representation
+- GP-1969-03 [2026-11] Analytic approximation of formal solutions
+- GP-1970-20 [2026-11] Rota's finite-field vector-space Ramsey conjecture
+- GP-1970-21 [2026-11] Quadratic pairs in characteristic three
+- GP-1970-22 [2026-11] Factor criteria for infinite quantum spin states
+- GP-1970-23 [2026-11] Elementary proof of the four-subspace deformation example
+- GP-1970-24 [2026-11] The unit-sheaf cohomology of the punctured elliptic curve
+- GP-1970-25 [2026-11] Punctured affine cohomology and residue duality
+- GP-1970-26 [2026-11] Homotoping a distribution to a foliation
+- GP-1970-50 [2026-11] Analytic and combinatorial torsion
+- GP-1970-51 [2026-11] Gudkov congruence for maximal real plane curves
+- GP-1970-52 [2026-11] A bounded linear operator with a dense orbit
+- GP-1970-53 [2026-11] Modular parametrization of a rational elliptic curve
+- GP-1970-54 [2026-11] Which sequences of coherent states are complete?
+- GP-1970-59 [2026-11] Uniform centered uncertainty for an orthonormal basis
+
+## GY1971: items
+
+- 1971-229.1 [E] Symplectic form, Darboux coordinates, and Hamiltonian fields
+- 1971-229.2 [E] Poisson bracket and the normalization problem
+- 1971-229.3 [E] Integral symplectic forms and prequantum line bundles
+- 1971-229.4 [E] Ambiguity of prequantization and flat twists
+- 1971-229.5 [E] The prequantum representation by first-order operators
+- 1971-229.6 [E] Real, complex, and mixed polarizations
+- 1971-229.7 [E] Polarized sections and the Poisson normalizer
+- 1971-229.8 [E] Vertical polarization on a cotangent bundle
+- 1971-231.1 [E] Regular unipotents and the singular locus in type A
+- 1971-231.2 [E] Springer’s resolution by invariant complete flags
+- 1971-231.3 [E] Invariant flag counts and Hall polynomials
+- 1971-231.4 [E] Flag counts and the even Poincaré polynomial
+- 1971-231.5 [E] Dimension of a Springer fibre and the centralizer
+- 1971-232.1 [F] The unlocated Rego note on cohomology and integrable distributions
+- 1971-232.2 [E] Decomposition of graded derivations and the Frölicher–Nijenhuis bracket
+- 1971-232.3 [E] When an induced Lie derivation is a differential
+- 1971-233.1 [E] The critical exponent of a finite-dimensional norm
+- 1971-233.2 [E] Critical exponent of a Hilbert space
+- 1971-233.3 [E] Critical exponents of the one and infinity norms
+- 1971-233.4 [E] A two-dimensional norm with no finite critical exponent
+- 1971-233.5 [C] Finiteness for finite-dimensional lp spaces
+- 1971-233.6 [C] Does the minimum critical exponent tend to infinity with dimension?
+- 1971-233.7 [F] The twelve-dimensional direct-sum example is not securely reconstructible
+- 1971-233.8 [C] The constrained power-norm extremum
+- 1971-235.1 [B] Affine finite-field Radon inversion by incidence counting
+- 1971-235.2 [B] The range condition from parallel classes
+- 1971-235.3 [E] Gaussian binomial coefficients and the limit q equals one
+- 1971-234.1 [E] Microlocal regularity and the wavefront set
+- 1971-234.2 [E] Conormal bundles as Lagrangians
+- 1971-234.3 [E] Pseudodifferential kernels are conormal to the diagonal
+- 1971-234.4 [E] Oscillatory parametrization of a Lagrangian distribution
+- 1971-236.1 [E] The Godbillon–Vey three-class
+- 1971-236.2 [E] Vanishing for a foliation by fibres
+- 1971-236.3 [B] Deformation invariance versus foliated concordance
+- 1971-236.4 [E] The nonzero homogeneous example on a compact SL2 quotient
+- 1971-236.5 [E] Transverse pseudogroups and formal vector-field characteristic classes
+- 1971-236.6 [E] The continuous cohomology of W1
+- 1971-237.1 [E] Discrete spectrum of a self-adjoint elliptic operator
+- 1971-237.2 [A] Spectral flow for a closed self-adjoint family
+- 1971-237.3 [A] The unit spectral-flow example on the circle
+- 1971-237.4 [A] Computing spectral flow from geometric data
+- 1971-237.5 [A] Analytic eigenvalue branches and the orbit heuristic
+- 1971-237.6 [A] The diagonal scalar-ODE model for the suspended index
+- 1971-237.7 [A] A diffeomorphism and the obstruction from a natural operator family
+- 1971-237.8 [F] The ungraded de Rham operator has zero spectral flow
+- 1971-237.9 [F] The incomplete higher-signature example
+- 1971-238.1 [F] Motives and different cohomology theories: no recorded result
+- 1971-239.1 [E] Schubert cells in a complex Grassmannian
+- 1971-239.2 [E] Schubert cycles give an integral homology basis
+- 1971-239.3 [E] Basic invariant forms on the homogeneous quotient
+- 1971-239.4 [E] The curvature matrix and invariant characteristic forms
+- 1971-239.5 [E] The alternant quotient as a Schur polynomial and character
+- 1971-239.6 [E] Schur curvature forms and the dual Schubert basis
+- 1971-239.7 [F] Gelfand’s unspecified request to describe a modular group algebra
+- 1971-240.1 [E] Algebraic order of a differential operator
+- 1971-240.2 [A] Agreement with differential operators on vector bundles
+- 1971-240.3 [A] Cojet corepresentation and its evaluation operator
+- 1971-240.4 [E] Jets represent differential operators in the target variable
+- 1971-240.5 [E] The algebra generated by the two scalar actions
+- 1971-240.6 [A] Recursive multiderivation functors
+- 1971-241.1 [A] Repeated commutators recover the Hamilton–Jacobi symbol
+- 1971-241.2 [E] The tensor-quotient construction of universal jets
+- 1971-241.3 [A] Which universal forms recover ordinary smooth forms?
+- 1971-241.4 [A] Skew multiderivations and the distinction from covariant forms
+- 1971-241.5 [F] The claimed nonzero second functor over the prime field
+- 1971-241.6 [F] The group-ring/de Rham comparison is not identified
+- 1971-241.7 [A] Representation of multiderivations by universal forms
+- 1971-241.8 [A] The exterior differential from a natural transformation
+- 1971-241.9 [A] Finite and stable algebraic Spencer complexes
+- 1971-241.10 [F] An index over an arbitrary ring is only a programme heading
+- 1971-241.11 [A] Hamiltonian formalism over a commutative algebra
+- 1971-242.1 [A] Lemma 1: functoriality in the source and target
+- 1971-242.2 [E] Lemma 2: first-order operators split into a derivation and multiplication
+- 1971-242.3 [E] Lemma 3: orders add under composition
+- 1971-242.4 [A] Lemma 4: evaluation on cojets is a differential operator
+- 1971-242.5 [A] Lemma 5: currying an operator into a cojet-valued homomorphism
+- 1971-242.6 [A] Lemma 6: the two cojet maps are mutually inverse
+- 1971-243.1 [E] Infinitesimal homogeneous spaces and infinitesimal torsors
+- 1971-243.2 [E] Finite-dimensional Lie algebras integrate locally, not automatically globally
+- 1971-243.3 [E] Formal vector fields and the origin-fixing formal coordinate group
+- 1971-243.4 [E] Automorphisms of the Lie algebra of formal vector fields
+- 1971-243.5 [E] The formal frame bundle as a principal Wn-space
+- 1971-243.6 [F] Other substantive principal Wn-spaces
+- 1971-243.7 [E] The characteristic chain map from Lie algebra cochains
+- 1971-243.8 [A] Bernstein’s finite-coordinate differential calculus on jet towers
+- 1971-243.9 [E] The formal Lie algebra is an inverse limit as a vector space
+- 1971-243.10 [A] Relative cochains and descent of basic forms
+- 1971-243.11 [E] Relative Lie algebra cohomology need not equal the cohomology of a homogeneous space
+- 1971-243.12 [E] Removing linear frames leaves a space homotopy equivalent to the manifold
+- 1971-243.13 [E] The truncated characteristic polynomial ring in relative Wn-cohomology
+- 1971-243.14 [E] Chern–Weil classes from formal frames and the role of a connection
+- 1971-243.15 [A] Formal transverse frames of a foliation
+- 1971-243.16 [E] Bott vanishing for the real normal bundle
+- 1971-243.17 [E] Characteristic obstruction to homotoping a distribution to a foliation
+- 1971-244.1 [F] Geometric meaning and arithmetic of an unnamed foliation invariant
+- 1971-244.2 [F] Recovering rotation numbers from the proposed invariant
+- 1971-246.1 [E] Quadratic polynomials, involutions, and twisted duals
+- 1971-246.2 [E] The form parameter and quadratic forms as a quotient
+- 1971-246.3 [E] Hermitianization and the failure of the diagonal alone at maximal parameter
+- 1971-246.4 [E] Hyperbolic quadratic modules and nonsingularity
+- 1971-246.5 [E] Grothendieck--Witt group versus Witt quotient
+- 1971-246.6 [E] Hyperbolic complements and the finiteness restriction
+- 1971-246.7 [E] Field and integral examples: stable invariants are not complete isometry invariants
+- 1971-246.8 [F] An unspecified K-group of a finite group ring
+- 1971-246.9 [E] The mass-formula lower bound for rank-32 even unimodular lattices
+- 1971-246.10 [E] Matrix-ring invariance and the choice of duality
+- 1971-246.11 [E] Stable orthogonal groups and hermitian K1
+- 1971-246.12 [E] Perfect groups, universal central extensions, and second homology
+- 1971-246.13 [F] The incompletely specified higher hermitian simplicial model
+- 1971-247.1 [E] Projective K0 and elementary-matrix K1
+- 1971-247.2 [E] Steinberg relations and the incomplete displayed presentation
+- 1971-247.3 [E] K2 as the central kernel of the stable Steinberg group
+- 1971-247.4 [E] The determinant identifies K1 of a field
+- 1971-247.5 [B] Are universally valid elementary relations consequences of the Steinberg relations?
+- 1971-247.6 [E] Embedding K0 as a Laurent K1 summand
+- 1971-247.7 [E] Polynomial cokernels and the normalization of the Laurent index
+- 1971-247.8 [B] The K1 summand in Laurent K2
+- 1971-247.9 [B] Truncation modulo finite matrices as a boundary construction
+- 1971-248.1 [E] An integral polarization and Hodge decomposition
+- 1971-248.2 [E] Hard Lefschetz, primitive cohomology, and orthogonal decomposition
+- 1971-248.3 [E] Hodge--Riemann bilinear relations and a sign inconsistency
+- 1971-248.4 [E] Abstract polarized Hodge structures and the Weil operator
+- 1971-249.1 [E] The shift-independent Laurent index revisited
+- 1971-249.2 [E] The projective-module splitting and Gelfand’s repetition
+- 1971-249.3 [E] The Laurent exact sequence and polynomial Nil summands
+- 1971-249.4 [E] Higman linearization and nilpotent matrices
+- 1971-250.1 [E] Killing a perfect normal subgroup by the plus construction
+- 1971-250.2 [E] The discrete GL plus model and the missing degree zero
+- 1971-250.3 [E] Agreement of Quillen K2 with the classical field group
+- 1971-250.4 [E] Discrete and topological general linear groups give different theories
+- 1971-250.5 [E] Cohomology on spaces from the K-theory representing space
+- 1971-250.6 [F] Novikov’s Chern-character programme
+- 1971-251.1 [E] Holomorphic variation of the Hodge filtration
+- 1971-251.2 [E] Smooth families and the cohomological local system
+- 1971-251.3 [E] Inverse-image coefficients and the relative de Rham resolution
+- 1971-251.4 [E] Degeneration of the relative Hodge-to-de Rham spectral sequence
+- 1971-251.5 [E] The Gauss–Manin connection
+- 1971-252.1 [E] Exterior waves and the Lax–Phillips interaction space
+- 1971-252.2 [E] Complex poles and the continued resolvent
+- 1971-252.3 [E] Wave operators and the question of asymptotic completeness
+- 1971-252.4 [E] Orthogonal channels and multichannel completeness
+- 1971-252.5 [F] Faddeev’s three-particle problem and the Lax–Phillips scheme
+- 1971-252.6 [E] Kato’s trace-class perturbation theorem
+- 1971-252.7 [E] Birman’s invariance principle and resolvent comparability
+- 1971-252.8 [E] The scattering operator and its spectral fibres
+- 1971-252.9 [E] The spectral shift and Birman–Krein determinant formula
+- 1971-252.10 [E] Localized trace-class conditions for existence
+- 1971-252.11 [E] Two-space wave operators and the identification operator
+- 1971-253.1 [E] Volodin’s simplicial general linear group
+- 1971-253.2 [E] Gersten–Swan derived functors and free simplicial resolutions
+- 1971-253.3 [A] Acyclicity of free rings in reduced K-theory
+- 1971-253.4 [A] The announced solution of the universal Steinberg-relation problem
+- 1971-253.5 [A] Cone matrices, Morita invariance, and suspension
+- 1971-253.6 [E] Recovering K0 and Bass’s negative groups
+- 1971-253.7 [A] Polynomial Nil terms and the distinction from Karoubi–Villamayor theory
+- 1971-253.8 [A] Relative groups and the correction from kernels to fibre products
+- 1971-253.9 [E] The plus construction does not automatically make every group an H-space
+- 1971-253.10 [F] The assertion that everything extends to the unitary case
+- 1971-253.11 [A] The higher Laurent fundamental theorem and its missing summands
+- 1971-253.12 [E] Whitehead’s four factors and the Laurent K1-to-K2 class
+- 1971-253.13 [A] Compression of Laurent relations and the inverse boundary
+- 1971-253.14 [A] Vaserstein’s explicit expectation of agreement with Quillen
+- 1971-254.1 [E] Projections onto a Laurent-series lattice and a finite-rank commutator
+- 1971-254.2 [E] Tate’s coordinate-free formula for the residue
+- 1971-255.1 [E] The simplex category, simplicial objects, and realization
+- 1971-255.2 [E] The nerve of a category and the group classifying space
+- 1971-255.3 [E] Products of nerves and natural isomorphisms as homotopies
+- 1971-255.4 [E] Strict commutative multiplication and generalized Eilenberg–MacLane spaces
+- 1971-255.5 [E] Coherent commutativity and repeated delooping
+- 1971-255.6 [E] The represented cohomology theory and its grading
+- 1971-255.7 [E] Projective modules, automorphism groupoids, and algebraic K-theory
+- 1971-255.8 [E] Finite sets and the Barratt–Priddy–Quillen theorem
+- 1971-255.9 [E] Linearization from finite sets to free modules
+- 1971-255.10 [F] The unresolved image-of-J comparison over a prime field
+- 1971-256.1 [E] Triangular simplices on the stable general linear group
+- 1971-256.2 [E] The algebraic cone and suspension rings
+- 1971-256.3 [A] Suspension, vanishing of cone K-theory, and the index
+- 1971-256.4 [F] The unspecified Banach-ring generalization
+- 1971-256.5 [A] Free rings are K-acyclic only in the reduced convention
+- 1971-256.6 [A] Free resolutions and the required relative degree shift
+- 1971-256.7 [E] Agreement with Bass negative groups and regular vanishing
+- 1971-256.8 [B] Karoubi–Villamayor comparison: a domain hypothesis is insufficient
+- 1971-257.1 [E] The stable plus construction and its universal property
+- 1971-257.2 [B] Equality of the Quillen, Volodin, Swan, Gersten and Vaserstein groups
+- 1971-257.3 [B] Acyclic coinvariants and the quotient comparison
+- 1971-257.4 [B] The identity component and the missing K-zero factor
+- 1971-258.1 [E] The first three K-groups of a finite field
+- 1971-258.2 [E] Quillen’s complete finite-field calculation
+- 1971-258.3 [E] K-theory of the algebraic closure and its apparent periodicity
+- 1971-258.4 [E] Frobenius invariants recover the finite-field orders
+- 1971-258.5 [F] An unclear statement about increasing degree
+- 1971-259.1 [E] Stable plus construction for finite-field K-theory
+- 1971-259.2 [E] Adams operations represented on reduced complex K-theory
+- 1971-259.3 [E] Finite-field K-theory as the fibre of an Adams operation
+- 1971-259.4 [E] A homotopy fibre does not represent the bare fixed subgroup
+- 1971-259.5 [E] Brauer lifting and Frobenius invariance
+- 1971-259.6 [E] The Lang map and étale comparison
+- 1971-260.1 [B] Relative perfectness and homology-preserving abelianization
+- 1971-260.2 [F] Simple targets and the limits of the uniqueness assertion
+- 1971-261.1 [E] The Kato–Rosenblum theorem
+- 1971-261.2 [B] Which spectral types admit trace-class-close realizations?
+- 1971-261.3 [E] Spectrum in the algebraic quotient by trace-class operators
+- 1971-261.4 [E] Sandwiched spectral derivatives and resolvent boundary values
+- 1971-261.5 [E] A stationary formula for the intertwining operator
+- 1971-262.1 [E] Étale homotopy type and complex comparison
+- 1971-262.2 [E] Galois action on geometric étale homotopy
+- 1971-262.3 [E] Completion is represented in a pro-homotopy category
+- 1971-263.1 [E] Time-dependent wave operators, intertwining and completeness
+- 1971-263.2 [E] The chain rule for wave operators
+- 1971-263.3 [E] Resolvent factorization and spectral localization of the stationary formula
+- 1971-263.4 [E] Birman’s local trace-class criterion with domain control
+- 1971-265.1 [E] Grothendieck covering families and fibre products
+- 1971-265.2 [E] Presheaves, natural transformations and the functor category
+- 1971-265.3 [E] The sheaf condition uses products over an arbitrary cover
+- 1971-265.4 [E] Sheafification, adjunction and the abelian category of sheaves
+- 1971-265.5 [E] Cohomology on a site as a derived section functor
+- 1971-265.6 [E] Continuity of a functor of sites
+- 1971-265.7 [E] Grothendieck and Leray spectral sequences
+- 1971-265.8 [E] Group objects and the classifying site
+- 1971-265.9 [E] Constant sheaves and the local coefficients in a fibration sequence
+- 1971-265.10 [E] Quillen’s mod-l cohomology of a finite general linear group
+- 1971-265.11 [E] Finite generation through a faithful unitary representation
+- 1971-265.12 [E] Comparing finite-field and complex algebraic groups
+- 1971-266.1 [E] Complexes, cohomology, degree and homotopy
+- 1971-266.2 [E] The homotopy category is generally not abelian
+- 1971-266.3 [E] The derived category and its universal property
+- 1971-266.4 [E] Derived morphisms retain information invisible to cohomology
+- 1971-266.5 [E] Roofs and the direction of the limit
+- 1971-266.6 [E] When an additive functor has a total derived functor
+- 1971-267.1 [E] Bounded-below injective complexes model the derived category
+- 1971-268.1 [E] Unoriented, oriented and stably complex bordism
+- 1971-268.2 [E] Representatives by complex manifolds: a necessary qualification
+- 1971-268.3 [E] The complex bordism coefficient ring
+- 1971-268.4 [E] Bordism of a space and the module-classification programme
+- 1971-268.5 [E] Modules as quasicoherent sheaves and their fibres
+- 1971-268.6 [E] The dense-open K-theory claim and the Conner–Floyd comparison
+- 1971-268.7 [B] Formal coordinate changes and equivariant bordism data
+- 1971-268.8 [B] Height classifies geometric orbits in fixed positive characteristic
+- 1971-268.9 [B] Morava K-theories and the advertised periodicity
+- 1971-268.10 [B] Height stabilizers and p-adic division algebras
+- 1971-268.11 [E] Formal group laws and the Lazard–Quillen universal ring
+- 1971-268.12 [E] Invariant differentials determine the logarithm over a Q-algebra
+- 1971-269.1 [E] Ramanujan’s tau function and the missing leading factor
+- 1971-269.2 [E] Dyson’s five-variable lattice formula for tau
+- 1971-269.3 [E] Eta powers and products over positive roots
+- 1971-269.4 [B] Why does the exponent 26 occur?
+- 1971-269.5 [E] Limits of the kinematical groups
+- 1971-270.1 [E] Kirillov’s recap of bordism cycles over a space
+- 1971-270.2 [E] The coefficient ring and the affine sheaf attached to bordism
+- 1971-270.3 [B] The three orbit types and the proposed fibre theories
+- 1971-270.4 [E] The fibre M/MJ and the residue field
+- 1971-270.5 [E] Full and strict formal coordinate changes
+- 1971-270.6 [F] Formal vector fields and the ambiguous dual of differentials
+- 1971-270.7 [E] Associativity and the characteristic-zero commutativity theorem
+- 1971-270.8 [E] Invariant differentials, pullback and the obstruction to integration
+- 1971-270.9 [E] Mishchenko’s projective-space coefficients
+- 1971-270.10 [E] When a transitive group-scheme action is a homogeneous quotient
+- 1972-288.1 [F] Gelfand’s programme of quantizing existing equations
+- 1972-288.2 [F] Gelfand’s programme of finding physically adequate equations
+- 1972-288.3 [E] Euclidean-invariant random fields and the spatial Markov property
+- 1972-288.4 [E] Nelson reconstruction with explicit analytic assumptions
+- 1972-288.5 [F] The unspecified recovery of Glimm–Jaffe results
+
+## GY1971: problems
+
+- GP-1970-26 [2026-11] Homotoping a distribution to a foliation
+- GP-1971-01 [2026-11] Critical exponents of finite-dimensional lp norms
+- GP-1971-02 [2026-11] Growth of the minimum critical exponent over all norms
+- GP-1971-03 [2026-11] Maximizing a power norm under a spectral-radius constraint
+- GP-1971-04 [2026-11] Geometric computation of spectral flow
+- GP-1971-20 [2026-11] Normalized universal relations among elementary matrices
+- GP-1971-21 [2026-11] Agreement of the early higher algebraic K-theory constructions
+- GP-1971-40 [2026-11] Unitary equivalence modulo trace class from spectral data
+- GP-1971-41 [2026-11] The exceptional exponent 26 in the eta identities
+
+## GY1972: items
+
+- 1972-272.1 [E] Integral local system and its scalar extensions
+- 1972-272.2 [E] Canonical flat connection and horizontal sections
+- 1972-272.3 [E] Hodge filtration and Griffiths transversality
+- 1972-272.4 [E] Compact dual and the erroneous orthogonality index
+- 1972-272.5 [E] Opposed filtrations, Hodge decomposition, and Weil operator
+- 1972-272.6 [E] Polarization positivity and the open period domain
+- 1972-272.7 [E] Homogeneous period domain and compact stabilizer
+- 1972-272.8 [E] Projection to a Riemannian symmetric space
+- 1972-273.1 [E] Local field, valuation ring, and projective linear action
+- 1972-273.2 [E] Lattices, homothety classes, and the vertex homogeneous space
+- 1972-273.3 [E] Simultaneous elementary divisors for two lattices
+- 1972-273.4 [E] Invariant distance between lattice classes
+- 1972-273.5 [E] Adjacency and the q plus one neighbours
+- 1972-273.6 [E] The lattice graph is a tree
+- 1972-273.7 [E] Analogy with the hyperbolic plane and the unspecified Weil reference
+- 1972-274.1 [E] The field C p and the exact Tate reading target
+- 1972-274.2 [E] Finite local Galois extensions and normalized valuation
+- 1972-274.3 [E] Ramification filtration and its shifted indexing
+- 1972-274.4 [E] Residue-field quotient and the exercise on surjectivity
+- 1972-274.5 [E] Tame character on the first inertia quotient
+- 1972-274.6 [E] Additive characters on higher ramification quotients
+- 1972-274.7 [E] Solvability of finite local Galois groups
+- 1972-274.8 [E] Unramified, tame, and totally ramified extensions
+- 1972-275.1 [E] Constant sheaf and its étalé space
+- 1972-275.2 [E] Integral local systems from locally constant transition functions
+- 1972-275.3 [E] Associated real, complex, and holomorphic bundles
+- 1972-275.4 [E] Flat connection in a locally constant frame
+- 1972-275.5 [E] Horizontal polarization and transversality of the Hodge filtration
+- 1972-275.6 [E] Parity of the polarization is reversed in the notebook
+- 1972-275.7 [E] Projective flag variety and the corrected isotropic compact dual
+- 1972-275.8 [E] Opposition, Weil operator, and positivity define the period domain
+- 1972-275.9 [E] Announced homogeneity and the identity-component qualification
+- 1972-276.1 [E] One-dimensional formal laws and the formal inverse
+- 1972-276.2 [E] Associativity does not force commutativity over every ring
+- 1972-276.3 [E] Strict coordinate changes versus classification of laws
+- 1972-276.4 [E] Logarithm of a formal law
+- 1972-276.5 [E] Canonical invariant differential
+- 1972-276.6 [E] Existence and uniqueness of the normalized rational logarithm
+- 1972-276.7 [E] The universal rational law
+- 1972-276.8 [E] Presentation of the integral universal coefficient ring
+- 1972-276.9 [E] Lazard polynomiality and rationalization
+- 1972-276.10 [E] Indecomposables linearize associativity
+- 1972-276.11 [E] Classify homogeneous additive two-cocycles
+- 1972-276.12 [E] Primitive polynomial Hopf algebra and comodules
+- 1972-276.13 [E] The two-cocycle exact sequence requires coalgebra cohomology
+- 1972-276.14 [E] Quadratic and cubic cocycles: a mistaken characteristic
+- 1972-276.15 [E] Minimal resolutions simplify the cohomology differential
+- 1972-276.16 [E] Divided-power multiplication on the dual
+- 1972-276.17 [E] Characteristic-p factorization of the divided-power algebra
+- 1972-277.1 [E] Representations of a directed graph without imposed relations
+- 1972-277.2 [E] A single arrow requires rank as well as kernel and cokernel
+- 1972-277.3 [E] One loop is the similarity problem for one operator
+- 1972-277.4 [E] Arbitrary matrix pairs reduce to commuting pairs
+- 1972-277.5 [E] Classification of one or two subspaces
+- 1972-277.6 [E] Nine multiplicities classify an ordered triple of subspaces
+- 1972-277.7 [E] Four-subspace classification and continuous families
+- 1972-277.8 [E] Which quivers have only finitely many indecomposables?
+- 1972-277.9 [B] The affine classification attributed to Roiter or Nazarova
+- 1972-277.10 [E] Dynkin diagrams also arise in hypersurface singularities
+- 1972-278.1 [E] The category of representations and direct sums
+- 1972-278.2 [E] Krull--Schmidt decomposition
+- 1972-278.3 [E] Gabriel classification for every orientation
+- 1972-278.4 [E] Obstructions to finite type from cycles and branching
+- 1972-278.5 [E] Positive roots are the indecomposable dimension vectors
+- 1972-278.6 [E] The notebook counts simple roots instead of positive roots
+- 1972-278.7 [E] The six interval representations of A3
+- 1972-278.8 [B] What the notebook calls an unsolvable category
+- 1972-278.9 [B] Extended Dynkin quivers have tame infinite type
+- 1972-279.1 [E] Lazard theorem restated through indecomposables
+- 1972-279.2 [E] An equivalent symmetric cocycle identity
+- 1972-279.3 [E] Resolution of the primitive coalgebra
+- 1972-279.4 [E] Ordinary module Hom cannot substitute for comodule Hom
+- 1972-279.5 [E] Normalized coboundaries and the four-term differential
+- 1972-280.1 [E] Formal unitization of an associative ring
+- 1972-280.2 [E] Quasiunits under the circle product
+- 1972-280.3 [E] Finite matrix stabilization and the stable general linear group
+- 1972-280.4 [E] Row-and-column-finite cone and suspension rings
+- 1972-280.5 [E] Strict triangular matrices and their quasiinverses
+- 1972-280.6 [E] Reindexing requires injective maps
+- 1972-280.7 [E] Permutation-triangular simplices and the based space S A
+- 1972-280.8 [E] Positive K groups from homotopy groups under the stated unit hypothesis
+- 1972-280.9 [A] Whitehead stabilization homotopy and five block matrices
+- 1972-280.10 [E] Elementary simplicial homotopy is contiguity
+- 1972-280.11 [E] Interleaved block sum and its homotopy invariance
+- 1972-280.12 [E] Interchange gives abelian group structures
+- 1972-280.13 [A] Infinite block sum and vanishing of cone K theory
+- 1972-280.14 [E] K one as components modulo elementary matrices
+- 1972-280.15 [A] Elementary perfectness and the idempotent-ring extension
+- 1972-280.16 [E] Triangular generators and their elementary relations
+- 1972-280.17 [E] Stable Steinberg group with the missing index restrictions restored
+- 1972-280.18 [E] Steinberg group as paths and the K two kernel
+- 1972-280.19 [E] Universal central extension and the second homology of E A
+- 1972-280.20 [A] Pairwise simplices need not form a simplex: the tolerance assertion
+- 1972-281.1 [E] Homotopy category of complexes in an abelian category
+- 1972-281.2 [E] Quasi-isomorphisms as the class to be inverted
+- 1972-281.3 [E] Equivalent left and right cancellation by quasi-isomorphisms
+- 1972-281.4 [E] Derived localization and composition of fractions
+- 1972-282.1 [E] Graded algebra cohomology
+- 1972-282.2 [E] Existence of resolutions and independence of the answer
+- 1972-282.3 [E] Yoneda multiplication by lifting cocycles
+- 1972-282.4 [E] Ext need not be graded commutative
+- 1972-282.5 [A] Homological classification of multivalued formal groups
+- 1972-282.6 [E] Normalized bar resolution and its signs
+- 1972-282.7 [E] Dual bar differential and its correct target
+- 1972-282.8 [E] Concatenation represents the Yoneda product
+- 1972-283.1 [E] The quadratic pencil and its separated eigenfunctions
+- 1972-283.2 [E] Completeness of the one-sided Kostyuchenko system
+- 1972-283.3 [B] Biorthogonality requires the half system, not the signed list
+- 1972-283.4 [B] The half system is not a Schauder basis when the tilt is nonzero
+- 1972-283.5 [F] Analyticity of convergent expansions and an unspecified converse
+- 1972-283.6 [F] First-order Abel summation and the sign of the exponential
+- 1972-283.7 [F] Nonseparated boundary conditions
+- 1972-283.8 [F] Exponential sectorial growth of the resolvent
+- 1972-283.9 [F] Shortening the interval and excess completeness
+- 1972-283.10 [F] Bernstein intervention on extending the completeness interval
+- 1972-283.11 [E] Completeness as an entire-transform uniqueness problem
+- 1972-283.12 [B] Replacing integer frequencies by a sequence
+- 1972-284.1 [E] Function germs and the equivalence of hypersurfaces
+- 1972-284.2 [E] Simple germs and the ADE list
+- 1972-284.3 [E] The first nonsimple stratum has codimension six
+- 1972-284.4 [E] Versal deformation and its pullback property
+- 1972-284.5 [E] A transverse slice produces a versal family
+- 1972-284.6 [E] The Jacobian algebra and infinitesimal versality
+- 1972-284.7 [E] The Ak Jacobian algebra and miniversal unfolding
+- 1972-284.8 [E] The discriminant and its generic Morse points
+- 1972-284.9 [E] The polynomial discriminant and the swallowtail name
+- 1972-284.10 [E] The discriminant complement has the corresponding Artin group
+- 1972-284.11 [E] The Milnor fibre is a bouquet of middle-dimensional spheres
+- 1972-284.12 [E] Intersection form and the sign of vanishing cycles
+- 1972-284.13 [E] Monodromy on the vanishing-cycle lattice
+- 1972-284.14 [F] A programme linking local asymptotics and global topology
+- 1972-285.1 [E] Completed divided powers and continuous duality
+- 1972-285.2 [E] The binomial coproduct
+- 1972-285.3 [E] Cobar cycles and boundaries recover the Lazard equation
+- 1972-285.4 [E] Recovering the integral calculation from fields
+- 1972-285.5 [E] Ext of a truncated polynomial factor: the characteristic-two exception
+- 1972-285.6 [E] An associative noncommutative one-dimensional formal group
+- 1972-285.7 [E] Cocycles and actual laws: the square-zero qualification
+- 1972-285.8 [E] Normalized binomial cocycles and one indecomposable per degree
+- 1972-287.1 [E] Homotopy smoothings and their equivalence
+- 1972-287.2 [E] Twenty-eight smooth homotopy seven-spheres
+- 1972-287.3 [E] Describe the homotopy structure set
+- 1972-287.4 [E] PL homotopy structures and the standard sphere
+- 1972-287.5 [E] Thom quotient and the bottom fibre sphere
+- 1972-287.6 [E] Thom coreducibility characterizes J-triviality
+- 1972-287.7 [E] Kernel of J versus a normal invariant
+- 1972-287.8 [E] Atiyah normal-bundle difference
+- 1972-287.9 [E] The PL surgery classification and the periodic obstruction
+- 1972-287.10 [E] Sullivan computation of the PL normal-invariant homotopy groups
+- 1972-287.11 [C] Smooth normal invariants: a reconstructed all-degree computation programme
+- 1972-289.1 [E] Homotopy structures distinguished from actual structures
+- 1972-289.2 [E] Hauptvermutung: homology index and dimensional hypotheses
+- 1972-289.3 [E] The normal difference is independent of a marked representative
+- 1972-289.4 [E] J-triviality and proper fibrewise equivalence
+- 1972-289.5 [E] Equivalence of the two J-triviality criteria
+- 1972-290.1 [A] Common invariant subspace for a commuting compact-containing family
+- 1972-290.2 [A] Extension of the argument to locally convex spaces
+- 1972-290.3 [A] A compact image separated from zero and the transitivity alternative
+- 1972-290.4 [A] Finite covering, convex weights, and the Schauder fixed point
+- 1972-290.5 [A] The spectral contradiction does not promise a finite-dimensional invariant subspace
+- 1972-290.6 [A] A nontrivial closed ideal from compact multiplication
+- 1972-292.1 [E] The Leray integral representation on a convex domain
+- 1972-292.2 [E] A compact localization error with a half-Hölder gain
+- 1972-292.3 [A] A strictly pseudoconvex domain as a convex-domain section
+- 1972-292.4 [E] Bounded extension from a transverse analytic submanifold
+- 1972-292.5 [E] The converse geometric implication
+- 1972-292.6 [E] The maximal ideal space of A(D)
+- 1972-291.1 [E] The symplectic Poisson bracket
+- 1972-291.2 [A] Associative quantization and the correspondence principle
+- 1972-291.3 [A] The optional constant unit
+- 1972-291.4 [A] Trace and symplectic volume
+- 1972-291.5 [A] Naturality relative to a chosen category
+- 1972-291.6 [E] The Gaussian Fock product and its domain
+- 1972-291.7 [E] The Fock representation must be complex linear
+- 1972-291.8 [E] Creation, annihilation, and the two orderings
+- 1972-291.9 [E] Coherent states and covariant symbols
+- 1972-291.10 [E] Boundedness duality for symbols
+- 1972-291.11 [E] Compactness and decay in the Fock model
+- 1972-291.12 [E] Trace class and the two trace integrals
+- 1972-291.13 [E] Gaussian conversion and the Weyl midpoint
+- 1972-291.14 [F] Gelfand’s Poincaré attribution
+- 1972-291.15 [E] Continuous Parseval frames and the missing norm weight
+- 1972-291.16 [E] Compression and the Fourier example
+- 1972-291.17 [E] The convex trace inequalities
+- 1972-291.18 [A] The Bergman cross-ratio and weighted holomorphic space
+- 1972-291.19 [F] A constant unit outside the homogeneous case
+- 1972-291.20 [A] Homogeneity fixes the normalization
+- 1972-291.21 [F] The shorthand uniqueness assertion on symmetric domains
+- 1972-291.22 [E] Can the Bergman kernel vanish?
+- 1972-291.23 [A] Global polarization of covariant symbols
+- 1972-291.24 [A] Compact Hermitian symmetric quantization
+- 1972-291.25 [A] The disk and its projective symmetry representation
+- 1972-293.1 [E] Four structure notations
+- 1972-293.2 [E] The set Phi must retain a specified trivialization
+- 1972-293.3 [E] Normal difference and its zero normalization
+- 1972-293.4 [E] The simply connected surgery obstruction sequence
+- 1972-293.5 [E] Adding the reference normal bundle and passing to Thom spaces
+- 1972-293.6 [E] Pontryagin--Thom collapse of the reference embedding
+- 1972-293.7 [E] Transversality produces a degree-one normal map
+- 1972-293.8 [E] How uniquely is the transverse manifold determined?
+- 1972-293.9 [E] Can surgery produce a homotopy equivalence?
+- 1972-293.10 [E] The missing left term and h-cobordisms among films
+- 1972-294.1 [E] Finite determinacy and the action on jets
+- 1972-294.2 [E] Modality counts families of nearby orbits
+- 1972-294.3 [E] Zero modality is exactly ADE
+- 1972-294.4 [E] Stable equivalence and the inappropriate positivity condition
+- 1972-294.5 [F] The unresolved sentence about analytic coordinate changes
+- 1972-294.6 [E] The local smooth level manifold
+- 1972-294.7 [E] Tyurina’s definiteness criterion
+- 1972-294.8 [E] Milnor number, bouquet and local algebra
+- 1972-294.9 [E] The E6 intersection diagram
+- 1972-294.10 [A] The unimodal classification announcement
+- 1972-294.11 [A] The cubic example is simple elliptic with a two-dimensional radical
+- 1972-294.12 [A] The signature implications need two separate corrections
+- 1972-294.13 [A] The hyperbolic T-series and its missing restrictions
+- 1972-295.1 [E] The finite reduced J-group
+- 1972-295.2 [E] Adams operations determined on line bundles
+- 1972-295.3 [E] Fibrewise degree one and J-equivalence
+- 1972-295.4 [E] Recovering the J-quotient from K-theory and all Adams operations
+- 1972-295.5 [E] The purported reverse Adams formula is false for each arbitrary k
+- 1972-295.6 [E] The Adams conjecture, already proved before this report
+- 1972-295.7 [E] Naturality gives classifying maps for the operations
+- 1972-295.8 [E] Filtered equivalences preserve the intrinsic spherical fibration
+- 1972-295.9 [E] The universal sphere bundle in the BU filtration
+- 1972-295.10 [E] The stable spherical classifying space and the J-map
+- 1972-295.11 [E] Completed spheres and their self-equivalence monoids
+- 1972-295.12 [E] Sullivan completion and its universal mapping property
+- 1972-295.13 [E] Completion of homotopy groups and the product over primes
+- 1972-295.14 [E] Finite stable spherical homotopy groups allow extension of J
+- 1972-295.15 [E] The Adams operations that become unstable Galois symmetries
+- 1972-295.16 [E] Grassmannians over the integers and algebraic Galois action
+- 1972-295.17 [E] Cyclotomic abelianization of the arithmetic action
+- 1972-295.18 [E] Analytic and étale comparison has finite coefficients
+- 1972-295.19 [E] Nerves recover a profinite homotopy type
+- 1972-296.1 [E] Regularity of an elliptic zeta function at zero
+- 1972-296.2 [B] The eta function of a self-adjoint elliptic operator
+- 1972-296.3 [B] The eta function has no pole at zero: announcement and proof scope
+- 1972-296.4 [B] The shifted circle eta invariant
+- 1972-296.5 [B] Spectral asymmetry is a regularized difference
+- 1972-296.6 [F] Character-weighted spectral L-series
+- 1972-298.1 [E] Distributions on residue classes
+- 1972-298.2 [E] The normalized invariant distribution is unbounded
+- 1972-298.3 [E] The bounded floor-function distribution
+- 1972-298.4 [E] The two-valued distribution for c equal to two
+- 1972-298.5 [E] Riemann sums and the bounded case
+- 1972-298.6 [B] Moderate growth suffices for Lipschitz integrands
+- 1972-298.7 [E] Negative odd zeta values are rational
+- 1972-298.8 [E] The uncorrected zeta sequence is not a continuous function of weight
+- 1972-298.9 [E] The Mellin transform and its regularizing factors
+- 1972-297.1 [E] Choosing a Milnor fibre of an isolated critical point
+- 1972-297.2 [E] The bouquet and the reference to vanishing cycles
+- 1972-299.1 [E] Vector-valued distributions and clopen sets
+- 1972-299.2 [E] The missing measure in the Riemann sum
+- 1972-299.3 [E] Repeated floor-function measure
+- 1972-299.4 [E] Analytic characters and the prime two
+- 1972-299.5 [E] Holomorphic cusp forms and the automorphy factor
+- 1972-299.6 [E] Hecke operators and the eigenvalue normalization
+- 1972-299.7 [E] Primitive multiplicative characters
+- 1972-299.8 [E] Twisting the cusp form changes its level
+- 1972-299.9 [E] The Mellin integral and its constant
+- 1972-299.10 [B] Algebraic normalized periods
+- 1972-299.11 [E] Parity of the real period conflicts with the even character
+- 1972-299.12 [E] The ordinary unit root
+- 1972-299.13 [B] A corrected ordinary measure from periodic Hecke periods
+- 1972-299.14 [B] Interpolation of primitive-character L-values
+- 1972-300.1 [E] Power sums and Bernoulli polynomials
+- 1972-300.2 [E] Telescoping Taylor identities
+- 1972-300.3 [E] The determinant is finite after polynomial truncation
+- 1972-300.4 [E] The coefficients called B in the notebook include factorials
+- 1972-300.5 [E] The exponential test and the generating function
+- 1972-300.6 [F] Bernoulli numbers in arbitrary fields
+- 1972-300.7 [E] Hurwitz’s lemniscatic analogue
+
+## GY1972: problems
+
+- GP-1972-101 [2026-11] Does pairwise adjacency imply a simplex in the permutation-triangular K-theory complex?
+- GP-1972-201 [2026-11] Homogeneous additive cocycles and formal-law indecomposables
+- GP-1972-202 [2026-11] Determine the smooth normal-invariant homotopy groups
+- GP-1972-203 [2026-11] Homotopy structures and the obstruction to surgery
+- GP-1972-204 [2026-11] Uniqueness of transverse normal maps and the left surgery term
+- GP-1972-301 [2026-11] Classification of finite-type quivers
+- GP-1972-302 [2026-11] The tame infinite boundary for quivers
+- GP-1972-303 [2026-11] Completeness and coefficients of the one-sided Kostyuchenko system
+- GP-1972-304 [2026-11] The Adams conjecture for stable spherical fibrations
+- GP-1972-402 [2026-11] Off-diagonal zeros of the Bergman kernel
+- GP-1972-403 [2026-11] Ordinary p-adic interpolation of modular L-values
+
+## GY1973: items
+
+- 1973-302.1 [F] Lichtenbaum's special-value programme in the agenda
+- 1973-302.2 [F] Unresolved name in the planned Weil discussion
+- 1973-302.3 [E] Finite generation of the two function-field families
+- 1973-302.4 [B] Serre's finite-presentation question over a polynomial ring
+- 1973-302.5 [B] Serre's finite-presentation question over a Laurent ring
+- 1973-302.6 [E] Coherence of a group
+- 1973-302.7 [E] Free groups are coherent
+- 1973-302.8 [E] Nilpotent groups are coherent
+- 1973-302.9 [E] Scott's coherence theorem for three-manifold groups
+- 1973-302.10 [E] The imaginary-quadratic arithmetic example
+- 1973-302.11 [C] Is SL3(Z) coherent?
+- 1973-302.12 [C] Is SL2(Z[1/p]) coherent?
+- 1973-302.13 [B] Coherence of GLn(Q)
+- 1973-302.14 [F] Bracketed relations among irreducibles
+- 1973-302.15 [F] Which fundamental groups occur?
+- 1973-303.1 [E] Finding an integration theory for compact p-adic spaces
+- 1973-303.2 [F] Adelic Mellin motivation with an unspecified quotient
+- 1973-303.3 [E] Bernoulli values of the classical zeta function
+- 1973-303.4 [F] Gelfand on divergent sums and spectral parity
+- 1973-303.5 [E] Removing the Euler factor and interpolating zeta values
+- 1973-303.6 [F] The proposed cross-prime analytic analogy
+- 1973-303.7 [E] Serre classification of compact non-Archimedean manifolds
+- 1973-303.8 [E] Computing the Serre invariant by reduction
+- 1973-303.9 [E] The projective line as two analytic balls
+- 1973-303.10 [E] Compact Lie groups and supernatural order
+- 1973-303.11 [E] Distributions on clopen subsets
+- 1973-303.12 [E] The residue-class tree and compatibility equation
+- 1973-303.13 [E] Invariant p-adic distribution is unbounded
+- 1973-303.14 [E] The bounded two-valued distribution
+- 1973-303.15 [E] Integration by arbitrary tagged clopen partitions
+- 1973-303.16 [E] The linear function fails to integrate against the invariant distribution
+- 1973-303.17 [E] Moderate growth suffices for Lipschitz integration
+- 1973-304.1 [E] Repeated Lipschitz integration criterion
+- 1973-304.2 [E] Moments of the sign distribution
+- 1973-304.3 [E] Restriction to units produces the Euler factor
+- 1973-304.4 [E] Continuous character space and its disc coordinates
+- 1973-304.5 [E] Analyticity of the p-adic Mellin transform
+- 1973-304.6 [E] Holomorphic cusp forms for the full modular group
+- 1973-304.7 [E] The discriminant form and low-weight dimensions
+- 1973-304.8 [E] Hecke eigenbasis and algebraic Fourier coefficients
+- 1973-304.9 [E] The prime Hecke operator and its coefficient recurrence
+- 1973-304.10 [E] Rational-cusp period integrals
+- 1973-304.11 [E] The period distribution relation
+- 1973-304.12 [E] The tentative correction of the period half-measure
+- 1973-305.1 [E] The corrected quadratic-root distribution
+- 1973-305.2 [E] Periods and critical L-values
+- 1973-305.3 [E] Continued fractions and integral modular-symbol reduction
+- 1973-305.4 [E] Parity and reality of periods
+- 1973-305.5 [E] Algebraicity after two period normalizations
+- 1973-305.6 [E] Eichler-Shimura period relations
+- 1973-305.7 [E] Odd period coordinates and the one-dimensional even excess
+- 1973-305.8 [E] Hecke operators on period coordinates
+- 1973-305.9 [E] Ramanujan congruence modulo 691
+- 1973-305.10 [E] Algebraic normalized period measures
+- 1973-305.11 [E] The ordinary root gives a bounded measure
+- 1973-305.12 [F] The unresolved relation between a_p and p
+- 1973-305.13 [E] Primitive-character interpolation of the critical value at one
+- 1973-305.14 [F] The Lichtenbaum regulator interpretation of zeta(3)
+- 1973-305.15 [C] Transcendence of zeta(3)
+- 1973-305.16 [C] The arithmetic nature of Euler's constant
+- 1973-307.1 [E] Wallach factorization through the Poisson bracket
+- 1973-307.2 [E] The Helton--Howe trace measure
+- 1973-307.3 [F] Normed rings in a proposed p-adic operator theory
+- 1973-306.1 [E] C*-extensions by the compact operators
+- 1973-306.2 [E] Busby maps, splitting and addition
+- 1973-306.3 [E] Suspensions and the homological interpretation
+- 1973-306.4 [E] Exact sequence for a closed subcomplex
+- 1973-306.5 [E] The family index pairing
+- 1973-306.6 [E] The garbled relation between Ext and degree-zero K-homology
+- 1973-306.7 [F] The affine-group extension and two indices
+- 1973-306.8 [E] Extensions of the circle are classified by the index
+- 1973-306.9 [E] Normal operators plus compact operators form a closed set
+- 1973-306.10 [F] The asserted failure of closure for pairs
+- 1973-308.1 [E] Simplicial objects and the simplex category
+- 1973-308.2 [E] The face and degeneracy presentation
+- 1973-308.3 [E] The singular simplicial set
+- 1973-308.4 [E] Geometric realization and its CW cells
+- 1973-308.5 [E] Faces of nondegenerate simplices can be degenerate
+- 1973-308.6 [E] Realizing a simplicial space retains a topology
+- 1973-308.7 [E] The singular realization comparison
+- 1973-308.8 [E] An ordered simplicial model of a polyhedron
+- 1973-308.9 [E] Realization of products and the topology convention
+- 1973-308.10 [E] The simplicial interval
+- 1973-308.11 [E] The nerve and classifying space of a small category
+- 1973-308.12 [E] Groups as one-object categories and the C2 example
+- 1973-308.13 [E] The first definition of the Q-construction and higher K-groups
+- 1973-309.1 [E] The product of two simplicial intervals
+- 1973-309.2 [E] The nerve revisited
+- 1973-309.3 [E] Barycentric subdivision as a nerve
+- 1973-309.4 [E] Natural transformations induce homotopies
+- 1973-309.5 [E] Initial and terminal objects give contractions
+- 1973-309.6 [E] Adjoints give homotopy equivalences
+- 1973-309.7 [E] Opposite categories have the same classifying space
+- 1973-309.8 [E] The homotopy sequence of a fibration
+- 1973-309.9 [E] Mapping paths replace an arbitrary map by a fibration
+- 1973-309.10 [E] The comma-category map to the homotopy fiber
+- 1973-309.11 [E] Quillen Theorem B
+- 1973-309.12 [F] A proposed limit over comma categories
+- 1973-309.13 [E] Fredholm representations of a ring with involution
+- 1973-309.14 [E] Twisting a Fredholm cycle by a vector bundle
+- 1973-309.15 [E] Integer-valued pairings lose torsion information
+- 1973-309.16 [E] Families refine the numerical index
+- 1973-309.17 [E] Elliptic symbols and analytic K-homology
+- 1973-309.18 [E] The K-class of a Fredholm representation of a discrete group
+- 1973-309.19 [E] The Fredholm space has one component for each index
+- 1973-309.20 [E] Generalized signatures of Hermitian forms
+- 1973-310.1 [E] The formal vector-field algebra and its filtration
+- 1973-310.2 [E] Continuity into a discrete countable-dimensional module
+- 1973-310.3 [E] Inflation from a finite jet quotient followed by induction
+- 1973-310.4 [A] Minimal height and the kernel submodule
+- 1973-310.5 [A] Irreducibility and reconstruction above height one
+- 1973-310.6 [A] The differential-form exceptions for W_n
+- 1973-310.7 [A] The corresponding Hamiltonian result
+- 1973-310.8 [F] The parenthetical bounded-representation question
+- 1973-310.9 [F] Kirillov on finite-functional-dimension diffeomorphism representations
+- 1973-311.1 [E] The dual comma category and homotopy fibres
+- 1973-311.2 [E] Quillen Theorem A
+- 1973-311.3 [E] An exact category inside an abelian category
+- 1973-311.4 [E] Admissible epimorphisms survive pullback
+- 1973-311.5 [E] Morphisms in Q are admissible subquotient spans
+- 1973-311.6 [E] Composition of Q spans by fibre product
+- 1973-311.7 [E] Higher K groups as shifted homotopy groups of BQ
+- 1973-311.8 [E] The exact category of finitely generated projective modules
+- 1973-311.9 [E] The plus construction and its corrected degree
+- 1973-311.10 [E] The plus/Q comparison needs a loop space
+- 1973-311.11 [E] Finite-rank automorphisms give nullhomotopic maps to BQ
+- 1973-311.12 [E] Adding a free summand is homotopic to the identity on BQ
+- 1973-313.1 [E] Wave operators and the nonlinear scattering map
+- 1973-313.2 [E] The cubic Klein--Gordon equation as a scattering example
+- 1973-313.3 [E] KdV and the distinction between dispersive and soliton asymptotics
+- 1973-313.4 [E] Cartier's 2-adic logarithm example
+- 1973-312.1 [E] The metaplectic obstruction and symplectic spinors
+- 1973-312.2 [E] Canonical commutation relations and metaplectic implementation
+- 1973-312.3 [E] The Clifford-algebra analogy
+- 1973-312.4 [E] Bounded K-valued measures as continuous duals
+- 1973-312.5 [E] Convolution of p-adic measures
+- 1973-312.6 [E] The bounded Amice transform
+- 1973-312.7 [F] Unbounded distributions are not automatically arbitrary moment series
+- 1973-312.8 [E] Measures on the p-adic unit group
+- 1973-312.9 [E] Exponential coordinates and the range of the transform
+- 1973-312.10 [E] The Newton--Mahler expansion and norm identity
+- 1973-314.1 [E] Quillen's Q-category of an exact category
+- 1973-314.2 [E] The missing loop in comparison with the plus construction
+- 1973-314.3 [E] K-zero as the fundamental group of BQ
+- 1973-314.4 [E] Object loops and additivity through two-simplices
+- 1973-315.1 [E] Darboux coordinates and symplectic transition functions
+- 1973-315.2 [E] The Schwartz--Hilbert--distribution triple of spinor bundles
+- 1973-315.3 [E] The Heisenberg bundle and the polynomial degree error
+- 1973-315.4 [E] Lagrangian tangent planes
+- 1973-316.1 [E] The nonlinear chain equation and its Hamiltonian sign
+- 1973-316.2 [E] Numerical recurrence of low-mode energy
+- 1973-316.3 [F] Unidentified recurrence times and integration-step comments
+- 1973-316.4 [E] Zakharov's integrable approximation explanation
+- 1973-316.5 [E] Periodic trajectories of the wave equation on a circle
+- 1973-316.6 [F] Periodic first-order drift for a cubic perturbation
+- 1973-317.1 [E] The bundle of Lagrangian planes
+- 1973-318.1 [E] Nonsingular Hermitian forms over a ring with involution
+- 1973-318.2 [E] Fredholm representations
+- 1973-318.3 [E] Spectral splitting and the compact off-diagonal blocks
+- 1973-318.4 [E] The T-signature of a form
+- 1973-318.5 [E] The Fredholm-representation higher-signature formula
+- 1973-318.6 [E] Why finite-dimensional representations do not suffice
+- 1973-319.1 [E] Lattice operations, order and distributivity
+- 1973-319.2 [E] The modular law for submodule lattices
+- 1973-319.3 [E] Are all modular lattices submodule lattices?
+- 1973-319.4 [A] Free modular lattices and linear equivalence of terms
+- 1973-319.5 [E] Subspace systems and direct-sum decomposition
+- 1973-319.6 [E] Classifying all representations of D-r
+- 1973-319.7 [A] Perfect elements and compatible complements
+- 1973-319.8 [A] Recursive lattice words indexed by adjacent-distinct sequences
+- 1973-319.9 [A] The first Boolean cubicle of perfect elements
+- 1973-321.1 [E] A p-adic homogeneous space as a vertex set
+- 1973-321.2 [E] The standard Iwahori subgroup
+- 1973-321.3 [E] Simplices from common Iwahori stabilizers
+- 1973-321.4 [E] The rank-one Bruhat--Tits tree
+- 1973-321.5 [E] The finite flag-incidence building in dimension three
+- 1973-320.1 [F] Cancelled rational-function and exponential-sum fragment
+- 1973-320.2 [E] The Weil bound and the missing constant one
+- 1973-320.3 [E] A coarse upper bound and the deduction of the full Weil estimate
+- 1973-320.4 [E] Riemann--Roch dimension for a large divisor
+- 1973-320.5 [E] Frobenius powers of a Riemann--Roch space
+- 1973-320.6 [E] The two multiplication maps in the auxiliary-function construction
+- 1973-322.1 [A] The announced three-variable case of Serre's problem
+- 1973-322.2 [E] Bass stable rank at most two
+- 1973-322.3 [E] Nonzero K2 forces stable rank three in two variables
+- 1973-322.4 [A] The unrestricted zero-K2 branch of the stable-rank assertion
+- 1973-322.5 [A] The erroneous classification of fields with vanishing K2
+- 1973-322.6 [E] The real degree obstruction to reducing the sphere row
+- 1973-322.7 [F] An incompletely specified algebraic winding symbol
+- 1973-322.8 [E] Stable symplectic K1
+- 1973-322.9 [B] Reducing the conic triple by entire functions
+- 1973-323.1 [E] Ext from a free resolution
+- 1973-323.2 [E] Comparison of resolutions and the Hom-complex invariant
+- 1973-323.3 [E] Cohomology groups do not determine chain-homotopy type
+- 1973-323.4 [E] The complex of graded homomorphisms
+- 1973-323.5 [E] A resolution as a quasi-isomorphism to a complex
+- 1973-323.6 [E] When a quasi-isomorphism of free complexes is a homotopy equivalence
+- 1973-323.7 [E] The homotopy category and localization at quasi-isomorphisms
+- 1973-323.8 [E] Derived Hom and graded morphisms in the derived category
+- 1973-323.9 [E] Deriving a contravariant functor by projective replacements
+- 1973-323.10 [E] The universal transformation for a total right derived functor
+- 1973-325.1 [E] Finite and algebraic general linear groups
+- 1973-325.2 [F] The announced Green-polynomial subject
+- 1973-326.1 [E] The first two KdV Lax operators
+- 1973-326.2 [E] The real periodic Schrödinger operator is self-adjoint
+- 1973-326.3 [E] Periodic and antiperiodic interlacing
+- 1973-326.4 [E] Self-adjoint Bloch fibers
+- 1973-326.5 [E] Gelfand transform and its normalization
+- 1973-326.6 [E] Bloch eigenfunction expansion and band derivatives
+- 1973-326.7 [E] Monodromy in a conjugate solution basis
+- 1973-326.8 [E] Floquet multipliers and spectral bands
+- 1973-326.9 [E] Monotonicity of the discriminant in each band
+- 1973-326.10 [E] Constant potentials and the free monodromy
+- 1973-326.11 [F] Mathieu stability sketch
+- 1973-326.12 [E] Closed gaps and double boundary eigenvalues
+- 1973-326.13 [B] Which supplementary data determine a periodic potential?
+- 1973-326.14 [E] Finite-gap periodic potentials
+- 1973-326.15 [A] Stationary KdV and finite-gap spectra
+- 1973-326.16 [A] Finite-dimensional Hamiltonian stationary flows
+- 1973-326.17 [B] Density of finite-gap potentials
+- 1973-326.18 [A] A stationary matrix equation and its spectral polynomial
+- 1973-326.19 [E] Riccati expansion and conservation-law densities
+- 1973-326.20 [A] Evolution of a normalized eigenfunction basis
+- 1973-326.21 [A] Monodromy conjugation under time and basepoint changes
+- 1973-326.22 [A] Finite spectral curve and band edges
+- 1973-327.1 [A] Constructing the odd KdV hierarchy
+- 1973-327.2 [E] Gelfand--Levitan equation and Volterra factorization
+- 1973-327.3 [E] Parameter differentiation of the integral equation
+- 1973-327.4 [E] Lifting kernel derivations through dressing
+- 1973-327.5 [E] Kernel commutators and formal adjoints
+- 1973-327.6 [E] Diagonal jets and dressed differential coefficients
+- 1973-327.7 [F] A larger Lie algebra of admissible derivations
+- 1973-327.8 [E] Linear constraints become dressed nonlinear constraints
+- 1973-327.9 [A] Two compatible dressed operators
+- 1973-327.10 [A] Generating solutions from linear kernel equations
+- 1973-327.11 [A] The second/third-order KP pair
+- 1973-327.12 [A] Scalar KP equation and its KdV reduction
+- 1973-327.13 [A] Triangular matrix solutions encode linearization
+- 1973-327.14 [E] Physical interpretations and real forms of KP
+- 1973-327.15 [A] First-order matrix dressing and the N-wave system
+- 1973-327.16 [A] Resonant three-wave interaction
+- 1973-327.17 [F] The prohibition on adding dissipation
+- 1973-327.18 [F] The unquantified Hamiltonian conjecture
+- 1973-327.19 [E] Sine-Gordon as an integrable reduction
+- 1973-327.20 [F] Laser-pulse and two-level Bloch equations
+- 1973-327.21 [E] Nonlinear Schrödinger inverse scattering
+- 1973-328.1 [E] Slow variables for a nonlinear Klein--Gordon wave
+- 1973-328.2 [E] Rapid phase and the leading oscillator equation
+- 1973-328.3 [E] Traveling-wave quadrature and integration constants
+- 1973-328.4 [E] Averaged variational equations
+- 1973-328.5 [F] The unexplained constant action relation
+- 1973-328.6 [E] Scope of the Whitham exposition
+- 1973-329.1 [E] The smooth wavefront set
+- 1973-329.2 [E] Step functions, boundary normals, and smoothing
+- 1973-329.3 [E] Gelfand's slicing explanation of directional singularities
+- 1973-329.4 [E] Wavefront projection equals singular support
+- 1973-329.5 [E] Schwartz kernels and the required continuity
+- 1973-329.6 [E] Extension to compactly supported distributions
+- 1973-329.7 [E] The primed canonical relation and its sign
+- 1973-329.8 [E] Wavefront propagation through a kernel
+- 1973-329.9 [E] Composition of kernel relations
+- 1973-329.10 [E] Distribution spaces with controlled wavefront
+- 1973-329.11 [E] Multiplication under the no-opposite-covectors condition
+- 1973-329.12 [E] Homogeneous phases and symbol classes
+- 1973-329.13 [E] Cutoff definition of an oscillatory distribution
+- 1973-330.1 [E] The one-soliton wave and its normalization
+- 1973-330.2 [E] Two-soliton asymptotic separation
+- 1973-330.3 [E] Uniqueness of a prescribed pure two-soliton solution
+- 1973-330.4 [F] The damaged collision-amplitude bound
+- 1973-330.5 [E] Collision-induced shifts of soliton centers
+- 1973-330.6 [E] Bargmann potentials and polynomial-exponential solutions
+- 1973-330.7 [F] Rational interpolation for the auxiliary solutions
+- 1973-330.8 [E] Polynomial Wronskian and the missing normalization
+- 1973-330.9 [E] Cubic time evolution of reflectionless data
+- 1973-330.10 [F] The incomplete auxiliary time operator
+- 1973-330.11 [E] Riccati logarithmic derivatives and the Miura map
+- 1973-331.1 [F] Representations of diffeomorphism and current groups
+- 1973-331.2 [E] The bundle-automorphism group extension
+- 1973-331.3 [E] Symmetric Fock space and the vacuum
+- 1973-331.4 [E] Exponential vectors and factorial normalization
+- 1973-332.1 [F] The unrecorded Whitham--KdV exposition
+- 1973-333.1 [E] The Laplace operator and its sign convention
+- 1973-333.2 [E] The heat kernel eigenfunction expansion and trace
+- 1973-333.3 [E] The small-time heat-trace expansion
+- 1973-333.4 [E] Curvature contractions in the heat coefficients
+- 1973-333.5 [E] The integrated scalar-curvature coefficient
+- 1973-333.6 [E] The quadratic curvature heat coefficient
+- 1973-333.7 [E] The off-diagonal heat parametrix
+- 1973-333.8 [E] Sakai and the fourth heat coefficient
+- 1973-333.9 [F] Koblenz's claimed independent fourth-coefficient computation
+- 1973-333.10 [F] Gelfand's lattice-point and zeta-zero analogy
+- 1973-333.11 [E] Closed billiard paths and oscillations in spectral density
+- 1973-333.12 [E] Cauchy smoothing of the spectral measure
+- 1973-333.13 [E] Heat and wave traces must be distinguished
+- 1973-333.14 [F] The underspecified twin-gap question
+- 1973-333.15 [E] The circle supplies exact spectral doublets
+- 1973-333.16 [B] Superpolynomially close neighbors on a near-flat two-torus
+- 1973-333.17 [F] The tentative three-torus comparison
+- 1973-333.18 [E] The half-wave propagator and its distributional trace
+- 1973-333.19 [E] Unit-speed propagation of singularities and caustics
+- 1973-333.20 [E] Closed-geodesic contributions to the wave trace
+
+## GY1973: problems
+
+- GP-1973-01 [2026-11] Finite presentation over a finite-field polynomial ring
+- GP-1973-02 [2026-11] Finite presentation over a finite-field Laurent ring
+- GP-1973-03 [2026-11] Coherence of SL3(Z)
+- GP-1973-04 [2026-11] Coherence of SL2(Z[1/p])
+- GP-1973-05 [2026-11] Ranks for coherence of GLn(Q)
+- GP-1972-403 [2026-11] Ordinary p-adic interpolation of modular L-values
+- GP-1973-10 [2026-11] Transcendence of zeta(3)
+- GP-1973-11 [2026-11] Transcendence of Euler's constant (elliptical notebook occurrence)
+- GP-1973-30 [2026-11] Representability of every modular lattice by submodules
+- GP-1973-31 [2026-11] Classification of finite-dimensional r-subspace systems
+- GP-1973-32 [2026-11] The conic triple in polynomial and entire-function rings
+- GP-1973-33 [2026-11] Serre's problem for projective modules over a polynomial ring
+- GP-1973-50 [2026-11] Monotonicity in a Hill spectral band
+- GP-1973-51 [2026-11] Supplementary data for the periodic inverse spectral problem
+- GP-1973-52 [2026-11] Approximation by finite-gap periodic potentials
+- GP-1973-53 [2026-11] Recursive construction of KdV Lax operators
+- GP-1973-54 [2026-11] Soliton collision phase shifts
+
+## GY1974: items
+
+- 1974-331.1 [F] Representation programme for diffeomorphism and current groups
+- 1974-331.2 [E] Automorphisms of a principal bundle and the gauge extension
+- 1974-331.3 [E] Symmetric Fock space
+- 1974-331.4 [E] Exponential vectors and factorial normalization
+- 1974-332.1 [F] An unrecorded account of Whitham’s method for KdV
+- 1974-335.1 [E] Scalar Hölder regularity for measurable uniformly elliptic coefficients
+- 1974-335.2 [E] Using linear theory in scalar nonlinear regularity
+- 1974-335.3 [E] Failure of scalar regularity for elliptic systems
+- 1974-335.4 [E] Partial regularity and the dimension of the singular set
+- 1974-335.5 [E] Mean curvature of a graph and a size obstruction
+- 1974-336.1 [E] Complex tori and algebraic tori
+- 1974-336.2 [F] The unspecified problem of describing all tori
+- 1974-336.3 [E] Hyperelliptic curves and their holomorphic differentials
+- 1974-336.4 [E] The Jacobian and the missing Hodge quotient
+- 1974-336.5 [E] Period matrices and the moduli diagram
+- 1974-336.6 [E] A genus-two polynomial Hamiltonian pair and its corrected quartic coefficient
+- 1974-336.7 [E] Commuting Hamiltonian vector fields
+- 1974-336.8 [A] Common levels as open parts of abelian varieties
+- 1974-336.9 [A] Rational parametrization of the marked universal hyperelliptic Jacobian
+- 1974-336.10 [E] The spectral quintic and a parameter-normalization discrepancy
+- 1974-336.11 [E] Abel’s map from a symmetric power
+- 1974-336.12 [E] Normalized Bloch solutions and the unit multiplier condition
+- 1974-336.13 [F] The almost-periodic completeness warning
+- 1974-336.14 [E] The two-sheeted spectral surface and its genus
+- 1974-336.15 [A] The finite-gap isospectral family and its Jacobian
+- 1974-337.1 [E] Z-sets defined by approximation of Hilbert-cube maps
+- 1974-337.2 [E] The pseudoboundary of the Hilbert cube
+- 1974-337.3 [E] Z-set unknotting in the Hilbert cube
+- 1974-337.4 [E] Countable unions of Z-sets
+- 1974-337.5 [F] The ambiguous maximal sigma-Z-set assertion
+- 1974-337.6 [E] Every continuous real function on the ray space is constant
+- 1974-337.7 [E] Homeomorphism type of infinite-dimensional separable Fréchet spaces
+- 1974-338.1 [E] The prescribed-mean-curvature Dirichlet equation
+- 1974-338.2 [E] A radial annulus and the maximal catenoid height
+- 1974-338.3 [F] Soap-film diagrams as a geometric illustration
+- 1974-338.4 [E] A continuous prescribed curvature with an infinite-slope solution
+- 1974-338.5 [E] Raising one endpoint beyond the possible flux
+- 1974-338.6 [E] The area-plus-potential functional and its Euler equation
+- 1974-338.7 [E] Removing the gradient cutoff in variational minimization
+- 1974-338.8 [E] A necessary flux-perimeter inequality
+- 1974-338.9 [E] Bounded variation and the dual definition of total variation
+- 1974-338.10 [E] Relaxed area for a BV graph
+- 1974-338.11 [E] Lower semicontinuity of BV area
+- 1974-338.12 [E] Compactness of bounded BV sets
+- 1974-338.13 [E] Boundary mismatch in the relaxed Dirichlet functional
+- 1974-339.1 [A] The finite-gap hyperelliptic spectral curve
+- 1974-339.2 [A] Meromorphic continuation of the normalized Bloch solution
+- 1974-339.3 [A] Pole and zero divisors of degree N with possible cancellation
+- 1974-339.4 [A] One divisor point on each real gap oval
+- 1974-340.1 [E] Periodic Schrödinger bands and finite-gap potentials
+- 1974-340.2 [E] Unimodular monodromy and its characteristic equation
+- 1974-340.3 [E] The bounded-solution and discriminant criterion for the spectrum
+- 1974-340.4 [E] Quasimomentum and the Bloch multiplier
+- 1974-340.5 [E] Base-point independence of the discriminant
+- 1974-340.6 [A] Bloch continuation to the finite-gap curve
+- 1974-340.7 [A] Finite-gap potentials are stationary for a higher KdV equation
+- 1974-340.8 [A] The Jacobian description of the isospectral manifold
+- 1974-340.9 [A] Higher KdV flows on the isospectral Jacobian
+- 1974-340.10 [E] Monotonicity of a chosen band phase
+- 1974-340.11 [F] The physical trapping and exponential-decay shorthand
+- 1974-340.12 [E] Extrema of the discriminant and the sign of the lower bound
+- 1974-340.13 [E] Open band edges, closed gaps and monodromy Jordan form
+- 1974-340.14 [E] The normalization-independent Riccati variable
+- 1974-340.15 [E] Amplitude, phase and the real part of the Riccati variable
+- 1974-340.16 [E] The high-energy Riccati expansion and local differential polynomials
+- 1974-340.17 [E] The monodromy formula and the missing subtraction
+- 1974-340.18 [E] The Wronskian normalization at the base point
+- 1974-340.19 [A] Cancelling the closed-gap entire factor
+- 1974-340.20 [A] Why the reduced entire function is a polynomial
+- 1974-340.21 [A] The polynomial representation of the Riccati variable
+- 1974-340.22 [E] The leading power of the spectral square root
+- 1974-340.23 [E] Conserved Riccati integrals and the stationary variational equation
+- 1974-340.24 [E] The derivative order of the Riccati densities
+- 1974-341.1 [E] The energy weak formulation of a quasilinear system
+- 1974-341.2 [E] Strong ellipticity and the distinction from coefficient smoothness
+- 1974-341.3 [E] The Sobolev energy space and zero trace
+- 1974-341.4 [E] Scalar or two-dimensional regularity in the energy class
+- 1974-341.5 [E] The Giusti coefficient tensor and the singular radial solution
+- 1974-341.6 [F] A three-variable, two-component counterexample without a specified system
+- 1974-341.7 [F] The unverified uniqueness assertion for singular Dirichlet data
+- 1974-341.8 [E] A relatively closed singular set of dimension strictly below n minus two
+- 1974-341.9 [F] The compressed higher-order partial-regularity bound
+- 1974-341.10 [E] Variational problems with nonregular minimizers
+- 1974-341.11 [F] Gelfand’s proposed analogue of resolution of singularities
+- 1974-342.1 [A] Analytic expressions in combinatorial characteristic-class calculations
+- 1974-342.2 [E] The logarithmic integral and the Rogers dilogarithm
+- 1974-342.3 [E] The sign of the Basel integral
+- 1974-342.4 [E] A correct golden-ratio dilogarithm evaluation
+- 1974-343.1 [E] Periodic Hill operator and bounded Bloch solutions
+- 1974-343.2 [A] Characterizing finite-gap potentials by stationary KdV
+- 1974-343.3 [E] Monodromy and its discriminant
+- 1974-343.4 [E] Allowed and forbidden intervals from the discriminant
+- 1974-343.5 [E] Closed gaps have scalar monodromy
+- 1974-343.6 [A] Removing double branch points from the spectral curve
+- 1974-343.7 [E] The Riccati logarithmic derivative
+- 1974-343.8 [E] Amplitude and phase of a Bloch solution
+- 1974-343.9 [E] Formal high-energy densities and parity
+- 1974-343.10 [E] Quasimomentum as a generating function
+- 1974-343.11 [A] Variational derivative of quasimomentum
+- 1974-343.12 [E] Expressing the logarithmic derivative through monodromy
+- 1974-343.13 [A] The finite-gap polynomial divisor representation
+- 1974-343.14 [F] Entire functions of order one in place of finite-gap polynomials
+- 1974-343.15 [A] Bloch function on the hyperelliptic curve
+- 1974-344.1 [E] Unordered configurations and the electric-field map
+- 1974-344.2 [E] Stable homology approximation and group completion
+- 1974-344.3 [E] Configuration spaces as classifying spaces
+- 1974-344.4 [B] The topology of signed configurations
+- 1974-344.5 [B] The correct loop-space target for cancelling particles
+- 1974-344.6 [B] Scanning a manifold into a section space
+- 1974-344.7 [B] Stable homology of configurations on manifolds
+- 1974-344.8 [B] Particles disappearing at a boundary
+- 1974-344.9 [B] Relative configurations and the local disk calculation
+- 1974-344.10 [B] Local-to-global proof by homotopy pullback
+- 1974-345.1 [E] Compact-group link variables and plaquette holonomy
+- 1974-345.2 [E] The finite-volume lattice Gibbs measure
+- 1974-345.3 [E] The Wilson loop as a gauge-invariant correlation
+- 1974-345.4 [B] Exact integration in two dimensions
+- 1974-345.5 [B] Coupling group-valued spins to a lattice connection
+- 1974-345.6 [E] Euclidean continuation and transfer matrices
+- 1974-345.7 [B] When the Bessel partition function is valid
+- 1974-345.8 [E] Boundary independence of the pressure
+- 1974-345.9 [E] Nonanalyticity in the infinite-volume limit
+- 1974-345.10 [F] Area and perimeter laws require a specified model
+- 1974-346.1 [E] Milnor number as local gradient multiplicity
+- 1974-346.2 [A] The Newton boundary and its alternating volume number
+- 1974-346.3 [A] Kushnirenko lower bound and equality under nondegeneracy
+- 1974-346.4 [A] Nondegeneracy of an edge polynomial
+- 1974-346.5 [A] Face nondegeneracy as a finite-codimension ideal
+- 1974-346.6 [E] Cohen--Macaulay semigroup rings in the proof
+- 1974-347.1 [E] Euler--Jacobi vanishing of the total residue
+- 1974-348.1 [E] The nerve and realization of a category
+- 1974-348.2 [E] Partially ordered sets as thin categories
+- 1974-348.3 [E] A group as a one-object category
+- 1974-348.4 [E] A contractible-cover model for a space
+- 1974-348.5 [E] The sphere and the octahedral order complex
+- 1974-348.6 [E] The spherical building of a vector space
+- 1974-348.7 [E] The Solomon--Tits homotopy type
+- 1974-348.8 [E] A maximum contracts a poset nerve
+- 1974-348.9 [E] The cover by hyperplane cones
+- 1974-348.10 [E] Contracting the fixed-line part of the building
+- 1974-348.11 [E] The nonempty finite-intersection criterion
+- 1974-348.12 [E] Collapsing the common part gives a wedge
+- 1974-348.13 [E] A cofiber in a contractible space is a suspension
+- 1974-348.14 [E] The hyperplane intersection and dimension induction
+- 1974-348.15 [E] The dimension-two base case
+- 1974-348.16 [E] Suspending a wedge of spheres
+- 1974-348.17 [E] The Steinberg module and reduced homology
+- 1974-348.18 [E] The classifying space of a discrete group is aspherical
+- 1974-348.19 [E] The contractible chaotic category
+- 1974-348.20 [E] The universal-cover functor and multiplication convention
+- 1974-348.21 [E] Transition functions and a bundle's classifying map
+- 1974-349.1 [A] The total Milnor number of a polynomial
+- 1974-349.2 [A] The Newton upper bound and equality at infinity
+- 1974-349.3 [E] Global multiplicity as the degree of the normalized gradient
+- 1974-349.4 [E] Normal cone semigroup algebras are Cohen--Macaulay
+- 1974-349.5 [F] Toric compactifications as the geometric interpretation
+- 1974-350.1 [E] The Yang--Mills curvature-squared action
+- 1974-350.2 [E] Gauge potentials as local connection forms
+- 1974-350.3 [E] The quadratic curvature form representing a Pontryagin class
+- 1974-351.1 [E] The interval current group
+- 1974-351.2 [E] Finite evaluation representations and tensor products
+- 1974-351.3 [E] Characters and distributions, with the circle-valued qualification
+- 1974-351.4 [E] A spatially uniform irreducible current-group representation
+- 1974-351.5 [E] The complementary series in the real-line model
+- 1974-351.6 [E] The trivial representation is an accumulation point
+- 1974-351.7 [F] An unidentified notion of representation dimension
+- 1974-351.8 [E] Finite-dimensional symmetric-power representations
+- 1974-351.9 [E] The endpoint invariant functional and its trivial quotient
+- 1974-351.10 [F] Negative squares in an incompletely normalized continuation
+- 1974-351.11 [E] Dyadic refinement of the step-current group
+- 1974-351.12 [E] Multiplicity one under diagonal restriction
+- 1974-351.13 [E] The isometric diagonal delta embedding
+- 1974-351.14 [E] An irreducible continuous tensor-product representation
+- 1974-351.15 [E] The centered logarithmic Hilbert space
+- 1974-351.16 [E] Formal coherent vectors rather than ordinary functions
+- 1974-351.17 [E] The scalar cocycle restoring unitarity
+- 1974-353.1 [E] The smooth wavefront set
+- 1974-353.2 [E] Gelfand’s hyperplane slicing interpretation
+- 1974-353.3 [E] One-sided analytic continuation and directional regularity
+- 1974-353.4 [E] Projection onto singular support
+- 1974-353.5 [E] Frequency projection and rapid Fourier decay
+- 1974-353.6 [E] Multiplication under the no-opposite-covectors condition
+- 1974-353.7 [E] A distribution kernel defines an operator
+- 1974-353.8 [E] Kernel extensions with both axis wavefronts absent
+- 1974-353.9 [E] The primed relation and propagation through a kernel
+- 1974-353.10 [F] Gelfand proposes polynomial as well as linear integration
+- 1974-353.11 [E] Composition of wavefront relations
+- 1974-354.1 [E] Locally finite configurations and their measurable sets
+- 1974-354.2 [E] The Poisson reference measure
+- 1974-354.3 [E] Finite interaction range gives conditional locality
+- 1974-354.4 [E] Finite-range many-particle interaction potentials
+- 1974-354.5 [F] The unexplained termination of the potential sequence
+- 1974-354.6 [E] Finite-volume Gibbs density and particle-number sectors
+- 1974-355.1 [E] Poisson configurations on an infinite measured metric space
+- 1974-355.2 [E] Hard-core finite-range pair energy
+- 1974-355.3 [E] The DLR conditional probability equation
+- 1974-355.4 [E] The boundary collar is sufficient exterior information
+- 1974-355.5 [E] Gelfand interprets conditioning as disintegration
+- 1974-355.6 [E] Consistency for nested regions
+- 1974-355.7 [E] Existence from finite-volume limits
+- 1974-355.8 [E] One-dimensional uniqueness
+- 1974-355.9 [E] Uniqueness at sufficiently low activity
+- 1974-355.10 [E] Lattice gas with a Bernoulli reference measure
+- 1974-355.11 [E] Weak-interaction or high-temperature uniqueness
+- 1974-355.12 [E] Periodic ground configurations and local energy differences
+- 1974-355.13 [E] A finite set of periodic reference ground states
+- 1974-355.14 [A] Peierls energy cost for defects
+- 1974-355.15 [A] Independent parameters unfold the ground-state energies
+- 1974-355.16 [A] Low-temperature coexistence and phase-diagram strata
+- 1974-355.17 [F] Gelfand asks for a p-adic Gibbs analogue
+- 1974-356.1 [E] Testing wavefront regularity with nonlinear phases
+- 1974-356.2 [E] Defining an oscillatory distribution by cutoff removal
+- 1974-356.3 [E] The linear-phase delta example
+- 1974-356.4 [E] Removing the nonstationary part of an amplitude
+- 1974-356.5 [E] The critical-set bound for the wavefront
+- 1974-356.6 [E] Nondegenerate phases parametrize Lagrangians
+- 1974-356.7 [E] Local phase functions for every conic Lagrangian
+- 1974-356.8 [E] Euler homogeneity proves the Lagrangian condition
+- 1974-356.9 [E] Equivalent phases define the same distribution class
+- 1974-356.10 [E] Fourier integral kernels and gluing over phase charts
+- 1974-356.11 [E] Kirillov: affine structures on Lagrangian leaves
+- 1974-356.12 [E] Basic Hamiltonians give parallel commuting fields
+- 1974-356.13 [E] The asserted Euclidean-or-torus leaf dichotomy
+- 1974-356.14 [E] Recognizing FIOs by rapidly oscillating tests
+- 1974-357.1 [E] FIO operator action on compactly supported distributions
+- 1974-357.2 [E] Pseudodifferential operators as diagonal FIOs
+- 1974-357.3 [F] Gelfand asks for a p-adic FIO construction
+- 1974-357.4 [E] When is a distribution kernel a Fourier integral kernel?
+- 1974-357.5 [E] Microlocal straightening of a real principal symbol
+- 1974-357.6 [E] Propagation of singularities for real principal type
+- 1974-357.7 [E] Bernstein: characteristic variety of an operator ideal
+- 1974-357.8 [E] Bernstein’s lower bound on characteristic dimension
+- 1974-358.1 [E] Finite-spin random fields
+- 1974-358.2 [E] Point random fields
+- 1974-358.3 [E] Generalized random fields valued in distributions
+- 1974-358.4 [E] The Markov-chain comparison
+- 1974-358.5 [E] Construct all fields with prescribed exterior conditional laws
+- 1974-358.6 [E] Regular conditional probability as a measurable kernel
+- 1974-358.7 [E] Existence and almost-everywhere uniqueness of conditional kernels
+- 1974-358.8 [E] Fubini’s theorem as conditional measure on a rectangle
+- 1974-358.9 [E] Conditioning on a map or a countable family of observables
+- 1974-359.1 [F] Particle-like structures in theories with broken symmetry
+- 1974-360.1 [E] Two programmes for holomorphic mapping theory
+- 1974-360.2 [E] Logarithmic residue as integration around a normal circle
+- 1974-360.3 [E] Currents and their distributional exterior derivative
+- 1974-360.4 [E] The residue current measures the singular part of differentiation
+- 1974-360.5 [E] The one-variable residue normalization
+- 1974-360.6 [E] The divisor residue includes vanishing multiplicities
+- 1974-360.7 [E] A divisor determines a line bundle and canonical section
+- 1974-360.8 [E] The Hermitian Poincaré--Lelong identity and its sign
+- 1974-360.9 [E] The divisor class is Poincaré dual to the first Chern class
+- 1974-360.10 [E] Bézout by products of divisor classes
+- 1974-360.11 [E] Integration currents on singular analytic sets
+- 1974-360.12 [E] Pullback volume counts the multiplicity of a holomorphic map
+- 1974-360.13 [E] Graph volume and the mixed raw growth integrals
+- 1974-360.14 [F] The unspecified comparison of higher growth with first growth
+- 1974-360.15 [E] Pulling a divisor identity back by a holomorphic map
+- 1974-360.16 [E] The missing boundary term in the counting calculation
+- 1974-360.17 [E] Integrated divisor counting and the radius exponent
+- 1974-360.18 [E] The first main theorem bounds divisor counting by growth
+- 1974-361.1 [E] The first main inequality recalled with its constant suppressed
+- 1974-361.2 [E] The sign and normalization of the Ricci form of a volume
+- 1974-361.3 [E] The volume-curvature inequalities needed for comparison
+- 1974-361.4 [E] Ahlfors-type volume decrease from the ball or polydisc
+- 1974-361.5 [F] The unidentifiable eigenfunction-related closing fragment
+
+## GY1974: problems
+
+- GP-1973-50 [2026-11] Monotonicity in a Hill spectral band
+- GP-1973-51 [2026-11] Supplementary data for the periodic inverse spectral problem
+- GP-1974-01 [2026-11] Continuous functions on the product-sequence ray space
+- GP-1974-02 [2026-11] Discontinuous minimizers of elliptic vectorial variational integrals
+- GP-1974-10 [2026-11] Finite-gap spectra and stationary KdV characterization
+- GP-1974-11 [2026-11] The loop-space target for positive and negative particles
+- GP-1974-12 [2026-11] Computing local Milnor numbers from Newton data
+- GP-1974-13 [2026-11] Counting all isolated critical points from the Newton polytope
+- GP-1974-14 [2026-11] A measure-invariant irreducible representation of the PSL2 current group
+- GP-1974-20 [2026-11] Random fields with prescribed conditional distributions
+
+## GY1975: items
+
+- 1975-363.1 [A] Local Lie brackets and the locality hypothesis
+- 1975-363.2 [E] Formal deformation and the reported third-cohomology condition
+- 1975-363.3 [E] The planar Moyal bracket requires mixed derivatives
+- 1975-363.4 [F] The final canonical-commutator suggestion
+- 1975-364.1 [E] The 1975 particle table and interaction-strength heuristic
+- 1975-364.2 [E] Spin one-half, Weyl spinors, and Lorentz boosts
+- 1975-364.3 [E] Gelfand’s covering-group explanation
+- 1975-364.4 [E] Parity, the Weyl equations, and the Dirac mass
+- 1975-364.5 [E] Local phase covariance introduces a connection
+- 1975-364.6 [E] Curvature and the Maxwell kinetic term
+- 1975-364.7 [E] The scattering functional integral is formal
+- 1975-364.8 [E] Gelfand’s Gaussian-moment analogy and divergent cubic integral
+- 1975-364.9 [E] A logarithmically divergent model loop integral
+- 1975-364.10 [E] Feynman parameters and the missing beta normalization
+- 1975-364.11 [E] Dirac Green function and the Feynman pole prescription
+- 1975-364.12 [E] Single-photon exchange and the diagram expansion
+- 1975-364.13 [E] Antiparticles do not make the Feynman inverse the only Green function
+- 1975-364.14 [E] Charge screening and the opposite nonabelian sign
+- 1975-365.1 [E] Classification modulo compact operators
+- 1975-365.2 [E] Extensions as odd analytic K-homology
+- 1975-366.1 [E] Euler’s product, partitions, and the pentagonal expansion
+- 1975-366.2 [E] Jacobi’s cubic Euler-product identity
+- 1975-366.3 [E] The discriminant and the exponent 24
+- 1975-366.4 [A] Macdonald identities in Kostant’s character form
+- 1975-366.5 [F] The spectral-zeta fragment
+- 1975-366.6 [F] Gelfand’s complex-exponent suggestion
+- 1975-367.1 [E] The enlarged symmetry of massless lepton kinetic terms
+- 1975-367.2 [E] Local SU(2) covariance and the three gauge fields
+- 1975-367.3 [E] Charged weak currents and muon decay
+- 1975-367.4 [E] Neutral mixing requires a hypercharge assignment
+- 1975-367.5 [E] Four flavours and three colours in the quark count
+- 1975-368.1 [A] Differential polynomials and total differentiation
+- 1975-368.2 [A] The evolutionary Lie bracket
+- 1975-368.3 [A] Povzner’s identification with compatible evolution equations
+- 1975-369.1 [E] Tau as the coefficients of the discriminant
+- 1975-370.1 [F] The unexplained nonalgorithmic qualification
+- 1975-370.2 [E] The combinatorial expansion needs multiplicities
+- 1975-370.3 [E] Dyson’s five-variable formula
+- 1975-370.4 [E] Ramanujan’s divisor-convolution identity
+- 1975-370.5 [E] The congruence modulo 691
+- 1975-370.6 [E] The assertion that there are only two rank-24 forms
+- 1975-370.7 [E] Recovering tau from a rank-24 lattice theta series
+- 1975-370.8 [E] Manin’s finite coefficient formula and its boundary weights
+- 1975-370.9 [E] Recursive computation using partition numbers
+- 1975-370.10 [E] The convergent Rademacher series and its phases
+- 1975-370.11 [E] Hecke multiplicativity of tau
+- 1975-370.12 [E] Prime-power coefficients are complete symmetric sums
+- 1975-370.13 [E] The two-dimensional l-adic representation
+- 1975-370.14 [E] Deligne’s bound does not make the roots purely imaginary
+- 1975-370.15 [E] Eta transformations and the invariant sixth differential
+- 1975-370.16 [E] The graded ring generated by E4 and E6
+- 1975-370.17 [E] Rademacher contours and cusp singularities
+- 1975-370.18 [E] Kostant’s identity revisited with a missing power
+- 1975-371.1 [E] Heisenberg operators and their symplectic normalizer
+- 1975-371.2 [E] Quadratic generating functions and unitary Fourier kernels
+- 1975-371.3 [E] Unitarity alone does not select the metaplectic double cover
+- 1975-371.4 [E] Composition phases and the Maslov sign
+- 1975-372.1 [E] Liouville integrability and quadratures
+- 1975-372.2 [E] The pendulum quadrature is not a second independent integral
+- 1975-372.3 [E] The periodic Toda Hamiltonian
+- 1975-372.4 [B] Involution of the Toda integrals
+- 1975-372.5 [E] Five pair-potential families and their phase spaces
+- 1975-372.6 [A] Classical and nonreduced root-system potentials
+- 1975-372.7 [B] Commuting complete integrals in the elliptic case
+- 1975-372.8 [E] Four separate tasks in solving an integrable model
+- 1975-372.9 [E] Lax matrices and trace invariants
+- 1975-372.10 [E] The quadratic matrix invariant for harmonic confinement
+- 1975-372.11 [A] Inverse spectral data require more than the traces
+- 1975-372.12 [E] Higher commuting particle flows
+- 1975-372.13 [A] Quantum Hamiltonians as conjugated radial Laplacians
+- 1975-372.14 [F] Gelfand’s larger group-integrability programme
+- 1975-372.15 [B] Complete integrability for exceptional root systems
+- 1975-372.16 [E] The quantum sine-Gordon and massive Thirring correspondence
+- 1975-372.17 [E] Classical Grassmann coordinates and the graded Poisson bracket
+- 1975-372.18 [E] Gauge constraints and the two photon polarizations
+- 1975-372.19 [E] The singular Legendre map and the constraint algorithm
+- 1975-372.20 [E] First- and second-class constraints require a rank condition
+- 1975-372.21 [E] Sources and the formal generating functional
+- 1975-372.22 [F] The constraint determinant and the ambiguous term A
+- 1975-372.23 [F] The asserted cancellation of delta at zero
+- 1975-373.1 [E] Differential parts of fractional powers and the KdV hierarchy
+- 1975-373.2 [E] The stationary third-order equation and one-gap potentials
+- 1975-373.3 [F] An unspecified noncommutative theory
+- 1975-374.1 [A] Coefficient recursion for a commuting operator
+- 1975-374.2 [E] Polynomial dependence of commuting scalar differential operators
+- 1975-374.3 [A] The spectral curve and a normalized common eigenfunction
+- 1975-374.4 [A] Existence and uniqueness of the one-point Baker--Akhiezer function
+- 1975-374.5 [A] The function ring acts by commuting differential operators
+- 1975-374.6 [E] Pole-order gaps and the genus sum
+- 1975-374.7 [E] The claimed algebraic independence is impossible
+- 1975-374.8 [A] A genus criterion requires more than a list of operator orders
+- 1975-374.9 [E] Commutativity of the centralizer
+- 1975-374.10 [A] The normalized theta formula and its missing factors
+- 1975-375.1 [A] Regular diagonal spectral pencil and diagonal gauge
+- 1975-375.2 [A] Formal diagonal resolvents and commuting matrix flows
+- 1975-375.3 [A] Isospectral Lax evolution
+- 1975-375.4 [A] Stationary equations and the polynomial matrix Lax equation
+- 1975-375.5 [A] Algebraic finite-gap eigenfunction and spectral curve
+- 1975-375.6 [A] Bloch property of the common eigenfunction
+- 1975-375.7 [A] Complete integrability of stationary matrix systems
+- 1975-375.8 [A] Recovering matrix potentials with a fixed spectral curve
+- 1975-376.1 [E] Development of loops, curvature and torsion
+- 1975-376.2 [E] Characteristic classes and basic geometry on polyhedra
+- 1975-376.3 [E] General relativity on a lattice
+- 1975-376.4 [E] Reciprocal mathematics and physics curricula
+- 1975-376.5 [E] The polynomial functional equation
+- 1975-377.1 [E] Quark content, spin and resonance shorthand
+- 1975-377.2 [E] Flavor tensor products for mesons and baryons
+- 1975-377.3 [E] The additive-quark total-cross-section ratio
+- 1975-377.4 [B] The historical absence of pentaquarks
+- 1975-377.5 [E] Color, fermion statistics and singlet tensors
+- 1975-377.6 [E] Approximate flavor symmetry and exact color gauge invariance
+- 1975-377.7 [E] The color Yang-Mills Lagrangian and gluons
+- 1975-377.8 [F] Noncommutative electrical engineering
+- 1975-377.9 [E] Variational symmetries and conserved currents
+- 1975-377.10 [C] A linearly rising potential in four-dimensional pure gauge theory
+- 1975-377.11 [E] Infinitely heavy charges and suppression of pair creation
+- 1975-377.12 [E] Wilson loops and extraction of a static energy
+- 1975-377.13 [E] Worldline phases and the area-law criterion
+- 1975-377.14 [E] Gaussian Abelian loop and the Coulomb potential
+- 1975-377.15 [E] Why the non-Abelian integral is not Gaussian
+- 1975-379.1 [A] Zero-curvature compatibility for two auxiliary equations
+- 1975-379.2 [A] Formal wave-function recursion and its normalization
+- 1975-379.3 [A] Recovering an operator from a normalized formal wave
+- 1975-379.4 [E] Commuting scalar operators of orders two and three
+- 1975-379.5 [A] Algebraic operator versus merely formal asymptotics
+- 1975-379.6 [F] An unspecified quasianalyticity analogue
+- 1975-379.7 [A] Existence and uniqueness of the Baker-Akhiezer wave
+- 1975-379.8 [A] The elliptic example requires a meromorphic correction factor
+- 1975-380.1 [E] Differential operator ring over a differential algebra
+- 1975-380.2 [F] The claim that all commutative subrings come from smooth curves
+- 1975-380.3 [F] A noncommutative reciprocity programme
+- 1975-380.4 [F] Extensions of Gelfand-Kirillov division rings
+- 1975-380.5 [A] Elliptic homomorphisms and their rank
+- 1975-380.6 [A] A homomorphism encoded by a filtered module
+- 1975-380.7 [A] From order filtrations to sheaves and a pole at infinity
+- 1975-381.1 [B] Recovering a radial profile from its joint frequency array
+- 1975-381.2 [B] Semiclassical spectral sampling of the radial action
+- 1975-381.3 [E] The Abel inversion and its missing normalization
+- 1975-381.4 [B] Compatibility of an overdetermined spectral array
+- 1975-381.5 [E] Barycentric cycles representing Stiefel-Whitney classes
+- 1975-381.6 [E] Parity of the simplex count and Euler characteristic
+- 1975-382.1 [E] Frame bundle and vertical Maurer-Cartan identification
+- 1975-382.2 [E] Connection forms and equivariant horizontal complements
+- 1975-382.3 [E] Affine fibers of pointwise connection data
+- 1975-382.4 [E] Connections as sections of an affine bundle over the base
+- 1975-382.5 [E] The tautological universal connection and its correct base
+- 1975-382.6 [E] Difference of connections as an endomorphism-valued one-form
+- 1975-383.1 [E] Pointed-curve rings and their genus-zero and elliptic examples
+- 1975-383.2 [E] Recovering the pointed curve from its punctured function ring
+- 1975-383.3 [E] Weierstrass gaps and the residue-class formula
+- 1975-383.4 [E] Generators at an ordinary point and the missing generator
+- 1975-383.5 [A] Elliptic homomorphisms and the pole/order rank revisited
+- 1975-383.6 [E] The order-two/order-three commuting example recalled
+- 1975-383.7 [A] Leading coefficient and dependence on the local parameter
+- 1975-383.8 [E] Gauge equivalence and local removal of a scalar connection term
+- 1975-383.9 [A] Rank-one homomorphisms from a leading coefficient and a Jacobian point
+- 1975-383.10 [A] Recovering the homomorphism from a cyclic filtered module
+- 1975-383.11 [A] Acyclic line bundles produce the pole filtration
+- 1975-383.12 [A] Reconstructing the line bundle on two affine charts
+- 1975-384.1 [E] Degree-zero divisor classes and line bundles
+- 1975-384.2 [E] The period lattice and the analytic Jacobian
+- 1975-384.3 [E] Jacobi inversion converts linear motion to moving divisors
+- 1975-385.1 [A] Rank-one homomorphisms and filtered modules revisited
+- 1975-385.2 [E] A nondifferential operator whose every higher power is differential
+- 1975-385.3 [E] The gap count recalled in residue-class form
+- 1975-385.4 [A] The relative acyclic line bundle and its simple-pole connection
+- 1975-385.5 [A] The reciprocal polar coefficient of the connection
+- 1975-385.6 [A] Initial value and leading coefficient in the rank-one inverse correspondence
+- 1975-385.7 [E] The Picard group and the tangent space of the Jacobian
+- 1975-385.8 [A] The principal-part boundary map gives the Jacobian velocity
+- 1975-386.1 [E] Yang–Mills potentials, curvature and action
+- 1975-386.2 [E] Legendre transformation and Gauss constraint
+- 1975-386.3 [E] Propagation of the Gauss constraint
+- 1975-386.4 [E] Gauge covariance and transverse coordinates
+- 1975-386.5 [E] Longitudinal electric field and the Coulomb kernel
+- 1975-386.6 [E] Recovery of the Abelian Coulomb energy
+- 1975-386.7 [E] Perturbation of the non-Abelian Gauss equation
+- 1975-386.8 [E] Canonical quantization in Coulomb gauge
+- 1975-386.9 [C] Vacuum averaging of the charge interaction
+- 1975-387.1 [E] The generalized Poisson distribution
+- 1975-387.2 [E] Normalization of the generalized Poisson law
+- 1975-388.1 [E] The first Brauer–Thrall theorem
+- 1975-388.2 [B] Infinite chains of indecomposable modules
+- 1975-388.3 [B] Bounding composition length by indecomposable-chain length
+- 1975-388.4 [E] Integral forms and finite or affine Dynkin diagrams
+- 1975-388.5 [E] Reflections and roots of simply laced forms
+- 1975-388.6 [A] A divisibility criterion for roots
+- 1975-388.7 [E] Roots of the star-shaped quadratic form
+- 1975-389.1 [E] Superfunctions and split supermanifolds
+- 1975-389.2 [E] Berezin integration
+- 1975-389.3 [E] Coordinate changes with nilpotent terms
+- 1975-389.4 [F] An unnamed 64-dimensional algebra
+- 1975-389.5 [E] Lie superalgebras and associative envelopes
+- 1975-389.6 [E] The formal Lie correspondence in supergeometry
+- 1975-389.7 [E] Gelfand’s nilpotent Taylor formula
+- 1975-389.8 [B] Deformation in the direction of a super-Poisson bracket
+- 1975-390.1 [E] The row transfer matrix for the Ising model
+- 1975-390.2 [E] Free energy and the thermodynamic limit
+- 1975-390.3 [E] Onsager’s zero-field Ising solution
+- 1975-390.4 [E] Anticommuting operators in the transfer-matrix solution
+- 1975-390.5 [E] Lieb’s entropy of square ice
+- 1975-391.1 [E] The spectral curve and joint-eigenfunction sheaf
+- 1975-391.2 [E] Counting eigenvectors over a fixed spectral value
+- 1975-391.3 [A] The higher-rank inverse construction
+- 1975-391.4 [A] Drinfeld’s functional parameters and gauge normalization
+- 1975-391.5 [E] Laplacian convention and Weyl frequencies
+- 1975-391.6 [E] The rectangular flat-torus spectrum
+- 1975-391.7 [C] Abel-renormalized distributions of spectral phases
+- 1975-391.8 [E] Closed-geodesic resonances in spectral phases
+- 1975-391.9 [E] The symplectic return map and its spectral types
+- 1975-391.10 [E] Elliptic and hyperbolic orbit amplitudes
+- 1975-391.11 [E] Regularizing the elliptic delta comb
+- 1975-391.12 [F] Hyperbolic continuation and an elliptic-function sketch
+- 1975-391.13 [E] Holomorphic half-wave trace versus meromorphic continuation
+- 1975-391.14 [E] Sturm’s bound for linear combinations
+- 1975-391.15 [E] Courant’s nodal-domain bound
+- 1975-391.16 [B] Arnold’s Harnack-type question for eigenfunction sums
+- 1975-391.17 [E] Ground-state positivity and the polynomial analogy
+- 1975-392.1 [E] Continuum action and its coupling convention
+- 1975-392.2 [E] Link variables and plaquette action
+- 1975-392.3 [E] Finite-lattice Haar integral and correlations
+- 1975-392.4 [E] Wick rotation and the continuum functional integral
+- 1975-393.1 [E] The Hamiltonian cochain complex in polynomial symbols
+- 1975-393.2 [C] Computing the full Hamiltonian cohomology
+- 1975-393.3 [E] The all-vector-field comparison
+- 1975-393.4 [E] Finite bigraded complexes and off-diagonal contraction
+- 1975-393.5 [E] Low weights and the exotic Gelfand–Kalinin–Fuchs classes
+- 1975-393.6 [E] Relative cohomology and the omitted zero-weight exception
+- 1975-393.7 [E] Perchik’s constant-term Euler series
+- 1975-393.8 [C] Infinitely many nonzero relative Euler characteristics
+- 1975-393.9 [E] The numerical lower bound of 57 cohomology classes
+- 1975-393.10 [E] Multiplication dualized to a coproduct
+- 1975-393.11 [E] Averaging a two-valued formal multiplication
+- 1975-394.1 [E] The Lorentz metric and proper time
+- 1975-394.2 [E] Curvature contractions and Einstein’s equation
+- 1975-394.3 [E] Stress–energy from variation of the metric
+- 1975-394.4 [E] The electromagnetic action and differential form
+- 1975-394.5 [E] Vacuum Einstein equations from scalar curvature
+- 1975-394.6 [E] The meaning of gravitational energy in the field equation
+- 1975-394.7 [F] Gelfand’s question about quantizing geometry
+- 1975-394.8 [E] Planck-scale dimensional estimates
+- 1975-394.9 [E] The Einstein–perfect-fluid system
+- 1975-394.10 [E] Conservation of stress gives relativistic Euler equations
+- 1975-394.11 [E] Schwarzschild geometry and its maximal extension
+- 1975-394.12 [E] The areal radius has a saddle at the bifurcation sphere
+- 1975-395.1 [B] Serre’s problem over a polynomial ring
+- 1975-395.2 [B] Unimodular rows and determinant-one completion
+- 1975-395.3 [B] A monic unimodular column is equivalent to its constant value
+- 1975-395.4 [E] The resultant and its leading coefficients
+- 1975-395.5 [B] Suslin’s translation by a resultant
+- 1975-395.6 [B] Patching translations and eliminating variables
+- 1975-396.1 [E] Perfect-fluid data and normalization of velocity
+- 1975-396.2 [E] Sound speed and relativistic causality
+- 1975-396.3 [E] Coordinate freedom, constraints and hyperbolic reduction
+- 1975-396.4 [E] Gödel’s spacetime and closed timelike curves
+
+## GY1975: problems
+
+- GP-1975-01 [2026-11] Unitary classification of essentially normal operators modulo compacts
+- GP-1975-02 [2026-11] Involution for elliptic Calogero--Moser systems
+- GP-1975-03 [2026-11] Integrability of exceptional-root Calogero--Moser systems
+- GP-1975-04 [2026-11] Adequate inverse data for Calogero--Moser particle systems
+- GP-1975-05 [2026-11] Involution of the periodic Toda integrals
+- GP-1973-53 [2026-11] Recursive construction of KdV Lax operators
+- GP-1974-10 [2026-11] Finite-gap spectra and stationary KdV characterization
+- GP-1975-11 [2026-11] Matrix finite-gap inverse problem at fixed spectral curve
+- GP-1975-10 [2026-11] Continuum confinement and the static potential
+- GP-1975-13 [2026-11] Monotone radial profile from the indexed frequency matrix
+- GP-1975-14 [2026-11] Rank-one pointed-curve inverse correspondence
+- GP-1975-12 [2026-11] Commuting scalar operators of orders two and three
+- GP-1975-22 [2026-11] Normalization of the generalized Poisson law
+- GP-1975-23 [2026-11] Deforming a superfunction algebra along an even Poisson bracket
+- GP-1975-26 [2026-11] Reconstructing higher-rank commuting ordinary differential operators
+- GP-1975-24 [2026-11] Abel limits of Laplace spectral phases
+- GP-1975-25 [2026-11] A Harnack-type bound for sums of eigenfunctions
+- GP-1975-20 [2026-11] Infinitely many nonzero coefficients in Perchik’s relative Euler series
+- GP-1975-21 [2026-11] Full cohomology of formal Hamiltonian vector fields
+- GP-1973-33 [2026-11] Serre’s problem for polynomial rings
+
+## GY1976: items
+
+- 1976-398.1 [E] The determinant-one quadric of signature (2,2)
+- 1976-398.2 [E] Which linear symmetries come from left and right translations?
+- 1976-398.3 [E] Stabilizers of points of the quadric
+- 1976-398.4 [E] Haar measure and the Hilbert space of the regular representation
+- 1976-398.5 [E] Separating series before decomposing into irreducibles
+- 1976-398.6 [E] Classification of real hyperplane sections
+- 1976-398.7 [E] The hyperplane Radon transform on the quadric
+- 1976-398.8 [F] The unspecified range of the four- and three-parameter transforms
+- 1976-398.9 [E] Orthogonal discrete and continuous parts
+- 1976-398.10 [E] Common kernels of the section and ruling transforms
+- 1976-398.11 [E] An ultrahyperbolic equation for the transform
+- 1976-398.12 [F] The unexplained minimality of the families A, D and E
+- 1976-398.13 [E] Straight rulings as translates of a unipotent subgroup
+- 1976-398.14 [A] The two complex domains and the Siegel coordinate chart
+- 1976-398.15 [E] A distinguished boundary is more than a uniqueness set
+- 1976-398.16 [A] Hardy boundary values separate the two discrete series
+- 1976-398.17 [A] The holomorphic projector kernel and its missing trace factor
+- 1976-398.18 [A] The Fourier-integral technique behind the projector
+- 1976-398.19 [A] Arnold’s Möbius characterization of the two domains
+- 1976-401.1 [E] The graded Weil algebra
+- 1976-401.2 [E] The Chevalley differential sign convention
+- 1976-401.3 [E] The unique Weil differential on both sets of generators
+- 1976-401.4 [E] Acyclicity in positive degree, with constants surviving
+- 1976-402.1 [E] Computing compact Lie-group cohomology from invariant forms
+- 1976-402.2 [E] Primitive odd forms versus indecomposable symmetric invariants
+- 1976-403.1 [E] When can a scalar second-order ODE be straightened by point transformations?
+- 1976-403.2 [E] Every linear second-order equation is locally point-flat
+- 1976-403.3 [E] Cartan geometry of a general second-order equation
+- 1976-403.4 [E] Two transverse line fields spanning a contact distribution
+- 1976-403.5 [E] A projective parameter along each solution
+- 1976-403.6 [E] Inequivalent projective structures on the circle
+- 1976-403.7 [F] The damaged global projective-structure question
+- 1976-403.8 [E] Removing the mixed quadratic transverse terms
+- 1976-403.9 [E] The relative 5/2-density along a solution
+- 1976-403.10 [E] Why vanishing on one solution does not imply formal straightening
+- 1976-403.11 [E] The normal form with a squared first derivative factor
+- 1976-403.12 [E] Cubic slope equations form an invariant projective class
+- 1976-403.13 [E] A vector field from a nonvanishing relative density
+- 1976-403.14 [E] The projective scalar I2 and the adjoint quadratic form
+- 1976-403.15 [E] Invariant differentiation and the higher In
+- 1976-403.16 [F] Gelfand’s proposed connection with Gelfand–Fuchs cohomology
+- 1976-404.1 [E] Lie superalgebra signs and parity
+- 1976-404.2 [E] The associative supercommutator
+- 1976-404.3 [E] Real Majorana spinors in signature (-,+,+,+)
+- 1976-404.4 [E] The four-dimensional supertranslation algebra
+- 1976-404.5 [E] Extending supertranslations to the Poincaré superalgebra
+- 1976-404.6 [E] The off-shell Wess--Zumino chiral multiplet
+- 1976-404.7 [E] A consistent supersymmetric action and the notebook’s coefficient defects
+- 1976-404.8 [E] Eliminating the auxiliary fields and auditing the potential
+- 1976-404.9 [E] Infinitesimal supersymmetry and invariance of the action
+- 1976-405.1 [E] Valence quarks in nucleons and mesons
+- 1976-405.2 [E] Short-distance freedom seen through electromagnetic probes
+- 1976-405.3 [E] Confinement as a pre-existing physical programme
+- 1976-405.4 [E] A growing potential is not necessarily a growing force
+- 1976-405.5 [F] The uncertainty-principle slogan does not specify a stability theorem
+- 1976-405.6 [E] Local Lorentz-covariant gauge dynamics instead of a prescribed force law
+- 1976-405.7 [E] Colour and flavour are two different indices
+- 1976-405.8 [E] Local colour gauge symmetry
+- 1976-406.1 [F] Factors and matrices of continuous order
+- 1976-406.2 [E] Supercommutative functions and their parity
+- 1976-406.3 [E] Superdomains as locally ringed spaces
+- 1976-406.4 [E] Morphisms determined by coordinate pullbacks
+- 1976-406.5 [E] Endomorphisms of a point with two odd directions
+- 1976-406.6 [E] The nilpotent Taylor formula for a smooth pullback
+- 1976-406.7 [E] Even and left odd partial derivatives
+- 1976-406.8 [E] The Berezinian and the reciprocal formula in the recap
+- 1976-406.9 [E] Supertrace, logarithm, and supertranspose
+- 1976-406.10 [E] Berezinian volume elements rather than a top ordinary form
+- 1976-406.11 [E] Compactly supported Berezin integration
+- 1976-406.12 [E] Regular ideals and embedded even boundaries
+- 1976-406.13 [A] A closed superdomain includes a choice of superboundary
+- 1976-406.14 [A] Straightening the nilpotently displaced circle
+- 1976-406.15 [A] A boundary-preserving half-line change of variables
+- 1976-406.16 [A] Stokes formula for a nilpotently displaced disc
+- 1976-406.17 [E] Berezin and Marinov on classical Grassmann mechanics
+- 1976-407.1 [E] What is a connection?
+- 1976-407.2 [E] The massless Dirac equation used to introduce gauge coupling
+- 1976-407.3 [E] Curvature and the source-free Yang--Mills equations
+- 1976-407.4 [E] Gelfand's reference on quarks
+- 1976-407.5 [E] The distinction between a gauge field and quark matter
+- 1976-407.6 [E] The abelian reduction and gradient gauge transformations
+- 1976-407.7 [E] Nonabelian gauge covariance
+- 1976-407.8 [E] A metric on the total space of a principal bundle
+- 1976-407.9 [E] Horizontal curvature and the structural identity
+- 1976-407.10 [E] The projected codifferential is independent of the vertical metric
+- 1976-407.11 [E] Projection of the bundle equation to a local gauge
+- 1976-407.12 [E] The affine Cartan connection induced by a metric
+- 1976-407.13 [E] Vacuum Einstein equations as the affine curvature equation
+- 1976-407.14 [E] Why the second-order connection equation follows from Ricci flatness
+- 1976-408.1 [E] Euler's pentagonal-number identity
+- 1976-408.2 [E] Jacobi's cubic Euler-product identity
+- 1976-408.3 [E] Partitions and the reciprocal Euler product
+- 1976-408.4 [E] Ramanujan's tau function and the eta normalization
+- 1976-408.5 [E] The invariant Casimir and the compact-group Laplacian
+- 1976-408.6 [E] Kostant's character expansion of an Euler-product power
+- 1976-408.7 [E] The distinguished regular conjugacy class in SU(n)
+- 1976-408.8 [E] The spectral zeta reflection requires completion
+- 1976-408.9 [F] The unidentified 39th- and 45th-power formulas
+- 1976-408.10 [E] The affine denominator and homological explanation of Macdonald identities
+- 1976-408.11 [A] Radial Laplacians become inverse-sine-square Hamiltonians
+- 1976-408.12 [A] A complete commuting family of quantum integrals from radial operators
+- 1976-408.13 [E] Generalized Cartan matrices
+- 1976-408.14 [E] Chevalley--Serre generators and the missing conventions
+- 1976-408.15 [E] Finite type and the positive-definite criterion
+- 1976-408.16 [E] Affine A2 as a central extension of the loop algebra
+- 1976-408.17 [E] The scope of the positive-semidefinite loop classification
+- 1976-410.1 [E] Calogero and the boomeron reference
+- 1976-410.2 [A] The fourth-order Lax commutator and two incorrect coefficients
+- 1976-410.3 [A] The recorded rank-two pulse and the missing solution data
+- 1976-410.4 [A] Periodic singularities of the displayed denominator
+- 1976-410.5 [E] Commuting operators, spectral curves, and eigenfunction sheaves
+- 1976-410.6 [E] Rank-one evolution as translation on the Jacobian
+- 1976-410.7 [B] The recurring higher-rank inverse construction
+- 1976-410.8 [F] Hyperelliptic curves and the two-quadrics shorthand
+- 1976-410.9 [F] The unqualified question about analytic paths
+- 1976-410.10 [A] Nodal spectral curves and soliton solutions
+- 1976-410.11 [A] Differential-operator algebra and compatible evolution conventions
+- 1976-410.12 [A] Krichever--Drinfeld filtered bimodules
+- 1976-410.13 [A] The regular bimodule attached to commuting operators
+- 1976-410.14 [A] Recovering the commuting algebra from a cyclic filtered module
+- 1976-410.15 [A] A second connection produces Lax evolution
+- 1976-410.16 [A] Three commuting connections and the shared zero-curvature sign error
+- 1976-411.1 [E] Variational problem with a submanifold of endpoint pairs
+- 1976-411.2 [E] Positive Legendre condition gives a finite Morse index
+- 1976-411.3 [E] Legendre transform and the symplectic variational flow
+- 1976-411.4 [E] Graphs of symplectic maps as Lagrangian planes
+- 1976-411.5 [E] Symmetric-form chart on the Lagrangian Grassmannian
+- 1976-411.6 [E] Maslov crossings and independence of the auxiliary complement
+- 1976-411.7 [E] Topology of the Lagrangian Grassmannian and the singular Maslov cycle
+- 1976-411.8 [E] Endpoint correction for an open Lagrangian path
+- 1976-411.9 [E] The conormal Lagrangian for a boundary condition
+- 1976-411.10 [E] General-boundary Morse--Maslov index formula
+- 1976-411.11 [E] Spherical convolution and kernels on a compact quotient
+- 1976-411.12 [E] Commuting spherical operators and a common eigenbasis
+- 1976-411.13 [E] Trace formula and the grouping into conjugacy classes
+- 1976-411.14 [E] Abel transform and the Euclidean spherical transform
+- 1976-411.15 [E] Joint spectral parameters and multiplicities
+- 1976-411.16 [A] Poisson form of the spherical trace identity
+- 1976-411.17 [A] Closed-geodesic length and support of the geometric distribution
+- 1976-411.18 [A] Joint Weyl law and the unsupported remainder exponent
+- 1976-412.1 [E] Matrix differential-operator algebra and three compatibility equations
+- 1976-412.2 [A] Filtered bimodule data and the omitted generation axioms
+- 1976-412.3 [A] A free cyclic differential module produces commuting operators
+- 1976-412.4 [A] A commuting time connection yields a Lax equation
+- 1976-412.5 [A] Zero curvature and the sign in the Zakharov--Shabat equation
+- 1976-412.6 [A] An affine nodal spectral curve by pairwise identification
+- 1976-412.7 [A] Gluing a trivial module over the normalization
+- 1976-412.8 [A] Reality conditions at conjugate nodes
+- 1976-412.9 [A] The staircase filtration on polynomial columns
+- 1976-412.10 [A] The block interpolation matrix and nondegeneracy
+- 1976-412.11 [A] The sign and indexing of the filtration shift
+- 1976-412.12 [A] Normalized cyclic vector from finite linear equations
+- 1976-412.13 [A] Connection preserving the nodal gluing equations
+- 1976-412.14 [A] Explicit evolution of the gluing matrices
+- 1976-412.15 [A] Flatness of the parameter connections and two-time exponential signs
+- 1976-412.16 [A] Graded cyclicity and the order of a spectral operator
+- 1976-412.17 [A] A quadratic function on the nodal curve and an operator of order twice the rank
+- 1976-412.18 [E] The rank-one nodal construction includes KdV multisolitons
+- 1976-412.19 [F] The unqualified question about N-soliton behaviour
+- 1976-413.1 [F] The programme of an elementary geometry of polyhedra
+- 1976-413.2 [E] The two-faces condition does not characterize a manifold
+- 1976-413.3 [E] Assigning local vertex weights for the Euler characteristic
+- 1976-413.4 [E] Two degree-four characteristic numbers
+- 1976-413.5 [E] The first Pontryagin cycle as a corank-two degeneracy locus
+- 1976-413.6 [E] Canonical coorientation and independence of the signed count
+- 1976-413.7 [E] Two sections of a plane bundle represent the square of the Euler class
+- 1976-413.8 [E] A one-chain relating cycles after replacing one section
+- 1976-413.9 [E] A two-chain filling the cyclic sum of section changes
+- 1976-413.10 [E] Hypersimplices and their two kinds of triangular faces
+- 1976-413.11 [E] Boundary-compatible chains assigned to hypersimplices
+- 1976-413.12 [F] The two triangular chain assignments and the handwritten one-half
+- 1976-414.1 [E] The affine complex line transform
+- 1976-414.2 [E] Reconstruction from all line integrals and reduction to a plane
+- 1976-414.3 [E] John equation and the missing global range hypotheses
+- 1976-414.4 [F] A wavefront-set heuristic from singular plane integrals
+- 1976-414.5 [E] Differential forms on the space of lines through a point
+- 1976-414.6 [E] The closed-form characterization of the complex line-transform range
+- 1976-414.7 [E] Cycle inversion and the real dimension of the integrating cycle
+- 1976-414.8 [E] Why the analogous real local period gives zero
+- 1976-414.9 [E] Restricted data and the definition of an admissible complex
+- 1976-414.10 [E] Admissible line complexes come from a curve or a surface
+- 1976-414.11 [E] Plücker coordinates and the equation of a linear complex
+- 1976-414.12 [E] Symplectic polarity attached to a nondegenerate linear complex
+- 1976-414.13 [E] The standard linear complex and its isomorphism class
+- 1976-414.14 [F] An unspecified Legendre transformation
+- 1976-416.1 [E] When does the Poncelet polygon close?
+- 1976-416.2 [E] Poncelet’s porism
+- 1976-416.3 [E] Invariant measure and circle-rotation coordinates
+- 1976-416.4 [E] Figiel’s short proof of Dvoretzky’s theorem
+- 1976-415.1 [E] Symmetric groups, partitions, and Young diagrams
+- 1976-415.2 [E] The common constituent of row and column induced representations
+- 1976-415.3 [E] Hook-length formula for the degree of an irreducible
+- 1976-415.4 [E] Multiplicity-free branching by removing a cell
+- 1976-415.5 [E] Paths, standard tableaux, and a Gelfand--Tsetlin basis
+- 1976-415.6 [E] Counting paths between two fixed Young diagrams
+- 1976-415.7 [E] The assertion that total path counting is unsolved
+- 1976-415.8 [E] First-row length detected by invariant vectors
+- 1976-415.9 [E] Finite Plancherel measure
+- 1976-415.10 [A] The coherent Plancherel measure on infinite Young paths
+- 1976-415.11 [F] Gelfand asks for an infinite-dimensional Plancherel formulation
+- 1976-415.12 [A] Plancherel limit shape in half-rotated coordinates
+- 1976-415.13 [A] Almost-sure convergence along coherent paths
+- 1976-415.14 [A] Asymptotic first-row length
+- 1976-415.15 [B] The proposed white-noise central limit theorem
+- 1976-415.16 [F] An unidentified stationarity assertion
+- 1976-415.17 [E] Row insertion connects permutations and Plancherel diagrams
+- 1976-415.18 [A] Ulam's problem for a random real sequence
+- 1976-417.1 [E] The marked surface group
+- 1976-417.2 [E] Dimension of the general linear character variety
+- 1976-417.3 [E] The flat bundle associated to a representation
+- 1976-417.4 [E] A packet is a fiber of forgetting the flat structure
+- 1976-417.5 [E] The packet dimension mixes GL(n) and fixed determinant
+- 1976-417.6 [F] An ambiguous question about related bundles and representations
+- 1976-417.7 [E] Any two irreducibles need not become analytically equivalent
+- 1976-417.8 [E] The affine fibration exists only over an appropriate bundle locus
+- 1976-417.9 [E] Describe the packet of a fixed line bundle
+- 1976-417.10 [E] Constant transition functions and degree zero
+- 1976-417.11 [E] A meromorphic section gives an integral-residue differential
+- 1976-417.12 [E] Changing a section changes the residue divisor by a principal divisor
+- 1976-417.13 [E] Constructing every character in a packet from a divisor
+- 1976-417.14 [E] The trivial packet is the exponential of holomorphic periods
+- 1976-417.15 [E] A marked character packet determines the curve through Torelli
+- 1976-417.16 [E] Unitary characters select a unique point of each line packet
+- 1976-417.17 [E] Schwarzian derivative and its chain rule
+- 1976-417.18 [E] Schwarzians require a projective atlas to become quadratic differentials
+- 1976-417.19 [E] Double poles and the leading coefficient called a residue
+- 1976-417.20 [E] Schwarzian integration and projective monodromy
+- 1977-437.1 [E] Topoi and derived categories as organizing concepts
+- 1977-437.2 [A] Describe algebraic vector bundles on projective space
+- 1977-437.3 [E] Projective space is the scalar quotient of a punctured vector space
+- 1977-437.4 [E] The negatively graded exterior algebra
+- 1977-437.5 [E] Finite graded representations of the exterior algebra
+- 1977-437.6 [A] A complex for every nonzero exterior generator
+- 1977-437.7 [A] Proper modules: fibre homology concentrated in degree zero
+- 1977-437.8 [E] The Euler characteristic fixes the fibre rank
+- 1977-437.9 [A] The homology spaces form an algebraic vector bundle
+- 1977-437.10 [E] Free exterior-algebra modules give the zero bundle
+- 1977-437.11 [A] Every algebraic vector bundle has a proper-module model
+- 1977-437.12 [A] Uniqueness is stable graded isomorphism
+- 1977-437.13 [A] An independently obtained related theorem of Beilinson
+- 1977-437.14 [E] Twisting line bundles and homogeneous regular functions
+- 1977-437.15 [A] The global linear complex on projective space
+- 1977-437.16 [A] Twisting by O(1) is a shifted cosyzygy
+- 1977-437.17 [E] Large positive twists are globally generated
+- 1977-437.18 [E] The graded section module and coordinate multiplications
+- 1977-437.19 [A] Recovering a module from two consecutive section spaces
+- 1977-437.20 [E] Vector bundles must be enlarged to coherent sheaves
+- 1977-437.21 [E] Serre correspondence is a quotient by finite-dimensional graded modules
+- 1977-437.22 [E] Sheafification through degree-zero localization
+- 1977-437.23 [E] Shifting the polynomial module yields O(N)
+
+## GY1976: problems
+
+- GP-1976-01 [2026-11] Analytic separation of the regular representation of SL(2, R) into series
+- GP-1976-02 [2026-11] Arnold’s Möbius characterization of the Gelfand--Gindikin domains
+- GP-1976-03 [2026-11] Local point linearization of scalar second-order ODEs
+- GP-1976-04 [2026-11] Extension of four-dimensional supertranslations to the Poincaré superalgebra
+- GP-1976-10 [2026-11] Stokes formula for closed superdomains with even boundary
+- GP-1975-26 [2026-11] Reconstructing higher-rank commuting ordinary differential operators
+- GP-1976-20 [2026-11] Boundary-compatible hypersimplicial chains for the first Pontryagin class
+- GP-1976-21 [2026-11] Range and inversion of the line transform in three-space
+- GP-1976-22 [2026-11] Admissible algebraic complexes of lines
+- GP-1976-23 [2026-11] Poncelet closure for two conics
+- GP-1976-24 [2026-11] Counting Young-graph paths between prescribed endpoints
+- GP-1976-25 [2026-11] Ulam asymptotics and the Plancherel first row
+- GP-1976-26 [2026-11] Description and Torelli information of rank-one representation packets
+- GP-1977-01 [2026-11] Algebraic description of vector bundles on projective space
+- GP-1977-02 [2026-11] Represent twisting by O(1) on the exterior-module side
+
+## GY1977: items
+
+- 1977-419.1 [E] A unitary connection and the self-duality equation
+- 1977-419.2 [E] Conformal invariance of four-dimensional self-duality
+- 1977-419.3 [F] Gluons and the proposed physical role of instantons
+- 1977-419.4 [F] A spectral-determinant path-integral prescription
+- 1977-419.5 [E] The twistor fibration over the four-sphere
+- 1977-419.6 [E] Quaternionic conjugation, invariant lines and the Klein quadric
+- 1977-419.7 [E] The instanton--holomorphic-bundle correspondence
+- 1977-419.8 [E] A holomorphic structure on the pulled-back bundle
+- 1977-419.9 [E] The four-sphere has no complex structure
+- 1977-420.1 [E] Zero curvature for differential-operator evolution equations
+- 1977-420.2 [E] Quasiperiodic families, rational degenerations and soliton separatrices
+- 1977-420.3 [E] Algebraic type and an additional commuting operator
+- 1977-420.4 [E] Spectral curves and genus under degeneration
+- 1977-420.5 [E] Polynomial dependence of commuting scalar differential operators
+- 1977-420.6 [E] Rational KdV solutions and many-particle pole dynamics
+- 1977-420.7 [E] Rationality implies a stationary higher KdV relation
+- 1977-420.8 [F] The proposed extension from KdV to every Lax equation
+- 1977-421.1 [E] Lattices in semisimple Lie groups
+- 1977-421.2 [E] Algebraic groups over a field and integral points
+- 1977-421.3 [E] Arithmetic subgroups and commensurability
+- 1977-421.4 [E] Finite covolume of arithmetic subgroups
+- 1977-421.5 [E] The lattice SL(n,Z) and the modular-area exercise
+- 1977-421.6 [E] Irreducibility of a lattice
+- 1977-421.7 [E] The overly broad arithmeticity conjecture outside PSL(2,R)
+- 1977-421.8 [E] Margulis arithmeticity in higher real rank
+- 1977-421.9 [E] Rigidity and the special role of surface lattices
+- 1977-421.10 [E] Algebraic coefficients after conjugation
+- 1977-421.11 [E] The archimedean superrigidity assertion
+- 1977-421.12 [E] The nonarchimedean compactness assertion
+- 1977-421.13 [E] From local compactness to arithmeticity
+- 1977-421.14 [C] The arithmeticity problem in the remaining rank-one groups
+- 1977-423.1 [E] Curvature in a local gauge
+- 1977-423.2 [E] The coordinate self-duality and Yang-Mills equations
+- 1977-423.3 [E] Self-duality implies the Yang-Mills equation
+- 1977-424.1 [E] A known lighter counterfeit among 27 coins
+- 1977-424.2 [E] Thirteen coins when only the counterfeit identity is required
+- 1977-424.3 [E] Choosing informative three-outcome weighings
+- 1977-424.4 [E] Shannon entropy and the binary sign error
+- 1977-424.5 [E] Additivity and conditional information
+- 1977-425.1 [E] Temperature can change a broken-symmetry phase
+- 1977-425.2 [E] Dynamical instability and loss of coarse information
+- 1977-425.3 [E] Boltzmann entropy of a macrostate
+- 1977-425.4 [E] Ideal-gas expansion and the entropy-information sign
+- 1977-425.5 [E] Maxwell’s demon and the entropy of the whole apparatus
+- 1977-425.6 [E] A black-hole horizon as a causal barrier
+- 1977-425.7 [E] The Schwarzschild radius and the incorrect solar value
+- 1977-425.8 [E] The limited no-hair statement and the missing angular momentum
+- 1977-425.9 [E] Classical increase of event-horizon area
+- 1977-425.10 [E] Area entropy, Hawking temperature and the generalized second law
+- 1977-425.11 [E] Comparing absorption of hot and cold bodies
+- 1977-425.12 [E] Hawking radiation and the thermal occupation factor
+- 1977-425.13 [F] Causal inaccessibility versus quantum information loss
+- 1977-425.14 [E] Uniform acceleration and a Rindler horizon
+- 1977-425.15 [E] The Unruh temperature and observer-dependent particles
+- 1977-425.16 [E] The microwave background as evidence for a hot past
+- 1977-425.17 [F] Does a cosmological horizon explain the radiation temperature?
+- 1977-426.1 [E] The differential-polynomial algebra and its total derivative
+- 1977-426.2 [E] Local functionals modulo total derivatives
+- 1977-426.3 [E] When does an identically zero local integral imply a total derivative?
+- 1977-426.4 [E] The Euler variational derivative
+- 1977-426.5 [E] The first Gelfand--Dickey Hamiltonian matrix
+- 1977-426.6 [E] The first nonconstant small-order example
+- 1977-426.7 [E] Evolutionary derivations commute with the total derivative
+- 1977-426.8 [E] The Lie algebra of evolutionary characteristics
+- 1977-426.9 [E] The Poisson bracket on local functionals
+- 1977-426.10 [B] A conceptual proof of the first Gelfand--Dickey Jacobi identity
+- 1977-426.11 [E] Novikov’s third-order Hamiltonian operator for KdV
+- 1977-427.1 [F] Monte Carlo as a metaphor for the seminar’s breadth
+- 1977-428.1 [E] The category of Harish–Chandra modules
+- 1977-428.2 [A] Algebraization of a bounded part of the Harish–Chandra category
+- 1977-428.3 [E] The Lorentz-group matrix-pair precedent
+- 1977-428.4 [E] Central characters and support
+- 1977-428.5 [E] Decomposition by generalized infinitesimal character
+- 1977-428.6 [A] An algebra finite over the center
+- 1977-428.7 [A] A rank-three analytic matrix order for PSL2(R)
+- 1977-429.1 [E] Finite generation and admissibility
+- 1977-429.2 [E] The support criterion is a character, not its value
+- 1977-429.3 [E] Separation of disjoint central supports
+- 1977-429.4 [E] Equivalence of categories
+- 1977-429.5 [E] Morita equivalence for a full matrix algebra
+- 1977-429.6 [A] Nice analytic algebras
+- 1977-429.7 [A] The local nice-algebra theorem
+- 1977-429.8 [E] The sl2 Casimir has a sign inconsistency
+- 1977-429.9 [A] Generators of the rank-one matrix order
+- 1977-429.10 [A] The three-vertex quiver and its relations
+- 1977-429.11 [A] The rank-two order for SL3(R)
+- 1977-430.1 [E] Compact weights in the PSL2(R) example
+- 1977-430.2 [E] The Casimir and bounded central support
+- 1977-430.3 [E] Morita functors in arbitrary matrix size
+- 1977-430.4 [E] A left ideal selecting finitely many compact weights
+- 1977-430.5 [E] The normalizer quotient algebra
+- 1977-430.6 [A] The finite-K-type functor
+- 1977-430.7 [A] A sufficiently large finite set of K-types detects the block
+- 1977-430.8 [E] Homogeneous-function principal series
+- 1977-430.9 [A] Polynomial dependence on the principal-series parameter
+- 1977-430.10 [E] Subquotients of principal series
+- 1977-430.11 [E] Casimir eigenvalues in the homogeneous realization
+- 1977-430.12 [E] The reducible principal series at the trivial character
+- 1977-430.13 [E] Generic Weyl reflection of the principal-series parameter
+- 1977-430.14 [A] Three compact types near the trivial character
+- 1977-430.15 [F] Further groups proposed for explicit computation
+- 1977-431.1 [E] An algebraic relation between commuting ordinary differential operators
+- 1977-431.2 [E] The rank-one spectral-curve description
+- 1977-431.3 [E] Theta formulas and linear motion on a Jacobian
+- 1977-431.4 [F] Unspecified historical reference and almost-commuting pairs
+- 1977-432.1 [E] Connections, curvature and local pure gauges
+- 1977-432.2 [E] Topological charge requires a trace and normalization
+- 1977-432.3 [E] Yang–Mills variation and the abelian case
+- 1977-432.4 [C] Classifying all finite-action Yang–Mills critical points
+- 1977-432.5 [B] Finite action and extension over the point at infinity
+- 1977-432.6 [E] Four-dimensional conformal invariance
+- 1977-432.7 [E] The topological energy bound and self-dual minima
+- 1977-432.8 [B] Multi-instanton ansätze and the all-charge problem
+- 1977-432.9 [E] Dimension of the SU2 instanton moduli space
+- 1977-432.10 [E] The elliptic deformation complex and obstruction vanishing
+- 1977-432.11 [E] Charge-one uniqueness and conformal symmetry
+- 1977-432.12 [B] Connectedness of fixed-charge instanton moduli
+- 1977-432.13 [E] A spectral-parameter formulation of self-duality
+- 1977-432.14 [E] Orthogonal complex structures and the twistor fibration
+- 1977-432.15 [E] Instantons as holomorphic bundles on twistor space
+- 1977-432.16 [E] Integrability is involutivity of the complex tangent distribution
+- 1977-433.1 [E] Bounded analytic and inner functions
+- 1977-433.2 [E] Canonical factorization and the singular inner factor
+- 1977-433.3 [E] Greatest common inner divisor
+- 1977-433.4 [E] Failure of an unrestricted Bézout identity in H-infinity
+- 1977-433.5 [F] The stronger outer-factor denial is not a complete statement
+- 1977-433.6 [E] Sherman’s generic linear-combination lemma
+- 1977-433.7 [E] Finite polynomial combinations and simultaneous rows
+- 1977-433.8 [E] Matrix reduction by controlled inner divisors
+- 1977-434.1 [E] The KP normalization in the notes
+- 1977-434.2 [A] The double-pole form of rational decaying KP solutions
+- 1977-434.3 [A] The particle Hamiltonian needs a normalization correction
+- 1977-434.4 [A] The KP time is a higher commuting particle flow
+- 1977-434.5 [E] The differential-operator compatibility representation
+- 1977-434.6 [F] Commutative subalgebras of Weyl skew fields
+- 1977-435.1 [E] Curvature and the self-duality equations
+- 1977-435.2 [E] Gauge changes and removable frame singularities
+- 1977-435.3 [E] Regularity at infinity and compactification
+- 1977-435.4 [E] Clutching classification and charge
+- 1977-435.5 [A] Projection from a finite-dimensional trivial bundle
+- 1977-435.6 [E] Can every connection be induced from a trivial one?
+- 1977-435.7 [E] Quaternionic real structure and the twistor projection
+- 1977-435.8 [E] Affine coordinates of the twistor map
+- 1977-435.9 [E] Self-duality as a type condition on pulled-back curvature
+- 1977-435.10 [A] Belavin’s covariant compatibility equations
+- 1977-435.11 [A] From a tensor subspace to the bundle fibers
+- 1977-435.12 [A] Rank, positivity, and quaternionic orthogonality conditions
+- 1977-435.13 [A] Completeness and the equivalence relation on instanton data
+- 1977-435.14 [F] The quadruple-of-subspaces intervention
+- 1977-435.15 [A] Gram matrices and the absence of horizontal sections
+- 1977-435.16 [A] The constrained four-by-four Gram blocks
+- 1977-435.17 [A] Affine generators of the orthogonal complement
+- 1977-435.18 [A] Computing the connection from a kernel and orthonormal frame
+- 1977-435.19 [A] The cohomological monad classification
+- 1977-436.1 [E] Hamiltonian formulation of a nonlinear scalar field
+- 1977-436.2 [E] Free-field Fock energy and occupation densities
+- 1977-436.3 [E] Nonspreading finite-energy solutions and failure of free scattering
+- 1977-436.4 [E] Lorentz boosts and the mass-shell relation
+- 1977-436.5 [C] Resolution into radiation and finitely many localized structures
+- 1977-436.6 [E] Additivity of asymptotic energies
+- 1977-436.7 [E] Several particle species from one classical field
+- 1977-436.8 [E] Periodic solitons and their internal parameters
+- 1977-436.9 [E] Classical sine-Gordon kink and breather masses
+- 1977-436.10 [E] Bohr--Sommerfeld breather levels and the exact coupling
+- 1977-436.11 [E] Rigorous construction of exponential interactions at small coupling
+- 1977-436.12 [E] Short-range wave operators and a unitary scattering operator
+- 1977-436.13 [A] Extracting scattering amplitudes from propagator asymptotics
+- 1977-436.14 [E] The stationary-phase exponent and amplitude
+- 1977-436.15 [E] Path integrals with soliton boundary data
+- 1977-436.16 [A] A quantum inverse-scattering method
+- 1977-436.17 [E] The exact sine-Gordon scattering matrix has two charge channels
+- 1977-436.18 [F] Classical solvability versus quantum solvability
+- 1977-436.19 [E] The fluctuation determinant and the sine-Gordon zero mode
+- 1977-436.20 [F] Explicit higher-loop functionals of the resolvent kernel
+- 1977-436.21 [E] The one-loop sine-Gordon mass correction
+- 1977-436.22 [F] The no-higher-corrections claim depends on the mass convention
+- 1977-436.23 [E] The coupling threshold is not simply soliton disappearance
+- 1977-436.24 [E] Semiclassical phase integrals and reflectionless couplings
+- 1977-436.25 [E] The hyperbolic-secant scattering analogy
+- 1977-436.26 [E] The constrained sphere sigma model and its classical Lax representation
+- 1977-436.27 [B] Massive sigma-model particles scatter like solitons
+- 1977-438.1 [E] Topoi and derived categories as organizing concepts
+- 1977-438.2 [A] Graded exterior modules and evaluation complexes
+- 1977-438.3 [A] Constant rank and the bundle of evaluation homology
+- 1977-438.4 [A] Free exterior modules produce the zero bundle
+- 1977-438.5 [A] Stable exterior-module description of algebraic vector bundles
+- 1977-438.6 [E] The twisting sheaf and its local rank-one property
+- 1977-438.7 [A] The linear sheaf complex associated with an exterior module
+- 1977-438.8 [A] A truncated Koszul kernel followed by syzygies
+- 1977-438.9 [E] Serre's quotient-category description of coherent sheaves
+- 1977-438.10 [E] Sheafification by degree-zero localization
+- 1977-438.11 [A] The symmetric-algebra linear complex
+- 1977-438.12 [E] Totalization and the missing Koszul sign
+- 1977-438.13 [A] The Hom Koszul-dual functor
+- 1977-438.14 [A] The unit comparison and its erroneous value at one
+- 1977-438.15 [E] Quasi-isomorphisms and the derived category
+- 1977-438.16 [E] Roofs, Ore squares, and cancellation
+- 1977-438.17 [A] Reduction of Koszul comparisons by finite filtrations
+- 1977-439.1 [E] The smooth ideal of a point as a line-bundle module
+- 1977-439.2 [B] Rapidity fermions and their canonical anticommutation relations
+- 1977-439.3 [B] Massive Dirac solutions and the conserved pairing
+- 1977-439.4 [F] Support decomposition versus isotropic Fock polarization
+- 1977-439.5 [E] Clifford normal ordering and its exterior-algebra symbol
+- 1977-439.6 [B] The neutral twist operator and its quadratic kernel
+- 1977-439.7 [B] The companion odd field and vacuum modules
+- 1977-439.8 [B] Mixed correlation functions and holonomic deformation
+- 1977-439.9 [F] The defective second equation in the holonomic system
+- 1977-439.10 [E] The two-point Ising scaling function and Painleve III
+- 1977-439.11 [E] Fuchsian isomonodromy and Painleve VI
+- 1977-439.12 [E] What fixed singularities mean in the Painleve classification
+- 1977-440.1 [E] Gauss and Appell hypergeometric series
+- 1977-440.2 [E] Fractional differentiation as a hypergeometric construction
+- 1977-440.3 [E] Appell integrals from line and conic configurations
+- 1977-440.4 [E] Rational ratios of neighboring series coefficients
+- 1977-440.5 [E] The universal arrangement and its discriminant
+- 1977-440.6 [E] The rank-one twisted de Rham complex
+- 1977-440.7 [E] Top-degree concentration and the missing zero-weight exclusion
+- 1977-440.8 [E] The finite logarithmic Aomoto complex
+- 1977-440.9 [E] Euler characteristic, bounded chambers, and solution rank
+- 1977-440.10 [E] Twisted cycles, duality, and chamber regularization
+- 1977-441.1 [A] Formal substitutions, jets, and the positive Witt algebra
+- 1977-441.2 [A] A stably complex manifold as a genus polynomial
+- 1977-441.3 [A] Geometric characteristic operations and their scope
+- 1977-441.4 [A] Operations as left-invariant differential operators
+- 1977-441.5 [A] The Todd translate and bordism integrality
+- 1977-441.6 [A] Rational Ext and vector-field cohomology
+- 1977-441.7 [C] Cohomology of formal substitutions with integer coefficients
+- 1977-442.1 [A] The recursion operator and the nonisospectral hierarchy
+- 1977-442.2 [E] The Fourier analogy and the nonlinear spectral transform
+- 1977-442.3 [A] Scattering data and their linear transport
+- 1977-442.4 [A] Conserved moments from the scaling seed
+- 1977-442.5 [E] Hamiltonian operators and the order of recursion factors
+- 1977-442.6 [A] The transmission phase and its inconsistent leading coefficient
+- 1977-442.7 [A] Moment evolution, triangularity, and periodicity
+- 1977-442.8 [E] Adjacent Palamodov lecture: caustics and wave fronts
+- 1977-442.9 [F] The illustrated four-thirds front singularity
+- 1977-442.10 [E] The forward Cauchy fundamental solution
+- 1977-443.1 [E] Complete scattering data cannot generally be replaced by reflection alone
+- 1977-443.2 [E] Two-potential Wronskian identities
+- 1977-443.3 [E] The adjoint spectral identity for the recursion kernel
+- 1977-443.4 [E] A nonlinear Backlund relation induces a rational multiplier
+- 1977-443.5 [E] The infinitesimal limit and a sign-inconsistent alternative formula
+- 1977-443.6 [E] Products of second-order solutions satisfy a third-order equation
+- 1977-443.7 [E] Elementary soliton insertion and Riccati form
+- 1977-443.8 [F] Generating all integrals by Backlund transformations
+- 1977-443.9 [E] Permutability and nonlinear superposition
+- 1977-443.10 [E] Evolution as a generalized Backlund transformation
+- 1977-443.11 [A] A polynomial PDE produces interacting-root dynamics
+- 1977-443.12 [A] Hermite coefficients linearize the root system
+- 1977-443.13 [E] Hermite-zero equilibria and Stieltjes relations
+- 1977-443.14 [A] The integer interaction-matrix spectrum and missing identity
+- 1977-444.1 [E] The Chevalley-Eilenberg chain and cochain complexes
+- 1977-444.2 [E] Hodge representatives on finite weight complexes
+- 1977-444.3 [E] Formal vector fields and the two vanishing-jet subalgebras
+- 1977-444.4 [F] Finite defect and the unqualified integration obstruction
+- 1977-444.5 [E] Center-free algebras and their derivation algebra
+- 1977-444.6 [E] Previously computed cohomology of W1 and L0
+- 1977-444.7 [E] The positive Witt bracket and finite weight decomposition
+- 1977-444.8 [E] Goncharova cohomology and pentagonal weights
+- 1977-444.9 [A] The metric matters for the nonzero Laplacian spectrum
+- 1977-444.10 [A] Integer Laplacian eigenvalues and their corrected multiplicities
+- 1977-444.11 [A] Nonnegativity and the two zero-eigenvalue partitions
+- 1977-444.12 [A] Vandermonde-cubed harmonic representatives
+- 1977-445.1 [E] Ordinal sign sequences and their numerical order
+- 1977-445.2 [E] Simplicity, truncations, and canonical cuts
+- 1977-445.3 [E] The simplest number between two separated sets
+- 1977-445.4 [E] Recursive addition and ordered additive-group laws
+- 1977-451.1 [E] Infinitesimal characters and algebraic block separation
+- 1977-451.2 [E] Relative first cohomology classifies split-on-h extensions
+- 1977-451.3 [E] Continuous cocycles and topologically split extensions
+- 1977-451.4 [B] Smooth-vector regularization and the van Est comparison
+- 1977-451.5 [E] A real unipotent extension and the compact-period obstruction
+- 1977-451.6 [E] Non-Hausdorff first cohomology of the affine group
+- 1977-451.7 [F] Semisimple cohomology and a contradictory orthogonal-group fragment
+- 1977-451.8 [F] An unspecified SL2 topological-extension counterexample
+- 1977-451.9 [E] K-finite vectors and algebraic extension computations
+- 1977-451.10 [E] Semidirect products and dual orbits
+- 1977-451.11 [E] The quaternionic ADHM equations and their quotient
+- 1977-451.12 [F] A beautiful parametrization of instanton matrices
+- 1977-451.13 [F] Local gauge transformations and an unfinished confinement argument
+- 1977-457.1 [E] The complete-flag double fibration
+- 1977-457.2 [E] Parallel sections along null curves and descent
+- 1977-457.3 [E] The reverse ambitwistor correspondence and missing field equations
+- 1977-457.4 [E] Grading and transitivity in the adjoint action
+- 1977-457.5 [E] Four Cartan families and the missing classification hypotheses
+- 1977-457.6 [E] The maximal Cartan prolongation and Jacobi symmetry
+- 1977-457.7 [E] The inductively defined bracket on a prolongation
+- 1977-457.8 [E] The polynomial vector-field realization
+- 1977-457.9 [E] The complex rank-one criterion for infinite type
+- 1977-457.10 [F] An infinite-dimensional input and a Poisson-algebra suggestion
+- 1977-457.11 [E] Generalized Cartan matrices and symmetrizability
+- 1977-457.12 [E] Chevalley-Serre generators and an index mismatch
+- 1977-457.13 [E] Root-lattice and height gradings
+- 1977-457.14 [E] Finite, affine, and indefinite growth
+- 1977-457.15 [E] The center from the kernel of the Cartan matrix
+- 1977-457.16 [E] Untwisted loop algebras and the missing central quotient
+- 1977-457.17 [E] Twisted loop algebras from an involution
+- 1977-457.18 [E] A one-dimensional graded bracket with period three
+- 1977-457.19 [F] The incomplete three-algebra and exhaustion statements
+- 1977-457.20 [E] Hermitian matrices, spinors and the Lorentz cover
+- 1977-457.21 [E] The real N=1 super-Poincare algebra
+- 1977-457.22 [E] Extended supersymmetry and the role of internal indices
+- 1977-457.23 [E] Mixing space-time and internal symmetries and the no-go scope
+- 1977-457.24 [E] Superspace and the finite superfield expansion
+- 1977-457.25 [E] Odd differential operators realizing supertranslations
+
+## GY1977: problems
+
+- GP-1977-01 [2026-11] Nonarithmetic lattices in complex hyperbolic dimension at least four
+- GP-1977-02 [2026-11] A conceptual proof of the first Gelfand--Dickey Jacobi identity
+- GP-1977-03 [2026-11] Local algebraization of Harish–Chandra categories
+- GP-1977-04 [2026-11] Finite-action Yang–Mills critical connections beyond instantons
+- GP-1977-05 [2026-11] Fixed-charge instanton classification and connectedness
+- GP-1977-06 [2026-11] Selecting combinations with prescribed inner divisors
+- GP-1977-07 [2026-11] Rational decaying KP solutions and commuting pole dynamics
+- GP-1977-08 [2026-11] Inducing a unitary connection by orthogonal projection
+- GP-1977-09 [2026-11] Soliton resolution with the correct coherent structures and radiation
+- GP-1977-10 [2026-11] Constructing a quantum inverse-scattering formalism
+- GP-1977-11 [2026-11] Describe projective bundles by finite exterior modules
+- GP-1977-12 [2026-11] Why homogeneous functions define a line bundle
+- GP-1977-13 [2026-11] Cohomology of the integral formal substitution group
+
+## GY1978: items
+
+- 1978-446.1 [E] Ordinal sign sequences and their numerical order
+- 1978-446.2 [E] Simplicity, truncations and the canonical cut
+- 1978-446.3 [E] The simplest separator of two sets
+- 1978-446.4 [E] Recursive addition
+- 1978-446.5 [E] Additive identities, order and sign reversal
+- 1978-446.6 [E] Two arithmetic exercises
+- 1978-446.7 [E] The basic multiplication inequality
+- 1978-446.8 [E] The four-family product cut
+- 1978-446.9 [E] Ring laws and the multiplicative identities
+- 1978-446.10 [E] Uniformity: independence of a cut representation
+- 1978-446.11 [E] An infinite number and its reciprocal infinitesimal
+- 1978-446.12 [E] Ordinals and Hessenberg natural arithmetic
+- 1978-446.13 [E] Division and positive square roots
+- 1978-446.14 [E] Polynomial intermediate values do not eliminate gaps
+- 1978-446.15 [E] Periodic signs and two rational examples
+- 1978-446.16 [B] Exponentiation, logarithms and real-base powers
+- 1978-446.17 [B] Exponential growth beyond every fixed polynomial
+- 1978-446.18 [E] The exponential series at an infinitesimal
+- 1978-446.19 [E] Arbitrary real-coefficient power series at infinitesimals
+- 1978-446.20 [B] Asymptotic integration and an incorrect Gaussian formula
+- 1978-446.21 [E] Omnific integers and an insufficient truncation criterion
+- 1978-446.22 [E] Every surreal is a quotient of omnific integers
+- 1978-446.23 [B] The unfinished recursive exponential cut
+- 1978-447.1 [E] A two-dimensional matrix lattice action
+- 1978-447.2 [F] Complete integrability and higher discrete currents
+- 1978-447.3 [B] The semi-discrete nonabelian Toda chain
+- 1978-447.4 [B] A spectral zero-curvature representation for matrix Toda
+- 1978-447.5 [E] Conservation of a transfer product and its endpoint terms
+- 1978-447.6 [B] A formal matrix Riccati recursion and conserved coefficients
+- 1978-447.7 [B] The block Jacobi Lax equation
+- 1978-447.8 [E] Lattice curvature and the continuum Yang--Mills action
+- 1978-447.9 [E] The lattice Yang--Mills equation as a sum of plaquette differences
+- 1978-447.10 [E] Based holonomy and curvature insertions
+- 1978-447.11 [A] The logarithmic loop field: transversality and flatness
+- 1978-447.12 [A] Yang--Mills as a functional conservation equation
+- 1978-447.13 [F] An undefined chiral action on loop space
+- 1978-447.14 [A] Recovering a connection from loop data
+- 1978-447.15 [A] A prospective second loop current in three dimensions
+- 1978-447.16 [A] A spectral linear system on loop space
+- 1978-447.17 [E] The principal chiral field and a spectral flat connection
+- 1978-447.18 [E] Flat holonomy and spectral integrals of the chiral model
+- 1978-447.19 [E] The massive Green-function analogy
+- 1978-447.20 [F] A proposed string Green function and area-law asymptotic
+- 1978-447.21 [E] Projected areas as contour coordinates
+- 1978-447.22 [E] Reduction to area variables and self-dual momentum
+- 1978-447.23 [F] An unspecified Bessel-function solution in two area invariants
+- 1978-447.24 [E] Self-dual area profiles and the Hamilton--Jacobi identity
+- 1978-447.25 [F] Can projected areas give the minimum spanning area?
+- 1978-448.1 [F] Krichever’s isolated remark about instantons
+- 1978-448.2 [E] Normalized functional integrals and cutoff-dependent parameters
+- 1978-448.3 [E] Gauge degeneracy of the Yang--Mills action
+- 1978-448.4 [E] The Faddeev--Popov slice and Jacobian
+- 1978-448.5 [E] The orbit-volume determinant in a finite-dimensional quotient
+- 1978-448.6 [E] Degenerate Gaussian integrals and analytic torsion
+- 1978-448.7 [E] Semiclassical integration over a critical manifold
+- 1978-448.8 [E] Dimension of the SU(2) instanton family
+- 1978-448.9 [E] Rational maps as sphere-valued instantons
+- 1978-448.10 [E] The sigma-model topological bound
+- 1978-448.11 [E] The instanton Hessian as a Dolbeault Laplacian
+- 1978-448.12 [E] Zeta-regularized nonzero determinants
+- 1978-448.13 [E] Metric variation and the Frullani determinant formula
+- 1978-448.14 [E] Variation of the heat trace and local coefficients
+- 1978-448.15 [E] Zero modes and the instanton moduli measure
+- 1978-448.16 [E] The zeros-and-poles instanton measure
+- 1978-448.17 [E] The neutral two-component Coulomb gas
+- 1978-448.18 [E] The free-fermion value of the Coulomb-gas coupling
+- 1978-449.1 [A] Rational auxiliary systems and zero curvature
+- 1978-449.2 [E] A common pole and polynomial Lax pairs
+- 1978-449.3 [A] Coefficient equations at the poles
+- 1978-449.4 [A] Conjugacy orbits and one-variable residue data
+- 1978-449.5 [A] Gauge freedom and equations for the frames
+- 1978-449.6 [A] The orbit-variable variational principle
+- 1978-449.7 [E] Formal conservation-law expansions at the poles
+- 1978-449.8 [F] Many Hamiltonian structures for the rational family
+- 1978-449.9 [E] Euclidean scalar correlators and renormalization
+- 1978-449.10 [E] Momentum invariants, amputation, and the physical mass
+- 1978-449.11 [E] Invariant charge and its normalization
+- 1978-449.12 [E] The leading-logarithm formula and the Landau limit
+- 1978-449.13 [E] Large-order coefficients from a functional saddle point
+- 1978-449.14 [E] The sharp four-dimensional Sobolev inequality
+- 1978-449.15 [F] A critical cubic equation and a missing Yang--Mills ansatz
+- 1978-450.1 [E] Strong extensions and equivalence
+- 1978-450.2 [E] Strong group extensions and first cohomology
+- 1978-450.3 [E] Lie-algebra extensions and the Chevalley--Eilenberg differential
+- 1978-450.4 [E] Different infinitesimal characters split an algebraic extension
+- 1978-450.5 [E] Relative first cohomology and extensions split over a subalgebra
+- 1978-450.6 [E] Continuous cocycles and topologically split extensions
+- 1978-450.7 [E] Smooth vectors and their topology
+- 1978-450.8 [B] Continuous, smooth-vector, and relative Lie-algebra cohomology
+- 1978-450.9 [E] The unipotent extension of the additive group
+- 1978-450.10 [E] The affine group: large ordinary cohomology and zero reduced cohomology
+- 1978-450.11 [E] First cohomology of irreducible unitary representations of simple groups
+- 1978-450.12 [F] An inconsistent orthogonal-group vanishing sentence
+- 1978-450.13 [F] Failure of central-character splitting in a continuous category
+- 1978-450.14 [E] Central-character splitting in the smooth category
+- 1978-450.15 [E] K-finite vectors and relative algebraic extensions
+- 1978-450.16 [E] Semidirect products and dual orbits
+- 1978-453.1 [E] Quaternionic ADHM reality equations and quotient
+- 1978-453.2 [E] The unframed charge-N instanton dimension
+- 1978-453.3 [F] A beautiful parametrization of instanton matrices
+- 1978-453.4 [E] Gauge averaging forces a charged bilocal expectation to vanish
+- 1978-453.5 [F] The proposed confinement inference
+- 1978-453.6 [F] A finite cutoff can destroy a hidden symmetry
+- 1978-453.7 [E] A semiclassical sine-Gordon spectrum
+- 1978-453.8 [E] The finite periodic XYZ spectral problem
+- 1978-453.9 [E] The chain-to-Thirring scaling limit
+- 1978-453.10 [E] Pauli spin algebra
+- 1978-453.11 [E] Jordan--Wigner fermions and their normalization
+- 1978-453.12 [E] Quadratic fermion diagonalization of the transverse Ising chain
+- 1978-453.13 [E] Heisenberg evolution preserves the algebra, but the displayed equation is schematic
+- 1978-453.14 [E] Interacting fermions and the continuum quartic term
+- 1978-453.15 [E] Massive Thirring and quantum sine-Gordon equivalence
+- 1978-453.16 [E] Mandelstam soliton operators and canonical factors
+- 1978-453.17 [E] The Zamolodchikov exchange algebra
+- 1978-453.18 [E] Three-particle consistency and factorization
+- 1978-453.19 [E] Baxter elliptic weights and their limited completeness claim
+- 1978-453.20 [E] Transfer matrices and commuting Hamiltonians
+- 1978-454.1 [E] Exchange generators and associativity
+- 1978-454.2 [E] Rapidity ordering and collision diagrams
+- 1978-454.3 [E] Three-body reordering and the Yang--Baxter equation
+- 1978-454.4 [E] The component count of the consistency equations
+- 1978-454.5 [E] Cyclic contraction and commuting transfer matrices
+- 1978-454.6 [E] Conservation laws as a route to factorization
+- 1978-454.7 [E] The four-weight eight-vertex ansatz
+- 1978-454.8 [F] An inconsistent sample functional equation
+- 1978-454.9 [E] Differential reduction and elliptic solutions
+- 1978-454.10 [F] Representing an unspecified algebra of four functions
+- 1978-454.11 [E] Commuting Taylor coefficients
+- 1978-454.12 [E] The XYZ Hamiltonian as a logarithmic derivative
+- 1978-454.13 [E] Local three-site charges versus raw Taylor coefficients
+- 1978-454.14 [F] Gelfand suggests SL(2,R)
+- 1978-454.15 [E] The six-vertex trigonometric degeneration
+- 1978-454.16 [E] Arbitrary auxiliary dimension and a nearest-neighbour density
+- 1978-454.17 [F] The literal rotationally invariant spin-1 density
+- 1978-454.18 [E] Uniqueness of an invariant two-site spin-one-half interaction
+- 1978-454.19 [B] Adding anisotropic parameters to the spin-1 construction
+- 1978-454.20 [F] The proposed universality of the factorization scheme
+- 1978-454.21 [F] Gelfand asks for a Maurer-Cartan interpretation
+- 1978-454.22 [F] Second-order extension does not make every local Hamiltonian integrable
+- 1978-454.23 [E] Matrix associativity is not enough for exchange consistency
+- 1978-454.24 [E] Monodromy multiplication and RTT representations
+- 1978-454.25 [E] The zero-field Ising partition sum and trace
+- 1978-454.26 [F] Diagonal transfer weights and an unfinished commutation assertion
+- 1978-455.1 [E] The Grassmannian compactification of complex Minkowski space
+- 1978-455.2 [E] The conformal stabilizer and an impossible quotient
+- 1978-455.3 [E] SU(2,2) and the conformal spin cover
+- 1978-455.4 [E] The projective null-twistor hypersurface
+- 1978-455.5 [E] Null two-planes and the U(2) compactification
+- 1978-455.6 [E] Incidence of twistor lines gives the light cone
+- 1978-455.7 [E] Conformal inversion and its domain
+- 1978-455.8 [E] Holomorphic connection and curvature
+- 1978-455.9 [E] The Yang-Mills commutator sign
+- 1978-455.10 [F] The attributed Landau preference for the S-matrix
+- 1978-455.11 [E] The Yang-Mills action and Euler-Lagrange equation
+- 1978-455.12 [E] The five-dimensional ambitwistor incidence quadric
+- 1978-455.13 [E] The third formal neighbourhood criterion for full Yang-Mills
+- 1978-455.14 [E] Arbitrary holomorphic connections and bundles before the field equation
+- 1978-456.1 [E] The complete-flag double fibration
+- 1978-456.2 [E] Flatness and horizontal sections along a null curve
+- 1978-456.3 [E] Pullback and descent to the space of null geodesics
+- 1978-456.4 [E] Reverse transform and the quadric-triviality condition
+- 1978-457.1 [E] Grading and the two transitivity conditions
+- 1978-457.2 [E] Polynomial vector fields and the degree-zero matrix algebra
+- 1978-457.3 [E] Divergence-free polynomial vector fields
+- 1978-457.4 [E] Hamiltonian polynomial vector fields
+- 1978-457.5 [E] Contact polynomial vector fields
+- 1978-457.6 [E] The four-series classification needs more hypotheses
+- 1978-457.7 [E] The maximal Cartan prolongation and Jacobi symmetry
+- 1978-457.8 [E] The inductive bracket in the prolongation
+- 1978-457.9 [E] The loop algebra twisted by an involution
+- 1978-457.10 [E] Negative transpose on sl(3)
+- 1978-457.11 [E] A period-three one-dimensional graded bracket
+- 1978-457.12 [F] The unspecified three-algebra and two-construction exhaustion claims
+- 1978-458.1 [E] The real N=1 super-Poincare algebra
+- 1978-458.2 [E] Hermitian matrices and the Lorentz double cover
+- 1978-458.3 [E] Constructing a superalgebra from its even algebra and odd module
+- 1978-458.4 [E] Extended supersymmetry and internal indices
+- 1978-458.5 [E] The no-go theorem is a statement about scattering symmetries
+- 1978-458.6 [E] Superspace and the finite superfield expansion
+- 1978-458.7 [E] Odd differential operators realize the supertranslation brackets
+- 1978-458.8 [E] Supertranslations on coordinates
+- 1978-458.9 [E] The commutator closes on translations, with a factor correction
+- 1978-458.10 [E] A scalar superfield transforms by pullback
+- 1978-458.11 [E] Chiral coordinates and left-right decomposition
+- 1978-458.12 [E] The chiral multiplet and its auxiliary component
+- 1978-459.1 [E] A continuous local Lie bracket on sections
+- 1978-459.2 [E] Locality gives differential expressions; rank one gives first order
+- 1978-459.3 [E] The scope of Kirillov's rank-one classification
+- 1978-459.4 [E] The standard Poisson model
+- 1978-459.5 [E] The contact model has a sign error in the notebook
+- 1978-459.6 [F] The diagram of higher-rank classification gaps
+- 1978-459.7 [E] Formal pseudodifferential symbols as an infinite-component Lie algebra
+- 1978-459.8 [E] Formal differential power series and the required completion
+- 1978-459.9 [E] Formal differential group laws
+- 1978-459.10 [E] The substitution group and tensor-density modules
+- 1978-459.11 [E] Ritt's rank-two classification has thirteen types
+- 1978-460.1 [E] Regular webs and the needed general-position condition
+- 1978-460.2 [E] Incidence webs from a projective variety
+- 1978-460.3 [E] Gelfand's Crofton formula and its normalization
+- 1978-460.4 [E] When can a planar three-web be made parallel?
+- 1978-460.5 [E] The dual web of a projective curve
+- 1978-460.6 [E] Abelian relations of a web
+- 1978-460.7 [E] Rank means dimension over the constants
+- 1978-460.8 [E] The rank of an algebraic curve web is its genus
+- 1978-460.9 [E] The Chern rank bound and Castelnuovo number
+- 1978-460.10 [B] Maximal rank implies algebraization: the later repair of the main theorem
+- 1978-460.11 [E] The projective-connection strategy and its historical limitation
+- 1978-460.12 [E] A vertex tensor for an arrangement of lines
+- 1978-460.13 [F] The unspecified large-system asymptotic and boundary independence
+- 1978-460.14 [E] The three-line move is the Yang--Baxter identity
+- 1978-460.15 [E] Existence of nontrivial matrices satisfying the three-line identity
+- 1978-460.16 [F] The proposed pairwise formula for the leading free energy
+- 1978-460.17 [E] Factorized scattering and Boltzmann-weight interpretations
+- 1978-460.18 [E] Face spins and a nearest-neighbor partition function
+- 1978-460.19 [F] The unqualified assertion about all exactly computable partition functions
+- 1978-460.20 [E] The displayed Ising vertex weight and its parity constraint
+
+## GY1978: problems
+
+- GP-1978-01 [2026-11] A spectral representation for the nonabelian Toda chain
+- GP-1978-10 [2026-11] Anisotropic regular factorization for the spin-one density: literal and corrected versions
+- GP-1978-11 [2026-11] The finite periodic XYZ spectral problem
+- GP-1978-20 [2026-11] Hexagonal closure and parallelizability of planar three-webs
+- GP-1978-21 [2026-11] Algebraization of maximal-rank codimension-one webs in dimension at least three
+
+## GY1979: items
+
+- 1979-462.1 [E] Spacetime foam as a quantum-gravity proposal
+- 1979-462.2 [F] The Page--Atiyah graviton report
+- 1979-462.3 [F] Coleman and Jackiw on topology and instanton methods
+- 1979-462.4 [F] The four-manifold and bundle-classification report
+- 1979-462.5 [E] Signature and characteristic numbers in dimension four
+- 1979-462.6 [F] The recorded higher-spin zero-mode index formula
+- 1979-462.7 [F] Boson--fermion index identities on self-dual backgrounds
+- 1979-462.8 [E] Nonzero-mode cancellation and the heat coefficient
+- 1979-462.9 [A] Finiteness in a self-dual supergravity sector
+- 1979-462.10 [F] An unspecified super-index theorem
+- 1979-462.11 [E] Exceptional symmetry of maximal supergravity
+- 1979-462.12 [E] The exceptional Jordan algebra and compact F4
+- 1979-463.1 [A] Additional additive functions on a resonance manifold
+- 1979-463.2 [A] Difference curves yield families of collision invariants
+- 1979-463.3 [B] Is the difference-curve construction universal?
+- 1979-463.4 [E] Zero curvature and the dispersion of a dressed scalar pair
+- 1979-463.5 [E] The linearized Gel'fand--Levitan--Marchenko equation
+- 1979-463.6 [A] The resonance obstruction for an additional quadratic-leading integral
+- 1979-463.7 [E] The KP dispersion from quadratic and cubic symbols
+- 1979-463.8 [E] A matrix dressing pair and the Davey--Stewartson system
+- 1979-463.9 [E] Fourier Hamiltonians and the complex variational derivative
+- 1979-463.10 [F] The displayed four-wave coefficient does not vanish on resonance
+- 1979-463.11 [E] Poincaré's first-order homological obstruction
+- 1979-463.12 [E] Translation-surface interpretation of the resonance parametrization
+- 1979-463.13 [F] Integrals with higher-order leading terms
+- 1979-463.14 [E] Formal Birkhoff normal form at a nonresonant elliptic equilibrium
+- 1979-464.1 [E] Electron--positron annihilation and its inverse
+- 1979-464.2 [E] Hamilton's square-root relations and the missing quaternion quotient
+- 1979-464.3 [E] Möbius transformations as projectivized spinor transformations
+- 1979-465.1 [E] The scope of the cited self-dual cancellation results
+- 1979-465.2 [E] Two-spinor notation and the Lorentz/Euclidean distinction
+- 1979-465.3 [E] Pauli multiplication and spin-generator conventions
+- 1979-465.4 [E] Irreducible multispinors and epsilon contractions
+- 1979-465.5 [E] Two-form decomposition into symmetric spinors
+- 1979-465.6 [E] Hodge self-duality and signature
+- 1979-465.7 [E] Self-dual full curvature implies the vacuum Einstein equation
+- 1979-465.8 [F] The proposed universal higher-spin Laplacian
+- 1979-465.9 [E] Formal symmetry versus self-adjoint spectral theory
+- 1979-465.10 [E] The scalar specialization
+- 1979-465.11 [E] The spinor Lichnerowicz formula
+- 1979-465.12 [E] The Maxwell/Hodge operator in Lorenz gauge
+- 1979-465.13 [F] The spin-three-halves example
+- 1979-465.14 [F] The spin-two Einstein example
+- 1979-465.15 [E] Differential forms and the de Rham Laplacian
+- 1979-465.16 [F] Mixed-parity differential forms and an index theorem
+- 1979-465.17 [E] The spin-five-halves gravitational-coupling obstruction
+- 1979-465.18 [E] Reducible tensor powers versus irreducible spin labels
+- 1979-465.19 [F] Compatibility and spectral intertwiners
+- 1979-465.20 [E] Heat-kernel expansion and its spectral realization
+- 1979-465.21 [E] The regularized nonzero-mode contribution need not be an integer
+- 1979-465.22 [E] Heat coefficients through order six and the boundary caveat
+- 1979-465.23 [F] Index differences after spectral cancellation
+- 1979-465.24 [E] Euler and Pontryagin integrals
+- 1979-466.1 [E] The two Gaussian Fourier exercises
+- 1979-466.2 [E] The narrow quartic Fourier exercise
+- 1979-466.3 [E] The highly oscillatory quartic Fourier exercise
+- 1979-466.4 [E] Canonical form of a symplectically self-adjoint operator
+- 1979-467.1 [E] Projective twistors and the Hermitian null cone
+- 1979-467.2 [E] The Grassmannian and its frame bundle
+- 1979-467.3 [E] The graph coordinate chart
+- 1979-467.4 [E] Complementary isotropic planes and the GL2 subgroup
+- 1979-467.5 [E] Tube domains, real boundary and boundary strata
+- 1979-467.6 [E] Transitivity and conformal compactification
+- 1979-467.7 [E] Fractional-linear action on matrix coordinates
+- 1979-467.8 [E] The affine chart stabilizer includes dilations
+- 1979-467.9 [E] The determinant is the Minkowski quadratic form
+- 1979-467.10 [E] Intersecting twistor lines and the light cone
+- 1979-467.11 [E] Correcting the point/ray correspondence
+- 1979-467.12 [E] The status of curved twistor theory in 1979
+- 1979-467.13 [F] A higher-dimensional twistor analogue
+- 1979-468.1 [E] Parity in a graded vector space
+- 1979-468.2 [E] The exterior algebra and its monomial basis
+- 1979-468.3 [E] The even Grassmann envelope
+- 1979-468.4 [F] Graph analogues of the even Grassmann algebra
+- 1979-468.5 [E] Even block supermatrices
+- 1979-468.6 [E] Cyclicity of the supertrace
+- 1979-468.7 [E] The Berezinian and its multiplicativity
+- 1979-468.8 [E] The 1|1 multiplicativity check
+- 1979-468.9 [E] The body map and invertibility
+- 1979-468.10 [E] Diagonalization when body eigenvalues are distinct
+- 1979-468.11 [B] Canonical forms beyond simple body spectrum
+- 1979-468.12 [E] Even commutants of all-odd-entry matrices
+- 1979-468.13 [E] Stable exterior modules and projective vector bundles
+- 1979-468.14 [B] Construct the maps, not only the cohomology spaces
+- 1979-468.15 [B] A linear-algebra description for Grassmannians
+- 1979-469.1 [E] Two distinct translation parametrizations
+- 1979-469.2 [E] Theta divisors as sums of Abel curves
+- 1979-469.3 [E] When the two Abel curves are distinct
+- 1979-469.4 [E] The Lie--Wirtinger converse with nondegeneracy
+- 1979-469.5 [F] A universal explanation of integrability by translation geometry
+- 1979-470.1 [E] The current group and its one-form Hilbert space
+- 1979-470.2 [E] The infinite-dimensional Gaussian realization
+- 1979-470.3 [E] The Maurer--Cartan cocycle and affine action
+- 1979-470.4 [E] The energy representation
+- 1979-470.5 [A] Irreducibility in dimension at least three
+- 1979-470.6 [A] Reducibility in one dimension
+- 1979-470.7 [C] Irreducibility on a two-dimensional base
+- 1979-470.8 [E] Stochastic development to Brownian paths on a group
+- 1979-470.9 [E] Quasi-invariance and the Brownian representation
+- 1979-470.10 [E] Equivalence of Brownian and energy representations
+- 1979-470.11 [F] The asserted type-III factor
+- 1979-471.1 [E] First-class constraints on a symplectic phase space
+- 1979-471.2 [E] Can structure functions be made constant?
+- 1979-471.3 [E] Multiplier action and Hamiltonian gauge directions
+- 1979-472.1 [E] Functional integral and perturbative scattering functional
+- 1979-472.2 [E] Iterating the classical field equation as a tree expansion
+- 1979-472.3 [E] Background split and harmonic gauge for the metric fluctuation
+- 1979-472.4 [E] The gravitational ghost operator and perturbative unitarity
+- 1979-472.5 [F] Additional ghost interactions in supergravity
+- 1979-472.6 [E] Diffeomorphism invariance and background covariance
+- 1979-472.7 [E] On-shell gauge independence and its loop-order restriction
+- 1979-472.8 [E] Changing a gauge-fixing functional by a change of variables
+- 1979-472.9 [E] Maxwell gauge invariance and its Hessian kernel
+- 1979-472.10 [E] Lorenz and generalized linear gauges for electromagnetism
+- 1979-473.1 [E] Sources and time-ordered correlation functions
+- 1979-473.2 [E] Coupling expansion versus expansion around a classical solution
+- 1979-473.3 [E] Nondegenerate stationary phase and its missing normalization
+- 1979-473.4 [E] Gauge degeneracy obstructs the naive saddle formula
+- 1979-473.5 [E] Infinitesimal group generators, Lie equations and invariant measures
+- 1979-473.6 [E] An admissible local gauge slice
+- 1979-473.7 [E] Faddeev--Popov determinant identity
+- 1979-473.8 [E] Factoring gauge volume from an invariant integral
+- 1979-473.9 [E] Gauge averaging and the indispensable normalization
+- 1979-473.10 [E] Grassmann representation of the gauge determinant
+- 1979-473.11 [E] BRST transformations and the antighost qualification
+- 1979-473.12 [E] Chevalley--Eilenberg cancellation behind BRST nilpotence
+- 1979-473.13 [E] Physical unitarity and cancellation of ghost states
+- 1979-473.14 [E] Field-dependent BRST parameters and gauge independence
+- 1979-473.15 [E] Open supergravity algebras
+- 1979-473.16 [E] Yang--Mills curvature, infinitesimal gauge generator and ghosts
+- 1979-474.1 [F] Difficulties in operator and canonical approaches to gravity
+- 1979-474.2 [E] Einstein equation from the action and the stress tensor normalization
+- 1979-474.3 [E] What Yau's theorem actually says
+- 1979-474.4 [E] Gibbons--Hawking boundary term and gluing
+- 1979-474.5 [E] Reference subtraction for an asymptotically flat action
+- 1979-475.1 [E] Even graded canonical Poisson bracket
+- 1979-475.2 [E] First and second class: why determinant zero is insufficient
+- 1979-475.3 [E] Constrained stationary action and Lagrange multipliers
+- 1979-475.4 [E] Dirac bracket for second-class constraints
+- 1979-475.5 [E] Gelfand's geometric interpretation of the Dirac bracket
+- 1979-475.6 [E] Reduced equations and local canonical coordinates
+- 1979-475.7 [E] Canonical commutators and the limits of quantization
+- 1979-475.8 [E] Time-ordered source functional and Schwinger--Dyson equations
+- 1979-475.9 [E] Phase-space functional Fourier representation
+- 1979-475.10 [E] The second-class constraint measure
+- 1979-475.11 [E] Gauge fixing converts a regular first-class system to second class
+- 1979-477.1 [E] The notebook's dilogarithm integral
+- 1979-477.2 [E] The differential five-term relation needs related arguments
+- 1979-477.3 [F] Dilogarithms in algebraic K-theory
+- 1979-477.4 [E] Combinatorial characteristic classes: the Gelfand--Gabrielov--Losik lead
+- 1979-477.5 [E] Hyperbolic tetrahedral volume
+- 1979-477.6 [F] Apéry's zeta(3) result and an unspecified dilogarithm link
+- 1979-477.7 [E] Web geometry and Bol
+- 1979-477.8 [F] Scattering theory: an unqualified connection
+- 1979-476.1 [E] The zeta(2) integral has a missing minus sign
+- 1979-476.2 [F] Bloch's proposed replacement of zeta(2) by a curve zeta function
+- 1979-476.3 [E] A closed real regulator one-form
+- 1979-476.4 [E] Bilinearity and alternation of the real regulator form
+- 1979-476.5 [E] The single-valued dilogarithm proves the Steinberg relation
+- 1979-476.6 [E] David Wigner and continuous cohomology of SL(2)
+- 1979-476.7 [E] A puncture period and the tame symbol
+- 1979-476.8 [E] Symbols present K2 of the function field, not automatically of the curve
+- 1979-476.9 [E] The unique smooth projective completion of an algebraic curve
+- 1979-476.10 [E] Localization and extension of the real regulator over punctures
+- 1979-476.11 [A] Beilinson's complex multiplicative regulator
+- 1979-476.12 [E] Stable Steinberg extension and second group homology
+- 1979-478.1 [E] Promoting Lagrange multipliers to canonical variables
+- 1979-478.2 [E] Ghost canonical pairs and the BFV phase-space action
+- 1979-478.3 [E] Nilpotent Hamiltonian charge, invariant Hamiltonian and gauge fermion
+- 1979-478.4 [E] Solving the Hamiltonian BRST equations as a formal series
+- 1979-478.5 [F] Termination of the supergravity ghost expansion
+- 1979-478.6 [E] Hamiltonian BRST transformations and nilpotence
+- 1979-478.7 [E] Field-dependent BRST change of variables and gauge independence
+- 1979-479.1 [E] First-generation charges and valence nucleon diagrams
+- 1979-479.2 [E] Three quark and lepton generations
+- 1979-479.3 [E] Colour triplets, singlets and eight adjoint gluons
+- 1979-479.4 [E] Chiral weak doublets, singlets and hypercharge
+- 1979-479.5 [E] Dirac matrices, chirality and the massless limit
+- 1979-479.6 [E] Photon, charged-current and neutral-current exchange
+- 1979-479.7 [E] Non-Abelian curvature and the gauge kinetic action
+- 1979-479.8 [E] Minimal gauge coupling of fermions
+- 1979-479.9 [E] Gauge-invariant Higgs potential and power counting
+- 1979-479.10 [E] Classical vacuum as a minimum-energy configuration
+- 1979-480.1 [E] Coulomb interaction energy and divergent point-charge self-energies
+- 1979-480.2 [B] A flux tube of distance-independent transverse size
+- 1979-480.3 [C] Linear static energy and continuum confinement
+- 1979-480.4 [F] Manin's semiclassical qualification
+- 1979-480.5 [E] The product gauge connection and electroweak kinetic terms
+- 1979-480.6 [E] Scalar energy, stationary points and local vacua
+- 1979-480.7 [E] Small oscillations and the scalar mass-squared Hessian
+- 1979-480.8 [E] Symmetry zero modes and the correct Goldstone count
+- 1979-480.9 [E] Unitary gauge, vector masses and conserved physical degrees of freedom
+- 1979-480.10 [E] Exercise: eliminate the Goldstone field in the planar scalar model
+- 1979-480.11 [E] The Higgs doublet and the unbroken electromagnetic subgroup
+- 1979-480.12 [E] Diagonalizing the weak neutral mass matrix
+- 1979-480.13 [E] Charged, electromagnetic and neutral currents
+- 1979-480.14 [E] Electron mass from a gauge-invariant Yukawa coupling
+- 1979-480.15 [E] Quark Lagrangian and a unitary mixing matrix
+- 1979-482.1 [E] Gauge connections, ordered parallel transport and Wilson loops
+- 1979-482.2 [E] Vanishing of gauge-variant expectations needs a precise observable
+- 1979-482.3 [E] Gelfand on path-group characters and connections
+- 1979-482.4 [E] Stokes-type loop functionals and the area derivative
+- 1979-482.5 [E] Curvature from an infinitesimal commutator
+- 1979-482.6 [E] Marked path derivatives become covariant derivatives
+- 1979-482.7 [E] Translation of a contour and the area-derivative integral
+- 1979-482.8 [E] The classical Yang--Mills equation in loop notation
+- 1979-482.9 [E] Normalized expectation and the weak Schwinger--Dyson identity
+- 1979-482.10 [E] The color contraction is specific to the defining unitary representation
+- 1979-482.11 [E] Finite-rank loop equations form a hierarchy
+- 1979-482.12 [E] Gauge-covariant regularization must reconnect separated endpoints
+- 1979-482.13 [E] Large-rank factorization requires normalized traces
+- 1979-482.14 [C] The general confinement goal and the proposed large-rank route
+- 1979-483.1 [E] Coxeter presentations, reduced words and Bruhat order
+- 1979-483.2 [E] The Hecke algebra, specialization and its standard basis
+- 1979-483.3 [E] Bar involution and inversion of Hecke generators
+- 1979-483.4 [E] Existence and uniqueness of the Kazhdan--Lusztig basis
+- 1979-483.5 [E] The simple-reflection polynomial and the second canonical basis
+- 1979-483.6 [B] Kazhdan--Lusztig multiplicities of Verma modules
+- 1979-483.7 [B] Vogan parity and the Ext-polynomial refinement
+- 1979-483.8 [E] Multiplication in the canonical basis and cell subquotients
+- 1979-484.1 [E] Allowable chains for middle intersection homology
+- 1979-484.2 [E] Smooth normalization and rational Poincare duality
+- 1979-484.3 [E] Schubert closures supply the relevant even stratification
+- 1979-484.4 [E] Local intersection cohomology computes Kazhdan--Lusztig polynomials
+- 1979-485.1 [E] The Gaussian family with orthogonal-group labels
+- 1979-485.2 [E] Discrete finite-multiplicity restriction and the maximal-compact analogy
+- 1979-485.3 [E] Type I for the completed finite-real-rank groups
+- 1979-485.4 [E] Exhaustion of finite-rank irreducibles by holomorphic constructions
+- 1979-486.1 [E] Locally linear flattenings are an additional triangulation hypothesis
+- 1979-486.2 [E] The hypersimplex over a simplex and its elementary models
+- 1979-486.3 [E] Gluing the hypersimplicial space over the original complex
+- 1979-486.4 [E] Configuration spaces and their degeneracy loci
+- 1979-486.5 [F] Does the degeneracy decomposition itself form a cell structure?
+- 1979-486.6 [E] The low-codimension configuration cell models
+- 1979-486.7 [E] Connectivity of the codimension-three configuration graph
+- 1979-486.8 [E] Restriction maps glue the configuration models
+- 1979-486.9 [E] The compatible product complex Gamma
+- 1979-486.10 [E] The signed one-forty-eighth cocycle on four-cells
+- 1979-486.11 [E] The combinatorial cocycle represents the first Pontryagin class
+- 1979-486.12 [E] Six coordinate degeneracy divisors on the real Grassmannian
+- 1979-486.13 [E] Enhanced configurations of four rays and cross-ratio
+- 1979-486.14 [E] A Pontryagin form on the Grassmannian
+- 1979-486.15 [A] Fiber integration of the Pontryagin form and the Rogers dilogarithm
+- 1979-487.1 [E] From a Grassmannian point to a vector and ray configuration
+- 1979-487.2 [E] A configuration plus a hypersimplex point recovers the plane
+- 1979-488.1 [E] Hydrostatic reduction of the incompressible free-surface equations
+- 1979-488.2 [E] The height equation is integrated mass conservation
+- 1979-488.3 [A] Additional branches generate conservation laws beyond the usual moment hierarchy
+- 1979-488.4 [A] Lagrangian layers give a simpler one-dimensional Hamiltonian bracket
+- 1979-488.5 [A] Two horizontal dimensions retain a Hamiltonian formulation under appropriate variables
+- 1979-488.6 [A] The many-fluid variables also give a kinetic reinterpretation
+- 1979-488.7 [E] Gelfand interprets the system as collective differential equations
+
+## GY1979: problems
+
+- GP-1979-01 [2026-11] Canonical forms of even Grassmann matrices
+- GP-1979-02 [2026-11] Even commutants of odd Grassmann matrices
+- GP-1977-11 [2026-11] Describe projective bundles by finite exterior modules
+- GP-1979-03 [2026-11] Explicit maps in the BGG and Beilinson constructions
+- GP-1979-04 [2026-11] A Grassmannian counterpart of the projective-space linear model
+- GP-1979-06 [2026-11] The two-dimensional energy representation
+- GP-1979-05 [2026-11] Universality of the difference-curve resonance construction
+- GP-1979-20 [2026-11] Local abelianization of regular first-class constraints
+- GP-1975-10 [2026-11] Continuum confinement and the static potential
+- GP-1979-41 [2026-11] Kazhdan--Lusztig multiplicity and cohomological conjectures
+
+## GY1980: items
+
+- 1980-490.1 [E] Stratifications and middle-perversity allowable chains
+- 1980-490.2 [E] Poincare duality for intersection homology
+- 1980-490.3 [E] The nodal union of two spheres and failure of homotopy invariance
+- 1980-490.4 [B] Intersection cohomology versus L2 cohomology
+- 1980-490.5 [E] Isolated singularities and Deligne truncation
+- 1980-491.1 [E] The weighted curve transform and incidence fiber
+- 1980-491.2 [E] Local inversion from curves through a point
+- 1980-491.3 [E] Admissible first-order differential forms
+- 1980-491.4 [A] The one-dimensional incidence case and support at a point
+- 1980-491.5 [E] Quotient by trivial exact forms
+- 1980-492.1 [E] A second-order equation and its dual family
+- 1980-492.2 [E] Straightening a family of curves by point transformations
+- 1980-492.3 [E] Incidence manifolds and double fibrations
+- 1980-492.4 [E] Homogeneous double fibrations and the intersection stabilizer
+- 1980-492.5 [E] The hyperbolic and horospherical matrix example
+- 1980-492.6 [E] Segre families and separate-coordinate equivalence
+- 1980-492.7 [E] Adapted coframes and the Segre structure group
+- 1980-492.8 [E] Frobenius conditions for the two Segre foliations
+- 1980-493.1 [E] A G-structure as a reduction of the frame bundle
+- 1980-493.2 [F] Geometries on the two-sphere associated with subgroups
+- 1980-493.3 [E] Allowability revisited with complex-dimensional skeleta
+- 1980-493.4 [E] Sheaf-local intersection cohomology and its arithmetic motivation
+- 1980-493.5 [E] Embedding a singular variety and the delta-module picture
+- 1980-493.6 [E] Minimal extension and the irreducibility hypothesis
+- 1980-493.7 [E] Derived solutions from a locally free resolution
+- 1980-493.8 [E] Flat connections and local systems
+- 1980-493.9 [E] The regular Riemann--Hilbert correspondence
+- 1980-493.10 [E] Torsion-freeness does not characterize connections
+- 1980-493.11 [E] Regular singular equations and logarithmic lattices
+- 1980-493.12 [E] Testing higher-dimensional regularity on curves
+- 1980-493.13 [E] Finite length and generically flat simple factors
+- 1980-494.1 [E] Subgroups and normal subgroups of finite symmetry groups
+- 1980-494.2 [E] Topology of SL(2,R) and its universal covering manifold
+- 1980-494.3 [E] The universal covering group and a triple-line cocycle
+- 1980-494.4 [E] Countably many projective structures on the real line up to isomorphism
+- 1980-495.1 [A] Levi-flat filling of an embedded two-sphere
+- 1980-495.2 [E] The asserted obstruction for a torus
+- 1980-495.3 [F] A degenerate boundary problem of index zero
+- 1980-495.4 [A] Gauge-invariant functional integration as a regularized program
+- 1980-495.5 [A] Covariant Hodge heat kernels as diffusion covariance
+- 1980-495.6 [A] Heat-kernel regularity and the stochastic differential equation
+- 1980-495.7 [E] The Feynman--Kac representation of a Schroedinger semigroup
+- 1980-495.8 [E] Khasminskii exponential bound and the missing negative part
+- 1980-495.9 [E] Large-time logarithmic growth and the bottom of the spectrum
+- 1980-497.1 [E] Enveloping algebras and their quotient division rings
+- 1980-497.2 [B] The unextended Gelfand--Kirillov conjecture revisited
+- 1980-497.3 [F] Differential operators beyond polynomial coefficients
+- 1980-497.4 [E] The BGG sheaf approach on projective space
+- 1980-496.1 [E] Affine objects and their rings of functions
+- 1980-496.2 [E] Localization of modules and quasi-coherent sheaves
+- 1980-496.3 [E] Serre’s cohomological criterion for affineness
+- 1980-496.4 [A] Quasi-coherent D-modules and D-affinity
+- 1980-496.5 [A] Affine varieties, projective spaces, and the elliptic counterexample
+- 1980-496.6 [A] Induced D-modules from negative line bundles
+- 1980-496.7 [E] Reversing the tensor product and formal transposition
+- 1980-496.8 [A] Does equivalence by global sections imply D-affinity?
+- 1980-496.9 [E] The canonical class obstruction and the limits of Chern-class arguments
+- 1980-496.10 [A] Global operators on the flag variety and localization
+- 1980-496.11 [E] The projective-line operator algebra and its central relation
+- 1980-499.1 [E] The Cayley norm and multiplicative composition
+- 1980-499.2 [E] Dimensions of finite-dimensional absolute-valued algebras
+- 1980-499.3 [E] The Clifford-algebra route to the dimension restriction
+- 1980-499.4 [E] Can a multiplicative norm exist in infinite dimension?
+- 1980-499.5 [E] Associativity, Desargues, and the Cayley projective plane
+- 1980-499.6 [F] Differential and locally homogeneous projective planes
+- 1980-499.7 [F] A unified geometric explanation of exceptional Lie types
+- 1980-498.1 [E] Global sections and localization for a sheaf of rings
+- 1980-498.2 [A] Cohomological affinity and equivalence of module categories
+- 1980-498.3 [E] A compact projective generator identifies an abelian category with modules
+- 1980-498.4 [A] Projective space is D-affine
+- 1980-498.5 [A] Flag-variety localization for a reductive group
+- 1980-498.6 [E] The transfer bimodule and its two commuting operator actions
+- 1980-498.7 [E] Derived direct and inverse image in place of a ring pullback
+- 1980-501.1 [E] Continuity and differentiability of Thomae’s function
+- 1980-501.2 [E] Differentiability of powers of Thomae’s function
+- 1980-501.3 [E] A double continuous limit for the Dirichlet function
+- 1980-501.4 [E] Can the Dirichlet function be a pointwise limit of continuous functions?
+- 1980-501.5 [E] Fourier integrals with quadratic, quartic, and sextic decay
+- 1980-500.1 [E] Pullback of a left D-module
+- 1980-500.2 [E] Pullback of connections and of the structure sheaf
+- 1980-500.3 [E] Ordinary pullback can destroy D-module coherence
+- 1980-500.4 [E] The ordinary fibre of a delta module vanishes
+- 1980-500.5 [E] The transfer bimodule and ordinary right direct image
+- 1980-500.6 [E] Closed-embedding direct images and normal delta derivatives
+- 1980-500.7 [E] Canonical right module and conversion from left modules
+- 1980-500.8 [E] Derived pullback and derived integration
+- 1980-500.9 [E] Integration of the canonical module computes shifted de Rham cohomology
+- 1980-502.1 [E] Isomorphic cohomology need not lift to a chain map
+- 1980-502.2 [F] An unspecified derived equivalence between a sphere and its dual
+- 1980-504.1 [E] Whitehead product from the boundary of a product of cubes
+- 1980-504.2 [E] Shifted graded Jacobi identity for Whitehead products
+- 1980-505.1 [F] An ambiguous four-operator perturbation assertion
+- 1980-503.1 [E] Pulling solutions back and integrating solutions along fibres
+- 1980-503.2 [E] Derived direct images compose
+- 1980-503.3 [E] Projection of a plane and the degree minus one direct image
+- 1980-503.4 [E] The right-module Spencer complex and de Rham shift
+- 1980-503.5 [E] Relative de Rham cohomology and the Gauss–Manin action
+- 1980-503.6 [E] Closed-embedding exactness and Kashiwara equivalence
+- 1980-503.7 [E] Holonomicity tested by all derived point fibres
+- 1980-503.8 [E] Generic connections and gluing holonomic modules along strata
+- 1980-503.9 [E] Finite length of holonomic modules
+- 1980-503.10 [E] Simple holonomic modules as minimal extensions
+- 1980-503.11 [E] Smoothness alone does not make a direct image simple
+- 1980-506.1 [E] Periodic magnetic Schrödinger and Pauli operators
+- 1980-506.2 [F] The aside on a constant electric field
+- 1980-506.3 [E] Integral magnetic flux as the degree of a physical line bundle
+- 1980-506.4 [E] Reduction of rational flux to integral flux
+- 1980-506.5 [E] Flux quantization depends on the charge being modeled
+- 1980-506.6 [E] Magnetic translations form a projective lattice representation
+- 1980-506.7 [E] Irrational flux prevents finite-dimensional magnetic translation fibers
+- 1980-506.8 [F] Describe the spectrum: a program without a specified invariant
+- 1980-506.9 [E] Magnetic Bloch decomposition for commuting lattice translations
+- 1980-506.10 [E] Explicit Pauli zero modes in a periodic magnetic field
+- 1980-506.11 [E] Divisors, sigma multipliers, and real quasimomenta
+- 1980-506.12 [E] The N-dimensional zero-mode fiber
+- 1980-506.13 [A] Rank and Chern number of the Bloch bundle
+- 1980-506.14 [E] The same fiber multiplicity at every constant-field Landau level
+- 1980-506.15 [E] Compressing a weak electric perturbation to the zero-mode bundle
+- 1980-506.16 [A] Codimension three and generic splitting into line bundles
+- 1980-506.17 [F] The aside about one-dimensional second-order operators
+- 1980-506.18 [F] Complex or parabolic regularization in the irrational case
+- 1980-508.1 [E] Grassmannian dimension notation and coordinate inclusions
+- 1980-508.2 [F] The inadequately specified geodesic-simplex construction
+- 1980-508.3 [E] The hypersimplex
+- 1980-508.4 [A] Positive torus orbit closures and the genericity condition
+- 1980-508.5 [A] The orbit closure is a hypersimplex with its face stratification
+- 1980-508.6 [A] The projective triangle and its dual Grassmannian triangle
+- 1980-508.7 [A] The octahedron and the cross-ratio in Gr(2,4)
+- 1980-508.8 [A] Dilogarithmic volume between two Grassmannian simplices
+- 1980-508.9 [E] The two families of hypersimplex boundary faces
+- 1980-508.10 [A] Vanishing of harmonic forms on real Grassmannian simplices
+- 1980-508.11 [E] Five configurations and the differential five-term identity
+- 1980-508.12 [A] Pontryagin-form fibre integration and Stokes’ formula
+- 1980-508.13 [B] Positive orbits in compact Kähler manifolds and their polytope closures
+- 1980-508.14 [B] Kähler harmonic-form vanishing on the positive torus part
+- 1980-508.15 [B] Convexity for commuting Hamiltonians and the orbit-image conflation
+- 1980-508.16 [F] The unspecified relation with integration by quadratures
+- 1980-509.1 [E] Genus of a hyperelliptic curve
+- 1980-509.2 [E] Degree genus formula and why the hyperelliptic plane model is special
+- 1980-509.3 [E] Newton polygons and Laurent-monomial translation
+- 1980-509.4 [E] The Newton-polygon genus theorem
+- 1980-509.5 [E] Boundary valuations and unimodular monomial changes
+- 1980-509.6 [E] Edge lengths count punctures
+- 1980-509.7 [E] Divisor degree and the signed boundary root count
+- 1980-509.8 [E] Mixed area and the two incompatible normalizations
+- 1980-509.9 [E] Bernshtein’s torus root count, with multiplicities and nondegeneracy
+- 1980-509.10 [E] Equal polygons and the Bézout specialization
+- 1980-509.11 [E] Euler characteristic of a nondegenerate torus hypersurface
+- 1980-509.12 [E] Pick’s formula from genus, punctures, and Euler characteristic
+- 1980-509.13 [E] Mixed area with a disk and the isoperimetric inequality
+- 1980-509.14 [E] The surface intersection inequality requires positivity
+- 1980-509.15 [E] Toric compactification from compatible monomial charts
+- 1980-511.1 [E] Dixmier’s commuting operators of orders four and six
+- 1980-511.2 [A] Grinevich’s rational rank-two generalization
+- 1980-510.1 [E] KdV inverse scattering and the recorded Lax pair
+- 1980-510.2 [E] Matrix zero-curvature equations
+- 1980-510.3 [F] The third-stage unification slogan
+- 1980-510.4 [A] Elliptic linear systems for anisotropic vector equations
+- 1980-510.5 [E] Landau–Lifshitz dynamics and scattering brackets
+- 1980-512.1 [E] Unimodular torus charts and character--cocharacter duality
+- 1980-512.2 [E] The fan compatibility condition
+- 1980-512.3 [E] The sigma-process example is one blow-up chart
+- 1980-512.4 [E] Completeness, the projective-plane fan, and toric classification
+- 1980-513.1 [A] Exponential sums and complex Newton polytopes
+- 1980-513.2 [A] Asymptotic zero count for regular exponential systems
+- 1980-513.3 [A] The face formula for pseudovolume
+- 1980-513.4 [A] Polarization and the real-spectrum specialization
+- 1980-513.5 [A] Smooth-boundary and Levi-form descriptions of pseudovolume
+- 1980-513.6 [A] Support functions and the growth-indicatrix question of 2 March
+- 1980-514.1 [E] Borel summation of the Gaussian tail
+- 1980-514.2 [E] Yang–Baxter connections and unitarity
+- 1980-515.1 [B] Inversion and partial-transpose dynamics
+- 1980-515.2 [E] The symmetric eight-vertex subspace
+- 1980-515.3 [E] Baxter invariants and the generic elliptic fibre
+- 1980-515.4 [F] Invariant varieties beyond the eight-vertex example
+- 1980-516.1 [E] From factorized scattering to spin chains and spin fields
+- 1980-516.2 [E] Two-body amplitudes and factorization
+- 1980-516.3 [E] Three-line consistency gives the Yang–Baxter equation
+- 1980-516.4 [E] Finding a nontrivial two-body Yang–Baxter matrix
+- 1980-516.5 [E] Tensor-leg notation with noncommutative coefficients
+- 1980-516.6 [E] The commuting-transfer-operator lemma
+- 1980-516.7 [E] The elliptic Pauli-matrix solution
+- 1980-516.8 [E] A parameter family yields commuting transfer matrices
+- 1980-517.1 [E] The constrained geodesic equation on an ellipsoid
+- 1980-517.2 [E] Isospectrality of Moser’s projected matrix
+- 1980-518.1 [E] Elliptic rank-two operators in Tyurin coordinates
+- 1980-518.2 [E] Tyurin deformation equations and the potential formula
+- 1980-518.3 [A] Grinevich’s rationality criterion and the Dixmier specialization
+- 1980-519.1 [E] Kirillov’s formal pseudodifferential formula for the Dixmier pair
+- 1980-519.2 [B] Rational differential operators for a genus-two spectral curve
+- 1980-519.3 [C] Curve function fields in the Weyl division ring
+- 1980-519.4 [B] The remark excluding coprime differential orders
+- 1980-519.5 [E] Existence of the Weyl skew field of fractions
+- 1980-520.1 [E] Verma modules
+- 1980-520.2 [A] Flag-variety and projective-line realizations
+- 1980-521.1 [E] Kodaira dimension and irregularity
+- 1980-521.2 [E] Maximal irregularity at Kodaira dimension zero
+- 1980-521.3 [E] Irregular threefolds of Kodaira dimension zero
+- 1980-521.4 [F] The irregularity-zero entry in the classification table
+- 1980-521.5 [F] The negative-infinite Kodaira-dimension line
+- 1980-522.1 [E] Waldhausen’s K-theory programme for diffeomorphism spaces
+- 1980-522.2 [E] Quillen’s plus construction and homotopy rings
+- 1980-522.3 [B] Soulé’s zeta-value bounds for the orders of K-groups
+- 1980-523.1 [E] The collisionless self-consistent-field model
+- 1980-524.1 [E] Incompressible Euler flow as geodesic motion
+- 1980-524.2 [E] Hamiltonian reduction and coadjoint-orbit symplectic forms
+- 1980-524.3 [E] The Vlasov Lie–Poisson bracket
+- 1980-524.4 [B] Gauge-coupled kinetic systems
+- 1980-524.5 [F] Density and the incomplete compressible-fluid Hamiltonian claim
+- 1980-525.1 [E] Elastic collisions and the homogeneous Boltzmann equation
+- 1980-525.2 [E] Inverse-power potentials and Maxwell molecules
+- 1980-525.3 [E] The Bobylev Fourier identity
+- 1980-525.4 [E] Gaussian convolution symmetry
+- 1980-525.5 [E] Maxwellians and linearization
+- 1980-525.6 [E] The constant-loss plus compact-gain decomposition
+- 1980-525.7 [F] Unspecified new eigenfunctions
+- 1980-525.8 [A] Triangular linearization of the isotropic Maxwell hierarchy
+- 1980-525.9 [A] Countably many nonlinear invariants of relaxation
+- 1980-525.10 [F] The spatially inhomogeneous and hydrodynamic-limit programme
+- 1980-526.1 [B] The Hermitian sum spectral problem
+- 1980-526.2 [B] The recursive Horn inequalities
+- 1980-526.3 [B] Tensor-product multiplicities and saturation
+- 1980-526.4 [E] Convolution of orbital measures
+- 1980-527.1 [E] Barotropic compressible Euler equations
+- 1980-527.2 [E] Characteristics and the onset of a scalar shock
+- 1980-527.3 [E] Conservation form and entropy selection
+- 1980-527.4 [F] Zakharov’s matrix Hopf equation
+- 1980-527.5 [F] Expansion of gas into vacuum
+- 1980-527.6 [E] The hyperbolic-plane nonimmersion analogy
+- 1980-527.7 [E] The slightly compressible to incompressible limit
+- 1980-527.8 [E] Internal energy in material coordinates
+- 1980-527.9 [F] The unspecific viscous-fluid extension
+- 1980-527.10 [F] A descending step for a polynomially regularized Burgers equation
+- 1980-528.1 [E] The semigroup of indefinite contractions
+- 1980-528.2 [A] Compression semigroups of domains
+- 1980-528.3 [A] Contractive involutive-semigroup representations
+- 1980-528.4 [E] Tensor-power representations of ordinary contractions
+- 1980-528.5 [E] The Hermitian criterion for invariant proper cones
+- 1980-528.6 [E] The list of simple Hermitian real forms
+- 1980-528.7 [A] Minimal and maximal cones after choosing an orientation
+- 1980-528.8 [A] Global semigroups from Hermitian invariant cones
+- 1980-528.9 [A] Local semigroups for general invariant cones
+- 1980-528.10 [A] The representation cone and highest-weight condition
+- 1980-528.11 [A] Holomorphic extension and the contractive representation category
+- 1980-528.12 [A] Holomorphic–antiholomorphic factorization for the minimal cone
+- 1980-528.13 [F] Gelfand’s request to go beyond semisimple groups
+
+## GY1980: problems
+
+- GP-1967-21 [2026-11] The unextended semisimple Gelfand--Kirillov conjecture
+- GP-1980-01 [2026-11] Projective structures on the real line
+- GP-1980-02 [2026-11] Levi-flat filling of real two-spheres
+- GP-1980-03 [2026-11] Categorical characterization of D-affinity
+- GP-1980-04 [2026-11] Infinite-dimensional algebras with a multiplicative norm
+- GP-1980-20 [2026-11] Continuity and differentiability of Thomae functions
+- GP-1980-21 [2026-11] A single continuous-function limit for the Dirichlet function
+- GP-1980-22 [2026-11] Large-frequency asymptotics of Gaussian, quartic, and sextic Fourier integrals
+- GP-1980-23 [2026-11] Isomorphic cohomology without a direct chain map
+- GP-1980-24 [2026-11] Genus from a Newton polygon
+- GP-1980-25 [2026-11] Root counts from prescribed Newton polytopes
+- GP-1980-26 [2026-11] Newton-type asymptotic root count for complex exponential sums
+- GP-1980-27 [2026-11] Relating exponential zero density to the growth indicatrix
+- GP-1980-40 [2026-11] Genus-two spectral curves of rational commuting differential operators
+- GP-1980-41 [2026-11] Curve function fields in the first Weyl division ring
+- GP-1980-42 [2026-11] Spectra of sums of Hermitian matrices and tensor-product multiplicities
+
+## GY1981: items
+
+- 1981-531.1 [E] Adjoint representation and the Killing form
+- 1981-531.2 [F] Approximate Lorentz representations and a neutrino-mass aside
+- 1981-531.3 [E] Cartan roots, root spaces and the real root span
+- 1981-531.4 [E] Simple roots, positivity and the highest root
+- 1981-531.5 [E] Coroots and the dual root system
+- 1981-531.6 [E] Weyl reflections and the examples A2 and sl(n)
+- 1981-531.7 [E] Finite Cartan matrices and their symmetrization
+- 1981-531.8 [E] Chevalley–Serre presentation
+- 1981-531.9 [E] Weight-space decomposition and the weight lattice
+- 1981-531.10 [E] Root vectors shift weights
+- 1981-531.11 [E] Classification by dominant integral highest weights
+- 1981-531.12 [E] Formal characters and the Weyl vector
+- 1981-531.13 [E] Weyl character formula
+- 1981-531.14 [E] Weyl denominator and the Vandermonde model
+- 1981-532.1 [E] The maximal-ideal construction of a contragredient Lie algebra
+- 1981-532.2 [E] Removing redundant central Cartan directions
+- 1981-532.3 [E] Roots and root multiplicities of the contragredient quotient
+- 1981-532.4 [E] Generalized Cartan-matrix axioms
+- 1981-532.5 [E] Finite, affine and indefinite trichotomy
+- 1981-532.6 [E] Second Rogers–Ramanujan identity
+- 1981-532.7 [E] First Rogers–Ramanujan identity
+- 1981-533.1 [E] Verma modules and their PBW weight structure
+- 1981-533.2 [E] One-dimensional Hom spaces and injectivity of Verma homomorphisms
+- 1981-533.3 [E] The BGG strong-linkage criterion and the rho-sign error
+- 1981-533.4 [E] Computing root-space dimensions and independent root words
+- 1981-534.1 [E] Closed sets from pointwise stabilizers
+- 1981-534.2 [E] Setwise stabilizers and the restriction exact sequence
+- 1981-534.3 [E] Ordered and saturated flags in the closure geometry
+- 1981-534.4 [E] Singleton closures and an incorrect stabilizer-equality assertion
+- 1981-534.5 [E] Double transitivity and its singleton-closure obstruction
+- 1981-534.6 [A] Four geometric axioms and the asserted Bruhat decomposition
+- 1981-534.7 [A] Frames, their normalizer and the Weyl quotient
+- 1981-534.8 [F] Unspecified examples outside the axioms
+- 1981-534.9 [E] Unitary double cosets and singular values
+- 1981-534.10 [E] Borel double cosets and permutation matrices
+- 1981-534.11 [E] Mixed unitary–Borel double cosets
+- 1981-535.1 [E] The representation variety and base-change action of A_m
+- 1981-535.2 [E] Finite orbit classification by interval multiplicities
+- 1981-535.3 [E] Composition ranks, interval inversion and degeneration order
+- 1981-535.4 [E] Normality, Cohen–Macaulayness and rational singularities
+- 1981-535.5 [A] The Schubert analogy and the Zelevinsky map
+- 1981-535.6 [B] Quiver intersection cohomology and p-adic representation multiplicities
+- 1981-535.7 [E] A single arrow and determinantal varieties
+- 1981-536.1 [E] The two-generator Serre algebra and its dimension table
+- 1981-536.2 [E] The bigraded Witt formula for a free Lie algebra
+- 1981-536.3 [E] The Catalan specialization and the missing product length
+- 1981-536.4 [E] The enveloping algebra and alternating associative Serre relations
+- 1981-536.5 [E] The symmetric-algebra Euler transform and divisor sums
+- 1981-536.6 [F] The uncompleted lexicographic word method
+- 1981-536.7 [E] Counting interlacing tables with four fixed top entries
+- 1981-537.1 [E] Superspace as a functor of Grassmann algebras
+- 1981-537.2 [E] A real (4|4) supersurface and its odd complex tangent space
+- 1981-537.3 [E] Holomorphic transformations preserving the Berezin volume
+- 1981-537.4 [E] The graph superfield and field-space democracy
+- 1981-537.5 [A] The vector-valued Levi form and its four-by-four determinant
+- 1981-537.6 [A] The invariant action density and the corrected exponents
+- 1981-537.7 [A] Uniqueness within the stated first/second-derivative action class
+- 1981-537.8 [A] SCR structure as CR data with ambient-volume normalization
+- 1981-538.1 [E] Triangular decomposition and simple-root generators
+- 1981-538.2 [E] Highest vectors and highest weights
+- 1981-538.3 [E] Verma module and its unique simple quotient
+- 1981-538.4 [E] Finite length versus arbitrary subquotients
+- 1981-538.5 [E] Composition multiplicities in a Verma module
+- 1981-538.6 [E] Central-character linkage and the rho shift
+- 1981-538.7 [E] Independence of the dominant integral base point
+- 1981-538.8 [E] Kazhdan--Lusztig values give Verma multiplicities
+- 1981-538.9 [B] What the coefficients remember beyond total multiplicity
+- 1981-539.1 [E] Category O and the sign of the nilradical
+- 1981-539.2 [E] Restricted contragredient duality
+- 1981-540.1 [E] The normalized contravariant Shapovalov form
+- 1981-540.2 [E] PBW trivialization of the family of Verma modules
+- 1981-540.3 [E] Generic nondegeneracy along the rho deformation
+- 1981-540.4 [E] The Jantzen filtration requires parameter-dependent lifts
+- 1981-540.5 [B] Does changing the deformation direction preserve layer multiplicities?
+- 1981-540.6 [B] Correct grading of Kazhdan--Lusztig coefficients in Jantzen layers
+- 1981-540.7 [E] Local intersection cohomology of Schubert closures
+- 1981-541.1 [E] Weights and multiplicities in a finite-dimensional simple module
+- 1981-541.2 [E] Type-A alternants and the missing highest-weight shift
+- 1981-541.3 [E] Cauchy determinant exercise
+- 1981-541.4 [B] Finite weight multiplicities from affine Kazhdan--Lusztig polynomials
+- 1981-541.5 [F] An unspecified extension to all Kac--Moody algebras
+- 1981-542.1 [E] Primitivity of the universal enveloping algebra
+- 1981-542.2 [E] Jacobson's primitive-envelope question for algebraic Lie algebras
+- 1981-542.3 [E] Why nonzero semisimple and nilpotent Lie algebras are excluded
+- 1981-542.4 [E] The affine Lie algebra is Frobenius
+- 1981-542.5 [E] The binary-cubic semidirect product
+- 1981-542.6 [A] The asserted two-example classification and its missing reductive hypotheses
+- 1981-542.7 [A] Castling as a method for generating further Frobenius examples
+- 1981-542.8 [F] An unidentified gamma function associated with the cubic example
+- 1981-543.1 [E] The singular limit of the van der Pol equation
+- 1981-543.2 [E] Integrating the reduced first-order equation
+- 1981-543.3 [E] Relaxation jumps and the limiting periodic cycle
+- 1981-543.4 [E] Rayleigh and van der Pol equations are linked by differentiation
+- 1981-543.5 [E] Using an infinitesimal parameter in singular perturbation theory
+- 1981-543.6 [E] The zero-one probability space and ultrapower quotient
+- 1981-543.7 [E] Surreal numbers represented by transfinite sign sequences
+- 1981-543.8 [E] The finite-arrow halving rule needs correction
+- 1981-543.9 [E] Infinite arrow blocks and the distinction between omega and infinity
+- 1981-544.1 [A] An ascending union plausibly identified with a filtered elliptic matrix algebra
+- 1981-544.2 [A] Sigma-product entries and cancellation of elliptic multipliers
+- 1981-546.1 [E] Schrödinger evolution and the formal Feynman kernel
+- 1981-546.2 [E] The heat-semigroup interpretation of the path integral
+- 1981-546.3 [E] The Einstein--Hilbert action has second-order field equations
+- 1981-546.4 [E] Which curvature actions have lower-order Euler--Lagrange equations?
+- 1981-546.5 [F] A formal gravitational integral and finite triangulation measures
+- 1981-546.6 [E] Piecewise flat metrics and Regge hinge curvature
+- 1981-546.7 [A] Convergence of Regge curvature under nondegenerate refinement
+- 1981-546.8 [C] Does curvature convergence imply convergence of the Regge equations?
+- 1981-546.9 [E] Fat smooth triangulations and the danger of repeated barycentric subdivision
+- 1981-546.10 [A] Higher piecewise flat curvature from flags and solid angles
+- 1981-546.11 [A] Higher curvature convergence and the Euler-form correction
+- 1981-546.12 [E] An angle-flag Gauss--Bonnet formula for Euler characteristic
+- 1981-546.13 [F] The unidentified earlier Brin formula
+- 1981-546.14 [E] Simplex metrics as positive-definite Gram matrices
+- 1981-546.15 [E] The invariant metric measure and its missing edge-length Jacobian
+- 1981-546.16 [A] Compatible simplex metrics and the induced finite-dimensional volume
+- 1981-546.17 [E] Chern's kinematic formula as the curvature-convergence mechanism
+- 1981-547.1 [E] Hamiltonian Lie-group actions and the global exactness condition
+- 1981-547.2 [E] The equivariant Poisson moment map
+- 1981-549.1 [E] The parallel-body polynomial and the curvature-index shift
+- 1981-549.2 [E] Projection averages and Crofton averages of Euler characteristic
+- 1981-549.3 [E] Normalized lattice volume and height in a quotient lattice
+- 1981-549.4 [E] The proposed replacement of volume by lattice-point count
+- 1981-548.1 [E] The complementary beta-numbers of a partition and its conjugate
+- 1981-548.2 [E] The corrected generating-function identity for complementary partitions
+- 1981-548.3 [E] Symplectic cones and their two scaling examples
+- 1981-550.1 [E] The contact quotient and symplectization of a free symplectic cone
+- 1981-550.2 [F] The unqualified existence and uniqueness assertion for quantization
+- 1981-550.3 [E] Weyl quantization and the momentum-sign inconsistency
+- 1981-550.4 [E] Classical symbols on the isotropic cone and the principal-order quotient
+- 1981-550.5 [B] An axiomatic complex-order Weyl algebra
+- 1981-550.6 [E] Asymptotic completeness of the operator filtration
+- 1981-550.7 [E] Boundedness, compactness and trace-class thresholds
+- 1981-550.8 [E] Compactness detects a vanishing classical principal symbol
+- 1981-550.9 [E] Splitting the principal-symbol sequence
+- 1981-550.10 [E] Holomorphic order families and complex powers
+- 1981-552.1 [E] The regular-holonomic Riemann--Hilbert correspondence in MacPherson's proposed title
+- 1981-552.2 [B] What corresponds to a characteristic variety on the sheaf side?
+- 1981-552.3 [E] Bivariant homology attached to maps and its composition product
+- 1981-553.1 [E] The discrete-to-topological homotopy fiber for volume-preserving diffeomorphisms
+- 1981-553.2 [E] Local homology depends on the group germ at the identity
+- 1981-551.1 [E] The subgroup fibration and the homotopy-quotient qualification
+- 1981-551.2 [F] The infinitesimal fundamental-domain analogy for a dense subgroup
+- 1981-553.3 [A] The universal flat foliation and its transverse volume form
+- 1981-553.4 [A] The canonical cohomology classes obtained by fiber integration
+- 1981-553.5 [A] The torus addition cycle detects the top class
+- 1981-553.6 [A] Parity of the top canonical class on spheres
+- 1981-553.7 [A] The secondary class on Euclidean space and its opposite parity
+- 1981-554.1 [E] The comparison map after forgetting the topology of a Lie group
+- 1981-554.2 [C] The Friedlander--Milnor finite-coefficient isomorphism conjecture
+- 1981-554.3 [E] Positive-degree rational homology vanishes under the comparison for compact groups
+- 1981-554.4 [E] The large integral second homology of a Lie group made discrete
+- 1981-554.5 [A] The isomorphism conjecture for groups with solvable identity component
+- 1981-554.6 [A] Finite-coefficient split surjectivity for finitely many components
+- 1981-554.7 [A] Integral cohomology injects after discretization
+- 1981-554.8 [A] The finite-coefficient comparison in degree one
+- 1981-554.9 [E] The degree-two comparison for real and complex special linear groups
+- 1981-555.1 [C] Exact smooth coinvariants for the modular action on the projective circle
+- 1981-555.2 [C] The asserted smooth density is distinct from exact solvability
+- 1981-555.3 [F] The connection with foliations having minimal leaves
+- 1981-556.1 [B] Geometric computation of compact-group weight multiplicities
+- 1981-556.2 [F] The unspecified hyperbolic multiplicity programme
+- 1981-556.3 [E] The regular SU(3) orbit and its hexagonal diagonal image
+- 1981-556.4 [E] Dimensions and singular values of the torus moment map
+- 1981-556.5 [E] SU(3) weight hexagons and multiplicity layers
+- 1981-556.6 [B] Riemann–Roch multiplicity requires a reduced space
+- 1981-556.7 [F] An unspecified duality between groups and representations
+- 1981-556.8 [E] Falling factorials as a basis for finite differences
+- 1981-556.9 [E] Orbit volume and representation dimension need a normalization and a shift
+- 1981-556.10 [E] Fractional differentiation and the Euler hypergeometric integral
+- 1981-556.11 [F] The programme of multivariable hypergeometric functions
+- 1981-556.12 [E] Atiyah convexity and the torus approach to representations
+- 1981-557.1 [A] Relative Darboux theorem for a smooth submanifold
+- 1981-557.2 [E] Moser’s deformation argument relative to a submanifold
+- 1981-557.3 [A] When does a two-form extend to an ambient symplectic form?
+- 1981-557.4 [E] The symplectic space of oriented rays
+- 1981-557.5 [A] Extremals and the obstacle example
+- 1981-557.6 [E] The symplectic odd binary-form representation
+- 1981-557.7 [A] Translation Hamiltonian and reduction by q1
+- 1981-557.8 [C] Goldsheid’s uniform approximation by coordinate-product Lagrangians
+- 1981-557.9 [E] Coordinatewise closeness does not control the gap of the spans
+- 1981-558.1 [E] The index as an integral of a local density
+- 1981-558.2 [E] Meromorphic continuation of a positive elliptic zeta function
+- 1981-558.3 [E] The shifted-zeta formula for the index
+- 1981-558.4 [E] Local zeta values from a parameter-dependent parametrix
+- 1981-558.5 [E] The signature operator and its chirality splitting
+- 1981-558.6 [E] The div–grad–curl example and its missing sign
+- 1981-558.7 [E] Local signature and Todd densities
+- 1981-558.8 [E] The signature theorem with its eta boundary correction
+- 1981-558.9 [F] Is signature the only additive invariant?
+- 1981-558.10 [E] Filling independence and nonlocality of the signature defect
+- 1981-558.11 [E] Spectral boundary projections and the normal-operator qualification
+- 1981-558.12 [E] APS index formula and the role of the zero modes
+- 1981-558.13 [E] Variation of the signature eta invariant on a cylinder
+- 1981-559.1 [E] The collar operator and boundary bundle identification
+- 1981-559.2 [E] The repeated APS formula and the choice of projection
+- 1981-559.3 [E] Heat supertrace as the basis of the boundary index proof
+- 1981-559.4 [E] Positive spectral zeta: a zero global residue can have a nonzero local density
+- 1981-559.5 [E] The sum and difference of the two spectral halves
+- 1981-559.6 [F] Boundary values for unspecified general characteristic classes
+- 1981-559.7 [E] Stredder and Epstein: an identifiable bibliographic pointer
+- 1981-559.8 [E] Is self-adjointness necessary for spectral asymmetry?
+- 1981-559.9 [E] Does eta regularity require a filling?
+- 1981-559.10 [E] A shifted local zeta representative of the index density
+- 1981-559.11 [E] The corrected ray integral and the alleged Seeley sign error
+- 1981-559.12 [E] The repeated div–grad–curl square
+- 1981-559.13 [A] Differences of spectral-cut zeta functions at integer points
+- 1981-559.14 [A] Cut independence at zero and the nonpositive-integer extension
+- 1981-559.15 [A] The shifted-zeta polynomial and its missing powers
+- 1981-559.16 [F] The Mahler analogy and the unspecified p-adic continuation
+
+## GY1981: problems
+
+- GP-1981-01 [2026-11] Root-space dimensions and independent Lie words
+- GP-1981-02 [2026-11] Three classical double-coset spaces
+- GP-1981-03 [2026-11] Integer Gelfand–Tsetlin arrays with four fixed top entries
+- GP-1981-04 [2026-11] The type-A quiver formula for p-adic GL(n) multiplicities
+- GP-1979-41 [2026-11] Kazhdan--Lusztig multiplicity and cohomological conjectures
+- GP-1981-10 [2026-11] Dependence of Jantzen-layer multiplicities on deformation direction
+- GP-1981-12 [2026-11] Primitivity of enveloping algebras of algebraic Lie algebras
+- GP-1981-13 [2026-11] Van der Pol relaxation limit and matching of slow branches
+- GP-1981-20 [2026-11] Curvature actions with lower-order field equations
+- GP-1981-21 [2026-11] Convergence of the equations of Regge gravity
+- GP-1981-22 [2026-11] The Friedlander--Milnor comparison with finite coefficients
+- GP-1981-23 [2026-11] Smooth modular-group coinvariants on the projective circle
+- GP-1981-40 [2026-11] Uniform coordinate-product approximation of a Lagrangian plane
+- GP-1981-41 [2026-11] Geometric realization of compact-group weight multiplicities
+- GP-1981-42 [2026-11] Local extension of a two-form to an ambient symplectic form
+- GP-1981-43 [2026-11] Eta regularity without a bounding manifold
+- GP-1981-44 [2026-11] Spectral zeta constructions without self-adjointness
+
+## GY1982: items
+
+- 1982-561.1 [E] Cartan generators and the Serre quotient
+- 1982-561.2 [E] Finite and affine types and the rank-two examples
+- 1982-561.3 [E] The Heisenberg central extension of a symplectic space
+- 1982-561.4 [E] Loop realization and the sign of the central cocycle
+- 1982-561.5 [F] Root monomials and the proposal to make paths continuous
+- 1982-561.6 [E] The basic highest-weight module
+- 1982-561.7 [E] Nonconjugate loop Cartans and the square-root obstruction
+- 1982-561.8 [F] A p-adic analogy without a specified statement
+- 1982-561.9 [F] Quadratic forms and an unspecified count of 2 to the n
+- 1982-561.10 [E] Principal Heisenberg modes and the Fock representation
+- 1982-561.11 [E] Exponential modes realize the remaining affine generators
+- 1982-562.1 [E] Lorentzian area action and its sign
+- 1982-562.2 [E] Singular Legendre transform and first-class constraints
+- 1982-562.3 [E] Two classical Witt algebras and Fourier conventions
+- 1982-562.4 [E] Oscillators, Fock space and the Virasoro central term
+- 1982-562.5 [E] Incompatibility of all quantum Virasoro constraints
+- 1982-562.6 [E] Half-constraints and physical matrix elements
+- 1982-562.7 [B] Cyclic iterated integrals as classical string observables
+- 1982-562.8 [B] Normal ordering does not preserve all charge relations
+- 1982-562.9 [B] The quantum algebra of cyclic charges
+- 1982-562.10 [B] Completeness of invariant charges
+- 1982-563.1 [E] Gauge covariantization and the connection transformation
+- 1982-563.2 [E] Perturbative renormalizability after gauging
+- 1982-563.3 [E] Vacuum manifold and symmetry breaking
+- 1982-563.4 [F] Grand unification and the affine-group proposal
+- 1982-563.5 [E] Monopole sectors from the sphere at spatial infinity
+- 1982-563.6 [E] Strings and fundamental-group sectors
+- 1982-563.7 [E] Charge-reversing holonomy and the missing disconnected stabilizer
+- 1982-563.8 [A] Ordinary-to-mirror particle transport around a string
+- 1982-563.9 [F] Quantum stability of the proposed strings
+- 1982-563.10 [F] Mirror-photon visibility and the quasar anecdote
+- 1982-564.1 [E] Normalized even families do not by themselves force a cascade
+- 1982-564.2 [E] Universal period-doubling parameter scaling
+- 1982-564.3 [E] Why universality is robust for transverse families
+- 1982-564.4 [F] Suggested extension from maps to differential equations
+- 1982-564.5 [A] Two-parameter period tripling and complex scaling constants
+- 1982-564.6 [E] The renormalization fixed-point equation
+- 1982-564.7 [E] Degree-ten approximation and a computer-assisted proof
+- 1982-564.8 [F] Stochastic behavior beyond period-doubling accumulation
+- 1982-565.1 [E] Planar counting and the matrix-field action
+- 1982-565.2 [E] Langevin equilibrium and stochastic quantization
+- 1982-565.3 [E] Large-N factorization and the meaning of self-averaging
+- 1982-565.4 [E] Quenched momenta and conjugated noise
+- 1982-565.5 [A] The reduced Langevin equation and formal matrix measure
+- 1982-565.6 [C] All-coupling free energy of four unitary matrices
+- 1982-565.7 [E] The one-unitary external-field integral
+- 1982-565.8 [F] The unspecified Fateev extension of the external-field solution
+- 1982-566.1 [E] The Witt algebra and its one-dimensional central extension
+- 1982-566.2 [E] Verma modules, PBW basis and partition-number dimensions
+- 1982-566.3 [E] Tensor densities with two parameters
+- 1982-566.4 [E] Semi-infinite wedges and normal-ordering of the zero mode
+- 1982-566.5 [E] Highest weight and central charge of the wedge representation
+- 1982-566.6 [E] When the wedge realization is a Verma module
+- 1982-566.7 [E] The reducibility locus of Virasoro Verma modules
+- 1982-566.8 [E] The central-charge-zero specialization
+- 1982-566.9 [E] Bosonic polynomial realization and the incorrect printed modes
+- 1982-567.1 [E] Area, conformal coordinates and the minimal-surface equation
+- 1982-567.2 [E] Propagation of conformality from the boundary
+- 1982-567.3 [F] What measure defines the sum over surfaces?
+- 1982-567.4 [E] Reparametrization invariance of curve length
+- 1982-567.5 [E] The lattice-walk geometric series and its convergence range
+- 1982-567.6 [E] Fixed-length random rods and their endpoint distribution
+- 1982-567.7 [E] Diffusive scaling, mass tuning and the quadratic momentum term
+- 1982-567.8 [E] Gaussian increments, Wiener measure and proper time
+- 1982-567.9 [E] The Euclidean massive Green function
+- 1982-567.10 [E] A spring mesh gives a Gaussian field at fixed worldsheet geometry
+- 1982-567.11 [E] Why the bosonic critical dimension is 26
+- 1982-567.12 [E] The independent-metric action and cosmological term
+- 1982-568.1 [E] Parameters of regular adjoint orbits
+- 1982-568.2 [E] Springer incidence resolution
+- 1982-568.3 [E] The real cylinder-to-cone illustration
+- 1982-568.4 [B] Nilpotent orbital integrals from regular semisimple ones
+- 1982-568.5 [E] Recovering the crossing value from hyperbola integrals
+- 1982-568.6 [E] Why the singular limit contains logarithms
+- 1982-569.1 [E] Proper time and the particle Green function
+- 1982-569.2 [E] Entropy subtraction and the renormalized mass
+- 1982-569.3 [F] The remark about singular infinite-dimensional measures
+- 1982-569.4 [E] The fixed-topology Polyakov metric integral
+- 1982-569.5 [F] Could surfaces with many handles dominate?
+- 1982-569.6 [E] Functional metrics and the trace direction
+- 1982-569.7 [E] Diffeomorphisms and the covector connection sign
+- 1982-569.8 [B] Does dividing by gauge volume define the measure?
+- 1982-569.9 [E] Conformal gauge, residual automorphisms and moduli
+- 1982-569.10 [E] Matter and ghost determinants are different operators
+- 1982-569.11 [E] The induced Liouville action and its scope
+- 1982-569.12 [E] The field-dependent norm of the conformal factor
+- 1982-570.1 [E] The characteristic foliation and regular symplectic reduction
+- 1982-570.2 [E] The Lagrangian equivalence relation of a coisotropic quotient
+- 1982-570.3 [F] The proposed converse for symmetric idempotent relations
+- 1982-570.4 [E] When Fourier integral kernels form an algebra
+- 1982-570.5 [E] The product model: pseudodifferential in one factor, smoothing in the other
+- 1982-570.6 [E] Shmelyov’s conormal embedding condition
+- 1982-571.1 [E] The massless Yang–Mills–Higgs energy and magnetic charge
+- 1982-571.2 [E] Nonminimal stationary points and the monopole–antimonopole minimax
+- 1982-571.3 [E] A unit instanton on a simply connected homology four-sphere
+- 1982-571.4 [B] The five-dimensional instanton moduli calculation
+- 1982-571.5 [B] The instanton end and a five-dimensional cobordism
+- 1982-571.6 [E] Oriented four-dimensional cobordism and the signature
+- 1982-571.7 [B] Donaldson’s diagonalization theorem versus a manifold classification
+- 1982-571.8 [B] Reducible instantons and cones on the complex projective plane
+- 1982-571.9 [E] The weak Morse inequalities and their hypotheses
+- 1982-571.10 [B] Conjugating the de Rham differential
+- 1982-571.11 [B] Deformed Hodge representatives
+- 1982-571.12 [E] Exterior algebra as a fermionic Fock space
+- 1982-571.13 [B] The Witten Laplacian and its Hessian term
+- 1982-571.14 [B] The normal harmonic oscillator at a Morse point
+- 1982-571.15 [B] The missing Gaussian in the local ground state
+- 1982-571.16 [B] Small eigenvalues, quasimodes and the Morse inequalities
+- 1982-571.17 [B] Gelfand’s replacement of cycle modifications by form modifications
+- 1982-571.18 [B] Supersymmetry as geometry of field configurations
+- 1982-571.19 [F] The proposed higher-dimensional gauge-field interpretation
+- 1982-571.20 [B] Enss’s announcement of three-body Coulomb asymptotic completeness
+- 1982-572.1 [E] Four motivations for statistical mechanics of surfaces
+- 1982-572.2 [E] The solid-on-solid measure with zero boundary heights
+- 1982-572.3 [E] Localization and exponential height tails at large inverse temperature
+- 1982-572.4 [E] Logarithmic height-difference fluctuations at small inverse temperature
+- 1982-572.5 [E] Microscopic height shifts versus an enhanced continuous symmetry
+- 1982-572.6 [E] The passage from height graphs to general plaquette surfaces
+- 1982-572.7 [F] The asserted exponential times power counting asymptotic
+- 1982-572.8 [A] Boundary independence of the exponential growth rate
+- 1982-572.9 [F] Does the subexponential exponent depend only on boundary topology?
+- 1982-572.10 [F] The number of handles of a typical surface
+- 1982-572.11 [E] The partition-function abscissa from counting growth
+- 1982-572.12 [F] Divergent normalization does not define a positive-density surface phase
+- 1982-572.13 [F] The conjectured roughening interval for general surfaces
+- 1982-572.14 [E] The zero-color limit as an analytic interpolation
+- 1982-572.15 [E] The proposed edge-length measure and its scale divergence
+- 1982-572.16 [E] Regge curvature concentrated on codimension-two hinges
+- 1982-572.17 [E] Weak convergence of piecewise-flat curvature measures
+- 1982-572.18 [F] Does the displayed random-metric integral converge to Polyakov theory?
+- 1982-573.1 [E] The Virasoro bracket and its missing cubic central factor
+- 1982-573.2 [E] A cyclic highest-weight representation and its Verma cover
+- 1982-573.3 [E] Primary covariance does not uniquely define the field
+- 1982-573.4 [A] Computing primary correlators and the role of null states
+- 1982-573.5 [E] The contravariant Gram form and positivity
+- 1982-573.6 [E] Neretin on reducibility and the first singular level
+- 1982-573.7 [E] Independent embeddings and worldsheet metrics
+- 1982-573.8 [E] Diffeomorphism quotient and conformal representatives
+- 1982-573.9 [E] Scalar and ghost determinants after gauge fixing
+- 1982-573.10 [E] The induced Liouville action and its quantum measure
+- 1982-573.11 [F] The claim that one integral would settle the string problem
+- 1982-573.12 [E] Critical dimension and the remaining worldsheet integrations
+- 1982-573.13 [B] Cylinder evolution and the spectral representation
+- 1982-573.14 [B] Liouville stationary states as Virasoro representations
+- 1982-573.15 [E] The improved classical Liouville stress tensor
+- 1982-573.16 [E] Holomorphic stress components and the sign of the improvement
+- 1982-573.17 [E] Recovering Virasoro modes from the stress field
+- 1982-574.1 [E] Lorentz-group representations reduced to linear algebra
+- 1982-574.2 [E] The flag-line model for SL(2,R)
+- 1982-574.3 [A] A regular singularity as two linear maps
+- 1982-574.4 [E] Ordinary sheaf gluing across a closed subset
+- 1982-574.5 [A] Nearby and vanishing cycles provide gluing data
+- 1982-575.1 [E] Schubert cells and Grassmannian cohomology
+- 1982-575.2 [E] Fixed-trace projections as continuous Grassmannians
+- 1982-575.3 [F] Schubert-type strata for a continuous flag
+- 1982-575.4 [F] Topology and cohomology of the proposed continuous Grassmannian
+- 1982-576.1 [A] The announced supertwistor programme
+- 1982-576.2 [E] Grassmannian compactification and null incidence
+- 1982-576.3 [E] Tautological bundles and spinors
+- 1982-576.4 [A] Flag superspaces with reduced space G(2,4)
+- 1982-576.5 [E] Superflags require the functor of points
+- 1982-576.6 [A] The standard N-extended superspace flag
+- 1982-576.7 [E] Projective supercoordinates and their big cells
+- 1982-576.8 [F] Classes of odd-codimension supercells
+- 1982-576.9 [A] The odd-form isotropic example
+- 1982-576.10 [E] The Penrose correspondence starts but is not recorded
+- 1982-577.1 [E] Liouville action from the string conformal factor
+- 1982-577.2 [E] Conformal covariance and the purported unique local action
+- 1982-577.3 [E] Liouville equation and the developing map
+- 1982-577.4 [E] Complete cusp metrics on punctured spheres
+- 1982-577.5 [B] Quantum correlations and the classical saddle
+- 1982-577.6 [E] Stress tensor and Schwarzian normalization
+- 1982-577.7 [E] Fuchsian equation and the accessory parameters
+- 1982-577.8 [E] Varying punctures while preserving Fuchsian reality
+- 1982-577.9 [B] The Liouville action generates accessory parameters
+- 1982-577.10 [E] Canonical momentum in the chiral calculation
+- 1982-577.11 [E] The Virasoro cocycle and Laurent modes
+- 1982-577.12 [B] Anomaly coefficient versus quantum central charge
+- 1982-577.13 [A] Primary fields and Ward operators
+- 1982-577.14 [A] Highest-weight modules and the four-point cross-ratio
+- 1982-577.15 [A] Descendant expansion requires the inverse Gram matrix
+- 1982-577.16 [A] The first equal-weight block coefficient
+- 1982-577.17 [F] Coalescing punctures and accessory coefficients
+- 1982-577.18 [E] Bosonic oscillators realize the Virasoro algebra
+- 1982-577.19 [E] Oscillator and Verma bases agree only generically
+- 1982-577.20 [E] Quadratic current and the Miura-type stress tensor
+- 1982-577.21 [A] Bargmann coordinates turn Ward identities into PDEs
+- 1982-577.22 [B] Reconstructing four-point correlations from conformal blocks
+- 1982-578.1 [E] Scalar field equations and polynomial interactions
+- 1982-578.2 [E] A double-well potential and two classical vacua
+- 1982-578.3 [E] The planar domain wall and its thickness
+- 1982-578.4 [E] Local U(1) covariance of the Abelian Higgs action
+- 1982-578.5 [E] Vortex winding and flux quantization
+- 1982-578.6 [E] The thin-core approximation produces a string action
+- 1982-578.7 [E] Worldsheet area and extremality
+- 1982-578.8 [E] A circular loop contracts in the effective model
+- 1982-578.9 [F] Monopoles as string endpoints
+- 1982-578.10 [E] The colour gauge field and quark Lagrangian
+- 1982-580.1 [F] A call for infinite-dimensional symplectic geometry
+- 1982-580.2 [E] Supersymmetric derivation of fixed point formulas
+- 1982-580.3 [E] Weighted pullback extends the Möbius action
+- 1982-580.4 [E] The complementary-series inner product is almost invariant
+- 1982-580.5 [E] Gaussian unitarization on Fock space
+- 1982-581.1 [E] The loop-space symplectic form modulo constants
+- 1982-581.2 [E] The quotient carries a Poisson algebra, not automatically a smooth manifold
+- 1982-581.3 [E] Symplectic reduction requires a moment-map level
+- 1982-581.4 [E] Polarization and the symmetric oscillator space
+- 1982-581.5 [E] The Schwinger term obstructs ordinary invariants
+- 1982-581.6 [A] Physical states as an image of invariants in coinvariants
+- 1982-581.7 [A] The critical charge 26 in semi-infinite homology
+- 1982-581.8 [B] A p-adic analogue of diffeomorphism-group representations
+- 1982-582.1 [A] The almost invariant kernel needs a positivity qualification
+- 1982-582.2 [E] The periodic Hilbert transform is a complex structure modulo constants
+- 1982-582.3 [E] Two endpoint Hilbert forms
+- 1982-582.4 [A] Endpoint actions preserve a symplectic form
+- 1982-582.5 [E] Normalized Hardy projections and Lagrangian subspaces
+- 1982-582.6 [F] A general pseudodifferential invariance principle
+- 1982-582.7 [E] The logarithmic Hilbert convolution is not a delta derivative
+- 1982-582.8 [E] Analytic continuation and differentiation of homogeneous kernels
+- 1982-582.9 [A] Realizing circle diffeomorphisms on analytic symmetric sequences
+- 1982-582.10 [F] Dependence on the smoothness of a diffeomorphism
+- 1982-583.1 [E] Hamiltonian torus actions and the moment map
+- 1982-583.2 [E] The cocycle behind commuting Hamiltonian fields
+- 1982-583.3 [E] Orbit tangent spaces are isotropic
+- 1982-583.4 [E] Regular symplectic reduction by the torus
+- 1982-583.5 [E] The reduced symplectic class varies affinely
+- 1982-583.6 [E] Piecewise polynomial reduced volume and density
+- 1982-583.7 [E] Exact stationary phase for isolated fixed points
+- 1982-583.8 [E] Positive-dimensional fixed components need the equivariant Euler class
+- 1982-583.9 [E] Equivariant localization explains the improvements
+- 1982-583.10 [E] Convexity of the torus moment image
+- 1982-583.11 [E] Quadratic local phase and finite Fourier expansion force exactness
+- 1982-583.12 [E] The compact orbital integral is a corrected character
+- 1982-583.13 [E] The ten-year-old Semenov-Tian-Shansky reference
+- 1982-583.14 [E] Vergne’s proof for discrete-series orbits
+- 1982-584.1 [E] Regular SU(3) orbits of Hermitian matrices
+- 1982-584.2 [E] The hexagon map is diagonal projection, not the invariant map
+- 1982-584.3 [E] Geometry of the SU(3) permutahedral hexagon
+- 1982-584.4 [E] Changing fibers and piecewise linear reduced volume
+- 1982-584.5 [E] Recovering weight multiplicities geometrically
+- 1982-585.1 [E] Instability tongues and periodic or antiperiodic spectra
+- 1982-585.2 [E] Generic first-order opening of Hill gaps
+- 1982-585.3 [E] Exponential gap decay requires analytic regularity
+- 1982-585.4 [E] Mathieu’s cosine perturbation has increasingly high tangency
+- 1982-585.5 [E] The polynomial-degree gap bound uses a ceiling and an upper estimate
+- 1982-585.6 [F] Perturbing a one-gap potential
+- 1982-585.7 [E] Rayleigh--Schrödinger expansion at a simple eigenvalue
+- 1982-585.8 [E] Catalan closed form and the erroneous seventh entry
+- 1982-585.9 [E] The Catalan convolution has incorrect bounds
+- 1982-585.10 [E] The polygon interpretation has an index shift
+- 1982-585.11 [E] Dimension of curve moduli
+- 1982-585.12 [E] Catalan many minimal pencils on a general even-genus curve
+- 1982-585.13 [A] Bracket symbols as Catalan objects
+- 1982-585.14 [A] The spectral quiver and its chronological products
+- 1982-585.15 [E] Local finiteness controls formal coefficients, not convergence by itself
+- 1982-585.16 [E] The perturbed invariant subspace as a graph
+- 1982-585.17 [E] The secular operator preserves the cluster spectrum
+- 1982-585.18 [E] Closed paths give universal coefficient formulas
+- 1982-585.19 [A] Filled bracket diagrams remember the denominator data
+- 1982-585.20 [E] The denominator rule for each filled diagram
+- 1982-585.21 [E] Fourier blocks of a trigonometric perturbation
+- 1982-585.22 [E] Remote blocks are scalar for an even polynomial
+- 1982-585.23 [A] Reflection of a short loop delays splitting
+- 1982-585.24 [A] Dual bracket fillings equalize the diagonal corrections
+- 1982-586.1 [E] KdV Hamiltonians, stationary finite gap solutions, and Lenard recursion
+- 1982-586.2 [E] Band edges and normalized quasimomentum
+- 1982-586.3 [A] Spectral form of the stationary Hessian
+- 1982-586.4 [A] First order opening of a closed spectral gap
+- 1982-586.5 [F] Gelfand on third and higher variations
+- 1982-586.6 [A] Gap-opening modes and their adjoint pairing
+- 1982-587.1 [A] Shifted spectral zeta function of a Hill operator
+- 1982-587.2 [E] Hurwitz and Epstein comparisons and a binomial expansion
+- 1982-587.3 [F] Arithmetic of shifted spectral values
+- 1982-587.4 [A] Universal polynomials and positive integer zeta values
+- 1982-587.5 [E] The free circle and Bernoulli normalization
+- 1982-587.6 [A] One-gap Lamé quasimomentum
+- 1982-587.7 [B] Multiplicativity of the zeta determinant
+- 1982-587.8 [E] Euler, Apéry, and regularized sums
+- 1982-587.9 [F] The D-module sketch for a complex power
+- 1982-587.10 [F] Clausen series and a negative-even zeta derivative
+- 1982-588.1 [E] A closed one-form as a many-valued action
+- 1982-588.2 [E] Dirac monopole and the phase of the action
+- 1982-588.3 [E] Local actions and constant transition differences
+- 1982-589.1 [A] Double Lie algebras and invariant Hamiltonians
+- 1982-589.2 [A] Modified Yang–Baxter equation, the double, and factorization
+- 1982-589.3 [B] Gelfand’s classification problem for sl(2)
+- 1982-589.4 [A] Quadratic Poisson bracket and the Hamiltonian hierarchy
+- 1982-590.1 [E] Spectral boundary conditions and the APS index formula
+- 1982-590.2 [E] Replacing self-adjointness by a spectral-cut hypothesis
+- 1982-590.3 [E] Fedosov’s idempotents for an elliptic symbol
+- 1982-590.4 [E] Chern character, Todd form, and the symbol index
+- 1982-590.5 [E] Index from shifted zeta functions and local parametrices
+- 1982-590.6 [E] Local index densities for signature and Dirac operators
+- 1982-590.7 [F] Formal cohomology of metrics and symbols
+- 1982-590.8 [E] Signature defect and equivariant eta series
+- 1982-590.9 [E] Eta regularity without a bounding manifold
+- 1982-590.10 [E] Flat bundles, secondary K-theory, and reduced eta
+- 1982-591.1 [A] Loops, Hardy polarization, and the restricted Grassmannian
+- 1982-591.2 [E] Which measurable loops give the Fredholm and compact projections?
+- 1982-591.3 [A] Grassmannian flows and Krichever’s algebro-geometric locus
+- 1982-591.4 [E] Modified hierarchies and the Miura flag
+- 1982-591.5 [A] Determinant lines, affine central extensions, and tau
+- 1982-591.6 [E] Krichever’s KP zero-curvature and tau reconstruction
+- 1982-592.1 [A] Index-zero Grassmannian and admissible frames
+- 1982-592.2 [A] The Fredholm determinant tau function and its zero set
+- 1982-592.3 [A] Nonvanishing, Schur functions, and Plücker coefficients
+- 1982-592.4 [A] The Krichever map and its Fredholm index
+- 1982-592.5 [A] Theta factorization of an algebro-geometric tau function
+- 1982-592.6 [F] Gelfand’s request for theta functions of all abelian varieties
+- 1982-592.7 [A] Baker function, tau ratio, and Miwa shifts
+- 1982-592.8 [A] Formal KP Lax operator and the Gelfand–Dikii reduction
+- 1982-592.9 [A] Pole-order bounds and regular singular scalar operators
+- 1982-592.10 [A] The determinant line and its nontrivial central extension
+- 1982-592.11 [E] Local Miura factorization and the flag of solutions
+- 1982-592.12 [F] Differential fields and the proposed Galois analogy
+- 1982-594.1 [E] The first KP coefficient and the two-time equation
+- 1982-593.1 [E] Exact stationary phase and the fixed-component denominator
+- 1982-593.2 [E] Polynomial density on regular-value chambers
+- 1982-593.3 [F] Gelfand’s question about stationary eigenvalues
+- 1982-593.4 [E] Borel equivariant cohomology and localization
+- 1982-593.5 [E] The invariant Cartan complex and the square of its differential
+- 1982-593.6 [E] Parity localization and Vergne’s explicit contracting form
+- 1982-593.7 [F] A group-free formulation through the double fibration
+- 1982-596.1 [E] Hamiltonian torus actions and the moment map
+- 1982-596.2 [E] Convexity of the moment image
+- 1982-596.3 [E] Critical walls and the Duistermaat–Heckman density
+- 1982-595.1 [F] Special-value programme and the limits of the surviving statement
+- 1982-595.2 [E] Arithmetic models and the local point-count zeta function
+- 1982-595.3 [E] Weil rationality and the correct location of finite-field zeros
+- 1982-595.4 [F] Which coefficients define reasonable Euler factors?
+- 1982-595.5 [C] Global continuation and functional equations for curves
+- 1982-595.6 [C] Matching geometric H1 factors with automorphic L-functions
+- 1982-595.7 [B] The elliptic completion and what the BSD heading does not say
+- 1982-598.1 [E] Dedekind zeta and Shintani cone series
+- 1982-598.2 [F] Constant-coefficient operators on a torus: unresolved identification
+
+## GY1982: problems
+
+- GP-1982-01 [2026-11] Quantization of cyclic invariant charges of the closed string
+- GP-1982-02 [2026-11] Global free energy of the recorded four-unitary matrix integral
+- GP-1982-03 [2026-11] Reducibility and first singular vectors of Virasoro Verma modules
+- GP-1982-04 [2026-11] Recover a crossing value from hyperbola orbital integrals
+- GP-1982-05 [2026-11] Nonminimal finite-energy SU(2) Yang–Mills–Higgs critical points
+- GP-1982-06 [2026-11] Existence of a unit instanton when the second cohomology vanishes
+- GP-1982-07 [2026-11] Asymptotic completeness for three quantum particles with Coulomb forces
+- GP-1982-08 [2026-11] Primary correlators, conformal blocks and null-state equations
+- GP-1982-09 [2026-11] The Virasoro representation content of the Liouville spectrum
+- GP-1982-20 [2026-11] Flag superspaces with reduced Grassmannian G(2,4)
+- GP-1982-21 [2026-11] Polyakov accessory-parameter conjecture
+- GP-1982-22 [2026-11] A p-adic analogue of the circle-diffeomorphism representations
+- GP-1981-41 [2026-11] Geometric realization of compact-group weight multiplicities
+- GP-1982-40 [2026-11] Multiplicativity of zeta-regularized determinants
+- GP-1982-41 [2026-11] Classical modified Yang–Baxter operators on sl(2)
+- GP-1981-44 [2026-11] Spectral zeta constructions without self-adjointness
+- GP-1981-43 [2026-11] Eta regularity without a bounding manifold
+- GP-1982-42 [2026-11] Global continuation of curve zeta functions
+- GP-1982-43 [2026-11] Automorphy of the H1 of arbitrary curves
+
+## GY1985: items
+
+- 1985-641.1 [A] Baker functions with an exponential singularity
+- 1985-641.2 [E] Exponential principal parts and the Picard group
+- 1985-641.3 [E] Super light rays of dimension one even and eight odd
+- 1985-641.4 [E] Spin(10), the isotropic-line stabilizer, and two eight-dimensional spinors
+- 1985-641.5 [E] The complex Clifford algebra in ten dimensions
+- 1985-641.6 [E] Inner automorphisms yield a projective orthogonal action
+- 1985-641.7 [E] Flatness along super light rays and ten-dimensional Yang--Mills constraints
+- 1985-641.8 [F] The twelve-dimensional projective diagram
+- 1985-641.9 [E] Lines in projective three-space and null two-planes
+- 1985-641.10 [E] Rank two and two relative-position parameters
+- 1985-641.11 [E] Curvature on alpha-surfaces and the Penrose--Ward transform
+- 1985-642.1 [B] Uniform bounds for zeros of polynomial Abelian integrals
+- 1985-642.2 [B] Petrov: the cubic Hamiltonian gives an n-dimensional Chebyshev space
+- 1985-642.3 [E] Picard--Fuchs systems and Sturm-type nonoscillation
+- 1985-642.4 [E] Chebyshev spaces versus arbitrary linearly independent functions
+- 1985-642.5 [E] The kernel of restriction and integration on a level curve
+- 1985-642.6 [E] Jacobian algebra of x cubed plus y to the fourth
+- 1985-642.7 [E] Jacobian algebra of x squared y plus y to the fourth
+- 1985-643.1 [E] Jacobi triple product
+- 1985-643.2 [E] Pochhammer notation and the three incorrect arguments
+- 1985-643.3 [E] The reference to Ramanujan summation
+- 1985-643.4 [E] Coefficient counting by two strict odd partitions
+- 1985-643.5 [E] Eventually constant binary words and partition size
+- 1985-643.6 [E] Gap charge and the two odd-distance sets
+- 1985-643.7 [E] Young-diagram area equals half the odd sum minus charge squared
+- 1985-644.1 [B] Vigneras: from GL(2) over a quadratic extension to GSp(4)
+- 1985-644.2 [B] The degree-eight triple-product L-function
+- 1985-644.3 [E] Hecke functions and trace characters
+- 1985-644.4 [E] Parabolic induction and unramified-character families
+- 1985-644.5 [F] An unfinished comparison with the real and complex cases
+- 1985-644.6 [B] Local Langlands packets for GSp(4)
+- 1985-644.7 [E] Quadratic space of Hermitian two-by-two matrices
+- 1985-644.8 [B] Weil representation and the similitude theta correspondence
+- 1985-646.1 [E] The Bernstein variety is a support space, not the irreducible dual
+- 1985-646.2 [E] Regular trace functions along induced families
+- 1985-646.3 [B] The precise trace Paley--Wiener image theorem
+- 1985-645.1 [E] String histories as maps of surfaces
+- 1985-645.2 [F] The claim about all particles and a ten-dimensional superspace
+- 1985-645.3 [F] The crystal-growth analogy
+- 1985-645.4 [E] The Nambu--Goto area functional
+- 1985-645.5 [E] The formal sum over maps
+- 1985-645.6 [F] The asserted correspondence of operator and path-integral approaches
+- 1985-645.7 [E] Polyakov action with an independent worldsheet metric
+- 1985-645.8 [E] Integrate the map first: a Gaussian determinant
+- 1985-647.1 [E] Which polyhedron is the diagonal-orthogonal central section of a four-cube?
+- 1985-648.1 [E] The automorphic L2 representation and its spectral decomposition
+- 1985-648.2 [E] Gelfand: p-adic expansions and the expansion of one third
+- 1985-648.3 [E] The adele ring is a restricted product including the real place
+- 1985-648.4 [E] Principal congruence subgroups and divisibility of levels
+- 1985-648.5 [E] Adelic quotient as the inverse limit of congruence quotients
+- 1985-648.6 [E] Modular curves: cusps are not elliptic points
+- 1985-648.7 [E] Restricted tensor products of local representations
+- 1985-648.8 [E] Gelfand points to Connes on subfactors and knots
+- 1985-648.9 [C] Which restricted products actually occur automorphically?
+- 1985-648.10 [E] Spherical representations and unramified principal series
+- 1985-648.11 [E] Satake parameters as semisimple dual-group conjugacy classes
+- 1985-648.12 [E] The complex dual group and a chosen representation
+- 1985-648.13 [E] Unramified Euler factors and the partial automorphic L-function
+- 1985-648.14 [E] The trivial GL(1) example is the Riemann zeta function
+- 1985-649.1 [E] Induced metric and the Nambu area
+- 1985-649.2 [E] A symbolic sum over surfaces with marked target points
+- 1985-649.3 [E] First variation of area and the minimal-surface equation
+- 1985-649.4 [F] Gelfand on harmonic maps and the construction of minimal surfaces
+- 1985-649.5 [E] The proposed second variation of area
+- 1985-649.6 [E] Dirichlet energy and independent variation of the metric
+- 1985-649.7 [E] Harmonicity does not force conformality
+- 1985-649.8 [E] The weak L2 metric on the space of metrics
+- 1985-649.9 [E] Diffeomorphism redundancy and Faddeev--Popov gauge fixing
+- 1985-650.1 [E] Dolbeault Laplacians and primed zeta determinants
+- 1985-650.2 [E] The formal logarithmic derivative needs regularization
+- 1985-650.3 [E] Conformal change of the Dolbeault adjoint
+- 1985-650.4 [E] Heat finite parts and the one-dimensional regularization ambiguity
+- 1985-650.5 [E] The scalar heat coefficient and curvature convention
+- 1985-650.6 [E] Tensor-spin heat coefficients and Serre symmetry
+- 1985-650.7 [E] The quadratic anomaly coefficient
+- 1985-650.8 [E] Integrating the anomaly into a Liouville action
+- 1985-650.9 [F] Classical Liouville solutions versus the quantum Liouville integral
+- 1985-650.10 [E] Critical dimension and mixed determinant powers
+- 1985-650.11 [E] Zero modes turn determinants into cohomology lines
+- 1985-651.1 [E] The Polyakov action on a closed surface
+- 1985-651.2 [E] Gelfand on a second string scale
+- 1985-651.3 [E] Gaussian integration over the embedding coordinates
+- 1985-651.4 [F] A surface analogue of Wiener measure
+- 1985-651.5 [E] A conformal slice must include Teichmüller parameters
+- 1985-651.6 [E] Formal division by the volume of the diffeomorphism group
+- 1985-651.7 [F] The assertion that the integral collapses to a small set
+- 1985-651.8 [E] L2 metrics and the infinitesimal diffeomorphism action
+- 1985-651.9 [E] The square-root Jacobian and the missing finite-dimensional directions
+- 1985-651.10 [E] Trace-free tensors as Beltrami differentials
+- 1985-651.11 [E] The ghost operator is not the Hodge Laplacian on one-forms
+- 1985-653.1 [E] The subspace lattice and the modular identity
+- 1985-653.2 [A] A computable dimension bound for a failed lattice identity
+- 1985-653.3 [A] Decidability of identities in linear-subspace lattices
+- 1985-652.1 [E] Fuchs repeats the determinant integral on a metric slice
+- 1985-652.2 [E] Fixing a conformal structure before integrating the Weyl factor
+- 1985-652.3 [E] The determinant anomaly with spin j
+- 1985-652.4 [E] What becomes constant at dimension 26
+- 1985-652.5 [F] The remaining integral over moduli
+- 1985-652.6 [E] The background-curvature term in the Liouville action
+- 1985-652.7 [F] Repeating the classical/quantum Liouville equivalence
+- 1985-654.1 [E] Gauss--Bonnet for tame complete finite-volume manifolds
+- 1985-654.2 [E] Homotopy invariance of the integrated L-form
+- 1985-654.3 [E] Cone geometry and the radial regular singular operator
+- 1985-654.4 [E] Logarithmic heat asymptotics and link spectral data
+- 1985-654.5 [E] The signature operator and its eta correction
+- 1985-654.6 [B] An index formula for general Fuchs-type operators
+- 1985-654.7 [F] The endpoint condition does not specify a general cone domain
+- 1985-654.8 [E] Finite L2 kernels for invariant operators require ellipticity
+- 1985-654.9 [E] Hilbert modular surfaces and the one-cusp qualification
+- 1985-654.10 [E] The cusp signature defect and the Shimizu L-series
+- 1985-655.1 [E] The Dolbeault complex of a tangent tensor power
+- 1985-655.2 [E] Harmonic representatives give cohomology norms
+- 1985-655.3 [E] The determinant of cohomology and its dual convention
+- 1985-655.4 [E] The zeta correction of the Hodge metric
+- 1985-655.5 [E] Anomaly-free tensor products of determinant lines
+- 1985-655.6 [E] Descent to the moduli stack and the Faltings comparison
+- 1985-656.1 [E] Perfect elements and compatible direct-sum decompositions
+- 1985-656.2 [E] Modular lattice axioms and free generators
+- 1985-656.3 [E] The first upper Boolean cubicle
+- 1985-656.4 [E] Adjacent-distinct words and the recursive cubicles
+- 1985-656.5 [E] Perfectness, cardinality, dual cubicles, and their order
+- 1985-656.6 [E] Complete irreducibility over the rational prime field
+- 1985-657.1 [E] Virasoro, the Witt quotient, and a central-sign convention
+- 1985-657.2 [E] Verma modules and their grading
+- 1985-657.3 [E] The reducibility criterion and the miscopied Kac polynomial
+- 1985-657.4 [E] Singular vectors and the first singular grade
+- 1985-657.5 [E] Laurent vector fields, infinite matrices, and Fock realizations
+- 1985-657.6 [E] The affine current algebra and Gelfand's intervention
+- 1985-657.7 [E] Sugawara operators, normal ordering, and the noncritical level
+- 1985-657.8 [E] The affine sl2 example and the spin/Dynkin-label mismatch
+- 1985-657.9 [E] The coset difference commutes with the subalgebra currents
+- 1985-657.10 [E] The Selberg integral: exponent and chamber normalization
+- 1985-657.11 [E] Two screening charges and the missing integration cycle
+- 1985-657.12 [E] Four-point blocks depend on a cross-ratio
+- 1985-657.13 [F] Analytic continuation in the number of screenings
+- 1985-658.1 [E] Topology of Grassmannian configuration strata
+- 1985-658.2 [E] Every polytope type as an orthogonal projection of a simplex
+- 1985-658.3 [E] Isotopy of matrices with prescribed determinant signs
+- 1985-658.4 [E] The small-configuration bound
+- 1985-658.5 [F] The nineteen-column counterexample attributed to Mnëv
+- 1985-658.6 [E] Universality for real configuration spaces
+- 1985-658.7 [F] A complex analogue of convexity
+- 1985-658.8 [E] Steinitz characterization of three-dimensional polytope graphs
+- 1985-658.9 [E] Contractibility of normalized three-polytope realization spaces
+- 1985-658.10 [C] Universality for simplicial four-polytope realization spaces
+- 1985-658.11 [F] Fields of polytopes in tangent spaces
+- 1985-658.12 [E] Geometric lattices and finite matroids
+- 1985-658.13 [E] Representability of a geometric lattice by a vector configuration
+- 1985-658.14 [E] The Fano configuration and characteristic two
+- 1985-658.15 [F] Faithful join representations and an unresolved subspace example
+- 1985-658.16 [E] Representability and systems of algebraic inequalities
+- 1985-658.17 [E] Gelfand on lattices and their representation theory
+- 1985-658.18 [E] Every finite lattice embeds in a finite partition lattice
+- 1985-659.1 [E] Elastic scattering and Mandelstam invariants
+- 1985-659.2 [E] The listed duality conditions
+- 1985-659.3 [E] The Veneziano beta amplitude and the unsupported uniqueness assertion
+- 1985-659.4 [E] Linear Regge trajectories as physical input
+- 1985-659.5 [E] Euler integral for the four-point amplitude
+- 1985-659.6 [F] Five-point Euler integrals and the meaning of closed evaluation
+- 1985-659.7 [E] The Heisenberg algebra and infinitely many string modes
+- 1985-659.8 [E] Chiral coordinate fields and their distributional commutators
+- 1985-659.9 [E] Sugawara operators for free bosons
+- 1985-659.10 [E] Normal-ordered exponential vertex operators
+- 1985-659.11 [E] Vertex covariance and conformal weight
+- 1985-659.12 [E] Factorizing amplitudes through vertices and a propagator
+- 1985-659.13 [E] Momentum Fock spaces and mode shifts
+- 1985-659.14 [E] The two-vertex contraction and binomial generating series
+- 1985-660.1 [E] Virasoro weights and the physical constraint space
+- 1985-660.2 [E] Spurious states and the physical quotient
+- 1985-660.3 [E] The weight of a preimage under L minus one
+- 1985-660.4 [E] Half constraints followed by a quotient
+- 1985-660.5 [E] The critical no-ghost theorem
+- 1985-660.6 [E] The creation coefficient and zero modes in the continued vertex formula
+- 1985-660.7 [E] Multipoint oscillator contractions
+- 1985-660.8 [E] Norm-two screening operators commute with Virasoro
+- 1985-660.9 [E] A symmetric Cartan matrix from Lorentzian vectors
+- 1985-660.10 [E] Kac--Moody Chevalley operators from screening residues
+- 1985-660.11 [E] Gelfand on the Monster, strings, and moonshine
+- 1985-660.12 [E] Null directions and transverse DDF operators
+- 1985-660.13 [E] Completeness of transverse oscillators at the critical dimension
+- 1985-661.1 [E] Borel presentation of the cohomology of the full flag variety
+- 1985-661.2 [E] Bruhat cells and the homology/cohomology bases
+- 1985-661.3 [E] Schubert polynomial representatives
+- 1985-661.4 [E] Normalization of the top cohomology class
+- 1985-661.5 [E] The sign convention for divided differences
+- 1985-661.6 [E] Independence of reduced expressions
+- 1985-661.7 [E] Generating all Schubert polynomials from the longest element
+- 1985-661.8 [E] Symmetry at a non-descent
+- 1985-662.1 [E] Normal ordering and the missing Sugawara half
+- 1985-662.2 [F] Gelfand asks for normal ordering on other underlying spaces
+- 1985-662.3 [E] Coordinate and current Fourier series
+- 1985-662.4 [E] Gelfand identifies the classical vector fields and their central extension
+- 1985-662.5 [E] When the Virasoro Fock module depends only on momentum norm
+- 1985-662.6 [E] Summing momentum sectors before imposing the constraints
+- 1985-662.7 [E] The repeated no-ghost statement uses the quotient, not all constrained states
+- 1985-662.8 [E] The corrected oscillator vertex formula still omits zero-mode powers
+- 1985-662.9 [E] The Laurent-mode sign in the Heisenberg commutator
+- 1985-662.10 [E] Integral, even, and unimodular lattices
+- 1985-662.11 [E] Norm-two roots of an integral positive-definite lattice
+- 1985-662.12 [E] The rank restriction for even unimodular positive lattices
+- 1985-662.13 [E] The eight-dimensional lattice exercise
+- 1985-662.14 [E] ADE root lattices are even
+- 1985-662.15 [E] The sign cocycle forces evenness
+- 1985-662.16 [E] A finite Lie algebra from the lattice roots
+- 1985-662.17 [E] Twisted lattice vertices and the affine basic representation
+- 1985-662.18 [E] The special rank-twenty-four lattice and sporadic groups
+- 1985-662.19 [E] The current-algebra brackets and the omitted opposite-root case
+- 1985-662.20 [E] The final DDF residue recipe
+- 1985-663.1 [E] The blanket exclusion of ordinary Lax pairs
+- 1985-663.2 [E] Counting the variables of scattering data
+- 1985-663.3 [E] The Manakov L-A-B triple preserves a kernel
+- 1985-663.4 [E] Two-point Baker--Akhiezer data and uniqueness
+- 1985-663.5 [E] Gauge normalization and recovery of the operator
+- 1985-663.6 [E] Quasiperiodicity does not guarantee a smooth potential
+- 1985-663.7 [E] Zero magnetic flux in a periodic vector-potential gauge
+- 1985-663.8 [E] The fixed-energy complex Fermi curve
+- 1985-663.9 [E] The holomorphic involution removes the magnetic term
+- 1985-663.10 [E] Reality requires the compatible antiholomorphic involution
+- 1985-663.11 [E] Prym theta functions and potential spectral data
+- 1985-663.12 [F] An underspecified higher-dimensional finite-gap criterion
+- 1985-663.13 [E] The Novikov--Veselov evolution and exchanged derivatives
+- 1985-663.14 [B] Rational fixed-energy soliton potentials
+- 1985-663.15 [F] The rapidly decaying inverse problem is said to be essentially solved
+- 1985-664.1 [E] The Polyakov partition function is a formal gauge integral
+- 1985-664.2 [E] Critical dimension and conformal gauge leave moduli
+- 1985-664.3 [E] Quadratic differentials and their Gram matrix
+- 1985-664.4 [E] Products of Abelian differentials and the hyperelliptic exception
+- 1985-664.5 [B] Novikov identifies the Schottky recognition problem
+- 1985-664.6 [E] Beltrami coordinates are dual to quadratic differentials
+- 1985-664.7 [E] Elliptic moduli and the modular fundamental domain
+- 1985-664.8 [E] A torus Beltrami deformation and a wedge-sign error
+- 1985-664.9 [E] Gaussian modes, zero modes and the power minus twelve
+- 1985-664.10 [E] The torus determinant depends on the area convention
+- 1985-664.11 [E] The modular invariant one-loop bosonic measure
+- 1985-664.12 [E] Metric variation inserts the stress tensor
+- 1985-664.13 [E] Point splitting, normal ordering and the projective anomaly
+- 1985-664.14 [E] Period normalization and theta characteristics
+- 1985-664.15 [E] An odd characteristic gives a half-differential only when nonsingular
+- 1985-664.16 [F] The incomplete higher-genus stress-tensor formula
+- 1985-666.1 [E] Genus expansion and the erroneous one-loop q-density
+- 1985-666.2 [E] Dolbeault cohomology and the determinant of cohomology
+- 1985-666.3 [E] Line bundles of fixed degree form a Picard torsor
+- 1985-666.4 [E] Zeta regularization removes zero eigenvalues before differentiating
+- 1985-666.5 [E] The Quillen norm is inverted on the notebook determinant line
+- 1985-666.6 [E] Finite-dimensional determinant comparison and operator variance
+- 1985-666.7 [E] Operator independence holds only in the fixed finite-dimensional model
+- 1985-666.8 [E] Metrics on powers of the canonical bundle
+- 1985-666.9 [E] The anomaly polynomial and its normalization
+- 1985-666.10 [E] Cancellation makes the tensor-product norm metric independent
+- 1985-666.11 [E] Why thirteen and twenty-six occur
+- 1985-666.12 [E] Determinant lines form a holomorphic bundle even across cohomology jumps
+- 1985-666.13 [B] Belavin--Knizhnik curvature cancellation
+- 1985-666.14 [E] Zero curvature alone cannot normalize a metric
+- 1985-666.15 [A] The Mumford form is a section, not a global scalar function
+- 1985-666.16 [B] The displayed local determinant Hessian suppresses zero modes
+- 1985-666.17 [E] The bosonic moduli integral diverges at the cusp
+- 1985-666.18 [F] The unqualified hope that everything converges for superstrings
+- 1985-666.19 [B] The genus-two measure uses ten even theta constants
+- 1985-666.20 [B] A genus-three formula exists, but general moduli are not absent
+- 1985-666.21 [E] Global constancy on moduli and the remaining scalar ambiguity
+
+## GY1985: problems
+
+- GP-1985-01 [2026-11] Uniform degree bounds for zeros of Abelian integrals
+- GP-1985-02 [2026-11] Local Langlands correspondence for GSp(4)
+- GP-1985-03 [2026-11] Central section of a four-cube perpendicular to a main diagonal
+- GP-1985-04 [2026-11] Arithmetic occurrence and multiplicity in the automorphic spectrum
+- GP-1985-20 [2026-11] Deciding identities in all finite-dimensional subspace lattices
+- GP-1985-21 [2026-11] Index formulas for elliptic Fuchs-type operators with conic ends
+- GP-1982-03 [2026-11] Reducibility and first singular vectors of Virasoro Verma modules
+- GP-1985-40 [2026-11] Topology of real configuration realization spaces
+- GP-1985-41 [2026-11] Isotopy within a fixed determinant-sign class
+- GP-1985-42 [2026-11] Universality in dimension four under simpliciality
+- GP-1985-60 [2026-11] Recognizing Jacobians among principally polarized abelian varieties

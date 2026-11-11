@@ -1,0 +1,8 @@
+General Jacobiator = (epsilon+1) det(rows grad(f), grad(g), grad(h)).
+epsilon = 1 : [x,y], [y,z], [z,x] = [1, y, -2*x] ; cyclic [f,[g,h]] = 2
+Opposite nesting [[f,g],h] = -2
+epsilon = -1 : [x,y], [y,z], [z,x] = [1, y, 0] ; cyclic [f,[g,h]] = 0
+Opposite nesting [[f,g],h] = 0
+Polynomial triple 1 : plus-model Jacobiator = -4*x**2*y + 8*x*z**2 + 2*y**2 - 4*z ; corrected-model Jacobiator = 0.
+Polynomial triple 2 : plus-model Jacobiator = -4*x**3 + 4*x*y*z + 8*x*y - 4*y**3 - 2*z**2 ; corrected-model Jacobiator = 0.
+All symbolic assertions passed. SymPy 1.14.0

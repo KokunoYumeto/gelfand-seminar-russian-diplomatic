@@ -1,0 +1,82 @@
+\SourcePage{GELFAND-P000472}{unlabelled}
+\SourceFigure{GELFAND-P000472}{top-product-diagram}{Узел $C_1$ густо наведён. От $C_i$ к $A$ идёт прерывистая стрелка, у стрелки от $C_{i+j}$ к $C_j$ один разрыв.\par\smallskip\centering
+\begingroup\color{black}\GelfandFitDiagram{[diagram: consult scan]}\endgroup}
+
+Получили гомоморфизм $C_{i+j}\longrightarrow A_0$.
+\Unclear{GELFAND-P000472}{homomorphism-verb}{Первое слово читается «Получили», предпоследняя буква сближена с последней.}
+
+Получится
+\[
+A\underset{\text{сопост.}}{\rightsquigarrow}H(A)
+\qquad\text{(кольцо)}
+\]
+$H(A)$ вообще говоря некоммутативно (!) по настоящему.
+На этом основана классифик. многозн. групп.
+\Unclear{GELFAND-P000472}{multivalued-groups}{После «классифик.» читается «многозн.».}
+
+(В топологии до сих пор встр. только коммут. кольца — там всегда алгебры Хопфа).
+
+\uline{Станд. резольвента или \mbox{$B$}-резольвента.}
+\[
+\overline A=\sum_{n>0}A_n
+\]
+\[
+C_1=A\underset{A_0}{\otimes}\overline A
+\qquad\text{В дальнейшем }A_0\text{ опускается}
+\]
+(Исх. кольца коммутативны!)
+\[
+\begin{gathered}
+C_s=A\otimes(\overline A)^s.\\
+d_{s+1}\colon A\otimes(\overline A)^{s+1}
+\longrightarrow A\otimes(\overline A)^s
+\end{gathered}
+\]
+\[
+\begin{aligned}
+d_s\bigl(a_0[a_1|a_2|\ldots|a_s]\bigr)
+={}&(-1)^{\varepsilon(0)}a_0a_1[a_2|\ldots a_s]\\
+ &+\sum(-1)^{\varepsilon(n)}a_0[a_1|\ldots|a_na_{n+1}|\ldots a_s]
+\end{aligned}
+\]
+\Unclear{GELFAND-P000472}{bar-differential-indices}{Два индекса в произведении наведены. Читается $a_na_{n+1}$.}
+
+$\varepsilon(n)$ — некоторые ф-ии от номера,
+\sout{Для чётной градуир. \mbox{$\varepsilon(n)=n$}.}
+\par\uline{\mbox{$\varepsilon(n)=n$}, если все элем. чётные.}
+\SourceFigure{GELFAND-P000472}{even-sign-cancellation}{Условие о чётных элементах вписано ниже зачёркнутой строки и отделено чертой.}
+
+\[
+\operatorname{Hom}_A(C_s,A_0)\simeq(\overline A^{\,*})^s,
+\qquad \overline A^{\,*}=\operatorname{Hom}_{A_0}(\overline A,A_0)
+\]
+\[
+d_s^*\colon[\alpha_1|\alpha_2|\ldots|\alpha_{s-1}]
+=\sum(-1)^{\varepsilon(n)}
+[\alpha_1|\ldots|\overline\Delta\alpha_n|\ldots|\alpha_{s-1}].
+\]
+\[
+\varepsilon(n)=n,\quad\text{если }\deg\alpha_i=2k_i
+\]
+
+\uline{Опред. \mbox{$\overline\Delta$}.}
+\SourceFigure{GELFAND-P000472}{lower-coproduct-box}{У верхней стрелки явное правое остриё; левый конец наведён и также похож на остриё.\par\smallskip\centering
+\begingroup\color{black}\GelfandFitDiagram{[diagram: consult scan]}\endgroup}
+
+На самом деле
+\[
+\operatorname{Im}\overline\Delta\subset\overline{A^*}.
+\]
+\Unclear{GELFAND-P000472}{lower-reduced-image}{Черта справа проходит над $A$ и звёздочкой.}
+
+Отсюда ещё одно определение умножения,
+\[
+\begin{aligned}
+C_s^*&\qquad f=[\alpha_1|\ldots|\alpha_s]\\
+C_{s'}^*&\qquad g=[\alpha'_1|\ldots|\alpha'_{s'}]
+\end{aligned}
+\qquad
+f\cdot g=[\alpha_1|\ldots|\alpha_s|\alpha'_1|\ldots|\alpha'_{s'}]
+\]
+\Unclear{GELFAND-P000472}{bottom-prime-index}{Последний индекс у $g$ читается $s^{\prime}$. В записи произведения сильно наведена граница после первого штрихованного члена.}
+

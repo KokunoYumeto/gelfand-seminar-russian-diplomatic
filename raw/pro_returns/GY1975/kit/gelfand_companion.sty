@@ -1,0 +1,86 @@
+% gelfand_companion.sty -- macros for the chapters of the companion to the notes of the I. M. Gelfand seminar.
+% Engine: XeLaTeX (or LuaLaTeX). Every chapter of every year uses only these macros, so that all chapters compile
+% together in one reader.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{gelfand_companion}[2026/11/09 v1]
+\RequirePackage{iftex}
+\RequireTUTeX
+\RequirePackage{fontspec}
+\IfFileExists{fonts/DejaVuSerif.ttf}{%
+  \setmainfont{DejaVuSerif}[Path=fonts/,Extension=.ttf,
+    UprightFont=*,BoldFont=*-Bold,ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic,SlantedFont=*-Italic,
+    BoldSlantedFont=*-BoldItalic]}{%
+  \IfFontExistsTF{CMU Serif}{\setmainfont{CMU Serif}}{%
+    \IfFontExistsTF{DejaVu Serif}{\setmainfont{DejaVu Serif}}{}}}
+\IfFileExists{russianb.ldf}{\RequirePackage[russian,english]{babel}}{%
+  \RequirePackage[english]{babel}%
+  \babelprovide[import,hyphenrules=+]{russian}}
+\RequirePackage{amsmath,amssymb,amsthm,mathtools}
+\RequirePackage{xcolor}
+\RequirePackage{longtable,booktabs,array}
+\RequirePackage{enumitem}
+\RequirePackage{needspace}
+\RequirePackage{etoolbox}
+% Permit natural ragged-right breaks in long scholarly headings.
+\patchcmd{\section}{\normalfont\Large\bfseries}{\normalfont\Large\bfseries\raggedright}{}{}
+\patchcmd{\subsection}{\normalfont\large\bfseries}{\normalfont\large\bfseries\raggedright}{}{}
+\widowpenalty=10000
+\clubpenalty=10000
+\RequirePackage[authoryear,round]{natbib}
+\RequirePackage{xurl}
+\RequirePackage[hidelinks]{hyperref}
+
+% ---- source pages: \GSpage{P000123} prints the page id and links to the scan at MCCME is not possible (the archive
+% URLs are per record), so it prints the id; \GSrecord{53} links to the MCCME record.
+\newcommand{\GSpage}[1]{\textsf{#1}}
+\newcommand{\GSrecord}[1]{\href{https://old.mccme.ru/gelfand/notes/record-#1.html}{record~#1}}
+
+% ---- a talk (one MCCME record); written by build_chapter.py
+% a record on the boundary of two packages (a year heading) appears in both chapters: label it once
+\newcommand{\GSlabelonce}[1]{\ifcsname GSlab@#1\endcsname\else\expandafter\gdef\csname GSlab@#1\endcsname{}\label{#1}\fi}
+% \GStalk{record}{date ISO}{speaker}{source pages}{short title}
+\newcommand{\GStalk}[5]{%
+  \Needspace{7\baselineskip}%
+  \ifblank{#3}{%
+    \ifblank{#2}{\section{#5}}{\section{#2: #5}}}{%
+    \ifblank{#2}{\section{#3: #5}}{\section{#3, #2: #5}}}%
+  \GSlabelonce{rec:#1}%
+  \noindent{\small\GSrecord{#1}; source pages \GSpage{#4}.}\par\nobreak\medskip\nobreak}
+
+% ---- one item of the occurrence index; written by build_chapter.py
+% \begin{GSitem}{id}{class}{title} ... \GSfield{label}{text} ... \end{GSitem}
+\newenvironment{GSitem}[3]{%
+  \par\medskip\Needspace{6\baselineskip}\phantomsection\noindent
+  \parbox[t]{\dimexpr\linewidth-5.8em\relax}{\raggedright\strut\textbf{#1}\quad\textbf{#3}}%
+  \hfill\parbox[t]{4.8em}{\raggedleft\strut\fbox{\footnotesize Class #2}}\label{item:#1}\par
+  \begin{list}{}{\leftmargin=1.2em\itemsep=1pt\parsep=0pt\topsep=2pt}}%
+  {\end{list}\par}
+\newcommand{\GSfield}[2]{\item[]\textit{#1.}\ #2}
+
+% ---- results in developments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+% \ours marks a proof supplied in this companion; any novelty claim is stated separately.
+\newcommand{\ours}{\textup{[proved here]}}
+% \oursComputed marks a computation made for this companion
+\newcommand{\oursComputed}{\textup{[computed here]}}
+% Russian quotations from the notes
+\newcommand{\ru}[1]{\foreignlanguage{russian}{#1}}
+
+% ---- corrections to the transcription and translation; written by build_chapter.py
+\newenvironment{GScorrections}{%
+  \small\setlength{\tabcolsep}{3pt}\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.10\linewidth}>{\raggedright\arraybackslash}p{.13\linewidth}>{\raggedright\arraybackslash}p{.18\linewidth}>{\raggedright\arraybackslash}p{.23\linewidth}>{\raggedright\arraybackslash}p{.30\linewidth}@{}}
+  \toprule Page & Place & Transcription reads & Should read & Evidence\\ \midrule\endhead}%
+  {\bottomrule\end{longtable}}
+\endinput

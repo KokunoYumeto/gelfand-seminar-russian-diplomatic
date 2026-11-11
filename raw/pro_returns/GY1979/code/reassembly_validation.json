@@ -1,0 +1,116 @@
+{
+  "date": "2026-11-10",
+  "scope": "Offline reassembly from a clean directory with no sibling parts; no TeX, network, source re-authoring or mathematical tests run. Final source files were not edited.",
+  "temporary_directory": "/workspace/scratch/163d6b002bc9/gy1979_reassembly_j7j08gbs/GY1979",
+  "no_sibling_parts": true,
+  "commands": [
+    {
+      "command": [
+        "python",
+        "code/assemble_chapter.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"records\": 27,\n  \"items\": 252,\n  \"problems\": 10,\n  \"references\": 104,\n  \"corrections\": 106,\n  \"bibliography_conflicts_to_review\": 3\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "code/apply_editorial_changes.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"critical_source_spans\": 27,\n  \"logged_changes\": 52\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "code/typeset_corrections.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"correction_cells_typeset\": 118\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "code/source_coverage.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"page_envelope\": 79,\n  \"current_year_pages\": 76,\n  \"boundary_pages\": 3,\n  \"current_pages_without_item_pointer\": [],\n  \"note\": \"Page pointers index source content; adjoining catalog envelopes are not independent evidence of speaker attribution.\"\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "code/write_report.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"items\": 252,\n  \"class_counts\": {\n    \"E\": 203,\n    \"F\": 27,\n    \"A\": 12,\n    \"B\": 7,\n    \"C\": 3\n  },\n  \"areas\": {\n    \"Quantum gravity and supergravity\": 12,\n    \"Integrable systems and wave dynamics\": 14,\n    \"Quantum electrodynamics\": 1,\n    \"Spinors, quaternions and projective transformations\": 2,\n    \"Spin geometry and index theory\": 24,\n    \"Fourier analysis and oscillatory integrals\": 3,\n    \"Symplectic linear algebra\": 1,\n    \"Twistor and complex geometry\": 13,\n    \"Superalgebra and matrix problems\": 12,\n    \"Algebraic geometry and exterior-module constructions\": 3,\n    \"Complex geometry and Abelian functions\": 5,\n    \"Representations of infinite-dimensional groups\": 15,\n    \"Hamiltonian constraints and quantization\": 47,\n    \"Quantum theory and quantization\": 5,\n    \"Special functions and algebraic K-theory\": 8,\n    \"Algebraic K-theory and regulators\": 12,\n    \"Gauge fields and particle physics\": 25,\n    \"Gauge fields and large-rank limits\": 14,\n    \"Representation theory and Kazhdan\\u2013Lusztig theory\": 8,\n    \"Topology of singular spaces\": 4,\n    \"Characteristic classes and combinatorial topology\": 17,\n    \"Hydrodynamics and integrable systems\": 7\n  },\n  \"report_words\": 3113,\n  \"overview_words\": 657\n}\n"
+    }
+  ],
+  "comparisons": [
+    {
+      "file": "GY1979_talks.json",
+      "equal": true,
+      "original_bytes": 20079,
+      "reassembled_bytes": 20079,
+      "original_sha256": "bb99612c8cb649de53d4ff5dea6492fb9f726b724ee75e3cb466310ac1bee9bd",
+      "reassembled_sha256": "bb99612c8cb649de53d4ff5dea6492fb9f726b724ee75e3cb466310ac1bee9bd"
+    },
+    {
+      "file": "GY1979_items.json",
+      "equal": true,
+      "original_bytes": 419705,
+      "reassembled_bytes": 419705,
+      "original_sha256": "ccdebc30e741bb6e912776383507ff9fce47e2b45182e922e953ffb20dffee43",
+      "reassembled_sha256": "ccdebc30e741bb6e912776383507ff9fce47e2b45182e922e953ffb20dffee43"
+    },
+    {
+      "file": "GY1979_problems.json",
+      "equal": true,
+      "original_bytes": 9282,
+      "reassembled_bytes": 9282,
+      "original_sha256": "6ff8b7a72c39eb87435d35b94e7dc816e69b60e1ad312506e38d3817179fe5ca",
+      "reassembled_sha256": "6ff8b7a72c39eb87435d35b94e7dc816e69b60e1ad312506e38d3817179fe5ca"
+    },
+    {
+      "file": "GY1979_overview.tex",
+      "equal": true,
+      "original_bytes": 5003,
+      "reassembled_bytes": 5003,
+      "original_sha256": "f2091cf87ce1c83cc2081eb683f0926f11a25e5975f33aceacee872e688bf818",
+      "reassembled_sha256": "f2091cf87ce1c83cc2081eb683f0926f11a25e5975f33aceacee872e688bf818"
+    },
+    {
+      "file": "GY1979_development.tex",
+      "equal": true,
+      "original_bytes": 23438,
+      "reassembled_bytes": 23438,
+      "original_sha256": "80671cfd2d9f22d24cc44dc80f1419ef2fde12156cbae198fbe2eb59e8b0bae6",
+      "reassembled_sha256": "80671cfd2d9f22d24cc44dc80f1419ef2fde12156cbae198fbe2eb59e8b0bae6"
+    },
+    {
+      "file": "GY1979_corrections.csv",
+      "equal": true,
+      "original_bytes": 34208,
+      "reassembled_bytes": 34208,
+      "original_sha256": "c3983301b7fdf2f73c1ad953e076ea7b40c8067dc440aa85d73660ee9dd253c3",
+      "reassembled_sha256": "c3983301b7fdf2f73c1ad953e076ea7b40c8067dc440aa85d73660ee9dd253c3"
+    },
+    {
+      "file": "GY1979_references.bib",
+      "equal": true,
+      "original_bytes": 76550,
+      "reassembled_bytes": 76550,
+      "original_sha256": "6c75baef86e6106be06b4d62a26c843f2672ea4a598994531e576ed22b65e6d5",
+      "reassembled_sha256": "6c75baef86e6106be06b4d62a26c843f2672ea4a598994531e576ed22b65e6d5"
+    },
+    {
+      "file": "GY1979_report.md",
+      "equal": true,
+      "original_bytes": 21214,
+      "reassembled_bytes": 21214,
+      "original_sha256": "9dd592a8f3d5b894822aa7acde713a24f3949da24b2e58ffe7cf6e8a4ab3a796",
+      "reassembled_sha256": "9dd592a8f3d5b894822aa7acde713a24f3949da24b2e58ffe7cf6e8a4ab3a796"
+    }
+  ],
+  "original_files_changed_during_run": [],
+  "result": "PASS"
+}

@@ -1,0 +1,131 @@
+{
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "numpy": "2.3.5",
+  "symbolic": {
+    "two_state": {
+      "determinant_residual": "0",
+      "row_sums": "identically one"
+    },
+    "three_real_with_nonnegative_member": {
+      "determinant_residual": "0",
+      "row_sums": "identically one"
+    },
+    "three_real_both_negative": {
+      "determinant_residual": "0",
+      "row_sums": "identically one"
+    },
+    "three_complex_circulant": {
+      "determinant_residual": "0",
+      "row_sums": "identically one"
+    },
+    "triangle_inequality_residual": "2*(a**2 - 2*a - 3*b**2 + 1)"
+  },
+  "exact_grid": {
+    "real_grid_denominator": 40,
+    "feasible_real_pairs": 5741,
+    "trace_rejected_real_pairs": 820,
+    "real_boundary_cases": 280,
+    "circulant_simplex_denominator": 48,
+    "circulant_exact_cases": 1225,
+    "circulant_boundary_cases": 144
+  },
+  "independent_random_runs": [
+    {
+      "seed": 1987,
+      "matrices": 2000,
+      "nonreal_three_state_cases": 153,
+      "maximum_modulus_excess": 3.1086244689504383e-15,
+      "maximum_triangle_excess": 0.0
+    },
+    {
+      "seed": 8811,
+      "matrices": 2000,
+      "nonreal_three_state_cases": 148,
+      "maximum_modulus_excess": 2.6645352591003757e-15,
+      "maximum_triangle_excess": 0.0
+    }
+  ],
+  "five_dimensional_obstruction": {
+    "power_sums_checked": 2048,
+    "JLL_pairs_checked": 2048,
+    "first_four_moments": [
+      "0",
+      "10/3",
+      "10/9",
+      "70/27"
+    ],
+    "all_two_Perron_block_partitions_rejected": [
+      {
+        "negative_counts": [
+          0,
+          3
+        ],
+        "block_traces": [
+          "1",
+          "-1"
+        ]
+      },
+      {
+        "negative_counts": [
+          1,
+          2
+        ],
+        "block_traces": [
+          "1/3",
+          "-1/3"
+        ]
+      },
+      {
+        "negative_counts": [
+          2,
+          1
+        ],
+        "block_traces": [
+          "-1/3",
+          "1/3"
+        ]
+      },
+      {
+        "negative_counts": [
+          3,
+          0
+        ],
+        "block_traces": [
+          "-1",
+          "1"
+        ]
+      }
+    ],
+    "diagnostic_only": "Finite checks do not prove universal JLL validity; see proof."
+  },
+  "cohomology_linear_algebra": {
+    "abelianization_relation_determinant": -1,
+    "adjoint_fixed_space_dimension": 0,
+    "two_factor_cocycle_space_dimension": 6,
+    "principal_cocycle_rank": 3,
+    "quotient_dimension": 3,
+    "scope": "Checks the linear algebra; topological hypotheses are proved in the text."
+  },
+  "tensor_angles": {
+    "seeds": [
+      737,
+      198822
+    ],
+    "explicit_tensor_embedding_cases": 600,
+    "range_construction_cases": 150,
+    "maximum_cross_Gram_entry_residual": 5.551115123125783e-17,
+    "maximum_trace_norm_excess": 4.440892098500626e-16,
+    "maximum_realization_or_norm_residual": 4.04121180963557e-14,
+    "dimensions_checked": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "scope": "Numerical diagnostics independently form the tensor subspaces; the proof establishes all dimensions."
+  },
+  "status": "PASS"
+}

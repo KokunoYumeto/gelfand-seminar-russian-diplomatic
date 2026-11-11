@@ -1,0 +1,115 @@
+\SourcePage{GELFAND-P000476}{unlabelled}
+\uuline{V. M. Buchstaber.} (continuation).
+
+\[
+\begin{gathered}
+A\overset{\text{addit.}}{=}\Lambda[[X]],\qquad
+X_n\text{ — addit. generators}\\
+X_n\cdot X_m=C_{n+m}^n X_{n+m}
+\end{gathered}
+\]
+\Unclear{GELFAND-P000476}{additive-equality}{Two short parallel strokes under “addit.” read as an equals sign.}
+
+\[
+\begin{gathered}
+\operatorname{Ext}_A^{2,*}(\Lambda,\Lambda)\\[-.4ex]
+\rotatebox[origin=c]{90}{$=$}\\[-.4ex]
+\operatorname{Ker}d_3^*/\operatorname{Im}d_2^*
+\end{gathered}
+\qquad\text{in terms of the }B\text{-construction}
+\]
+
+$1^\circ$.
+\[
+d_3^*\colon\overline A^*\otimes\overline A^*
+\longrightarrow\overline A^*\otimes\overline A^*\otimes\overline A^*
+\]
+
+\[
+A^*=\operatorname{Hom}_{\Lambda}^{c}(\Lambda[[X]],\Lambda)
+\overset{\text{add.}}{\simeq}\Lambda[x]
+\]
+\Unclear{GELFAND-P000476}{top-dual-hom}{The upper index of $\operatorname{Hom}$ reads $c$ and the lower one $\Lambda$.}
+
+\uuline{compact} (nonzero val. on a finite number).
+\SourceFigure{GELFAND-P000476}{compact-annotation}{“Compact” is written below $\operatorname{Hom}$ and connected to it by a stroke.}
+
+\[
+\begin{gathered}
+\Delta\colon A^*\longrightarrow A^*\otimes A^*\\
+\Delta x_n\longrightarrow x_n\otimes1+1\otimes x_n+\sum d_{i,j}x_i\otimes x_j^*
+\end{gathered}
+\]
+\Unclear{GELFAND-P000476}{top-delta-star}{A star is visible after $x_j$. It is absent from the later formula for $\Delta x_n$.}
+
+\[
+\begin{aligned}
+(\Delta x_n,x_i\otimes x_j)&=d_{i,j}\\[-.4ex]
+\qquad\rotatebox[origin=c]{90}{$=$}&\\[-.4ex]
+(x_n,x_i\cdot x_j)&=(x_n,C_{i+j}^{i}x_{i+j})=C_{i+j}^{i}\delta_{n,i+j}
+\end{aligned}
+\]
+\SourceFigure{GELFAND-P000476}{pairing-layout}{A vertical equals sign joins the two lines of the pairing.}
+
+\[
+\Delta x_n=x_n\otimes1+1\otimes x_n+\sum C_n^i x_i\otimes x_{n-i}
+\]
+And put\quad $x_n=x^n$
+\[
+\begin{gathered}
+\Delta x^n=(x\otimes1+1\otimes x)^n\\
+d_3^*\colon \overline{\Lambda[x,y]}\longrightarrow\overline{\Lambda[x,y,z]}
+\end{gathered}
+\]
+
+\[
+d_3\Biggl(\underset{
+  \substack{\rotatebox[origin=c]{90}{$=$}\\ \sum h_{i,j}x^iy^j}
+}{h(x,y)}\Biggr)=\sum h_{ij}(\overline\Delta x^i)z^j
+-\sum h_{i,j}x^i\overline\Delta y^j=
+\]
+\Unclear{GELFAND-P000476}{middle-differential-star}{The calculation has $d_3$ without a star before $h(x,y)$. The preceding line has $d_3^*$.}
+
+\[
+\overline\Delta x^n=
+\underset{\substack{
+ \rotatebox[origin=c]{90}{$=$}\\
+ (\Delta(x))^n\\
+ \rotatebox[origin=c]{90}{$=$}\\
+ (x+y)^n
+}}{\Delta x^n}-x^n-y^n.
+\]
+\SourceFigure{GELFAND-P000476}{coproduct-identifications}{Below $\Delta x^n$, vertical equals signs connect $(\Delta(x))^n$ and $(x+y)^n$.}
+
+\[
+=h(x+y,z)-\mbox{\sout{\ensuremath{h(x,z)}}}-h(y,z)
+-h(x,y+z)+h(x,y)+\mbox{\sout{\ensuremath{h(x,z)}}}.
+\]
+\SourceFigure{GELFAND-P000476}{cancelled-cocycle-terms}{Both instances of $h(x,z)$ are crossed out. The minus and plus signs in front remain visible.}
+
+\uuline{\mbox{$\operatorname{Ker}d_3^*$}:}
+\[
+\boxed{h(x+y,z)+h(x,y)=h(x,y+z)+h(y,z)}
+\]
+Denote these cycles by $L$.
+\SourceFigure{GELFAND-P000476}{kernel-relation-box}{The equality is enclosed in a rectangular box.}
+
+This is precisely the Lazard relation.
+\Unclear{GELFAND-P000476}{lazard-name}{The adjective before “relation” reads «лазаровское» (“Lazard”).}
+
+\[
+\underline{\operatorname{Im}d_2^*}=\Lambda\{d_2^*x^n\}
+\]
+\[
+0\longrightarrow\operatorname{Im}d_2^*\longrightarrow L
+\longrightarrow\operatorname{Ext}_A^{2,n}(\Lambda,\Lambda)\longrightarrow0
+\]
+
+\uline{Calculation of the group \mbox{$\operatorname{Ext}$}.}
+
+The eq. does not involve $\Lambda$. Hence it suffices to calc. 2 cases:
+
+1)\quad $\Lambda$ — $Z_p$-module ($p$ — prime)
+
+2)\quad $\Lambda=Q$
+

@@ -1,0 +1,51 @@
+# The I. M. Gelfand seminar, 1971-72: the records
+
+From the MCCME list of the notes, https://old.mccme.ru/gelfand/notes/all-links.html (record number, date
+and speaker as catalogued there; each record's page links to its scans), with the source pages of the
+attached transcription on which the record's notes lie. Records without a date are headings or plans.
+
+- record 229: 6-Sep-71, A.A. Kirillov. (1971-09-06); pages P000358-P000360; https://old.mccme.ru/gelfand/notes/record-229.html
+- record 230: 1971-72. (no date); pages P000358-P000366; https://old.mccme.ru/gelfand/notes/record-230.html
+- record 231: 13-Sep-71, I.M. Gelfand. (1971-09-13); pages P000364-P000367; https://old.mccme.ru/gelfand/notes/record-231.html
+- record 232: 13-Sep-71, B.I. Rosenfeld. (1971-09-13); pages P000365-P000368; https://old.mccme.ru/gelfand/notes/record-232.html
+- record 233: 13-Sep-71, Vlastimil Ptak. (1971-09-13); pages P000366-P000369; https://old.mccme.ru/gelfand/notes/record-233.html
+- record 234: 13-Sep-71, A.A. Kirillov. (1971-09-13); pages P000367-P000369; https://old.mccme.ru/gelfand/notes/record-234.html
+- record 235: 13-Sep-71, I.M. Gelfand. (1971-09-13); pages P000367-P000370; https://old.mccme.ru/gelfand/notes/record-235.html
+- record 236: 20-Sep-71, I.N. Bernstein. (1971-09-20); pages P000368-P000371; https://old.mccme.ru/gelfand/notes/record-236.html
+- record 237: 20-Sep-71, Michael Atiyah. (1971-09-20); pages P000369-P000374; https://old.mccme.ru/gelfand/notes/record-237.html
+- record 238: 20-Sep-71, Pierre Deligne. (1971-09-20); pages P000372-P000374; https://old.mccme.ru/gelfand/notes/record-238.html
+- record 239: 25-Oct-71, S.I. Gelfand. (1971-10-25); pages P000372-P000376; https://old.mccme.ru/gelfand/notes/record-239.html
+- record 240: 25-Oct-71, A.M. Vinogradov. (1971-10-25); pages P000374-P000378; https://old.mccme.ru/gelfand/notes/record-240.html
+- record 241: 1-Nov-71, A.M. Vinogradov. (1971-11-01); pages P000376-P000384; https://old.mccme.ru/gelfand/notes/record-241.html
+- record 242: 8-Nov-71, A.M. Vinogradov. (1971-11-08); pages P000382-P000388; https://old.mccme.ru/gelfand/notes/record-242.html
+- record 243: 15-Nov-71, I.M. Gelfand. (1971-11-15); pages P000386-P000395; https://old.mccme.ru/gelfand/notes/record-243.html
+- record 244: 15-Nov-71, V.I. Arnold. (1971-11-15); pages P000393-P000396; https://old.mccme.ru/gelfand/notes/record-244.html
+- record 245: YEAR 1972, -. (no date); pages P000394-P000396; https://old.mccme.ru/gelfand/notes/record-245.html
+- record 246: 14-Feb-72, L.N. Vasserstein. (1972-02-14); pages P000394-P000401; https://old.mccme.ru/gelfand/notes/record-246.html
+- record 247: 21-Feb-72, D.A. Kazhdan. (1972-02-21); pages P000399-P000404; https://old.mccme.ru/gelfand/notes/record-247.html
+- record 248: 21-Feb-72, A.M. Gabrielov. (1972-02-21); pages P000402-P000406; https://old.mccme.ru/gelfand/notes/record-248.html
+- record 249: 28-Feb-72, A.A. Kirillov. (1972-02-28); pages P000404-P000408; https://old.mccme.ru/gelfand/notes/record-249.html
+- record 250: 28-Feb-72, Jack Morava. (1972-02-28); pages P000406-P000409; https://old.mccme.ru/gelfand/notes/record-250.html
+- record 251: 28-Feb-72, A.M. Gabrielov. (1972-02-28); pages P000407-P000411; https://old.mccme.ru/gelfand/notes/record-251.html
+- record 252: 6-Mar-72, M.Sh. Birman. (1972-03-06); pages P000409-P000414; https://old.mccme.ru/gelfand/notes/record-252.html
+- record 253: 6-Mar-72, L.N. Vasserstein. (1972-03-06); pages P000412-P000416; https://old.mccme.ru/gelfand/notes/record-253.html
+- record 254: 6-Mar-72, D.A. Kazhdan. (1972-03-06); pages P000414-P000417; https://old.mccme.ru/gelfand/notes/record-254.html
+- record 255: 13-Mar-72, Jack Morava. (1972-03-13); pages P000415-P000421; https://old.mccme.ru/gelfand/notes/record-255.html
+- record 256: 13-Mar-72, L.N. Vasserstein. (1972-03-13); pages P000419-P000424; https://old.mccme.ru/gelfand/notes/record-256.html
+- record 257: 20-Mar-72, D.A. Kazhdan. (1972-03-20); pages P000422-P000424; https://old.mccme.ru/gelfand/notes/record-257.html
+- record 258: 20-Mar-72, I.M. Gelfand. (1972-03-20); pages P000422-P000425; https://old.mccme.ru/gelfand/notes/record-258.html
+- record 259: 20-Mar-72, D.A. Kazhdan. (1972-03-20); pages P000423-P000425; https://old.mccme.ru/gelfand/notes/record-259.html
+- record 260: 20-Mar-72, D.B. Fuchs. (1972-03-20); pages P000423-P000427; https://old.mccme.ru/gelfand/notes/record-260.html
+- record 261: 20-Mar-72, M.Sh. Birman. (1972-03-20); pages P000425-P000428; https://old.mccme.ru/gelfand/notes/record-261.html
+- record 262: 27-Mar-72, D.A. Kazhdan. (1972-03-27); pages P000426-P000429; https://old.mccme.ru/gelfand/notes/record-262.html
+- record 263: 27-Mar-72, M.Sh. Birman. (1972-03-27); pages P000427-P000429; https://old.mccme.ru/gelfand/notes/record-263.html
+- record 264: 27-Mar-72, I.M. Gelfand. (1972-03-27); pages P000427-P000431; https://old.mccme.ru/gelfand/notes/record-264.html
+- record 265: 3-Apr-72, A.Yu. Geronimus. (1972-04-03); pages P000429-P000438; https://old.mccme.ru/gelfand/notes/record-265.html
+- record 266: 10-Apr-72, A.Yu. Geronimus. (1972-04-10); pages P000436-P000440; https://old.mccme.ru/gelfand/notes/record-266.html
+- record 267: 10-Apr-72, D.A. Kazhdan. (1972-04-10); pages P000438-P000440; https://old.mccme.ru/gelfand/notes/record-267.html
+- record 268: 10-Apr-72, Jack Morava. (1972-04-10); pages P000438-P000446; https://old.mccme.ru/gelfand/notes/record-268.html
+- record 269: 14-Apr-72, I.M. Gelfand. (1972-04-14); pages P000444-P000447; https://old.mccme.ru/gelfand/notes/record-269.html
+- record 270: 14-Apr-72, Jack Morava. (1972-04-14); pages P000445-P000451; https://old.mccme.ru/gelfand/notes/record-270.html
+- record 271: 1972. (no date); pages P000449-P000451; https://old.mccme.ru/gelfand/notes/record-271.html
+- record 286: YEAR 1973, -. (no date); pages P000477-P000479; https://old.mccme.ru/gelfand/notes/record-286.html
+- record 288: 19-Feb-72, R.L. Dobrushin. (1972-02-19); pages P000479-P000481; https://old.mccme.ru/gelfand/notes/record-288.html

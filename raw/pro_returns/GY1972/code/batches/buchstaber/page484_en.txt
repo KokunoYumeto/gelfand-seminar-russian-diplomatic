@@ -1,0 +1,111 @@
+\SourcePage{GELFAND-P000484}{unlabelled}
+\uuline{F. A. Berezin.}
+
+\uline{Quantization problem.}
+
+$M$ — sympl. manifold
+($\omega$ — a form [illegible] with matrix $\omega_{ik}$;
+$\omega^{ik}$ — inverse matrix)
+\Unclear{GELFAND-P000484}{form-mark}{A heavily retraced sign follows “form”. Possible readings are $2$ or $\xi$.}
+
+\[
+[f,g]=\sum\omega^{ik}\frac{\partial f}{\partial x^i}
+\frac{\partial g}{\partial x^k}
+\]
+Quantization: a family of assoc. rings $A_h$ with elements $f(x)$ (functions on $M$)
+\[
+f_1\ast f_2=g(x\mid h)
+\]
+\[
+\left.
+\begin{aligned}
+1)\quad &g(x\mid0)=f_1(x)\cdot f_2(x)\\
+2)\quad &\left.\frac{\partial}{\partial h}
+(f_1\ast f_2-f_2\ast f_1)\right|_{h=0}=[f_1,f_2]
+\end{aligned}
+\right\}\quad(\text{correspondence principle}).
+\]
+Several further reqs. (less obligatory)
+
+3) all $A_h$ — algebras with $1$, corresp. $f_0\equiv1$.
+
+4) $A_h$ — an algebra with trace (def. on a distinguished set of elements in $A_h$).
+\Unclear{GELFAND-P000484}{trace-domain}{The ending of the word “elements” was rewritten. The earlier reading is unresolved.}
+
+\[
+\mathrm{Sp}(f_1\ast f_2)=\mathrm{Sp}(f_2\ast f_1)
+\]
+and
+\[
+\mathrm{Sp}\, f=c\int f\,d\mu,
+\]
+where $d\mu$ — the nat. measure on the manifold (a power of $\omega$).
+\SourceFigure{GELFAND-P000484}{measure-word}{The parenthetical reads «степень $\omega$» (“a power of $\omega$”).}
+
+Req. of math. naturalness — \uuline{functoriality} with respect to canonical
+Diffeomorphisms (with respect to some family of maps — some fixed category).
+
+{\centering\rule{1.9em}{.4pt}\quad\textperiodcentered\quad\rule{1.9em}{.4pt}\par}
+
+A solution is known when $M\in$ a certain class
+(2 classes of Kähler manifolds).
+
+\begingroup\color{black}\GelfandFitDiagram{[diagram: consult scan]}\endgroup
+\SourceFigure{GELFAND-P000484}{class-bracket}{A common stroke runs to the left of both items and below them.}
+
+{\centering\rule{1.9em}{.7pt}\quad\textbullet\quad\rule{1.9em}{.7pt}\par}
+
+\uline{Fock space.}
+\Unclear{GELFAND-P000484}{fock-mark}{A sign above the start of the heading is heavily blacked out. Its reading is unresolved.}
+
+\[
+M=C^n\qquad\omega=\sum dz_i\wedge d\bar z_i.
+\]
+Functions — entire functions $f(z,\bar z)$ (expan. in $x,y$ in a series converg. everywhere)
+\[
+(f_1\ast f_2)(z,\bar z)=\frac1{h^n}
+\int f_1(z,\bar v)f_2(v,\bar z)
+ e^{-\frac1h(z-v)(\bar z-\bar v)}\,dv\,d\bar v
+\]
+Important: the structure of lin. rep. of this ring.
+
+Let $\varphi(z)$ — ordinary entire functions satisfying
+\[
+(\varphi,\varphi)=\frac1{h^n}
+\int|\varphi(z)|^2e^{-\frac{z\bar z}{h}}\,dz\,d\bar z
+<+\infty\qquad(\text{space }F_2)
+\]
+There acts a lin. rep. of the ring $A_h$:
+\[
+(\hat f\varphi)(z)=\frac1{h^n}\int
+ f(z,v)\overline{\varphi(v)}\,
+ e^{-\frac1h(v-z)\bar v}\,dv\,d\bar v,
+\]
+$f$ — Wick symbol.
+\SourceFigure{GELFAND-P000484}{wick-conjugation}{The bar is over $\varphi(v)$. The preceding factor $f(z,v)$ has no bar over $v$.}
+
+One more ring of operators:
+\[
+(\hat f\varphi)(z)=\frac1{h^n}\int
+ \mathring{f}(v,\bar v)\varphi(v)
+ e^{-\frac1h(v-z)\bar v}\,dv\,d\bar v,
+\]
+$\mathring{f}$ — anti-Wick symbol.
+\[
+(\hat a_k\varphi)(z)=\frac{\partial\varphi}{\partial z_k},
+\qquad(\hat a_k^*\varphi)(z)=z_k\varphi.
+\]
+\[
+\begin{aligned}
+\hat f&=\sum f_{mn}\hat a^{*m}\hat a^n
+&\longleftrightarrow\quad
+f(z,\bar z)&=\sum f_{mn}\bar z^m z^n\\
+\hat f&=\sum\mathring{f}_{mn}\hat a^n\hat a^{*m}
+&\longleftrightarrow\quad
+\mathring{f}(z,\bar z)&=\sum\mathring{f}_{mn}z^n\bar z^m.
+\end{aligned}
+\]
+\Unclear{GELFAND-P000484}{ordered-erasure}{The sign at the upper right of the first $\hat f$ is overwritten. A possible reading is $*$.}
+
+\Unclear{GELFAND-P000484}{ordering-bars}{The exponents on the first $\hat a$ and the first $z$ of the lower row are heavily retraced. Both are provisionally read as $n$.}
+

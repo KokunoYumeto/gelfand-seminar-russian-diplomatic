@@ -1,0 +1,17 @@
+Research computation: exact rational arithmetic, not numerical sampling.
+Seed: 1965; SymPy: 1.14.0
+commutators: 60 PASS
+inverses: 60 PASS
+composition: 40 PASS
+monomial_action: 300 PASS
+finite_group: 2 PASS
+pbw_counts: 175 PASS
+Logarithmic-derivative implementers: 3 PASS
+Negative controls: wrong conjugation sign and missing chain-rule factor both rejected.
+h=3/(x-1)-2/(x+2): implementer (x-1)^(-3)*(x+2)^2, residual 0.
+h=1/(2*x): nonintegral residue; noninner by proof. Twice h=1/x has implementer x^(-1).
+h=1/x^2: double pole, excluded by proved criterion.
+h=x: polynomial part, excluded by proved criterion.
+C2 example: x -> -x, p -> -p-2/(x^2-1); square identity, averaged translation removes cocycle.
+PBW edge cases included n=k=0 and N=0; binomial identity passed throughout.
+All requested finite checks passed. No conclusion about the full automorphism group is inferred.

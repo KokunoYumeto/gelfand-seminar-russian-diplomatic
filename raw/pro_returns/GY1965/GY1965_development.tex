@@ -1,0 +1,287 @@
+\subsection{A bounded answer to the Weyl-field automorphism problem}
+\label{dev:weyl}
+
+\paragraph{Question, scope and evidence.}
+Item 1965-80.10 asks, literally, \ru{Найти все автоморфизмы этого тела}.
+The strongest formulation supported by its preceding notation is to determine
+\(\operatorname{Aut}_{L}D_{n,k}\), once a characteristic-zero coefficient field
+\(L\) and its fixedness are specified. The page supplies neither proposed
+generators nor relations for that group. In particular, its parenthesis about
+Fourier transformation and multiplication is a suggestion, not a generation
+conjecture. The following work fixes
+\[
+ K=\mathbb C(x),\qquad R=K[p;d/dx],\qquad
+ D=Q(R)=D_{1,0},\qquad [p,x]=1.
+\]
+It determines the subgroup preserving this particular \(K\), and distinguishes
+its rational translations that are inner from those that are outer. All
+automorphisms fix \(\mathbb C\) pointwise. These hypotheses are restrictions
+made here; they are not attributed to the notebook.
+
+The full polynomial-algebra automorphism theorem is different:
+\citet[Theorem 2]{makarlimanov1984automorphisms} treats \(A_1\), not its entire
+fraction field. The rational-subfield stabilizer below is already
+\citet[Proposition 2.2(i)]{alevdumas1998invariants}; their Theorem 2.5 also gives
+\(D^G\simeq D\) for finite groups stabilizing \(\mathbb C(p)\), \(\mathbb C(x)\)
+or \(\mathbb C(px)\). We re-prove the stabilizer and derive an explicit
+inner-translation criterion. These are bounded, self-contained partial
+answers, with no claim of new literature results. The notation \ours\ means
+that a proof is supplied in this companion, not that priority is claimed.
+
+\citet[\S5.3.3]{dumas2011invariants} explicitly records the missing full
+automorphism-group description. The current search, dated 9 November 2026,
+found no later full classification. A recent related result,
+\citet[Theorem 0.12]{schwarz2024generalizations}, proves rationality of invariant
+Weyl fields for finite groups induced from rational function fields when the
+commutative invariant field is rational. It does not classify arbitrary
+automorphisms of \(D\). A still more recent preprint,
+\citet[Corollary 8.12]{lauritzenthomsen2026duality}, version 2 dated
+2 November 2026, proves equality and finiteness of the left and right
+indices for every noncommutative division \(\mathbb C\)-subalgebra of
+\(D_{1,0}\); commutative subalgebras have infinite indices. This concerns
+extension dimensions, not a description of all automorphisms.
+These distinctions identify the remaining mathematical obstruction,
+but do not establish why particular researchers did or did not pursue the
+1966 suggestion; no documentary claim of that kind is made.
+
+\paragraph{A centralizer calculation.}
+We use formal pseudodifferential series only as an algebraic device. Let
+\(\mathcal P\) consist of sums \(\sum_{j\le m}a_j(x)p^j\), with
+\(a_j\in K\), \(m\in\mathbb Z\), and multiplication determined by
+\[
+ p^j a=\sum_{r\ge0}\binom{j}{r}a^{(r)}p^{j-r}
+ \quad(j\in\mathbb Z).
+\]
+Every coefficient of a product receives finitely many contributions. For
+completeness, associativity reduces, after the Leibniz rule, to the identity
+\[
+ \binom{i}{r}\binom{i+j-r}{s}
+ =\sum_{t=0}^{s}\binom{j}{t}\binom{i}{r+s-t}
+                         \binom{r+s-t}{r}
+ \quad(i,j\in\mathbb Z,\ r,s\ge0).
+\]
+Indeed, first take out \(\binom{i}{r}\) and then apply the generalized
+Vandermonde identity to the remaining sum. The two sides are exactly the
+coefficients of \(a b^{(r)}c^{(s)}p^{i+j+k-r-s}\) in the two bracketings
+of \((ap^i)(bp^j)(cp^k)\). Coefficientwise finiteness extends this calculation
+from monomials to all the stated series.
+A nonzero series can be factored as \(a_mp^m(1+Q)\), where \(Q\) has order
+at most \(-1\); the formal geometric series in \(-Q\) constructs its inverse.
+Thus \(\mathcal P\) is a division ring containing \(R\), and the Ore
+universal property embeds \(D\) into it. No analytic convergence is asserted.
+
+\begin{lemma}[The rational centralizer \ours]
+The centralizer of \(x\) in \(D\) is precisely \(K\).
+\end{lemma}
+\begin{proof}
+The multiplication rule gives \([p^j,x]=jp^{j-1}\) for every integer \(j\),
+including negative integers, since all derivatives of \(x\) above the first
+vanish. If \(A=\sum_{j\le m}a_jp^j\) commutes with \(x\), uniqueness of its
+series expansion gives \(ja_j=0\) for every \(j\ne0\). Characteristic zero
+therefore gives \(A=a_0\in K\). Conversely, every element of \(K\) commutes
+with \(x\).
+\end{proof}
+
+\begin{proposition}[The rational-subfield stabilizer \ours]
+An automorphism \(\phi\in\operatorname{Aut}_{\mathbb C}D\) satisfies
+\(\phi(K)=K\) if and only if
+\[
+ \phi(x)=f(x)=\frac{ax+b}{cx+d},\qquad
+ \phi(p)=\frac{1}{f'(x)}p+h(x),
+ \quad ad-bc\ne0,\quad h\in K.
+\]
+Scalar multiples of the matrix represent the same \(f\). Every displayed pair
+defines an automorphism, including when \(c\ne0\).
+\end{proposition}
+\begin{proof}
+The restriction to \(K\) is a rational function field automorphism. Its image
+\(f\) has a rational compositional inverse. Degrees of nonconstant rational
+maps of the projective line multiply under composition, so \(\deg f=1\):
+\(f\) is the displayed fractional linear map. In particular \(f'\ne0\).
+The defining relation gives \([\phi(p),f]=1\), while
+\([f'^{-1}p,f]=1\). Their difference commutes with \(f\), hence with
+\(\mathbb C(f)=K\). The lemma puts that difference in \(K\).
+
+Conversely, substitution \(a(x)\mapsto a(f(x))\) is an automorphism of \(K\).
+For \(P=f'^{-1}p+h\), the chain rule gives
+\([P,a(f)]=a'(f)\); thus the prescription respects the Ore relation and
+defines a map on \(R\). Its images generate \(R\), since \(K\) is already
+in the image and \(p=f'(P-h)\). More explicitly, if \(u=f^{-1}\), its inverse
+has \(x\mapsto u(x)\) and
+\[
+ p\mapsto f'(u(x))p-f'(u(x))h(u(x)).
+\]
+The chain rule verifies both compositions on the generators. The maps extend
+to inverse automorphisms of \(D\).
+\end{proof}
+
+The equality \(\phi(K)=K\) is indispensable: the algebraic Fourier
+automorphism \(x\mapsto p\), \(p\mapsto-x\) does not preserve \(K\).
+Conversely, preserving \(K\) need not mean preserving \(A_1\):
+\(x\mapsto x^{-1}\), \(p\mapsto-x^2p\) is an involution of \(D\) whose image
+of \(x\) is not polynomial. This is a statement about the chosen polynomial
+subalgebra, not about whether the involution is conjugate to another action.
+
+\paragraph{Which rational translations are inner?}
+Write \(T_h(x)=x\) and \(T_h(p)=p+h(x)\).
+The maps \(T_h\) form a copy of the additive group of \(K\).
+
+\begin{proposition}[Exact rational-pole criterion \ours]
+For \(h\in\mathbb C(x)\), the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item \(T_h\) is an inner automorphism of \(D\).
+\item \(h=-u'/u\) for some \(u\in\mathbb C(x)^{\times}\).
+\item The polynomial part of \(h\) is zero, every finite pole is simple,
+and every finite-pole residue is an integer.
+\end{enumerate}
+If \(h=\sum_a r_a/(x-a)\) has these properties, one implementing element is
+\(u=\prod_a(x-a)^{-r_a}\).
+\end{proposition}
+\begin{proof}
+If \(T_h=\operatorname{Ad}_u\) for some \(u\in D^{\times}\), its fixing
+\(x\) implies \(ux=xu\). The centralizer lemma forces \(u\in K^{\times}\).
+The Ore relation yields
+\[
+ upu^{-1}=p-\frac{u'}u.
+\]
+This proves (i) implies (ii), and the same identity proves the converse.
+Factor a nonzero rational function over \(\mathbb C\) as
+\(u=C\prod_a(x-a)^{m_a}\), with integral \(m_a\) and finitely many nonzero
+exponents. Then \(-u'/u=-\sum_a m_a/(x-a)\), proving (ii) implies (iii).
+Conversely, unique partial fraction decomposition and (iii) give exactly
+\(h=\sum_a r_a/(x-a)\), \(r_a\in\mathbb Z\); the displayed product has
+\(-u'/u=h\). No extra condition at infinity is missing: the differential
+\(h(x)\,dx\) has residue there equal to the negative sum of the finite
+residues.
+\end{proof}
+
+\begin{corollary}[Translation classes in the outer automorphism group \ours]
+The image of \(\{T_h:h\in K\}\) in
+\(\operatorname{Out}_{\mathbb C}D=\operatorname{Aut}_{\mathbb C}D/\operatorname{Inn}D\)
+is, as an abelian group,
+\[
+ K\Big/\left\{-\frac{u'}u:u\in K^{\times}\right\}
+ \simeq
+ \mathbb C[x]\ \oplus\!\bigoplus_{a\in\mathbb C,\ j\ge2}\!\mathbb C
+ \ \oplus\!\bigoplus_{a\in\mathbb C}\!(\mathbb C/\mathbb Z).
+\]
+All direct-sum elements have finite support. The first term records the
+polynomial part, the second higher-order principal parts, and the third
+simple-pole residues modulo integers.
+\end{corollary}
+\begin{proof}
+The kernel of the homomorphism \(h\mapsto[T_h]\) is exactly the subgroup in
+the denominator by the proposition. Partial fractions give an additive direct
+sum decomposition of \(K\). The denominator is precisely the integral lattice
+in its simple-pole summands, so quotienting gives the formula. This is an
+abelian-group quotient; the \(\mathbb C/\mathbb Z\) terms are not complex
+vector spaces.
+\end{proof}
+
+\begin{example}[Outer torsion and actual infinite order \ours]
+For an integer \(m\ge2\), \(T_{1/(mx)}\) is not inner, but
+\(T_{1/(mx)}^m=T_{1/x}=\operatorname{Ad}_{x^{-1}}\). Its class in the outer
+group has exact order \(m\), because \(r/m\notin\mathbb Z\) for
+\(1\le r<m\). The automorphism itself has infinite order:
+\(T_{1/(mx)}^r=T_{r/(mx)}\ne\mathrm{id}\) for every positive \(r\).
+Thus statements about finite order in \(\operatorname{Out}D\) must not be
+substituted for statements about finite order in \(\operatorname{Aut}D\).
+\end{example}
+
+\paragraph{Finite subgroups of this stabilizer.}
+For \(\sigma\in\operatorname{Aut}_{\mathbb C}K\) put \(f=\sigma(x)\) and
+let \(L_\sigma\) be the lift with \(p\mapsto f'^{-1}p\).
+Then
+\[
+ L_\sigma T_b L_\sigma^{-1}=T_{R_\sigma b},\qquad
+ R_\sigma b=f'(x)b(f(x)).
+\]
+With automorphisms composed as maps of algebras, \(f_{\sigma\tau}=
+f_\tau\circ f_\sigma\), and the chain rule gives
+\(R_{\sigma\tau}=R_\sigma R_\tau\). Thus every stabilizer element has a
+unique form \(T_bL_\sigma\), with multiplication
+\[
+ (T_bL_\sigma)(T_cL_\tau)=T_{b+R_\sigma c}L_{\sigma\tau}.
+\]
+
+\begin{proposition}[Removing a finite-group translation cocycle \ours]
+Every finite subgroup \(H\) of the stabilizer of \(K\) is conjugate, by a
+rational translation \(T_a\), to the canonical lift of its image in
+\(\operatorname{Aut}_{\mathbb C}K\).
+\end{proposition}
+\begin{proof}
+The kernel of restriction to \(K\) is the torsion-free additive group
+\(\{T_b\}\), so restriction is injective on \(H\). Write its image as
+\(Q\), and its elements uniquely as \(T_{b_\sigma}L_\sigma\),
+\(\sigma\in Q\). The multiplication law gives
+\(b_{\sigma\tau}=b_\sigma+R_\sigma b_\tau\).
+Let \(a=|Q|^{-1}\sum_{\tau\in Q}b_\tau\). Sum this identity over \(\tau\)
+to obtain \(b_\sigma=a-R_\sigma a\). Hence
+\[
+ T_{-a}(T_{b_\sigma}L_\sigma)T_a=L_\sigma
+\]
+for every \(\sigma\). Averaging uses characteristic zero; the assertion is
+not made in positive characteristic.
+\end{proof}
+
+This proves a normal form for finite actions within the chosen stabilizer.
+It says nothing about whether an arbitrary finite subgroup of
+\(\operatorname{Aut}D\) stabilizes a conjugate rational subfield. Nor does
+it make the conjugating translation inner: the pole criterion decides that
+additional question separately.
+
+\paragraph{Computations and independent checks.}
+The accompanying \texttt{code/check\_weyl.py} implements multiplication of
+finite differential operators from the Leibniz rule, with exact rational
+coefficients. It checks the commutator, inverse and composition identities
+above for fractional linear changes including inversion, higher-order poles,
+nonintegral residues and polynomial shifts. A separate evaluation on
+monomials checks the operator commutator without using the multiplication
+routine. The same script enumerates PBW exponent tuples by a recurrence and
+compares them with \(\binom{N+2n+k}{2n+k}\), including zero generators and
+\(N=0\). The complete output is retained; finite tests are used to detect
+algebraic or coding mistakes, not to establish the universally quantified
+results.
+
+\begin{example}[Rational shifts checked by symbolic differentiation \oursComputed]
+The exact examples give
+\[
+\begin{array}{c|c|c}
+h(x)&\text{inner?}&\text{implementer, when it exists}\\\hline
+3/(x-1)-2/(x+2)&\text{yes}&(x-1)^{-3}(x+2)^2\\
+1/(2x)&\text{no}&\text{its square is implemented by }x^{-1}\\
+1/x^2&\text{no}&\text{higher-order pole}\\
+x&\text{no}&\text{nonzero polynomial part}\\
+0&\text{yes}&1
+\end{array}
+\]
+Each positive case is checked by differentiating the implementer; negative
+cases are excluded by the proved criterion, not by a failed search.
+\end{example}
+
+The second proof check re-derives the conjugation sign from
+\(pu=up+u'\), and the composition law from substitution before applying the
+abstract semidirect-product notation. Deliberately reversing the sign of
+\(u'/u\), or omitting \(f'\) in the group action, fails the symbolic checks.
+The proof also distinguishes the fixed subfield condition from the weaker
+condition that an image is rational in some other generator. A separate
+review of the written proof and a second parameter run are documented in
+\texttt{evidence/development\_review.md} and the computation output.
+
+\paragraph{The exact obstruction and a further bounded run.}
+The unresolved step is global: an arbitrary automorphism can move
+\(\mathbb C(x)\) to a different commutative subfield of \(D\). The
+centralizer argument classifies maps only after the source and target
+rational subfield have been fixed. Fourier interchange already escapes that
+stabilizer. No reduction of every Weyl generating pair to the normal form
+above has been proved here, and no generation theorem is conjectured on the
+strength of the computations.
+
+A further bounded run could explicitly compare the stabilizers of
+\(\mathbb C(x)\) and \(\mathbb C(xp)\), using the second normal form in
+\citet[Proposition 2.2(ii)]{alevdumas1998invariants}, and compute innerness
+and conjugacy obstructions for rational functions with a fixed finite pole
+set. That would refine the notebook's concrete suggestions while remaining
+far short of classifying the full automorphism group. The present contribution
+is the explicit, checked restricted answer and the precise location of the
+remaining gap.

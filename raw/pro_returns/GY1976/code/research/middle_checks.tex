@@ -1,0 +1,81 @@
+\subsection{Critical checks on the Berezinian and flatness signs}
+
+These calculations audit faithful mathematical errors in the source. They are
+elementary critical annotations, not a claim to new research and not a development
+of a class C or D problem.
+
+\paragraph{The reciprocal Berezinian on P000673.}\oursComputed{}
+For an even block-diagonal matrix \(J=\operatorname{diag}(a,d)\) of size
+\(1|1\), with nonzero even scalar entries, the usual Berezinian is
+\(\operatorname{Ber}J=a/d\). The first expression on P000673 gives \(d/a\),
+whereas the lower expression on the same page gives \(a/d\).
+Taking \(a=2,d=3\) gives \(3/2\) versus \(2/3\), so the two expressions
+cannot be simultaneous definitions in the stated convention.
+The usual normalization is explicitly printed in
+\citet[\S1]{bernsteinleites1977integral} and in the earlier density formula
+\citep[formula~(3)]{berezinleites1975supermanifolds}.
+The correct general formula is
+\[
+ \operatorname{Ber}\begin{pmatrix}A&B\\C&D\end{pmatrix}
+ =\frac{\det(A-BD^{-1}C)}{\det D}
+ =\frac{\det A}{\det(D-CA^{-1}B)}.
+\]
+This test isolates a reciprocal error without depending on conventions for
+left versus right odd derivatives.
+
+\paragraph{Flatness on P000684 and in the printed Manin theorem.}\ours{}
+Use the notebook's convention
+\(\nabla_1\mathbf1=P\mathbf1\) and
+\(\nabla_2\mathbf1=L\mathbf1\).
+Because both connections commute with \(\nabla\), the coefficientwise
+Leibniz rule gives
+\[
+ [\nabla_1,\nabla_2]\mathbf1
+ = (d_1L+LP-d_2P-PL)\mathbf1.
+\]
+The cyclic filtered-module theorem makes the action on \(\mathbf1\)
+faithful for differential operators, hence flatness implies
+\[
+ d_1L-d_2P=[P,L].
+\]
+Both the difference sign and the order of the commutator follow from the
+declared convention. An unspecified \(\pm\) in front of a commutator cannot
+repair a sum of the two derivatives.
+
+For a concrete counterexample to that sum, take
+\(\mathcal B=\mathbb Q[t,z]\), \(d=0\),
+\(\mathcal M=\mathcal B[D]\), and
+\[
+ \nabla Q=DQ,\qquad
+ \nabla_1Q=\partial_tQ+Qz,\qquad
+ \nabla_2Q=\partial_zQ+Qt.
+\]
+The standard order filtration satisfies the module axioms; the three
+connections commute. Their values on \(1\) are \(P=z\) and \(L=t\).
+Thus \(d_1L-d_2P=1-1=0=[P,L]\), whereas
+\(d_1L+d_2P=2\ne0\). The accompanying exact symbolic check verifies this
+on a general test polynomial in \(t,z,D\).
+
+The error is also present in the inspected printed English statement
+\citep[Chapter~III, Theorem~2.6, p.~83]{manin1978algebraic}.
+That statement uses the opposite names,
+\(\nabla_1\mathbf1=L\mathbf1\), \(\nabla_2\mathbf1=P\mathbf1\),
+and prints \(d_1P+d_2L=[P,L]\). Its proof requires instead
+\(d_1P-d_2L=[L,P]\). This identifies a shared mathematical sign error,
+not a failure to transcribe the notebook.
+
+\paragraph{Independent fourth-order check.}\oursComputed{}
+For P000681, the companion's separate \texttt{critical\_checks.py} computes
+the commutator by two methods. With \(L=D^4+vD^2+wD+z\),
+\(P=D^2+AD+v/2\), and \(A_x=0\), its coefficients are
+\[
+\begin{aligned}
+[L,P]_{D^2}&=2v_{xx}-Av_x-2w_x,\\
+[L,P]_{D}&=2v_{xxx}+vv_x-w_{xx}-Aw_x-2z_x,\\
+[L,P]_{1}&=\tfrac12v_{xxxx}+\tfrac12vv_{xx}+\tfrac12wv_x-z_{xx}-Az_x.
+\end{aligned}
+\]
+The notebook's first two relative coefficients are therefore wrong, while
+the third equation agrees. Manin's later equation has the corrected relative
+coefficients, with its own time and commutator conventions
+\citep[Chapter~III, \S6.3, equation~(17), p.~96]{manin1978algebraic}.

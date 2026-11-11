@@ -1,0 +1,155 @@
+\subsection{The boundary-cosine identity in record 86}
+
+\begin{proposition}[Boundary-cosine identity, independent verification]\ours
+Let \(K\subset\mathbb R^2\) be bounded and strictly convex with \(C^2\)
+boundary. For distinct \(M,N\in\partial K\), let \(c_M\) be the cosine between
+the inward unit normal at \(M\) and the chord directed from \(M\) to \(N\);
+define \(c_N\) with the chord directed from \(N\) to \(M\). Then
+\[
+ \int_{\partial K}\int_{\partial K}c_Mc_N\,ds_M\,ds_N=2\pi |K|.
+\]
+\end{proposition}
+
+\begin{proof}
+Parameterize unoriented lines by an angle \(0\leq\theta<\pi\) and a signed
+normal coordinate \(p\). Put
+\(v=(\cos\theta,\sin\theta)\), \(n=(-\sin\theta,\cos\theta)\).
+A transverse line through \(K\) has endpoints
+\(M=pn+av\), \(N=pn+bv\), \(a<b\), and chord length \(\ell=b-a\).
+Differentiating the endpoint formulas gives
+\[
+ n\cdot dM=dp+a\,d\theta,\qquad n\cdot dN=dp+b\,d\theta.
+\]
+Taking the exterior product and then absolute values yields
+\[
+ c_Mc_N\,ds_M\,ds_N=\ell\,|dp\,d\theta|.
+\]
+The map from ordered distinct endpoint pairs to unoriented lines is
+two-to-one almost everywhere. Hence the boundary integral is
+\(2\int_0^\pi\int_{\mathbb R}\ell(p,\theta)\,dp\,d\theta\).
+For each fixed \(\theta\), Fubini in orthogonal coordinates gives
+\(\int\ell(p,\theta)\,dp=|K|\). This proves the asserted constant.
+Tangencies and the diagonal have zero measure and are handled by limits.
+\end{proof}
+
+\paragraph{Independent second check by the divergence theorem.}\ours{}
+Let \(m_M\) be the inward normal at \(M\), and let \(\nu_N\) be the
+outward normal at \(N\). For \(r=x-M\), define
+\[
+ F_M(x)=\frac{(m_M\cdot r)r}{|r|^2}.
+\]
+On the boundary, \(F_M(N)\cdot\nu_N=c_Mc_N\), whereas away from \(M\)
+\(\operatorname{div}F_M(x)=m_M\cdot(x-M)/|x-M|^2\).
+Removing a disk of radius \(\varepsilon\) about \(M\) causes a flux
+error tending to zero, since \(F_M\) is bounded. Therefore the double
+boundary integral equals
+\[
+ \int_K\int_{\partial K}
+ \frac{\nu_M\cdot(M-x)}{|M-x|^2}\,ds_M\,dx.
+\]
+Fubini is valid because the singularity \(|x-M|^{-1}\) is locally
+integrable in the planar variable. For every interior \(x\), the inner
+integral is the flux of \(\nabla_M\log|M-x|\), hence \(2\pi\).
+This independently recovers \(2\pi|K|\) without the chord-coordinate
+Jacobian or its multiplicity count.
+
+This is a verification of the recorded formula, not a claim of a new
+identity. The classical line measure is discussed in
+\citet{santalo1989integral}, \S1.2; the 1953 treatise
+\citep{santalo1953introduction} establishes the pre-seminar setting,
+but an exact Borovikov publication was not verified. \oursComputed{}
+For a circle of radius
+\(R\), \(c_Mc_N=\sin^2((t-s)/2)\) and the integral is
+\(2\pi^2R^2=2\pi|K|\), an independent normalization check.
+
+\subsection{The corrected nutation polynomial in record 83}
+
+\begin{proposition}[Elimination for the recorded top Lagrangian]\ours
+For
+\[
+ L=\frac12\bigl(\dot\theta^2+\dot\varphi^2+\dot\psi^2
+       +2\dot\varphi\dot\psi\cos\theta\bigr)-p\cos\theta,
+\]
+let \(n=\partial L/\partial\dot\varphi\),
+\(e=\partial L/\partial\dot\psi\), and let \(h=T+p\cos\theta\).
+On \(|u|<1\), \(u=\cos\theta\), the reduced equation is
+\[
+ \dot u^2=2pu^3-2hu^2+2(ne-p)u+2h-n^2-e^2.
+\]
+\end{proposition}
+
+\begin{proof}
+Direct differentiation gives
+\(n=\dot\varphi+u\dot\psi\),
+\(e=\dot\psi+u\dot\varphi\), without the two extraneous factors 2
+in the notebook. Solving this two-by-two system gives
+\[
+ \dot\varphi=\frac{n-eu}{1-u^2},\qquad
+ \dot\psi=\frac{e-nu}{1-u^2}.
+\]
+Therefore
+\[
+ \dot\varphi^2+\dot\psi^2+2u\dot\varphi\dot\psi
+   =\frac{n^2+e^2-2neu}{1-u^2},\qquad
+ \dot\theta^2=\frac{\dot u^2}{1-u^2}.
+\]
+Substitution into the energy equation and multiplication by
+\(2(1-u^2)\) give
+\(\dot u^2=2(h-pu)(1-u^2)-n^2-e^2+2neu\), whose expansion is the claim.
+\end{proof}
+
+The physical branch must satisfy \(-1\leq u\leq1\) and a nonnegative
+right-hand side. Distinct roots give an elliptic quadrature; repeated roots
+give degenerate limits. This checks the specific normalized spherical-top
+model written in the notes; it does not silently substitute the general
+two-inertia symmetric-top model of the classical literature
+\citep{klein1897top}.
+
+\subsection{Testing Gelfand's slice-area formula}
+
+\begin{example}[A fixed-direction counterexample]\oursComputed
+For the ellipsoid
+\(x^2/a^2+y^2/b^2+z^2/c^2\leq1\), a section at height \(t\) has area
+\(S(t)=\pi ab(1-t^2/c^2)\), \(|t|\leq c\). Consequently
+\[
+ \int_{-c}^{c}|S'(t)|^2\,dt=\frac{8\pi^2a^2b^2}{3c},\qquad
+ V=\frac{4\pi abc}{3},\qquad
+ \frac{\int|S'|^2}{V}=\frac{2\pi ab}{c^2}.
+\]
+The ratio depends on shape, so no universal multiplier can make the
+single-direction formula valid for all ellipsoids. If the ambiguous source
+were read as \(S^2\) instead of \((S')^2\), even homothetic scaling would
+rule out a universal constant relating that integral to volume.
+\end{example}
+
+\begin{proposition}[An averaged repair, not an attribution]\ours
+For the hyperplane Radon transform in \(\mathbb R^3\), ordinary surface
+measure on \(S^2\), and Euclidean area on each plane,
+\[
+ \int_{S^2}\int_{\mathbb R}|\partial_t Rf(\omega,t)|^2\,dt\,d\omega
+       =8\pi^2\|f\|_{L^2(\mathbb R^3)}^2.
+\]
+This holds first for Schwartz functions and extends by density in the
+corresponding norm; for indicators of bounded domains of finite volume it
+gives an averaged volume formula.
+\end{proposition}
+
+\begin{proof}
+Use \(\widehat f(\xi)=\int e^{-ix\cdot\xi}f(x)\,dx\).
+Fubini gives the Fourier-slice identity
+\(\mathcal F_t Rf(\omega,\sigma)=\widehat f(\sigma\omega)\).
+One-dimensional Plancherel, the double coverage of polar coordinates by
+\((\omega,\sigma)\in S^2\times\mathbb R\), and three-dimensional
+Plancherel give, successively,
+\[
+ \frac1{2\pi}\int_{S^2}\int_{\mathbb R}
+       \sigma^2|\widehat f(\sigma\omega)|^2\,d\sigma\,d\omega
+ =\frac2{2\pi}\int_{\mathbb R^3}|\widehat f(\xi)|^2\,d\xi
+ =8\pi^2\|f\|_2^2.
+\]
+\end{proof}
+
+Neither the angular integral nor its normalization is written in P000138.
+The valid averaged identity therefore cannot by itself establish what
+Gelfand intended by \(M\), especially since the following line explicitly
+calls \(M\) a universal constant.

@@ -1,0 +1,11 @@
+Final build record
+python3 build_chapter.py GY1974
+xelatex -interaction=nonstopmode -halt-on-error -file-line-error GY1974_test.tex
+bibtex GY1974_test
+xelatex -interaction=nonstopmode -halt-on-error -file-line-error GY1974_test.tex
+xelatex -interaction=nonstopmode -halt-on-error -file-line-error GY1974_test.tex
+Two further XeLaTeX passes followed explicit data-layout repairs.
+The final pass is xelatex_final.out; the full engine and bibliography logs
+are GY1974_test.log and GY1974_test.blg at archive root.
+python3 code/validate_delivery.py
+python3 code/generation/check_reproduction.py --compare-delivered

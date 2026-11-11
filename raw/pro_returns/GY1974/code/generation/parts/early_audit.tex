@@ -1,0 +1,143 @@
+\subsection{Verification of the singular elliptic-system example}
+
+This is an editorial verification of the formulas on P000565, not a claim of a new singular-solution construction. The two identical coefficients in the reconstruction below agree with the formula reproduced by \citet[\S3.2, equation (3.3)]{mingione2006regularity}. That review attributes the construction to Giusti and Miranda (1968); the original 1968 article was not retrieved. Thus the first handwritten coefficient is emended by mathematical reconstruction, supported indirectly by the historical source, rather than by claiming that the scan contains an invisible numeral.
+
+\begin{proposition}[Residual of the tensor as copied]\ours
+Let \(n=N\ge3\), \(B=B_1(0)\subset\mathbb R^n\), and \(u(x)=x/|x|\) for \(x\ne0\), with any value assigned at the origin. For constants \(\alpha,\beta\), set
+\[
+ A_{ij}^{hk}(v)=\delta_{ij}\delta_{hk}
+ +\left(\delta_{jk}+\alpha\frac{v_jv_k}{1+|v|^2}\right)
+  \left(\delta_{ih}+\beta\frac{v_iv_h}{1+|v|^2}\right),
+ \qquad
+ F_j^k=\sum_{i,h}A_{ij}^{hk}(u)\partial_i u^h.
+\]
+Then \(u\in W^{1,2}(B;\mathbb R^n)\), and, away from the origin,
+\[
+ F_j^k=\frac1r\left[n\delta_{jk}
+       +\left(-1+\frac{\alpha(n-1)}2\right)u_ju_k\right],
+ \qquad
+ \sum_j\partial_jF_j^k
+ =(n-1)\left(\frac{\alpha(n-2)}2-2\right)\frac{x_k}{r^3},
+ \quad r=|x|.
+\]
+In particular, the copied value \(\alpha=1/(n-2)\), with the second coefficient \(\beta=4/(n-2)\), gives the nonzero residual
+\[
+ -\frac32(n-1)\frac{x_k}{r^3}.
+\]
+It therefore does not make \(x/|x|\) solve the displayed homogeneous system.
+\end{proposition}
+\begin{proof}
+Direct differentiation gives
+\[
+ \partial_i u^h=\frac{\delta_{ih}-u_i u_h}{r},
+ \qquad |Du|^2=\frac{n-1}{r^2}.
+\]
+Because \(u\) is bounded, the inner boundary term used to identify each distributional first derivative is \(O(\varepsilon^{n-1})\) and tends to zero. Thus these punctured classical derivatives are indeed its weak derivatives. The radial integral of \(|Du|^2\) is a constant times \(\int_0^1r^{n-3}\,dr<\infty\). Moreover,
+\[
+ \sum_{i,h}\left(\delta_{ih}+\frac\beta2u_i u_h\right)
+                    \partial_i u^h=\frac{n-1}{r},
+\]
+because \(\sum_i u_i\partial_i u^h=0\). Substituting this contraction proves the flux formula, including its independence of \(\beta\). Finally
+\[
+ \sum_j\partial_j\!\left(\frac{\delta_{jk}}r\right)
+ =-\frac{x_k}{r^3},\qquad
+ \sum_j\partial_j\!\left(\frac{x_jx_k}{r^3}\right)
+ =(n-2)\frac{x_k}{r^3}.
+\]
+Combining these identities gives the residual. A nonzero residual on an open subset of the punctured ball already excludes a distributional solution on the ball.
+\end{proof}
+
+\begin{proposition}[A uniformly elliptic reconstruction and its weak solution]\ours
+Take both coefficients equal to \(a=4/(n-2)\). Then \(A(v)\) is real analytic and uniformly bounded for \(v\in\mathbb R^n\), and for every real matrix \(\xi=(\xi_i^h)\),
+\[
+ |\xi|^2\le
+ \sum_{i,j,h,k}A_{ij}^{hk}(v)\xi_i^h\xi_j^k
+ \le (1+n+2a+a^2)|\xi|^2.
+\]
+The map \(u=x/|x|\) is an energy-class weak solution on \(B\), has boundary trace \(u(x)=x\) on \(\partial B\), and has no continuous representative at the origin.
+\end{proposition}
+\begin{proof}
+Put \(C(v)=I+a\,vv^T/(1+|v|^2)\). Since the two factors coincide, the quadratic form is exactly
+\[
+ |\xi|^2+\left(\sum_{i,h}C_{ih}(v)\xi_i^h\right)^2.
+\]
+Writing \(s=|v|^2/(1+|v|^2)\in[0,1)\), one has
+\(\|C(v)\|_{\mathrm F}^2=n+2as+a^2s^2\le n+2a+a^2\).
+Cauchy--Schwarz proves the upper bound; the square proves the lower bound. The denominator \(1+|v|^2\) never vanishes on real space, so the coefficients are real analytic; the same representation proves uniform boundedness.
+
+The preceding proposition makes the divergence vanish on \(B\setminus\{0\}\). For \(\varphi\in C_c^\infty(B;\mathbb R^n)\), integrate by parts on \(B\setminus\overline{B_\varepsilon}\). The inner boundary term has magnitude at most \(C\|\varphi\|_\infty\varepsilon^{n-1}\varepsilon^{-1}=O(\varepsilon^{n-2})\), because \(|F|\le C/r\). It tends to zero for \(n\ge3\). The integral of \(F:D\varphi\) over the removed ball also tends to zero, since \(r^{-1}\) is locally integrable. Consequently
+\[
+ \sum_{i,j,h,k}\int_B A_{ij}^{hk}(u)\partial_i u^h\partial_j\varphi^k\,dx=0.
+\]
+The map is smooth near \(\partial B\), with the claimed trace. Its different radial limits at the origin preclude continuity there. The result proves existence, and asserts neither uniqueness for the nonlinear Dirichlet problem nor that this particular homogeneous system is the Euler equation of a minimizing functional.
+\end{proof}
+
+\begin{remark}[Independent exact checks]\oursComputed
+The script \texttt{early\_code/exact\_checks.py} differentiates the unsimplified tensor flux using first-order jets with rational arithmetic. At \((3,4,0,\ldots,0)\), in each dimension \(3,4,5,6\), it reproduces the residual above for the copied coefficients and obtains zero for the reconstruction. These finite checks supplement the dimension-independent proof; they do not replace it. The point may lie outside \(B\), because the algebraic flux identity being checked is valid on all of \(\mathbb R^n\setminus\{0\}\).
+\end{remark}
+
+\subsection{The genus-two Hamiltonian and spectral normalization}
+
+The algebra below checks P000555 in the canonical convention \(\{q_i,p_j\}=\delta_{ij}\). The Hamiltonian system and its spectral construction were already published by \citet[\S2, pp.~64--65]{novikov1974periodic} before the September lecture. The coefficient \(5/8\) also follows by expanding the formula of \citet[\S4]{dubrovinnovikov1974periodicity}. This is a verification of the recorded formulas, without a novelty claim.
+
+\begin{proposition}[Exact Poisson-bracket diagnostic]\oursComputed
+Let \(c,d,a\) be constants and put
+\begin{align*}
+ J_1(a)&=p_1p_2-\frac12q_2^2-\frac52q_1^2q_2-aq_1^4+cq_1^2-dq_1,\\
+ J_2&=p_1^2-2q_1p_1p_2+2(q_2-c)p_2^2+D,\\
+ D&=q_1^5+2cq_1^3+dq_1^2-4q_1q_2^2+4cq_1q_2-2dq_2.
+\end{align*}
+Then
+\[
+ \{J_1(a),J_2\}=(8a-5)q_1^3(q_1p_2-p_1).
+\]
+Thus the copied quartic coefficient \(a=5/2\) gives a generically nonzero bracket. The replacement \(a=5/8\) gives commuting Hamiltonians.
+\end{proposition}
+\begin{proof}
+For the convention specified above,
+\(\{F,G\}=\sum_i(F_{q_i}G_{p_i}-F_{p_i}G_{q_i})\).
+Here
+\begin{align*}
+ (J_1)_{q_1}&=-5q_1q_2-4aq_1^3+2cq_1-d,&
+ (J_1)_{q_2}&=-q_2-\tfrac52q_1^2,\\
+ (J_1)_{p_1}&=p_2,&(J_1)_{p_2}&=p_1,\\
+ (J_2)_{p_1}&=2p_1-2q_1p_2,&
+ (J_2)_{p_2}&=-2q_1p_1+4(q_2-c)p_2,\\
+ (J_2)_{q_1}&=-2p_1p_2+5q_1^4+6cq_1^2+2dq_1-4q_2^2+4cq_2,\\
+ (J_2)_{q_2}&=2p_2^2-8q_1q_2+4cq_1-2d.
+\end{align*}
+Substitution and collecting coefficients gives the displayed factorization. The accompanying script verifies the polynomial identity symbolically over the rational numbers, with \(q_1,q_2,p_1,p_2,c,d,a\) independent.
+\end{proof}
+
+\begin{proposition}[Conditional spectral polynomial in an explicit normalization]\oursComputed
+Set \(J_1=J_1(5/8)\), let the spatial derivative be the Hamiltonian vector field \(D_xF=\{F,J_1\}\), and identify the Schrödinger potential as \(u=q_1\). Define
+\[
+ P(E)=E^2+\frac{q_1}2E+\frac{q_1^2-2q_2+2c}{16}.
+\]
+Then the squared-eigenfunction identity gives
+\begin{align*}
+ R(E)&=(E-u)P^2+\frac12P D_x^2P-\frac14(D_xP)^2\\
+ &=E^5+\frac c4E^3-\frac d{16}E^2
+   +\left(\frac{J_1}{32}+\frac{c^2}{64}\right)E
+   -\frac{J_2}{256}-\frac{cd}{128}.
+\end{align*}
+Moreover \(D_xR=0\) and
+\(D_x^3P-4(u-E)D_xP-2(D_xu)P=0\).
+\end{proposition}
+\begin{proof}
+Hamilton's equations give
+\[
+ D_xq_1=p_2,\quad D_xq_2=p_1,\quad
+ D_xp_1=5q_1q_2+\tfrac52q_1^3-2cq_1+d,\quad
+ D_xp_2=q_2+\tfrac52q_1^2.
+\]
+In particular
+\[
+ D_xP=\frac{p_2}2E+\frac{q_1p_2-p_1}{8},\qquad
+ D_x^2P=\frac{q_2+\frac52q_1^2}{2}E
+          +\frac{p_2^2-4q_1q_2+2cq_1-d}{8}.
+\]
+Substitution and collection by powers of \(E\) prove the formula for \(R\). The two Hamiltonians are constant along this vector field by the preceding bracket identity, so \(D_xR=0\). Direct differentiation, or differentiating the squared-eigenfunction identity and canceling the nonzero polynomial \(P\), gives the third-order identity. All polynomial equalities have also been checked exactly by the supplied script.
+\end{proof}
+
+This last proposition is deliberately conditional on the stated choices of \(u\), spatial flow and \(P\). The notebook prints \(c^2/4\) in the coefficient of \(E\) and a positive constant term. The author-hosted Dubrovin--Novikov text yields \(c^2/64\) after translating its parameters, but retains a positive constant term and has other apparent typographic defects. Although \citet[Ch.~II, \S4, p.~105]{dubrovinmatveevnovikov1976nonlinear} supplies the same \(q_1=u\), \(q_2=u''-5u^2/2\) interpretation, a complete agreement of all source sign conventions has not been established. Accordingly the data record an unresolved normalization discrepancy; the conditional identity above is not presented as a recovered literal reading of the notebook.

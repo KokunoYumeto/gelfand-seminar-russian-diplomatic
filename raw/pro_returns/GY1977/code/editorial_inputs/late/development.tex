@@ -1,0 +1,225 @@
+\subsection{Independent checks of the spectral and algebraic formulas}
+
+The following computations explain emendations in occurrences
+1977-442.4, 1977-442.6--.7, 1977-443.9 and 1977-443.12--.14, and two later
+algebraic formulas. They are checks made for this companion, with no claim
+of historical novelty. The relevant published subjects are described by
+\citet{calogerodegasperis1976inverse,calogerodegasperis1978extension,
+calogero1978motion}; only their publisher metadata and abstracts or
+editorial footnotes were available for the present comparison. Thus the
+proofs below verify the displayed notebook equations independently of a
+claim to have read their full published normalization conventions.
+
+\begin{proposition}[Transmission phase in the notebook convention]\oursComputed
+Let \(u\in C(\mathbb R)\cap L^1(\mathbb R)\) be real. Use the
+notebook's physical scattering normalization for
+\(\psi''=(u-k^2)\psi\): at negative infinity,
+\(\psi\sim T(k)e^{-ikx}\), and at positive infinity,
+\(\psi\sim e^{-ikx}+R(k)e^{ikx}\). With
+\(T=|T|e^{2i\varphi}\) and the branch \(\varphi\to 0\) as
+\(k\to+\infty\), its leading high-energy phase is
+\[
+ \varphi(k)=-\frac{1}{4k}\int_{\mathbb R}u(x)\,dx+o(k^{-1}).
+\]
+Consequently, the source's coefficient \(-c_0/2\), where
+\(c_0=\int u\), is incompatible with its own factor 2 in the phase of T.
+\end{proposition}
+\begin{proof}
+Normalize the left Jost solution f by \(f\sim e^{-ikx}\) at negative
+infinity. Its Volterra equation is
+\[
+ f(x)=e^{-ikx}+\frac1k\int_{-\infty}^x
+          \sin(k(x-y))u(y)f(y)\,dy.
+\]
+For real \(k>0\), Gronwall's inequality gives
+\(\sup_x|f(x)|\le\exp(\|u\|_1/k)\) and
+\(\sup_x|f(x)-e^{-ikx}|\le
+\|u\|_1\exp(\|u\|_1/k)/k\).
+Splitting the sine into exponentials shows that the coefficient of
+\(e^{-ikx}\) at positive infinity is
+\[
+ A(k)=1-\frac1{2ik}\int_{\mathbb R}e^{iky}u(y)f(y)\,dy
+     =1+\frac{i c_0}{2k}+O(k^{-2}).
+\]
+The error bound follows from the uniform estimate and integrability
+of u. For all sufficiently large k, \(A(k)\ne0\).
+The physical solution is \(\psi=f/A\), so \(T=A^{-1}\), and
+\(\log T=-i c_0/(2k)+O(k^{-2})\). Taking half the imaginary part
+on the branch near1 proves the formula. No convergence of a full
+asymptotic series is asserted.
+
+An independent exact check uses
+\(u=-2r^2\operatorname{sech}^2(rx)\), \(r>0\), and
+\[
+ \psi=e^{-ikx}\frac{ik+r\tanh(rx)}{ik+r},\qquad
+ T(k)=\frac{k+ir}{k-ir}.
+\]
+Direct differentiation gives \(\psi''=(u-k^2)\psi\). Its multiplying
+factor tends to 1 at positive infinity and to
+\((ik-r)/(ik+r)=(k+ir)/(k-ir)=T(k)\) at negative infinity,
+so it has exactly the stated physical normalization, with \(R=0\).
+Here \(c_0=-4r\) and \(\varphi=\arctan(r/k)=r/k+O(k^{-3})\),
+again giving \(-c_0/4\). The symbolic residual and expansion are
+recorded in the accompanying verification output. An independent
+review caught an earlier reciprocal error in the stated boundary
+normalization; these explicit endpoint checks correct it without
+altering the final coefficient \(-c_0/4\).
+\end{proof}
+
+\begin{proposition}[Weights of the integrated recursion moments]\oursComputed
+Let \(u\in\mathcal S(\mathbb R)\), and for
+\(f\in\mathcal S(\mathbb R)\) define
+\[
+ L_u f=f''-4uf+2u'\int_x^\infty f(s)\,ds,\qquad
+ S_u=xu'+2u,\qquad c_n[u]=\int_{\mathbb R}L_u^n S_u\,dx,
+\]
+The upper-tail primitive of a Schwartz function is bounded; its
+product with \(u'\) is Schwartz. Thus L preserves this space,
+all the displayed iterates and integrals exist, and the boundary
+terms used below vanish.
+For \(u_\lambda(x)=\lambda^2u(\lambda x)\), \(\lambda>0\),
+\[
+ c_n[u_\lambda]=\lambda^{2n+1}c_n[u].
+\]
+Thus a pure scaling flow \(u_t=b(xu_x+2u)\), for constant \(b\in\mathbb R\),
+has \(\dot c_n=(2n+1)bc_n\), rather than \(nbc_n\).
+\end{proposition}
+\begin{proof}
+If \(h_\lambda(x)=\lambda^a h(\lambda x)\), then its upper-tail
+primitive has weight \(a-1\). Each of the three terms in
+\(L_{u_\lambda}h_\lambda\) therefore has weight \(a+2\). Since
+\(S_{u_\lambda}(x)=\lambda^2S_u(\lambda x)\), induction gives
+weight \(2n+2\) before integration and \(2n+1\) afterwards.
+The scaling-flow solution is obtained by \(\lambda=e^{bt}\).
+
+Independently, integration by parts gives \(c_0=\int u\).
+Put \(U(x)=\int_x^\infty u(s)\,ds\). Then
+\(\int_x^\infty S_u=U-xu\), and the formula for L gives
+\(c_1=-3\int u^2\). For example, on
+\(u_\lambda=\lambda^2e^{-\lambda^2x^2}\), the two quantities are
+\(\lambda\sqrt\pi\) and \(-3\lambda^3\sqrt{\pi/2}\).
+These exact integrals independently test weights 1 and 3, already
+refuting the source's proposed weights 0 and 1.
+\end{proof}
+
+\begin{proposition}[The sign in the Bianchi quadrilateral]\oursComputed
+Let \(p,q\in\mathbb C\) be constants, and let U,A,B be
+complex-valued \(C^1\) functions on a real interval I. Suppose the
+two lower B\"acklund edges satisfy
+\[
+ U_x+A_x=-\tfrac12(A-U)(4p+A-U),
+\]
+and the same equation with \((A,p)\) replaced by \((B,q)\).
+On any subinterval where the displayed denominator is nonzero,
+the compatible upper value is the \(C^1\) function
+\[
+ C=U-\frac{(p+q)(A-B)}{p-q+\tfrac12(A-B)}.
+\]
+In particular, the denominator uses \(A-B\), with the same order
+as the numerator in these conventions.
+\end{proposition}
+\begin{proof}
+The upper edges require
+\[
+ A_x+C_x=-\tfrac12(C-A)(4q+C-A),\qquad
+ B_x+C_x=-\tfrac12(C-B)(4p+C-B).
+\]
+Subtracting them and eliminating \(A_x-B_x\) by the two lower
+edges gives a linear equation for C. Solving it yields the displayed
+formula. This elimination is one check.
+
+For a second check, differentiate that rational formula using the two
+lower equations, leaving \(U_x\) arbitrary. Substitution into either
+upper equation gives zero identically. The symbolic verification file
+performs these as two separate residual calculations. The computation
+only concerns this local differential quadrilateral; it neither fills
+in missing scattering norming data nor proves a global permutability
+statement at zeros of the denominator.
+\end{proof}
+
+\begin{proposition}[The Hermite interaction matrix]\oursComputed
+Let \(\bar x_1,\ldots,\bar x_n\) be the distinct zeros of the
+physicists' Hermite polynomial \(H_n\), and put
+\[
+ A_{jk}=-\frac1{(\bar x_j-\bar x_k)^2}\quad(j\ne k),\qquad
+ A_{jj}=\sum_{k\ne j}\frac1{(\bar x_j-\bar x_k)^2}.
+\]
+For the source's root dynamics
+\[
+ \ddot x_j=-x_j+\sum_{k\ne j}
+       \frac{1+2\dot x_j\dot x_k}{x_j-x_k},
+\]
+the equilibrium linearization is
+\(\ddot\varepsilon+(I+A)\varepsilon=0\).
+Moreover, \(\operatorname{Spec}(A)=\{0,1,\ldots,n-1\}\), with
+each eigenvalue simple.
+\end{proposition}
+\begin{proof}
+The derivative of each inverse difference contributes
+\(-(\varepsilon_j-\varepsilon_k)/(\bar x_j-\bar x_k)^2\).
+The velocity products have zero linear part at a stationary point.
+The independent term \(-x_j\) contributes \(-\varepsilon_j\),
+giving the stated matrix \(I+A\).
+
+For the spectrum, use the notebook polynomial equation
+\[
+ \Psi_{tt}+\tfrac12\Psi_{xx}-x\Psi_x+n\Psi=0,
+ \qquad
+ \Psi=2^{-n}\sum_{m=0}^n c_m(t)H_{n-m}(x),\quad c_0=1.
+\]
+The Hermite differential equation gives
+\(\ddot c_m+mc_m=0\) for \(1\le m\le n\).
+At a polynomial with distinct roots, the differential of the
+root-to-coefficient map is invertible: a variation has
+\(\delta\Psi(\bar x_j)=-\Psi'(\bar x_j)\delta x_j\), and
+evaluation at n distinct points is invertible on polynomials of
+degree at most \(n-1\). Therefore \(I+A\) is conjugate to
+\(\operatorname{diag}(1,\ldots,n)\).
+
+As a second explicit check, for n=3 the roots are
+\(-\sqrt{3/2},0,\sqrt{3/2}\) and
+\[
+ A=\begin{pmatrix}
+ 5/6&-2/3&-1/6\\
+ -2/3&4/3&-2/3\\
+ -1/6&-2/3&5/6
+ \end{pmatrix},\qquad
+ \det(\lambda I-A)=\lambda(\lambda-1)(\lambda-2).
+\]
+The verification code independently differentiates the full nonlinear
+force and obtains its Jacobian \(-I-A\). It also checks the Hermite
+mode identity exactly for all 36 pairs \(1\le m\le n\le8\).
+Already n=1 shows why the identity cannot be omitted: A is zero but
+the single root satisfies \(\ddot x=-x\).
+\end{proof}
+
+\begin{remark}[Two later algebraic checks]\oursComputed
+For occurrence1977-457.18, take the ordinary \(\mathfrak{sl}_2\)
+relations and define
+\[
+ \varepsilon_{3r}=\tfrac12ht^r,\quad
+ \varepsilon_{3r+1}=et^r,\quad
+ \varepsilon_{3r-1}=\tfrac12ft^r.
+\]
+Matrix commutators verify all nine residue cases of
+\([\varepsilon_i,\varepsilon_j]=a_{ij}\varepsilon_{i+j}\),
+where \(a_{ij}\in\{-1,0,1\}\) is congruent to \(j-i\) modulo 3.
+Separately, the 27 residue triples satisfy Jacobi directly. The
+nonhomogeneous ideal \((t-1)\mathfrak{sl}_2[t,t^{-1}]\) explains why
+the classification convention is graded simplicity, as already stated
+in \citet[Introduction]{kac1968graded}.
+
+For occurrence1977-457.25, left Grassmann differentiation satisfies
+\(\{\partial_{\theta^a},\theta^b\}=\delta_a^b\), while distinct
+odd multiplications or derivatives anticommute. Hence the two cross
+terms in the notebook's Q and \(\bar Q\) each contribute
+\(-i\sigma^m\partial_m\), giving
+\(\{Q_\alpha,\bar Q_{\dot\beta}\}=-2i\sigma^m_{\alpha\dot\beta}
+\partial_m\); the same-chirality brackets vanish. Independently,
+the code realizes multiplication and differentiation as exact 16-by-16
+matrices on the exterior algebra of four generators and checks all 12
+anticommutator pairs with four independent commuting derivative
+symbols. These calculations validate the surviving manuscript signs;
+they do not resolve the illegible cancelled mark or supply the missing
+Lorentz action on the spinor coordinates.
+\end{remark}

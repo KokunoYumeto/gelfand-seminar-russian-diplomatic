@@ -1,0 +1,191 @@
+\subsection{The resolved genus-two subcase: a coordinate obstruction and an explicit certificate}
+\label{dev:genus2}
+
+This section audits the now-resolved genus-two subcase, item 1980-519.2 and problem GP-1980-40, as preparation for the still-unresolved universal function-field question in the next subsection. The genus-two item is class B, not an open problem manufactured to justify a development. On P000970 the notebook asks whether a genus-two equation \(P(x,y)=0\) can be satisfied by commuting operators with rational coefficients. It does not specify a normal form for the curve, a nontriviality condition, or permission to change its affine coordinates. These omissions matter. Constant operators corresponding to a complex point satisfy the equation trivially. For a prescribed affine model, the substantive requirement is an \emph{injective unital} map from its integral coordinate ring to
+\[
+ R=\mathbb C(x)[D],\qquad Df=fD+f',\quad D=d/dx.
+\]
+The letter \(x\) here is the differential variable; \(z,w\) will denote coordinates of a spectral curve. Injectivity rules out a constant-point representation. This qualification, and the distinction between a prescribed affine model and its function field, are ours.
+
+\paragraph{The decisive quantifier distinction.}
+For every smooth genus-two curve, one can choose its standard hyperelliptic quintic model and realize it by commuting ordinary differential operators with rational coefficients. This is a verified later theorem, not merely a generic existence result. The stronger assertion that every prescribed affine model works is false, by the proposition below. We do not convert the difference into a new historical open classification problem.
+
+\paragraph{Checked literature and chronology.}
+\citet[Lemma~5.4, Proposition~5.5 and Remark~5.6, pp.~221--223]{dixmier1968weyl} gives the elliptic polynomial-operator example. \citet[Theorems~2--3 and Example~(a), preprint p.~11]{mironov2011selfadjoint} constructs higher-genus hyperelliptic examples; the preprint appeared on 18 July 2011, the article online on 19 October 2013 and in the August 2014 issue. Its genus-two family is the source of the explicit pair verified below. \citet[Theorem~1 and its parameter-map proof]{davletshinamironov2016orbits}, first circulated on 4 June 2016 and published in 2017, realizes a fixed \emph{generic} genus-two spectral curve by polynomial operators and proves infinitely many automorphism orbits. Dominance of that parameter map alone does not settle all special curves. Crucially, \citet[Theorem~3(2), using the union of Theorems~1 and~2]{oganesyan2016rational}, first circulated on 18 August 2016 and published in 2018, realizes \emph{every} monic quintic \(w^2=z^5+\beta_4z^4+\cdots+\beta_0\) by rational-coefficient operators of orders four and ten. Both operator families are needed for the stated coverage. The bounded contribution here is a coordinate obstruction, a correction of the notebook's formula and an exact reproducible certificate for a known family. No novelty is claimed for the known existence theorems.
+
+\begin{lemma}[Units and a rational multiplication operator]\ours\quad
+\label{lem:units}
+The units of \(R\) are precisely \(\mathbb C(x)^*\). If \(f\in\mathbb C(x)\setminus\mathbb C\), then its centralizer in \(R\) is \(\mathbb C(x)\).
+\end{lemma}
+\begin{proof}
+For nonzero ordinary differential operators the highest derivative coefficient of a product is the product of the highest coefficients. Consequently
+\(\operatorname{ord}(AB)=\operatorname{ord}(A)+\operatorname{ord}(B)\), with both orders nonnegative. An invertible operator and its inverse therefore have order zero. Conversely, every nonzero rational function is invertible in \(R\).
+
+Write \(A=a_m(x)D^m+\cdots+a_0(x)\), with \(a_m\ne0\). For \(m>0\), the coefficient of \(D^{m-1}\) in \([A,f]\) is \(m a_m f'\). Characteristic zero and nonconstant rational \(f\) imply \(f'\ne0\), so this coefficient cannot vanish. Thus an operator commuting with \(f\) has order zero, and all order-zero operators commute with it.
+\end{proof}
+
+\begin{proposition}[A unit obstruction for an affine curve]\ours\quad
+\label{prop:unitobstruction}
+Let \(C^\circ\) be a smooth irreducible affine curve over \(\mathbb C\) whose smooth projective model \(C\) has positive genus. If \(\mathbb C[C^\circ]\) has a nonconstant unit, there is no injective unital \(\mathbb C\)-algebra homomorphism
+\[
+ \mathbb C[C^\circ]\longrightarrow \mathbb C(x)[D].
+\]
+\end{proposition}
+\begin{proof}
+Suppose \(\iota\) is such a map and \(u\) is a nonconstant unit. Lemma~\ref{lem:units} gives \(\iota(u)=f(x)\in\mathbb C(x)^*\). If \(f=c\) were constant, \(u-c\ne0\) would belong to the kernel. Hence \(f\) is nonconstant. The commutativity of the source forces the entire image into the centralizer of \(f\), which is \(\mathbb C(x)\). Taking ordinary commutative fractions gives a field embedding
+\(\mathbb C(C)\hookrightarrow\mathbb C(x)\).
+
+This embedding induces a nonconstant rational map \(\mathbb P^1\dashrightarrow C\), which extends to a finite morphism because \(C\) is smooth and projective. If its degree is \(d\ge1\), the characteristic-zero Riemann--Hurwitz formula gives
+\[
+ -2=d(2g(C)-2)+\sum_{p\in\mathbb P^1}(e_p-1)\ge0,
+\]
+since \(g(C)\ge1\). This contradiction proves the assertion.
+\end{proof}
+
+\begin{example}[A smooth genus-two equation that cannot be realized in the prescribed coordinates]\ours\quad
+\label{ex:affineobstruction}
+Consider
+\[
+ C^\circ:\quad z w^2-z^4-1=0.
+\]
+In its coordinate ring, \(z(w^2-z^3)=1\), so \(z\) is a nonconstant unit. Set \(Y=zw\). On \(z\ne0\), the equation becomes
+\[
+ Y^2=z^5+z.
+\]
+The polynomial \(z^5+z\) is squarefree: at its zero \(z=0\) its derivative is \(1\), and at each nonzero zero, where \(z^4=-1\), its derivative is \(-4\). The double cover of \(\mathbb P^1_z\) is branched at these five roots and at infinity, so its smooth projective model has genus two. The affine equation is irreducible because \(z^5+z\) is not a square in \(\mathbb C(z)\). It is smooth: since \(z\ne0\), vanishing of the derivative with respect to \(w\) would imply \(w=0\); then the derivative with respect to \(z\) is \(-4z^3\ne0\). Proposition~\ref{prop:unitobstruction} applies. Thus the universal prescribed-affine-equation reading of the notebook question has a negative answer, even for a smooth genus-two affine curve. This does not give a counterexample to Gelfand's function-field conjecture.
+\end{example}
+
+\paragraph{Correcting the preliminary elliptic example.}
+The literal P000970 expression has \(L=D^2+x^3+a\), \(L_4=L^2+2x\) and \(L_6=L^3+3x^2L+3Lx^2\). With the convention \([D,x]=1\), the coefficient of \(D^5\) in the commutator of these last two operators is
+\[
+ 48x-12\ne0.\qquad\oursComputed
+\]
+The formula is therefore false, including at \(a=0\). A corrected form of the classical pair is
+\[
+ P_1=L^2+2x,\qquad
+ M_1=L^3+\frac32(xL+Lx)=L^3+3xL+3D.
+\]
+Our exact computation gives
+\[
+ [P_1,M_1]=0,\qquad M_1^2=P_1^3-a.\qquad\oursComputed
+\]
+For \(a\ne0\) the spectral cubic is smooth; for \(a=0\) it is singular. This is the normalization of \citet[Proposition~5.5]{dixmier1968weyl} with \(p=x,q=-D\). The distinction is recorded as a faithful mathematical error in the notebook, rather than an unsubstantiated change of handwriting.
+
+The second notebook description also needs qualification. Its two-term expression \(A=L+xL^{-1}\) has
+\[
+ (A^3)_+=L^3+3xL+6D,\qquad\oursComputed
+\]
+where \((\cdot)_+\) denotes the differential part of a formal pseudodifferential operator. Thus it does not reproduce \(M_1\). The actual formal square root of \(P_1\) begins \(L+xL^{-1}-DL^{-2}+\cdots\); including this next term gives the correct differential part of the cube. The exact truncated calculation in \texttt{code/check\_formal.py} verifies both formulas with a cutoff that is sufficient for every nonnegative derivative order. This is a correction of an abbreviated formal expression, not evidence against the classical commuting pair.
+
+\begin{proposition}[An exact genus-two operator certificate]\oursComputed\quad
+\label{prop:certificate}
+Let \(a\in\mathbb C\), \(L=D^2+x^3+a\), and set
+\begin{align*}
+ P&=L^2+6x,\\
+ M&=LP^2+(3xL-3D)P+9x^2L-18xD+9.
+\end{align*}
+These are polynomial-coefficient differential operators of orders \(4\) and \(10\). They satisfy
+\[
+ [P,M]=0,\qquad M^2=P^5+27aP^2+81.
+\]
+The polynomial \(F_a(z)=z^5+27az^2+81\) is squarefree precisely when
+\(2916a^5+3125\ne0\). In particular \(a=0\) gives a smooth genus-two spectral curve.
+\end{proposition}
+\begin{proof}[Exact computation and smoothness]
+All operator calculations are performed over \(\mathbb Q[a,x]\), not at floating-point samples. In left normal form \(A=\sum_i a_iD^i\), \(B=\sum_j b_jD^j\), the complete multiplication rule is
+\[
+ (AB)_n=\sum_{\substack{i,j\ge0,\ 0\le k\le i\\i+j-k=n}}
+ \binom{i}{k}a_i\,\partial_x^k b_j.
+\]
+It follows by induction from \(Df=fD+f'\). The included script \texttt{code/check\_weyl.py} implements exactly this finite formula and expands every coefficient as a polynomial. The two residual coefficient dictionaries are empty: every coefficient of \([P,M]\) and of \(M^2-P^5-27aP^2-81\) is identically zero. The output contains the full expanded \(P\) and \(M\), the nonzero literal notebook commutator, and the zero residuals, allowing the finite identities to be reproduced without interpreting an unspecified numerical tolerance.
+
+An additional identity check compares the constructed \(M\) with the displayed preprint form and detects a scalar normalization:
+\[
+ M=L^5+\frac{15}{2}(xL^3+L^3x)+45(x^2L+Lx^2)-9.
+\]
+Example~(a) of \citet{mironov2011selfadjoint}, in the checked 2012 preprint, displays the expression without \(-9\). That expression still commutes with \(P\), but it equals \(M+9\); its spectral relation must be centered as \((M_{\rm displayed}-9)^2=F_a(P)\). The independent comparison caught this difference before delivery. No claim is made here about whether it was corrected in the final journal typesetting. A second independent algebraic route uses
+\(Q=z^2+3xz+9x^2\), \(V=x^3+a\), \(W=6x\). Substitution in Mironov's equation, with primes meaning \(x\)-derivatives,
+\begin{align*}
+ 4F={}&4(z-W)Q^2-4V(Q')^2+(Q'')^2-2Q'Q'''\\
+      &+2Q(2V'Q'+4VQ''+Q'''')
+\end{align*}
+gives \(4(z^5+27az^2+81)\). Here \(Q'=3z+18x\), \(Q''=18\) and the higher derivatives vanish. This verifies the spectral polynomial against the published construction, separately from operator multiplication.
+
+For the squarefreeness claim, a multiple root cannot be \(z=0\), since \(F_a(0)=81\). The equations \(F_a=F_a'=0\) at a nonzero root reduce to
+\[
+ z^3=-54a/5,\qquad az^2=-5.
+\]
+They imply \(a\ne0\), \(z=54a^2/25\), and \(2916a^5+3125=0\). Conversely these formulas produce a common root whenever that parameter equation holds. This proves the exact exceptional locus without trusting a discriminant command. The separately computed discriminant is
+\[
+ \operatorname{disc}_z(F_a)=3^{16}(2916a^5+3125).
+\]
+A squarefree quintic gives five finite branch points and one at infinity, hence genus two by Riemann--Hurwitz.
+\end{proof}
+
+\paragraph{Independent checks and their scope.}
+The second operator check computes direct action on polynomials, without multiplying coefficient dictionaries, at \(a=-2,0,1,3\). For every \(n=0,\ldots,20\), it verifies both residuals on \(x^n\). An ordinary differential operator of order at most \(r\) that annihilates \(1,x,\ldots,x^r\) is zero: evaluation on these monomials successively forces its coefficients to vanish, starting with the constant coefficient. Since the residual orders are at most \(13\) and \(20\), respectively, these action checks are complete at each selected parameter. They are a second check, not a replacement for the all-parameter polynomial identities. A separate conceptual review of the unit obstruction checked injectivity, irreducibility, the order filtration, extension of the map to projective models, and the genus calculation; it found no counterexample or missing hypothesis after those qualifications were made explicit. Both check records are included.
+
+\paragraph{What this calculation does and a feasible further check.}
+The unit obstruction rules out certain prescribed affine models, while the certificate illustrates a known family in suitable coordinates. General genus-two existence is already supplied by Oganesyan and must not be advertised as work still to do. A useful bounded follow-up would implement his two-family parameter inversion for a specified quintic, such as \(z^5+z\), print the resulting rational operators and verify their identities exactly. That would make an existing theorem executable. No historical reason for the problem having been dropped is established by the sources. The obstruction relevant to the notebook's wording is the distinction between affine pole data and the abstract curve field.
+
+\subsection{From a commuting pair to a curve field in the first Weyl division ring}
+\label{dev:fieldembedding}
+
+This development concerns item 1980-519.3 and problem GP-1980-41. The notebook explicitly adds \ru{т.е. поле рац. ф-й на любой алг. кривой}. Its strongest defensible modern formulation over the complex numbers is:
+
+\begin{conjecture}[Gelfand's function-field question as recorded on P000970]
+For every smooth projective irreducible complex algebraic curve \(C\), there is an injective unital \(\mathbb C\)-algebra map
+\[
+ \mathbb C(C)\hookrightarrow Q(A_1),\qquad
+ A_1=\mathbb C\langle x,D\rangle/(Dx-xD-1),
+\]
+where \(Q(A_1)\) is the Ore division ring of fractions.
+\end{conjecture}
+
+The notebook does not specify a base field; \(\mathbb C\), smooth projective normalization and unital base-field-linear embeddings are explicit reconstruction choices. The statement concerns a \emph{commutative subfield} of the rank-one Weyl division ring. It is distinct from the Dixmier endomorphism conjecture, from isomorphisms between Weyl fields of different ranks, and from the Gelfand--Kirillov conjecture for enveloping algebras. The unit obstruction above applies to ordinary differential operators and does not apply to a division ring, in which elements of negative differential order are allowed.
+
+\paragraph{Present scope of the checked results.}
+Dixmier's example and the higher-genus polynomial constructions give subfields after an injectivity argument. More strongly, \citet[Theorem~3(1)--(2)]{oganesyan2016rational} settles all curve fields of genus one and two; genus zero is immediate. \citet[Theorem~1.1]{makarlimanov2021centralizers} proves that a rank-one centralizer in \(A_1\), over a characteristic-zero field, embeds in a polynomial ring. That is a genus-zero obstruction within the specified polynomial-operator class and does not classify commutative subfields of \(Q(A_1)\). A recent check also located \citet[abstract]{ivlev2026trigonal}, which announces particular rank-two trigonal genus-three examples, not a theorem for every curve; only its publisher metadata and abstract were accessible. Searches of the primary literature and author bibliographies through November 2026 did not identify a proof or counterexample for the exact universal function-field statement. This negative search result is a limitation of the evidence, not a theorem about the completeness of the literature. We retain C with that qualification.
+
+\begin{lemma}[An order test for injectivity]\ours\quad
+\label{lem:orderembedding}
+Let \(P,M\in A_1\) commute, with \(\operatorname{ord}(P)=r>0\) and \(\operatorname{ord}(M)=s>0\). Suppose \(r\nmid s\), and \(M^2=F(P)\), where \(F\in\mathbb C[z]\) is not a square in \(\mathbb C(z)\). Then the map
+\[
+ \mathbb C[z,w]/(w^2-F(z))\longrightarrow A_1,
+ \qquad z\longmapsto P,\quad w\longmapsto M
+\]
+is injective.
+\end{lemma}
+\begin{proof}
+Division by the monic polynomial in \(w\) gives a unique representative \(f(z)+g(z)w\). For nonzero \(f\), the order of \(f(P)\) is \(r\deg f\): the highest power of \(P\) has strictly greater order than all lower powers. Likewise, for nonzero \(g\), the order of \(g(P)M\) is \(r\deg g+s\). These orders are in different residue classes modulo \(r\), so the two summands cannot cancel. If only one summand is present it is nonzero, since \(A_1\) is a domain and powers of a positive-order operator are linearly independent. Thus the kernel is zero. The nonsquare condition ensures that the source is the integral coordinate ring of an irreducible curve, as needed for the field conclusion below.
+\end{proof}
+
+\begin{corollary}[An explicit family of genus-two field embeddings]\ours\quad
+\label{cor:fieldembedding}
+For every \(a\in\mathbb C\) with \(2916a^5+3125\ne0\), the curve
+\[
+ C_a:\quad w^2=z^5+27az^2+81
+\]
+has smooth projective genus two, and \(\mathbb C(C_a)\) embeds in \(Q(A_1)\) by \(z\mapsto P\), \(w\mapsto M\) from Proposition~\ref{prop:certificate}.
+\end{corollary}
+\begin{proof}
+A squarefree polynomial of odd degree five is not a square in \(\mathbb C(z)\), because its simple zeros have odd valuations. Apply Lemma~\ref{lem:orderembedding} with \(r=4\) and \(s=10\), since \(4\nmid10\). Every nonzero element of the embedded commutative coordinate ring becomes invertible in the Ore division ring. Define a fraction \(b/c\) to map to \(\iota(b)\iota(c)^{-1}\). Images of the coordinate-ring elements and their inverses commute, so the usual fraction equivalence proves this map well defined; injectivity follows because a nonzero numerator remains nonzero in a division ring. The genus statement was proved in Proposition~\ref{prop:certificate}.
+\end{proof}
+
+This corollary supplies the elementary injectivity step that a mere polynomial identity does not provide. It uses a known operator family and makes no claim to resolve Gelfand's universal conjecture. The same argument applies to the corrected elliptic pair with \(r=4,s=6\) and \(a\ne0\). The greatest common divisor of two displayed orders alone is not a proof about the rank of their entire centralizer, and no such inference is used.
+
+\begin{corollary}[The obstructed affine model nevertheless has an embeddable function field]\ours\quad
+The function field of \(zw^2-z^4-1=0\) embeds in \(Q(A_1)\), even though its affine coordinate ring does not embed in \(\mathbb C(x)[D]\).
+\end{corollary}
+\begin{proof}
+Use \citet[Theorem~3(2)]{oganesyan2016rational} for \(Y^2=z^5+z\), obtaining commuting rational-coefficient operators \(P_0,M_0\) of orders four and ten. The proof of Lemma~\ref{lem:orderembedding} applies unchanged to \(\mathbb C(x)[D]\), whose order is still additive. This ring is contained in \(Q(A_1)\), since nonzero polynomial coefficients can be inverted there. The resulting field embedding sends the original coordinates to \(z\mapsto P_0\), \(w\mapsto M_0P_0^{-1}\).
+
+In fact \(M_0P_0^{-1}\) cannot be an ordinary differential operator. If it were, the spectral relation would imply
+\[
+ P_0\bigl((M_0P_0^{-1})^2-P_0^3\bigr)=1
+\]
+inside \(\mathbb C(x)[D]\), making the positive-order \(P_0\) a unit, contrary to Lemma~\ref{lem:units}. The required quotient is exactly where the two questions diverge.
+\end{proof}
+
+\paragraph{Remaining obstruction and a feasible next question.}
+The missing quantifier is \emph{every prescribed function field in arbitrary genus}. The order argument is sufficient once appropriate operators have been constructed; it does not construct them for an arbitrary curve. One further bounded run could take a specified squarefree degree-seven hyperelliptic equation, determine its membership in the two rational-operator families of \citet[Theorem~3(3)]{oganesyan2016rational}, and produce an exact certificate when successful. Failure of those families or of a chosen degree bound would not prove nonexistence of a division-ring embedding. The affine unit obstruction likewise cannot be promoted to a negative result for that conjecture. These boundaries are part of the mathematical conclusion.

@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "status_date": "2026-11-09",
+  "records": 43,
+  "items": 320,
+  "problems": 11,
+  "corrections": 101,
+  "references": 95,
+  "class_counts": {
+    "A": 42,
+    "B": 8,
+    "C": 3,
+    "D": 0,
+    "E": 239,
+    "F": 28
+  },
+  "required_deliverables": [
+    "GY1967_talks.json",
+    "GY1967_items.json",
+    "GY1967_problems.json",
+    "GY1967_overview.tex",
+    "GY1967_development.tex",
+    "GY1967_corrections.csv",
+    "GY1967_references.bib",
+    "GY1967_report.md",
+    "GY1967_chapter.tex",
+    "GY1967_test.pdf"
+  ],
+  "pdf_pages": 164,
+  "pdf_bytes": 827675,
+  "pdf_sha256": "5af766036de23a9d5717b94afd8c7ec2b36e1be5ae1b4bf2ef3bf541d1e18079",
+  "all_occurrence_ids_in_pdf": true,
+  "all_catalogue_records_in_pdf": true,
+  "final_latex_log": {
+    "latex_errors": 0,
+    "overfull_boxes": 0,
+    "missing_characters": 0,
+    "undefined_citations": 0,
+    "undefined_references": 0,
+    "latex_or_package_warnings": 0
+  },
+  "bibtex_warnings": 0,
+  "build_sequence": [
+    "python build_chapter.py GY1967",
+    "XeLaTeX",
+    "BibTeX",
+    "XeLaTeX",
+    "XeLaTeX"
+  ],
+  "build_script_success": true,
+  "packaged_data_regeneration_identical": true,
+  "weyl_exact_assertions": 522,
+  "editorial_arithmetic_checks": 105,
+  "additional_elementary_check_families": 6,
+  "visual_review": "audit/visual_review.md",
+  "scope": "Structural/build/computation checks supplement the source audits and complete proofs; they do not independently establish every historical theorem."
+}

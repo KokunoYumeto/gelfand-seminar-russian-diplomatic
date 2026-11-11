@@ -1,0 +1,209 @@
+\subsection{A correction to the published tolerance assertion}
+\label{sec:gy1972-tolerance-correction}
+
+The question at the end of Vasserstein's talk, occurrence 1972-280.20 and
+problem GP-1972-101, asks whether pairwise adjacency implies that a finite
+set is a simplex. This is a precise question, but it is not an undisseminated
+C or D item. The same assertion was published in
+\citet[\S11, Remark~(c), p.~111]{vaserstein1976foundations}, immediately after
+the definition of the simplicial scheme. The short announcement
+\citep{vaserstein1973foundations} was received on 14 November 1972, one day
+after the talk, and gives the same left-translation construction. The
+detailed paper was received on 26 February 1975 and published in 1976.
+
+The result below is included as corrective development of an A item.
+The label A records publication provenance, not mathematical correctness.
+This is a deliberate methodological extension of the usual C/D-only
+development filter: a fully checkable correction of an exact published
+assertion should not be suppressed or reclassified D merely to fit that
+filter. The marks \ours\ and \oursComputed\ identify work performed for
+this companion; they do not assert that the counterexample or criterion
+has never been noticed before.
+
+\paragraph{The exact model.}
+Let \(R\) be an associative ring with identity. Write
+\(\mathrm{GL}(R)=\bigcup_{n\geq1}\mathrm{GL}_n(R)\), with stabilization
+\(g\mapsto\operatorname{diag}(g,1)\). For a total order \(\prec\) of the
+coordinates obtained by a permutation of \(\mathbb N\), let
+\(U_\prec\) be the subgroup of matrices differing from the identity in
+finitely many entries and satisfying
+\[
+ u_{ii}=1,\qquad u_{ij}=0\quad\text{if }i\ne j\text{ and }j\prec i.
+\]
+A finite nonempty set \(X\subset\mathrm{GL}(R)\) is a simplex of the
+left-coset model when
+\[
+                 X\subset gU_\prec
+       \quad\text{for some }g\in\mathrm{GL}(R)\text{ and one order }\prec.
+\]
+This is the definition on P000468 after replacing the notebook's circle
+coordinate \(a\) by \(I+a\). Reversing upper and lower triangular
+conventions gives the same collection of simplices after coordinate
+permutations. The 1976 paper uses right cosets and explains in
+\S11, Remark~(b), that inversion identifies its model with the
+left-translation model. In particular, the same order must work for an
+entire simplex. The pairwise condition permits different orders for
+different pairs and is strictly weaker.
+
+\begin{proposition}[Exact acyclic-support criterion]\ours
+\label{prop:gy1972-support-criterion}
+Let \(X\subset\mathrm{GL}(R)\) be finite and nonempty, and choose
+\(x_0\in X\). Form a finite directed graph on a set of coordinates
+containing all nonidentity entries of all \(x_0^{-1}x\), \(x\in X\).
+Include the edge \(i\to j\), including a loop if \(i=j\), whenever
+\[
+                (x_0^{-1}x-I)_{ij}\ne0
+                \quad\text{for some }x\in X.
+\]
+Then \(X\) is a simplex of the left-coset model if and only if this graph
+is acyclic. The criterion is unchanged by adjoining identity coordinates.
+For the right-coset model, replace \(x_0^{-1}x\) by \(xx_0^{-1}\).
+\end{proposition}
+
+\begin{proof}
+If \(X\subset gU_\prec\), write \(x_0=gu_0\) and \(x=gu_x\).
+Then \(x_0^{-1}x=u_0^{-1}u_x\in U_\prec\). Thus every edge points
+strictly forward in the same order, which excludes directed cycles and
+loops. Conversely, a finite acyclic directed graph has a topological
+ordering. Order the finitely many relevant coordinates accordingly and
+extend this to a permutation order of \(\mathbb N\). Absence of loops
+says that every \(x_0^{-1}x\) has diagonal entries one, and all other
+nonzero entries lie strictly above the diagonal in the chosen order.
+Consequently every \(x_0^{-1}x\) belongs to \(U_\prec\), giving
+\(X\subset x_0U_\prec\). Adding identity coordinates adds isolated
+vertices, so cannot create or remove a directed cycle. The right-coset
+proof uses \(xx_0^{-1}\) in exactly the same way.
+\end{proof}
+
+This is an exact replacement for the proposed pairwise test. It reduces
+simplex recognition to finding a common order of the union of the
+relative supports, rather than checking each pair with a separate order.
+When equality to zero is decidable in the coefficient ring, the criterion
+also gives a finite decision procedure: compute the relative matrices
+and perform a topological-sort test on their support graph.
+
+\begin{proposition}[A three-vertex counterexample over every nonzero unital ring]\ours
+\label{prop:gy1972-nonflag-triple}
+Suppose \(1_R\ne0\), and in \(\mathrm{GL}_3(R)\) put
+\[
+ a=I+E_{12},\qquad b=I+E_{23},\qquad c=I+E_{31}.
+\]
+Every two-element subset of \(\{a,b,c\}\) is a simplex, but the entire
+set is not a simplex. This holds in both the left-coset and right-coset
+conventions and after every stabilization.
+\end{proposition}
+
+\begin{proof}
+The matrix units carry coefficient \(1_R\), so each is square-zero and
+the three inverses are obtained by replacing plus with minus. Direct
+multiplication gives
+\[
+\begin{aligned}
+ a^{-1}b&=I-E_{12}+E_{23}-E_{13},\\
+ a^{-1}c&=I-E_{12}+E_{31},\\
+ b^{-1}c&=I-E_{23}+E_{31}-E_{21}.
+\end{aligned}
+\]
+The off-diagonal supports point forward, respectively, in the orders
+\[
+             1\prec2\prec3,\qquad
+             3\prec1\prec2,\qquad
+             2\prec3\prec1.
+\]
+Thus every pair is a left-coset simplex. If the triple were a simplex,
+the same order would triangularize both \(a^{-1}b\) and \(a^{-1}c\).
+Their supports would require simultaneously
+\(1\prec2\), \(2\prec3\), and \(3\prec1\), an impossibility.
+Equivalently, their union support contains a directed triangle, so
+Proposition~\ref{prop:gy1972-support-criterion} applies.
+
+For completeness, the same three vertices also work directly in the
+right-coset convention, without replacing them by their inverses:
+\[
+\begin{aligned}
+ ba^{-1}&=I-E_{12}+E_{23},\\
+ ca^{-1}&=I-E_{12}+E_{31}-E_{32},\\
+ cb^{-1}&=I-E_{23}+E_{31}.
+\end{aligned}
+\]
+The same respective three orders triangularize these pairwise
+quotients. The first two again have union support containing
+\(1\to2\to3\to1\), excluding a common right coset.
+
+All decisive coefficients are \(1_R\) or \(-1_R\), which are nonzero
+in every nonzero unital ring, including characteristic two. The proof
+uses no field hypothesis and no division by a coefficient. Additional
+identity coordinates cannot remove a cycle among coordinates one,
+two, and three. This proves all the stated cases.
+\end{proof}
+
+\begin{proposition}[Minimal coordinate rank of the obstruction]\ours
+\label{prop:gy1972-rank-minimal}
+For every unital ring, a finite pairwise adjacent set of vertices
+supported in one two-by-two block is a simplex, even when adjacency is
+tested after stabilization. Consequently the example in
+Proposition~\ref{prop:gy1972-nonflag-triple} has minimal coordinate rank,
+as well as the smallest possible number of vertices for failure of the
+pairwise criterion.
+\end{proposition}
+
+\begin{proof}
+Translate by the inverse of one vertex so that the set contains \(I\).
+In the left model, every other vertex adjacent to \(I\) and supported
+on two coordinates must have one of the forms
+\(I+rE_{12}\) or \(I+sE_{21}\). Stabilization does not change this
+fact, since only the relative order of those two coordinates matters.
+If both orientations occur nontrivially, with \(r\ne0\) and \(s\ne0\),
+then
+\[
+ (I+rE_{12})^{-1}(I+sE_{21})
+       =I-rE_{12}+sE_{21}-rsE_{11}.
+\]
+Both off-diagonal entries are nonzero and point in opposite directions.
+No coordinate order can make this matrix unitriangular, irrespective of
+whether \(rs\) vanishes. This contradicts pairwise adjacency.
+Hence all nonidentity vertices use one orientation and lie in one
+unitriangular group, so the whole set is a simplex. The same argument
+works with right quotients, or follows by inversion. Rank one is
+immediate. Sets of at most two vertices cannot contradict a condition
+defined by their two-element subsets, while the displayed triple does.
+\end{proof}
+
+\paragraph{Independent verification.}\oursComputed
+The included Python program \texttt{check\_tolerance.py} uses exact
+matrix arithmetic and exhausts all coordinate permutations in dimensions
+three, four, and five over \(\mathbb Z\) and
+\(\mathbb F_2,\mathbb F_3,\mathbb F_5,\mathbb F_7\), in both coset
+conventions. Its thirty parameter cases all have three present edges
+and no triple simplex. The complete successful-order lists, integer
+quotient matrices, and results are in \texttt{tolerance\_output.json}.
+The integer calculation rechecks the signs and cross terms; the
+characteristic-two calculation checks that the obstruction does not
+rely on distinguishing plus from minus. A separate independently
+written audit by the assembling researcher exhausts the four finite
+fields in the same three dimensions and both conventions and agrees in
+all twenty-four cases. The general-ring and arbitrary-stabilization
+conclusions follow from the proof, not extrapolation from these finite
+computations. The rank-two argument was also checked independently by
+normalizing a base vertex and recomputing the opposite-direction
+quotient above.
+
+\paragraph{Scope and historical assessment.}
+This resolves the literal notebook question negatively; no residual
+mathematical obstruction remains for that question. The 1976 source
+expressly says the tolerance assertion is not used in the paper.
+Accordingly, this local correction provides no basis for declaring its
+comparison theorems or the Volodin construction invalid. Searching the
+speaker's Foundations papers and bibliography, the original Volodin
+paper, and targeted literature queries identified the exact published
+assertion but did not establish the history of any later correction.
+Absence of a retrieved erratum is not evidence that none exists, and no
+claim is made about why the error persisted.
+
+The strongest general statement supported after correction is the
+acyclic-support criterion above, with its full common-order requirement.
+Replacing the simplicial complex by its flag completion would create a
+different construction and does not rescue the literal assertion.
+A further bounded bibliographic run could trace corrections or uses of
+Remark~(c); it is not needed to establish the explicit counterexample,
+and it is not recorded as a manufactured open mathematical problem.

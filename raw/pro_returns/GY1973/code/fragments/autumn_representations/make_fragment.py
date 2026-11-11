@@ -1,0 +1,692 @@
+"""Build the owned GY1973 records 312--323.  Run after each record checkpoint."""
+import csv
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+TALKS, ITEMS, PROBLEMS, CORRECTIONS, AREAS = [], [], [], [], {}
+
+def talk(record, date, speaker, pages, title, summary):
+    TALKS.append(dict(record=record,date=date,speaker=speaker,pages=pages,title=title,kind="talk",summary=summary))
+
+def item(record, pages, kind, title, notes, statement, reconstruction, cls, fate, status,
+         refs=(), literal="correct", match="exact", verification="read the result",
+         development="annotated", problem="", confidence="high", area="", speaker=None):
+    n = 1 + sum(x['record']==record for x in ITEMS)
+    ident = f"1973-{record}.{n}"
+    d=dict(id=ident,record=record,pages=pages,kind=kind,title=title,notes=notes,statement=statement,
+        reconstruction=reconstruction,**{"class":cls},fate=fate,
+        present_status="As of 9 November 2026: "+status,literal_correctness=literal,
+        publication_match=match,verification=verification,development=development,problem=problem,
+        worth="",refs=list(refs),confidence=confidence)
+    if speaker: d['speaker']=speaker
+    ITEMS.append(d); AREAS[ident]=area
+    return ident
+
+def problem(ident,title,statement,occurrences,status,refs):
+    PROBLEMS.append(dict(id=ident,title=title,statement=statement,occurrences=occurrences,
+        status=status,status_date="2026-11",refs=refs))
+
+def correction(page,place,reads,should,evidence,applies="both",typ="faithful_error"):
+    CORRECTIONS.append(dict(page=page,place=place,transcription_reads=reads,should_read=should,
+        evidence=evidence,applies_to=applies,type=typ))
+
+def save():
+    order={n:i for i,n in enumerate([313,312,314,315,316,317,318,319,321,320,322,323])}
+    for fn,data in [('talks.json',sorted(TALKS,key=lambda x:order[x['record']])),
+                    ('items.json',sorted(ITEMS,key=lambda x:(order[x['record']],int(x['id'].split('.')[-1])))),
+                    ('problems.json',PROBLEMS),('area_map.json',AREAS)]:
+        (ROOT/fn).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+    with (ROOT/'corrections.csv').open('w',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=['page','place','transcription_reads','should_read','evidence','applies_to','type'])
+        w.writeheader();w.writerows(CORRECTIONS)
+
+# Source sequence begins with Gelfand, although the archive numbers Kirillov first.
+talk(313,'1973-10-22','I. M. Gelfand','P000525-P000526',
+     'Nonlinear scattering and a 2-adic logarithm example',
+     r'''The first block on P000525 advertises Strauss's nonlinear scattering theory through comparison of a nonlinear flow with a simpler linear flow. Klein--Gordon and Korteweg--de Vries equations are examples, without a stated dimension, data class, or completeness theorem. The explicitly attributed Cartier example ``as presented by Gelfand'' occurs inside the ensuing discussion of \(p\)-adic measures on P000526 and is indexed here as an intervention, not a second uninterrupted talk. The archive's overlapping page ranges do not establish a different speaker for the unlabelled surrounding measure theory.''')
+item(313,'P000525','definition','Wave operators and the nonlinear scattering map',
+     r'''The notes write \(U(t)U(s)=U(t+s)\), conservation of \(E\), and \(E(U(t)f-U_0(t)f_\pm)\to0\) as \(t\to\pm\infty\). The relation between \(f_-\) and \(f_+\) is denoted \(S\).''',
+     r'''Let \(U(t)\) and \(U_0(t)\) be global flows on specified phase spaces embedded in a common normed space \(X\). A scattering state for \(f\) is an \(f_\pm\) with \(\|U(t)f-U_0(t)f_\pm\|_X\to0\). If these states exist uniquely on specified incoming and outgoing sets, the scattering map is \(S:f_-\mapsto f_+\). Existence, uniqueness, and surjectivity are separate assertions; conservation of an energy alone implies none of them.''',
+     r'''The normed phase space, domains of the maps, and uniqueness assumptions make the definition precise. Interpreting the notebook's \(E\) on a difference as a norm or a coercive error functional is a reconstruction.''',
+     'E',r'''This is exposition of an existing framework. Strauss's 1973 Denver lectures were published in 1974; the abstract and opening formulation of \citet[pp.~53--78]{strauss1974scattering} explicitly study asymptotic comparison with linear equations. The publication is not a theorem verifying all examples listed here.''',
+     'The framework is standard; no universal existence or completeness assertion can be extracted from this paragraph.',
+     ['strauss1974scattering'],literal='correct with missing hypotheses',verification='publisher metadata checked',area='Nonlinear PDE and dynamics')
+item(313,'P000525','remark','The cubic Klein--Gordon equation as a scattering example',
+     r'''The displayed example is \(u_{tt}-\Delta u+u+|u|^2u=0\), called a wave equation. The Laplacian sign is retraced in the manuscript.''',
+     r'''For a sufficiently regular real or complex solution on \(\mathbb R^d\), with decay justifying integration by parts, the defocusing cubic Klein--Gordon energy is \[E(u,u_t)=\int_{\mathbb R^d}\left(\tfrac12|u_t|^2+\tfrac12|\nabla u|^2+\tfrac12|u|^2+\tfrac14|u|^4\right)\,dx.\] It is conserved. A scattering theorem additionally fixes \(d\), a solution class, and a norm; the notebook does not supply them.''',
+     r'''The energy and the identification as Klein--Gordon are our standard reconstruction of the displayed equation, not a recorded theorem of global scattering.''',
+     'E',r'''The example belongs to the nonlinear-wave scattering program advertised in \citet[abstract and pp.~53--78]{strauss1974scattering}. Only the program and bibliographic chronology were verified there; the notebook does not identify a particular theorem with fixed dimension and data.''',
+     'The equation and its conserved energy are identifiable. A claim of all-data scattering in an arbitrary dimension would go beyond the evidence.',
+     ['strauss1974scattering'],literal='correct with missing hypotheses',match='partial',verification='publisher metadata checked',area='Nonlinear PDE and dynamics')
+item(313,'P000525','remark','KdV and the distinction between dispersive and soliton asymptotics',
+     r'''The second example is \(u_\tau+u_{xxx}+uu_x=0\), labelled the de Vries equation.''',
+     r'''This is the Korteweg--de Vries equation after a normalization of the dependent variable. Its nonzero travelling solitons show why the preceding comparison with the free Airy flow cannot be asserted for every decaying solution without specifying the asymptotic sector. The equation itself is unambiguous; no scattering theorem is stated.''',
+     r'''The warning about solitons interprets the example; it is not attributed to Gelfand. The manuscript's \(\tau\) is retained as a time variable.''',
+     'E',r'''\citet[pp.~240--243]{zabuskykruskal1965solitons} had already connected KdV solitary-wave interactions with recurrence in 1965. The publisher record confirms the paper and date; this supports chronology, not an exact identification of the unspecified scattering statement.''',
+     'An expository example of nonlinear dispersive asymptotics, with no precise new problem in the notes.',
+     ['zabuskykruskal1965solitons'],match='thematic only',verification='publisher metadata checked',area='Nonlinear PDE and dynamics')
+item(313,'P000526','theorem',"Cartier's 2-adic logarithm example",
+     r'''``\ru{(Cartier) в изложении Гельфанда}'' precedes \(\ln(1-a)=a+a^2/2+\cdots\), followed by \(a=2\), \(\ln(-1)=0\), and \(\sum_{n\ge1}2^n/n=0\). The partial sums begin \(2,4,20/3,32/3\).''',
+     r'''In \(\mathbb Q_2\), \(v_2(2^n/n)=n-v_2(n)\to\infty\), so the series converges. The logarithm on \(1+2\mathbb Z_2\) is \(\log(1-a)=-\sum_{n\ge1}a^n/n\). Its homomorphism law gives \(2\log(-1)=\log(1)=0\), hence \(\sum_{n\ge1}2^n/n=0\). Thus for every \(k\), all sufficiently late partial sums belong to \(2^k\mathbb Z_2\).''',
+     r'''We insert the missing minus sign and justify convergence; the final vanishing assertion survives this correction. The source gives an oral attribution, not a Cartier publication.''',
+     'E',r'''An elementary consequence of the pre-existing \(p\)-adic logarithm. No exact Cartier publication was located; the mathematical verification here is direct and does not turn an oral attribution into a bibliography entry.''',
+     'Correct after repairing the logarithm identity; the attribution remains an oral report in the notebook.',
+     [],literal='false as written',match='none found',verification='indirect',area='p-adic analysis',speaker='I. M. Gelfand (after Cartier)')
+correction('P000526','Cartier example: logarithm series',r'\(\ln(1-a)=a+a^2/2+\cdots\)',r'\(\ln(1-a)=-a-a^2/2-\cdots\)',
+           'Russian text and scan both have positive signs. This is a faithful mathematical error; the specialization at a=2 still sums to zero.')
+save()
+
+talk(312,'1973-10-22','A. A. Kirillov','P000525-P000527',
+     'Metaplectic spinors and bounded p-adic measures',
+     r'''After Gelfand's scattering announcement, Kirillov presents symplectic spinors through the metaplectic cover and the canonical commutation relations. The numbered second block treats \(p\)-adic measures, the bounded power-series transform, and the Newton--Mahler basis. Its speaker is not restated; assigning it to the continuing Kirillov block is an editorial reconstruction. The Cartier example explicitly credited to Gelfand is separated as item 1973-313.4. P000527 begins with the end of the Mahler argument before the new Fuchs heading.''')
+item(312,'P000525','construction','The metaplectic obstruction and symplectic spinors',
+     r'''For symplectic \(M\), the frame group is \(\operatorname{Sp}(2n,\mathbb R)\), topologically \(U(n)\); a two-sheeted cover \(M(2n,\mathbb R)\) permits a spinor bundle when \(C_1\) is divisible by two.''',
+     r'''Let \((M^{2n},\omega)\) be a smooth symplectic manifold and \(J\) an \(\omega\)-compatible almost complex structure. Its symplectic frame bundle lifts to \(\operatorname{Mp}(2n,\mathbb R)\) exactly when \(w_2(TM)=0\), equivalently \(c_1(TM,J)\in2H^2(M;\mathbb Z)\). A chosen lift and the oscillator representation define an associated infinite-dimensional symplectic spinor bundle. The homotopy equivalence with \(U(n)\) is not an isomorphism of groups.''',
+     r'''The standard name \(\operatorname{Mp}\), the choice of compatible \(J\), and the equivalence with \(w_2=0\) explicate the shorthand. A choice of lift is necessary, not canonical.''',
+     'E',r'''The notes explicitly report Kostant's work. \citet[\S3, Theorem~5 and Definition~6]{krysl2017spinors} states this obstruction and associated-bundle construction, attributing it to Kostant's 1973 Rome contribution published in 1974. The underlying metaplectic representation predates the seminar; publication in 1974 does not make this Kirillov's new result.''',
+     'An established construction, with the topological obstruction and choice of metaplectic structure made explicit.',
+     ['krysl2017spinors'],area='Symplectic geometry and representation theory')
+item(312,'P000525','construction','Canonical commutation relations and metaplectic implementation',
+     r'''The algebra has \(p_iq_j-q_jp_i=\delta_{ij}\), represented by \(p_i=\partial_{x_i}\), \(q_i=x_i\) in \(L^2(\mathbb R^n)\). Symplectic changes of generators are said to induce automorphisms of bounded operators, implemented up to scalar, whose factors reduce to \(\pm1\).''',
+     r'''On the invariant Schwartz domain, \([\partial_{x_i},x_j]=\delta_{ij}\), together with \([p_i,p_j]=[q_i,q_j]=0\). For a unitary formulation use \(P_i=-i\partial_{x_i}\), \(Q_i=x_i\) and the Weyl relations of the Heisenberg group with a fixed nontrivial central character. Uniqueness of its irreducible unitary representation gives projective implementers for \(\operatorname{Sp}(2n,\mathbb R)\); their canonical lift is the oscillator representation of its double cover.''',
+     r'''The domain and the Weyl form of the relations repair the unsupported passage from unbounded polynomial generators to bounded-operator automorphisms. The double cover requires the metaplectic construction; innerness alone does not prove it.''',
+     'E',r'''\citet[\S\S2.1--2.3]{krysl2017spinors} reviews the precise oscillator representation and Weyl algebra. Kostant's earlier quantization paper was published in 1970, independently of the website's later digitization date \citep[pp.~87--208]{kostant1970quantization}.''',
+     'The representation-theoretic statement is established. The notebook proof needs domain and continuity hypotheses and a genuine metaplectic step.',
+     ['krysl2017spinors','kostant1970quantization'],literal='correct with missing hypotheses',match='partial',area='Symplectic geometry and representation theory')
+item(312,'P000525','remark','The Clifford-algebra analogy',
+     r'''The parenthesis says that replacing the minus sign by a plus gives the spin representation of the orthogonal group.''',
+     r'''For a finite-dimensional quadratic space \((V,q)\) over a field of characteristic different from two, the Clifford algebra is generated by \(V\) with \(uv+vu=2b(u,v)\), where \(b\) polarizes \(q\). Its spin modules carry representations of \(\operatorname{Spin}(V,q)\), hence generally projective representations of \(\operatorname{SO}(V,q)\). Merely changing the displayed mixed commutator is insufficient: all anticommutation relations and the quadratic form must be specified.''',
+     r'''This is an analogy reconstructed as a Clifford-algebra statement; the notebook contains no choice of signature or spin module.''',
+     'E',r'''The orthogonal/symplectic analogy is reviewed in \citet[\S2 and introduction]{krysl2017spinors}. It is background, not an independent 1973 discovery.''',
+     'Standard after specifying the full Clifford relations and the spin double cover.',
+     ['krysl2017spinors'],literal='correct with missing hypotheses',match='partial',area='Symplectic geometry and representation theory')
+item(312,'P000526','definition','Bounded K-valued measures as continuous duals',
+     r'''For a finite extension \(K/\mathbb Q_p\), the notes write \(\operatorname{Hom}(C(\mathbb Z_p,K),\mathbb Q_p)=C(\mathbb Z_p,K)'=M(\mathbb Z_p,K)\).''',
+     r'''Give \(C(\mathbb Z_p,K)\) its supremum norm. The Banach space of bounded \(K\)-valued measures is \(M(\mathbb Z_p,K)=\operatorname{Hom}_{K,\mathrm{cont}}(C(\mathbb Z_p,K),K)\), with operator norm. Equivalently these are finitely additive \(K\)-valued functions on compact open sets with uniformly bounded values, extended to continuous functions by uniform approximation.''',
+     r'''We specify continuity and \(K\)-linearity and change the codomain to \(K\). A \(\mathbb Q_p\)-linear dual is a different object, though trace pairings can relate it to a \(K\)-dual after extra choices.''',
+     'E',r'''\citet[\S2]{amice1965mesures} explicitly defines the measure space as the continuous dual; the lecture is dated 17 May 1965. The note's codomain mismatch is not part of that result.''',
+     'Established Banach-space duality; the coefficient field and boundedness cannot be suppressed.',
+     ['amice1965mesures'],literal='false as written',area='p-adic analysis')
+item(312,'P000526','construction','Convolution of p-adic measures',
+     r'''Convolution is defined by the iterated integral \(\int f\,d(\mu*\nu)=\int\int f(x+y)\,d\mu(x)\,d\nu(y)\).''',
+     r'''For bounded \(K\)-valued measures on the compact additive group \(\mathbb Z_p\), this formula defines a bounded measure. Uniform continuity makes the inner integral continuous in \(y\). It gives a commutative unital Banach algebra with unit \(\delta_0\) and \(\|\mu*\nu\|\le\|\mu\|\|\nu\|\).''',
+     r'''The compact group, boundedness, and unit are stated explicitly to justify the integral construction.''',
+     'E',r'''The same construction appears in \citet[\S2, ``Produit de convolution'']{amice1965mesures}, eight years before this seminar.''',
+     'An established convolution algebra; no unbounded-measure extension follows automatically.',
+     ['amice1965mesures'],area='p-adic analysis')
+item(312,'P000526','theorem','The bounded Amice transform',
+     r'''``Theorem 1'' identifies \(M(\mathbb Z_p,K)\) with \(K[[T]]\), immediately restricted to series of finite coefficient supremum. It uses \(a_k=\int\binom{x}{k}\,d\mu\) and \(\int(1+T)^x\,d\mu\).''',
+     r'''Write \[K[[T]]_{\mathrm b}=\{\sum a_kT^k:\sup_k|a_k|_p<\infty\}.\] The map \(\mathcal A\mu(T)=\sum_{k\ge0}(\int\binom{x}{k}\,d\mu)T^k\) is an isometric \(K\)-algebra isomorphism \(M(\mathbb Z_p,K)\simeq K[[T]]_{\mathrm b}\). In particular \(\mathcal A(\mu*\nu)=\mathcal A\mu\,\mathcal A\nu\). The integral character formula converges for \(|T|_p<1\).''',
+     r'''The subscript distinguishes the bounded-coefficient algebra from all formal series; the notebook's finite-norm parenthesis already supplies that restriction.''',
+     'E',r'''\citet[\S3]{amice1965mesures} identifies convolution measures with bounded-coefficient analytic transforms and records the isometry. The one-variable identification in the notes is its standard special case.''',
+     'Established; the equality with unrestricted formal power series would be false.',
+     ['amice1965mesures'],literal='correct with missing hypotheses',area='p-adic analysis')
+item(312,'P000526','claim','Unbounded distributions are not automatically arbitrary moment series',
+     r'''The notes say that formal series are obtained from unbounded measures, then define such measures as finitely additive functions on elementary sets, dual to locally constant functions.''',
+     r'''The algebraic dual of locally constant functions on \(\mathbb Z_p\) consists of compatible values on residue classes, without a uniform bound. It does not by that definition act on the non-locally-constant polynomials \(\binom{x}{k}\). Thus the displayed moment transform is not defined for an arbitrary such distribution. A distribution space with additional regularity and a growth-controlled transform must be specified before any power-series classification is meaningful.''',
+     r'''This is a diagnosis of the missing domain, not a replacement theorem asserting a particular distribution topology.''',
+     'F',r'''The bounded theorem in \citet[\S\S2--3]{amice1965mesures} does not establish this unbounded extension. Searches for Amice's duals and Fourier transforms identify several inequivalent distribution theories; none supplies the absent test-function space in this sentence.''',
+     'The literal inference is unsupported. Its intended unbounded version cannot be identified from the notes; this is not evidence for an open problem.',
+     ['amice1965mesures'],literal='not determinable',match='none found',verification='unresolved lead',confidence='medium',area='p-adic analysis')
+item(312,'P000526','theorem','Measures on the p-adic unit group',
+     r'''``Theorem 2'' writes \(M(\mathbb Z_p^*,K)=(p-1)K[[T]]\).''',
+     r'''For odd \(p\), \(\mathbb Z_p^\times\simeq\mu_{p-1}\times(1+p\mathbb Z_p)\), and a choice of a topological generator identifies the second factor with \(\mathbb Z_p\). Since \(K\supset\mathbb Q_p\) contains \(\mu_{p-1}\), character idempotents give \(M(\mathbb Z_p^\times,K)\simeq\prod_{\chi:\mu_{p-1}\to K^\times}K[[T]]_{\mathrm b}\). For \(p=2\), use \(\{\pm1\}\times(1+4\mathbb Z_2)\), giving two components, not \(p-1=1\).''',
+     r'''We interpret the coefficient \(p-1\) as a product decomposition of convolution algebras, add the odd-prime restriction, and make the noncanonical generator choice explicit.''',
+     'E',r'''This is a direct finite-character decomposition combined with the already established one-variable transform of \citet[\S3]{amice1965mesures}; the decomposition is reconstructed here, not quoted as that paper's numbered theorem.''',
+     'Correct for odd primes in the stated form; the dyadic case requires a different finite factor.',
+     ['amice1965mesures'],literal='correct with missing hypotheses',match='partial',area='p-adic analysis')
+item(312,'P000526','question','Exponential coordinates and the range of the transform',
+     r'''Putting \(1+T=e^\tau\), the notes write \(\widetilde\mu(\tau)=\int e^{\tau x}\,d\mu\), invite one to ``rewrite the analysis'', and ask what functions arise, with integral coefficients after inverse substitution.''',
+     r'''For the already defined bounded measures, \(\widetilde\mu(\tau)=\mathcal A\mu(e^\tau-1)\) converges for \(|\tau|_p<p^{-1/(p-1)}\). Formally, \(G(\tau)\in K[[\tau]]\) is in this image exactly when \(G(\log(1+T))\in K[[T]]_{\mathrm b}\); the integral-measure unit ball corresponds to coefficients in \(\mathcal O_K\). Analytic continuation outside this exponential disk is a separate question and is not specified in the notes.''',
+     r'''This exact formal characterization is our consequence of the preceding isomorphism. We do not replace the informal request for a range description by an unrecorded continuation problem.''',
+     'E',r'''The character transform is already developed in \citet[\S3]{amice1965mesures}; the exponential-coordinate formulation here follows by a change of formal variable. No distinct publication or unresolved analytic-domain question is identifiable from the notebook wording.''',
+     'The bounded formal range is determined by the transform theorem. A broader analytic range question lacks a specified domain and topology.',
+     ['amice1965mesures'],literal='correct with missing hypotheses',match='partial',confidence='medium',area='p-adic analysis')
+item(312,'P000526-P000527','theorem','The Newton--Mahler expansion and norm identity',
+     r'''The proof uses \(P_k(x)=x(x-1)\cdots(x-k+1)/k!\), \(c_k=\Delta^kf(0)\), and claims uniform convergence for every continuous \(f\), with \(\max|f|=\max|a_k|\). The series is called Taylor and then Maclaurin.''',
+     r'''Every \(f\in C(\mathbb Z_p,K)\) has the unique uniformly convergent expansion \(f(x)=\sum_{k\ge0}c_k\binom{x}{k}\), where \(c_k=\sum_{j=0}^k(-1)^{k-j}\binom{k}{j}f(j)\to0\), and \(\|f\|_\infty=\sup_k|c_k|\). Duality gives \(\|\mu\|=\sup_k|\int\binom{x}{k}\,d\mu|\). These are finite differences and falling factorials, not derivatives and ordinary powers.''',
+     r'''The vanishing of the coefficients and uniqueness are supplied. The \(a_k\) in the last norm formula refers to function-expansion coefficients there; elsewhere it denotes measure moments.''',
+     'E',r'''This is Mahler's 1958 interpolation theorem \citep[Theorem~1]{mahler1958interpolation}, extended in \citet[Chapter~II]{amice1964interpolation}. Mahler's 1961 correction concerns the differentiability theorem, not this continuous expansion \citep[opening paragraph]{mahler1961correction}.''',
+     'Established; the notebook name ``Maclaurin'' must not be read as a claim of ordinary analyticity for every continuous p-adic function.',
+     ['mahler1958interpolation','amice1964interpolation','mahler1961correction'],area='p-adic analysis')
+correction('P000526','measure dual codomain',r'\(\operatorname{Hom}(C(\mathbb Z_p,K),\mathbb Q_p)\)',r'\(\operatorname{Hom}_{K,\mathrm{cont}}(C(\mathbb Z_p,K),K)\)',
+           'The scan confirms the p-adic base field; the subsequent K-algebra and K-valued moments require the continuous K-dual. This is an emendation, not a misread letter.')
+correction('P000526','Theorem 2: unit group',r'\((p-1)K[[T]]\)',r'\(\prod_{\chi\in\widehat\mu_{p-1}}K[[T]]_{\mathrm b}\) for odd p; two components for p=2',
+           'The scan has no odd-prime hypothesis. The structure of the p-adic unit group supplies the missing restriction; the bounded-coefficient convention is retained.')
+correction('P000527','first paragraph: expansion name','Maclaurin series','Newton--Mahler interpolation series',
+           'The displayed falling factorials and finite differences, confirmed in the scan, determine the meaning. The source itself uses the misleading name.')
+save()
+
+talk(314,'1973-10-22','D. B. Fuchs','P000527',
+     'The Q-construction and the Grothendieck group',
+     r'''The continuation on P000527 gives Quillen's exact-category \(Q\)-construction and explains why its fundamental group is the Grothendieck group: objects determine loops and short exact sequences determine their additive relations. A separate line compares \(BQM\) with \(B\operatorname{GL}(\infty,A)\), omitting the loop-space shift. This material continues record 311, rather than introducing an independent K-theory construction.''')
+item(314,'P000527','construction',"Quillen's Q-category of an exact category",
+     r'''\(M\) is an additive full subcategory of an abelian category, closed under extensions. Objects of \(QM\) are those of \(M\); a morphism is drawn \(X\leftarrow X''\to X'\), with an admissible epimorphism and an admissible monomorphism.''',
+     r'''Let \(\mathcal M\) be an essentially small extension-closed additive full subcategory of an abelian category, with the induced exact structure. A morphism \(X\to Y\) in \(Q\mathcal M\) is an isomorphism class of spans \(X\xleftarrow{p}Z\xrightarrow{i}Y\), with \(p\) an admissible epimorphism and \(i\) an admissible monomorphism. Composition uses pullback; the exact-category axioms ensure admissibility.''',
+     r'''We insert smallness, the induced exact structure, equivalence of spans, and the composition law. These are necessary to turn the diagram into a category.''',
+     'E',r'''\citet[\S2, construction of \(Q\mathcal M\)]{quillen1973higher} is the exact source, originating in the 1972 Seattle lectures and published in 1973. This continues the exposition in record 311.''',
+     'Established; there is no separate Fuchs conjecture here.',
+     ['quillen1973higher'],literal='correct with missing hypotheses',area='Algebraic K-theory')
+item(314,'P000527','claim','The missing loop in comparison with the plus construction',
+     r'''The notebook states that \(BQM\) is homologically equivalent to \(B\operatorname{GL}(\infty,A)\).''',
+     r'''For a unital ring \(A\), let \(\mathcal P(A)\) be its exact category of finitely generated projective modules. Then \(\Omega BQ\mathcal P(A)\simeq K_0(A)\times B\operatorname{GL}(A)^+\), after choosing compatible base components. Thus the component of the constant loop has the homotopy type of \(B\operatorname{GL}(A)^+\), and the plus map from \(B\operatorname{GL}(A)\) is an integral homology equivalence. The statement does not concern \(BQ\mathcal P(A)\) itself.''',
+     r'''The ring, category, loop-space shift, and component are supplied. For example \(H_1(BQ\mathcal P(\mathbb F_2))\cong K_0(\mathbb F_2)=\mathbb Z\), whereas \(H_1(B\operatorname{GL}(\mathbb F_2))=0\), so the literal line cannot be retained.''',
+     'E',r'''The comparison is announced in \citet[introduction, pp.~86--87]{quillen1973higher}, which expressly defers its proof; see the later treatment in \citet[Chapter~IV, Q-construction]{weibel2013kbook}. The corrected theorem was already available in the 1972--1973 work.''',
+     'Established with the loop and component restored. The displayed notebook comparison is false as written.',
+     ['quillen1973higher','weibel2013kbook'],literal='false as written',match='partial',area='Algebraic K-theory')
+item(314,'P000527','theorem','K-zero as the fundamental group of BQ',
+     r'''The Grothendieck group is generated by objects with relations \(X=X'+X''\) from short exact sequences; the notes identify it with \(K_0(M)=\pi_1(BQM,0)\).''',
+     r'''For an essentially small exact category \(\mathcal M\), let \(K_0(\mathcal M)\) be the abelian group on isomorphism classes \([X]\), modulo \([X]=[X']+[X'']\) for every admissible short exact sequence. There is a canonical isomorphism \(K_0(\mathcal M)\cong\pi_1(BQ\mathcal M,0)\).''',
+     r'''Isomorphism classes and admissibility are explicit. The split exact sequences explain commutativity but do not replace the nonsplit relations.''',
+     'E',r'''This is the basic \(K_0\)-identification in \citet[\S2]{quillen1973higher}, circulated in the 1972 Seattle lectures and published in 1973.''',
+     'A standard theorem; the indexing of homotopy groups is correct in this line.',
+     ['quillen1973higher'],area='Algebraic K-theory')
+item(314,'P000527','method','Object loops and additivity through two-simplices',
+     r'''For each \(X\), the sketch defines a loop \(\zeta_X\) through \(0\) and \(X\). The triangular picture for \(0\to X'\to X\to X''\to0\) yields \(\zeta_X\sim\zeta_{X'}\zeta_{X''}\), invoking two-simplices.''',
+     r'''There are two canonical \(Q\)-arrows \(0\to X\): the spans \(0\leftarrow0\to X\) and \(0\leftarrow X\xrightarrow{1}X\). Traversing the first and then the reverse of the second gives a based loop, with a choice of global sign convention. The nerve's two-simplices associated with an admissible exact sequence identify its class with the product of the corresponding classes for \(X'\) and \(X''\).''',
+     r'''The backwards path is a path in the realization, not an inverse morphism in \(Q\mathcal M\). We spell out the spans to disambiguate the diagram.''',
+     'E',r'''This is the elementary nerve proof underlying \citet[\S2, calculation of \(\pi_1\)]{quillen1973higher}, not a new additivity theorem.''',
+     'An identifiable proof of the preceding theorem; the diagram is meaningful after distinguishing arrows from reversed paths.',
+     ['quillen1973higher'],literal='correct with missing hypotheses',area='Algebraic K-theory')
+correction('P000527','comparison after Q-definition',r'\(BQM\) homologically equivalent to \(B\operatorname{GL}(\infty,A)\)',r'\(\Omega_0 BQ\mathcal P(A)\simeq B\operatorname{GL}(A)^+\); the plus map is a homology equivalence',
+           'The scan confirms the missing loop symbol. Fundamental groups already refute the literal statement over the field with two elements. The projective-module category and base component must be specified.')
+save()
+
+talk(315,'1973-10-29','A. A. Kirillov','P000528',
+     'Bundles associated with the metaplectic representation',
+     r'''Kirillov resumes the symplectic-spinor discussion: local symplectic coordinates, lifted transition functions, and the Schwartz--Hilbert--tempered-distribution triple of associated bundles. A Heisenberg-algebra bundle is identified with \(TM\oplus\mathbb R\), but the accompanying degree bound for polynomials is one degree too large. Lagrangian planes are introduced at the end, before Schnirelman's heading.''')
+item(315,'P000528','theorem','Darboux coordinates and symplectic transition functions',
+     r'''Locally \(\omega=\sum dp_k\wedge dq_k\), and tangent-bundle transition maps lie in \(\operatorname{Sp}(2n,\mathbb R)\). They are assumed lifted to the two-sheeted cover.''',
+     r'''Every smooth symplectic \(2n\)-manifold has Darboux charts in which \(\omega\) has the displayed form. Derivatives of coordinate changes preserve \(\omega\) and therefore are symplectic linear maps pointwise. A metaplectic structure is a compatible cocycle of lifts, not merely separate lifts of individual transition functions.''',
+     r'''We distinguish nonlinear coordinate changes from their derivatives, and impose the cocycle condition on the lifts.''',
+     'E',r'''This is the local and bundle background used in \citet[\S3]{krysl2017spinors}; the topological obstruction is item 1973-312.1. No new local normal-form theorem is proposed.''',
+     'Standard Darboux and principal-bundle theory.',
+     ['krysl2017spinors'],literal='correct with missing hypotheses',area='Symplectic geometry and representation theory')
+item(315,'P000528','construction','The Schwartz--Hilbert--distribution triple of spinor bundles',
+     r'''The spinor representation induces \(HM\), with \(SM\subset HM\subset S'M\); \(SM\) is labelled rapidly decreasing.''',
+     r'''Given a metaplectic principal bundle \(P\to M\), the invariant triple \(\mathcal S(\mathbb R^n)\subset L^2(\mathbb R^n)\subset\mathcal S'(\mathbb R^n)\) yields associated bundles \(P\times_{\operatorname{Mp}}\mathcal S\), \(P\times_{\operatorname{Mp}}L^2\), and \(P\times_{\operatorname{Mp}}\mathcal S'\). The Hilbert embedding in tempered distributions uses the usual pairing convention. These are infinite-dimensional bundles with their respective locally convex topologies.''',
+     r'''The fibre models, topology, and chosen metaplectic structure are supplied; \(S'M\) is a distribution bundle, not the algebraic dual of all sections.''',
+     'E',r'''The spinor bundle and oscillator realization are described in \citet[\S\S2.2--3.1]{krysl2017spinors}; \citet[\S3, Definition~2]{krysl2006spinor} also constructs the associated bundle. This records Kostant's existing construction.''',
+     'An established construction. The representation preserves Schwartz space, so the three fibres glue compatibly.',
+     ['krysl2017spinors','krysl2006spinor'],area='Symplectic geometry and representation theory')
+item(315,'P000528','claim','The Heisenberg bundle and the polynomial degree error',
+     r'''\(GM=TM\oplus(\mathbb R\times M)\) is called the Heisenberg Lie algebra bundle and is labelled polynomials of degree at most two in \(p,q\). It acts on the spinor bundle.''',
+     r'''The fibre \(T_xM\oplus\mathbb R\) with \([(v,a),(w,b)]=(0,\omega_x(v,w))\) is the \((2n+1)\)-dimensional Heisenberg Lie algebra. Under Poisson brackets it corresponds to affine-linear polynomials, of degree at most one. Polynomials of degree at most two form the larger semidirect extension by \(\mathfrak{sp}(2n,\mathbb R)\). Its infinitesimal Schrödinger action is defined on the Schwartz fibres, not as bounded operators on every Hilbert fibre.''',
+     r'''We repair the degree and specify the invariant domain of the action. The central normalization may be rescaled consistently.''',
+     'E',r'''The Heisenberg and Weyl-algebra realization is standard background in \citet[\S\S2.1--2.3]{krysl2017spinors}. A dimension count already separates the two polynomial algebras.''',
+     'The named Heisenberg construction is established; the degree-two label is a faithful notebook error.',
+     ['krysl2017spinors'],literal='false as written',match='partial',area='Symplectic geometry and representation theory')
+item(315,'P000528','definition','Lagrangian tangent planes',
+     r'''The final line introduces \(RM\) and \(R_x\), Lagrangian subspaces of \(T_xM\) of maximal dimension.''',
+     r'''A subspace \(L\subset T_xM\) is Lagrangian if \(\omega_x|_L=0\) and \(\dim L=n\), equivalently \(L=L^{\perp_\omega}\). All such planes form the fibre of the Lagrangian Grassmannian bundle over \(M\). A global section is additional structure and is not asserted to exist.''',
+     r'''The equality of maximal isotropic dimension with half the tangent dimension is made explicit. The notation does not identify a chosen polarization.''',
+     'E',r'''This is standard symplectic linear algebra in the setting reviewed by \citet[\S3]{krysl2017spinors}; Fuchs's short intervention on P000529 continues the bundle description.''',
+     'An established definition, with no existence theorem for a Lagrangian distribution in the notes.',
+     ['krysl2017spinors'],area='Symplectic geometry and representation theory')
+correction('P000528','Heisenberg bundle polynomial label',r'polynomials \(\le2\) in p and q',r'polynomials \(\le1\) for the stated Heisenberg bundle',
+           'The scan and Russian text clearly give degree 2. TM plus one scalar has dimension 2n+1; degree-two polynomials additionally contain the symplectic Lie algebra.')
+correction('P000528','metaplectic notation',r'\(M(n,\mathbb R)\) and \(M(2n,\mathbb R)\)',r'Use a single convention \(\operatorname{Mp}(2n,\mathbb R)\)',
+           'Both notations occur visibly on the page and refer to the same double cover of Sp(2n,R). This is notation normalization, not a second covering group.',typ='ambiguity')
+save()
+
+talk(316,'1973-10-29','A. I. Schnirelman','P000528-P000529',
+     'Fermi--Pasta--Ulam recurrence and a periodic-wave heuristic',
+     r'''The talk reports numerical recurrence of energy initially placed in the first Fourier mode of a weakly nonlinear chain. Zakharov suggests approximation by an integrable differential system. The discussion passes to a string and to perturbations of the wave equation on the circle. Parameters, boundary conditions, numerical units, and the averaged first-order drift system are not fully recorded, so the numerical sketch and the asserted periodic drift cannot be promoted to general theorems.''')
+item(316,'P000528','claim','The nonlinear chain equation and its Hamiltonian sign',
+     r'''The displayed chain has \(\ddot x_k=x_{k-1}+x_{k+1}-2x_k+\varepsilon(x_{k-1}-x_k)^2+\varepsilon(x_{k+1}-x_k)^2\). Both nonlinear signs are positive in the scan.''',
+     r'''For a nearest-neighbour Hamiltonian chain with \(r_k=x_{k+1}-x_k\), potential \(V(r)=r^2/2+\varepsilon r^3/3\), and compatible fixed or periodic boundary conditions, \(\ddot x_k=V'(r_k)-V'(r_{k-1})\). Hence the quadratic terms occur as \(\varepsilon[(x_{k+1}-x_k)^2-(x_k-x_{k-1})^2]\). The notebook equation is a different dynamical system unless an omitted convention changes the model.''',
+     r'''The Hamiltonian and boundary-condition alternatives specify the standard alpha-FPU reconstruction. We do not silently edit the source or claim that its plus-plus equation has the same conservation law.''',
+     'E',r'''The FPU numerical experiment was reported in \citet[LA-1940]{fermipastaulam1955studies}, written in May 1955. The primary report record was checked; the Hamiltonian differentiation above supplies the sign check independently.''',
+     'The standard FPU model is identifiable, but its equation is not faithfully represented by the two nonlinear plus signs.',
+     ['fermipastaulam1955studies'],literal='false as written',match='partial',verification='publisher metadata checked',area='Nonlinear PDE and dynamics')
+item(316,'P000528','remark','Numerical recurrence of low-mode energy',
+     r'''For a chain labelled 16, the initial displacement is sinusoidal, with all energy in the first harmonic. The sketch shows transfer to other modes and near return. A cubic nonlinearity is said to give the same qualitative result.''',
+     r'''The identifiable claim is an observation for particular finite nonlinear chains and initial conditions: modal energies may show pronounced near recurrence rather than rapid equipartition. It is not exact periodicity, not a statement for every initial condition, and not a bound uniform in chain length or energy.''',
+     r'''We distinguish a numerical observation from a quantified theorem. The notebook does not specify amplitudes, coupling strength, endpoint convention, or the formula used to define modal energy.''',
+     'E',r'''The phenomenon is the already reported FPU experiment \citep[LA-1940]{fermipastaulam1955studies}; the connection with soliton recurrence was studied by \citet[pp.~240--243]{zabuskykruskal1965solitons}. Both precede the talk.''',
+     'The historical phenomenon is established, but the particular plotted experiment is not reproducible from these notes alone.',
+     ['fermipastaulam1955studies','zabuskykruskal1965solitons'],literal='correct with missing hypotheses',match='partial',verification='publisher metadata checked',area='Nonlinear PDE and dynamics')
+item(316,'P000528','claim','Unidentified recurrence times and integration-step comments',
+     r'''The notes contain \(t=10^{-35}\), a caption approximately 50 million periods, and comments about ten steps and a one-third period. No physical units or numerical algorithm are given.''',
+     r'''No definite numerical estimate can be reconstructed: it is not stated which time scale, error tolerance, integration scheme, or physical system the numbers refer to. The figure supports only the qualitative recurrence item 1973-316.2.''',
+     r'''We retain the negative exponent seen in the scan rather than changing it to match a plausible timescale. The disconnected numbers are not used as data for a computation.''',
+     'F',r'''Comparison with the identifiable FPU report \citep[LA-1940]{fermipastaulam1955studies} does not determine these units or the stated step counts. No exact numerical publication match was found.''',
+     'Unidentified numerical details, not an open recurrence-time conjecture.',
+     ['fermipastaulam1955studies'],literal='not determinable',match='none found',verification='unresolved lead',confidence='low',area='Nonlinear PDE and dynamics')
+item(316,'P000529','method',"Zakharov's integrable approximation explanation",
+     r'''Zakharov proposes approximation by a differential system possessing first integrals as a possible cause of recurrence. A sinusoidally excited string is mentioned, followed by the remark that other initial data can lead to equipartition.''',
+     r'''In a long-wavelength, weak-nonlinearity scaling, an FPU chain may be approximated over a specified time regime by a dispersive PDE such as KdV. Integrability can explain recurrent or coherent behaviour in that regime; it does not imply exact integrability of the original chain or exclude later energy transfer. The recorded equipartition remark has no universal quantifiers or rate.''',
+     r'''The scaling restrictions and limitation of the approximation are supplied. The notes propose an explanation, not a convergence theorem with an error bound.''',
+     'E',r'''The KdV and recurrence connection was already explored by \citet[pp.~240--243]{zabuskykruskal1965solitons} in 1965. The notebook's attribution to Zakharov concerns this seminar intervention, not priority for the general connection.''',
+     'A recognizable established mechanism, with no precise new approximation or equipartition problem in the notes.',
+     ['zabuskykruskal1965solitons'],literal='correct with missing hypotheses',match='partial',verification='publisher metadata checked',area='Nonlinear PDE and dynamics',speaker='V. E. Zakharov')
+item(316,'P000529','claim','Periodic trajectories of the wave equation on a circle',
+     r'''For \(u_{tt}=u_{xx}\) on \(S^1\), the notes say all trajectories are closed.''',
+     r'''On a circle of length \(2\pi\), an energy solution has Fourier modes \(a_n\cos(nt)+b_n\sin(nt)\) for \(n\ne0\) and constant mode \(a_0+b_0t\). The solution is \(2\pi\)-periodic in the energy phase space if and only if the mean initial velocity \(b_0\) is zero. The spatially constant solution \(u(t,x)=t\) refutes the unrestricted assertion.''',
+     r'''The circle length and phase space are fixed for precision. The missing zero-mode hypothesis is diagnosed directly by Fourier series, not inferred as something the speaker necessarily said.''',
+     'E',r'''Elementary Fourier analysis gives both the corrected theorem and the explicit counterexample. This is old background within the discussion, not a later resolution of a research problem.''',
+     'Correct on the zero-mean-velocity subspace; false for the full phase space.',
+     [],literal='false as written',match='none found',verification='indirect',area='Nonlinear PDE and dynamics')
+item(316,'P000529','claim','Periodic first-order drift for a cubic perturbation',
+     r'''The equations \(u_{tt}=u_{xx}+\varepsilon f'(u)\) and \(u_{tt}=u_{xx}-\varepsilon u^3\) are followed by the claim that the first-order drift of trajectories is also periodic.''',
+     r'''The recorded statement lacks the averaged vector field, its domain, treatment of the zero mode, and the meaning of periodicity. Consequently neither a universal periodicity theorem for an averaged flow nor periodicity of every solution of the nonlinear PDE is a supported precise formulation.''',
+     r'''We preserve the claim without supplying an unrecorded normal-form or averaging construction. The nonlinear equation alone does not determine which drift system is intended.''',
+     'F',r'''Searches combining Schnirelman/Shnirelman, periodic wave equations, first-order averaging, and FPU recurrence did not identify an exact theorem with these quantifiers. The familiar integrable-approximation literature is only thematic and cannot fill the gap.''',
+     'Not identifiable as a definite theorem or open problem from the available notes.',
+     [],literal='not determinable',match='none found',verification='unresolved lead',confidence='low',area='Nonlinear PDE and dynamics')
+correction('P000528','nonlinear chain equation',r'\(+\varepsilon(x_{k-1}-x_k)^2+\varepsilon(x_{k+1}-x_k)^2\)',r'For the standard alpha-FPU Hamiltonian: \(\varepsilon[(x_{k+1}-x_k)^2-(x_k-x_{k-1})^2]\)',
+           'Both plus signs are confirmed by Russian text and scan. Differentiating the nearest-neighbour cubic potential gives a difference. This correction is conditional on the stated FPU identification.')
+correction('P000529','linear wave claim','all trajectories are closed','all trajectories with zero mean initial velocity are periodic',
+           'The scan makes the universal claim. The spatially constant solution u=t is a direct counterexample; Fourier modes give the corrected condition.')
+save()
+
+talk(317,'1973-10-29','D. B. Fuchs','P000529',
+     'The Lagrangian Grassmannian bundle',
+     r'''A boxed intervention labels the space \(\Lambda\) of Lagrangian planes in \(\mathbb R^{2n}\) and the bundle \(RM\to M\). There is no further theorem, Maslov-class calculation, or quantization assertion in this block. It links Kirillov's notation on P000528 to the ensuing discussion without supplying an independent long talk.''')
+item(317,'P000529','construction','The bundle of Lagrangian planes',
+     r'''The box headed Fuchs defines \(\Lambda\) as the set of Lagrangian planes in \(\mathbb R^{2n}\) and depicts \(RM\to M\), a bundle of Lagrangian planes on a symplectic manifold.''',
+     r'''For the symplectic frame bundle \(\operatorname{Fr}_{\operatorname{Sp}}(TM)\), form \(\Lambda(TM)=\operatorname{Fr}_{\operatorname{Sp}}(TM)\times_{\operatorname{Sp}(2n,\mathbb R)}\Lambda(n)\to M\), where \(\Lambda(n)\cong U(n)/O(n)\). Its fibre consists of all Lagrangian subspaces of \(T_xM\). A section is a Lagrangian distribution, which need not be integrable or globally exist.''',
+     r'''The associated-bundle formula and homogeneous-space description explicate the picture. No Maslov class or global section is attributed to the notebook.''',
+     'E',r'''This is standard symplectic bundle geometry in the framework reviewed by \citet[\S3]{krysl2017spinors}; the brief source gives only the construction, not a distinct research claim.''',
+     'Established background, continuing item 1973-315.4.',
+     ['krysl2017spinors'],area='Symplectic geometry and representation theory')
+save()
+
+talk(318,'1973-10-29','A. S. Mishchenko','P000529-P000530',
+     'Fredholm representations and higher signatures',
+     r'''Mishchenko defines a Fredholm representation, applies it to nonsingular Hermitian forms over a ring with involution, and constructs a signature by the difference of two Fredholm indices. The culmination is the characteristic-number formula for a closed oriented manifold. The exact constructions and formula were publicly announced in March--April 1973, from a submission received in October 1972. The fuller 1974 paper supplies proofs and a more general ring formulation. These are therefore expository E items, despite their close match to a later full publication.''')
+item(318,'P000529','definition','Nonsingular Hermitian forms over a ring with involution',
+     r'''A matrix \(\lambda\) over \(\Lambda\) is called a quadratic form when \(\lambda^*=\lambda\) and \(\mu\lambda=1\) for some \(\mu\).''',
+     r'''Let \(\Lambda\) be a unital ring with involution and \(\lambda\in M_n(\Lambda)\) satisfy \(\lambda^*=\lambda\) and \(\mu\lambda=1\). Taking adjoints gives \(\lambda\mu^*=1\); uniqueness of a left and right inverse yields \(\mu=\mu^*\), so \(\lambda\) is invertible. It defines a nonsingular Hermitian form on the free module. Over rings where two is not invertible, this is not the same data as a quadratic refinement in surgery theory.''',
+     r'''The term Hermitian is used for the actual displayed matrix conditions. The source's one-sided inverse is sufficient because self-adjointness provides the other side.''',
+     'E',r'''Hermitian forms are older background. The self-adjoint invertible matrix setting over a group ring is explicit in \citet[\S3]{mishchenko1973infinite}, published before the seminar; the general ring exposition is \citet[\S3]{mishchenko1974infinite}.''',
+     'Established; the matrix definition is precise after distinguishing Hermitian forms from quadratic refinements.',
+     ['mishchenko1973infinite','mishchenko1974infinite'],literal='correct with missing hypotheses',area='Topology and index theory')
+item(318,'P000529','definition','Fredholm representations',
+     r'''\(T=(T_1,F,T_2)\), where the \(T_i\) are involution-preserving representations and \(F\) is Fredholm with \(FT_1(x)-T_2(x)F\) compact for every \(x\in\Lambda\).''',
+     r'''Take unital star representations \(T_i:\Lambda\to\mathcal B(H_i)\) and a bounded Fredholm operator \(F:H_1\to H_2\) satisfying the stated compact-intertwining condition. For \(\Lambda=\mathbb Z[\pi]\), unitary representations of \(\pi\) extend to this data. Different Hilbert spaces are allowed.''',
+     r'''The two Hilbert spaces, boundedness, and unit-preserving condition are explicit. Compactness is pointwise for each ring element; no unrecorded uniform bound on the whole ring is imposed.''',
+     'E',r'''The group version already appears in \citet[\S1]{mishchenko1973infinite}, received 10 October 1972 and published in the March--April 1973 issue. The general ring definition is \citet[Definition~1.1]{mishchenko1974infinite}.''',
+     'An established precursor of Fredholm-module formulations of K-homology.',
+     ['mishchenko1973infinite','mishchenko1974infinite'],area='Topology and index theory')
+item(318,'P000529','theorem','Spectral splitting and the compact off-diagonal blocks',
+     r'''The represented forms are bounded, self-adjoint and invertible. In positive/negative decompositions, \(F\otimes1\) has compact off-diagonal entries and Fredholm diagonal entries. The lower right entry is first written \(F_3\), then called \(F_4\).''',
+     r'''Let \(\lambda_i=T_i^{(n)}(\lambda)\), and split \(H_i^n=H_i^+\oplus H_i^-\) by their spectral projections. The relation \(F^{(n)}\lambda_1-\lambda_2F^{(n)}\in\mathcal K\) implies that the two off-diagonal blocks of \(F^{(n)}\) are compact. Since \(F^{(n)}\) is Fredholm, its diagonal blocks \(F_+:H_1^+\to H_2^+\) and \(F_-:H_1^-\to H_2^-\) are Fredholm.''',
+     r'''The decomposition is spectral, not a finite-dimensional diagonalization by an eigenbasis. Functional calculus modulo compact operators justifies preservation of spectral signs because zero is separated from the spectra.''',
+     'E',r'''The splitting lemma was stated in \citet[\S3]{mishchenko1973infinite}; \citet[Lemmas~3.2--3.3]{mishchenko1974infinite} gives the fuller proof. The notebook has an index typo.''',
+     'Established for the bounded invertible represented forms; the corrected lower right block is the negative-to-negative block.',
+     ['mishchenko1973infinite','mishchenko1974infinite'],literal='false as written',match='partial',area='Topology and index theory')
+item(318,'P000530','construction','The T-signature of a form',
+     r'''\(\operatorname{sign}_T\lambda=\operatorname{index}F_1-\operatorname{index}F_4\), independent of the splitting and of the representative of the form class.''',
+     r'''With the spectral blocks of item 1973-318.3, define \(\operatorname{Sign}_T(\lambda)=\operatorname{ind}F_+-\operatorname{ind}F_-\). It is invariant under isometry of nonsingular forms, additive under orthogonal sum, and zero on hyperbolic forms, hence descends to the corresponding Witt/L-group under the conventions of the construction.''',
+     r'''We identify precisely the equivalences required for descent. This is not a claim of invariance under an unspecified relation on arbitrary singular matrices.''',
+     'E',r'''The index difference and its well-defined Wall-group homomorphism are explicit in \citet[\S3]{mishchenko1973infinite}. The fuller account is \citet[Definition~3.4 and Theorem~3.5]{mishchenko1974infinite}.''',
+     'Established; the index difference, not the sum, is the signature invariant.',
+     ['mishchenko1973infinite','mishchenko1974infinite'],area='Topology and index theory')
+item(318,'P000530','theorem','The Fredholm-representation higher-signature formula',
+     r'''For compact \(M\) of dimension \(4K\), \(\pi_1(M)=\pi\), and \(\Lambda=\mathbb Z[\pi]\), the notes state \(\operatorname{sign}_T\sigma(M)=\langle\operatorname{ch}\xi_T\,L(M),[M]\rangle\). They call \(\xi_T\) a bundle and \(\sigma(M)\) a quadratic form.''',
+     r'''Let \(M\) be a closed oriented smooth \(4k\)-manifold, \(f:M\to B\pi\) the classifying map of its universal cover, and \(T\) a Fredholm representation of \(\pi\). With Mishchenko's Wall/Poincare-complex class \(\sigma(M)\) and associated K-theory class \(\xi_T\) pulled back along \(f\), \[\operatorname{Sign}_T\sigma(M)=\langle L(TM)\smile\operatorname{ch}(f^*\xi_T),[M]\rangle.\] The coefficient class is virtual in general; constructing \(\sigma(M)\) uses the algebraic Poincare complex, not an unjustified free middle-homology module.''',
+     r'''Closedness and orientation, the classifying map, the virtual K-class, and the surgery-theoretic meaning of \(\sigma(M)\) are supplied.''',
+     'E',r'''The exact formula is \citet[Theorem~1]{mishchenko1973infinite}, publicly printed before this talk. \citet[Theorem~5.1]{mishchenko1974infinite} gives the full treatment; announcement and full result were read.''',
+     'The formula is established for the classes produced by Fredholm representations. It is not a proof of the Novikov conjecture for every group and every cohomology class.',
+     ['mishchenko1973infinite','mishchenko1974infinite'],literal='correct with missing hypotheses',area='Topology and index theory')
+item(318,'P000530','remark','Why finite-dimensional representations do not suffice',
+     r'''The talk ends ``\ru{Конечномерных предст. недостаточно}''; the ordinary Hirzebruch signature is indicated by \(\operatorname{ch}\xi_T=1\).''',
+     r'''A complex vector bundle associated to a finite-dimensional unitary representation of \(\pi\) is flat. Its positive-degree rational Chern character vanishes, so the corresponding characteristic number sees only its rank times the ordinary signature. Fredholm representation pairs can produce nontrivial K-classes with higher-degree Chern character. This explains the need for the infinite-dimensional construction, without asserting that all K-classes arise this way for every group.''',
+     r'''The rational qualification and the limitation on representability of arbitrary K-classes are essential to the interpretation.''',
+     'E',r'''Flat-bundle rational Chern classes are older background. The pre-talk \citet[Theorem~3 and corollary]{mishchenko1973infinite} exhibits the reach of infinite-dimensional families under geometric assumptions; \citet[introduction and \S6]{mishchenko1974infinite} explains the motivation. These stronger geometric conclusions are not imported into the notebook.''',
+     'An established motivation, not a universal representability theorem.',
+     ['mishchenko1973infinite','mishchenko1974infinite'],literal='correct with missing hypotheses',match='partial',area='Topology and index theory')
+correction('P000529','matrix of F tensor identity',r'\(\begin{pmatrix}F_1&F_2\\F_3&F_3\end{pmatrix}\)',r'\(\begin{pmatrix}F_1&F_2\\F_3&F_4\end{pmatrix}\)',
+           'Russian text and scan repeat the lower-left block index, while the next line and P000530 use a fourth index for the second Fredholm diagonal block. This is a faithful index error.')
+save()
+
+talk(319,'1973-11-12','V. A. Ponomarev','P000531-P000532',
+     'Free modular lattices, subspace representations and perfect elements',
+     r'''Ponomarev passes from lattice identities to representations of the free modular lattice by finite families of subspaces. He defines perfect elements and gives recursive lattice words and a Boolean family generated by sums omitting one generator. These definitions and constructions match the 1974 Gelfand--Ponomarev paper. The separate conjecture that every modular lattice is a submodule lattice is false: the Arguesian condition is an older additional restriction. A question about classification must distinguish the tame four-subspace problem from the matrix-pair complexity already present for five subspaces.''')
+item(319,'P000531','definition','Lattice operations, order and distributivity',
+     r'''Two associative, commutative, idempotent operations \(\cap,+\) satisfy absorption. The order is \(a\le b\iff a\cap b=a\). Distributive lattices are described as systems of subsets.''',
+     r'''A lattice has meet \(a\wedge b\) and join \(a\vee b\) satisfying those identities; they determine the stated partial order. Distributivity is either, equivalently both, distributive identities. Every distributive lattice embeds into a lattice of subsets with intersection and union (with the usual prime-ideal separation principle); it need not be the entire powerset, nor be closed under complements.''',
+     r'''We interpret ``systems of subsets'' as a sublattice representation, not a Boolean-algebra assertion. The conventional separation principle is explicit.''',
+     'E',r'''These are the introductory definitions, also reproduced in \citet[\S1.1]{gelfandponomarev1974modular}; they were standard before 1973.''',
+     'Established elementary lattice theory.',
+     ['gelfandponomarev1974modular'],literal='correct with missing hypotheses',area='Lattice and representation theory')
+item(319,'P000531','theorem','The modular law for submodule lattices',
+     r'''For \(a\subseteq b\), \(b\cap(a+c)=a+(b\cap c)\), called Dedekind's law. Subspace and submodule lattices are modular but not generally distributive.''',
+     r'''For submodules \(A\subseteq B\) and \(C\) of a module over any unital ring, \(B\cap(A+C)=A+(B\cap C)\). Thus its submodule lattice is modular. A vector space of dimension at least two has a nondistributive subspace lattice: three distinct lines in a two-dimensional subspace violate distributivity. Dimensions zero and one are exceptions to the notebook's unqualified phrase.''',
+     r'''The dimension restriction is supplied; modularity needs no finite-dimensionality assumption.''',
+     'E',r'''This is standard background, stated in \citet[\S1.1]{gelfandponomarev1974modular}.''',
+     'Established, with the low-dimensional distributive cases separated.',
+     ['gelfandponomarev1974modular'],literal='correct with missing hypotheses',area='Lattice and representation theory')
+item(319,'P000531','conjecture','Are all modular lattices submodule lattices?',
+     r'''The notes ask whether there are further identities and explicitly conjecture that every modular lattice is the lattice of submodules of a module; they immediately note that subspace lattices have further identities.''',
+     r'''The literal conjecture is false. Submodule lattices satisfy the Arguesian (lattice-theoretic Desargues) identity, whereas a non-Desarguesian projective plane gives a modular lattice of height three that fails it. Such a lattice is neither isomorphic to a full submodule lattice nor embeddable as a sublattice of one. Modularity alone is therefore insufficient.''',
+     r'''The exact conjecture concerns submodules, not merely vector subspaces. We use the older Arguesian obstruction to answer that literal formulation; we do not replace it by an unspecified coordinatization problem.''',
+     'E',r'''The relevant extra condition was studied in \citet[pp.~294--313]{jonsson1954modular}, published in 1954. The submodule necessity is also stated explicitly in \citet[\S6]{herrmanntakach2005subgroup}. The conjecture was thus already false in the established theory, despite its appearance as a question in the notebook.''',
+     'Disproved; the non-Desarguesian-plane obstruction answers the recorded universal assertion.',
+     ['jonsson1954modular','herrmanntakach2005subgroup'],literal='false as written',match='partial',problem='GP-1973-30',area='Lattice and representation theory')
+item(319,'P000531','construction','Free modular lattices and linear equivalence of terms',
+     r'''\(D^r\) is generated by \(e_1,\ldots,e_r\) modulo modular-lattice relations. Terms \(P,Q\) are linearly equivalent if they agree after substituting subspaces.''',
+     r'''The free modular lattice \(D^r\) has the universal property for assignments of its generators to any modular lattice. For this notebook's finite-dimensional representation setting, define \(a\sim b\) if \(\rho(a)=\rho(b)\) for every lattice homomorphism \(\rho:D^r\to\mathcal L(V)\), every field \(k\), and every finite-dimensional \(k\)-space \(V\). This congruence can identify distinct abstract lattice elements.''',
+     r'''The quantifiers over fields and finite dimensions follow the subsequent definition of perfect elements. Abstract equality and equality in every linear representation remain separate.''',
+     'A',r'''\citet[\S1.2]{gelfandponomarev1974modular} gives precisely this notion and notes that distinct linearly equivalent elements occur already for four generators. The paper was received 10 June 1974 and published later that year.''',
+     'An established distinction; identities valid in all subspace representations do not automatically hold in the free modular lattice.',
+     ['gelfandponomarev1974modular'],area='Lattice and representation theory')
+item(319,'P000531','construction','Subspace systems and direct-sum decomposition',
+     r'''A representation sends meet to intersection and join to sum. A representation of \(D^r\) is exactly a finite-dimensional space \(V\) with subspaces \(E_1^0,\ldots,E_r^0\). Direct sums and indecomposability are defined.''',
+     r'''An ordered \(r\)-subspace system is \((V;E_1,\ldots,E_r)\); its morphisms are linear maps carrying every \(E_i\) into the corresponding target subspace. By freeness this is equivalent to a representation of \(D^r\). A direct decomposition is \(V=V_1\oplus V_2\) with \(E_i=(E_i\cap V_1)\oplus(E_i\cap V_2)\) for every \(i\). Finite-dimensional systems decompose into indecomposables, uniquely up to isomorphism and permutation.''',
+     r'''The morphisms and simultaneous compatibility condition make the category explicit; arbitrary vector-space complements need not give decompositions of the system.''',
+     'E',r'''The subspace-system viewpoint is already present in \citet[\S\S1--2]{gelfandponomarev1971quadruples} and \citet[introduction]{bernsteingelfandponomarev1973coxeter}. Earlier seminar occurrences include 1970-198.1 and 1970-198.13.''',
+     'Established representation theory; the number of subspaces determines the complexity of classification.',
+     ['gelfandponomarev1971quadruples','bernsteingelfandponomarev1973coxeter'],area='Lattice and representation theory')
+item(319,'P000531','problem','Classifying all representations of D-r',
+     r'''The explicit problem is ``describe all representations of \(D^r\)''. The ground field is arbitrary and the representations are finite-dimensional.''',
+     r'''For fixed \(r\) and field \(k\), classify ordered \(r\)-subspace systems up to a simultaneous linear isomorphism. Over an algebraically closed field, \(r\le3\) has finite indecomposable type; \(r=4\) has a tame classification with one-parameter families. For \(r\ge5\), the problem contains simultaneous similarity of arbitrary pairs \((A,B)\): use \(W\oplus W\) with the two coordinate subspaces, the diagonal, and the graphs of \(A\) and \(B\). An isomorphism preserving the first three is \(g\oplus g\), so the remaining two encode simultaneous conjugacy.''',
+     r'''The explicit five-subspace reduction is supplied here. Wildness is a complexity result, not a claim that no mathematically useful invariants or restricted classifications can exist. The four-subspace result quoted is restricted to the field hypotheses of the sources.''',
+     'E',r'''The four-subspace classification circulated in the 1970 Tihany contribution and the 1971 announcement \citep{gelfandponomarev1971quadruples}. \citet[pp.~30--32]{bernsteingelfandponomarev1973coxeter} already distinguishes affine families from matrix-pair complexity. Compare earlier occurrences 1972-277.5--1972-277.7. GP-1970-23 concerns a specific deformation example and is not this general problem.''',
+     'The finite/tame/wild distinction is established. A request for unrestricted normal forms beyond four subspaces cannot be treated as an isolated unsolved seminar conjecture.',
+     ['gelfandponomarev1971quadruples','bernsteingelfandponomarev1973coxeter'],literal='correct with missing hypotheses',match='partial',problem='GP-1973-31',area='Lattice and representation theory')
+item(319,'P000531','definition','Perfect elements and compatible complements',
+     r'''An element is perfect if its image in every finite-dimensional representation over every field admits a complement splitting the representation. Equivalently, its image in each indecomposable is zero or the whole space. Linearly equivalent elements are perfect together.''',
+     r'''For a modular lattice \(L\), call \(a\in L\) perfect if each finite-dimensional representation \(\rho\) splits with \(\rho(a)\) as one summand. Equivalently \(\rho(a)\in\{0,V\}\) for every indecomposable \(\rho:L\to\mathcal L(V)\): decompose a finite-dimensional representation into indecomposables and collect those on which \(a\) acts as the whole space. Perfection therefore depends only on the linear-equivalence class.''',
+     r'''We explain the equivalence using finite-dimensional decomposition. An arbitrary complement of a subspace is insufficient; it must split every \(\rho(b)\).''',
+     'A',r'''This exactly matches the definition in \citet[\S1.2]{gelfandponomarev1974modular}; the proof of the cubicle perfection theorem occupies later sections. Publication followed in 1974.''',
+     'An established definition and equivalence. The notebook does not assert that it has classified all perfect elements.',
+     ['gelfandponomarev1974modular'],area='Lattice and representation theory')
+item(319,'P000531-P000532','construction','Recursive lattice words indexed by adjacent-distinct sequences',
+     r'''The first word is \(e_{i_1i_2}=e_{i_1}\,[\text{overwritten sign}]\,\sum_{k\ne i_1,i_2}e_k\). The next page gives \(e_\alpha=e_{i_1}\sum_{\beta\in\Gamma(\alpha)}e_\beta\), but the conditions defining \(\Gamma\) end in an ellipsis.''',
+     r'''The matching published construction is as follows. Let \(\alpha=(i_1,\ldots,i_\ell)\) have adjacent distinct entries in \(\{1,\ldots,r\}\). Let \(\Gamma(\alpha)\) consist of \(\beta=(k_1,\ldots,k_{\ell-1})\) with adjacent distinct entries and \(k_j\notin\{i_j,i_{j+1}\}\) for every \(j\). Put \(e_{(i)}=e_i\) and recursively \(e_\alpha=e_{i_1}\wedge\bigvee_{\beta\in\Gamma(\alpha)}e_\beta\). Empty joins use the least element of the generated bounded lattice.''',
+     r'''The meet sign and the completed indexing conditions come from the published formula, not from deciphering the overwritten mark. They are explicitly a literature-based reconstruction. We do not assert that each individual word is perfect.''',
+     'A',r'''\citet[\S1.3, equation~(1.1)]{gelfandponomarev1974modular} gives the matching recurrence; the full text was opened and this definition read. The later paper resolves the incomplete source notation without legitimizing silent transcription repair.''',
+     'The construction is identified with high confidence; its complete formula is supplied from the 1974 publication.',
+     ['gelfandponomarev1974modular'],literal='not determinable',match='partial',area='Lattice and representation theory')
+item(319,'P000532','theorem','The first Boolean cubicle of perfect elements',
+     r'''The ``trivial perfect elements'' are \(m_t=\sum_{i\ne t}e_i\); the notes say that they generate a Boolean algebra with \(r\) generators.''',
+     r'''In the free modular lattice on \(r\ge2\) generators, the sublattice generated by \(m_t=\bigvee_{i\ne t}e_i\) is the first upper cubicle \(B^+(1)\). It is a Boolean lattice with \(2^r\) elements, and every element is perfect. The \(m_t\) are its distinguished coatoms. This is not the free Boolean algebra on \(r\) independent Boolean generators, which would have \(2^{2^r}\) elements.''',
+     r'''We identify the cubicle and distinguish lattice generators from freely independent Boolean generators. The minimum and maximum are those of this sublattice, not necessarily those of every ambient representation.''',
+     'A',r'''\citet[Lemma~3.1 and Corollaries~4.1--4.2]{gelfandponomarev1974modular} proves the Boolean structure, perfection, and cardinality. These statements give an exact fate for the notebook claim.''',
+     'Established in the 1974 paper. No completeness conjecture for all perfect elements is stated in the notebook and none is added to the problem index.',
+     ['gelfandponomarev1974modular'],literal='correct with missing hypotheses',area='Lattice and representation theory')
+problem('GP-1973-30','Representability of every modular lattice by submodules',
+        r'Is every modular lattice isomorphic to the lattice of all submodules of some module over some ring?',
+        ['1973-319.3'],
+        r'As of November 2026: false. Submodule lattices are Arguesian; non-Desarguesian projective-plane lattices are modular and not Arguesian. This obstruction predates the 1973 talk \citep{jonsson1954modular,herrmanntakach2005subgroup}.',
+        ['jonsson1954modular','herrmanntakach2005subgroup'])
+problem('GP-1973-31','Classification of finite-dimensional r-subspace systems',
+        r'For a field \(k\) and fixed \(r\), describe all ordered systems \((V;E_1,\ldots,E_r)\) of subspaces in a finite-dimensional \(k\)-space up to simultaneous linear isomorphism, equivalently the finite-dimensional representations of \(D^r\).',
+        ['1970-198.1','1970-198.6','1972-277.5','1972-277.6','1972-277.7','1973-319.6'],
+        r'As of November 2026: the algebraically closed-field classification is finite for at most three subspaces and tame for four; five subspaces already encode arbitrary matrix pairs. Earlier occurrences are special cases of this general problem. This is distinct from the deformation question GP-1970-23 \citep{gelfandponomarev1971quadruples,bernsteingelfandponomarev1973coxeter}.',
+        ['gelfandponomarev1971quadruples','bernsteingelfandponomarev1973coxeter'])
+correction('P000531','universal submodule conjecture','every modular lattice is a submodule lattice','The conjecture is false; the Arguesian identity is an additional necessary condition',
+           'The conjectural wording is clear in Russian and the scan. This is a mathematical annotation, not a transcription change; the obstruction was known before 1973.')
+correction('P000531-P000532','recursive lattice words','overwritten operation and incomplete Gamma conditions',r'Published reconstruction: meet with the join over adjacent-distinct \(k_j\), each avoiding \(i_j,i_{j+1}\)',
+           'Scan cannot resolve the overwritten operation. Gelfand--Ponomarev 1974, §1.3 equation (1.1), supplies the matching complete construction; reconstruction must remain separate from the diplomatic text.',typ='ambiguity')
+save()
+
+talk(321,'1973-11-12','S. I. Gelfand','P000532',
+     'Affine and spherical buildings',
+     r'''After the end of Ponomarev's lattice discussion, S. I. Gelfand describes the Bruhat--Tits complex as a discrete analogue of a symmetric space. Maximal compact subgroups and Iwahori subgroups encode vertices and chambers. The rank-one picture is a tree; a finite-dimensional flag-incidence example over a finite field illustrates a spherical building. In source order this block precedes Kazhdan's curve-counting talk, although the archive numbers it later.''')
+item(321,'P000532','construction','A p-adic homogeneous space as a vertex set',
+     r'''For a \(p\)-adic group \(G\), a maximal compact \(K\) is open, so \(G/K\) is discrete. The example is \(G=\operatorname{GL}_2(\mathbb Q_p)/C\), with \(K=\operatorname{GL}_2(\mathcal O)\).''',
+     r'''For \(G=\operatorname{PGL}_n(\mathbb Q_p)\), let \(K\) be the image of \(\operatorname{GL}_n(\mathbb Z_p)\). Then \(K\) is compact open and \(G/K\) identifies with homothety classes of full \(\mathbb Z_p\)-lattices in \(\mathbb Q_p^n\). These are vertices of the affine building. For a general reductive group, one quotient by a chosen parahoric need not contain all vertex types.''',
+     r'''The quotient image of \(K\), the lattice model, and the restriction to type A are supplied. Maximal compact openness is not asserted for every conceivable topological group.''',
+     'E',r'''The affine-building framework is developed in \citet[\S\S2 and 6]{bruhattits1972groupes}, published in 1972. The notebook is an introductory exposition.''',
+     'Established; the quotient and vertex-type qualifications prevent an overgeneralized construction.',
+     ['bruhattits1972groupes'],literal='correct with missing hypotheses',area='Buildings and p-adic groups')
+item(321,'P000532','definition','The standard Iwahori subgroup',
+     r'''The displayed subgroup has integral upper-triangular entries, entries divisible by \(p\) below the diagonal, and unit diagonal entries; it is called Iwahori.''',
+     r'''The standard Iwahori subgroup of \(\operatorname{GL}_n(\mathbb Q_p)\) is \(I=\{g\in\operatorname{GL}_n(\mathbb Z_p):g\bmod p\text{ is upper triangular}\}\). Its image in \(\operatorname{PGL}_n\) fixes the corresponding alcove in the affine building. A complete lattice chain determines the same stabilizer.''',
+     r'''We make the reduction map and passage to the projective group explicit; the notebook's letter \(B\) denotes this compact-open subgroup, not the algebraic Borel of \(G\).''',
+     'E',r'''This is standard Iwahori/parahoric structure within \citet[\S\S4 and 6]{bruhattits1972groupes}.''',
+     'Established; the matrix display is correct with the group and reduction convention specified.',
+     ['bruhattits1972groupes'],area='Buildings and p-adic groups')
+item(321,'P000532','construction','Simplices from common Iwahori stabilizers',
+     r'''Points \(x_i\in G/K\) are identified with conjugates \(K_i\); they span a simplex if a conjugate of the Iwahori subgroup lies in \(\bigcap K_i\).''',
+     r'''For \(\operatorname{PGL}_n(\mathbb Q_p)\), distinct lattice-homothety vertices form a simplex when representatives can be ordered in a chain \(pL\subsetneq L_r\subsetneq\cdots\subsetneq L_1\subsetneq L\). Equivalently they are a subset of the vertices of one alcove, whose Iwahori fixes them. Vertex stabilizers are the corresponding conjugates of \(K\). Repeated vertices do not enlarge a simplex.''',
+     r'''The chain formulation specifies the construction in the example where the notebook's single vertex orbit works. General buildings require all relevant parahoric types.''',
+     'E',r'''The simplex/parahoric correspondence belongs to the affine-building construction in \citet[\S\S2 and 6]{bruhattits1972groupes}.''',
+     'Established for the stated type-A model; a literal construction from an arbitrary single G/K is too broad.',
+     ['bruhattits1972groupes'],literal='correct with missing hypotheses',match='partial',area='Buildings and p-adic groups')
+item(321,'P000532','theorem','The rank-one Bruhat--Tits tree',
+     r'''For \(n=2\) the complex is declared contractible, with a tree drawn below.''',
+     r'''The affine building of \(\operatorname{PGL}_2(\mathbb Q_p)\) is the tree whose vertices are homothety classes of full lattices in \(\mathbb Q_p^2\), with adjacency represented by \(pL\subsetneq L'\subsetneq L\). Its neighbours at \([L]\) correspond to lines in \(L/pL\cong\mathbb F_p^2\), so the valency is \(p+1\). A tree is contractible.''',
+     r'''The lattice description and valency explain the drawing. The manuscript does not label it as a finite tree or attach a numerical branching count.''',
+     'E',r'''The rank-one instance is contained in the pre-existing affine-building theory of \citet[\S2]{bruhattits1972groupes}.''',
+     'Established; the contractibility claim is correct in this example.',
+     ['bruhattits1972groupes'],area='Buildings and p-adic groups')
+item(321,'P000532','construction','The finite flag-incidence building in dimension three',
+     r'''In \(V_3(\mathbb F_q)\), vertices of type one are lines and of type two are planes; incidence spans a simplex.''',
+     r'''The spherical building of \(\operatorname{PGL}_3(\mathbb F_q)\) has as vertices the nonzero proper subspaces of \(\mathbb F_q^3\); edges are flags \(L\subset P\) with dimensions one and two. It is a bipartite incidence graph, not the contractible affine tree of the preceding item.''',
+     r'''We distinguish this finite spherical example from the affine example. No claim that every building in the block is contractible is imputed to the notes.''',
+     'E',r'''This is the flag-complex model underlying the building theory used in \citet[\S1, combinatorial background]{bruhattits1972groupes}.''',
+     'Established incidence geometry; its type and topology differ from the preceding rank-one affine example.',
+     ['bruhattits1972groupes'],area='Buildings and p-adic groups')
+correction('P000532','maximal compact in projective group',r'\(G=\operatorname{GL}_2(\mathbb Q_p)/C,\ K=\operatorname{GL}_2(\mathbb Z_p)\)',r'\(K\) is the image of \(\operatorname{GL}_2(\mathbb Z_p)\) in \(G\)',
+           'The manuscript suppresses passage to the central quotient. The unquotiented matrix group is not literally a subgroup of the projective group.',typ='ambiguity')
+save()
+
+talk(320,'1973-11-12','D. A. Kazhdan','P000532-P000533',
+     'The Stepanov--Bombieri method for counting points on curves',
+     r'''Kazhdan explains a Riemann--Roch and Frobenius construction after Bombieri's June 1973 Bourbaki lecture on Stepanov's method. The notes omit the constant one in the projective Weil bound and compress two distinct multiplication maps into a single diagram. They also abbreviate the deduction of the full Weil estimate from a coarse upper bound, omitting the uniformity and covering argument emphasized by Bombieri. These are identifiable proof-compression defects, not new unsolved point-counting questions.''')
+item(320,'P000532','remark','Cancelled rational-function and exponential-sum fragment',
+     r'''Before the curve-counting discussion, crossed-out lines contain \(ax+b/x\) with \(a,b\in\mathbb Z\), a partly illegible superscript, and an exponential-sum fragment.''',
+     r'''No summation range, finite field, character, or estimate survives. The fragment cannot identify a definite Kloosterman-sum claim or any other precise exponential-sum theorem.''',
+     r'''The visible rational expression is retained as cancelled source evidence. We do not infer the missing summand from a familiar formula.''',
+     'F',r'''No exact publication identification is warranted by the cancelled fragment. The subsequent Bombieri discussion is independently identifiable and does not restore this text.''',
+     'Unidentifiable cancelled material; it has no problem-index entry.',
+     [],literal='not determinable',match='none found',verification='unresolved lead',confidence='low',area='Arithmetic geometry')
+item(320,'P000532','theorem','The Weil bound and the missing constant one',
+     r'''For a curve \(X/\mathbb F_q\) of genus \(g\), the notes write \(|[X_q]-q|\le2g\sqrt q\) and identify it with the Weil hypothesis.''',
+     r'''For a smooth projective geometrically connected curve \(X/\mathbb F_q\) of genus \(g\), \[|\#X(\mathbb F_q)-(q+1)|\le2g\sqrt q.\] Equivalently the reciprocal roots of the numerator of its zeta function have complex absolute value \(\sqrt q\); the equivalence uses the point counts over all finite extensions. An affine curve requires adjustment for omitted points.''',
+     r'''Smoothness, projectivity, geometric connectedness, and the extension-field formulation are supplied. For \(\mathbb P^1\), the notebook expression gives \(1\le0\), proving that the missing one matters.''',
+     'E',r'''This is the established curve Riemann hypothesis reviewed in \citet[\S I]{bombieri1974counting}. Bombieri's lecture was delivered in June 1973 and printed in 1974; it is not the first proof of Weil's theorem.''',
+     'Established after restoring q+1 and the curve hypotheses; the literal displayed bound is false.',
+     ['bombieri1974counting'],literal='false as written',area='Arithmetic geometry')
+item(320,'P000532','method','A coarse upper bound and the deduction of the full Weil estimate',
+     r'''The notes attribute \([X_q]\le q+4g\sqrt q\) to Stepanov through Bombieri and say that any constant independent of \(q\) would formally suffice for the sharp result.''',
+     r'''The Stepanov--Bombieri strategy constructs auxiliary functions to obtain a square-root error estimate and then uses extension fields and suitable covers or twists to recover the zeta-function conclusion. A one-sided upper estimate for one curve over one field, or even only its extension sequence without the necessary companion information, is not the complete deduction. The printed \(q+4g\sqrt q\) also needs an endpoint correction in genus zero.''',
+     r'''We retain the method and do not manufacture an exact theorem from the abbreviated constant. Bombieri's hypotheses for the intermediate estimate and the extra covering step are part of the literature, not present in the notebook.''',
+     'E',r'''\citet[\S\S~II--III]{bombieri1974counting} is the direct source. Section III explicitly warns that an upper bound alone does not establish the Riemann hypothesis, and supplies the additional argument. The June 1973 circulation predates this talk.''',
+     'The method is established; the compressed inference is incomplete and the displayed constant is not quoted as an exact published theorem.',
+     ['bombieri1974counting'],literal='correct with missing hypotheses',match='partial',area='Arithmetic geometry')
+item(320,'P000532','theorem','Riemann--Roch dimension for a large divisor',
+     r'''For a divisor \(D\), the notes call \(L(D)\) the number of functions divisible by \(D\), and write \(L(D)=\deg D-g+1\) for \(\deg D>2g\).''',
+     r'''For a divisor \(D\) on a smooth projective geometrically connected curve, put \(L(D)=H^0(X,\mathcal O_X(D))=\{f\in k(X):\operatorname{div}(f)+D\ge0\}\cup\{0\}\) and \(\ell(D)=\dim_k L(D)\). Riemann--Roch gives \(\ell(D)=\deg D-g+1\) when \(\deg D>2g-2\). The notebook's stronger threshold is sufficient. Over \(\mathbb F_q\), the actual number of elements is \(q^{\ell(D)}\).''',
+     r'''We distinguish the vector space, its dimension, and its cardinality, and fix the divisor sign convention.''',
+     'E',r'''This is the standard Riemann--Roch input used in \citet[\S~II]{bombieri1974counting}.''',
+     'Established; the notebook formula concerns dimension, not the cardinality of a space of functions.',
+     ['bombieri1974counting'],literal='correct with missing hypotheses',area='Arithmetic geometry')
+item(320,'P000533','construction','Frobenius powers of a Riemann--Roch space',
+     r'''A point \(x_0\) is fixed, \(L_e\) consists of functions with a pole of order at most \(e\) there, and \(L_e^q\) has the same number of elements as \(L_e\).''',
+     r'''Assume \(x_0\in X(\mathbb F_q)\) and \(L_e=L(ex_0)\). Then \(f\mapsto f^q\) is an injective \(\mathbb F_q\)-linear map with image \(L_e^q\subset L(qex_0)\), so \(\dim L_e^q=\dim L_e\). It is not the assertion that \(L(qex_0)=L_e^q\). Over an algebraic closure the map is semilinear, with the same dimension conclusion.''',
+     r'''The rationality of the base point, the image-space notation, and the increased pole order are supplied.''',
+     'E',r'''This Frobenius device is part of \citet[\S~II]{bombieri1974counting}. The notebook retains the essential equal-dimension observation.''',
+     'Established with the image and pole order distinguished.',
+     ['bombieri1974counting'],literal='correct with missing hypotheses',area='Arithmetic geometry')
+item(320,'P000533','method','The two multiplication maps in the auxiliary-function construction',
+     r'''A kernel is drawn in \(L_{q-1}\times L_e^q\to L_{q-1}L_e\subset L_{q+e-1}\), with ``isom. tensor prod.'' below. The dimension comparison is \((q-g)(e-g+1)>q+e-g\); the resulting functions vanish on rational points.''',
+     r'''Distinguish \(m:L_{q-1}\otimes_{\mathbb F_q}L_e\to L_{q+e-1}\), \(a\otimes b\mapsto ab\), from \(m_q:L_{q-1}\otimes L_e\to L_{q-1+qe}\), \(a\otimes b\mapsto ab^q\). If the recorded dimension inequality applies, \(\ker m\ne0\). For \(v=\sum a_i\otimes b_i\in\ker m\), \(m_q(v)\) vanishes at every rational point except the pole point because \(b_i(P)^q=b_i(P)\). To count zeros one must additionally prove \(m_q(v)\ne0\) and control vanishing multiplicities. The notebook omits these essential steps.''',
+     r'''The tensor product and the separation into two maps are our reconstruction from the source method. We do not claim that this bare dimension count by itself proves the square-root bound.''',
+     'E',r'''The auxiliary-function and Frobenius-independence argument is in \citet[\S~II]{bombieri1974counting}; the notes compress different spaces and maps into one line. The publication is an exact methodological match, not a validation of the literal diagram.''',
+     'The established method works with additional nonvanishing and multiplicity arguments; the notebook diagram has a genuine pole-order mismatch.',
+     ['bombieri1974counting'],literal='false as written',match='partial',area='Arithmetic geometry')
+correction('P000532','Weil point bound',r'\(|[X_q]-q|\le2g\sqrt q\)',r'\(|\#X(\mathbb F_q)-(q+1)|\le2g\sqrt q\) for smooth projective geometrically connected X',
+           'The scan has q, not q+1. The genus-zero projective line gives the immediate counterexample; the affine/projective convention is otherwise unstated.')
+correction('P000532','Riemann--Roch notation','L(D) is the number of functions',r'\(\ell(D)=\dim L(D)\); over \(\mathbb F_q\) the cardinality is \(q^{\ell(D)}\)',
+           'The Russian says number of functions, while the next page explicitly uses dimensions. The correct interpretation is vector-space dimension.',typ='ambiguity')
+correction('P000533','kernel multiplication diagram',r'\(L_{q-1}\times L_e^q\to L_{q-1}L_e\subset L_{q+e-1}\)',r'Separate ordinary and Frobenius-twisted tensor multiplication; the latter lands in \(L_{q-1+qe}\)',
+           'Scan and Russian confirm both the superscript q and the untwisted pole bound. Raising to q multiplies pole orders by q; rational-point evaluation explains the connection of the two maps.')
+save()
+
+talk(322,'1973-11-19','L. N. Vasserstein','P000534-P000535',
+     'Stable rank, Serre\'s problem and a conic reduction question',
+     r'''The opening announcement reports a three-variable case of Serre's problem. Vasserstein then defines stable rank, connects the two-variable case to \(K_2(k)\), and exhibits the real degree obstruction. An incompletely defined winding symbol and symplectic \(K_1\) lead to a concrete conic question for polynomial, entire and continuous functions. The 1974 announcement matches both genuine results and an erroneous field dichotomy; the 1976 full paper separates the remaining field cases. The conic wording needs its coefficient field and the meaning of ``common divisor'' restored before it has a definite answer.''')
+item(322,'P000534','claim','The announced three-variable case of Serre\'s problem',
+     r'''Before the speaker heading the notes say: ``\ru{Решена пробл. Серра о мног. от 3-х переменных}''. No coefficient field or characteristic restriction is recorded.''',
+     r'''The nearby 1974 result states that every finitely generated projective \(k[x_1,x_2,x_3]\)-module is free when \(k\) is perfect or \(\operatorname{char}k\ne2\). The modern unrestricted theorem holds for every field \(k\) and every finite number of variables. These are different scopes: the notebook alone does not establish the omitted imperfect characteristic-two case in November 1973.''',
+     r'''The restriction is supplied from the publication, not read into the handwritten announcement. The all-variable result is its later fate, not a theorem attributed to this meeting.''',
+     'A',r'''\citet[Theorem~1 and following remarks]{vasersteinsuslin1974serre}, received 26 November 1973, records work begun in January 1973 and the stated three-variable scope. The unrestricted result followed in 1976: \citet[\S III, Theorem~2]{suslin1976projective} and independently \citet[pp.~167--171]{quillen1976projective}. Their submission dates were 26 February and 1 March 1976 respectively.''',
+     'Serre\'s polynomial-ring problem over fields is solved. The 1973 announcement should retain its contemporary scope.',
+     ['vasersteinsuslin1974serre','suslin1976projective','quillen1976projective'],literal='correct with missing hypotheses',match='partial',problem='GP-1973-33',area='Algebraic K-theory')
+item(322,'P000534','definition','Bass stable rank at most two',
+     r'''For every unimodular column \((a,b,c)^t\), there should exist \(\alpha,\beta\in A\) making \((a+\alpha c,b+\alpha c)^t\) unimodular. The scan repeats \(\alpha\) in the second component, despite quantifying \(\beta\). Unimodular is glossed as relatively prime.''',
+     r'''For a commutative unital ring \(A\), write \(\operatorname{Um}_r(A)=\{(a_1,\ldots,a_r):\sum Aa_i=A\}\). Then \(\operatorname{sr}(A)\le2\) means that for every \((a,b,c)\in\operatorname{Um}_3(A)\) some \(\alpha,\beta\in A\) give \((a+\alpha c,b+\beta c)\in\operatorname{Um}_2(A)\). Having no common nonunit factor is weaker than generating the unit ideal in a multivariable polynomial ring.''',
+     r'''We repair the second coefficient and use the unit-ideal definition. The discussion specializes to commutative rings; noncommutative left/right conventions are not reconstructed unnecessarily.''',
+     'E',r'''Bass introduced the stable-range framework \citep[Chapter~I, \S4]{bass1964stable}; \citet[p.~17 and Theorem~1]{vaserstein1971stable} gives the precise unimodular-column formulation before this seminar.''',
+     'Standard definition, with two independent coefficients and genuine unimodularity.',
+     ['bass1964stable','vaserstein1971stable'],literal='false as written',area='Algebraic K-theory')
+item(322,'P000534','theorem','Nonzero K2 forces stable rank three in two variables',
+     r'''The first branch of the displayed theorem is \(\operatorname{sr}k[x_1,x_2]=3\) when \(K_2k\ne0\).''',
+     r'''For any field \(k\), if its Milnor group \(K_2^M(k)\) is nonzero, then \(\operatorname{sr}(k[x_1,x_2])=3\). For fields the usual algebraic \(K_2\) agrees with this Milnor group. Bass's dimension bound gives the upper bound three; the nontrivial content is nonreducibility of some unimodular triple.''',
+     r'''We specify the field and the \(K_2\) convention. This theorem concerns existence of an obstructed triple, not every triple, and therefore does not contradict the reducibility of the particular conic triple below.''',
+     'E',r'''\citet[\S19, p.~994]{vasersteinsuslin1976serre} explicitly attributes this result to \citet{krusemeyer1973fundamental}, published in March 1973 from a submission of June 1972. The precise consequence was read in the former; the original article's chronology was publisher-verified.''',
+     'Established and already available before the talk. The later symplectic formulation is not evidence of a new 1973 theorem by Vasserstein.',
+     ['vasersteinsuslin1976serre','krusemeyer1973fundamental'],area='Algebraic K-theory')
+item(322,'P000534','claim','The unrestricted zero-K2 branch of the stable-rank assertion',
+     r'''The second branch says \(K_2k=0\Longrightarrow\operatorname{sr}k[x_1,x_2]=2\), with no qualification on \(k\).''',
+     r'''The verified theorem is \(\operatorname{sr}(k[x_1,x_2])=2\) for fields \(k\) algebraic over a finite field. The notebook's stronger implication for every field with \(K_2(k)=0\) is a definite assertion, but the sources checked here do not establish it. Infinite algebraic extensions of global fields with vanishing \(K_2\) are not excluded by the hypothesis.''',
+     r'''We separate the proved algebraic-over-finite-field case from the stronger recorded implication. The absence of a verified modern resolution of the latter in this bounded search is not asserted to mean it is open today.''',
+     'A',r'''\citet[Theorem~4 and following remark]{vasersteinsuslin1974serre} prints the same conclusion through the false field implication in item 1973-322.5. The fuller \citet[\S19, p.~994]{vasersteinsuslin1976serre} explicitly leaves the additional field cases unresolved at that time; \citet[introduction]{suslin1980reciprocity} retains the distinction. Class A records publication of the assertion, not proof of its unrestricted validity.''',
+     'Verified for fields algebraic over finite fields. The unrestricted zero-K2 implication is not settled by the literature verified in this chapter; no present-day C or D claim is made.',
+     ['vasersteinsuslin1974serre','vasersteinsuslin1976serre','suslin1980reciprocity'],literal='not determinable',match='exact',confidence='medium',area='Algebraic K-theory')
+item(322,'P000534','claim','The erroneous classification of fields with vanishing K2',
+     r'''The parenthesis asserts \(K_2k=0\) for algebraic extensions of finite fields and \(K_2k\ne0\) in every other case.''',
+     r'''The forward assertion for fields algebraic over a finite field is correct, but the claimed converse is false: \(K_2(\overline{\mathbb Q})=0\), while \(\overline{\mathbb Q}\) has characteristic zero and is not algebraic over any finite field.''',
+     r'''The explicit counterexample answers the literal field assertion. It does not by itself decide the stable rank of \(\overline{\mathbb Q}[x_1,x_2]\).''',
+     'A',r'''The erroneous implication is also printed after Theorem~4 in \citet{vasersteinsuslin1974serre}. It is replaced by a more careful statement in \citet[\S19]{vasersteinsuslin1976serre}. The concrete counterexample is recorded in \citet[III, Exercise~6.5, p.~243]{weibel2013kbook}.''',
+     'False as written; publication of the same claim does not validate it.',
+     ['vasersteinsuslin1974serre','vasersteinsuslin1976serre','weibel2013kbook'],literal='false as written',area='Algebraic K-theory')
+item(322,'P000535','theorem','The real degree obstruction to reducing the sphere row',
+     r'''Under ``example over \(\mathbb R\)'', the column \((x_1,x_2,1-x_1^2-x_2^2)^t\) cannot be reduced; the reason is ``\ru{из степени}''. The coefficients are written \(\alpha,\beta\in\mathbb R\), without explicitly saying polynomial functions.''',
+     r'''The row \((x,y,1-x^2-y^2)\) is unimodular over \(\mathbb R[x,y]\), because \(x^2+y^2+(1-x^2-y^2)=1\). There are no continuous real-valued \(f_1,f_2\) on the closed unit disk for which \((x+(1-x^2-y^2)f_1,y+(1-x^2-y^2)f_2)\) is everywhere nonzero. Normalization would extend the identity map of the boundary circle to a disk-to-circle map, contradicting its degree. In particular polynomial reduction is impossible over \(\mathbb R\).''',
+     r'''The stronger continuous statement and the disk formulation make the recorded degree argument precise. It applies to real-valued functions and cannot be transferred unchanged to complex-valued functions.''',
+     'E',r'''This is the obstruction used in \citet[Theorem~8 and its proof, p.~27]{vaserstein1971stable}, received in April 1970 and published in 1971. Our appendix supplies the elementary disk proof for the exact two-variable example.''',
+     'Established. The coefficient field is decisive for the subsequent conic discussion.',
+     ['vaserstein1971stable'],literal='correct with missing hypotheses',area='Algebraic K-theory')
+item(322,'P000535','method','An incompletely specified algebraic winding symbol',
+     r'''For a curve \(C(x_1,x_2)=0\) and polynomials \(a,b,c\), the notes mention a winding index and a symbol read uncertainly as \(c(a,b)\) or \(e(a,b)\). For \(a=x_1,b=x_2\), it is called the winding number around the origin.''',
+     r'''A classical integer winding number requires an oriented real one-cycle avoiding \((a,b)=(0,0)\), together with a map to \(\mathbb R^2\setminus\{0\}\). A symplectic Mennicke symbol instead starts from a unimodular pair in a specified quotient ring and takes values in a specified \(K_1\)-group. The notebook does not say which cycle, field, quotient, or equivalence defines its proposed symbol, so no single exact invariant can be recovered.''',
+     r'''The two possible constructions explain the missing data without identifying them. The presence of the next \(K_1\operatorname{Sp}\) definition suggests an algebraic direction but does not prove equivalence with a topological degree.''',
+     'F',r'''\citet[\S4, pp.~948--949]{vasersteinsuslin1976serre} defines symplectic Mennicke symbols precisely and is a thematic lead. Searches for the exact conic/index wording did not determine the notebook's symbol or its claimed vanishing criterion.''',
+     'The intended invariant is unidentified. The separately displayed function-existence question is concrete enough to analyze without inventing that invariant.',
+     ['vasersteinsuslin1976serre'],literal='not determinable',match='thematic only',verification='unresolved lead',confidence='low',area='Algebraic K-theory')
+item(322,'P000535','definition','Stable symplectic K1',
+     r'''\(K_1\mathrm{Sp}\,B\) is described as symplectic matrices of order \(2n\) modulo elementary matrices.''',
+     r'''For a commutative unital ring \(B\), let \(\operatorname{Sp}(B)=\varinjlim_n\operatorname{Sp}_{2n}(B)\) under hyperbolic stabilization and let \(\operatorname{ESp}(B)\) be its elementary symplectic subgroup. Then \(K_1^{\operatorname{Sp}}(B)=\operatorname{Sp}(B)/\operatorname{ESp}(B)\). Stabilization makes the subgroup normal; an arbitrary fixed-rank quotient needs separate stability and normality hypotheses.''',
+     r'''The stable direct limit is inserted. The source's unspecified \(2n\) is not treated as an assertion that every finite rank already computes stable symplectic \(K_1\).''',
+     'E',r'''The pre-existing symplectic \(K_1\)-functor is recalled in \citet[\S4, Theorem~4.1 and following definition]{vasersteinsuslin1976serre}; the 1974 announcement also explicitly takes the stable union and quotient.''',
+     'Standard stable definition. It alone does not identify the preceding winding symbol.',
+     ['vasersteinsuslin1976serre'],literal='correct with missing hypotheses',area='Algebraic K-theory')
+item(322,'P000535','question','Reducing the conic triple by entire functions',
+     r'''For \(z_1^2+z_2^2=1\), the notes ask whether the index is zero and, equivalently, whether two functions \(f_1,f_2\), entire or of exponential growth, can make \((z_1^2+z_2^2-1)f_1+z_1\) and \((z_1^2+z_2^2-1)f_2+z_2\) have ``\ru{не имеют общ. делит.}''. They add ``\ru{в полиномах нет, в непр. ф-ях есть}''. The coefficient field is not explicitly restated after the earlier real example.''',
+     r'''For the complex formulation put \(c=x^2+y^2-1\). There exist even \(f_1,f_2,A,B\in\mathbb C[x,y]\) with \[A(x+cf_1)+B(y+cf_2)=1.\] In fact take \(f_1=1/2\), \(f_2=(i(x+2)-y)/2\), \(a=x+c/2\), \(s=x+1-iy\), \(A=s(a+1)-a-2\), \(B=is^2/2\). This also answers the complex entire and finite-exponential-type versions. With real-valued continuous coefficients the corresponding nowhere-zero pair is impossible by item 1973-322.6.''',
+     r'''We replace the ambiguous ``no common divisor'' by the stronger, stable-rank-relevant unit-ideal condition, and explicitly choose complex coefficients. Literal absence of a common polynomial factor is already satisfied by \(f_1=f_2=0\). The polynomial parenthesis is false for unrestricted complex coefficients, but a lost real-coefficient restriction cannot be ruled out from the notes. The exact relation with the unidentified index is not asserted.''',
+     'B',r'''The general entire-function reduction is subsumed by \citet[Theorem~1.1]{brudnyi2019stein}: \(\operatorname{sr}\mathcal O(X)=\lfloor\dim_{\mathbb C}X/2\rfloor+1\), so \(\operatorname{sr}\mathcal O(\mathbb C^2)=2\). The preprint circulated in 2018, publication followed in 2019. It imposes no growth bound. The explicit polynomial certificate is verified here as a critical emendation, without a priority claim or a new C/D designation.''',
+     'The stated complex existence problem is settled, including finite exponential type. The historical coefficient restriction and the unidentified index remain source ambiguities, not proved open mathematical problems.',
+     ['brudnyi2019stein','vaserstein1971stable'],literal='not determinable',match='partial',problem='GP-1973-32',confidence='medium',area='Algebraic K-theory')
+problem('GP-1973-32','The conic triple in polynomial and entire-function rings',
+     r'''For \(c=z_1^2+z_2^2-1\), do there exist \(f_1,f_2\) in the specified function algebra such that \((z_1+cf_1,z_2+cf_2)\) generates its unit ideal? The coefficient field and function algebra are part of the question; the notebook's ``common divisor'' is an imprecise formulation.''',
+     ['1973-322.9'],
+     r'''As of 9 November 2026: affirmative over \(\mathbb C[z_1,z_2]\), hence for complex entire functions and the algebra of entire functions of finite exponential type, by the certificate checked in the critical appendix. Negative for real-valued continuous coefficients on the real disk. Brudnyi's later general theorem settles unrestricted entire reduction. No unresolved C/D contribution is inferred from the notebook's missing coefficient restriction.''',
+     ['brudnyi2019stein','vaserstein1971stable'])
+problem('GP-1973-33','Serre\'s problem for projective modules over a polynomial ring',
+     r'''For a field \(k\) and finite \(n\), is every finitely generated projective \(k[x_1,\ldots,x_n]\)-module free? This occurrence announces the case \(n=3\) without recording its then-needed field restriction.''',
+     ['1973-322.1'],
+     r'''As of 9 November 2026: solved affirmatively by Quillen and Suslin in 1976. The 1974 Vaserstein--Suslin announcement proves the three-variable case for perfect fields or characteristic different from two. The statement of the general modern theorem must not erase that historical distinction.''',
+     ['vasersteinsuslin1974serre','suslin1976projective','quillen1976projective'])
+correction('P000534','stable-rank definition: reduced column',r'\((a+\alpha c,b+\alpha c)^t\)',r'\((a+\alpha c,b+\beta c)^t\)',
+           'Russian and scan clearly repeat alpha; two independent coefficients were quantified and the next-page real example uses beta in the second component.')
+correction('P000534','unimodular parenthetical gloss','relatively prime elements','elements generating the unit ideal',
+           'In several variables gcd one is insufficient: x and y have no common factor but generate a proper ideal. The stable-rank definition requires a Bezout relation.',typ='ambiguity')
+correction('P000534','field dichotomy following stable-rank theorem',r'\(K_2k\ne0\) unless k is algebraic over a finite field',r'The converse fails; \(K_2(\overline{\mathbb Q})=0\)',
+           'Russian and scan faithfully record the claim. The same error is printed in the 1974 announcement; the 1976 full paper distinguishes additional algebraic global-field cases. Weibel III Exercise 6.5 gives the concrete counterexample.')
+correction('P000534','zero-K2 branch of stable-rank assertion',r'\(K_2k=0\Rightarrow\operatorname{sr}k[x_1,x_2]=2\)',r'Verified here for k algebraic over a finite field; do not infer the unrestricted branch from the false field dichotomy',
+           'The 1974 announcement repeats the notebook argument, but Vaserstein--Suslin 1976 section 19 explicitly leaves extra field cases unresolved at that time. Present unrestricted status was not established by this bounded search.',typ='ambiguity')
+correction('P000535','conic question: common divisor and polynomial parenthesis','no common divisor; impossible in polynomials, possible for continuous functions',
+           'Specify coefficients and require a unit ideal/no simultaneous zeros; unrestricted complex polynomials already suffice',
+           'Both phrases are legible in the scan. The displayed complex polynomial Bezout certificate refutes the parenthesis under that interpretation. The preceding real example and the real degree obstruction prevent an unconditional attribution of a false complex theorem to the speaker.',typ='ambiguity')
+save()
+
+talk(323,'1973-11-19','D. A. Kazhdan','P000535-P000536',
+     'Derived categories and total derived Hom',
+     r'''Kazhdan develops the derived category from ordinary Ext: projective resolutions, comparison up to homotopy, complexes of maps, and localization at quasi-isomorphisms. He then describes total derived functors and their universal transformation. This is established Grothendieck--Verdier homological algebra, connected to the earlier 1971 derived-category discussions. The essential repairs are boundedness for the free-complex comparison theorem, variance for a contravariant functor, and the direction in which the universal transformation induces a map on natural transformations.''')
+item(323,'P000535','definition','Ext from a free resolution',
+     r'''For \(A\)-modules \(M,N\), a free resolution \(\cdots\to M_1\to M_0\to M\to0\) gives \(C^i=\operatorname{Hom}(M_i,N)\), and its cohomology is \(\operatorname{Ext}^i(M,N)\). In degree zero the notes recover \(\operatorname{Hom}(M,N)\).''',
+     r'''Let \(A\) be a unital ring and \(M,N\) left \(A\)-modules. Choose a projective resolution \(P_\bullet\to M\), concentrated in nonnegative homological degrees. Set \(C^i=\operatorname{Hom}_A(P_i,N)\) with differential induced by \(P_{i+1}\to P_i\). For \(i\ge0\), \(\operatorname{Ext}_A^i(M,N)=H^i(C^\bullet)\), and \(H^0(C^\bullet)=\operatorname{Hom}_A(M,N)\). Free resolutions exist and suffice.''',
+     r'''We specify module handedness, exactness of the augmented resolution, and the grading. Hom and Ext are abelian groups unless extra central coefficient structure is specified.''',
+     'E',r'''This is classical homological algebra preceding the seminar. The projective-resolution conventions and existence are checked in \citet[Tag~0643, Definition~13.19.1 and Lemma~13.19.3]{stacks2026foundations}; the total derived interpretation is reviewed in \citet[\S10.7]{weibel1994homological}.''',
+     'Established definition, independent of the chosen projective resolution.',
+     ['stacks2026foundations','weibel1994homological'],area='Homological algebra')
+item(323,'P000535','theorem','Comparison of resolutions and the Hom-complex invariant',
+     r'''``Any two resolutions are homotopic''; the invariant is said to be the complex defined up to homotopy, not merely its cohomology groups.''',
+     r'''Two projective resolutions of the same module admit chain maps lifting its identity, unique up to chain homotopy, and these maps are homotopy inverses. Applying \(\operatorname{Hom}_A(-,N)\) gives homotopy-equivalent cochain complexes. Consequently the Hom complex is determined up to chain homotopy by \(M,N\) and the projective-resolution construction.''',
+     r'''The phrase ``resolutions are homotopic'' is interpreted as chain-homotopy equivalence of projective resolutions. An arbitrary acyclic augmentation by nonprojective modules does not satisfy the same comparison theorem.''',
+     'E',r'''The comparison result is an older part of the theory. A modern precise form is \citet[Tag~0643, Lemmas~13.19.6--13.19.8]{stacks2026foundations}. Its bounded-above projectivity hypothesis also explains the later qualification in item 1973-323.6.''',
+     'Established for projective resolutions; the stronger chain-homotopy invariant is correctly identified.',
+     ['stacks2026foundations'],literal='correct with missing hypotheses',area='Homological algebra')
+item(323,'P000535','remark','Cohomology groups do not determine chain-homotopy type',
+     r'''The notes warn that complexes can have isomorphic homology groups without being homotopy equivalent, with an analogy to topology.''',
+     r'''For complexes of modules, equality of graded cohomology does not determine chain-homotopy type. For example the acyclic complex \(0\to\mathbb Z\xrightarrow{2}\mathbb Z\to\mathbb Z/2\to0\) is not contractible: a contracting homotopy would split the surjection \(\mathbb Z\to\mathbb Z/2\), which cannot split. It is quasi-isomorphic to zero but not homotopy equivalent to zero.''',
+     r'''The example is supplied as an elementary verification of the recorded distinction; it is not a recovered example of the speaker. This does not conflict with the special comparison theorem for bounded-above projective complexes.''',
+     'E',r'''The distinction is built into the older localization construction of the derived category \citep[Chapter~I]{hartshorne1966residues}; \citet[Tag~05RR]{stacks2026foundations} specifies which morphisms are inverted. The particular nonsplit example is checked directly here.''',
+     'Correct. Merely matching cohomology groups is even weaker than having a specified quasi-isomorphism.',
+     ['hartshorne1966residues','stacks2026foundations'],area='Homological algebra')
+item(323,'P000535-P000536','construction','The complex of graded homomorphisms',
+     r'''For complexes \(\dot M,\dot N\), the notes write \(\operatorname{Hom}(\dot M,\dot N)\) and describe \(\operatorname{Hom}^i(R,N)\) as maps with shift \(i\), with source and target arrows pointing in opposite directions in the sketch.''',
+     r'''For cochain complexes \(P^\bullet,N^\bullet\) of left \(A\)-modules define \[\operatorname{Hom}_A^n(P,N)=\prod_j\operatorname{Hom}_A(P^j,N^{j+n}),\qquad d\phi=d_N\phi-(-1)^n\phi d_P.\] Then \(d^2=0\). Its degree-zero cycles are chain maps, and degree-zero boundaries are null-homotopic maps. For bounded source and target the product is finite in every degree.''',
+     r'''The totalization, product convention and differential signs are supplied; the notebook gives only the shifted-map description and a schematic diagram.''',
+     'E',r'''The construction is standard and is given exactly in \citet[Tag~0A8H, \S15.73]{stacks2026foundations}. It predates the seminar as part of the homological-algebra framework.''',
+     'Established. The differential is essential: the graded collection of shifted maps alone is not yet the Hom complex.',
+     ['stacks2026foundations'],literal='correct with missing hypotheses',area='Homological algebra')
+item(323,'P000535-P000536','definition','A resolution as a quasi-isomorphism to a complex',
+     r'''A module is regarded as the complex concentrated in one degree. Replacing it by a free complex inducing the same cohomology is called a resolution; the underlined term is quasi-isomorphism.''',
+     r'''A chain map \(f:C^\bullet\to D^\bullet\) is a quasi-isomorphism when every \(H^n(f)\) is an isomorphism. A projective resolution of \(M[0]\) is a quasi-isomorphism \(P^\bullet\to M[0]\) with \(P^j=0\) for \(j>0\) and every \(P^j\) projective. More generally a bounded-above complex of modules has a bounded-above projective replacement.''',
+     r'''We distinguish a map inducing cohomology isomorphisms from two complexes with merely abstractly isomorphic cohomology. The boundedness is the version justified by the notebook's ordinary resolutions.''',
+     'E',r'''See \citet[Tag~0643, Definition~13.19.1 and Lemma~13.19.3]{stacks2026foundations}. These definitions belong to the pre-1973 derived-category theory documented by \citet[Chapter~I]{hartshorne1966residues}.''',
+     'Established; arbitrary unbounded replacements require a further resolution theory.',
+     ['stacks2026foundations','hartshorne1966residues'],literal='correct with missing hypotheses',area='Homological algebra')
+item(323,'P000536','theorem','When a quasi-isomorphism of free complexes is a homotopy equivalence',
+     r'''The boxed assertion says: two complexes of free modules are quasi-isomorphic if and only if they are homotopy equivalent. No boundedness restriction is repeated.''',
+     r'''Every quasi-isomorphism between bounded-above cochain complexes of projective modules is a chain-homotopy equivalence. The unrestricted statement is false. Over \(A=k[\varepsilon]/(\varepsilon^2)\), the doubly infinite complex with \(P^n=A\) and \(d^n=\varepsilon\) in every degree is acyclic, but not contractible: each possible expression \(dh+hd\) has image in \(\varepsilon A\) and cannot equal the identity. Thus \(P\to0\) is an unbounded counterexample even with rank-one free terms.''',
+     r'''The bounded-above convention is a reconstruction supported by the surrounding resolution diagrams. The counterexample checks the need for that convention; it is not attributed to Kazhdan.''',
+     'E',r'''\citet[Tag~0643, Lemma~13.19.4 and Remark~13.19.5]{stacks2026foundations} gives the correct bounded-above statement. The notebook's omission does not create a new theorem or question about arbitrary unbounded complexes.''',
+     'Correct for bounded-above projectives and, more generally, suitable K-projective complexes; false without such a hypothesis.',
+     ['stacks2026foundations'],literal='correct with missing hypotheses',match='partial',area='Homological algebra')
+item(323,'P000536','construction','The homotopy category and localization at quasi-isomorphisms',
+     r'''\(K(A)\) has complexes as objects and homotopy classes of maps as morphisms. \(D(A)\) has the same objects; its maps are described as strings of forward maps and backward quasi-isomorphisms.''',
+     r'''Let \(K(A)\) be the chain-homotopy category of complexes of left \(A\)-modules. The derived category is the localization \(D(A)=K(A)[S^{-1}]\) at quasi-isomorphisms. Zigzags represent morphisms only after imposing the localization relations; concatenated raw strings are not distinct morphisms merely because their presentations differ. For suitable calculus of fractions one may use roofs \(M\leftarrow P\to N\), with the left arrow a quasi-isomorphism.''',
+     r'''The equivalence relation on zigzags and the universal localization property complete the shorthand. Neither a triangulated structure nor later enhancements are claimed to have been fully developed in these two pages.''',
+     'E',r'''This is the Grothendieck--Verdier construction already in \citet[Chapter~I, pp.~19--84]{hartshorne1966residues}, based on the Harvard seminar of 1963--1964. The precise localization definition was reread in \citet[Tag~05RR, Definition~13.11.3]{stacks2026foundations}. Related earlier occurrences are 1971-266.3 and 1971-267.1.''',
+     'Established. The quotient relations are part of the definition, and the earlier discussions are expository links rather than recurring open problems.',
+     ['hartshorne1966residues','stacks2026foundations'],literal='correct with missing hypotheses',area='Homological algebra')
+item(323,'P000536','construction','Derived Hom and graded morphisms in the derived category',
+     r'''The stated goal is to make Hom into a complex; the source displays \(\operatorname{Hom}^i_{D(A)}(\dot M,\dot N)\) after constructing Hom from a free replacement.''',
+     r'''For \(M\in D^-(A)\), choose a bounded-above projective replacement \(P\to M\). For a complex \(N\), the object \(R\operatorname{Hom}_A(M,N)\) of \(D(\mathbb Z)\) is represented by \(\operatorname{Hom}_A^\bullet(P,N)\). Its cohomology is \[H^iR\operatorname{Hom}_A(M,N)\simeq\operatorname{Hom}_{D(A)}(M,N[i]).\] For modules in degree zero and \(i\ge0\), this is \(\operatorname{Ext}_A^i(M,N)\). For a commutative coefficient ring the usual additional module structure is available.''',
+     r'''A derived Hom object is distinguished from the single morphism group in the ordinary category \(D(A)\). The notebook's superscript is interpreted as the graded shifted morphism group, not an intrinsic differential on every ordinary Hom set.''',
+     'E',r'''The formulas are checked in \citet[Tags~0A8H and 0A5W, equation~15.75.0.2]{stacks2026foundations}, with projective computation justified by Tag~0643. They are standard derived-category constructions, not a new enrichment theorem of this seminar.''',
+     'Established with the specified replacement and grading conventions.',
+     ['stacks2026foundations'],literal='correct with missing hypotheses',area='Homological algebra')
+item(323,'P000536','method','Deriving a contravariant functor by projective replacements',
+     r'''The functor \(F\) is called contravariant, but the diagrams show \(F:M(A)\to M(B)\) and \(\dot F:D(A)\to D(B)\). One chooses free representatives and applies \(F\); cohomology gives ordinary derived functors.''',
+     r'''For an additive contravariant left-exact functor \(F:(A\text{-}\mathrm{Mod})^{\mathrm{op}}\to B\text{-}\mathrm{Mod}\), applying \(F\) to a bounded-above projective replacement, with degrees reversed, constructs \(RF:D^-(A)^{\mathrm{op}}\to D^+(B)\). Its cohomology on a module recovers the right derived functors of \(F\). Additivity preserves chain homotopies; bounded-above projective comparison proves independence. A general covariant functor has a different left/right resolution convention.''',
+     r'''We restore the opposite category, degree reversal, additivity, left exactness and bounded ranges. Without those data the notebook's covariance diagram and the asserted recovery in degree zero are not a precise theorem.''',
+     'E',r'''The bounded derived-functor construction is part of the theory already presented in \citet[Chapter~I]{hartshorne1966residues}. A checked formulation and the role of exactness are in \citet[Theorem~10.5.6 and Remark~10.5.8]{weibel1994homological}, with passage to opposite categories for the contravariant case.''',
+     'Established after repairing variance and specifying the resolution range; arbitrary unbounded free replacement is not sufficient.',
+     ['hartshorne1966residues','weibel1994homological'],literal='false as written',match='partial',area='Homological algebra')
+item(323,'P000536','definition','The universal transformation for a total right derived functor',
+     r'''The last lines require \(QF\to\dot FQ\) and display an isomorphism \[\operatorname{Hom}(QF,GQ)\to\operatorname{Hom}(\dot FQ,GQ)\] for every \(G\), with the arrow pointing right.''',
+     r'''Let \(Q_A:\mathcal K_A\to\mathcal D_A\) and \(Q_B:\mathcal K_B\to\mathcal D_B\) be the chosen localizations and let \(F:\mathcal K_A\to\mathcal K_B\) be an additive functor compatible with the relevant triangulated structures. A total right derived functor is \(RF:\mathcal D_A\to\mathcal D_B\) with \(\eta:Q_BF\to RFQ_A\), universal in the sense that composition with \(\eta\) induces the bijection \[\operatorname{Nat}(RF,G)\longrightarrow\operatorname{Nat}(Q_BF,GQ_A),\quad\theta\longmapsto(\theta Q_A)\eta.\] Existence is an additional requirement. For contravariant \(F\), first use the appropriate opposite category.''',
+     r'''This states the covariant categorical version consistently. The displayed notebook direction is the inverse factorization map if its universal property has already been established; direct precomposition with \(\eta\) goes the other way. Thus the arrow need not be declared a false theorem, but its intended meaning must be specified.''',
+     'E',r'''\citet[Definition~10.5.1, p.~391]{weibel1994homological} states exactly this universal property. The source theory predates 1973; the existence hypotheses are developed in \citet[Chapter~I, \S5]{hartshorne1966residues}. The Stacks formulation also treats existence separately \citep[Tag~05S7]{stacks2026foundations}.''',
+     'Established universal property. The notebook has a direction ambiguity, not evidence for an additional universal construction beyond standard derived functors.',
+     ['weibel1994homological','hartshorne1966residues','stacks2026foundations'],literal='correct with missing hypotheses',match='partial',area='Homological algebra')
+correction('P000536','equivalence for complexes of free modules','quasi-isomorphic if and only if homotopy equivalent','For cochain complexes of projectives bounded above, a quasi-isomorphism is a homotopy equivalence.',
+           'The scan omits the boundedness qualifier. Surrounding ordinary-resolution diagrams support this intended scope. The doubly infinite epsilon complex over the ring of dual numbers is an explicit counterexample to the unrestricted version.',typ='ambiguity')
+correction('P000536','derived category morphisms','strings of maps and inverse quasi-isomorphisms','equivalence classes of such strings under the localization relations',
+           'The manuscript gives only representatives. Without the quotient relation the construction is not the derived category.',typ='ambiguity')
+correction('P000536','contravariant functor and derived-functor diagrams',r'contravariant F, but \(F:M(A)\to M(B)\) and \(\dot F:D(A)\to D(B)\)',r'use the opposite source category and reverse complex degrees',
+           'Russian and scan explicitly say contravariant while drawing covariant arrows; the Hom example confirms the missing variance convention.')
+correction('P000536','last natural-transformation arrow',r'\(\operatorname{Nat}(QF,GQ)\to\operatorname{Nat}(\dot FQ,GQ)\)',r'the arrow can mean unique factorization; direct composition with QF to dotFQ induces the reverse direction',
+           'The rightward arrow is legible. It is not silently reversed: the two directions are inverse only after the stated universal property is imposed. Weibel Definition 10.5.1 checks the canonical composition direction.',typ='ambiguity')
+save()

@@ -1,0 +1,41 @@
+{
+  "status_date": "2026-11-10",
+  "scope": "Editorial verification of classical formulas; no new research theorem claimed.",
+  "school_commutator": {
+    "2": "-3*Derivative(u(x), x) - 2*Derivative(v(x), x)",
+    "1": "-3*Derivative(u(x), (x, 2)) - Derivative(v(x), (x, 2)) - 2*Derivative(w(x), x)",
+    "0": "-v(x)*Derivative(u(x), x) - Derivative(u(x), (x, 3)) - Derivative(w(x), (x, 2))"
+  },
+  "school_reduced_constant_coefficient": "-(2*c1 - 3*u(x))*Derivative(u(x), x)/2 - Derivative(u(x), (x, 3))/4",
+  "school_stationary_equation": "4*c1*Derivative(u(x), x) - 6*u(x)*Derivative(u(x), x) + Derivative(u(x), (x, 3)) = 0",
+  "cusp_commutator_zero": true,
+  "cusp_R_squared_equals_P_cubed": true,
+  "elliptic_coordinate_shift_checked": true,
+  "abel_constant_profile": [
+    {
+      "eta": "0.1",
+      "computed_log_psi": "-2.3025850929940456840179914546843642",
+      "exact_log_eta": "-2.3025850929940456840179914546843642",
+      "absolute_error": "3.1115076e-61"
+    },
+    {
+      "eta": "0.3",
+      "computed_log_psi": "-1.2039728043259359926227462177618385",
+      "exact_log_eta": "-1.2039728043259359926227462177618385",
+      "absolute_error": "0.0"
+    },
+    {
+      "eta": "0.7",
+      "computed_log_psi": "-0.35667494393873237891263871124118448",
+      "exact_log_eta": "-0.35667494393873237891263871124118448",
+      "absolute_error": "3.8893845e-62"
+    },
+    {
+      "eta": "0.95",
+      "computed_log_psi": "-0.051293294387550533426196144254687238",
+      "exact_log_eta": "-0.051293294387550533426196144254687238",
+      "absolute_error": "9.7234614e-63"
+    }
+  ],
+  "abel_normalization": "m = action/pi; log(psi(eta)) = 2 integral_eta^1 (tau*m(tau))prime / sqrt(tau^2-eta^2) dtau. Without /pi in m, coefficient is 2/pi."
+}

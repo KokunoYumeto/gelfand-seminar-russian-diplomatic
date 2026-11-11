@@ -1,0 +1,93 @@
+\SourcePage{GELFAND-P000460}{unlabelled}
+Consider in place of $A$ the ring $A[[t]]$; $t$ — time.
+
+Then def. the shift \uuline{\mbox{$x\mapsto F(x,t)$}} (shift of the form. var. by time $t$).
+
+Differential:
+\[
+\omega(x)=\psi(x)\,dx
+\]
+\Unclear{GELFAND-P000460}{differential-symbol}{The first coefficient sign is set as $\psi$. The same letter recurs in the formulas below.}
+
+\SourceFigure{GELFAND-P000460}{annotation}{A thin line marks off the addition above the formula.
+[diagram: consult scan]}
+
+Inv. form (differential):
+\SourceFigure{GELFAND-P000460}{dx-relation}{Two vertical strokes and “or” stand between the formulas.
+[diagram: consult scan]}
+
+\[
+\psi(F(x,t))\,\frac{\partial F(x,t)}{\partial x}=\psi(x)
+\]
+($t$ is a parameter; the differential is taken only in $x$)
+
+Set $x=0$:
+\[
+\begin{aligned}
+\left.\psi(t)(1+\ldots)\right|_{x=0}&=\psi(0),\\
+\psi(t)&=\psi(0)\,\frac{1}{\left.\dfrac{\partial F(x,t)}{\partial x}\right|_{x=0}}.
+\end{aligned}
+\]
+These are the series that are coeffs. in the inv. differential.
+
+Canonical form:
+\[
+\omega(x)=\frac{1}{\left.\dfrac{\partial F(x,y)}{\partial y}\right|_{y=0}}\,dx
+\]
+is an \sout{\ldots} invar. differential (simple exercise).
+\Unclear{GELFAND-P000460}{invariant-mark}{A heavy vertical sign lies between the words. Its reading is uncertain.}
+
+This gives a characterization.
+
+Consider the form. series
+\[
+g(x)=\int_0^x\omega(x)=x+\ldots
+\]
+(it is important that $A$ is a $\mathbb Q$-module! — integer denominators arise during integration)
+\Unclear{GELFAND-P000460}{integration-punctuation}{An exclamation mark follows “module.”}
+
+\Unclear{GELFAND-P000460}{integration-margin}{The first word after the dash reads «появляются» (“arise”).}
+
+Integrate the relation:
+\[
+\begin{gathered}
+\psi(F(x,t))\,dF(x,t)=\psi(x)\,dx\\
+g(F(x,y))=g(x)+C;
+\end{gathered}
+\]
+Here integration is in $x$ ($t$ — param.), therefore $C=C(y)$.
+
+Set $x=0$. We obtain: $C=g(y)$ \sout{\ldots}
+\Incomplete{GELFAND-P000460}{constant-cancel}{The entry after $C=g(y)$ is crossed out and illegible.}
+
+\[
+\begin{gathered}
+g(F(x,y))=g(x)+g(y)\\
+F(x,y)=g^{-1}(g(x)+g(y)).\quad !!\qquad\blacksquare
+\end{gathered}
+\]
+\uuline{Corollary}\quad Over $\mathbb Q$-mods. all form. laws are strictly isom.
+
+Univ. law: consid. $g(x)=x+\sum g_i x^{i+1}$ — a series, its ring is $\mathbb Q[g_i]$.
+\[
+F(x,y)=g^{-1}(g(x)+g(y));
+\]
+Over $\overset{\downarrow}{\mathbb Q}[g_i]$ one obtains a univ. law.
+(for all $\mathbb Q$-modules)
+\Unclear{GELFAND-P000460}{base-ring-overwrite}{The letter $\mathbb Q$ below the arrow is overwritten. The earlier strokes cannot be separated.}
+
+\begin{center}
+\rule[.5ex]{17mm}{.35pt}\enspace$\cdot$\enspace\rule[.5ex]{22mm}{.35pt}
+\end{center}
+
+We shall classify over arbitrary rings $A$ (commut. and with $1$)
+\Unclear{GELFAND-P000460}{universal-verb}{The first word reads «Будем» (“we shall”).}
+
+\SourceFigure{GELFAND-P000460}{universal-arrow}{A curved arrow leads from the universal law to the bracket before “Universality.”
+[diagram: consult scan]}
+
+any series $F(x,y)$ over the $\mathbb Q$-mod. $A$ is obt. from such a series by replacing its coefficients by their homomorphic images under a ring homom.
+$\mathbb Q[g_i]$ into $A$, sending $g_i$ to the coeffs. of the series $g(x)$,
+found above\(\bigr]\)
+\Unclear{GELFAND-P000460}{universal-images}{The two words for “homomorphic images” have plural endings.}
+

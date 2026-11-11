@@ -1,0 +1,67 @@
+{
+  "commands": [
+    {
+      "command": [
+        "python",
+        "build_chapter.py",
+        "GY1979"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "code/audit_chapter.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1979_test.tex"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bibtex",
+        "GY1979_test"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1979_test.tex"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1979_test.tex"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "log_flags": [
+    "Underfull \\hbox (badness 1102) in paragraph at lines 59--71",
+    "Underfull \\hbox (badness 2951) in paragraph at lines 221--222",
+    "Underfull \\hbox (badness 3009) in paragraph at lines 802--803",
+    "Underfull \\hbox (badness 1968) in paragraph at lines 873--874",
+    "Underfull \\hbox (badness 1701) in paragraph at lines 973--974",
+    "Underfull \\hbox (badness 1412) in paragraph at lines 1682--1683",
+    "Underfull \\hbox (badness 1708) in paragraph at lines 1728--1729",
+    "Underfull \\hbox (badness 1221) in paragraph at lines 1853--1854",
+    "Underfull \\hbox (badness 2293) in paragraph at lines 2041--2042",
+    "Underfull \\hbox (badness 1502) in paragraph at lines 2078--2079",
+    "Underfull \\hbox (badness 1184) in paragraph at lines 2803--2803",
+    "Underfull \\hbox (badness 2809) in paragraph at lines 3203--3203"
+  ]
+}

@@ -1,0 +1,101 @@
+\begin{theorem}[An explicit first-order differential operator with cut-dependent negative value]\ours
+Let \(\mathbb T^3=(\mathbb R/2\pi\mathbb Z)^3\) have its flat metric,
+let \(\mu>0\), and let \(\sigma_1,\sigma_2,\sigma_3\) be the Pauli
+matrices. On the trivial Hermitian bundle of rank four set
+\[
+ \alpha_j=\sigma_1\otimes\sigma_j\quad(1\le j\le3),
+ \qquad \beta=\sigma_3\otimes I_2,
+ \qquad
+ P=\sum_{j=1}^3\alpha_j(-i\partial_{x_j})+\mu\beta.
+\]
+Then \(P\) is an invertible self-adjoint elliptic differential operator
+of order one and of Dirac type. Define \(Z_+(s)\) using argument
+\(+\pi\) for negative eigenvalues, and \(Z_-(s)\) using argument
+\(-\pi\); both branches give argument zero to positive eigenvalues.
+The respective branch ranges are \((-\pi/2,3\pi/2)\) and
+\((-3\pi/2,\pi/2)\), so the cuts are the negative and positive
+imaginary axes. Both cut zeta functions are regular at \(s=-1\), but
+\[
+ \boxed{Z_+(-1)=-i\pi^2\mu^4,\qquad
+        Z_-(-1)=+i\pi^2\mu^4.} \tag{Z2}
+\]
+In particular, their difference there is \(-2i\pi^2\mu^4\ne0\).
+\end{theorem}
+\begin{proof}
+The four matrices \(\alpha_1,\alpha_2,\alpha_3,\beta\) are
+Hermitian, square to the identity, and anticommute in distinct pairs.
+Therefore
+\[
+ P^2=(-\Delta+\mu^2)I_4.
+\]
+The principal symbol squares to \(|\xi|^2I_4\), proving ellipticity
+and the Dirac-type assertion. On the Fourier mode indexed by
+\(k\in\mathbb Z^3\), the Hermitian matrix
+\(\sum_j\alpha_jk_j+\mu\beta\) has square
+\((|k|^2+\mu^2)I_4\) and trace zero. Its eigenvalues are
+\(\pm\sqrt{|k|^2+\mu^2}\), each with multiplicity two. Fourier
+expansion supplies the self-adjoint realization with domain \(H^1\),
+and \(\mu>0\) excludes a kernel. Both stated cuts are admissible for
+the operator and its principal symbol.
+
+For \(\operatorname{Re}s>3\), put
+\[
+ Z_{\mathrm{abs}}(s)=\operatorname{Tr}|P|^{-s}
+ =4\sum_{k\in\mathbb Z^3}(|k|^2+\mu^2)^{-s/2}.
+\]
+The multiplicities and branch conventions give exactly
+\[
+ Z_\pm(s)=\frac{1+e^{\mp i\pi s}}2\,Z_{\mathrm{abs}}(s). \tag{Z3}
+\]
+These identities continue meromorphically. To determine the pole of
+\(Z_{\mathrm{abs}}\), use its Mellin representation
+\[
+ Z_{\mathrm{abs}}(s)
+ =\frac1{\Gamma(s/2)}\int_0^\infty
+ t^{s/2-1}\operatorname{Tr}(e^{-tP^2})\,dt.
+\]
+Gaussian Poisson summation on this torus yields
+\[
+\begin{split}
+ \operatorname{Tr}(e^{-tP^2})
+ &=4e^{-\mu^2t}\sum_{k\in\mathbb Z^3}e^{-t|k|^2}\\
+ &=4\pi^{3/2}t^{-3/2}
+ \left(1-\mu^2t+\frac{\mu^4t^2}{2}+O(t^3)\right)
+   +O\!\left(t^{-3/2}e^{-c/t}\right)
+\end{split}
+\]
+for some \(c>0\) as \(t\downarrow0\). The coefficient of
+\(t^{1/2}\) is \(a=2\pi^{3/2}\mu^4\). The corresponding Mellin
+integral contributes \(2a/(s+1)\) before division by
+\(\Gamma(s/2)\). Since \(\Gamma(-1/2)=-2\sqrt\pi\),
+\[
+ \operatorname*{res}_{s=-1}Z_{\mathrm{abs}}(s)
+ =\frac{2a}{\Gamma(-1/2)}=-2\pi\mu^4. \tag{Z4}
+\]
+After the displayed heat terms are subtracted, the small-time integral
+is holomorphic near \(-1\); the large-time integral is entire because
+\(\mu>0\). Thus the pole computation is justified without a formal
+exchange of divergent series.
+
+Each prefactor in (Z3) has a simple zero at \(-1\), with
+\[
+ \left.\frac{d}{ds}\frac{1+e^{\mp i\pi s}}2\right|_{s=-1}
+ =\pm\frac{i\pi}{2}.
+\]
+Multiplying this derivative by the residue in (Z4) proves regularity
+and the two values (Z2). The holomorphic part of
+\(Z_{\mathrm{abs}}\) contributes zero at that point.
+\end{proof}
+
+\begin{remark}[Independent algebraic and normalization checks]\oursComputed
+The separate executable \texttt{verify\_negative\_cut.py} checks all
+Clifford anticommutators, Hermitian symmetry, the square and the exact
+characteristic polynomial, the Mellin residue, and both branch limits.
+The heat normalization was independently checked as
+\(4\operatorname{vol}(\mathbb T^3)/(4\pi)^{3/2}=4\pi^{3/2}\).
+A second mathematical audit reproduced the residue and phase signs.
+The symmetric spectrum also gives \(\eta(P;s)=0\) identically:
+this example uses the nonzero residue of the absolute zeta function.
+It is an explicit verification of the notebook correction, with no
+historical priority claim.
+\end{remark}

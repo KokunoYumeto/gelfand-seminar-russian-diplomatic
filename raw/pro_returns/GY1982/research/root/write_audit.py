@@ -1,0 +1,76 @@
+#!/usr/bin/env python3
+"""Record the root author's primary-source checks for this research run."""
+from pathlib import Path
+import json
+
+ROOT=Path(__file__).resolve().parent
+SOURCES={
+    'collinsguionnetmaurel2009asymptotics': {
+        'opened_url':['https://arxiv.org/pdf/math/0608193','https://arxiv.org/abs/math/0608193'],
+        'verification':'read the result',
+        'locator_and_scope':'Theorem 0.1, introduction pp.1–3, and Corollary 7.1. Small real self-adjoint polynomial potentials, probability Haar measure, local analytic limiting free energy and coefficient matching. Analytic extension of the limit does not assert convergence of complex-coupling integrals.',
+        'chronology':'Preprint 8 August 2006; revision 25 June 2008; journal publication 2009.',
+        'access_limit':'Publisher fetch returned 403; primary arXiv paper and metadata were read.'},
+    'collinssniady2006integration': {
+        'opened_url':['https://arxiv.org/pdf/math-ph/0402073','https://arxiv.org/abs/math-ph/0402073'],
+        'verification':'read the result',
+        'locator_and_scope':'Theorem 2.1, Proposition 2.2 and Corollary 2.4; matrix-entry Haar integration and degree-one/two unitary Weingarten functions.',
+        'chronology':'Preprint 26 February 2004; journal publication 2006.'},
+    'eguchikawai1982reduction': {
+        'opened_url':['https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.48.1063'],
+        'verification':'publisher metadata checked',
+        'locator_and_scope':'Publisher abstract, title, authors, volume, pages and publication dates. Reduction claim checked at abstract level; full proof not read.',
+        'chronology':'Received 19 January 1982; published 19 April 1982.',
+        'access_limit':'Full publisher text paywalled.'},
+    'neuberger2020quenched': {
+        'opened_url':['https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.094503','https://journals.aps.org/prd/pdf/10.1103/PhysRevD.102.094503'],
+        'verification':'read the result',
+        'locator_and_scope':'Sections II–IV: eigenvalue instability, annealed versus quenched prescriptions, strong-coupling series and weak-coupling limitations.',
+        'chronology':'Published 6 November 2020.'},
+    'bahnsmeinecke2011string': {
+        'opened_url':['https://arxiv.org/pdf/1103.0974'],
+        'verification':'read the result',
+        'locator_and_scope':'Proposition 4, Corollary 14 and section 4, especially pp.19–20: classical cyclic-charge algebra and formal quantization via quasi-Lie-bialgebra quantization. Existence is separated from preferred presentations and Hilbert-space representations.',
+        'chronology':'2011 preprint; no later journal status asserted.',
+        'access_limit':'Abstract route failed; full primary PDF succeeded.'},
+    'bahns2004string': {
+        'opened_url':['https://arxiv.org/pdf/hep-th/0403108'],
+        'verification':'read the result',
+        'locator_and_scope':'Sections 4–5: anomalies and failure of invariance for conventional oscillator normal ordering. Does not exclude every possible modified quantization.',
+        'chronology':'Preprint and journal publication 2004.'},
+    'enriquezhalbout2010quantization': {
+        'opened_url':['https://arxiv.org/abs/0804.0496','https://arxiv.org/pdf/0804.0496'],
+        'verification':'read the result',
+        'locator_and_scope':'Theorem 1.1 p.1 and the following existence consequence p.2: equivalence classes of universal quantization functors and existence via associators. String-charge application independently read in Bahns–Meinecke, section 4.',
+        'chronology':'First preprint 3 April 2008; inspected PDF revision 11 July 2008; journal publication 2010.',
+        'access_limit':'Direct AMS publisher access failed; primary preprint and publisher metadata route succeeded.'},
+    'gee2026modularity': {
+        'opened_url':['https://epubs.siam.org/doi/full/10.1137/25M1806697'],
+        'verification':'read the result',
+        'locator_and_scope':'Theorems 1.4–1.5, Remark 2.7, and the Information/Authors section. Publisher SIAM; editors Susan Friedlander and Yuri Tschinkel. Potential modularity, continuation and actual modularity remain distinct.',
+        'chronology':'Published online 13 July 2026. Remark 2.7 describes the earlier end-2018 posting of the 2021 paper.',
+        'access_limit':'Full HTML read successfully. BibTeX export returned 403; publisher and editors were read directly in the displayed publication information.'},
+    'boxercalegarigeepilloni2021surfaces': {
+        'opened_url':['https://www.numdam.org/articles/10.1007/s10240-021-00128-2/','https://numdam.org/item/10.1007/s10240-021-00128-2.pdf'],
+        'verification':'read the result',
+        'locator_and_scope':'Theorems 1.1.2–1.1.3 on printed p.156, and the qualification on poles on p.157. All genus-two curves and abelian surfaces over totally real fields; meromorphic continuation and functional equations from potential automorphy, without universal actual modularity.',
+        'chronology':'Received 25 December 2018; first published online 29 November 2021. Receipt is not treated as public circulation.'},
+    'boxercalegarigeepilloni2025modularity': {
+        'opened_url':['https://arxiv.org/abs/2502.20645','https://www.math.uchicago.edu/~fcale/papers/Modular.pdf'],
+        'verification':'read the result',
+        'locator_and_scope':'Theorem B, pp.3–4: smooth genus-two X/Q with degree-five model, Jacobian mod-3 representation surjective onto GSp4(F3), and good ordinary reduction of X at 2 and 3. Actual modularity for this specified class.',
+        'chronology':'First preprint 28 February 2025. No journal publication asserted.'},
+    'ginzburg1983symplectic': {
+        'opened_url':['https://www.mathnet.ru/php/archive.phtml?jrnid=faa&option_lang=eng&paperid=1562&wshow=paper',
+                      'https://www.mathnet.ru/eng/person23216',
+                      'https://annals.math.princeton.edu/2010/172-2/p07'],
+        'verification':'publisher metadata checked',
+        'locator_and_scope':'The 1983 paper is authored by V. A. Ginzburg. The distinct official records for mathematicians V. A. and V. L. make an identification by subject unsafe. The catalogue V. L. and manuscript V. are retained for record 570; related authorship is not evidence identifying the speaker. This root check concerns attribution only; the autumn audit separately records reading the mathematical paper.',
+        'chronology':'1983 paper received 23 December 1982. No independent dated seminar-speaker identification obtained.'},
+}
+
+for data in SOURCES.values():
+    data['checked_on']='2026-11-11'
+    data['owner']='root'
+(ROOT/'source_audit.json').write_text(json.dumps(SOURCES,ensure_ascii=False,indent=2)+'\n')
+print('Recorded',len(SOURCES),'root primary-source checks.')

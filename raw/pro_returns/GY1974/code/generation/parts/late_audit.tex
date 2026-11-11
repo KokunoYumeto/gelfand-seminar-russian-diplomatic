@@ -1,0 +1,126 @@
+\subsection{Two missing-hypothesis checks in the late microlocal talks}
+
+The following elementary arguments audit statements on P000592--P000593.
+They are editorial proofs, not claims of new research results. They do not
+turn an imprecise notebook phrase into a class C or D problem. The
+established comparison results are the affine-leaf connection described by
+\citet[Proposition 1.9 and Theorem 1.10]{loustausanders2017bilagrangian}
+and the homogeneous normal-form statement of
+\citet[Proposition 6.1.4]{duistermaathormander1972fourierii}.
+
+\begin{proposition}[A complete Lagrangian cylinder leaf]\ours
+The corollary on P000592 that Lagrangian leaves are either
+\(\mathbb R^n\) or tori is false, even for leaves admitting a global
+frame of complete commuting Hamiltonian vector fields.
+\end{proposition}
+
+\begin{proof}
+Write \(S^1=\mathbb R/\mathbb Z\), and use coordinates
+\[
+ M=T^*(S^1\times\mathbb R)
+   =\{(q_1,q_2,p_1,p_2)\},\qquad
+ \omega=dq_1\wedge dp_1+dq_2\wedge dp_2 .
+\]
+Here \(dq_1\) is the globally defined invariant one-form on \(S^1\).
+For each \((a,b)\in\mathbb R^2\), set
+\[
+ L_{a,b}=\{p_1=a,\ p_2=b\}.
+\]
+The map \(M\to\mathbb R^2\), \((q,p)\mapsto(p_1,p_2)\), is a
+submersion, so these sets form a smooth foliation. Each leaf has real
+dimension two, and \(\omega|_{L_{a,b}}=0\) because both \(dp_j\) vanish
+on its tangent bundle. It is therefore Lagrangian in the real
+four-dimensional symplectic manifold.
+
+The leaf is diffeomorphic to \(S^1\times\mathbb R\). It cannot be
+\(\mathbb R^2\), because its fundamental group is \(\mathbb Z\), and
+it cannot be a two-torus, because it is noncompact. With the convention
+\(\iota_{H_f}\omega=df\), the Hamiltonian fields of the global functions
+\(p_1,p_2\) are \(\partial_{q_1},\partial_{q_2}\). They commute, are
+independent everywhere, and are complete. Thus adding completeness to
+the notebook sentence does not remove this counterexample.
+\end{proof}
+
+\begin{remark}
+Three independent checks are available here: the dimension and
+restriction of \(\omega\) establish the Lagrangian property; the
+fundamental group excludes the plane; and noncompactness excludes the
+torus. More generally, a connected leaf with \(n\) globally independent
+complete commuting fields is a transitive \(\mathbb R^n\)-orbit with
+discrete stabilizer, so mixed cylinder factors are allowed. An
+arbitrary complete affine structure need not supply such a global frame:
+the global-action conclusion must not be inferred from the
+leafwise affine connection alone.
+\end{remark}
+
+\begin{proposition}[A radial point obstructs the stated homogeneous normal form]\ours
+The conditions \(p(\rho)=0\) and \(dp(\rho)\ne0\) do not suffice to
+straighten a real homogeneous principal symbol to a coordinate covector
+by a homogeneous canonical transformation, even if a nonvanishing
+scalar factor is allowed.
+\end{proposition}
+
+\begin{proof}
+On \(T^*\mathbb R^2\setminus0\), take
+\[
+ p(x,\xi)=x_1\xi_1,\qquad
+ \rho=(0,0;1,0),\qquad
+ R=\xi_1\partial_{\xi_1}+\xi_2\partial_{\xi_2}.
+\]
+The symbol is real and positively homogeneous of degree one.
+At \(\rho\), it satisfies \(p=0\) and \(dp=dx_1\ne0\).
+With
+\(H_p=\sum_j(p_{\xi_j}\partial_{x_j}-p_{x_j}\partial_{\xi_j})\),
+\[
+ H_p=x_1\partial_{x_1}-\xi_1\partial_{\xi_1},
+ \qquad H_p(\rho)=-R(\rho).
+\]
+In particular, the Hamilton field is a nonzero radial vector.
+
+Let \(\kappa\) be a homogeneous symplectic local diffeomorphism. Since it
+commutes with positive fibre dilations, differentiation of that
+commutation relation gives \(\kappa_*R=R\). Symplectic covariance gives
+\[
+ \kappa_*H_p=H_{p\circ\kappa^{-1}}.
+\]
+Thus the transformed Hamilton field is still radial and nonzero at
+\(\kappa(\rho)\). If the transformed defining symbol is further
+multiplied by a smooth nonvanishing function \(a\), then, on its
+characteristic hypersurface,
+\[
+ H_{a(p\circ\kappa^{-1})}
+   =a\,H_{p\circ\kappa^{-1}},
+\]
+so radiality persists.
+
+In contrast, for the coordinate symbol \(q(y,\eta)=\eta_2\),
+\(H_q=\partial_{y_2}\). This is horizontal and nonzero, hence cannot
+be proportional to the nonzero vertical radial vector at any
+point of \(T^*\mathbb R^2\setminus0\), including points where
+\(\eta_2=0\). The proposed homogeneous straightening is impossible.
+\end{proof}
+
+\begin{remark}
+The two-dimensional example is the stabilization of the one-dimensional
+symbol \(x\xi\). It avoids the incidental fact that the one-dimensional
+coordinate characteristic set \(\eta=0\) misses the punctured cotangent
+bundle. The obstruction uses three separately checked facts:
+\(dp(\rho)\ne0\), homogeneity preserves the radial field, and a coordinate
+symbol has a nonradial Hamilton field. It audits the canonical
+transformation required by the usual elliptic FIO conjugation theorem;
+it does not purport to rule out arbitrary unspecified kernel
+factorizations. The missing nonradial condition is explicitly present
+in the cited proposition of Duistermaat--Hörmander.
+\end{remark}
+
+\paragraph{Fourier sign used throughout.}
+The reconstruction uses
+\(\widehat u(\xi)=\int e^{-ix\xi}u(x)\,dx\).
+Consequently \((x+i0)^{-1}\), the upper-half-plane boundary value of
+\(1/z\), has positive, rather than negative, wavefront covectors.
+The explicit positive-frequency representation and wavefront
+calculation in
+\citet[Appendix A, equation (A.4)]{bohrlefeuvrepaternain2024invariant}
+independently checks this convention. P000584 does not specify its
+Fourier sign, so its contrary excluded-half-ray wording is logged as
+an ambiguity, not as a convention-independent mathematical error.

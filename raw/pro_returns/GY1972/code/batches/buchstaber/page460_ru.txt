@@ -1,0 +1,93 @@
+\SourcePage{GELFAND-P000460}{unlabelled}
+Рассм. вместо $A$ кольцо $A[[t]]$; $t$ — время.
+
+Тогда опр. сдвиг \uuline{\mbox{$x\mapsto F(x,t)$}} (сдвиг форм. перем. на время $t$).
+
+Дифференциал:
+\[
+\omega(x)=\psi(x)\,dx
+\]
+\Unclear{GELFAND-P000460}{differential-symbol}{Первый знак коэффициента передаётся как $\psi$. Та же буква повторяется в формулах ниже.}
+
+\SourceFigure{GELFAND-P000460}{annotation}{Над формулой тонкой линией выделена приписка.
+[diagram: consult scan]}
+
+Инв. форма (дифференциал):
+\SourceFigure{GELFAND-P000460}{dx-relation}{Два вертикальных штриха и «или» стоят между формулами.
+[diagram: consult scan]}
+
+\[
+\psi(F(x,t))\,\frac{\partial F(x,t)}{\partial x}=\psi(x)
+\]
+($t$ параметр; дифференциал берётся только по $x$)
+
+Положим $x=0$:
+\[
+\begin{aligned}
+\left.\psi(t)(1+\ldots)\right|_{x=0}&=\psi(0),\\
+\psi(t)&=\psi(0)\,\frac{1}{\left.\dfrac{\partial F(x,t)}{\partial x}\right|_{x=0}}.
+\end{aligned}
+\]
+Таковы ряды, явл. коэфф. при инв. дифференциале.
+
+Каноническая форма:
+\[
+\omega(x)=\frac{1}{\left.\dfrac{\partial F(x,y)}{\partial y}\right|_{y=0}}\,dx
+\]
+является \sout{\ldots} инвар. дифференциалом (простое упражнение).
+\Unclear{GELFAND-P000460}{invariant-mark}{Между словами виден густой вертикальный знак. Его чтение не установлено.}
+
+Это даёт хар-ку.
+
+Рассм. форм. ряд
+\[
+g(x)=\int_0^x\omega(x)=x+\ldots
+\]
+(важно, что $A$ есть $\mathbb Q$-модуль! — появляются целые знаменатели при интегрировании)
+\Unclear{GELFAND-P000460}{integration-punctuation}{После «модуль» читается восклицательный знак.}
+
+\Unclear{GELFAND-P000460}{integration-margin}{Первое слово после тире читается «появляются».}
+
+Интегрируем соотн.:
+\[
+\begin{gathered}
+\psi(F(x,t))\,dF(x,t)=\psi(x)\,dx\\
+g(F(x,y))=g(x)+C;
+\end{gathered}
+\]
+Здесь интегрируется по $x$ ($t$ — пар.), поэтому $C=C(y)$.
+
+Положим $x=0$. Получим: $C=g(y)$ \sout{\ldots}
+\Incomplete{GELFAND-P000460}{constant-cancel}{Запись после $C=g(y)$ зачёркнута и не разобрана.}
+
+\[
+\begin{gathered}
+g(F(x,y))=g(x)+g(y)\\
+F(x,y)=g^{-1}(g(x)+g(y)).\quad !!\qquad\blacksquare
+\end{gathered}
+\]
+\uuline{Следствие}\quad Над $\mathbb Q$-мод. все форм. законы сильно изом.
+
+Универс. закон: рассм. $g(x)=x+\sum g_i x^{i+1}$ — ряд, его кольцо $\mathbb Q[g_i]$.
+\[
+F(x,y)=g^{-1}(g(x)+g(y));
+\]
+Над $\overset{\downarrow}{\mathbb Q}[g_i]$ получ. универс. закон.
+(для всех $\mathbb Q$-модулей)
+\Unclear{GELFAND-P000460}{base-ring-overwrite}{Под стрелкой наведена буква $\mathbb Q$. Прежние штрихи не отделяются.}
+
+\begin{center}
+\rule[.5ex]{17mm}{.35pt}\enspace$\cdot$\enspace\rule[.5ex]{22mm}{.35pt}
+\end{center}
+
+Будем классиф. над произв. кольцами $A$ (коммут. и с $1$)
+\Unclear{GELFAND-P000460}{universal-verb}{Первое слово читается «Будем».}
+
+\SourceFigure{GELFAND-P000460}{universal-arrow}{Дуга со стрелкой идёт от записи универсального закона к скобке перед «Универсальность».
+[diagram: consult scan]}
+
+любой ряд $F(x,y)$ над $\mathbb Q$-мод. $A$ получ. из такого заменой коэффициентов их гомоморфными образами при гомом. кольца
+$\mathbb Q[g_i]$ в $A$, перевод. $g_i$ в коэфф. ряда $g(x)$,
+найденные выше\(\bigr]\)
+\Unclear{GELFAND-P000460}{universal-images}{Окончания обоих слов читаются во множественном числе «гомоморфными образами».}
+

@@ -1,0 +1,141 @@
+\subsection{What entire-function growth does and does not specify}
+\label{audit:entire-data}
+
+\paragraph{The historical question and its limits.}
+After the polynomial formula for \(\chi\), P000568 asks
+\ru{Пусть \(R\) и \(P\) --- целые ф-и 1-го пор. роста. Тогда им соотв. потенциалы \(u(x)\). Какие?}
+and adds \ru{не обяз. периодических}. The scan confirms the first-order-growth
+wording. The strongest supported historical question is to identify the potentials
+represented by an entire-function replacement of the finite-gap formula. The
+notebook supplies no normalization, admissible zeros, realness assumption, or
+global regularity requirement. It therefore does not determine a unique global
+inverse problem. This subsection is a verification annotation to that Class F
+item, not a declaration that an unformulated open problem has been solved.
+
+\paragraph{Precisely relevant later results.}
+\citet[Thm.~5.1, pp.~535--536]{marchenko1975characterization} characterize
+periodic and antiperiodic spectra for a real periodic Hill operator in specified
+Sobolev classes using a normalized slit-domain conformal map and weighted
+conditions on its slit heights. Their paper was received on 3 February 1975.
+That theorem has a specified period, reality, normalization and spectral
+asymptotics, absent from the seminar question. \citet[Hypotheses~3.1--3.2,
+Eq.~(3.14), Lemmas~3.3--3.5]{gesztesy1999infinite}, first circulated on
+7 July 1999, develop an infinite-genus construction with convergent spectral
+products, an assumed Green-function identity and controlled high-energy
+asymptotics. These are concrete realizations of the direction, not an exact
+match to arbitrary entire functions of order one. No evidence found in these
+sources establishes why Gelfand did not specify or pursue this formulation.
+
+\paragraph{A bounded reconstruction that can be settled.}
+Let \(I\subset\mathbb R\) be a nonempty open interval and \(U\subset\mathbb C\)
+a connected open set. Suppose \(P(E,x)\ne0\) on \(U\times I\), is twice
+continuously differentiable in \(x\), and is holomorphic in \(E\), with its first
+two \(x\)-derivatives continuous. Let \(R\) be holomorphic on \(U\), and suppose
+there is a holomorphic \(y\) on \(U\) such that \(y^2=R\). For example one can
+choose a simply connected region avoiding the zeros of \(R\). All conclusions
+below are local in this specified region; entire functions are a special case.
+
+\begin{proposition}[Local compatibility criterion \ours]
+\label{prop:entire-compatibility}
+Define
+\[
+ Q(E,x)=E-\frac{R(E)}{P(E,x)^2}
+       +\frac{P_{xx}(E,x)}{2P(E,x)}
+       -\frac{P_x(E,x)^2}{4P(E,x)^2}.
+\]
+There is a continuous potential \(u:I\to\mathbb C\), independent of \(E\),
+for which
+\[
+ \chi(E,x)=\frac{y(E)}{P(E,x)}-\frac{iP_x(E,x)}{2P(E,x)}
+ \quad\hbox{satisfies}\quad
+ -i\chi_x+\chi^2+u-E=0
+\]
+for every \((E,x)\in U\times I\), if and only if \(Q(E,x)\) is independent
+of \(E\). In that case \(u(x)=Q(E,x)\), equivalently
+\begin{equation}
+ R(E)=(E-u(x))P(E,x)^2+\tfrac12P(E,x)P_{xx}(E,x)
+                    -\tfrac14P_x(E,x)^2.
+ \label{eq:entire-identity}
+\end{equation}
+For \(x_0\in I\), the nonzero function
+\[
+ \psi(E,x)=\exp\!\left(\int_{x_0}^{x}
+       \left(\frac{i y(E)}{P(E,s)}+\frac{P_x(E,s)}{2P(E,s)}\right)\,ds\right)
+\]
+satisfies \(-\psi_{xx}+u\psi=E\psi\) and \(\psi(E,x_0)=1\).
+\end{proposition}
+\begin{proof}
+Put \(a=y/P\) and \(b=-P_x/(2P)\), so that \(\chi=a+ib\).
+Because \(y\) is independent of \(x\), \(a_x=2ab\). Also
+\(b_x=-P_{xx}/(2P)+P_x^2/(2P^2)\). Thus
+\[
+ -i\chi_x+\chi^2
+   =a^2-b^2+b_x+i(2ab-a_x)
+   =\frac{R}{P^2}-\frac{P_{xx}}{2P}+\frac{P_x^2}{4P^2}.
+\]
+The residual is exactly \(u-Q\). This proves both implications and
+\eqref{eq:entire-identity}. The exponential is defined without selecting a
+square root of \(P\). Its logarithmic derivative is \(i\chi\), so
+\(\psi_{xx}/\psi=i\chi_x-\chi^2\); the differential equation follows.
+\end{proof}
+
+Equation \eqref{eq:entire-identity} is the classical squared-eigenfunction
+identity; compare \citet[Eq.~(2.10)]{gesztesy1999infinite}. The proof above is
+included to fix the signs in the notebook's convention, not to claim novelty.
+
+\begin{proposition}[Invariance under a common factor \ours]
+Suppose the compatibility criterion holds. For a holomorphic function
+\(h(E)\ne0\) independent of \(x\), set
+\(\widetilde P=hP\), \(\widetilde R=h^2R\), and \(\widetilde y=hy\).
+Then \(\widetilde\chi=\chi\), \(\widetilde Q=Q\), and the potential is unchanged.
+\end{proposition}
+\begin{proof}
+In the quotients \(\widetilde y/\widetilde P\),
+\(\widetilde P_x/\widetilde P\), \(\widetilde P_{xx}/\widetilde P\), and
+\(\widetilde R/\widetilde P^2\), all factors \(h\) cancel. This proves each
+assertion. The nonvanishing hypothesis prevents spurious domain exclusions;
+common zeros would require an additional removability discussion.
+\end{proof}
+
+\begin{example}[Two entire pairs of order one \ours]
+The pair \(P(E,x)=R(E)=e^E\) consists of nonvanishing entire functions of
+order exactly one, constant in \(x\). It gives
+\(Q(E,x)=E-e^{-E}\), which is not independent of \(E\); therefore it defines
+no potential through the notebook's displayed formula. In contrast,
+\(P(E,x)=e^E\), \(R(E)=Ee^{2E}\) gives \(Q=0\), the free potential. Here
+\(y=e^E\sqrt E\) can be chosen on any simply connected region avoiding zero,
+and \(\psi=e^{i\sqrt E(x-x_0)}\). Both entire pairs meet the stated growth
+condition. In the second example the exponential factors cancel: no infinite
+spectral genus is created. More generally multiplying finite polynomial data
+by \(h=e^{E^m}\), \(m\ge1\), changes growth without changing the potential.
+Thus growth order alone neither guarantees compatibility nor specifies a
+new class of potentials.
+\end{example}
+
+\paragraph{Independent second check.}
+For any two solutions \(f,g\) of \(v''=(u-E)v\), put \(P=fg\) and
+\(W=fg'-f'g\). Direct differentiation, independent of the Riccati substitution,
+gives
+\[
+ (E-u)P^2+\tfrac12PP''-\tfrac14(P')^2=-\tfrac14W^2,
+ \qquad W'=0.
+\]
+This rederives the same identity with \(R=-W^2/4\). The exact-polynomial
+program \texttt{code/check\_spectral\_compatibility.py} verifies both derivations
+and common-factor invariance over the rational numbers. A sign-sensitive
+nonconstant check uses \(P=E+x^{-2}\), \(R=E^3\), \(u=2x^{-2}\) on \(x>0\)
+away from zeros of \(P\); symbolic expansion and sixteen rational substitutions
+give the same potential. \oursComputed{} The complete output is included. All
+checks passed; the proof, rather than the finite substitutions, establishes the
+general assertions.
+
+\paragraph{Remaining scope.}
+The local criterion does not characterize global real, nonsingular,
+self-adjoint or almost-periodic realizations. A definite further problem must
+choose the spectral variable (\(E\) or \(\sqrt E\)), remove common factors,
+specify zero/divisor and reality conditions, and control high-energy behaviour
+and continuation through zeros of \(P\). A further bounded research run could
+test a chosen normalized family against those conditions. The present evidence
+does not select such a family, so no new open conjecture is entered in the
+problem index and no claim is made that the historical programme remains open
+in every precise interpretation.

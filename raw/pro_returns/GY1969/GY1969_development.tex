@@ -1,0 +1,632 @@
+\subsection{Interval support for a current group: a precise positive construction}
+\label{dev:current-support}
+
+\paragraph{The question and its category.}
+On P000291, item 1969-180.2, Gelfand asks for an irreducible unitary
+representation of an $SU(2)$ current group whose support is an interval
+(problem GP-1969-02). The displayed matrices are functions of
+$t\in[0,1]$. The notes do not specify their regularity, the topology on
+the group, or the continuity required of a representation. Support is
+defined through the implication that a current equal to the identity
+near a closed set acts trivially. These omissions prevent a single
+category-independent answer. They are not silently repaired here.
+
+We give a complete construction for
+\[
+ G^1=C^1([0,1],SU(2)),\qquad
+ G^\infty=C^\infty([0,1],SU(2)),
+\]
+with their usual $C^1$ and smooth topologies, respectively, and
+\emph{strongly continuous} unitary representations. For either group,
+say that a closed set $F$ carries a representation $\pi$ if
+\[
+ g=1\text{ on a neighbourhood of }F\quad\Longrightarrow\quad\pi(g)=1.
+\]
+Our representation has no proper closed carrying set, so its support in
+this precise sense is $[0,1]$. Its restriction to $G^\infty$ remains
+irreducible. It is not strongly continuous for the uniform topology.
+This is a bounded contribution to the explicitly reconstructed question,
+not a classification of all representations, a claim of historical
+priority, or an identification of an unstated topology in the notebook.
+
+\paragraph{What the checked literature establishes.}
+For operator-norm-continuous irreducible representations of the smooth
+current group, the finite-evaluation classification of
+\citet[arXiv version, Thms.~4.11 and 4.15]{janssensneeb2015norm}
+gives finite support. The preprint circulated on 11 February 2013;
+online publication was in December 2014 and the journal issue in 2015.
+The group theorem is numbered 4.16 in the published version.
+Ismagilov's energy-representation irreducibility theorem requires base
+dimension at least five \citep[\S\S1--2]{ismagilov1976unitary}; his
+later segment note proves reducibility in dimension one
+\citep[pp.~73--74 in the Russian original]{ismagilov1981segment}.
+Neither statement rules out the strongly continuous representation
+constructed below. Positive-energy localization theorems impose
+additional projective and spacetime-action hypotheses
+\citep[Introduction]{janssensneeb2024positive}.
+
+These sources document why the continuity and representation class
+matter. They do not document why this particular seminar question was
+abandoned, nor justify saying that all strongly continuous interval
+representations have now been classified. The search included the
+original Math-Net notes, the norm-continuous classification and its
+references, and the 2024 localization monograph. No historical claim
+that the following construction is new is made.
+
+\begin{lemma}[Uniform smooth interpolation at finitely many points]\ours{}
+\label{lem:interpolation}
+Let $s_1,\ldots,s_q$ be distinct points of $(0,1)$ and set
+\[
+ r=\frac13\min\bigl(\{s_i,1-s_i:1\leq i\leq q\}
+       \cup\{|s_i-s_j|:i\ne j\}\bigr),\qquad L=12/r.
+\]
+For any $h_1,\ldots,h_q\in SU(2)$ there is a smooth current $g$,
+equal to $1$ near the endpoints, with $g(s_i)=h_i$ and
+$\|g'\|_\infty\leq L$. The norm is the operator norm on $2\times2$
+matrices. If $q=1$, omit the empty set of pairwise distances.
+\end{lemma}
+
+\begin{proof}
+Every $h_i$ is $\exp X_i$ for a skew-Hermitian traceless matrix $X_i$
+of norm at most $\pi$, by unitary diagonalization of an $SU(2)$ matrix.
+Use the smooth bump
+\[
+ \eta(u)=\begin{cases}
+ \exp\bigl(1-(1-u^2)^{-1}\bigr),&|u|<1,\\
+ 0,&|u|\geq1.
+ \end{cases}
+\]
+It satisfies $\eta(0)=1$ and $\|\eta'\|_\infty<3$: putting
+$v=(1-u^2)^{-1}\geq1$, its derivative has absolute value at most
+$2v^2e^{1-v}\leq8/e<3$. The intervals $(s_i-r,s_i+r)$ are disjoint
+and contained in $(0,1)$. Thus
+\[
+ g(t)=\prod_{i=1}^q\exp\bigl(\eta((t-s_i)/r)X_i\bigr)
+\]
+has at most one nonidentity factor at any point. It has the required
+values, is smooth also at the bump boundaries, and
+$\|g'\|_\infty\leq3\pi/r<12/r$.
+\end{proof}
+
+\begin{lemma}[Dense pairs with an interpolation tail bound]\ours{}
+\label{lem:pairs}
+There are pairwise distinct points $a_n,b_n\in(0,1)$, with
+$\{a_n:n\geq1\}$ dense, such that, writing
+$\epsilon_n=|a_n-b_n|$ and letting $L_N$ be the preceding lemma's
+bound for $a_1,b_1,\ldots,a_N,b_N$,
+\[
+ \sum_n\epsilon_n<\infty,
+ \qquad L_N\sum_{n>N}\epsilon_n\leq 2^{-2N}.
+ \tag{1}\label{eq:pairtail}
+\]
+\end{lemma}
+
+\begin{proof}
+Enumerate a countable basis $J_1,J_2,\ldots$ of nonempty open
+intervals in $(0,1)$. Choose $a_1,b_1\in J_1$ distinct. Inductively
+choose $a_m\in J_m$ outside the preceding finite set, and then
+$b_m\in J_m$, also new, so close to $a_m$ that
+\[
+ 0<\epsilon_m\leq 2^{-m}
+       \min_{1\leq j<m}\frac{2^{-j}}{1+L_j}\quad(m\geq2).
+ \tag{2}\label{eq:pairchoice}
+\]
+All the bounds on the right have already been fixed. Such a choice
+is possible in an open interval, even if those bounds are very small.
+For fixed $N$ and $m>N$, the $j=N$ term gives
+\[
+ \sum_{m>N}\epsilon_m
+ \leq\frac{2^{-N}}{1+L_N}\sum_{m>N}2^{-m}
+ =\frac{2^{-2N}}{1+L_N}.
+\]
+This proves (1) and summability. Meeting every basic interval proves
+density. There is no assumption of a positive separation for the
+infinite point set; separation is used only at each finite stage.
+\end{proof}
+
+\begin{theorem}[An irreducible representation with interval support]\ours{}
+\label{thm:interval-support}
+For either $G^1$ or $G^\infty$ as specified above, there is a
+strongly continuous unitary representation on a separable,
+infinite-dimensional Hilbert space that is irreducible and has support
+$[0,1]$. One representation of $G^1$ has all these properties also
+upon restriction to $G^\infty$.
+\end{theorem}
+
+\begin{proof}
+\emph{The Hilbert space and convergence.}
+Put $H_n=\mathbb C^2\otimes\overline{\mathbb C^2}$ and
+\[
+ \Omega_n=2^{-1/2}(e_1\otimes\bar e_1+e_2\otimes\bar e_2).
+\]
+Here the overline denotes the conjugate Hilbert space and conjugate
+representation. The vector $\Omega_n$ is fixed by
+$h\otimes\bar h$ for every $h\in SU(2)$. Let $H$ be the completion
+of the increasing union $H_1\otimes\cdots\otimes H_N$, embedded at
+the next stage by $v\mapsto v\otimes\Omega_{N+1}$. Write
+$\Omega=\bigotimes_n\Omega_n$. This defines the incomplete tensor
+product directly and makes separability and infinite dimension clear.
+
+For $g\in G^1$ set
+\[
+ U_n(g)=g(a_n)\otimes\overline{g(b_n)},\qquad
+ R_N(g)=\bigotimes_{n\leq N}U_n(g)\otimes1.
+\]
+Diagonal invariance and the fundamental theorem of calculus give
+\[
+ \|U_n(g)\Omega_n-\Omega_n\|
+ \leq\|g(a_n)-g(b_n)\|\leq\|g'\|_\infty\epsilon_n.
+ \tag{3}\label{eq:vacuum-bound}
+\]
+For a vector $v$ with excitations only in its first $M$ factors,
+telescoping a tensor product of unit vectors gives, for $P>Q\geq M$,
+\[
+ \|R_P(g)v-R_Q(g)v\|
+ \leq\|v\|\,\|g'\|_\infty\sum_{Q<n\leq P}\epsilon_n.
+\]
+The same estimate holds for an arbitrary vector of the first $M$
+tensor factors, since that head factors from the vacuum tail.
+Summability therefore gives a strong limit $\pi(g)$ first on this
+dense union and then on all of $H$, because all $R_N(g)$ have norm
+one. Finite products satisfy $R_N(gh)=R_N(g)R_N(h)$.
+Strong limits of uniformly bounded products preserve this identity.
+Applying it also to $g^{-1}$ proves that $\pi(g)$ is unitary and
+$\pi$ is a representation.
+
+\emph{Strong continuity.}
+For a vector supported in the first $M$ factors,
+\[
+ \|\pi(g)v-R_M(g)v\|
+ \leq\|v\|\,\|g'\|_\infty\sum_{n>M}\epsilon_n.
+ \tag{4}\label{eq:headtail}
+\]
+As $g\to1$ in $C^1$, the finite head tends to the identity and
+$\|g'\|_\infty\to0$. Thus $\pi(g)v\to v$ on the dense union;
+unitarity extends this to every vector. Continuity at other group
+elements follows from the homomorphism property. The inclusion
+$G^\infty\to G^1$ is continuous, so the restriction is strongly
+continuous as well.
+
+\emph{Irreducibility.}
+Fix $k$ and arbitrary, independently chosen $h_{a_n},h_{b_n}\in SU(2)$
+for $n\leq k$. Consider the local unitary
+\[
+ V=\bigotimes_{n\leq k}
+       (h_{a_n}\otimes\overline{h_{b_n}})\otimes1.
+\]
+For every $N\geq k$, Lemma~\ref{lem:interpolation} supplies a smooth
+$g_N$ taking these prescribed values at the first $2k$ points, and
+the value $1$ at the remaining points through $2N$, with
+$\|g_N'\|_\infty\leq L_N$. For $v$ supported in the first $M$
+factors and $N\geq\max(k,M)$, (4) and (1) give
+\[
+ \|\pi(g_N)v-Vv\|
+ \leq\|v\|L_N\sum_{n>N}\epsilon_n
+ \leq\|v\|2^{-2N}\longrightarrow0.
+\]
+Hence $V$ is a strong limit of representation operators, already
+from the smooth subgroup. Any operator commuting with the
+representation commutes with every such $V$.
+
+The complex linear span of $SU(2)$ in $M_2(\mathbb C)$ is all of
+$M_2(\mathbb C)$: the identity and $i$ times the three Pauli matrices
+belong to $SU(2)$ and span it. Independent choices at $a_n,b_n$
+therefore span $B(H_n)$, and independent choices through $k$ span
+the full matrix algebra on the first $k$ factors. If $T$ commutes
+with all these local algebras, it commutes with the projections
+\[
+ Q_N=\bigotimes_{n\leq N}|\Omega_n\rangle\langle\Omega_n|\otimes1.
+\]
+On the dense union these projections converge strongly to the
+rank-one projection onto $\mathbb C\Omega$; hence they do so on
+$H$. Consequently $T\Omega=c\Omega$. The vectors $A\Omega$ for
+local matrices $A$ span a dense subspace, and
+$TA\Omega=AT\Omega=cA\Omega$. Thus $T=c1$. This proves
+irreducibility for both groups.
+
+\emph{Support.}
+Let $F$ be a proper closed subset of $[0,1]$. Its complement
+contains an open interval with closure disjoint from $F$ and lying
+in $(0,1)$. Density supplies $a_n$ in that interval. Choose a smooth
+bump current $g$, equal to $1$ outside the interval, with $g(a_n)$
+noncentral. On the $n$th local matrix algebra, conjugation by
+$\pi(g)$ is exactly conjugation by $U_n(g)$: this is true for
+$R_N(g)$ when $N\geq n$ and passes to the strong limits of the
+unitaries and their inverses. The matrix $U_n(g)$ is not scalar.
+Indeed, if a tensor product of two invertible matrices is scalar,
+conjugating $X\otimes1$ shows that its first matrix commutes with
+every $X$, so that matrix is scalar. Here $g(a_n)$ is noncentral.
+It follows that $\pi(g)\ne1$, although $g=1$ near $F$. No proper
+closed set carries $\pi$; $[0,1]$ does. Notice that this argument
+does not try to isolate one point from the infinite dense set.
+\end{proof}
+
+\begin{proposition}[The uniform-topology obstruction]\ours{}
+\label{prop:not-czero}
+The representation in Theorem~\ref{thm:interval-support}, even
+restricted to smooth currents, is not strongly continuous for the
+$C^0$ topology. In particular it has no strongly continuous
+extension to $C([0,1],SU(2))$ with its uniform topology.
+\end{proposition}
+
+\begin{proof}
+For each $N$ choose a smooth $f_N:[0,1]\to[0,1]$ with
+$f_N(a_j)=1$ and $f_N(b_j)=0$ for $j\leq N$. Disjoint bumps around
+the finitely many $a_j$, avoiding the finitely many $b_j$, provide
+such a function. With $\sigma_3=\operatorname{diag}(1,-1)$, put
+\[
+ h_N(t)=\exp(iN^{-1/2}f_N(t)\sigma_3).
+\]
+Then $\|h_N-1\|_\infty\leq N^{-1/2}$. The first $N$ vacuum
+coefficients are all $\cos(N^{-1/2})$, since
+\[
+ \langle(g(a)\otimes\overline{g(b)})\Omega_n,\Omega_n\rangle
+ =\tfrac12\operatorname{Tr}(g(a)g(b)^*).
+\]
+Every remaining coefficient has absolute value at most one.
+Taking limits of the finite tensor products yields
+\[
+ |\langle\pi(h_N)\Omega,\Omega\rangle|
+ \leq\cos(N^{-1/2})^N\longrightarrow e^{-1/2}<1.
+\]
+Strong convergence $\pi(h_N)\Omega\to\Omega$ is impossible.
+An extension continuous for the uniform topology would imply just
+that convergence on this sequence.
+\end{proof}
+
+\begin{corollary}[Exact support in the norm-continuous class]\ours{}
+For $G^\infty$, an irreducible operator-norm-continuous unitary
+representation has finite support; conversely, every finite subset
+occurs as the support of such a representation. An interval of
+positive length cannot occur in this class.
+\end{corollary}
+
+\begin{proof}
+The smooth mapping group is connected: $g(t)\mapsto g(st)$ joins
+it to its constant subgroup, and $SU(2)$ is connected.
+The cited classification therefore expresses an irreducible
+norm-continuous representation as a finite tensor product
+$\bigotimes_{x\in S}\rho_x(g(x))$, omitting trivial factors.
+The finite set $S$ carries it. If a closed $F$ omits $x\in S$,
+choose a smooth current supported in a small neighbourhood of $x$
+disjoint from $F$ and from $S\setminus\{x\}$, taking at $x$ a value
+on which the nontrivial $\rho_x$ is not the identity. It acts
+nontrivially, so $F$ cannot carry the representation. Thus the
+support is exactly $S$. Conversely, independent finite
+interpolation and irreducibility of each factor show that the
+tensor product of nontrivial finite-dimensional irreducible
+$SU(2)$ representations at distinct points is irreducible and
+has exactly that support. For $S=\varnothing$ use the trivial
+one-dimensional representation.
+\end{proof}
+
+\paragraph{Independent check and remaining obstruction.}
+The proof was checked by a separate reader and by re-deriving its
+two potentially delicate steps. The tail estimate is selected
+\emph{after} every finite interpolation constant is fixed, so very
+small pair separations do not create a circular bound. Irreducibility
+uses approximate realization of finite local matrix algebras, not
+impossible exact separation of the dense evaluation set. Support
+was checked separately through conjugation of a local algebra.
+The $C^0$ obstruction supplies an independent diagnostic that the
+topology cannot be weakened without changing the conclusion.
+No finite computation is substituted for these infinite-dimensional
+arguments.
+
+What remains unresolved here is a classification of strongly
+continuous irreducible representations, the identification of the
+notebook's intended category, and the extent to which arbitrary
+paired sequences yield equivalent representations. A precise next
+question for this construction is: for distinct dense pairs
+$(a_n,b_n)$ with $\sum|a_n-b_n|<\infty$, characterize when the
+corresponding representation is irreducible, without imposing
+the sufficient interpolation-tail condition (1). A further bounded
+run could compare that condition with intrinsic continuity and
+commutant criteria in the infinite-tensor-product literature,
+and trace the historical priority of paired evaluation constructions.
+It should not promise a classification from the present sufficient
+criterion. The status of GP-1969-02 is therefore a positive answer
+in the explicit $C^1$/strong category and a negative answer in the
+smooth/operator-norm category, with the archival ambiguity retained.
+
+\subsection{Four subspaces: an elementary proof of the requested deformation}
+\label{dev:four-subspaces}
+
+On P000317, item 1970-198.12 asks for a simple proof that
+$S(5,2)\oplus S(1,2)$ deforms to $S(3,2)\oplus S(3,2)$.
+The canonical systems are identified in
+\citet[\S2]{gelfandponomarev1971quadruples}, received on
+21 October 1970 and published in 1971. The original announcement
+was read, as were the later normal forms reproduced in
+\citet[\S9]{enomotowatatani2004subspaces}. Those checked texts
+identify the systems but do not establish the exact requested
+deformation in a located passage. The publication match is therefore
+partial. The bounded mathematical question is answered below;
+this is not a claim that it remained open after the seminar or
+that the argument is new.
+
+\paragraph{Precise formulation.}
+Work over $\mathbb C$ with ordered quadruples of subspaces and
+simultaneous change of basis in the ambient vector space. The
+source's positive-defect notation here means
+$\sum_i\dim E_i-2\dim P=2$ for each indecomposable summand;
+the notebook's earlier displayed definition has the opposite sign.
+Define $S(1,2)$ as four copies of $\mathbb C$ in $\mathbb C$.
+For $R=S(3,2)$ take ambient basis $e_1,e_2,f_1$ and
+\[
+ \begin{aligned}
+ E_1&=\langle e_1,e_2\rangle,&
+ E_2&=\langle f_1,e_2\rangle,\\
+ E_3&=\langle e_1,e_2+f_1\rangle,&
+ E_4&=\langle f_1,e_1+e_2\rangle.
+ \end{aligned}
+\]
+For $S(5,2)$ use basis $e_1,e_2,e_3,f_1,f_2$ and
+\[
+ \begin{aligned}
+ E_1&=\langle e_1,e_2,e_3\rangle,&
+ E_2&=\langle f_1,f_2,e_3\rangle,\\
+ E_3&=\langle e_1,e_2+f_1,e_3+f_2\rangle,&
+ E_4&=\langle f_1,e_1+f_2,e_2+e_3\rangle.
+ \end{aligned}
+\]
+Both direct sums in the question consequently define points of
+$X=\operatorname{Gr}(4,6)^4$. We prove the stronger statement
+that $R\oplus R$ is the unique dense open orbit in $X$; thus every
+point of $X$, including the displayed special sum, admits an
+analytic deformation to that orbit. The field, topology and
+ordered-subspace convention are explicit reconstruction choices.
+
+\begin{lemma}[Endomorphisms of the three-dimensional system]\ours{}
+Every endomorphism of $R$ preserving its four subspaces is scalar.
+\end{lemma}
+
+\begin{proof}
+In the dual basis the four annihilator lines are represented by
+\[
+ \ell_1=(0,0,1),\quad\ell_2=(1,0,0),\quad
+ \ell_3=(0,1,-1),\quad\ell_4=(1,-1,0).
+\]
+The first three form a basis, and
+$\ell_4=-\ell_1+\ell_2-\ell_3$ has all three coefficients nonzero.
+An endomorphism preserving each primal plane has transpose
+preserving these four dual lines. It is diagonal in the first
+three lines, and preserving the fourth forces all three diagonal
+entries to agree. This proves the assertion, including
+noninvertible endomorphisms.
+\end{proof}
+
+\begin{theorem}[The notebook's deformation]\ours{}
+The $\mathrm{GL}_6(\mathbb C)$ orbit of $R\oplus R$ is open and
+dense in $X$. There is a holomorphic one-parameter family of ordered
+quadruples $x(t)\in X$, defined near $0$, with
+$x(0)=S(5,2)\oplus S(1,2)$ and $x(t)\cong R\oplus R$ for all
+sufficiently small nonzero $t$.
+\end{theorem}
+
+\begin{proof}
+An endomorphism of a direct sum is a block matrix of morphisms
+between its summands. The lemma gives
+$\operatorname{End}(R\oplus R)=M_2(\mathbb C)$, of dimension four.
+Its invertible elements form the stabilizer, also of dimension
+four. The orbit therefore has dimension $36-4=32$. Meanwhile
+$\dim X=4\cdot4(6-4)=32$, and $X$ is irreducible. An algebraic
+group orbit is locally closed. A locally closed subset of full
+dimension in this irreducible variety has closure $X$ and is open
+in that closure; the orbit is consequently open dense. Two
+disjoint open dense orbits in an irreducible variety cannot exist.
+
+For completeness, the closure statement gives an actual
+one-parameter deformation, not just a dimension comparison.
+Choose a product of standard affine Grassmann charts through
+$x(0)$; in graph coordinates it is $\mathbb C^{32}$ with $x(0)=0$.
+The complement of the open orbit is a proper closed algebraic
+subset of this chart. Choose a nonzero polynomial $f$ vanishing
+on that complement and a point $v$ with $f(v)\ne0$.
+Then $f(tv)$ is a nonzero one-variable polynomial, so for every
+sufficiently small $t\ne0$ it is nonzero. The graph coordinates
+$tv$ give the asserted holomorphic family. Finally, the common
+intersection of the four subspaces is one-dimensional for
+$S(5,2)\oplus S(1,2)$ and zero-dimensional for $R\oplus R$;
+the special fibre is genuinely a different orbit.
+\end{proof}
+
+\begin{example}[Independent endomorphism calculation]\oursComputed{}
+The script \nolinkurl{code/verify_four_subspaces.py} imposes
+$\ell^T A v=0$ for every subspace basis vector $v$ and every
+annihilating covector $\ell$, then row-reduces the resulting
+linear system over $\mathbb Q$. It independently finds
+\[
+\begin{array}{c|rrrrr}
+\text{system}&S(1,2)&S(3,2)&S(5,2)&S(5,2)\oplus S(1,2)&R\oplus R\\
+\hline
+\dim\operatorname{End}&1&1&1&7&4
+\end{array}
+\]
+The last two orbit dimensions are $29$ and $32$. The output is
+\nolinkurl{output/verify_four_subspaces.json}. This calculation
+checks the normal forms and stabilizer dimensions independently
+of the projective-frame proof. The first two nontrivial single
+summands have full-dimensional orbits in their own products of
+Grassmannians, confirming the source's stability claim for these
+particular summands, without endorsing its separate false slogan
+about every parameter-free indecomposable.
+\end{example}
+
+The proof was independently reviewed through both the projective
+frame and the orbit-dimension argument. No obstruction remains
+for this particular deformation over $\mathbb C$. What remains
+unverified is the exact historical publication of the requested
+elementary proof, not a mathematical openness claim. One further
+bounded run could locate that attribution or produce a convenient
+closed formula for a chosen one-parameter change of bases;
+neither is needed for the existence theorem proved here.
+
+\subsection{Audit annotation: commuting quantum marginals need not have product eigenbases}
+\label{dev:bell}
+
+This section corrects item 1970-197.2 on P000312--P000313. It is an
+annotation of a false literal claim, not a newly discovered open
+problem selected from class C or D. The notes first discuss the
+simple-spectrum situation, where a matrix commuting with all
+one-site marginals is diagonal in their uniquely determined tensor
+eigenbasis, and then assert that a suitable tensor eigenbasis can
+always be chosen in the degenerate case. The following counterexample
+checks the stronger condition that \emph{all} finite marginals
+commute after embedding in their common tensor algebra.
+
+\begin{proposition}[A faithful consistent Bell-block counterexample]\ours{}
+For each $0<p<1$ there is a state on the qubit chain indexed by
+$\mathbb Z$ whose finite density matrices are strictly positive,
+consistent under partial trace, and pairwise commuting when
+embedded into a common finite tensor algebra, but whose two-site
+density matrix on a designated adjacent pair is not diagonal in
+any product of one-site orthonormal bases.
+\end{proposition}
+
+\begin{proof}
+Partition the sites into pairs $\{2k,2k+1\}$ and put on each pair
+\[
+ D_p=p|\Phi\rangle\langle\Phi|+\frac{1-p}{4}1_4,
+ \qquad \Phi=\frac{|00\rangle+|11\rangle}{\sqrt2}.
+\]
+Its eigenvalues are $(1+3p)/4$ on $\Phi$ and $(1-p)/4$ on its
+three-dimensional orthogonal complement. Thus it is positive
+definite and has trace one. Each one-site partial trace is $1_2/2$.
+For a finite set $I\subset\mathbb Z$, define $\rho_I$ as the
+tensor product of $D_p$ for complete pairs in $I$ and $1_2/2$ for
+single sites of partially included pairs. Factors are reordered
+into site order by the canonical tensor permutation.
+
+Tracing out one member of a complete pair replaces $D_p$ by
+$1_2/2$; tracing out the remaining member gives one. It follows
+that $\operatorname{Tr}_{I\setminus J}\rho_I=\rho_J$ for every
+$J\subset I$. These normalized positive consistent functionals
+define a state on the increasing union of local matrix algebras;
+their norm is one, so the state extends to its norm completion.
+Every finite density matrix is strictly positive.
+
+For finite $I,J$, embed $\rho_I$ and $\rho_J$ in the tensor
+algebra on $I\cup J$ by tensoring with identity operators. On each
+fixed two-site block, each embedded matrix is either $D_p$ or a
+scalar multiple of the identity (including the case with only one
+site in the union). These block factors commute, hence so do the
+two full matrices. This checks every finite $I,J$, not just nested
+intervals.
+
+If $D_p$ were diagonal in a product of one-site orthonormal bases,
+its simple eigenvalue $(1+3p)/4$ would have a product eigenvector.
+Its eigenspace is instead $\mathbb C\Phi$. A two-qubit product
+vector has a rank-one coefficient matrix, whereas $\Phi$ has
+coefficient matrix $2^{-1/2}1_2$ of determinant $1/2$. Thus
+$\Phi$ is not a product vector, a contradiction.
+\end{proof}
+
+The example has period two. No one-site translation-invariance
+hypothesis is stated at this point in the notebook, and none is
+needed for the claim being refuted. Strict positivity shows that
+zero eigenvalues are not responsible. The obstruction is
+degeneracy of the one-site marginals, which leaves room for a
+nonproduct eigenvector of a joint density matrix.
+
+\begin{proposition}[The valid simple-spectrum repair]\ours{}
+Let $\rho$ be a density matrix on
+$H_1\otimes\cdots\otimes H_m$, with finite-dimensional $H_i$.
+Suppose that each one-site marginal $\rho_i$ has simple spectrum
+and that $\rho$ commutes with each embedded $\rho_i$. Then $\rho$
+is diagonal in the tensor product of the one-site eigenbases.
+\end{proposition}
+
+\begin{proof}
+For a simple-spectrum self-adjoint matrix, each spectral projection
+is a polynomial in that matrix by Lagrange interpolation on its
+distinct eigenvalues. Thus $\rho$ commutes with every one-site
+rank-one spectral projection and with every product of these
+projections. Those products are the rank-one projections of the
+tensor eigenbasis, so each corresponding line is invariant under
+$\rho$. This is the desired diagonalization.
+\end{proof}
+
+\begin{example}[Independent exact finite checks]\oursComputed{}
+The file \nolinkurl{code/verify_annotations.py} uses rational
+arithmetic from the Python standard library. On four sites it
+computes every one of the $16$ subset marginals by an explicit
+basis definition of partial trace, independently compares them
+with the block formula in the proof, and checks all $256$ ordered
+commutators after embedding. It repeats the entire calculation
+for $p=1/2$ and $p=2/3$. Both runs pass exactly. The first parameter
+gives spectrum $5/8,1/8,1/8,1/8$, and the second gives
+$3/4,1/12,1/12,1/12$. As an additional diagnostic, the partial
+transpose has a negative eigenvalue $-1/8$ and $-1/4$, respectively.
+The full output is \nolinkurl{output/verify_annotations.json}.
+The infinite-chain conclusion follows from the block proof above;
+four-site computations are an independent check of its algebra,
+not evidence substituted for an all-volume theorem.
+\end{example}
+
+\subsection{Audit annotation: the product uncertainty question and wavelet scaling}
+\label{dev:wavelet}
+
+On P000358 the general orthogonal-system question asks for a bound
+on the \emph{product} $\delta_x\delta_p$; it is distinct from the
+proposed Gram--Schmidt construction from a coherent-state lattice.
+The item and GP-1970-59 retain that distinction. This is a class-B
+historical resolution, not an open problem manufactured for
+development. Meyer's Schwartz orthonormal wavelet construction
+\citep[\S2, Thm.~1]{meyer1987uncertainty} already gives the
+following elementary implication. The lecture was delivered in
+February 1986 and published in 1987.
+
+\begin{proposition}[Uniform uncertainty products from a Schwartz wavelet]\ours{}
+Let $\psi\in\mathcal S(\mathbb R)$ have norm one and suppose that
+\[
+ \psi_{j,k}(x)=2^{j/2}\psi(2^jx-k),\qquad j,k\in\mathbb Z,
+\]
+is an orthonormal basis of $L^2(\mathbb R)$. With
+$Qf=xf$, $Pf=-if'$ and $\hbar=1$, let
+$\Delta_f A=\|(A-\langle Af,f\rangle)f\|$ for a normalized vector
+in the domain of $A$. Then
+\[
+ \Delta_{\psi_{j,k}}Q=2^{-j}\Delta_\psi Q,
+ \qquad\Delta_{\psi_{j,k}}P=2^j\Delta_\psi P,
+ \qquad
+ \Delta_{\psi_{j,k}}Q\,\Delta_{\psi_{j,k}}P
+ =\Delta_\psi Q\,\Delta_\psi P<\infty.
+\]
+\end{proposition}
+
+\begin{proof}
+All vectors are Schwartz, so the required first and second moments
+exist. In the position integrals substitute $y=2^jx-k$ to obtain
+\[
+ \langle Q\psi_{j,k},\psi_{j,k}\rangle
+ =2^{-j}(\langle Q\psi,\psi\rangle+k),
+\]
+and the centered second moment is multiplied by $2^{-2j}$.
+Differentiation gives
+$P\psi_{j,k}(x)=2^{3j/2}(P\psi)(2^jx-k)$, so the momentum mean is
+multiplied by $2^j$ and its centered second moment by $2^{2j}$.
+Taking square roots proves the identities.
+\end{proof}
+
+As a second check, the dilation--translation unitary
+$U_{j,k}f(x)=2^{j/2}f(2^jx-k)$ satisfies on Schwartz functions
+\[
+ U_{j,k}^*QU_{j,k}=2^{-j}(Q+k),\qquad
+ U_{j,k}^*PU_{j,k}=2^jP.
+\]
+These conjugation identities reproduce the variance calculation
+without repeating the moment integrals. They also show its exact
+limitation: neither individual deviation stays bounded as
+$j\to\pm\infty$.
+
+Bourgain proved the stronger existence of unrestricted orthonormal
+bases with both centered second moments uniformly bounded
+\citep[main theorem; IHES preprint, November 1986]{bourgain1988uncertainty}.
+The journal paper appeared in 1988. The distinction between such
+bases, regular Gabor systems, and higher-moment obstructions is
+explicit in \citet[pp.~115--116 and Thm.~1.1]{grochenigmalinnikova2013localization}.
+Neither the wavelet argument nor that general existence statement
+proves the notebook's particular Gram--Schmidt procedure works in
+an unspecified ordering. The chapter accordingly separates the
+settled existence question from that incompletely specified method.

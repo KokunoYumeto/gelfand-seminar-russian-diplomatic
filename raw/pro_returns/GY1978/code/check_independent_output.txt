@@ -1,0 +1,39 @@
+SPIN-ONE: independent permutation/contraction representation
+X eigenvalues (multiplicity): {2: 1, -1: 5, 1: 3}
+C[001,212] = t*(t - 1)*(t + 1)
+t = -3 witness = -24
+t = -2 witness = -6
+t = -1 witness = 0
+t = 0 witness = 0
+t = 1 witness = 0
+t = 2 witness = 6
+t = 3 witness = 24
+For arbitrary K23-K12 this entry is zero: first and third site both change.
+At notebook t=-2 the witness is -6: regular difference-form R is excluded.
+Zeros at t=-1,0,1 alone are not a sufficiency assertion.
+
+CONTACT BRACKET: nested convention [f,[g,h]] + cyclic
+Y=dy+x dz: [1, y, -2*x] Jacobi(x,y,z)= 2
+Y=dy-x dz: [1, y, 0] Jacobi(x,y,z)= 0
+Three distinct polynomial triples checked: plus defect=2 det(gradients), minus defect=0.
+
+GAUSSIAN TAIL: exact symbolic coefficient checks
+c_n for n=0..6 in e^(-x^2)/(2x) sum c_n x^(-2n): [1, -1/2, 3/4, -15/8, 105/16, -945/32, 10395/64]
+Truncated ODE residual equals (-1)^N (2N-1)!!/(2^N x^(2N)), N=1..8.
+x= 1.0 N={1,2,3,5,8}: signed next-term bounds verified at 80 digits.
+x= 2.0 N={1,2,3,5,8}: signed next-term bounds verified at 80 digits.
+x= 4.0 N={1,2,3,5,8}: signed next-term bounds verified at 80 digits.
+x= 7.5 N={1,2,3,5,8}: signed next-term bounds verified at 80 digits.
+
+AREA COUNTEREXAMPLE: exact boundary flux
+Oriented coordinate areas: {(0, 1): pi, (0, 2): 0, (0, 3): 0, (1, 2): 0, (1, 3): 0, (2, 3): 0}
+Integral of xy dz: -pi*epsilon
+Calibrated lower bound on spanning area: pi*sqrt(epsilon**2 + 1)
+Skew-form characteristic polynomial: lambda^2(lambda^2+1+delta^2(x^2+y^2)).
+For every nonzero real epsilon this exceeds pi; proof of comass and clipping is in the chapter.
+
+PERIOD-THREE LIE BRACKET: independent two-by-two loop representation
+All 625 ordered pairs with indices -12..12 obey the notebook residue rule.
+Proof for all indices reduces to the nine residue-class pairs and exponent addition.
+Evaluation z=1 has a nonzero proper ideal; the loop algebra is not ungraded simple.
+All exact assertions passed; numerical checks are finite corroboration only.

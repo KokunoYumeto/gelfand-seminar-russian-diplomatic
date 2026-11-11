@@ -1,0 +1,70 @@
+{
+  "neumann": {
+    "literal_jacobi_counterexample": "Jacobi(M1,p1,p2)=(a3-a2) M2, so the printed second table is not Poisson",
+    "literal_vector_fields": "printed P2 d(p^2/2) = -P1 dH, checked symbolically",
+    "repair": "mixed entry epsilon_ijk a_j p_k and pp entry -epsilon_ijk M_k",
+    "repair_jacobi": "all 20 coordinate triples pass, also for the pencil P1+u Q",
+    "repair_vector_fields": "Q d(p^2/2)=P1 dH, checked independently against cross products",
+    "cross_product": "pdot=M cross p; on p^2=1 and M.p=0, M=p cross pdot"
+  },
+  "kerov": {
+    "tested_r": "1 through 7 (product 2 through 7)",
+    "recurrence_sum_product_limits": "all exact rational identities pass",
+    "general_product_derivation": "Cancellation of (q^(r-1)-1)/(q^r-1) against W_(-(r-1)) leaves q/(q+1)^2",
+    "literal_counterexample": "q=2, r=2 gives W2 W(-1)=2/9 rather than 1"
+  },
+  "worked_schubert": {
+    "identity": "partial2 partial1 partial2(x1^7 x2^3)=h5 h2-h6 h1 in x1,x2,x3",
+    "verification": "operator expansion and independent Jacobi-Trudi determinant agree"
+  },
+  "poincare": {
+    "pairings_tested": {
+      "3": 36,
+      "4": 576
+    },
+    "adjoint_identity": "each simple divided difference on every pair in S3 and S4",
+    "independent_integration": "S3 alternating-coefficient integration agrees with direct partial1 partial2 partial1 and augmentation",
+    "dual_index": "v=w0 u, with Lehmer code complement"
+  },
+  "determinant_exchange": {
+    "samples": [
+      {
+        "d": 2,
+        "lhs": 240,
+        "correct_rhs": 240,
+        "literal_rhs": -119
+      },
+      {
+        "d": 3,
+        "lhs": 10608,
+        "correct_rhs": 10608,
+        "literal_rhs": 2790
+      }
+    ],
+    "independent_check": "full symbolic d=2 identity; general proof is expansion in the y basis"
+  },
+  "interchange": {
+    "horizontal_then_vertical": 1,
+    "vertical_then_horizontal": 0,
+    "independent_reason": "vertical A,B contraction is identically zero because their common edge indices cannot match"
+  },
+  "bimatroid": {
+    "row_and_column_matroids": "both free rank two",
+    "nonzero_singleton_minors": [
+      2,
+      4
+    ]
+  },
+  "rank_one": {
+    "recovered_squared_coordinates": [
+      1,
+      4,
+      9
+    ],
+    "sign_nonuniqueness": "flipping only v1 changes the rank-one matrix but preserves the characteristic polynomial"
+  },
+  "q_frobenius": {
+    "N2_check": "Q2=q s_(2)-s_(1,1), agreeing with Hecke quadratic roots q,-1",
+    "normalization": "Q_r=q^r q_r(X;q^-1)/(q-1)"
+  }
+}

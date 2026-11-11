@@ -1,0 +1,105 @@
+{
+  "status": "all independent checks passed",
+  "symbolic_residual": "(y second derivative + f*y)/A = 0 after exact reduction by u^2+v^2=1",
+  "special_derivative": "f_prime=2*x*(4+16*epsilon-16*epsilon^2)-128*epsilon*x^3+3/(2*x^3)",
+  "positive_lower_bound_for_x_greater_than_one": "7721/2500",
+  "automatic_differentiation_samples": 24,
+  "max_relative_residual": 4.116185065749563e-16,
+  "negative_derivative_samples": [
+    {
+      "k": 2,
+      "x": 2.658680776358274,
+      "fprime": -1.8636441667741848
+    },
+    {
+      "k": 3,
+      "x": 3.1953366214167214,
+      "fprime": -15.138982895845249
+    },
+    {
+      "k": 4,
+      "x": 3.6540072219081097,
+      "fprime": -32.0275553411511
+    },
+    {
+      "k": 5,
+      "x": 4.06120196879525,
+      "fprime": -51.93947773521295
+    },
+    {
+      "k": 6,
+      "x": 4.43113462726379,
+      "fprime": -74.49645910488267
+    },
+    {
+      "k": 7,
+      "x": 4.7724780500832065,
+      "fprime": -99.43118396620278
+    },
+    {
+      "k": 8,
+      "x": 5.090986092312156,
+      "fprime": -126.54249442453492
+    },
+    {
+      "k": 9,
+      "x": 5.39070793548543,
+      "fprime": -155.67222093152284
+    }
+  ],
+  "endpoint_tests": [
+    {
+      "lambda_plus_one": 1.0,
+      "sine_beta": 3.141592653589794,
+      "sine_regularized_quadrature": 3.141592653589793,
+      "cubic_beta": 1.0000000000000004
+    },
+    {
+      "lambda_plus_one": 0.5,
+      "sine_beta": 2.62205755429212,
+      "sine_regularized_quadrature": 2.6220575542921196,
+      "cubic_beta": 1.3110287771460605
+    },
+    {
+      "lambda_plus_one": 0.1,
+      "sine_beta": 2.1353449332480046,
+      "sine_regularized_quadrature": 2.135344933248004,
+      "cubic_beta": 1.4889122250176143
+    },
+    {
+      "lambda_plus_one": 0.01,
+      "sine_beta": 2.0138288834969638,
+      "sine_regularized_quadrature": 2.0138288834969615,
+      "cubic_beta": 1.4998779711896415
+    },
+    {
+      "lambda_plus_one": 0.001,
+      "sine_beta": 2.0013859524889797,
+      "sine_regularized_quadrature": 2.00138595248898,
+      "cubic_beta": 1.4999987676506483
+    },
+    {
+      "lambda_plus_one": 0.0001,
+      "sine_beta": 2.000138626016111,
+      "sine_regularized_quadrature": 2.000138626016114,
+      "cubic_beta": 1.4999999876643453
+    },
+    {
+      "lambda_plus_one": 1e-06,
+      "sine_beta": 2.0000013862940165,
+      "sine_regularized_quadrature": 2.000001386294019,
+      "cubic_beta": 1.4999999999987619
+    },
+    {
+      "lambda_plus_one": 1e-08,
+      "sine_beta": 2.000000013862945,
+      "sine_regularized_quadrature": 2.0000000138629437,
+      "cubic_beta": 1.5000000000000044
+    }
+  ],
+  "endpoint_limits": {
+    "sine": 2,
+    "cubic": 1.5
+  },
+  "scope": "The symbolic identity is exact. Numerical checks independently test differentiation and endpoint asymptotics; the general C1 endpoint statement is justified by the two-sided endpoint proof, not inferred from sampled values."
+}

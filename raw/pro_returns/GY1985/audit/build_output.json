@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "local_tex_format_fallback": true,
+  "environment_overrides": {
+    "TEXMF": "{/usr/share/texmf,/usr/share/texlive/texmf-dist}",
+    "TEXFORMATS": "/workspace/scratch/0d205e72a69b/work/deliverable/code/texruntime:"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "build_chapter.py",
+        "GY1985"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/deliverable",
+      "log": "audit/buildlogs/builder.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1985_test.tex"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/deliverable",
+      "log": "audit/buildlogs/xelatex_1.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "bibtex",
+        "GY1985_test"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/deliverable",
+      "log": "audit/buildlogs/bibtex.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1985_test.tex"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/deliverable",
+      "log": "audit/buildlogs/xelatex_2.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1985_test.tex"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/deliverable",
+      "log": "audit/buildlogs/xelatex_3.txt",
+      "exit_code": 0
+    }
+  ],
+  "remaining_layout_or_reference_messages": []
+}

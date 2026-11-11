@@ -1,0 +1,20 @@
+\documentclass[11pt,oneside]{book}
+\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage{gelfand_companion}
+\begin{document}
+\chapter{Smoke test}
+\GStalk{540}{1981-11-23}{S. I. Gelfand}{P000996--P000997}{Jantzen forms and category O}
+English and \ru{русская цитата: Что если сменить направление?}
+\begin{GSitem}{1981-540.1}{B}{Known result and exact verification}
+\GSfield{Statement}{For \(A\in M_n(\mathbb C)\), \(\|A\|_{\mathrm{op}}\le\|A\|_F\), and \(\mathfrak g=\mathfrak n_-\oplus\mathfrak h\oplus\mathfrak n_+\).}
+\GSfield{Fate}{See \citet[\S8.4]{williamson2016local}.}
+\end{GSitem}
+\begin{proposition}[An elementary identity]\ours
+\(\det\left(\begin{smallmatrix}1&t\\t&t^2+t^3\end{smallmatrix}\right)=t^3\).
+\end{proposition}
+\begin{proof}Expand the determinant.\end{proof}
+\begin{tabular}{lll}\toprule Direction&Layers&Result\\\midrule
+\(\rho\)&\((7,3,2,1)\)&verified\\\bottomrule\end{tabular}
+\bibliographystyle{plainnat}
+\bibliography{smoke}
+\end{document}

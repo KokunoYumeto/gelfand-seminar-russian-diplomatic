@@ -1,0 +1,33 @@
+1. Feynman normalization on the standard two-simplex
+area = 1/2 ; integral for (a,b,c)=(1,2,3) = 1/12
+2! times integral = 1/6 ; 1/(abc) = 1/6
+
+2. Failure of the weighted ray selector
+coordinate 2 supremum = 1/4 < 1/2
+coordinate 3 supremum = 1/8 < 1/2
+coordinate 10 supremum = 1/1024 < 1/2
+
+3. Spherical orbital measure and SO(3) dimension
+2*pi*lambda^2 integral[-1,1] exp(i*lambda*r*z) dz = 4*pi*lambda*sin(lambda*r)/r
+after division by 4*pi*lambda = sin(lambda*r)/r
+midpoint angular quadrature = 46.48889502440622 closed formula = 46.488894938982874
+spin 0 character at identity = 1 small-angle check = 1.0
+spin 1 character at identity = 3 small-angle check = 2.99999999999996
+spin 2 character at identity = 5 small-angle check = 4.9999999999998
+spin 3 character at identity = 7 small-angle check = 6.9999999999994404
+
+4. Nonsymmetric Perron example
+A = [[1, 1, 0], [1, 0, 1], [1, 0, 0]] Perron root = 1.8392867552141612
+correct row sums = [1.0, 0.9999999999999999, 0.9999999999999999]
+row sums using left vector incorrectly = [0.8392867552141611, 1.2955977425220848, 1.839286755214161]
+stationary weights = [0.6184199223193926, 0.28219180532445143, 0.09938827235615601] stationarity residual = 1.1102230246251565e-16
+entropy = 0.6093778634360063 log(Perron root) = 0.6093778634360063
+
+5. Four-block matrix versus one-forbidden-transition model
+block sizes [2, 1, 1, 1] determinant 1 char(A) coefficients ascending = [0, 0, 0, 1, -3, 1] char(B) = [0, 1, -3, 1]
+block sizes [3, 2, 1, 1] determinant 1 char(A) coefficients ascending = [0, 0, 0, 0, 0, 1, -4, 1] char(B) = [0, 0, 1, -4, 1]
+
+6. Heisenberg central eigenvalue obstruction
+[aX+cY,bX+dY] = (a*d-b*c) Z by bilinearity and [X,Y]=Z; lattice automorphism has determinant+1 or-1
+
+All finite and symbolic checks passed. They are annotations, not proofs of the cited literature theorems.

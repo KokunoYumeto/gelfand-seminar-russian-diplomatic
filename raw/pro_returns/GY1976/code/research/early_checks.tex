@@ -1,0 +1,109 @@
+\subsection{Critical verification of the early records}
+
+The following checks audit mathematical statements faithfully present in the manuscript. They make no novelty claim and are not developments of an invented open problem. Every calculation was re-derived independently or checked by a second algebraic method; the accompanying \texttt{early\_checks.py} and its output preserve the exact computations. A separate reviewer independently checked the kernel formula as well.
+
+\begin{proposition}[The missing factor in the projector kernel]\ours{}
+Let \(|\lambda|>1\), and let \(t=\lambda+\lambda^{-1}\). The character-series expression occurring in the holomorphic discrete-series projector, with its common Haar normalization suppressed, is
+\[
+ K(\lambda)=\frac1{\lambda-\lambda^{-1}}
+ \sum_{n=1}^{\infty}n\lambda^{-n}
+ =\frac{\lambda^2}{(\lambda-1)^3(\lambda+1)}.
+\]
+Consequently
+\[
+ K(\lambda)^2(t-2)^3(t+2)=1.
+\]
+Thus the invariant trace expression is proportional, with a consistently chosen holomorphic branch, to \([(t-2)^3(t+2)]^{-1/2}\), as in \citet[Theorem~10, equations~18 and~22]{gelfandgindikin1977complex}. The notebook's \((2-t)^{-3/2}\) lacks a nonconstant factor.
+\end{proposition}
+\begin{proof}
+Put \(r=\lambda^{-1}\). The geometric series converges normally on compact subsets of \(|r|<1\); differentiating it gives
+\(\sum_{n\ge1}nr^n=r/(1-r)^2\). Dividing by \(\lambda-\lambda^{-1}\) and simplifying gives the rational formula. Independently,
+\[
+ t-2=\frac{(\lambda-1)^2}{\lambda},\qquad
+ t+2=\frac{(\lambda+1)^2}{\lambda},
+\]
+so direct substitution proves the squared identity without relying on a branch choice. The phase difference between \(t-2\) and \(2-t\) may be included in the normalization constant on a branch, but \((t+2)^{-1/2}\) cannot be. This is a check of the published character-series kernel, not a claim that arbitrary scalar square roots define a global projector without their boundary-value prescriptions.
+
+As an independent finite check, for \(0<r<1\),
+\[
+ \sum_{n>N}nr^n=\frac{r^{N+1}((N+1)-Nr)}{(1-r)^2}.
+\]
+Exact rational arithmetic, using no symbolic summation, verified the finite sum plus this tail at \(\lambda=3/2,2,3,5\), each with \(N=1,2,7,23\). A separate reviewer independently obtained the same rational and trace identities. These checks confirm the algebra; the publication supplies the representation-theoretic projector interpretation.
+\end{proof}
+
+\begin{proposition}[Quadratic normalization near a solution]\ours{}
+Suppose, near \(y=p=0\),
+\[
+ y''=a(x)y^2+b(x)yp+c(x)p^2+O((|y|+|p|)^3),\qquad p=y'.
+\]
+Then a local point transformation whose Jacobian is one on the reference solution removes the two mixed quadratic terms and leaves
+\[
+ Y_{XX}=A(X)Y^2+O((|Y|+|Y_X|)^3),\qquad
+ A=a+\frac16c''-\frac13b'.
+\]
+\end{proposition}
+\begin{proof}
+Use \(X=x+f(x)y\), \(Y=y+g(x)y^2\). Along the equation put \(D=\partial_x+p\partial_y+F\partial_p\). The exact transformation formula is
+\[
+ Y_{XX}=\frac{D^2Y\,DX-DY\,D^2X}{(DX)^3}.
+\]
+Its quadratic part is
+\[
+ (a+g'')y^2+(b+4g'-f'')yp+(c+2g-2f')p^2.
+\]
+Choose \(g=f'-c/2\) and integrate \(f''=(2c'-b)/3\) locally. The latter equation has smooth local solutions; the coordinate Jacobian is one at \(y=0\), so the inverse function theorem applies. The surviving coefficient is the displayed \(A\). Expressing this quadratic polynomial in the new variables changes it only by terms of order at least three.
+
+The symbolic audit expanded the full chain-rule expression with \((y,p)\mapsto(\varepsilon y,\varepsilon p)\). A second check used the concrete polynomials \(a=1+x^2\), \(b=x+2\), \(c=x^3-x\), \(f=x^4/6-x^3/18-2x^2/3\); the mixed terms vanished and the remaining coefficient was \(x^2+x+2/3\). The classical Tresse expression in occurrence~1976-403.1, restricted to the reference solution, independently gives \(H=12A\).
+\end{proof}
+
+\begin{example}[A limitation of the density criterion]\ours{}
+The analytic equation \(y''=y^3\) has the solution \(y=0\), zero constant and linear transverse terms, and zero quadratic transverse coefficient. Thus the density constructed along this particular solution vanishes. Nevertheless, the classical relative invariant is \(H=6F_{yy}=36y\), which is a nonzero formal series. The equation cannot be formally point-flat. This checks the literal one-solution reading of P000666; it does not rule out a stronger intended statement with additional quantifiers and hypotheses. Direct substitution into the complete \(H\)-formula and the shorter \(F_p=0\) calculation agree.
+\end{example}
+
+\begin{proposition}[The projective vector-field invariant]\ours{}
+Let \(v(x)\partial_x\) be a specified smooth vector field and let \(X=\phi(x)\), \(\phi'\ne0\). Write \(V(X)=\phi'(x)v(x)\). Then
+\[
+ 2VV_{XX}-V_X^2
+ =2vv''-(v')^2+2v^2S(\phi),\qquad
+ S(\phi)=\frac{\phi^{(3)}}{\phi'}-
+ \frac32\left(\frac{\phi''}{\phi'}\right)^2.
+\]
+Hence \(I_2=2vv''-(v')^2\) and \(I_n=(v\partial_x)^{n-2}I_2\) are scalar invariants under projective coordinate changes. Under \(v\mapsto cv\), they scale as \(I_n\mapsto c^nI_n\).
+\end{proposition}
+\begin{proof}
+Since \(\partial_X=(\phi')^{-1}\partial_x\),
+\[
+ V_X=v'+\frac{\phi''}{\phi'}v,
+\]
+and one more differentiation proves the identity. The Schwarzian is zero for a Möbius map. Also \(V\partial_X=v\partial_x\), giving invariant differentiation and the scaling law by induction. A separate symbolic check used each of \(\phi=(2x+1)/(x+1)\) and \(\phi=(x-2)/(3x+4)\), with \(v=1+x+x^2+x^4\), and obtained exact zero differences. This confirms the notebook formulas for a specified field; it does not eliminate the constant ambiguity inherited from its relative density.
+\end{proof}
+
+\begin{proposition}[Auxiliary-field elimination in the written action]\ours{}
+With precisely the auxiliary terms on P000669, let
+\[
+ P=mA+g(A^2-B^2),\qquad Q=mB+2gAB.
+\]
+Then
+\[
+ \mathcal L_{\rm aux}=\tfrac12(F^2+G^2)+FP+GQ
+\]
+has unique stationary values \(F=-P\), \(G=-Q\), and its eliminated value is
+\[
+ -\frac12m^2(A^2+B^2)-mgA(A^2+B^2)
+ -\frac12g^2(A^2+B^2)^2.
+\]
+\end{proposition}
+\begin{proof}
+Differentiate with respect to the algebraic variables \(F,G\), then substitute. Independently, completing squares gives
+\[
+ \mathcal L_{\rm aux}=\tfrac12(F+P)^2+\tfrac12(G+Q)^2
+ -\tfrac12(P^2+Q^2).
+\]
+The identity
+\((A^2-B^2)^2+4A^2B^2=(A^2+B^2)^2\)
+gives the quartic term, and the two cross terms give the negative cubic coefficient. The code checked both polynomial identities and three independent integer parameter sets. This proves that the two notebook scalar formulas disagree under their printed conventions. Since \(P,Q\) contain no fermions, the operation cannot repair the separate factor-of-two discrepancy in the fermion mass term. The intended pre-existing construction is verified in \citet[\S~4(b)]{ogievetskymezincescu1975superfields}.
+\end{proof}
+
+\begin{remark}[What the audit does not settle]
+The five unidentified early occurrences concern an unspecified Radon range, an undefined minimality criterion, a damaged global projective question, a cohomological connection without a map or degree, and an uncertainty-principle slogan without a Hamiltonian. None supplies the precise remaining scope required for class C or D development. The completed audits concern literal correctness and finite calculations; they are not substitutes for a literature-supported open question.
+\end{remark}

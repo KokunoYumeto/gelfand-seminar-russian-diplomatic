@@ -1,0 +1,30 @@
+oursComputed: exact pencil coefficients: w -> d^2 lambda^2; w-prime -> 0; w-double-prime -> 1.
+oursComputed: exact differentiated primitive coefficients = (1/2,-1/2,0).
+Endpoint sin(2n*pi)=0, cos(2n*pi)=1 gives norm^2=(exp(2*g*n*pi)-1)/(4*g*n*(1+g^2)).
+oursComputed: independent quadrature on original x and endpoint-scaled s, at two mesh sizes:
+ gamma=-1.2 n=1 errors=[(3.566036355096003e-13, 3.566036355096003e-13), (2.2426505097428162e-14, 2.2426505097428162e-14)]
+ gamma=-1.2 n=3 errors=[(2.8878011093524947e-11, 2.8877567004315097e-11), (1.8052226380405045e-12, 1.8047785488306545e-12)]
+ gamma=-1.2 n=8 errors=[(1.4602090647741761e-09, 1.4602090647741761e-09), (9.126721600694054e-11, 9.126721600694054e-11)]
+ gamma=-0.3 n=1 errors=[(9.992007221626409e-15, 9.992007221626409e-15), (8.881784197001252e-16, 8.881784197001252e-16)]
+ gamma=-0.3 n=3 errors=[(8.064660050877137e-13, 8.064660050877137e-13), (5.040412531798211e-14, 5.040412531798211e-14)]
+ gamma=-0.3 n=8 errors=[(4.077271853475395e-11, 4.077271853475395e-11), (2.5484059307245843e-12, 2.5484059307245843e-12)]
+ gamma=0.15 n=1 errors=[(2.220446049250313e-15, 2.220446049250313e-15), (0.0, 0.0)]
+ gamma=0.15 n=3 errors=[(1.894040480010517e-13, 1.8918200339612667e-13), (1.2212453270876722e-14, 1.199040866595169e-14)]
+ gamma=0.15 n=8 errors=[(9.562128866491548e-12, 9.561906821886623e-12), (5.975220318532593e-13, 5.975220318532593e-13)]
+ gamma=0.7 n=1 errors=[(7.416289804496046e-14, 7.416289804496046e-14), (4.6629367034256575e-15, 4.884981308350689e-15)]
+ gamma=0.7 n=3 errors=[(6.000755448098971e-12, 6.000533403494046e-12), (3.752553823233029e-13, 3.750333377183779e-13)]
+ gamma=0.7 n=8 errors=[(3.0343794144016556e-10, 3.0343860757398033e-10), (1.896416357283215e-11, 1.896505175125185e-11)]
+Exact independent sine identity: sin(n(pi+s))=(-1)^n sin(ns), sin(n(pi-s))=-(-1)^n sin(ns).
+oursComputed: reflected-interval sample cancellation error = 4.3298697960381105e-15
+oursComputed: E6 Cartan exact leading principal minors = [2, 3, 4, 5, 6, 3]
+Sylvester criterion: negative E6 has inertia (0,0,6); adding the published rank-two zero form gives (0,2,6).
+oursComputed: KU(S2), k=4, coefficient residues mod3: [(0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)]
+Universal proof: 4 is a unit equal to1 mod3, also after inverting4.
+oursComputed: KO(S4) prime-divisibility checks with several possible finite J-orders:
+ M=1 q=2 k=3 M_mod_q=1 (k^2-1)_mod_q=0
+ M=2 q=3 k=4 M_mod_q=2 (k^2-1)_mod_q=0
+ M=24 q=5 k=6 M_mod_q=4 (k^2-1)_mod_q=0
+ M=120 q=7 k=8 M_mod_q=1 (k^2-1)_mod_q=0
+ M=5040 q=11 k=12 M_mod_q=2 (k^2-1)_mod_q=0
+Universal proof: for every finite M some prime q does not divide M; k=q+1 is a unit modq.
+PASS: all exact identities and independent numerical checks.

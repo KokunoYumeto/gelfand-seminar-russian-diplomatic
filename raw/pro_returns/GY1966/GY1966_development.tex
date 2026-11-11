@@ -1,0 +1,214 @@
+\subsection{GP-1966-09: what correlation bounds actually prove}
+\label{dev:canonical}
+
+\paragraph{Historical question and the bounded scope.}
+This section is a complete critical annotation of item 1966-100.11, whose recorded variance argument was published by Minlos (class A). It makes no claim to solve a previously open C/D problem. Item 1966-100.2 retains class F for the broader programme’s incomplete quantifiers. The notes posit bulk limits, control by distance to the boundary, and clustering; for
+\[
+ F_\Omega=\sum_{i\ne j}f(X_i-X_j),\qquad f\in L^1(\mathbb R^d),
+\]
+they infer a variance proportional to particle number. The strongest defensible historical formulation is conditional: find quantitative hypotheses on the canonical correlations which make this implication valid. The larger existence-and-clustering programme leaves its exceptional thermodynamic parameters unspecified, and therefore is not one sharply formulated all-density conjecture.
+
+There is a useful published anchor beyond the shorthand. \citet[Lecture III, \S4, pp.~162--164, especially Problem~3]{minlos1968lectures} asks for precise inequalities in the representative-observable argument. On p.~164 the published account explicitly restores an integrable mixing majorant and a boundary-strip condition; these must not be portrayed as omissions persisting in that paper. The separate short-distance issue remains: condition (3.24) is an \(L^1\) assumption, while the variance calculation contains \(f^2\). The following Remark~1 discusses an exponential large-deviation estimate, which is a stronger question than the concentration proved below. The lectures originated in September 1965 and were amplified in the autumn 1966 seminar; their 1968 publication date is not a discovery date for the elementary moment argument.
+
+Our contribution is a checked clarification: an explicit sufficient fourth-order correlation bound, a variance estimate with constants, a truncation argument covering \(L^1\), and counterexamples to stronger intermediate claims. It is not a claim of a new Gibbs-state theorem or a new general result in probability. All supplied proofs and computations carry the required editorial marks.
+
+\paragraph{Exact literature scope.}
+For stable finite-range interactions in a sufficiently dilute canonical regime, \citet[Theorem~2.5 and Corollary~2.6]{pulvirentitsagkarogiannis2015finite} control the truncated \emph{two-point} correlation and retain a finite-size contribution alongside spatial decay. The preprint appeared in September 2014 and the article in 2015. \citet[Theorems~2.1 and 2.7]{kunatsagkarogiannis2018density}, first circulated in 2016 and published in 2018, give convergent density expansions and correlation estimates within an explicit small-density domain. These are substantial realizations of the gas-phase programme. Neither citation, by itself, proves the four-point assumption below for arbitrary density, nor does a two-point estimate automatically control the covariance of two pair observables. We do not infer a theorem outside the hypotheses actually checked.
+
+\paragraph{Framework and quantifiers.}
+Let \(\Omega\subset\mathbb R^d\) be a measurable bounded region of positive volume \(V=|\Omega|\). Let \(\mathcal X\) be a simple point process with finitely many points in \(\Omega\) almost surely. Its symmetric factorial moment densities \(r_k\), \(1\leq k\leq4\), are defined by
+\[
+ \mathbb E\!\sum_{i_1,\ldots,i_k\;\mathrm{distinct}}
+ h(X_{i_1},\ldots,X_{i_k})
+ =\int_{\Omega^k}h(x_1,\ldots,x_k)r_k(x_1,\ldots,x_k)\,dx_1\cdots dx_k
+\]
+for nonnegative measurable \(h\). Thus the sums are ordered, exactly as on P000157. The particle number may be fixed, as in the canonical ensemble, or random. Define \(f_{ij}=f(x_i-x_j)\) for a real even measurable kernel \(f\). Write
+\[
+ B_{12;34}=r_4(x_1,x_2,x_3,x_4)-r_2(x_1,x_2)r_2(x_3,x_4).
+\]
+This is the covariance density for two disjoint ordered pairs. It is not identical to the fourth factorial cumulant: lower connected terms also contribute.
+
+For a sequence of regions, all constants below and the same majorant \(g\) must be independent of the region. Assume, almost everywhere,
+\begin{align}
+ 0\leq r_2&\leq C_2,&0\leq r_3&\leq C_3,\label{eq:bounds23}\\
+ |B_{12;34}|&\leq C_4\sum_{a=1}^2\sum_{b=3}^4g(x_a-x_b)+\frac{C_0}{V},
+ &g&\geq0,\quad g\in L^1(\mathbb R^d).\label{eq:pairmix}
+\end{align}
+The nonnegative constants may depend on the fixed physical parameters. No translation invariance, regular boundary, or infinite-volume state is needed for the variance implication itself. Such assumptions become relevant when deriving these bounds from a Gibbs model or when identifying the limiting mean.
+
+\begin{lemma}[Exact collision expansion]\ours\ 
+For an even kernel on a finite configuration,
+\[
+ F_\Omega^2=2\sum_{i\ne j}f_{ij}^2
+ +4\sum_{i,j,k\;\mathrm{distinct}}f_{ij}f_{jk}
+ +\sum_{i,j,k,\ell\;\mathrm{distinct}}f_{ij}f_{k\ell}.
+\]
+If the corresponding absolute integrals are finite, then
+\begin{equation}
+ \operatorname{Var}F_\Omega
+ =2\int_{\Omega^2}f_{12}^2r_2
+ +4\int_{\Omega^3}f_{12}f_{23}r_3
+ +\int_{\Omega^4}f_{12}f_{34}B_{12;34}.
+ \label{eq:exactvariance}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Expand the product of two sums over ordered unequal pairs. Their union has two, three, or four labels. For two labels, the second pair equals the first or its reversal, giving coefficient two. With three labels, the shared label occupies one of two places in each pair, giving four possibilities. Symmetry of \(f\) and relabelling put them in the displayed common form. Four distinct labels require no multiplicity factor. The factorial moment identities integrate the three terms. Subtract
+\((\mathbb EF_\Omega)^2=\int_{\Omega^4}f_{12}f_{34}r_2(x_1,x_2)r_2(x_3,x_4)\)
+to obtain \eqref{eq:exactvariance}. Absolute integrability, verified in the following proof under its assumptions, legitimizes all rearrangements. This is a re-derivation of the notebook identity, not an attribution of a new combinatorial formula.
+\end{proof}
+
+\begin{theorem}[An explicit finite-volume variance bound]\ours\ 
+Assume \eqref{eq:bounds23}--\eqref{eq:pairmix} and \(f\in L^1(\mathbb R^d)\cap L^2(\mathbb R^d)\), real and even. Then
+\begin{align}
+ \operatorname{Var}F_\Omega&\leq V K(f),\label{eq:variancebound}\\
+ K(f)&=2C_2\|f\|_2^2+
+ \bigl(4C_3+4C_4\|g\|_1+C_0\bigr)\|f\|_1^2.\label{eq:K}
+\end{align}
+Consequently, for \(\epsilon>0\),
+\[
+ \mathbb P\!\left(\left|\frac{F_\Omega-\mathbb EF_\Omega}{V}\right|>\epsilon\right)
+ \leq\frac{K(f)}{V\epsilon^2}.
+\]
+\end{theorem}
+\begin{proof}
+Integrating first in a difference variable gives
+\[
+ \int_{\Omega^2}|f_{12}|^2\leq V\|f\|_2^2,
+ \qquad
+ \int_{\Omega^3}|f_{12}f_{23}|\leq V\|f\|_1^2.
+\]
+In any summand of the spatial part of \eqref{eq:pairmix}, the edges \(12\), \(34\), and \(ab\), with \(a\in\{1,2\}\), \(b\in\{3,4\}\), form a tree on four vertices. Successively integrate a leaf over \(\Omega\), enlarging that integral to \(\mathbb R^d\). Each removed edge contributes its \(L^1\) norm; integration of the last vertex contributes \(V\). Hence, for each of the four cross edges,
+\[
+ \int_{\Omega^4}|f_{12}f_{34}|g(x_a-x_b)
+ \leq V\|f\|_1^2\|g\|_1.
+\]
+The canonical correction is bounded separately:
+\[
+ \frac{C_0}{V}\int_{\Omega^4}|f_{12}f_{34}|
+ \leq\frac{C_0}{V}(V\|f\|_1)^2
+ =C_0V\|f\|_1^2.
+\]
+These estimates also establish the required absolute moments: the unsubtracted four-point integral has the additional integrable product term bounded by \(C_2^2V^2\|f\|_1^2\). Apply \eqref{eq:exactvariance} and the triangle inequality. Chebyshev’s inequality proves the probability bound.
+\end{proof}
+
+The conclusion is \(O(V)\), not an asymptotic equivalent with a positive coefficient. Neither convergence of the normalized covariance integrals nor positivity of a limit was assumed; \(f=0\) alone rules out an unconditional positive coefficient. If \(N_\Omega/V\to\rho\in(0,\infty)\) with deterministic canonical particle numbers, the same result gives concentration after normalization by \(N_\Omega\).
+
+\begin{corollary}[The integrable-kernel conclusion survives truncation]\ours\ 
+Under the same uniform correlation hypotheses, let \(V\to\infty\) and let \(f\in L^1(\mathbb R^d)\) be real and even. Then
+\[
+ \frac{F_\Omega-\mathbb EF_\Omega}{V}\longrightarrow0
+ \quad\hbox{in probability},
+\]
+even when \(\operatorname{Var}F_\Omega\) is infinite; the centered convergence also holds in \(L^1\). More explicitly, put
+\(f_M=f\mathbf1_{\{|f|\leq M\}}\). For every \(M>0\) and \(\epsilon>0\),
+\begin{equation}
+ \mathbb P\!\left(\left|\frac{F_\Omega-\mathbb EF_\Omega}{V}\right|>\epsilon\right)
+ \leq\frac{4K(f_M)}{V\epsilon^2}
+ +\frac{4C_2}{\epsilon}\|f-f_M\|_1.
+ \label{eq:truncation}
+\end{equation}
+\end{corollary}
+\begin{proof}
+The truncated kernel belongs to both spaces because
+\(\|f_M\|_2^2\leq M\|f\|_1\). If \(R_\Omega=F_\Omega(f)-F_\Omega(f_M)\), then the factorial two-point formula implies
+\[
+ \mathbb E|R_\Omega|\leq C_2V\|f-f_M\|_1,
+ \qquad
+ \mathbb E|R_\Omega-\mathbb ER_\Omega|
+ \leq2C_2V\|f-f_M\|_1.
+\]
+Split the centered observable into its truncated part and the centered remainder, and apply the union bound with threshold \(\epsilon/2\) to each. Chebyshev controls the first part and Markov controls the second, giving exactly \eqref{eq:truncation}. Cauchy--Schwarz also gives the stronger bound
+\[
+ \frac{\mathbb E|F_\Omega-\mathbb EF_\Omega|}{V}
+ \leq\sqrt{\frac{K(f_M)}V}+2C_2\|f-f_M\|_1.
+\]
+First let \(V\to\infty\) at fixed \(M\), then let \(M\to\infty\). The order of limits is part of both conclusions. Convergence to a fixed thermodynamic value additionally requires convergence of \(\mathbb EF_\Omega/V\); concentration about a moving expectation does not establish that limit.
+\end{proof}
+
+\begin{proposition}[A sufficient condition identifying the mean]\ours\ 
+Let \(V_n=|\Omega_n|\to\infty\), \(r_{2,n}\leq C_2\), and define
+\[
+ A_n(z)=\frac1{V_n}\int_{\mathbb R^d}
+ \mathbf1_{\Omega_n}(x)\mathbf1_{\Omega_n}(x-z)
+ r_{2,n}(x,x-z)\,dx.
+\]
+If \(A_n(z)\to R(z)\) for almost every \(z\), then for \(f\in L^1\),
+\[
+ \frac{\mathbb EF_{\Omega_n}}{V_n}\longrightarrow
+ m=\int_{\mathbb R^d}f(z)R(z)\,dz.
+\]
+Combined with the preceding corollary, this yields \(F_{\Omega_n}/V_n\to m\) in probability. For the ideal canonical gas, a van Hove exhaustion and \(N_n/V_n\to\rho\) give \(R(z)=\rho^2\).
+\end{proposition}
+\begin{proof}
+Change variables \(z=x-y\) in the expectation. Its normalized value is \(\int fA_n\). Since \(0\leq A_n\leq C_2\), dominated convergence applies. In the ideal gas,
+\[
+ A_n(z)=\frac{(N_n)_2}{V_n^2}
+ \frac{|\Omega_n\cap(\Omega_n+z)|}{V_n}.
+\]
+For every fixed \(z\), the van Hove condition makes the last fraction tend to one. The first factor tends to \(\rho^2\). This also exhibits why pointwise correlation convergence near one fixed origin is not by itself the required moving-volume statement.
+\end{proof}
+
+\begin{example}[Finite expectation and infinite variance in an ideal gas]\ours\ 
+Take \(\Omega=[0,L]^d\), \(L>2\), and \(N\geq2\) independent uniformly distributed positions, viewed as an unordered simple configuration. Coincidences have probability zero. The potential is zero, hence stable and of finite range. For
+\[
+ f(z)=|z|^{-\alpha}\mathbf1_{\{0<|z|<1\}},\qquad
+ \frac d2\leq\alpha<d,\qquad f(0)=0,
+\]
+the kernel is real, even, nonnegative and integrable, because the radial integral near zero is proportional to \(\int_0^1r^{d-1-\alpha}\,dr\). Its square is not integrable. The expectation of the ordered-pair sum is finite, but its second moment and variance are infinite.
+\end{example}
+\begin{proof}
+The factorial density is \(r_2=N(N-1)/V^2>0\). The expectation is bounded by \(r_2V\|f\|_1\). Restrict \(x_1\) to the interior box \([1,L-1]^d\); a unit ball of differences around zero remains inside the vessel. Therefore \(\int_{\Omega^2}f_{12}^2r_2=\infty\). All summands of \(F_\Omega\) are nonnegative, and the two-label terms alone imply \(\mathbb EF_\Omega^2\geq2\int f_{12}^2r_2=\infty\). A finite first moment and infinite second moment give infinite variance. Every hypothesis used here has been specified; no interacting-model approximation is involved.
+\end{proof}
+
+\begin{remark}[A hard core does not by itself repair arbitrary \(L^1\) kernels]\ours\ 
+If a positive hard-core radius \(a\) is required, use two particles with potential \(+\infty\) for distances below \(a\) and zero otherwise, in a cube of side \(L>6a\). Its canonical partition function is finite and positive, and its two-point density is a positive constant on allowed pairs. The even kernel
+\[
+ f(z)=\bigl||z|-2a\bigr|^{-3/4}
+ \mathbf1_{\{0<||z|-2a|<a/4\}}
+\]
+is in \(L^1\) but not \(L^2\): in spherical coordinates the only singularity is a codimension-one shell, whose radial exponents are \(-3/4\) and \(-3/2\). The shell lies strictly outside the core. A positive-measure interior set of first-particle positions accommodates the whole shell, so the previous second-moment divergence proof applies. Values exactly on the shell can be set to zero without changing any integral. Thus a hard core removes only a singularity confined to forbidden separations, not the general defect in an unrestricted \(L^1\) assumption.
+\end{remark}
+
+\begin{proposition}[The canonical correction cannot be discarded]\ours\ 
+For the ideal canonical gas,
+\[
+ r_k=\frac{(N)_k}{V^k},\qquad
+ r_4-r_2^2=-\frac{N(N-1)(4N-6)}{V^4}.
+\]
+For \(N\geq2\), with \(\rho_N=N/V\),
+\[
+ |r_4-r_2^2|\leq\frac{4\rho_N^3}{V},\qquad
+ r_2\leq\rho_N^2,\quad r_3\leq\rho_N^3.
+\]
+Consequently \eqref{eq:pairmix} holds with \(C_4=0\), \(C_0=4\bar\rho^3\) whenever \(\rho_N\leq\bar\rho\). For a fixed \((N,V)\), the variance estimate becomes
+\[
+ \operatorname{Var}F_\Omega\leq
+ 2\rho_N^2V\|f\|_2^2+8\rho_N^3V\|f\|_1^2.
+\]
+\end{proposition}
+\begin{proof}
+The factorial density follows from the uniform labelled density. Subtract
+\((N)_2^2\) from \((N)_4\), factor out \(N(N-1)\), and use
+\((N-2)(N-3)-N(N-1)=6-4N\).
+The inequality follows from \((N-1)(4N-6)\leq4N^2\). Substitute these constants into \eqref{eq:K}. The \(V^{-1}\) covariance density is spatially constant: it is the effect of fixing the total number, not a failure caused by an interaction tail. A strictly exponential spatial majorant without a finite-size term cannot represent this constraint uniformly over growing vessels.
+\end{proof}
+
+\begin{remark}[The effective-volume quantifier in the scan is correct]\ours\ 
+For each fixed \(k\leq N\), put
+\[
+ \rho_{N,k}=\frac{(N)_k^{1/k}}{V},\qquad
+ v_{N,k}=\frac{V}{(N)_k^{1/k}}.
+\]
+Then \(r_k=\rho_{N,k}^k\) exactly. If \(V/N\to v>0\), then \(v_{N,k}\to v\) for every fixed \(k\). The notebook explicitly allows the adjustment to depend on \(k\); this elementary test supports that reading. One common \(\rho_N\) cannot exactly match both \(r_1\) and \(r_2\), since it would require simultaneously \(\rho_N=N/V\) and \(\rho_N^2=N(N-1)/V^2\). This does not disprove the actual order-dependent claim and proves no interacting boundary estimate.
+\end{remark}
+
+\paragraph{Independent checks and what they found.}
+\oursComputed\ The supplied standard-library program \texttt{check\_pair\_partitions.py} checks the ordered-pair expansion on configurations with \(N=0,\ldots,8\), using an even kernel with both signs and exact rational arithmetic. It independently constructs the factorial marginals of a nonuniform simple process on seven sites by enumerating all \(128\) configurations, then compares the direct variance to the correlation-density formula. It also verifies the canonical polynomial identity symbolically by coefficient arithmetic and at \(205\) rational parameter pairs. All comparisons are exact and pass. Testing \(N=0,1,2,3\) ensures that falling factorials and the two-label term are not being handled by an unjustified large-\(N\) shortcut.
+
+The analytic argument was separately re-derived: each of the four cross terms is a three-edge tree, so the coefficient of \(C_4\|g\|_1\) is four; centering the truncation remainder costs a factor two, producing the coefficient \(4C_2/\epsilon\) in \eqref{eq:truncation}. The independent review confirmed these constants and emphasized that they must be uniform in volume. It also confirmed the order of limits and the need for a separate mean-convergence hypothesis. These checks support the complete proofs above; finite computations are not used as substitutes for the general proofs. The review file is included with the code and outputs.
+
+\paragraph{Remaining obstruction and a feasible further run.}
+The missing model-specific step is to derive \eqref{eq:pairmix}, or a comparably integrable bound on its left-hand side, for a chosen interacting canonical gas with constants uniform in the vessel. The four-point object must be obtained with its canonical normalization intact. A two-point exponential-decay estimate alone is insufficient. The second task is to prove the averaged bulk convergence used for the mean; the third, if desired, is to control enough higher cumulants to obtain the exponential deviation estimate discussed in the Remark~1 following the published Problem~3. The variance bound gives only the displayed Chebyshev rate.
+
+A bounded follow-up should fix a particular stable finite-range potential and a certified dilute expansion domain, derive the required two-pair covariance from that expansion, and calculate explicit constants and boundary remainders. It could then establish the complete quantitative statement for that model and regime. It should not promise an all-density continuation across phase coexistence or a universal classification of exceptional parameters. The evidence does not show that the original programme was abandoned: later rigorous canonical expansions develop parts of it, while the elementary probability implication and the model-dependent correlation analysis remain logically distinct.

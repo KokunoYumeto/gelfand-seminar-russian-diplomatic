@@ -1,0 +1,257 @@
+{
+  "transmission": {
+    "Schrodinger_residual": "0",
+    "exact_T": "(k + I*r)/(k - I*r)",
+    "minus_infinity_coefficient": "(I*k - r)/(I*k + r)",
+    "minus_coefficient_minus_T": "0",
+    "plus_infinity_coefficient": "1",
+    "reflection_coefficient": "0",
+    "log_T_leading_coefficient": "2*I*r",
+    "c0": "-4*r",
+    "phi_leading_coefficient": "r=-c0/4",
+    "independent_check": "Left-Jost Volterra estimate and physical T=1/A derivation in development.tex",
+    "review_correction": "The proposition formerly interchanged T and its inverse at the left endpoint; independent root review caught it, and explicit endpoint checks now enforce the notebook convention."
+  },
+  "scaling": {
+    "gaussian_c0": "sqrt(pi)*lam",
+    "gaussian_c1": "-3*sqrt(2)*sqrt(pi)*lam**3/2",
+    "lambda_derivative_c0_minus_c0": "0",
+    "lambda_derivative_c1_minus_3c1": "0",
+    "generic_operator_weights": [
+      "d2:h weight w+2",
+      "u*h weight2+w",
+      "u_prime*primitive(h) weight3+w-1=w+2"
+    ],
+    "seed_weight": 2,
+    "integrated_nth_weight": "2*n+1",
+    "second_derivation": "integration by parts at n0,n1 and homogeneous conjugation for every n in development.tex"
+  },
+  "Bianchi": {
+    "elimination_solution": "-(-A*U + 2*A*p + 2*A*q + B*U - 2*B*p - 2*B*q - 2*U*p + 2*U*q)/(A - B + 2*p - 2*q)",
+    "difference_from_notebook_reconstruction": "0",
+    "upper_A_differential_residual": "0",
+    "upper_B_differential_residual": "0",
+    "scope": "nonzero rational denominator; lower Riccati equations assumed"
+  },
+  "Hermite": {
+    "A_n3": "Matrix([[5/6, -2/3, -1/6], [-2/3, 4/3, -2/3], [-1/6, -2/3, 5/6]])",
+    "force_jacobian_n3": "Matrix([[-11/6, 2/3, 1/6], [2/3, -7/3, 2/3], [1/6, 2/3, -11/6]])",
+    "J_plus_I_plus_A": "zero3by3",
+    "A_charpoly": "lambda*(lambda - 2)*(lambda - 1)",
+    "Hermite_mode_identity_pairs_checked": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "independent_general_argument": "simple-root Vandermonde change of coordinates conjugates I+A to diag(1,...,n)"
+  },
+  "loop_bracket": {
+    "nine_residue_cases": [
+      [
+        -1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        0,
+        1
+      ],
+      [
+        -1,
+        1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        0,
+        -1
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "Jacobi_residue_triples_checked": 27
+  },
+  "supertranslations": {
+    "exterior_basis_dimension": 16,
+    "generic_four_derivative_symbols": [
+      "d0",
+      "d1",
+      "d2",
+      "d3"
+    ],
+    "mixed_anticommutator": "-2*i*sigma^m*d_m",
+    "same_chirality_anticommutators": "zero",
+    "matrix_pairs_checked": 12
+  },
+  "elementary_counterexamples": {
+    "BGG_unit": "On the nonzero trivial exterior module all xi act as0, so the recorded unit value vanishes.",
+    "Aomoto_zero_weights": "All residues0 satisfy the written strictly-positive-integer exclusion; constants give H0=C for n>0.",
+    "Dirac_missing_derivative": "det(mI-Gamma)=m^2-1; no nonzero solution for m!=+-1.",
+    "Hermite_n1": "A=(0), but root ODE is x_ddot=-x, so I cannot be omitted."
+  }
+}

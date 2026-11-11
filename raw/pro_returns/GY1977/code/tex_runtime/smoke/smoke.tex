@@ -1,0 +1,27 @@
+\documentclass[11pt]{book}
+\usepackage{gelfand_companion}
+\begin{document}
+\chapter{Local XeLaTeX runtime verification}
+English and Russian text: \ru{Математический семинар И. М. Гельфанда.}
+\GStalk{419}{1977-09-05}{Runtime test}{P705--P710}{Style and font verification}
+\begin{GSitem}{test.1}{E}{A sample assertion}
+\GSfield{Statement}{For $x\in\mathbb{R}$, the integral is well defined.}
+\GSfield{Source}{A bibliography test follows \citep{knuth1984texbook}.}
+\end{GSitem}
+\begin{proposition}[\ours]
+For $a,b\in\mathbb{R}$, $(a+b)^2=a^2+2ab+b^2$.
+\end{proposition}
+\begin{proof}
+Expand the product and commute $a$ with $b$.
+\[
+ \int_0^1 x^2\,dx=\frac13,\qquad
+ \mathfrak{g}=\bigoplus_{i\geq1}\mathbb{C}e_i,\qquad
+ \mathcal{L}=\partial_x^2+u.
+\]
+\end{proof}
+\begin{GScorrections}
+P705 & Sample & $a+b$ & $a+b$ & No correction; layout check.\\
+\end{GScorrections}
+\bibliographystyle{plainnat}
+\bibliography{smoke}
+\end{document}

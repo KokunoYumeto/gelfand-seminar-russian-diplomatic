@@ -1,0 +1,203 @@
+\subsection{What the Abel spectral-phase limit requires}
+\label{dev:spectralphases}
+
+\paragraph{The recorded question and a defensible target.}
+Occurrence 1975-391.7 and problem GP-1975-24 concern the expression on
+\GSpage{P000652}. Let \(M\) be a closed compact Riemannian manifold,
+let \(\lambda_k\geq0\) be the eigenvalues of \(\sqrt{-\Delta}\), counted
+with multiplicity, and fix \(a>0\). With the periodic delta normalized to
+have mass one on \([0,2\pi)\), set
+\[
+ \Phi_{a,\varepsilon}=\varepsilon\sum_k e^{-\varepsilon\lambda_k}
+ \left(\delta_{\rm per}(\mu-a\lambda_k)-\frac1{2\pi}\right),
+ \qquad \varepsilon>0.
+\]
+The notebook proposes a limit and relates its nonzero Fourier coefficients
+to resonances with lengths of closed geodesics. It also specifies a generic
+length arrangement. To make that phrase coherent, distinctness and
+incommensurability must concern primitive unoriented geodesics; iterates
+necessarily have commensurable lengths. Isolated, nondegenerate iterates
+are the modern hypotheses needed for the simple leading wave-trace
+singularity. They are not silently imposed on every manifold in the first
+line of the notes. Analyticity, as recorded there, can be retained but
+does not itself prove the limiting assertion.
+
+The strongest target justified here is conditional: identify every fixed
+Fourier coefficient by a local trace calculation, then prove a bound
+uniform in both the Fourier index and the Abel parameter. The latter
+step cannot be replaced by pointwise convergence of coefficients. The
+following development isolates this obstruction, solves the complete
+circle model, and checks what fails when the generic-geodesic restriction
+is dropped. No general theorem under the notebook's generic hypotheses
+is claimed.
+
+\paragraph{Literature and identification limit.}
+The leading singularity at a nondegenerate orbit is part of the
+wave-trace theory already published in 1975
+\citep{duistermaatguillemin1975spectrum}.
+The first expansion in \citet[Introduction]{zelditch1998wave} explicitly
+has a simple-pole leading term and logarithmic lower terms. That local
+expansion supports the fixed-mode mechanism; it does not, by itself,
+give a bound uniform over all sampled times \(ma\).
+The latter paper appeared in 1998 and was deposited on arXiv in 2000;
+the deposit is not its first-publication date.
+As of 10 November 2026, the searches recorded for this chapter did not
+identify a theorem establishing the entire notebook limit in the stated
+generality. This is an unresolved match and analytic gap in the argument
+presented here, not a claim that all spectral-phase limit problems remain
+open in the literature.
+
+\begin{lemma}[A necessary and sufficient Fourier test]\ours\quad
+For \(T_\varepsilon\in\mathcal D'(\mathbb R/2\pi\mathbb Z)\),
+\(0<\varepsilon\leq1\), write
+\(\widehat T_\varepsilon(m)=(2\pi)^{-1}
+\langle T_\varepsilon,e^{-im\mu}\rangle\).
+Suppose the family is bounded on each compact parameter interval
+away from zero. It converges in distributions as \(\varepsilon\downarrow0\)
+if and only if every coefficient converges and there are
+\(C,N,\varepsilon_0>0\) such that
+\[
+ |\widehat T_\varepsilon(m)|\leq C(1+|m|)^N
+ \quad(m\in\mathbb Z,\ 0<\varepsilon\leq\varepsilon_0).
+\]
+For the notebook family, \(\widehat\Phi_{a,\varepsilon}(0)=0\), and
+\[
+ \widehat\Phi_{a,\varepsilon}(m)
+ =\frac{\varepsilon}{2\pi}
+    \sum_k e^{-(\varepsilon+ima)\lambda_k},\qquad m\ne0.
+\]
+\end{lemma}
+\begin{proof}
+The last formula follows by pairing each delta with the indicated
+exponential; the subtracted constant removes only the zero mode.
+For necessity, distributional convergence gives pointwise boundedness
+on the Frechet space of smooth periodic test functions. The uniform
+boundedness principle gives equicontinuity: for some \(C,N\),
+\(|\langle T_\varepsilon,f\rangle|\leq
+C\max_{j\leq N}\|f^{(j)}\|_\infty\) for small \(\varepsilon\).
+Testing exponentials gives the polynomial bound and their individual
+convergence. For sufficiency, the limiting coefficients have the same
+polynomial bound and so define a distribution. The Fourier coefficients
+of a smooth test function decay faster than any power. Consequently
+\[
+ \langle T_\varepsilon,f\rangle
+   =2\pi\sum_{m\in\mathbb Z}
+       \widehat T_\varepsilon(m)\widehat f(-m)
+\]
+converges by dominated convergence. This proves the assertion and keeps
+the normalization explicit.
+\end{proof}
+
+\begin{proposition}[The complete circle model]\ours\quad
+Let \(M\) be the circle of circumference \(2\pi R\), \(R>0\).
+If \(a/(2\pi R)\) is irrational, then
+\(\Phi_{a,\varepsilon}\to0\) in distributions. If
+\(a/(2\pi R)=p/q\) in lowest terms with \(p,q\) positive integers, then
+\[
+ \Phi_{a,\varepsilon}\longrightarrow
+ 2R\left(\frac1q\sum_{j=0}^{q-1}
+           \delta_{\rm per}(\mu-2\pi j/q)-\frac1{2\pi}\right).
+\]
+Including or omitting the zero eigenvalue does not change the limit.
+\end{proposition}
+\begin{proof}
+The eigenfunctions \(e^{ikx/R}\), \(k\in\mathbb Z\), give frequencies
+\(|k|/R\). Thus, for \(m\ne0\), the geometric series gives
+\[
+ \widehat\Phi_{a,\varepsilon}(m)
+ =\frac{\varepsilon}{2\pi}
+ \left(1+\frac{2}{e^{(\varepsilon+ima)/R}-1}\right).
+\]
+Its limit is \(R/\pi\) when \(ma/R\in2\pi\mathbb Z\), and zero
+otherwise. Moreover,
+\[
+ \left|\widehat\Phi_{a,\varepsilon}(m)\right|
+ \leq\frac{\varepsilon}{2\pi}
+       \left(1+\frac{2}{e^{\varepsilon/R}-1}\right)
+ \leq\frac{\varepsilon+2R}{2\pi},
+\]
+uniformly in \(m\). The Fourier test therefore proves convergence.
+In the rational case, the resonant indices are precisely the nonzero
+multiples of \(q\), which are the coefficients of the displayed atomic
+comb. In the irrational case no nonzero index is resonant. A zero
+eigenvalue contributes only
+\(\varepsilon(\delta_{\rm per}-1/(2\pi))\), which vanishes.
+\end{proof}
+
+\begin{example}[Why one cannot omit the geometric restriction]\ours\quad
+On the unit round two-sphere, with \(a=2\pi\), the notebook family has
+no distributional limit. More precisely,
+\[
+ \widehat\Phi_{2\pi,\varepsilon}(1)
+     =-\frac1{\pi\varepsilon}+O(1).
+\]
+This example does \emph{not} refute the generic-geodesic assertion:
+the round sphere has continuous families of closed geodesics of the
+same length, and their return maps are degenerate.
+\end{example}
+\begin{proof}
+The sphere frequencies are \(\lambda_\ell=\sqrt{\ell(\ell+1)}\), with
+multiplicity \(2\ell+1\), \(\ell\geq0\). For completeness, the polar
+coordinate identity
+\(\Delta_{\mathbb R^3}=\partial_r^2+2r^{-1}\partial_r+r^{-2}\Delta_{S^2}\)
+applied to a harmonic homogeneous polynomial \(r^\ell Y\) gives
+\(-\Delta_{S^2}Y=\ell(\ell+1)Y\).
+The decomposition of degree-\(\ell\) homogeneous polynomials into
+harmonic polynomials plus \(r^2\) times degree-\(\ell-2\) polynomials
+gives dimension
+\(\binom{\ell+2}{2}-\binom{\ell}{2}=2\ell+1\).
+Polynomial restrictions are dense on the sphere, so these harmonics
+give the full spectrum.
+
+Put \(\delta_\ell=\ell+\tfrac12-\lambda_\ell\).
+For \(\ell\geq1\), rationalization gives
+\[
+ 0<\delta_\ell=
+ \frac{1/4}{\ell+1/2+\sqrt{\ell(\ell+1)}}
+       \leq\frac1{4\ell}.
+\]
+Uniformly for \(0<\varepsilon\leq1\),
+\[
+ e^{-(\varepsilon+2\pi i)\lambda_\ell}
+ =-e^{-\varepsilon(\ell+1/2)}
+       \bigl(1+O(\ell^{-1})\bigr).
+\]
+After multiplying by \(2\ell+1\), summing, and then multiplying by
+\(\varepsilon/(2\pi)\), the error is \(O(1)\).
+The finitely many omitted low terms do not change this bound. The main
+term is
+\[
+ -\frac{\varepsilon}{2\pi}e^{-\varepsilon/2}
+       \sum_{\ell\geq0}(2\ell+1)e^{-\varepsilon\ell}
+ =-\frac{\varepsilon}{2\pi}e^{-\varepsilon/2}
+       \frac{1+e^{-\varepsilon}}{(1-e^{-\varepsilon})^2}
+ =-\frac1{\pi\varepsilon}+O(1).
+\]
+A distributional limit would have a finite first Fourier coefficient,
+which this estimate excludes.
+\end{proof}
+
+\paragraph{Checks, scope, and next step.}
+The circle normalization was checked independently by summing over
+residue classes \(k\bmod q\): each class has Abel mass tending to
+\(R/q\), doubled by the two signs of nonzero \(k\). Its Fourier
+transform agrees with the geometric-series calculation. The uniform
+bound follows separately from the triangle inequality for the positive
+Abel sum. For the sphere, rationalization gives a uniform remainder;
+the closed sum of \((2\ell+1)e^{-\varepsilon\ell}\) verifies the sign
+and the coefficient of the divergence. A separate numerical check,
+\texttt{code/spectral\_phase\_check.py}, compares the circle formula
+with direct summation and the sphere asymptotic with successively
+smaller parameters; the output is in
+\texttt{computations/spectral\_phase\_check.json}. Those floating-point
+values are diagnostics, not the proof of convergence or divergence.
+
+The remaining question in the generic higher-dimensional setting is
+the uniform polynomial estimate in the Fourier test, together with
+the exact hypotheses under which the local trace coefficients are
+well defined and do not cancel. A useful further research run would
+trace Shnirelman's exact publication and establish such a bound for
+one specified geometric class and a specified set of admissible
+\(a\). The present calculation neither proves that global estimate
+nor labels the sphere counterexample as a failure under hypotheses
+it does not satisfy.

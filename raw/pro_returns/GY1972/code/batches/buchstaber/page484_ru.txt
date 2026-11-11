@@ -1,0 +1,111 @@
+\SourcePage{GELFAND-P000484}{unlabelled}
+\uuline{Ф. А. Березин.}
+
+\uline{Зад. квантования.}
+
+$M$ — симпл. мн-зие
+($\omega$ — форма [нрзб.] с матр. $\omega_{ik}$;
+$\omega^{ik}$ — обр. матр.)
+\Unclear{GELFAND-P000484}{form-mark}{После «форма» густо наведён знак. Возможные чтения $2$ или $\xi$.}
+
+\[
+[f,g]=\sum\omega^{ik}\frac{\partial f}{\partial x^i}
+\frac{\partial g}{\partial x^k}
+\]
+Квантование: сем-во ассоц. колец $A_h$ с элементами $f(x)$ (ф-и на $M$)
+\[
+f_1\ast f_2=g(x\mid h)
+\]
+\[
+\left.
+\begin{aligned}
+1)\quad &g(x\mid0)=f_1(x)\cdot f_2(x)\\
+2)\quad &\left.\frac{\partial}{\partial h}
+(f_1\ast f_2-f_2\ast f_1)\right|_{h=0}=[f_1,f_2]
+\end{aligned}
+\right\}\quad(\text{принцип соответствия}).
+\]
+Ещё ряд треб. (не столь обяз.)
+
+3) все $A_h$ — алгебры с $1$, соотв. $f_0\equiv1$.
+
+4) $A_h$ — алгебра со следом (опр. на выд. мн-ве элементов в $A_h$).
+\Unclear{GELFAND-P000484}{trace-domain}{Окончание слова «элементов» переписано. Предыдущее чтение не установлено.}
+
+\[
+\mathrm{Sp}(f_1\ast f_2)=\mathrm{Sp}(f_2\ast f_1)
+\]
+и
+\[
+\mathrm{Sp}\, f=c\int f\,d\mu,
+\]
+где $d\mu$ — ест. мера на мн-зии (степень $\omega$).
+\SourceFigure{GELFAND-P000484}{measure-word}{В скобках читается «степень $\omega$».}
+
+Треб. мат. естеств. — \uuline{функториальность} по отн. к каноническим
+Диффеоморфизмам (отн. нек-рого сем-ва отобр. — нек-рой фикс. категории).
+
+{\centering\rule{1.9em}{.4pt}\quad\textperiodcentered\quad\rule{1.9em}{.4pt}\par}
+
+Решение изв., когда $M\in$ опр. классу
+(2 класса кэлеровых мн-зий).
+
+\begingroup\color{black}\GelfandFitDiagram{[diagram: consult scan]}\endgroup
+\SourceFigure{GELFAND-P000484}{class-bracket}{Оба пункта обведены общей чертой слева и снизу.}
+
+{\centering\rule{1.9em}{.7pt}\quad\textbullet\quad\rule{1.9em}{.7pt}\par}
+
+\uline{Фоковское пр-во.}
+\Unclear{GELFAND-P000484}{fock-mark}{Над началом заголовка густо закрашен знак. Чтение не установлено.}
+
+\[
+M=C^n\qquad\omega=\sum dz_i\wedge d\bar z_i.
+\]
+Ф-и — целые ф-и $f(z,\bar z)$ (разл. по $x,y$ в ряд, всюду сход.)
+\[
+(f_1\ast f_2)(z,\bar z)=\frac1{h^n}
+\int f_1(z,\bar v)f_2(v,\bar z)
+ e^{-\frac1h(z-v)(\bar z-\bar v)}\,dv\,d\bar v
+\]
+Важно: строение лин. предст. этого кольца.
+
+Пусть $\varphi(z)$ — обычные целые ф-и с усл.
+\[
+(\varphi,\varphi)=\frac1{h^n}
+\int|\varphi(z)|^2e^{-\frac{z\bar z}{h}}\,dz\,d\bar z
+<+\infty\qquad(\text{пр-во }F_2)
+\]
+Там действует лин. предст. кольца $A_h$:
+\[
+(\hat f\varphi)(z)=\frac1{h^n}\int
+ f(z,v)\overline{\varphi(v)}\,
+ e^{-\frac1h(v-z)\bar v}\,dv\,d\bar v,
+\]
+$f$ — виковский символ.
+\SourceFigure{GELFAND-P000484}{wick-conjugation}{Черта стоит над $\varphi(v)$. В предшествующем множителе $f(z,v)$ черты над $v$ нет.}
+
+Ещё одно кольцо операторов:
+\[
+(\hat f\varphi)(z)=\frac1{h^n}\int
+ \mathring{f}(v,\bar v)\varphi(v)
+ e^{-\frac1h(v-z)\bar v}\,dv\,d\bar v,
+\]
+$\mathring{f}$ — антивиковский символ.
+\[
+(\hat a_k\varphi)(z)=\frac{\partial\varphi}{\partial z_k},
+\qquad(\hat a_k^*\varphi)(z)=z_k\varphi.
+\]
+\[
+\begin{aligned}
+\hat f&=\sum f_{mn}\hat a^{*m}\hat a^n
+&\longleftrightarrow\quad
+f(z,\bar z)&=\sum f_{mn}\bar z^m z^n\\
+\hat f&=\sum\mathring{f}_{mn}\hat a^n\hat a^{*m}
+&\longleftrightarrow\quad
+\mathring{f}(z,\bar z)&=\sum\mathring{f}_{mn}z^n\bar z^m.
+\end{aligned}
+\]
+\Unclear{GELFAND-P000484}{ordered-erasure}{У первого $\hat f$ справа вверху затёрт знак. Возможное чтение $*$.}
+
+\Unclear{GELFAND-P000484}{ordering-bars}{Нижние показатели при первом $\hat a$ и первом $z$ густо наведены. Условное чтение $n$ в обоих местах.}
+

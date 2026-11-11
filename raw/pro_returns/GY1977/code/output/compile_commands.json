@@ -1,0 +1,66 @@
+[
+  {
+    "stage": "typesetting",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/1eb0e8a5924e/work/code/repair_typesetting.py",
+      "/workspace/scratch/1eb0e8a5924e/delivery/GY1977"
+    ],
+    "returncode": 0
+  },
+  {
+    "stage": "builder",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "build_chapter.py",
+      "GY1977"
+    ],
+    "returncode": 0
+  },
+  {
+    "stage": "xelatex_1",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/1eb0e8a5924e/work/tex_runtime/run_tex.py",
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "GY1977_test.tex"
+    ],
+    "returncode": 0
+  },
+  {
+    "stage": "bibtex",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/1eb0e8a5924e/work/tex_runtime/run_tex.py",
+      "bibtex",
+      "GY1977_test"
+    ],
+    "returncode": 0
+  },
+  {
+    "stage": "xelatex_2",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/1eb0e8a5924e/work/tex_runtime/run_tex.py",
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "GY1977_test.tex"
+    ],
+    "returncode": 0
+  },
+  {
+    "stage": "xelatex_3",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/1eb0e8a5924e/work/tex_runtime/run_tex.py",
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "GY1977_test.tex"
+    ],
+    "returncode": 0
+  }
+]

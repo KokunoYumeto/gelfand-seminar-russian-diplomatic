@@ -1,0 +1,31 @@
+--- kit_supplied/gelfand_companion.sty
++++ gelfand_companion.sty
+@@ -21,6 +21,9 @@
+ \RequirePackage{longtable,booktabs,array}
+ \RequirePackage{enumitem}
+ \RequirePackage{needspace}
++\RequirePackage{etoolbox}
++\widowpenalty=10000
++\clubpenalty=10000
+ \RequirePackage[authoryear,round]{natbib}
+ \RequirePackage{xurl}
+ \RequirePackage[hidelinks]{hyperref}
+@@ -34,13 +37,16 @@
+ % \GStalk{record}{date ISO}{speaker}{source pages}{short title}
+ \newcommand{\GStalk}[5]{%
+   \Needspace{7\baselineskip}%
+-  \section[#3, #2: #5]{#3, #2: #5}\label{rec:#1}%
++  \ifblank{#3}{%
++    \ifblank{#2}{\section{#5}}{\section{#2: #5}}}{%
++    \ifblank{#2}{\section{#3: #5}}{\section{#3, #2: #5}}}%
++  \label{rec:#1}%
+   \noindent{\small\GSrecord{#1}; source pages \GSpage{#4}.}\par\nobreak\medskip\nobreak}
+ 
+ % ---- one item of the occurrence index; written by build_chapter.py
+ % \begin{GSitem}{id}{class}{title} ... \GSfield{label}{text} ... \end{GSitem}
+ \newenvironment{GSitem}[3]{%
+-  \par\medskip\Needspace{4\baselineskip}\phantomsection\noindent
++  \par\medskip\Needspace{6\baselineskip}\phantomsection\noindent
+   \parbox[t]{\dimexpr\linewidth-5.8em\relax}{\raggedright\strut\textbf{#1}\quad\textbf{#3}}%
+   \hfill\parbox[t]{4.8em}{\raggedleft\strut\fbox{\footnotesize Class #2}}\label{item:#1}\par
+   \begin{list}{}{\leftmargin=1.2em\itemsep=1pt\parsep=0pt\topsep=2pt}}%

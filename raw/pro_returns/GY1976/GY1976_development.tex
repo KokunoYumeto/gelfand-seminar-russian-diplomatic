@@ -1,0 +1,400 @@
+No C or D occurrence qualified for a bounded new research contribution.
+The subsections below are critical verifications of statements, calculations
+and omissions in the notebook, not newly solved open problems. All results
+proved or computed in this task are marked with the supplied authorship
+macros; their exact scope and independent checks are stated in the text.
+Historical classifications remain those in the occurrence index.
+
+\subsection{Critical verification of the early records}
+
+The following checks audit mathematical statements faithfully present in the manuscript. They make no novelty claim and are not developments of an invented open problem. Every calculation was re-derived independently or checked by a second algebraic method; the accompanying \texttt{early\_checks.py} and its output preserve the exact computations. A separate reviewer independently checked the kernel formula as well.
+
+\begin{proposition}[The missing factor in the projector kernel]\ours{}
+Let \(|\lambda|>1\), and let \(t=\lambda+\lambda^{-1}\). The character-series expression occurring in the holomorphic discrete-series projector, with its common Haar normalization suppressed, is
+\[
+ K(\lambda)=\frac1{\lambda-\lambda^{-1}}
+ \sum_{n=1}^{\infty}n\lambda^{-n}
+ =\frac{\lambda^2}{(\lambda-1)^3(\lambda+1)}.
+\]
+Consequently
+\[
+ K(\lambda)^2(t-2)^3(t+2)=1.
+\]
+Thus the invariant trace expression is proportional, with a consistently chosen holomorphic branch, to \([(t-2)^3(t+2)]^{-1/2}\), as in \citet[Theorem~10, equations~18 and~22]{gelfandgindikin1977complex}. The notebook's \((2-t)^{-3/2}\) lacks a nonconstant factor.
+\end{proposition}
+\begin{proof}
+Put \(r=\lambda^{-1}\). The geometric series converges normally on compact subsets of \(|r|<1\); differentiating it gives
+\(\sum_{n\ge1}nr^n=r/(1-r)^2\). Dividing by \(\lambda-\lambda^{-1}\) and simplifying gives the rational formula. Independently,
+\[
+ t-2=\frac{(\lambda-1)^2}{\lambda},\qquad
+ t+2=\frac{(\lambda+1)^2}{\lambda},
+\]
+so direct substitution proves the squared identity without relying on a branch choice. The phase difference between \(t-2\) and \(2-t\) may be included in the normalization constant on a branch, but \((t+2)^{-1/2}\) cannot be. This is a check of the published character-series kernel, not a claim that arbitrary scalar square roots define a global projector without their boundary-value prescriptions.
+
+As an independent finite check, for \(0<r<1\),
+\[
+ \sum_{n>N}nr^n=\frac{r^{N+1}((N+1)-Nr)}{(1-r)^2}.
+\]
+Exact rational arithmetic, using no symbolic summation, verified the finite sum plus this tail at \(\lambda=3/2,2,3,5\), each with \(N=1,2,7,23\). A separate reviewer independently obtained the same rational and trace identities. These checks confirm the algebra; the publication supplies the representation-theoretic projector interpretation.
+\end{proof}
+
+\begin{proposition}[Quadratic normalization near a solution]\ours{}
+Suppose, near \(y=p=0\),
+\[
+ y''=a(x)y^2+b(x)yp+c(x)p^2+O((|y|+|p|)^3),\qquad p=y'.
+\]
+Then a local point transformation whose Jacobian is one on the reference solution removes the two mixed quadratic terms and leaves
+\[
+ Y_{XX}=A(X)Y^2+O((|Y|+|Y_X|)^3),\qquad
+ A=a+\frac16c''-\frac13b'.
+\]
+\end{proposition}
+\begin{proof}
+Use \(X=x+f(x)y\), \(Y=y+g(x)y^2\). Along the equation put \(D=\partial_x+p\partial_y+F\partial_p\). The exact transformation formula is
+\[
+ Y_{XX}=\frac{D^2Y\,DX-DY\,D^2X}{(DX)^3}.
+\]
+Its quadratic part is
+\[
+ (a+g'')y^2+(b+4g'-f'')yp+(c+2g-2f')p^2.
+\]
+Choose \(g=f'-c/2\) and integrate \(f''=(2c'-b)/3\) locally. The latter equation has smooth local solutions; the coordinate Jacobian is one at \(y=0\), so the inverse function theorem applies. The surviving coefficient is the displayed \(A\). Expressing this quadratic polynomial in the new variables changes it only by terms of order at least three.
+
+The symbolic audit expanded the full chain-rule expression with \((y,p)\mapsto(\varepsilon y,\varepsilon p)\). A second check used the concrete polynomials \(a=1+x^2\), \(b=x+2\), \(c=x^3-x\), \(f=x^4/6-x^3/18-2x^2/3\); the mixed terms vanished and the remaining coefficient was \(x^2+x+2/3\). The classical Tresse expression in occurrence~1976-403.1, restricted to the reference solution, independently gives \(H=12A\).
+\end{proof}
+
+\begin{example}[A limitation of the density criterion]\ours{}
+The analytic equation \(y''=y^3\) has the solution \(y=0\), zero constant and linear transverse terms, and zero quadratic transverse coefficient. Thus the density constructed along this particular solution vanishes. Nevertheless, the classical relative invariant is \(H=6F_{yy}=36y\), which is a nonzero formal series. The equation cannot be formally point-flat. This checks the literal one-solution reading of P000666; it does not rule out a stronger intended statement with additional quantifiers and hypotheses. Direct substitution into the complete \(H\)-formula and the shorter \(F_p=0\) calculation agree.
+\end{example}
+
+\begin{proposition}[The projective vector-field invariant]\ours{}
+Let \(v(x)\partial_x\) be a specified smooth vector field and let \(X=\phi(x)\), \(\phi'\ne0\). Write \(V(X)=\phi'(x)v(x)\). Then
+\[
+ 2VV_{XX}-V_X^2
+ =2vv''-(v')^2+2v^2S(\phi),\qquad
+ S(\phi)=\frac{\phi^{(3)}}{\phi'}-
+ \frac32\left(\frac{\phi''}{\phi'}\right)^2.
+\]
+Hence \(I_2=2vv''-(v')^2\) and \(I_n=(v\partial_x)^{n-2}I_2\) are scalar invariants under projective coordinate changes. Under \(v\mapsto cv\), they scale as \(I_n\mapsto c^nI_n\).
+\end{proposition}
+\begin{proof}
+Since \(\partial_X=(\phi')^{-1}\partial_x\),
+\[
+ V_X=v'+\frac{\phi''}{\phi'}v,
+\]
+and one more differentiation proves the identity. The Schwarzian is zero for a Möbius map. Also \(V\partial_X=v\partial_x\), giving invariant differentiation and the scaling law by induction. A separate symbolic check used each of \(\phi=(2x+1)/(x+1)\) and \(\phi=(x-2)/(3x+4)\), with \(v=1+x+x^2+x^4\), and obtained exact zero differences. This confirms the notebook formulas for a specified field; it does not eliminate the constant ambiguity inherited from its relative density.
+\end{proof}
+
+\begin{proposition}[Auxiliary-field elimination in the written action]\ours{}
+With precisely the auxiliary terms on P000669, let
+\[
+ P=mA+g(A^2-B^2),\qquad Q=mB+2gAB.
+\]
+Then
+\[
+ \mathcal L_{\rm aux}=\tfrac12(F^2+G^2)+FP+GQ
+\]
+has unique stationary values \(F=-P\), \(G=-Q\), and its eliminated value is
+\[
+ -\frac12m^2(A^2+B^2)-mgA(A^2+B^2)
+ -\frac12g^2(A^2+B^2)^2.
+\]
+\end{proposition}
+\begin{proof}
+Differentiate with respect to the algebraic variables \(F,G\), then substitute. Independently, completing squares gives
+\[
+ \mathcal L_{\rm aux}=\tfrac12(F+P)^2+\tfrac12(G+Q)^2
+ -\tfrac12(P^2+Q^2).
+\]
+The identity
+\((A^2-B^2)^2+4A^2B^2=(A^2+B^2)^2\)
+gives the quartic term, and the two cross terms give the negative cubic coefficient. The code checked both polynomial identities and three independent integer parameter sets. This proves that the two notebook scalar formulas disagree under their printed conventions. Since \(P,Q\) contain no fermions, the operation cannot repair the separate factor-of-two discrepancy in the fermion mass term. The intended pre-existing construction is verified in \citet[\S~4(b)]{ogievetskymezincescu1975superfields}.
+\end{proof}
+
+\begin{remark}[What the audit does not settle]
+The five unidentified early occurrences concern an unspecified Radon range, an undefined minimality criterion, a damaged global projective question, a cohomological connection without a map or degree, and an uncertainty-principle slogan without a Hamiltonian. None supplies the precise remaining scope required for class C or D development. The completed audits concern literal correctness and finite calculations; they are not substitutes for a literature-supported open question.
+\end{remark}
+
+
+\subsection{Critical checks on the Berezinian and flatness signs}
+
+These calculations audit faithful mathematical errors in the source. They are
+elementary critical annotations, not a claim to new research and not a development
+of a class C or D problem.
+
+\paragraph{The reciprocal Berezinian on P000673.}\oursComputed{}
+For an even block-diagonal matrix \(J=\operatorname{diag}(a,d)\) of size
+\(1|1\), with nonzero even scalar entries, the usual Berezinian is
+\(\operatorname{Ber}J=a/d\). The first expression on P000673 gives \(d/a\),
+whereas the lower expression on the same page gives \(a/d\).
+Taking \(a=2,d=3\) gives \(3/2\) versus \(2/3\), so the two expressions
+cannot be simultaneous definitions in the stated convention.
+The usual normalization is explicitly printed in
+\citet[\S1]{bernsteinleites1977integral} and in the earlier density formula
+\citep[formula~(3)]{berezinleites1975supermanifolds}.
+The correct general formula is
+\[
+ \operatorname{Ber}\begin{pmatrix}A&B\\C&D\end{pmatrix}
+ =\frac{\det(A-BD^{-1}C)}{\det D}
+ =\frac{\det A}{\det(D-CA^{-1}B)}.
+\]
+This test isolates a reciprocal error without depending on conventions for
+left versus right odd derivatives.
+
+\paragraph{Flatness on P000684 and in the printed Manin theorem.}\ours{}
+Use the notebook's convention
+\(\nabla_1\mathbf1=P\mathbf1\) and
+\(\nabla_2\mathbf1=L\mathbf1\).
+Because both connections commute with \(\nabla\), the coefficientwise
+Leibniz rule gives
+\[
+ [\nabla_1,\nabla_2]\mathbf1
+ = (d_1L+LP-d_2P-PL)\mathbf1.
+\]
+The cyclic filtered-module theorem makes the action on \(\mathbf1\)
+faithful for differential operators, hence flatness implies
+\[
+ d_1L-d_2P=[P,L].
+\]
+Both the difference sign and the order of the commutator follow from the
+declared convention. An unspecified \(\pm\) in front of a commutator cannot
+repair a sum of the two derivatives.
+
+For a concrete counterexample to that sum, take
+\(\mathcal B=\mathbb Q[t,z]\), \(d=0\),
+\(\mathcal M=\mathcal B[D]\), and
+\[
+ \nabla Q=DQ,\qquad
+ \nabla_1Q=\partial_tQ+Qz,\qquad
+ \nabla_2Q=\partial_zQ+Qt.
+\]
+The standard order filtration satisfies the module axioms; the three
+connections commute. Their values on \(1\) are \(P=z\) and \(L=t\).
+Thus \(d_1L-d_2P=1-1=0=[P,L]\), whereas
+\(d_1L+d_2P=2\ne0\). The accompanying exact symbolic check verifies this
+on a general test polynomial in \(t,z,D\).
+
+The error is also present in the inspected printed English statement
+\citep[Chapter~III, Theorem~2.6, p.~83]{manin1978algebraic}.
+That statement uses the opposite names,
+\(\nabla_1\mathbf1=L\mathbf1\), \(\nabla_2\mathbf1=P\mathbf1\),
+and prints \(d_1P+d_2L=[P,L]\). Its proof requires instead
+\(d_1P-d_2L=[L,P]\). This identifies a shared mathematical sign error,
+not a failure to transcribe the notebook.
+
+\paragraph{Independent fourth-order check.}\oursComputed{}
+For P000681, the companion's separate \texttt{critical\_checks.py} computes
+the commutator by two methods. With \(L=D^4+vD^2+wD+z\),
+\(P=D^2+AD+v/2\), and \(A_x=0\), its coefficients are
+\[
+\begin{aligned}
+[L,P]_{D^2}&=2v_{xx}-Av_x-2w_x,\\
+[L,P]_{D}&=2v_{xxx}+vv_x-w_{xx}-Aw_x-2z_x,\\
+[L,P]_{1}&=\tfrac12v_{xxxx}+\tfrac12vv_{xx}+\tfrac12wv_x-z_{xx}-Az_x.
+\end{aligned}
+\]
+The notebook's first two relative coefficients are therefore wrong, while
+the third equation agrees. Manin's later equation has the corrected relative
+coefficients, with its own time and commutator conventions
+\citep[Chapter~III, \S6.3, equation~(17), p.~96]{manin1978algebraic}.
+
+
+\subsection{Audit of the assertion that changing the complex structure merges any two packets}
+
+The notebook, P000702, third line from the bottom before the final diagram, says
+\ru{Любые два неприв. предст. эквивал. относит. нек-рой рим. пов. (вх. в какой-то пакет).}
+The scan confirms the two universal quantifiers; the word abbreviated as
+\ru{неприв.} is overwritten but is the diplomatic transcription's reading.
+The definition earlier on the same page makes equivalence mean
+\(E_{\rho_1}\cong E_{\rho_2}\) as holomorphic bundles.  The assertion therefore
+includes the following rank-one case, in which it is false.  The author's own
+survey explicitly gives uniqueness of the unitary representation in a packet
+as an exercise \citep[Ch.~II, \S2, Exercise~10, p.~204]{tyurin1978periods}.
+This is an audit
+of a literal assertion, not the development of a C or D problem.
+
+\begin{proposition}[Distinct unitary characters remain in distinct packets]\ours{}
+Let \(\Sigma\) be a connected, closed, oriented surface of genus \(g\geq1\),
+and let \(\chi_1,\chi_2:\pi_1(\Sigma)\to U(1)\) be two distinct characters.
+For every complex structure \(J\) compatible with the orientation, the
+holomorphic line bundles obtained from the two unitary flat bundles on
+\(X=(\Sigma,J)\) are nonisomorphic.  In particular, the notebook's assertion
+about arbitrary pairs of irreducible representations is false.
+\end{proposition}
+
+\begin{proof}
+Write \(L_i\) for the flat line bundle with monodromy \(\chi_i\), with its
+parallel Hermitian metric and holomorphic structure given by the
+\((0,1)\)-part of the flat connection.  Suppose that
+\(\Phi:L_1\to L_2\) is a holomorphic bundle isomorphism.  It is a nowhere-zero
+holomorphic section \(s\) of the unitary flat line bundle
+\(L=L_2\otimes L_1^{-1}\), whose monodromy is
+\(\delta=\chi_2\chi_1^{-1}\).
+
+On any simply connected coordinate neighbourhood choose a parallel frame
+\(e\) of norm one for \(L\).  Because the \((0,1)\)-connection defines the
+holomorphic structure, \(e\) is holomorphic.  Thus \(s=f e\) with \(f\)
+holomorphic and nowhere zero.  The real function
+\(u=\log\lVert s\rVert=\log|f|\) is harmonic on that neighbourhood.  Unitary
+transition functions make \(u\) a globally defined harmonic function on the
+compact connected Riemann surface \(X\); hence \(u\) is constant.  Each
+holomorphic function \(f\) therefore has constant modulus and is constant.
+Consequently \(s\) is a nonzero parallel section of \(L\).  Parallel
+transport around every loop fixes its nonzero value, so \(\delta=1\) and
+\(\chi_1=\chi_2\), a contradiction.
+
+For an explicit pair, use the presentation in the notebook.  Take
+\(\chi_1=1\), let \(\chi_2(a_1)=e^{i\theta}\) for
+\(\theta\notin2\pi\mathbb Z\), and send every other standard generator to
+\(1\).  The surface relation holds because \(U(1)\) is abelian.  Both are
+one-dimensional complex representations and therefore irreducible.  The
+argument applies to every compatible \(J\), including genus \(g\geq2\)
+if that was the intended range.  Even allowing a change of marking cannot
+turn the nontrivial character into the trivial character.
+\end{proof}
+
+\begin{remark}[Independent check]
+The proof was checked again by working on the universal cover.  A
+holomorphic isomorphism there is multiplication by a nowhere-zero
+holomorphic function \(F\) with
+\(F(\gamma u)=\delta(\gamma)F(u)\).  Since \(|\delta(\gamma)|=1\),
+\(\log|F|\) descends to a harmonic function on \(X\), hence is constant;
+the open mapping theorem then makes \(F\) constant and forces
+\(\delta=1\).  This check uses neither the higher-rank stability theorem
+nor an assumption that all flat holomorphic bundles are stable.
+\end{remark}
+
+
+\subsection{Critical checks for the miscatalogued exterior-algebra lecture}
+
+These checks concern record~437, whose manuscript date is 13 February 1978.
+They audit the supplied material without turning it into evidence of a
+1976--77 research problem. The results are elementary verifications of the
+construction recorded in the notebook; no claim of novelty is intended.
+
+\begin{proposition}[The regular exterior module is acyclic]\ours{}
+Let \(k\) be a field, let \(\Xi\) have finite dimension \(m\geq1\), and
+let \(0\ne\xi\in\Xi\). Give \(\Lambda=\bigwedge\Xi\) its negative
+grading and differential \(d(v)=\xi\wedge v\). Then the complex is
+contractible. Consequently every finite direct sum of grading shifts of
+\(\Lambda\) gives the zero bundle under the construction of record~437.
+\end{proposition}
+\begin{proof}
+Choose \(a\in\Xi^*\) with \(a(\xi)=1\). Define contraction on a simple
+exterior tensor by
+\[
+ \iota_a(v_1\wedge\cdots\wedge v_r)
+ =\sum_{j=1}^r(-1)^{j-1}a(v_j)
+ v_1\wedge\cdots\wedge\widehat{v_j}\wedge\cdots\wedge v_r.
+\]
+Applying this formula to \(\xi\wedge v\), the term contracting the first
+factor is \(v\); each remaining term is the negative of the corresponding
+term of \(\xi\wedge\iota_a(v)\). Therefore
+\(\iota_a d+d\iota_a=1\). If \(dv=0\), this identity gives
+\(v=d\iota_a(v)\), so every cycle is a boundary. The homotopy commutes
+with taking direct sums and does not depend on the choice of grading
+origin. In particular the output has rank zero, which resolves the
+notebook's ambiguous use of ``trivial'' in this example.
+\end{proof}
+
+\begin{remark}[Independent checks]\oursComputed{}
+The identity was independently re-derived by writing
+\(\Xi=k\xi\oplus U\), hence
+\(\Lambda=\bigwedge U\oplus\xi\wedge\bigwedge U\). The differential
+maps the first summand isomorphically to the second and kills the second.
+The exact-arithmetic program \texttt{code/critical\_checks.py} additionally
+constructs exterior multiplication and contraction by two separate
+bit-mask formulas. For \(m=1,\ldots,6\) and three nonzero vectors in each
+dimension, all 18 cases satisfy \(d^2=0\), \(\iota_a d+d\iota_a=1\),
+and zero homology in every degree. The ranks agree with
+\(\binom{m-1}{r}\) in exterior degree \(r\). These finite checks support
+the implementation; the preceding proof establishes the assertion for
+every \(m\), not an extrapolation from the computed cases.
+\end{remark}
+
+\begin{example}[The inverse construction requires a grading convention]\ours{}
+Take \(n=0\), so the base is a point, and let
+\(\mathcal E=\mathcal O\). For every \(N\geq0\), the two consecutive
+section spaces are one-dimensional and \(X_0\) is the identity. If the
+two tensor factors in P000756 are given their raw exterior grading, then
+\[
+ \partial:\Lambda\longrightarrow\Lambda,\qquad
+ \partial(1)=\xi_0,\qquad \partial(\xi_0)=0.
+\]
+Its kernel is \(k\xi_0\), concentrated in internal degree \(-1\).
+The action of \(\xi_0\) on that kernel is zero, so its fibre homology
+is nonzero in degree \(-1\); the raw kernel is not proper. This is an
+explicit check of an omitted grading convention, not a counterexample to
+the BGG correspondence. The dual free module
+\(\operatorname{Hom}_k(\Lambda,k)\) differs from \(\Lambda\) by a
+grading shift, which is essential in the precise inverse construction
+\citep[\S4]{bernsteingelfandgelfand1978bundles}.
+\end{example}
+
+\begin{proposition}[Sign of the twist operation]\ours{}
+Use the negative grading of record~437. If \(V\) is proper and
+\(0\to V\to P\to V'\to0\) is an exact sequence of finite graded
+exterior-algebra modules with \(P\) free, set \(W_j=V'_{j+1}\).
+Then \(W\) is proper and \(\Phi(W)=\Phi(V)(1)\).
+\end{proposition}
+\begin{proof}
+For each nonzero \(\xi\), applying \(L_\xi\) gives a short exact
+sequence of complexes. The middle complex is acyclic by the proposition
+above, so its homology sequence gives
+\(H_j(L_\xi(V'))\cong H_{j-1}(L_\xi(V))\). Consequently the only
+possibly nonzero homology of \(V'\) is in chain degree one, and the
+displayed grading shift moves it to degree zero. On projective space,
+\[
+ \mathcal L^j(W)
+ =V'_{1-j}\otimes\mathcal O(j)
+ =\mathcal L^{j-1}(V')(1).
+\]
+The short exact sequence of sheaf complexes gives
+\(\mathcal H^{-1}(\mathcal L(V'))\cong\mathcal H^0(\mathcal L(V))\).
+Reindexing by the displayed formula proves the claimed twist. Depending
+on the convention for a shifted complex, a minus sign in its differential
+is removed by multiplying degree \(j\) by \((-1)^j\); cohomology and
+the bundle are unaffected.
+\end{proof}
+
+\begin{remark}[Second check of indexing]
+There are two independent index tests: the chain homology sequence
+places the cokernel's fibre homology in degree one, whereas the sheaf
+cohomology sequence places it in degree minus one. The substitution
+\(j\mapsto-j\) in \(\mathcal L^j(V)=V_{-j}\otimes\mathcal O(j)\)
+reconciles them and gives \(\mathcal O(1)\), not \(\mathcal O(-1)\).
+This is exactly the convention in remark~2 after Theorem~1 of
+\citet{bernsteingelfandgelfand1978bundles}.
+\end{remark}
+
+
+\begin{remark}[Independent check of the inverse-module indexing]\ours{}
+The conventions of occurrence~1977-437.19 were checked against
+\citet[\S2, Corollary~2.4, Theorem~3.7 and \S4]{eisenbudfloystadschreyer2003exterior}.
+Put \(Z_m=\ker(T^m\to T^{m+1})\), use internal shifts
+\(Q(a)_j=Q_{a+j}\), and use cochain shifts \(K[a]^j=K^{a+j}\).
+At a sufficiently large cutoff \(N\), the BGG reciprocity theorem,
+applied to the regraded kernel, gives
+\(\mathcal L(Z_N(N))\simeq\mathcal E(N)\).
+Direct substitution in the definition of the linear complex gives
+\[
+ \mathcal L(Q(N))=\mathcal L(Q)[-N](N).
+\]
+Therefore \(\mathcal L(Z_N)\simeq\mathcal E[N]\).
+For every integer \(m\), exactness of the Tate complex gives
+\(0\to Z_m\to T^m\to Z_{m+1}\to0\).
+The middle term is graded free, and its linear sheaf complex is acyclic
+by the contraction above. Its associated triangle therefore gives
+\(\mathcal L(Z_{m+1})\simeq\mathcal L(Z_m)[1]\).
+Iteration yields \(\mathcal L(Z_N)\simeq\mathcal L(Z_0)[N]\), hence
+\(\mathcal L(Z_0)\simeq\mathcal E\) with no additional twist.
+The bounded complex of locally free sheaves may be split locally away
+from its locally free degree-zero cohomology, so its fibres have no
+other homology: \(Z_0\) is proper. The point case gives the trivial
+exterior module in internal degree zero. On \(\mathbb P^1\), the case
+\(\mathcal E=\mathcal O(-1)\) gives the Euler kernel of
+\(\mathcal O^2\to\mathcal O(1)\), again checking the grading sign.
+These are checks of conventions in the cited construction, not a new
+proof of the BGG reciprocity theorem.
+\end{remark}
+

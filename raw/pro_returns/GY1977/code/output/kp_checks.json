@@ -1,0 +1,30 @@
+{
+  "literal_notebook_pde": "3 u_yy + (4 u_t + 6 u u_x + u_xxx)_x = 0",
+  "pole_ansatz": "u=-2/(x-q)^2+r0+r1*(x-q)+...",
+  "coefficient_minus4": "48*qt - 36*qy**2 - 72*r0",
+  "coefficient_minus3": "-12*qyy - 24*r1",
+  "consequences": "q_yy=-8 sum_(j!=i)(q_i-q_j)^(-3); q_t=3q_y^2/4-3 sum_(j!=i)(q_i-q_j)^(-2)",
+  "canonical_y_hamiltonian": "H=(1/2)sum p_i^2 - 4 sum_(i<j)(q_i-q_j)^(-2), p_i=q_i,y",
+  "standard_minus_minus_lax_pair": "(4u_t-6uu_x-u_xxx)_x=3u_yy; w_x=3(u_xx+u_y)/4",
+  "time_convention": "The literal notebook PDE is obtained by reversing this t, equivalently using partial_t+M.",
+  "hamiltonian_triple_identity": "a^3(b-c)+b^3(c-a)+c^3(a-b)=0 when a+b+c=0; checked symbolically",
+  "poisson_bracket_checks": [
+    {
+      "particles": 2,
+      "full_symbolic_identity": true,
+      "exact_distinct_position_evaluations": 20
+    },
+    {
+      "particles": 3,
+      "full_symbolic_identity": true,
+      "exact_distinct_position_evaluations": 20
+    },
+    {
+      "particles": 4,
+      "full_symbolic_identity": false,
+      "exact_distinct_position_evaluations": 20
+    }
+  ],
+  "poisson_random_seed": 1977434,
+  "verified": "symbolic Laurent coefficients and differential-operator composition; independently rederived by a separate researcher"
+}

@@ -1,0 +1,140 @@
+GY1982 exact Haar calculation; domain: every integer N >= 2
+E W12 = 1/N [exact symbolic agreement]
+E W12^2 = 4/((N - 1)*(N + 1)) [exact symbolic agreement]
+E W12 conjugate(W12) = N**2/((N - 1)*(N + 1)) [exact symbolic agreement]
+E W12 W13 = 2/N**2 [exact symbolic agreement]
+E W12 W31 = 2/N**2 [exact symbolic agreement]
+E W12 W34 = N**(-2) [exact symbolic agreement]
+Var S, d=2 = 2*(N**4 + 2*N**2 + 2)/(N**2*(N - 1)*(N + 1)) [exact symbolic agreement]
+Var S, d=3 = 6*(N**4 + 6*N**2 - 2)/(N**2*(N - 1)*(N + 1)) [exact symbolic agreement]
+Var S, d=4 = 12*(N**4 + 10*N**2 - 6)/(N**2*(N - 1)*(N + 1)) [exact symbolic agreement]
+Var S, d=5 = 20*(N**4 + 14*N**2 - 10)/(N**2*(N - 1)*(N + 1)) [exact symbolic agreement]
+All 584 ordered plaquette pairs for d=2,3,4,5: checked symbolically.
+Independent low-rank edge case: N=1, every commutator is 1,
+F_{d,1}(beta)=-d^2 beta; Fsecond=0. The N>=2 formula is NOT used at N=1.
+For d=4, large-N derivatives: Fprime -> -4, Fsecond -> 12.
+These coefficient calculations alone do not interchange limits or
+prove an all-coupling free energy. Local analyticity uses the cited theorem.
+Exact rational spot evaluations:
+[
+  {
+    "d": 2,
+    "N": 2,
+    "Fprime": "-5/2",
+    "Fsecond": "13/3"
+  },
+  {
+    "d": 2,
+    "N": 3,
+    "Fprime": "-20/9",
+    "Fsecond": "101/36"
+  },
+  {
+    "d": 2,
+    "N": 4,
+    "Fprime": "-17/8",
+    "Fsecond": "29/12"
+  },
+  {
+    "d": 2,
+    "N": 7,
+    "Fprime": "-100/49",
+    "Fsecond": "2501/1176"
+  },
+  {
+    "d": 2,
+    "N": 11,
+    "Fprime": "-244/121",
+    "Fsecond": "2977/1452"
+  },
+  {
+    "d": 3,
+    "N": 2,
+    "Fprime": "-9/2",
+    "Fsecond": "19"
+  },
+  {
+    "d": 3,
+    "N": 3,
+    "Fprime": "-11/3",
+    "Fsecond": "133/12"
+  },
+  {
+    "d": 3,
+    "N": 4,
+    "Fprime": "-27/8",
+    "Fsecond": "35/4"
+  },
+  {
+    "d": 3,
+    "N": 7,
+    "Fprime": "-153/49",
+    "Fsecond": "2693/392"
+  },
+  {
+    "d": 3,
+    "N": 11,
+    "Fprime": "-369/121",
+    "Fsecond": "3073/484"
+  },
+  {
+    "d": 4,
+    "N": 2,
+    "Fprime": "-7",
+    "Fsecond": "50"
+  },
+  {
+    "d": 4,
+    "N": 3,
+    "Fprime": "-16/3",
+    "Fsecond": "55/2"
+  },
+  {
+    "d": 4,
+    "N": 4,
+    "Fprime": "-19/4",
+    "Fsecond": "41/2"
+  },
+  {
+    "d": 4,
+    "N": 7,
+    "Fprime": "-208/49",
+    "Fsecond": "2885/196"
+  },
+  {
+    "d": 4,
+    "N": 11,
+    "Fprime": "-496/121",
+    "Fsecond": "3169/242"
+  },
+  {
+    "d": 5,
+    "N": 2,
+    "Fprime": "-10",
+    "Fsecond": "310/3"
+  },
+  {
+    "d": 5,
+    "N": 3,
+    "Fprime": "-65/9",
+    "Fsecond": "985/18"
+  },
+  {
+    "d": 5,
+    "N": 4,
+    "Fprime": "-25/4",
+    "Fsecond": "235/6"
+  },
+  {
+    "d": 5,
+    "N": 7,
+    "Fprime": "-265/49",
+    "Fsecond": "15385/588"
+  },
+  {
+    "d": 5,
+    "N": 11,
+    "Fprime": "-625/121",
+    "Fsecond": "16325/726"
+  }
+]

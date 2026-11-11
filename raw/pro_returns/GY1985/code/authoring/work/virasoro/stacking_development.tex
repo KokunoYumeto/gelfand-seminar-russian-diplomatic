@@ -1,0 +1,283 @@
+\subsection{Simplicial four-polytopes: an explicit contractible family}
+\label{sec:gy1985-stacking}
+
+This development belongs to item~1985-658.10 and problem~GP-1985-42.
+The notebook on P001230 says only that even simplicial polytopes in
+\(\mathbb R^4\) can have \ru{более или менее любой} topology of their
+fixed-type realization spaces. The qualification means ``more or less any'';
+it does not specify a homeomorphism, homotopy equivalence, stable equivalence,
+or the normalization of realizations. An editorial homotopy formulation is:
+does every nonempty finite simplicial-complex homotopy type occur as a
+normalized realization space of a simplicial four-polytope? The stronger
+precise conjecture of \citet[Conjecture~4]{adiprasitopadrol2017universality}
+asks for stable equivalence to every nonempty open primary basic
+semialgebraic set defined over \(\mathbb Z\), even requiring the four-polytope
+to be neighborly. This latter formulation is a literature conjecture, not
+an exact quotation from the seminar. Adiprasito--Padrol use a homogenized
+realization model: vector configurations realizing the cone over the
+polytope, modulo \(\mathrm{GL}_{d+1}(\mathbb R)\). The fixed affine-frame
+and prescribed-history model proved contractible below is specified
+separately; no identification of these normalization conventions is
+assumed.
+
+\paragraph{The established results and their limits.}
+Mn\"ev's 1985 announcement already gives configuration universality and a
+simplicial-polytope statement with dimension unrestricted
+\citep[Theorems~3--4]{mnev1985varieties}. Adiprasito--Padrol explicitly regard
+the earlier arguments for the simplicial part as incomplete and supply
+the missing proof; the 1985 announcement must therefore not be treated
+as equivalent to an independently checked complete proof of that part. The proof of general four-polytope
+universality reported in \citet[Main Theorem]{richtergebertziegler1995realization}
+concerns work of 1994 and appeared in 1995; it does not impose simpliciality.
+\citet[Theorem~2]{adiprasitopadrol2017universality} proves the neighborly
+simplicial result in dimension \(2n-4\) with \(2n\) vertices. That paper first
+circulated in February 2014, appeared online in May 2016, and was printed
+in 2017. Its Conjecture~4 preserves the difficult fixed dimension.
+Their discussion after Conjecture~4 also cites established disconnected
+realization spaces of simplicial four-polytopes, so nontrivial topology
+in dimension four is already known; universality is the remaining
+quantifier. The same paper records trivial realization spaces for stacked polytopes
+in the discussion after Conjecture~4; its Theorem~3 proves a ball result
+for specified sewing families. The proof below supplies an explicit
+continuous insertion and contraction for a narrowly specified stacking
+space. It is not a new universality theorem or a new discovery of
+contractibility for stacked polytopes.
+
+As of November 2026, no resolution of fixed-dimensional simplicial
+universality was found in the bounded search for this chapter. The latest
+opened source explicitly retaining the constant-dimension simplicial
+question is the 2024 compendium, entries CG68--CG69
+\citep{schaefercardinalmiltzow2024existential}. This is dated evidence, not a
+claim to have excluded every subsequent publication. A later 2026 search
+lead concerning noncontractible realization spaces is recorded as
+unverified in the research log and is not used in the argument.
+
+\paragraph{The space to which the proof applies.}
+Fix \(d\geq2\), and fix the labelled simplex
+\(P_0=\operatorname{conv}(0,e_1,\ldots,e_d)\subset\mathbb R^d\).
+A \emph{prescribed stacking history} \(\mathcal H\) of length \(r\) specifies,
+at step \(k\), a labelled simplex facet \(F_k\) of the combinatorial polytope
+produced by the previous steps. The next labelled point must lie strictly
+beyond \(F_k\) and strictly beneath every other current facet.
+Let \(\mathcal R_0\) be the one-point space consisting of the fixed simplex.
+Recursively, \(\mathcal R_k\) consists of the coordinates of the first \(k\)
+inserted points satisfying every one of these conditions at its own step.
+These are \emph{history-compatible} realizations. Coordinates of the initial
+simplex remain fixed, so no affine group factor is present. We do not
+identify \(\mathcal R_r\) with the full realization space of the final
+combinatorial type without a separate deletion argument.
+
+For a configuration \(q\in\mathcal R_{k-1}\), write \(P(q)\) for its convex
+hull. For each facet \(G\), choose an inward affine supporting form
+\[
+  \ell_{G,q}(x)=a_G(q)\cdot x+b_G(q),\qquad
+  \|a_G(q)\|=1,
+\]
+which vanishes on \(G\) and is positive on the interior of \(P(q)\).
+These choices are continuous in \(q\). Indeed, the labelled vertices of a
+simplex facet give a nonzero affine cofactor vector. Divide its spatial
+part by its norm and choose its sign to be positive at the average of all
+vertices of \(P(q)\). That average is in the interior; the sign test never
+vanishes, so it is continuous, including if the parameter space were
+initially disconnected. This construction avoids an unproved global
+choice of a facet normal.
+
+\begin{lemma}[The stacking insertion region \ours]
+For a full-dimensional simplicial polytope \(P\) and a facet \(F\), set
+\[
+ U_F(P)=\{x\in\mathbb R^d:\ell_F(x)<0,
+                  \ \ell_G(x)>0\text{ for every facet }G\ne F\}.
+\]
+This is a nonempty open convex set. For every \(x\in U_F(P)\),
+\(\operatorname{conv}(P\cup\{x\})\) has the stacking combinatorial type:
+it retains all facets except \(F\), and replaces \(F\) by the simplices
+\(\operatorname{conv}(R\cup\{x\})\), one for each ridge \(R\) of \(F\).
+\end{lemma}
+\begin{proof}
+The inequalities define an intersection of finitely many open half-spaces,
+hence an open convex set. Let \(b\) be the barycenter of the vertices of
+\(F\), and let \(n_F=-a_F\) be the outward unit normal. Since \(b\) lies in
+the relative interior of \(F\), \(\ell_G(b)>0\) for every other facet.
+For sufficiently small \(\varepsilon>0\), the point
+\(b+\varepsilon n_F\) therefore satisfies all the required inequalities;
+nonemptiness is established quantitatively in the next proposition.
+
+For the combinatorial assertion, a segment from \(x\) to any point of \(P\)
+meets the plane \(\ell_F=0\) at a point of \(F\), unless it is wholly on the
+\(P\) side. At the crossing, all other facet inequalities hold because they
+hold at both endpoints. Consequently
+\[
+ \operatorname{conv}(P\cup\{x\})
+       =P\cup\operatorname{conv}(F\cup\{x\}).
+\]
+Every old facet \(G\ne F\) remains a supporting facet, since
+\(\ell_G(x)>0\). If a ridge \(R\subset F\) is shared by \(F\) and \(G\),
+then
+\[
+ h_R(y)=\ell_G(x)\ell_F(y)-\ell_F(x)\ell_G(y)
+\]
+is nonnegative on \(P\), vanishes precisely on \(R\) there, and also
+vanishes at \(x\). It exposes exactly
+\(\operatorname{conv}(R\cup\{x\})\), which is a simplex facet. The boundary
+of the union displayed above consists of the old boundary without the
+relative interior of \(F\), and these lateral faces of the added pyramid.
+Thus the listed facets exhaust the new boundary and give the stated type.
+\end{proof}
+
+\begin{proposition}[A continuous section and a fiberwise contraction \ours]
+The map
+\[
+ \pi_k:\mathcal R_k\longrightarrow\mathcal R_{k-1}
+\]
+forgetting the last vertex is surjective and has a continuous section.
+Moreover, \(\mathcal R_k\) strongly deformation retracts onto the graph of
+that section while every previous vertex is held fixed.
+\end{proposition}
+\begin{proof}
+Let \(F=F_k\). Its facet barycenter \(b(q)\) and outward unit normal
+\(n_F(q)=-a_F(q)\) are continuous. Define
+\[
+ \varepsilon(q)=\frac12\min\left(
+       1,\ \min_{G\ne F}
+       \frac{\ell_{G,q}(b(q))}{1+|a_G(q)\cdot n_F(q)|}
+                         \right)>0,
+ \qquad s(q)=b(q)+\varepsilon(q)n_F(q).
+\]
+The minimum is over the fixed finite labelled facet set at this step, so
+\(\varepsilon\) and \(s\) are continuous. For the selected facet,
+\(\ell_{F,q}(s(q))=-\varepsilon(q)<0\). For every other facet, write
+\(u=|a_G(q)\cdot n_F(q)|\). Then
+\[
+ \ell_{G,q}(s(q))
+ \geq \ell_{G,q}(b(q))-\varepsilon(q)u
+ \geq \ell_{G,q}(b(q))
+             \left(1-\frac{u}{2(1+u)}\right)>0.
+\]
+Thus \(s(q)\in U_F(P(q))\), proving both surjectivity and the section
+\(q\mapsto(q,s(q))\).
+
+The fiber over \(q\) is exactly \(U_F(P(q))\). Its convexity proves that
+\[
+ H_k((q,x),t)=\bigl(q,(1-t)x+t\,s(q)\bigr),\qquad 0\leq t\leq1,
+\]
+remains in \(\mathcal R_k\). This map is jointly continuous, equals the
+identity at \(t=0\), has image in the section at \(t=1\), and fixes every
+point of the section for every \(t\). These are precisely the strong
+deformation-retraction conditions. No claim that contractible fibers
+alone imply a homotopy equivalence is needed.
+\end{proof}
+
+\begin{theorem}[Contractibility for a prescribed stacking history \ours]
+For every finite prescribed facet-stacking history on the fixed simplex,
+the normalized history-compatible realization space \(\mathcal R_r\) is
+nonempty and contractible. In particular this holds in dimension four.
+\end{theorem}
+\begin{proof}
+The space \(\mathcal R_0\) is a point. At each step the section proves
+nonemptiness, and the preceding proposition retracts \(\mathcal R_k\)
+onto a copy of \(\mathcal R_{k-1}\). If a contraction of
+\(\mathcal R_{k-1}\) is already given, first use \(H_k\) to move to the
+section and then apply the contraction there through the continuous
+section map. Concatenating these two homotopies contracts
+\(\mathcal R_k\). Induction gives a finite, continuous contraction of
+\(\mathcal R_r\). The conclusion concerns exactly the recursively defined
+space: no assertion that every realization of the final type admits
+this history has entered the proof.
+\end{proof}
+
+\paragraph{A second check of the section estimate.}\ours\
+The argument can be rederived without unit normals, which is useful for
+exact arithmetic. Take inward forms with nonzero gradients \(a_G\), put
+\[
+ \eta=\min\left(1,\ \min_{G\ne F}
+          \frac{\ell_G(b)}{2(1+|a_G\cdot a_F|)}\right),
+ \qquad x=b-\eta a_F.
+\]
+Then \(\ell_F(x)=-\eta\|a_F\|^2<0\), while
+\(\ell_G(x)\geq\ell_G(b)-\eta|a_G\cdot a_F|>0\).
+This independently checks the sign and the strict-slack bound. If the
+vertices and inward forms are rational, \(b,\eta,x\) are rational; no
+square root is required. These identities check the proof for every
+admissible step, independently of the finite examples computed elsewhere
+in this chapter. Numerical or exact examples do not establish equality
+with the full realization space.
+
+\begin{proposition}[Rational points in simplicial realization spaces \ours]
+Every nonempty realization space of a labelled simplicial polytope
+contains a rational realization. The same holds after normalizing a
+specified affinely independent vertex frame to a rational simplex, on
+any nonempty such chart.
+\end{proposition}
+\begin{proof}
+Start with a labelled simplicial realization. Each facet has exactly
+\(d\) affinely independent vertices, and its supporting affine form is
+strictly positive on every other vertex. These are finitely many open
+conditions on the vertex coordinates: affine independence and the signs
+of the appropriate determinants. They continue to hold in a sufficiently
+small neighbourhood. Every listed simplex facet therefore persists.
+
+For completeness, this persistence rules out extra facets. Every ridge
+of a listed simplex facet belongs to exactly two listed facets in the
+original simplicial boundary complex. In the perturbed convex hull those
+two facets still meet along this ridge, and a ridge of a convex polytope
+belongs to exactly two facets. Hence no facet adjacent across a ridge to
+a listed facet can be unlisted. The facet-adjacency graph of a convex
+polytope is connected, so every facet is listed. Each old labelled vertex
+remains a vertex because it is a vertex of a persisting simplex facet.
+Thus the combinatorial type is constant throughout that neighbourhood.
+
+Rational points are dense in the coordinate space, so choose all vertex
+coordinates rational within this neighbourhood. For a normalized chart,
+first apply the unique affine map sending the chosen vertex frame to the
+specified rational frame. Hold those frame coordinates fixed and perturb
+the remaining coordinates rationally within the same finite strict
+inequalities. This gives the normalized rational realization as well.
+\end{proof}
+
+\begin{corollary}[The arithmetic limit of a simplicial universality claim \ours]
+Stable equivalence over \(\mathbb Q\), generated by rational equivalences
+and stable projections with nonempty relatively open polyhedral fibers
+defined over the base, cannot identify a nonempty simplicial-polytope
+realization space with every primary basic semialgebraic set over
+\(\mathbb Z\) without an openness or comparable arithmetic restriction.
+\end{corollary}
+\begin{proof}
+Existence of a rational point is preserved by rational equivalences
+whose maps and inverses are defined on the spaces. It is also preserved
+in both directions by a stable projection. One direction follows by
+projection. For the other, over a rational base point the fiber is a
+nonempty relatively open polyhedron with rational linear equations and
+strict rational inequalities. Its affine hull has a rational point and
+a rational direction basis; density in that affine hull yields a rational
+point satisfying all strict inequalities.
+
+The primary basic set
+\(S=\{t\in\mathbb R:t^2-2=0,\ t>0\}\) is nonempty and has no rational
+point. The proposition supplies a rational point for every nonempty
+simplicial realization space, so such a space cannot be stably equivalent
+to \(S\) in this sense. By contrast, a nonempty open subset of Euclidean
+space always has rational points. This explains why the established and
+conjectural simplicial universality statements restrict to open primary
+sets. It imposes no corresponding obstruction on homotopy universality:
+this particular \(S\) already has the homotopy type of a point.
+\end{proof}
+
+\paragraph{The remaining obstruction and a bounded next step.}
+A fixed stacking history admits a global section and convex insertion
+fibers, so it cannot encode arbitrary topology. The unresolved universal
+claim needs mechanisms beyond this restricted construction. In the
+known approaches, recording complicated order types inside auxiliary
+configurations does not by itself ensure that a fixed simplicial
+four-dimensional face lattice forces those order types. The discussion
+after Conjecture~4 in \citet{adiprasitopadrol2017universality} identifies
+precisely this distinction using stacked vertex figures and contractions.
+The present proof does not address that enforcement problem.
+
+A further bounded run could take one explicitly labelled small final
+stacked four-polytope and determine, by exact inequalities, whether every
+realization in the chosen normalization permits a specified last-vertex
+deletion. A proof would identify its full realization space with the
+history-compatible space for that case; a counterexample would delimit
+the identification. This is a concrete extension of the certificate,
+not a proposal to settle fixed-dimensional universality by checking a
+finite list of examples.

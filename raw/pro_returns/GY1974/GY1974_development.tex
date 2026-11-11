@@ -1,0 +1,715 @@
+\noindent No class C or D item met the selection criterion for a new research development. The following subsections are editorial verification audits: they prove corrections, state local reconstruction limits, and check conventions. The markers \ours{} and \oursComputed{} identify work performed for this companion, without asserting novelty. The final subsection audits adjacent pages already indexed in the preceding year; its 26 rows are not additional current-year occurrences.
+
+\subsection{Verification of the singular elliptic-system example}
+
+This is an editorial verification of the formulas on P000565, not a claim of a new singular-solution construction. The two identical coefficients in the reconstruction below agree with the formula reproduced by \citet[\S3.2, equation (3.3)]{mingione2006regularity}. That review attributes the construction to Giusti and Miranda (1968); the original 1968 article was not retrieved. Thus the first handwritten coefficient is emended by mathematical reconstruction, supported indirectly by the historical source, rather than by claiming that the scan contains an invisible numeral.
+
+\begin{proposition}[Residual of the tensor as copied]\leavevmode\par\noindent\ours\quad
+Let \(n=N\ge3\), \(B=B_1(0)\subset\mathbb R^n\), and \(u(x)=x/|x|\) for \(x\ne0\), with any value assigned at the origin. For constants \(\alpha,\beta\), set
+\[
+ A_{ij}^{hk}(v)=\delta_{ij}\delta_{hk}
+ +\left(\delta_{jk}+\alpha\frac{v_jv_k}{1+|v|^2}\right)
+  \left(\delta_{ih}+\beta\frac{v_iv_h}{1+|v|^2}\right),
+ \qquad
+ F_j^k=\sum_{i,h}A_{ij}^{hk}(u)\partial_i u^h.
+\]
+Then \(u\in W^{1,2}(B;\mathbb R^n)\), and, away from the origin,
+\[
+ F_j^k=\frac1r\left[n\delta_{jk}
+       +\left(-1+\frac{\alpha(n-1)}2\right)u_ju_k\right],
+ \qquad
+ \sum_j\partial_jF_j^k
+ =(n-1)\left(\frac{\alpha(n-2)}2-2\right)\frac{x_k}{r^3},
+ \quad r=|x|.
+\]
+In particular, the copied value \(\alpha=1/(n-2)\), with the second coefficient \(\beta=4/(n-2)\), gives the nonzero residual
+\[
+ -\frac32(n-1)\frac{x_k}{r^3}.
+\]
+It therefore does not make \(x/|x|\) solve the displayed homogeneous system.
+\end{proposition}
+\begin{proof}
+Direct differentiation gives
+\[
+ \partial_i u^h=\frac{\delta_{ih}-u_i u_h}{r},
+ \qquad |Du|^2=\frac{n-1}{r^2}.
+\]
+Because \(u\) is bounded, the inner boundary term used to identify each distributional first derivative is \(O(\varepsilon^{n-1})\) and tends to zero. Thus these punctured classical derivatives are indeed its weak derivatives. The radial integral of \(|Du|^2\) is a constant times \(\int_0^1r^{n-3}\,dr<\infty\). Moreover,
+\[
+ \sum_{i,h}\left(\delta_{ih}+\frac\beta2u_i u_h\right)
+                    \partial_i u^h=\frac{n-1}{r},
+\]
+because \(\sum_i u_i\partial_i u^h=0\). Substituting this contraction proves the flux formula, including its independence of \(\beta\). Finally
+\[
+ \sum_j\partial_j\!\left(\frac{\delta_{jk}}r\right)
+ =-\frac{x_k}{r^3},\qquad
+ \sum_j\partial_j\!\left(\frac{x_jx_k}{r^3}\right)
+ =(n-2)\frac{x_k}{r^3}.
+\]
+Combining these identities gives the residual. A nonzero residual on an open subset of the punctured ball already excludes a distributional solution on the ball.
+\end{proof}
+
+\begin{proposition}[A uniformly elliptic reconstruction and its weak solution]\leavevmode\par\noindent\ours\quad
+Take both coefficients equal to \(a=4/(n-2)\). Then \(A(v)\) is real analytic and uniformly bounded for \(v\in\mathbb R^n\), and for every real matrix \(\xi=(\xi_i^h)\),
+\[
+ |\xi|^2\le
+ \sum_{i,j,h,k}A_{ij}^{hk}(v)\xi_i^h\xi_j^k
+ \le (1+n+2a+a^2)|\xi|^2.
+\]
+The map \(u=x/|x|\) is an energy-class weak solution on \(B\), has boundary trace \(u(x)=x\) on \(\partial B\), and has no continuous representative at the origin.
+\end{proposition}
+\begin{proof}
+Put \(C(v)=I+a\,vv^T/(1+|v|^2)\). Since the two factors coincide, the quadratic form is exactly
+\[
+ |\xi|^2+\left(\sum_{i,h}C_{ih}(v)\xi_i^h\right)^2.
+\]
+Writing \(s=|v|^2/(1+|v|^2)\in[0,1)\), one has
+\(\|C(v)\|_{\mathrm F}^2=n+2as+a^2s^2\le n+2a+a^2\).
+Cauchy--Schwarz proves the upper bound; the square proves the lower bound. The denominator \(1+|v|^2\) never vanishes on real space, so the coefficients are real analytic; the same representation proves uniform boundedness.
+
+The preceding proposition makes the divergence vanish on \(B\setminus\{0\}\). For \(\varphi\in C_c^\infty(B;\mathbb R^n)\), integrate by parts on \(B\setminus\overline{B_\varepsilon}\). The inner boundary term has magnitude at most \(C\|\varphi\|_\infty\varepsilon^{n-1}\varepsilon^{-1}=O(\varepsilon^{n-2})\), because \(|F|\le C/r\). It tends to zero for \(n\ge3\). The integral of \(F:D\varphi\) over the removed ball also tends to zero, since \(r^{-1}\) is locally integrable. Consequently
+\[
+ \sum_{i,j,h,k}\int_B A_{ij}^{hk}(u)\partial_i u^h\partial_j\varphi^k\,dx=0.
+\]
+The map is smooth near \(\partial B\), with the claimed trace. Its different radial limits at the origin preclude continuity there. The result proves existence, and asserts neither uniqueness for the nonlinear Dirichlet problem nor that this particular homogeneous system is the Euler equation of a minimizing functional.
+\end{proof}
+
+\begin{remark}[Independent exact checks]\leavevmode\par\noindent\oursComputed\quad
+The script \texttt{code/exact\_checks.py} differentiates the unsimplified tensor flux using first-order jets with rational arithmetic. At \((3,4,0,\ldots,0)\), in each dimension \(3,4,5,6\), it reproduces the residual above for the copied coefficients and obtains zero for the reconstruction. These finite checks supplement the dimension-independent proof; they do not replace it. The point may lie outside \(B\), because the algebraic flux identity being checked is valid on all of \(\mathbb R^n\setminus\{0\}\).
+\end{remark}
+
+\subsection{The genus-two Hamiltonian and spectral normalization}
+
+The algebra below checks P000555 in the canonical convention \(\{q_i,p_j\}=\delta_{ij}\). The Hamiltonian system and its spectral construction were already published by \citet[\S2, pp.~64--65]{novikov1974periodic} before the September lecture. The coefficient \(5/8\) also follows by expanding the formula of \citet[\S4]{dubrovinnovikov1974periodicity}. This is a verification of the recorded formulas, without a novelty claim.
+
+\begin{proposition}[Exact Poisson-bracket diagnostic]\leavevmode\par\noindent\oursComputed\quad
+Let \(c,d,a\) be constants and put
+\begin{align*}
+ J_1(a)&=p_1p_2-\frac12q_2^2-\frac52q_1^2q_2-aq_1^4+cq_1^2-dq_1,\\
+ J_2&=p_1^2-2q_1p_1p_2+2(q_2-c)p_2^2+D,\\
+ D&=q_1^5+2cq_1^3+dq_1^2-4q_1q_2^2+4cq_1q_2-2dq_2.
+\end{align*}
+Then
+\[
+ \{J_1(a),J_2\}=(8a-5)q_1^3(q_1p_2-p_1).
+\]
+Thus the copied quartic coefficient \(a=5/2\) gives a generically nonzero bracket. The replacement \(a=5/8\) gives commuting Hamiltonians.
+\end{proposition}
+\begin{proof}
+For the convention specified above,
+\(\{F,G\}=\sum_i(F_{q_i}G_{p_i}-F_{p_i}G_{q_i})\).
+Here
+\begin{align*}
+ (J_1)_{q_1}&=-5q_1q_2-4aq_1^3+2cq_1-d,&
+ (J_1)_{q_2}&=-q_2-\tfrac52q_1^2,\\
+ (J_1)_{p_1}&=p_2,&(J_1)_{p_2}&=p_1,\\
+ (J_2)_{p_1}&=2p_1-2q_1p_2,&
+ (J_2)_{p_2}&=-2q_1p_1+4(q_2-c)p_2,\\
+ (J_2)_{q_1}&=-2p_1p_2+5q_1^4+6cq_1^2+2dq_1-4q_2^2+4cq_2,\\
+ (J_2)_{q_2}&=2p_2^2-8q_1q_2+4cq_1-2d.
+\end{align*}
+Substitution and collecting coefficients gives the displayed factorization. The accompanying script verifies the polynomial identity symbolically over the rational numbers, with \(q_1,q_2,p_1,p_2,c,d,a\) independent.
+\end{proof}
+
+\begin{proposition}[Conditional spectral polynomial in an explicit normalization]\leavevmode\par\noindent\oursComputed\quad
+Set \(J_1=J_1(5/8)\), let the spatial derivative be the Hamiltonian vector field \(D_xF=\{F,J_1\}\), and identify the Schrödinger potential as \(u=q_1\). Define
+\[
+ P(E)=E^2+\frac{q_1}2E+\frac{q_1^2-2q_2+2c}{16}.
+\]
+Then the squared-eigenfunction identity gives
+\begin{align*}
+ R(E)&=(E-u)P^2+\frac12P D_x^2P-\frac14(D_xP)^2\\
+ &=E^5+\frac c4E^3-\frac d{16}E^2
+   +\left(\frac{J_1}{32}+\frac{c^2}{64}\right)E
+   -\frac{J_2}{256}-\frac{cd}{128}.
+\end{align*}
+Moreover \(D_xR=0\) and
+\(D_x^3P-4(u-E)D_xP-2(D_xu)P=0\).
+\end{proposition}
+\begin{proof}
+Hamilton's equations give
+\[
+ D_xq_1=p_2,\quad D_xq_2=p_1,\quad
+ D_xp_1=5q_1q_2+\tfrac52q_1^3-2cq_1+d,\quad
+ D_xp_2=q_2+\tfrac52q_1^2.
+\]
+In particular
+\[
+ D_xP=\frac{p_2}2E+\frac{q_1p_2-p_1}{8},\qquad
+ D_x^2P=\frac{q_2+\frac52q_1^2}{2}E
+          +\frac{p_2^2-4q_1q_2+2cq_1-d}{8}.
+\]
+Substitution and collection by powers of \(E\) prove the formula for \(R\). The two Hamiltonians are constant along this vector field by the preceding bracket identity, so \(D_xR=0\). Direct differentiation, or differentiating the squared-eigenfunction identity and canceling the nonzero polynomial \(P\), gives the third-order identity. All polynomial equalities have also been checked exactly by the supplied script.
+\end{proof}
+
+This last proposition is deliberately conditional on the stated choices of \(u\), spatial flow and \(P\). The notebook prints \(c^2/4\) in the coefficient of \(E\) and a positive constant term. The author-hosted Dubrovin--Novikov text yields \(c^2/64\) after translating its parameters, but retains a positive constant term and has other apparent typographic defects. Although \citet[Ch.~II, \S4, p.~105]{dubrovinmatveevnovikov1976nonlinear} supplies the same \(q_1=u\), \(q_2=u''-5u^2/2\) interpretation, a complete agreement of all source sign conventions has not been established. Accordingly the data record an unresolved normalization discrepancy; the conditional identity above is not presented as a recovered literal reading of the notebook.
+
+
+\subsection{Checking the two logarithmic integrals on P000564}
+This is a verification of recorded identities, not the development of a newly open problem. The scan itself supplies the positive sign in the first identity and the negative sign in the second. The two expressions therefore need separate checks.
+
+\begin{proposition}[The Basel sign]\leavevmode\par\noindent\ours\quad
+The improper integral satisfies
+\[
+ \int_0^1\frac{\log(1-t)}{t}\,dt=-\frac{\pi^2}{6}.
+\]
+\end{proposition}
+\begin{proof}
+For \(0\le t<1\), \(-\log(1-t)=\sum_{n\ge1}t^n/n\). Since all terms are nonnegative, monotone convergence permits integration after division by \(t\), giving \(\sum_{n\ge1}1/n^2=\pi^2/6\). This is the classical dilogarithm identity, recorded in \citet[Eqs.~25.12.1--2]{nist2026polylogarithms}. The notebook's sign is impossible even before evaluation, since its integrand is negative.
+\end{proof}
+
+For the next calculation let
+\[
+ L(x)=\operatorname{Li}_2(x)+\tfrac12\log x\log(1-x),\qquad0<x<1,
+\]
+and extend to \(x<0\) by \(L(x)=-L(x/(x-1))\), with \(L(0)=0\). We use the classical reflection and five-term identities, in the normalization of \citet[Chapter II, \S1.A, pp.~23--24]{zagier2007dilogarithm}:
+\[
+ L(x)+L(1-x)=\frac{\pi^2}{6},
+\]
+\[
+ L(x)+L(y)=L(xy)+L\!\left(\frac{x(1-y)}{1-xy}\right)
+                    +L\!\left(\frac{y(1-x)}{1-xy}\right),\quad0<x,y<1.
+\]
+These real equalities have no ambiguity modulo a period. They follow as well by differentiating both sides and evaluating a boundary value; the logarithms remain real in the specified domain.
+
+\begin{proposition}[The symmetric golden-ratio integral]\leavevmode\par\noindent\ours\quad
+Set \(a=\sqrt5-2\). Then
+\[
+ \int_{-a}^{a}\left(\frac{\log|s|}{1-s}
+                   +\frac{\log|1-s|}{s}\right)\,ds=-\frac{\pi^2}{6}.
+\]
+\end{proposition}
+\begin{proof}
+On \((-1,0)\cup(0,1)\), direct differentiation of the real dilogarithm gives
+\[
+ -2L'(s)=\frac{\log|s|}{1-s}+\frac{\log|1-s|}{s}.
+\]
+The logarithmic singularity at zero is integrable, and \(L\) is continuous there. Let \(t=(\sqrt5-1)/2\), so \(t^2=1-t\), \(a=t^3=2t-1\), \(1-a=2t^2\), and \(1+a=2t\). The five-term identity with \(x=t,y=t^2\) reduces to
+\[
+ L(t)+L(t^2)=L(a)+L(1/2)+L(t^2/2).
+\]
+Reflection gives the left side \(\pi^2/6\), and \(L(1/2)=\pi^2/12\). Thus \(L(a)+L(t^2/2)=\pi^2/12\). The negative-argument rule gives
+\(L(-a)=-L(a/(1+a))=-L(t^2/2)\). Integrating the derivative now yields
+\(-2[L(a)-L(-a)]=-\pi^2/6\), as asserted.
+\end{proof}
+
+\begin{remark}[Independent computational check]\leavevmode\par\noindent\oursComputed\quad
+The included standard-library script \texttt{code/check\_dilogarithm.py} first evaluates the absolutely convergent series
+\[
+ \log a\log\frac{1+a}{1-a}
+       -4\sum_{j\ge0}\frac{a^{2j+1}}{(2j+1)^2},
+\]
+obtained by integrating the even part of the integrand. At 90-decimal precision it gives
+\[
+ -1.6449340668482264364724151666460251892189499012067984\ldots.
+\]
+After \(N\) terms the series tail is bounded by
+\(4a^{2N+1}/((1-a^2)(2N+1)^2)\); at \(N=180\) this is below \(1.51\cdot10^{-231}\). This bound controls truncation, not decimal rounding.
+An independent composite-Simpson calculation after \(s=a e^{-v}\), \(0\le v\le80\), gives errors relative to the double-precision value of \(-\pi^2/6\) of \(-7.37\cdot10^{-13}\) and \(-4.66\cdot10^{-14}\) for 20000 and 40000 subintervals respectively. The numerical agreement checks the signs and endpoints; the proof above establishes the exact identity. A second algebraic check verifies separately each golden-ratio substitution in the five-term equation. Neither check found an error in the second displayed integral.
+\end{remark}
+
+\subsection{Haar normalization in the planar lattice calculation}
+The following calculation audits the hypotheses of the formulas on P000573--P000574. It is a classical finite-dimensional integration, not an advance on an open gauge-theory problem. The character-expansion version and the difference between a disk and a torus are given in \citet[Appendix A]{hirasawa2020complex}; the lattice variables and loop observable already occur in \citet[\S\S II--III]{wilson1974confinement}.
+
+\begin{proposition}[Free planar boundary and one-plaquette factors]\leavevmode\par\noindent\ours\quad
+Consider a rectangular planar square lattice with \(A\) plaquettes, normalized Haar measure on every link, and no fixed boundary holonomy. Let \(\beta\in\mathbb R\). For \(U(1)\) and plaquette weight \(e^{\beta\cos\theta}\),
+\[
+ Z_A(\beta)=I_0(\beta)^A,
+ \qquad
+ I_m(\beta)=\frac1{2\pi}\int_{-\pi}^{\pi}
+       e^{\beta\cos\theta}\cos(m\theta)\,d\theta.
+\]
+For a simple oriented Wilson loop enclosing \(a\) plaquettes,
+\[
+ \langle W(C)\rangle=
+    \left(\frac{I_1(\beta)}{I_0(\beta)}\right)^a.
+\]
+For \(SU(2)\) with the fundamental trace and one-plaquette weight
+\(e^{\beta\operatorname{tr}U}\), the corresponding one-plaquette factor is
+\[
+ z_{SU(2)}(\beta)=\frac{I_1(2\beta)}{\beta},
+ \qquad z_{SU(2)}(0)=1.
+\]
+\end{proposition}
+\begin{proof}
+A spanning-tree change of link variables uses left and right invariance of normalized Haar measure. On a planar rectangular disk the remaining variables may be chosen as independent plaquette holonomies. This can also be seen by peeling successive boundary plaquettes: integrate their free outer link, and Haar invariance makes the resulting factor independent of the other links. All remaining tree integrations equal 1. Thus the partition integral is the \(A\)-th power of its one-plaquette integral, with no extra gauge-volume factor.
+
+For \(U(1)\), normalized Haar measure is \(d\theta/(2\pi)\), giving \(I_0\). The product of oriented plaquette holonomies inside a simple loop equals its boundary holonomy. The independent expectations inside the loop each equal \(I_1/I_0\), proving the loop formula.
+
+For \(SU(2)\), a conjugacy class has eigenvalues \(e^{\pm i\theta}\), \(0\le\theta\le\pi\). Its fundamental trace is \(2\cos\theta\), and normalized Haar integration of a class function uses \((2/\pi)\sin^2\theta\,d\theta\). Hence
+\[
+ z_{SU(2)}(\beta)
+ =\frac2\pi\int_0^\pi e^{2\beta\cos\theta}\sin^2\theta\,d\theta
+ =I_0(2\beta)-I_2(2\beta)
+ =\frac{I_1(2\beta)}{\beta}.
+\]
+For the last identity, integrate the derivative of
+\(\sin\theta\,e^{2\beta\cos\theta}\) from 0 to \(\pi\); its boundary values vanish. The limit at 0 follows directly from the original normalized Haar integral.
+\end{proof}
+
+\begin{remark}[What the notebook normalization can mean]\leavevmode\par\noindent\ours\quad
+The sign convention \(E=+\sum\cos\theta\) replaces \(\beta\) by \(-\beta\). Since \(I_0\) is even, the partition function is unchanged, while the loop expectation acquires \((-1)^a\). Thus its magnitude still satisfies the displayed area law. If \(V\) counts the sites of an \(N\)-by-\(N\) array, then \(A=(N-1)^2\), and \(\log Z=V\log I_0\) is only an asymptotic relation. Identifying opposite boundary edges changes the independent-plaquette argument and requires a global constraint. Finally, the different small-coupling expansions
+\[
+ I_0(\beta)=1+\frac{\beta^2}{4}+O(\beta^4),\qquad
+ \frac{I_1(2\beta)}{\beta}=1+\frac{\beta^2}{2}+O(\beta^4)
+\]
+already distinguish the Abelian formula from the stated fundamental-trace \(SU(2)\) convention. The exact \(U(1)\) pressure \(\log I_0(\beta)\) is analytic for every finite real \(\beta\); the neighboring general phase-transition discussion cannot be a proof of a finite-coupling transition in that example.
+\end{remark}
+
+
+\subsection{What entire-function growth does and does not specify}
+\label{audit:entire-data}
+
+\paragraph{The historical question and its limits.}
+After the polynomial formula for \(\chi\), P000568 asks
+\ru{Пусть \(R\) и \(P\) --- целые ф-и 1-го пор. роста. Тогда им соотв. потенциалы \(u(x)\). Какие?}
+and adds \ru{не обяз. периодических}. The scan confirms the first-order-growth
+wording. The strongest supported historical question is to identify the potentials
+represented by an entire-function replacement of the finite-gap formula. The
+notebook supplies no normalization, admissible zeros, realness assumption, or
+global regularity requirement. It therefore does not determine a unique global
+inverse problem. This subsection is a verification annotation to that Class F
+item, not a declaration that an unformulated open problem has been solved.
+
+\paragraph{Precisely relevant later results.}
+\citet[Thm.~5.1, pp.~535--536]{marchenko1975characterization} characterize
+periodic and antiperiodic spectra for a real periodic Hill operator in specified
+Sobolev classes using a normalized slit-domain conformal map and weighted
+conditions on its slit heights. Their paper was received on 3 February 1975.
+That theorem has a specified period, reality, normalization and spectral
+asymptotics, absent from the seminar question. \citet[Hypotheses~3.1--3.2,
+Eq.~(3.14), Lemmas~3.3--3.5]{gesztesy1999infinite}, first circulated on
+7 July 1999, develop an infinite-genus construction with convergent spectral
+products, an assumed Green-function identity and controlled high-energy
+asymptotics. These are concrete realizations of the direction, not an exact
+match to arbitrary entire functions of order one. No evidence found in these
+sources establishes why Gelfand did not specify or pursue this formulation.
+
+\paragraph{A bounded reconstruction that can be settled.}
+Let \(I\subset\mathbb R\) be a nonempty open interval and \(U\subset\mathbb C\)
+a connected open set. Suppose \(P(E,x)\ne0\) on \(U\times I\), is twice
+continuously differentiable in \(x\), and is holomorphic in \(E\), with its first
+two \(x\)-derivatives continuous. Let \(R\) be holomorphic on \(U\), and suppose
+there is a holomorphic \(y\) on \(U\) such that \(y^2=R\). For example one can
+choose a simply connected region avoiding the zeros of \(R\). All conclusions
+below are local in this specified region; entire functions are a special case.
+
+\begin{proposition}[Local compatibility criterion \ours]
+\label{prop:entire-compatibility}
+Define
+\[
+ Q(E,x)=E-\frac{R(E)}{P(E,x)^2}
+       +\frac{P_{xx}(E,x)}{2P(E,x)}
+       -\frac{P_x(E,x)^2}{4P(E,x)^2}.
+\]
+There is a continuous potential \(u:I\to\mathbb C\), independent of \(E\),
+for which
+\[
+ \chi(E,x)=\frac{y(E)}{P(E,x)}-\frac{iP_x(E,x)}{2P(E,x)}
+ \quad\hbox{satisfies}\quad
+ -i\chi_x+\chi^2+u-E=0
+\]
+for every \((E,x)\in U\times I\), if and only if \(Q(E,x)\) is independent
+of \(E\). In that case \(u(x)=Q(E,x)\), equivalently
+\begin{equation}
+ R(E)=(E-u(x))P(E,x)^2+\tfrac12P(E,x)P_{xx}(E,x)
+                    -\tfrac14P_x(E,x)^2.
+ \label{eq:entire-identity}
+\end{equation}
+For \(x_0\in I\), the nonzero function
+\[
+ \psi(E,x)=\exp\!\left(\int_{x_0}^{x}
+       \left(\frac{i y(E)}{P(E,s)}+\frac{P_x(E,s)}{2P(E,s)}\right)\,ds\right)
+\]
+satisfies \(-\psi_{xx}+u\psi=E\psi\) and \(\psi(E,x_0)=1\).
+\end{proposition}
+\begin{proof}
+Put \(a=y/P\) and \(b=-P_x/(2P)\), so that \(\chi=a+ib\).
+Because \(y\) is independent of \(x\), \(a_x=2ab\). Also
+\(b_x=-P_{xx}/(2P)+P_x^2/(2P^2)\). Thus
+\[
+ -i\chi_x+\chi^2
+   =a^2-b^2+b_x+i(2ab-a_x)
+   =\frac{R}{P^2}-\frac{P_{xx}}{2P}+\frac{P_x^2}{4P^2}.
+\]
+The residual is exactly \(u-Q\). This proves both implications and
+\eqref{eq:entire-identity}. The exponential is defined without selecting a
+square root of \(P\). Its logarithmic derivative is \(i\chi\), so
+\(\psi_{xx}/\psi=i\chi_x-\chi^2\); the differential equation follows.
+\end{proof}
+
+Equation \eqref{eq:entire-identity} is the classical squared-eigenfunction
+identity; compare \citet[Eq.~(2.10)]{gesztesy1999infinite}. The proof above is
+included to fix the signs in the notebook's convention, not to claim novelty.
+
+\begin{proposition}[Invariance under a common factor \ours]
+Suppose the compatibility criterion holds. For a holomorphic function
+\(h(E)\ne0\) independent of \(x\), set
+\(\widetilde P=hP\), \(\widetilde R=h^2R\), and \(\widetilde y=hy\).
+Then \(\widetilde\chi=\chi\), \(\widetilde Q=Q\), and the potential is unchanged.
+\end{proposition}
+\begin{proof}
+In the quotients \(\widetilde y/\widetilde P\),
+\(\widetilde P_x/\widetilde P\), \(\widetilde P_{xx}/\widetilde P\), and
+\(\widetilde R/\widetilde P^2\), all factors \(h\) cancel. This proves each
+assertion. The nonvanishing hypothesis prevents spurious domain exclusions;
+common zeros would require an additional removability discussion.
+\end{proof}
+
+\begin{example}[Two entire pairs of order one \ours]
+The pair \(P(E,x)=R(E)=e^E\) consists of nonvanishing entire functions of
+order exactly one, constant in \(x\). It gives
+\(Q(E,x)=E-e^{-E}\), which is not independent of \(E\); therefore it defines
+no potential through the notebook's displayed formula. In contrast,
+\(P(E,x)=e^E\), \(R(E)=Ee^{2E}\) gives \(Q=0\), the free potential. Here
+\(y=e^E\sqrt E\) can be chosen on any simply connected region avoiding zero,
+and \(\psi=e^{i\sqrt E(x-x_0)}\). Both entire pairs meet the stated growth
+condition. In the second example the exponential factors cancel: no infinite
+spectral genus is created. More generally multiplying finite polynomial data
+by \(h=e^{E^m}\), \(m\ge1\), changes growth without changing the potential.
+Thus growth order alone neither guarantees compatibility nor specifies a
+new class of potentials.
+\end{example}
+
+\paragraph{Independent second check.}
+For any two solutions \(f,g\) of \(v''=(u-E)v\), put \(P=fg\) and
+\(W=fg'-f'g\). Direct differentiation, independent of the Riccati substitution,
+gives
+\[
+ (E-u)P^2+\tfrac12PP''-\tfrac14(P')^2=-\tfrac14W^2,
+ \qquad W'=0.
+\]
+This rederives the same identity with \(R=-W^2/4\). The exact-polynomial
+program \texttt{code/check\_spectral\_compatibility.py} verifies both derivations
+and common-factor invariance over the rational numbers. A sign-sensitive
+nonconstant check uses \(P=E+x^{-2}\), \(R=E^3\), \(u=2x^{-2}\) on \(x>0\)
+away from zeros of \(P\); symbolic expansion and sixteen rational substitutions
+give the same potential. \oursComputed{} The complete output is included. All
+checks passed; the proof, rather than the finite substitutions, establishes the
+general assertions.
+
+\paragraph{Remaining scope.}
+The local criterion does not characterize global real, nonsingular,
+self-adjoint or almost-periodic realizations. A definite further problem must
+choose the spectral variable (\(E\) or \(\sqrt E\)), remove common factors,
+specify zero/divisor and reality conditions, and control high-energy behaviour
+and continuation through zeros of \(P\). A further bounded research run could
+test a chosen normalized family against those conditions. The present evidence
+does not select such a family, so no new open conjecture is entered in the
+problem index and no claim is made that the historical programme remains open
+in every precise interpretation.
+
+
+\subsection{Two missing-hypothesis checks in the late microlocal talks}
+
+The following elementary arguments audit statements on P000592--P000593.
+They are editorial proofs, not claims of new research results. They do not
+turn an imprecise notebook phrase into a class C or D problem. The
+established comparison results are the affine-leaf connection described by
+\citet[Proposition 1.9 and Theorem 1.10]{loustausanders2017bilagrangian}
+and the homogeneous normal-form statement of
+\citet[Proposition 6.1.4]{duistermaathormander1972fourierii}.
+
+\begin{proposition}[A complete Lagrangian cylinder leaf]\leavevmode\par\noindent\ours\quad
+The corollary on P000592 that Lagrangian leaves are either
+\(\mathbb R^n\) or tori is false, even for leaves admitting a global
+frame of complete commuting Hamiltonian vector fields.
+\end{proposition}
+
+\begin{proof}
+Write \(S^1=\mathbb R/\mathbb Z\), and use coordinates
+\[
+ M=T^*(S^1\times\mathbb R)
+   =\{(q_1,q_2,p_1,p_2)\},\qquad
+ \omega=dq_1\wedge dp_1+dq_2\wedge dp_2 .
+\]
+Here \(dq_1\) is the globally defined invariant one-form on \(S^1\).
+For each \((a,b)\in\mathbb R^2\), set
+\[
+ L_{a,b}=\{p_1=a,\ p_2=b\}.
+\]
+The map \(M\to\mathbb R^2\), \((q,p)\mapsto(p_1,p_2)\), is a
+submersion, so these sets form a smooth foliation. Each leaf has real
+dimension two, and \(\omega|_{L_{a,b}}=0\) because both \(dp_j\) vanish
+on its tangent bundle. It is therefore Lagrangian in the real
+four-dimensional symplectic manifold.
+
+The leaf is diffeomorphic to \(S^1\times\mathbb R\). It cannot be
+\(\mathbb R^2\), because its fundamental group is \(\mathbb Z\), and
+it cannot be a two-torus, because it is noncompact. With the convention
+\(\iota_{H_f}\omega=df\), the Hamiltonian fields of the global functions
+\(p_1,p_2\) are \(\partial_{q_1},\partial_{q_2}\). They commute, are
+independent everywhere, and are complete. Thus adding completeness to
+the notebook sentence does not remove this counterexample.
+\end{proof}
+
+\begin{remark}
+Three independent checks are available here: the dimension and
+restriction of \(\omega\) establish the Lagrangian property; the
+fundamental group excludes the plane; and noncompactness excludes the
+torus. More generally, a connected leaf with \(n\) globally independent
+complete commuting fields is a transitive \(\mathbb R^n\)-orbit with
+discrete stabilizer, so mixed cylinder factors are allowed. An
+arbitrary complete affine structure need not supply such a global frame:
+the global-action conclusion must not be inferred from the
+leafwise affine connection alone.
+\end{remark}
+
+\begin{proposition}[A radial point obstructs the stated homogeneous normal form]\leavevmode\par\noindent\ours\quad
+The conditions \(p(\rho)=0\) and \(dp(\rho)\ne0\) do not suffice to
+straighten a real homogeneous principal symbol to a coordinate covector
+by a homogeneous canonical transformation, even if a nonvanishing
+scalar factor is allowed.
+\end{proposition}
+
+\begin{proof}
+On \(T^*\mathbb R^2\setminus0\), take
+\[
+ p(x,\xi)=x_1\xi_1,\qquad
+ \rho=(0,0;1,0),\qquad
+ R=\xi_1\partial_{\xi_1}+\xi_2\partial_{\xi_2}.
+\]
+The symbol is real and positively homogeneous of degree one.
+At \(\rho\), it satisfies \(p=0\) and \(dp=dx_1\ne0\).
+With
+\(H_p=\sum_j(p_{\xi_j}\partial_{x_j}-p_{x_j}\partial_{\xi_j})\),
+\[
+ H_p=x_1\partial_{x_1}-\xi_1\partial_{\xi_1},
+ \qquad H_p(\rho)=-R(\rho).
+\]
+In particular, the Hamilton field is a nonzero radial vector.
+
+Let \(\kappa\) be a homogeneous symplectic local diffeomorphism. Since it
+commutes with positive fibre dilations, differentiation of that
+commutation relation gives \(\kappa_*R=R\). Symplectic covariance gives
+\[
+ \kappa_*H_p=H_{p\circ\kappa^{-1}}.
+\]
+Thus the transformed Hamilton field is still radial and nonzero at
+\(\kappa(\rho)\). If the transformed defining symbol is further
+multiplied by a smooth nonvanishing function \(a\), then, on its
+characteristic hypersurface,
+\[
+ H_{a(p\circ\kappa^{-1})}
+   =a\,H_{p\circ\kappa^{-1}},
+\]
+so radiality persists.
+
+In contrast, for the coordinate symbol \(q(y,\eta)=\eta_2\),
+\(H_q=\partial_{y_2}\). This is horizontal and nonzero, hence cannot
+be proportional to the nonzero vertical radial vector at any
+point of \(T^*\mathbb R^2\setminus0\), including points where
+\(\eta_2=0\). The proposed homogeneous straightening is impossible.
+\end{proof}
+
+\begin{remark}
+The two-dimensional example is the stabilization of the one-dimensional
+symbol \(x\xi\). It avoids the incidental fact that the one-dimensional
+coordinate characteristic set \(\eta=0\) misses the punctured cotangent
+bundle. The obstruction uses three separately checked facts:
+\(dp(\rho)\ne0\), homogeneity preserves the radial field, and a coordinate
+symbol has a nonradial Hamilton field. It audits the canonical
+transformation required by the usual elliptic FIO conjugation theorem;
+it does not purport to rule out arbitrary unspecified kernel
+factorizations. The missing nonradial condition is explicitly present
+in the cited proposition of Duistermaat--Hörmander.
+\end{remark}
+
+\paragraph{Fourier sign used throughout.}
+The reconstruction uses
+\(\widehat u(\xi)=\int e^{-ix\xi}u(x)\,dx\).
+Consequently \((x+i0)^{-1}\), the upper-half-plane boundary value of
+\(1/z\), has positive, rather than negative, wavefront covectors.
+The explicit positive-frequency representation and wavefront
+calculation in
+\citet[Appendix A, equation (A.4)]{bohrlefeuvrepaternain2024invariant}
+independently checks this convention. P000584 does not specify its
+Fourier sign, so its contrary excluded-half-ray wording is logged as
+an ambiguity, not as a convention-independent mathematical error.
+
+
+\subsection{Adjacent pages already indexed in the preceding year}
+
+The supplied overlapping page ranges include P000550 and P000552--P000553, but these are not additional mathematical content of records 331--332. P000550 continues the preceding KdV discussion; P000552 begins a separately dated meeting, \(1/\mathrm{IV}\text{-}74\), headed by Yura Koblenz, with Gelfand and Shnirelman interventions. The 26 entries below audit all identifiable mathematical content on those pages against the supplied prior index. They retain prior occurrence identifiers and do not create a current-year record333. Status is assessed as of November 2026. The two current records on P000551 separately provide five compatibility aliases for existing prior-year source occurrences.
+
+\paragraph{1973-330.6 (P000550): Polynomial-exponential solutions and Bargmann potentials.}
+The notes assert that arbitrary interpolation parameters produce a fundamental pair \(P(x,\zeta)e^{i\zeta x}\), \(Q(x,\zeta)e^{-i\zeta x}\) for a Sturm--Liouville equation with a Bargmann potential. A valid reflectionless construction requires admissible scattering data and a nonsingular interpolation system; an arbitrary complex choice need not give a real nonsingular potential, nor a fundamental pair at the Wronskian zeros.
+
+The construction belongs to established reflectionless inverse scattering. \citet[\S3, Theorem~1]{shabat2014interpolation} gives a precise interpolation theorem and explicitly recalls the 1974 Gelfand discussion on p.~305. Its general equation may have spectral-parameter-dependent potential; the real Bargmann specialization needs further conditions. This is a partial match, not validation of “arbitrary”.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-330.7 (P000550): The interpolation problem and its missing normalization.}
+The recorded conditions are \(P/Q=c_j e^{2i\zeta_jx}\) at finitely many nodes and \(P/Q\to1\) at infinity. The node count is overwritten as \(2n\,?\,1\); the degrees, admissibility, and rank condition are absent. Therefore the literal system does not determine a general existence or uniqueness theorem.
+
+\citet[\S3, equations (44)--(49), Theorem~1]{shabat2014interpolation} specifies degrees \(m,n\), \(m+n+1\) nodes, normalization of the product of leading coefficients, and nondegeneracy. Its conventions do not identify the overwritten count or repair the notebook automatically. No open problem is extracted from this incomplete formulation.
+
+\emph{Audit classification: F; verification: read the result.}
+
+\paragraph{1973-330.8 (P000550): The polynomial Wronskian and the absent leading factor.}
+The notes write \(P_xQ-Q_xP-2i\zeta PQ=\prod_j(\zeta-\zeta_j)\). Differentiating the interpolation equations does give zeros of the left side at the nodes. But if \(P,Q\) have degrees \(m,n\) and leading product \(pq\), its leading coefficient is \(-2ipq\), not automatically one. Its negative exponential sign is consistent with \(Pe^{-i\zeta x},Qe^{i\zeta x}\), opposite to the earlier displayed pair.
+
+\citet[Theorem~1, equation (50)]{shabat2014interpolation} proves the corresponding Wronskian factorization with an explicit leading constant \(-2\) in its real spectral convention. The degree, normalization and exponential signs must be chosen consistently. This is a mathematical normalization audit, not a confident reconstruction of the overwritten spectral letters.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-330.9 (P000550): Cubic time evolution of the interpolation data.}
+The source evolves \(c_j(t)=c_j(0)e^{2i\zeta_j^3t}\). The structural assertion is that the scattering or interpolation coefficients evolve exponentially with a cubic spectral exponent under a KdV flow. The numerical factor and sign depend on the scaling of time, the Schrödinger operator and the chosen scattering functions.
+
+\citet[equations (13), (18)]{shabat1973kdv} obtains linear cubic evolution of the scattering kernel; the paper was received 13 December 1972, presented 18 December 1972, and published in 1973. The cubic law is known before the source discussion; the notebook coefficient is not claimed to match another convention without conversion.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-330.10 (P000550): The incomplete third-order auxiliary equation.}
+The line reads \((4\partial_t+\partial_x^3-3q\partial_x)P=(\ )Q=0\). The second parenthesis is empty, and acting on polynomial factors after removing exponentials shifts every \(\partial_x\) to \(\partial_x\pm i\zeta\). A full Lax auxiliary equation also depends on its zeroth-order term and the normalization of the eigenfunctions.
+
+The cubic auxiliary-operator mechanism is established in \citet{shabat1973kdv} and in \citet[\S2, equation (33)]{shabat2014interpolation}. Neither supplies an exact missing notebook operator under the unresolved conventions. This remains an incomplete formula, not an open mathematical problem.
+
+\emph{Audit classification: F; verification: read the result.}
+
+\paragraph{1973-330.11 (P000550): Logarithmic derivatives, the spectral shift and the Miura sign.}
+For \(-y_{xx}+Vy=\zeta^2y\), the logarithmic derivative \(f=y_x/y\) satisfies \(f_x+f^2=V-\zeta^2\), away from zeros. The notebook omits this shift and pairs \(4f_t+f_{xxx}+3(f^2+\zeta^2)f_x=0\) with a plus-sign KdV equation for \(f_x+f^2\). These coefficients do not form the standard Miura identity. One consistent convention is \[4V_t+V_{xxx}-6VV_x=(\partial_x+2f)\bigl(4f_t+f_{xxx}-6(f^2+\zeta^2)f_x\bigr),\quad V=f_x+f^2+\zeta^2.\]
+
+The Riccati and factorization mechanism is classical; compare \citet[equations (2), (18)]{shabat2014interpolation}. The displayed identity is an editorial direct algebraic check \oursComputed, offered as a consistent convention rather than a palaeographic emendation of every sign on the page.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.1 (P000552): The sign of the Laplace--Beltrami operator.}
+On a closed smooth Riemannian manifold, the coordinate expression \(|g|^{-1/2}\partial_i(|g|^{1/2}g^{ij}\partial_j)\) is nonpositive on functions. To retain the written nonnegative eigenvalues \(\lambda_j\) and heat trace \(\sum e^{-t\lambda_j}\), define \(L=-\operatorname{div}\nabla\ge0\). The scan has heavy cancellation before the coordinate expression; an intended minus cannot be read confidently.
+
+The sign convention and spectral expansion are standard. \citet[\S1]{mckeansinger1967curvature} uses a nonpositive Laplacian and the opposite sign in the heat exponential; the mathematical correction is convention consistency, not an invented visible glyph.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.2 (P000552): Heat-kernel expansion and trace.}
+For a real orthonormal eigenbasis of \(L\ge0\), \(K(t,x,y)=\sum_j e^{-t\lambda_j}\varphi_j(x)\varphi_j(y)\) and \(\operatorname{Tr}(e^{-tL})=\int_MK(t,x,x)dV\), for \(t>0\). A complex orthonormal basis requires conjugation in the second factor.
+
+This is established spectral theory for a smooth compact manifold; \citet[\S1 and heat-kernel construction]{mckeansinger1967curvature} and \citet[introduction]{gilkey1979recursion} state the same framework. No novelty or extra assertion about termwise convergence at \(t=0\) is intended.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.3 (P000552): The small-time heat-trace expansion.}
+For a closed smooth \(n\)-manifold, \(\operatorname{Tr}(e^{-tL})\sim(4\pi t)^{-n/2}\sum_{j\ge0}a_jt^j\) as \(t\downarrow0\), with \(a_0=\operatorname{vol}M\). This is an asymptotic expansion to each finite order, not an asserted convergent series. Complex-time versions require sectors inside \(\operatorname{Re}t>0\).
+
+The notes attribute the expansion to Minakshisundaram (1949). The established result and its local-invariant interpretation are checked through \citet[introduction]{gilkey1979recursion}; \citet{mckeansinger1967curvature} predates the talk. These later explanatory sources are not used to change the historical priority.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.4 (P000552): Curvature contractions.}
+With a fixed curvature-sign convention, \(\operatorname{Ric}\) is a metric contraction of \(\operatorname{Rm}\), and \(\operatorname{Scal}=g^{ij}\operatorname{Ric}_{ij}\). Norms mean full metric contractions; \(|\operatorname{Rm}|^2=\sum R_{ijkl}^2\) holds in an orthonormal frame at the point. Several indices in the scan are overwritten and cannot be recovered uniquely.
+
+These are standard tensor definitions. \citet[\S7]{mckeansinger1967curvature} and \citet[\S1]{gilkey1979recursion} provide the invariant contraction framework. The coordinate-free reconstruction avoids inventing unreadable indices.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.5 (P000552): The integrated scalar-curvature coefficient.}
+For the scalar nonnegative Laplacian on a smooth closed manifold, with the usual geometric scalar-curvature convention, \(a_1=\frac16\int_M\operatorname{Scal}\,dV\). It is an integrated coefficient, not the pointwise heat coefficient itself.
+
+The formula is established before the talk; \citet[\S1, equation (5a), and \S4]{mckeansinger1967curvature} computes the scalar-curvature term. Sign conventions must be translated consistently with the Laplacian and curvature tensor.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.6 (P000552): The quadratic integrated heat coefficient.}
+Under the same closed-manifold hypotheses, \[a_2=\frac1{360}\int_M\bigl(2|\operatorname{Rm}|^2-2|\operatorname{Ric}|^2+5\operatorname{Scal}^2\bigr)dV.\] A local formula also contains a divergence term whose integral vanishes on a closed manifold; boundary problems require additional coefficients.
+
+The three curvature terms match the established result of \citet[\S7]{mckeansinger1967curvature}; \citet[introduction and \S4]{gilkey1979recursion} supplies an independent recurrence derivation. The source integral needs its volume element, but no change to the written numerical coefficients.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.7 (P000552): The missing off-diagonal Gaussian.}
+Near the diagonal, in a normal neighborhood and as \(t\downarrow0\), the heat parametrix has the form \[K(t,x,y)\sim(4\pi t)^{-n/2}e^{-d_g(x,y)^2/(4t)}\sum_{j\ge0}u_j(x,y)t^j.\] The notebook displays the power series without the Gaussian. That abbreviated formula is valid on the diagonal, but is false as a literal off-diagonal expansion.
+
+The local parametrix is classical; see the heat-kernel construction in \citet{mckeansinger1967curvature}. \citet[introduction, p.~202]{gilkey1979recursion} explicitly states off-diagonal rapid decay. The omitted exponential is an emendation of mathematical content.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.8 (P000552): Sakai and the fourth heat coefficient.}
+The source calls \(a_3\) the fourth coefficient, counting \(a_0\) first, and attributes a computation to Sakai. No formula for \(a_3\) is recorded, so the item is an attribution, not an occurrence of every term in the general cubic-curvature expression.
+
+\citet{sakai1971eigenvalues}, Tohoku Math. J.23(4),589--603, appeared in1971. Publisher issue metadata were opened; the attribution is explicitly confirmed by \citet[introduction]{gilkey1979recursion}. The full Sakai formula was not independently read in this audit.
+
+\emph{Audit classification: E; verification: indirect.}
+
+\paragraph{1973-333.9 (P000552): Koblenz’s claimed independent fourth-coefficient computation.}
+The speaker, named Yura Koblenz from Leningrad, is said to have computed \(a_3\) independently of Sakai. There is no formula, manuscript title, date of independent discovery or method in the notebook.
+
+Targeted searches for Koblenz, heat coefficients and Laplace asymptotics did not identify an exact primary publication. Sakai’s known computation does not prove or disprove the claim of independence. The attribution remains unverified, rather than classified as a new open mathematical question.
+
+\emph{Audit classification: F; verification: unresolved lead.}
+
+\paragraph{1973-333.10 (P000552): The lattice-point and Riemann-zero analogy.}
+Gelfand writes a circle lattice-point main term \(\pi r^2\) plus a schematic oscillatory sum and identifies the frequencies with zeros of the Riemann zeta function, “modulo the Riemann hypothesis”. The summation variables, coefficients and scaling are overwritten or undefined. The literal expression is not a verified lattice-point formula.
+
+No precise claim is recovered from this analogy. \citet[introduction]{colindeverdiere1973geodesicsii} distinguishes exact Poisson formulas on flat tori from general geodesic trace asymptotics, but this does not identify the notebook’s asserted zeta-zero formula. It remains F, with no transfer of an unrelated modern theorem.
+
+\emph{Audit classification: F; verification: read the result.}
+
+\paragraph{1973-333.11 (P000552-P000553): Closed billiard paths and oscillatory spectral density.}
+Shnirelman identifies oscillation lengths with closed billiard trajectories in a ball; the continuation displays \(f(\lambda)=f_0(\lambda)+\sum c_k\lambda^{\alpha_k}\sin(\ell_k\lambda+\omega_k)\). The variable must be a frequency for \(\ell_k\lambda\) to be the usual phase. Amplitudes, smoothing, boundary conditions, repeated trajectories and degeneracies are not specified.
+
+The named Balian--Bloch1972 paper is a strong historical match, but its publisher page returned403 and the exact formula was not read. \citet[introduction]{colindeverdiere1973geodesicsii} explicitly cites their bounded-domain Green-function method and gives a related closed-manifold theorem under nondegeneracy conditions. The match to the literal billiard formula remains partial.
+
+\emph{Audit classification: E; verification: indirect.}
+
+\paragraph{1973-333.12 (P000552): Cauchy smoothing and convergence.}
+The notes convolve the spectral measure with \(\varepsilon/(\lambda^2+\varepsilon^2)\). A normalized Cauchy kernel has an extra factor \(1/\pi\). One must also specify a finite spectral cutoff or a convergent regularization: for frequencies of \(\sqrt L\) in dimension \(n\ge2\), the positive tail \(\sum_j\varepsilon/\lambda_j^2\) diverges by Weyl growth. If \(\lambda_j\) denotes eigenvalues of \(L\), the bare sum instead converges in dimensions below4. A rapidly decreasing test function always defines a suitable smoothed spectral measure.
+
+Smoothing is an established spectral method, not a theorem guaranteeing convergence of this unspecific formula. The Weyl-law framework is in \citet[\S1]{mckeansinger1967curvature}; the oscillatory context is in \citet{colindeverdiere1973geodesicsii}. The convergence distinction is an editorial check of the displayed kernel.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.13 (P000553): The heat trace is not the displayed oscillatory trace.}
+The scan literally equates \(\sum e^{i\lambda_jz}\) with \(\operatorname{Tr}(e^{-z\Delta})\). For eigenvalues \(\mu_j\) of \(L\ge0\), the heat trace is \(\sum e^{-z\mu_j}\), holomorphic for \(\operatorname{Re}z>0\). If \(\lambda_j=\sqrt{\mu_j}\), the half-wave sum is \(\operatorname{Tr}(e^{iz\sqrt L})\), holomorphic for \(\operatorname{Im}z>0\) and distributionally defined on the real axis. These are different operators and domains.
+
+The later half-wave equation on the page supports a frequency interpretation, but does not repair the earlier equality literally. Compare the complex-time heat analysis of \citet{colindeverdiere1973geodesicsii} and the later spectral-trace paper \citet{duistermaatguillemin1975spectrum}; the latter was received20October1974 and publishedFebruary1975.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.14 (P000553): The unspecified general spectral-gap question.}
+The “twin problem” asks for \(\lambda_{k+1}-\lambda_k>c\lambda_k^{-\nu}\) for “general operators”. No operator class, multiplicity convention, generic topology, constants or frequency convention is fixed. Read universally with multiplicities, it is false even for the circle.
+
+The adjacent circle and torus examples show why a qualified formulation is essential. Neither the wave-trace theorem nor the near-flat torus theorem proves a lower bound for an unspecified generic class. The item remains F; no modern universal gap conjecture is silently substituted.
+
+\emph{Audit classification: F; verification: read the result.}
+
+\paragraph{1973-333.15 (P000553): Exact spectral doublets on the circle.}
+On a circle of length \(\ell\), the scalar Laplacian has eigenvalues \((2\pi m/\ell)^2\), each of multiplicity2 for \(m\ge1\). The half-wave eigenvalues are \(2\pi m/\ell\) with the same multiplicity. Every smooth metric on a circle is isometric to one specified by its total length, so metric perturbation preserves this doublet structure.
+
+This elementary Fourier computation proves the particular counterexample to the unqualified lower-gap assertion. The notebook’s wider phrase about stable asymptotic double multiplicity should not be extended to an arbitrary operator perturbation without specifying its class. The nearby torus analogy is treated independently by \citet{shnirelman1975multiplicity}.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.16 (P000553): Shnirelman’s all-index close-neighbor theorem.}
+Let a smooth Riemannian metric on \(T^2\) be sufficiently close to a flat metric, and let \(\lambda_k\) be the ordered eigenvalues of \(\sqrt{-\Delta_g}\), with multiplicities. Then, for every \(N\), there is \(C_N>0\) such that for every \(k>1\), \[\min(\lambda_{k+1}-\lambda_k,\lambda_k-\lambda_{k-1})<C_N k^{-N}.\] The closeness is enough for the invariant-torus construction used in the proof; no explicit norm threshold is supplied in the two-page announcement.
+
+\citet[Theorem and Lemmas1--3, pp.~265--266]{shnirelman1975multiplicity} states exactly this all-index result, explicitly strengthening Lazutkin’s positive-density subsequence theorem. It was received by the Moscow Mathematical Society7May1974 and published1975, after the1April1974 notebook meeting. Both primary pages were read. This is B relative to Koblenz’s main talk, with Shnirelman’s intervention explicitly preserved.
+
+\emph{Audit classification: B; verification: read the result.}
+
+\paragraph{1973-333.17 (P000553): The tentative three-torus comparison.}
+The source says that in \(T^3\) “apparently” the preceding behavior no longer holds. It specifies neither a metric nor the quantifier of the alleged negation. Flat tori still have symmetry-related multiplicities, so the phrase cannot be read as an assertion about every three-torus metric.
+
+\citet{shnirelman1975multiplicity} proves a two-dimensional theorem and does not supply the proposed three-dimensional negation. No exact primary theorem matching this tentative sentence was verified. It remains F rather than an eligible open problem.
+
+\emph{Audit classification: F; verification: read the result.}
+
+\paragraph{1973-333.18 (P000553): Half-wave propagation and its trace.}
+With \(L=-\Delta_g\ge0\), the Cauchy problem \(u_t=i\sqrt L\,u\), \(u(0)=\delta_x\), has distribution kernel \(U(t,y,x)\) of \(e^{it\sqrt L}\). Its distributional trace is \(\int_M U(t,x,x)dV=\sum_k e^{it\sqrt{\mu_k}}\). The sum is not generally pointwise convergent for real \(t\).
+
+The spectral construction is classical before the meeting. Its microlocal analysis uses the real-principal propagation framework of \citet[\S6.1]{duistermaathormander1972fourierii}; the later \citet{duistermaatguillemin1975spectrum} formalizes the trace relation. The source uses the same letter for energy eigenvalues and their square roots, requiring this distinction.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.19 (P000553): Unit-speed singularity propagation and caustics.}
+The page places kernel singularities at \(|x-y|=t\), draws a returning loop, and mentions bifurcations. On a Riemannian manifold the precise statement is propagation along the geodesic Hamilton flow of \(|\xi|_g\), at unit speed in the base. The equality \(d_g(x,y)=|t|\) describes the short-time normal-neighborhood front, not all returning geodesics or caustics globally.
+
+\citet[Theorem6.1.1]{duistermaathormander1972fourierii} establishes propagation of wave-front singularities along real-principal bicharacteristics before the talk. The sketch does not define an additional classification of bifurcations. Its loop is accounted for as a propagation/return diagram, not a separate unknown theorem.
+
+\emph{Audit classification: E; verification: read the result.}
+
+\paragraph{1973-333.20 (P000553): Closed-geodesic contributions to a wave trace.}
+Restricting the propagator to the diagonal and integrating selects fixed points of geodesic flow, hence closed geodesics. The singular support of the half-wave trace is contained in zero together with signed lengths of closed geodesics. Identifying a nonzero singular coefficient or a full expansion requires clean/nondegenerate fixed-point hypotheses and control of cancellations.
+
+\citet[introduction and main theorem]{colindeverdiere1973geodesicsii} gives a pre-talk closed-manifold oscillatory spectral/geodesic relation under explicit nondegeneracy hypotheses. \citet{duistermaatguillemin1975spectrum}, receivedOctober1974 and publishedFebruary1975, is a later general trace-theoretic continuation; only its publisher metadata were checked here. These are related to, but not an exact theorem for, the notebook’s unspecified billiard amplitudes.
+
+\emph{Audit classification: E; verification: read the result.}

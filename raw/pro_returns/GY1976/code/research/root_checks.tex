@@ -1,0 +1,132 @@
+\subsection{Critical checks for the miscatalogued exterior-algebra lecture}
+
+These checks concern record~437, whose manuscript date is 13 February 1978.
+They audit the supplied material without turning it into evidence of a
+1976--77 research problem. The results are elementary verifications of the
+construction recorded in the notebook; no claim of novelty is intended.
+
+\begin{proposition}[The regular exterior module is acyclic]\ours{}
+Let \(k\) be a field, let \(\Xi\) have finite dimension \(m\geq1\), and
+let \(0\ne\xi\in\Xi\). Give \(\Lambda=\bigwedge\Xi\) its negative
+grading and differential \(d(v)=\xi\wedge v\). Then the complex is
+contractible. Consequently every finite direct sum of grading shifts of
+\(\Lambda\) gives the zero bundle under the construction of record~437.
+\end{proposition}
+\begin{proof}
+Choose \(a\in\Xi^*\) with \(a(\xi)=1\). Define contraction on a simple
+exterior tensor by
+\[
+ \iota_a(v_1\wedge\cdots\wedge v_r)
+ =\sum_{j=1}^r(-1)^{j-1}a(v_j)
+ v_1\wedge\cdots\wedge\widehat{v_j}\wedge\cdots\wedge v_r.
+\]
+Applying this formula to \(\xi\wedge v\), the term contracting the first
+factor is \(v\); each remaining term is the negative of the corresponding
+term of \(\xi\wedge\iota_a(v)\). Therefore
+\(\iota_a d+d\iota_a=1\). If \(dv=0\), this identity gives
+\(v=d\iota_a(v)\), so every cycle is a boundary. The homotopy commutes
+with taking direct sums and does not depend on the choice of grading
+origin. In particular the output has rank zero, which resolves the
+notebook's ambiguous use of ``trivial'' in this example.
+\end{proof}
+
+\begin{remark}[Independent checks]\oursComputed{}
+The identity was independently re-derived by writing
+\(\Xi=k\xi\oplus U\), hence
+\(\Lambda=\bigwedge U\oplus\xi\wedge\bigwedge U\). The differential
+maps the first summand isomorphically to the second and kills the second.
+The exact-arithmetic program \texttt{code/critical\_checks.py} additionally
+constructs exterior multiplication and contraction by two separate
+bit-mask formulas. For \(m=1,\ldots,6\) and three nonzero vectors in each
+dimension, all 18 cases satisfy \(d^2=0\), \(\iota_a d+d\iota_a=1\),
+and zero homology in every degree. The ranks agree with
+\(\binom{m-1}{r}\) in exterior degree \(r\). These finite checks support
+the implementation; the preceding proof establishes the assertion for
+every \(m\), not an extrapolation from the computed cases.
+\end{remark}
+
+\begin{example}[The inverse construction requires a grading convention]\ours{}
+Take \(n=0\), so the base is a point, and let
+\(\mathcal E=\mathcal O\). For every \(N\geq0\), the two consecutive
+section spaces are one-dimensional and \(X_0\) is the identity. If the
+two tensor factors in P000756 are given their raw exterior grading, then
+\[
+ \partial:\Lambda\longrightarrow\Lambda,\qquad
+ \partial(1)=\xi_0,\qquad \partial(\xi_0)=0.
+\]
+Its kernel is \(k\xi_0\), concentrated in internal degree \(-1\).
+The action of \(\xi_0\) on that kernel is zero, so its fibre homology
+is nonzero in degree \(-1\); the raw kernel is not proper. This is an
+explicit check of an omitted grading convention, not a counterexample to
+the BGG correspondence. The dual free module
+\(\operatorname{Hom}_k(\Lambda,k)\) differs from \(\Lambda\) by a
+grading shift, which is essential in the precise inverse construction
+\citep[\S4]{bernsteingelfandgelfand1978bundles}.
+\end{example}
+
+\begin{proposition}[Sign of the twist operation]\ours{}
+Use the negative grading of record~437. If \(V\) is proper and
+\(0\to V\to P\to V'\to0\) is an exact sequence of finite graded
+exterior-algebra modules with \(P\) free, set \(W_j=V'_{j+1}\).
+Then \(W\) is proper and \(\Phi(W)=\Phi(V)(1)\).
+\end{proposition}
+\begin{proof}
+For each nonzero \(\xi\), applying \(L_\xi\) gives a short exact
+sequence of complexes. The middle complex is acyclic by the proposition
+above, so its homology sequence gives
+\(H_j(L_\xi(V'))\cong H_{j-1}(L_\xi(V))\). Consequently the only
+possibly nonzero homology of \(V'\) is in chain degree one, and the
+displayed grading shift moves it to degree zero. On projective space,
+\[
+ \mathcal L^j(W)
+ =V'_{1-j}\otimes\mathcal O(j)
+ =\mathcal L^{j-1}(V')(1).
+\]
+The short exact sequence of sheaf complexes gives
+\(\mathcal H^{-1}(\mathcal L(V'))\cong\mathcal H^0(\mathcal L(V))\).
+Reindexing by the displayed formula proves the claimed twist. Depending
+on the convention for a shifted complex, a minus sign in its differential
+is removed by multiplying degree \(j\) by \((-1)^j\); cohomology and
+the bundle are unaffected.
+\end{proof}
+
+\begin{remark}[Second check of indexing]
+There are two independent index tests: the chain homology sequence
+places the cokernel's fibre homology in degree one, whereas the sheaf
+cohomology sequence places it in degree minus one. The substitution
+\(j\mapsto-j\) in \(\mathcal L^j(V)=V_{-j}\otimes\mathcal O(j)\)
+reconciles them and gives \(\mathcal O(1)\), not \(\mathcal O(-1)\).
+This is exactly the convention in remark~2 after Theorem~1 of
+\citet{bernsteingelfandgelfand1978bundles}.
+\end{remark}
+
+
+\begin{remark}[Independent check of the inverse-module indexing]\ours{}
+The conventions of occurrence~1977-437.19 were checked against
+\citet[\S2, Corollary~2.4, Theorem~3.7 and \S4]{eisenbudfloystadschreyer2003exterior}.
+Put \(Z_m=\ker(T^m\to T^{m+1})\), use internal shifts
+\(Q(a)_j=Q_{a+j}\), and use cochain shifts \(K[a]^j=K^{a+j}\).
+At a sufficiently large cutoff \(N\), the BGG reciprocity theorem,
+applied to the regraded kernel, gives
+\(\mathcal L(Z_N(N))\simeq\mathcal E(N)\).
+Direct substitution in the definition of the linear complex gives
+\[
+ \mathcal L(Q(N))=\mathcal L(Q)[-N](N).
+\]
+Therefore \(\mathcal L(Z_N)\simeq\mathcal E[N]\).
+For every integer \(m\), exactness of the Tate complex gives
+\(0\to Z_m\to T^m\to Z_{m+1}\to0\).
+The middle term is graded free, and its linear sheaf complex is acyclic
+by the contraction above. Its associated triangle therefore gives
+\(\mathcal L(Z_{m+1})\simeq\mathcal L(Z_m)[1]\).
+Iteration yields \(\mathcal L(Z_N)\simeq\mathcal L(Z_0)[N]\), hence
+\(\mathcal L(Z_0)\simeq\mathcal E\) with no additional twist.
+The bounded complex of locally free sheaves may be split locally away
+from its locally free degree-zero cohomology, so its fibres have no
+other homology: \(Z_0\) is proper. The point case gives the trivial
+exterior module in internal degree zero. On \(\mathbb P^1\), the case
+\(\mathcal E=\mathcal O(-1)\) gives the Euler kernel of
+\(\mathcal O^2\to\mathcal O(1)\), again checking the grading sign.
+These are checks of conventions in the cited construction, not a new
+proof of the BGG reciprocity theorem.
+\end{remark}

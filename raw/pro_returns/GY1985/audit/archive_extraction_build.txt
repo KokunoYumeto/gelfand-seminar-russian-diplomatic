@@ -1,0 +1,125 @@
+format_build: PASS
+builder: PASS
+xelatex_1: PASS
+bibtex: PASS
+xelatex_2: PASS
+xelatex_3: PASS
+xelatex_4: PASS
+{
+  "status": "PASS",
+  "local_tex_format_fallback": true,
+  "environment_overrides": {
+    "TEXMF": "{/usr/share/texmf,/usr/share/texlive/texmf-dist}",
+    "TEXFORMATS": "/workspace/scratch/0d205e72a69b/work/gy1985_extraction__bvqxrry/code/texruntime:"
+  },
+  "commands": [
+    {
+      "argv": [
+        "xetex",
+        "-ini",
+        "-etex",
+        "-jobname=xelatex",
+        "-progname=xelatex",
+        "xelatex.ini"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/gy1985_extraction__bvqxrry/code/texruntime",
+      "log": "audit/buildlogs/format_build.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "build_chapter.py",
+        "GY1985"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/gy1985_extraction__bvqxrry",
+      "log": "audit/buildlogs/builder.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1985_test.tex"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/gy1985_extraction__bvqxrry",
+      "log": "audit/buildlogs/xelatex_1.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "bibtex",
+        "GY1985_test"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/gy1985_extraction__bvqxrry",
+      "log": "audit/buildlogs/bibtex.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1985_test.tex"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/gy1985_extraction__bvqxrry",
+      "log": "audit/buildlogs/xelatex_2.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1985_test.tex"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/gy1985_extraction__bvqxrry",
+      "log": "audit/buildlogs/xelatex_3.txt",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1985_test.tex"
+      ],
+      "cwd": "/workspace/scratch/0d205e72a69b/work/gy1985_extraction__bvqxrry",
+      "log": "audit/buildlogs/xelatex_4.txt",
+      "exit_code": 0
+    }
+  ],
+  "remaining_layout_or_reference_messages": []
+}
+{
+  "status": "PASS",
+  "checks": [
+    "26 records in manuscript order",
+    "260 consecutive core occurrence IDs",
+    "heading contains no mathematical item",
+    "all required fields and enums",
+    "11 problem records with current occurrence resolution",
+    "citations and bibliography keys",
+    "URL/DOI verification-note schema",
+    "all LaTeX data fields free of raw specials and control characters",
+    "59 core pages plus 2 adjacent pages",
+    "12 adjacent items outside core namespace"
+  ],
+  "errors": [],
+  "counts": {
+    "talks": 26,
+    "items": 260,
+    "problems": 11,
+    "adjacent_items": 12,
+    "references": 81,
+    "corrections": 172
+  },
+  "classes": {
+    "A": 4,
+    "E": 217,
+    "F": 23,
+    "B": 14,
+    "C": 2
+  }
+}

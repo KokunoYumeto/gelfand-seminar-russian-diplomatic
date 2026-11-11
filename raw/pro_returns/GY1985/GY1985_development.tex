@@ -1,0 +1,692 @@
+\subsection{Simplicial four-polytopes: an explicit contractible family}
+\label{sec:gy1985-stacking}
+
+This development belongs to item~1985-658.10 and problem~GP-1985-42.
+The notebook on P001230 says only that even simplicial polytopes in
+\(\mathbb R^4\) can have \ru{более или менее любой} topology of their
+fixed-type realization spaces. The qualification means ``more or less any'';
+it does not specify a homeomorphism, homotopy equivalence, stable equivalence,
+or the normalization of realizations. An editorial homotopy formulation is:
+does every nonempty finite simplicial-complex homotopy type occur as a
+normalized realization space of a simplicial four-polytope? The stronger
+precise conjecture of \citet[Conjecture~4]{adiprasitopadrol2017universality}
+asks for stable equivalence to every nonempty open primary basic
+semialgebraic set defined over \(\mathbb Z\), even requiring the four-polytope
+to be neighborly. This latter formulation is a literature conjecture, not
+an exact quotation from the seminar. Adiprasito--Padrol use a homogenized
+realization model: vector configurations realizing the cone over the
+polytope, modulo \(\mathrm{GL}_{d+1}(\mathbb R)\). The fixed affine-frame
+and prescribed-history model proved contractible below is specified
+separately; no identification of these normalization conventions is
+assumed.
+
+\paragraph{The established results and their limits.}
+Mn\"ev's 1985 announcement already gives configuration universality and a
+simplicial-polytope statement with dimension unrestricted
+\citep[Theorems~3--4]{mnev1985varieties}. Adiprasito--Padrol explicitly regard
+the earlier arguments for the simplicial part as incomplete and supply
+the missing proof; the 1985 announcement must therefore not be treated
+as equivalent to an independently checked complete proof of that part. The proof of general four-polytope
+universality reported in \citet[Main Theorem]{richtergebertziegler1995realization}
+concerns work of 1994 and appeared in 1995; it does not impose simpliciality.
+\citet[Theorem~2]{adiprasitopadrol2017universality} proves the neighborly
+simplicial result in dimension \(2n-4\) with \(2n\) vertices. That paper first
+circulated in February 2014, appeared online in May 2016, and was printed
+in 2017. Its Conjecture~4 preserves the difficult fixed dimension.
+Their discussion after Conjecture~4 also cites established disconnected
+realization spaces of simplicial four-polytopes, so nontrivial topology
+in dimension four is already known; universality is the remaining
+quantifier. The same paper records trivial realization spaces for stacked polytopes
+in the discussion after Conjecture~4; its Theorem~3 proves a ball result
+for specified sewing families. The proof below supplies an explicit
+continuous insertion and contraction for a narrowly specified stacking
+space. It is not a new universality theorem or a new discovery of
+contractibility for stacked polytopes.
+
+As of November 2026, no resolution of fixed-dimensional simplicial
+universality was found in the bounded search for this chapter. The latest
+opened source explicitly retaining the constant-dimension simplicial
+question is the 2024 compendium, entries CG68--CG69
+\citep{schaefercardinalmiltzow2024existential}. This is dated evidence, not a
+claim to have excluded every subsequent publication. A later 2026 search
+lead concerning noncontractible realization spaces is recorded as
+unverified in the research log and is not used in the argument.
+
+\paragraph{The space to which the proof applies.}
+Fix \(d\geq2\), and fix the labelled simplex
+\(P_0=\operatorname{conv}(0,e_1,\ldots,e_d)\subset\mathbb R^d\).
+A \emph{prescribed stacking history} \(\mathcal H\) of length \(r\) specifies,
+at step \(k\), a labelled simplex facet \(F_k\) of the combinatorial polytope
+produced by the previous steps. The next labelled point must lie strictly
+beyond \(F_k\) and strictly beneath every other current facet.
+Let \(\mathcal R_0\) be the one-point space consisting of the fixed simplex.
+Recursively, \(\mathcal R_k\) consists of the coordinates of the first \(k\)
+inserted points satisfying every one of these conditions at its own step.
+These are \emph{history-compatible} realizations. Coordinates of the initial
+simplex remain fixed, so no affine group factor is present. We do not
+identify \(\mathcal R_r\) with the full realization space of the final
+combinatorial type without a separate deletion argument.
+
+For a configuration \(q\in\mathcal R_{k-1}\), write \(P(q)\) for its convex
+hull. For each facet \(G\), choose an inward affine supporting form
+\[
+  \ell_{G,q}(x)=a_G(q)\cdot x+b_G(q),\qquad
+  \|a_G(q)\|=1,
+\]
+which vanishes on \(G\) and is positive on the interior of \(P(q)\).
+These choices are continuous in \(q\). Indeed, the labelled vertices of a
+simplex facet give a nonzero affine cofactor vector. Divide its spatial
+part by its norm and choose its sign to be positive at the average of all
+vertices of \(P(q)\). That average is in the interior; the sign test never
+vanishes, so it is continuous, including if the parameter space were
+initially disconnected. This construction avoids an unproved global
+choice of a facet normal.
+
+\begin{lemma}[The stacking insertion region \ours]
+For a full-dimensional simplicial polytope \(P\) and a facet \(F\), set
+\[
+ U_F(P)=\{x\in\mathbb R^d:\ell_F(x)<0,
+                  \ \ell_G(x)>0\text{ for every facet }G\ne F\}.
+\]
+This is a nonempty open convex set. For every \(x\in U_F(P)\),
+\(\operatorname{conv}(P\cup\{x\})\) has the stacking combinatorial type:
+it retains all facets except \(F\), and replaces \(F\) by the simplices
+\(\operatorname{conv}(R\cup\{x\})\), one for each ridge \(R\) of \(F\).
+\end{lemma}
+\begin{proof}
+The inequalities define an intersection of finitely many open half-spaces,
+hence an open convex set. Let \(b\) be the barycenter of the vertices of
+\(F\), and let \(n_F=-a_F\) be the outward unit normal. Since \(b\) lies in
+the relative interior of \(F\), \(\ell_G(b)>0\) for every other facet.
+For sufficiently small \(\varepsilon>0\), the point
+\(b+\varepsilon n_F\) therefore satisfies all the required inequalities;
+nonemptiness is established quantitatively in the next proposition.
+
+For the combinatorial assertion, a segment from \(x\) to any point of \(P\)
+meets the plane \(\ell_F=0\) at a point of \(F\), unless it is wholly on the
+\(P\) side. At the crossing, all other facet inequalities hold because they
+hold at both endpoints. Consequently
+\[
+ \operatorname{conv}(P\cup\{x\})
+       =P\cup\operatorname{conv}(F\cup\{x\}).
+\]
+Every old facet \(G\ne F\) remains a supporting facet, since
+\(\ell_G(x)>0\). If a ridge \(R\subset F\) is shared by \(F\) and \(G\),
+then
+\[
+ h_R(y)=\ell_G(x)\ell_F(y)-\ell_F(x)\ell_G(y)
+\]
+is nonnegative on \(P\), vanishes precisely on \(R\) there, and also
+vanishes at \(x\). It exposes exactly
+\(\operatorname{conv}(R\cup\{x\})\), which is a simplex facet. The boundary
+of the union displayed above consists of the old boundary without the
+relative interior of \(F\), and these lateral faces of the added pyramid.
+Thus the listed facets exhaust the new boundary and give the stated type.
+\end{proof}
+
+\begin{proposition}[A continuous section and a fiberwise contraction \ours]
+The map
+\[
+ \pi_k:\mathcal R_k\longrightarrow\mathcal R_{k-1}
+\]
+forgetting the last vertex is surjective and has a continuous section.
+Moreover, \(\mathcal R_k\) strongly deformation retracts onto the graph of
+that section while every previous vertex is held fixed.
+\end{proposition}
+\begin{proof}
+Let \(F=F_k\). Its facet barycenter \(b(q)\) and outward unit normal
+\(n_F(q)=-a_F(q)\) are continuous. Define
+\[
+ \varepsilon(q)=\frac12\min\left(
+       1,\ \min_{G\ne F}
+       \frac{\ell_{G,q}(b(q))}{1+|a_G(q)\cdot n_F(q)|}
+                         \right)>0,
+ \qquad s(q)=b(q)+\varepsilon(q)n_F(q).
+\]
+The minimum is over the fixed finite labelled facet set at this step, so
+\(\varepsilon\) and \(s\) are continuous. For the selected facet,
+\(\ell_{F,q}(s(q))=-\varepsilon(q)<0\). For every other facet, write
+\(u=|a_G(q)\cdot n_F(q)|\). Then
+\[
+ \ell_{G,q}(s(q))
+ \geq \ell_{G,q}(b(q))-\varepsilon(q)u
+ \geq \ell_{G,q}(b(q))
+             \left(1-\frac{u}{2(1+u)}\right)>0.
+\]
+Thus \(s(q)\in U_F(P(q))\), proving both surjectivity and the section
+\(q\mapsto(q,s(q))\).
+
+The fiber over \(q\) is exactly \(U_F(P(q))\). Its convexity proves that
+\[
+ H_k((q,x),t)=\bigl(q,(1-t)x+t\,s(q)\bigr),\qquad 0\leq t\leq1,
+\]
+remains in \(\mathcal R_k\). This map is jointly continuous, equals the
+identity at \(t=0\), has image in the section at \(t=1\), and fixes every
+point of the section for every \(t\). These are precisely the strong
+deformation-retraction conditions. No claim that contractible fibers
+alone imply a homotopy equivalence is needed.
+\end{proof}
+
+\begin{theorem}[Contractibility for a prescribed stacking history \ours]
+For every finite prescribed facet-stacking history on the fixed simplex,
+the normalized history-compatible realization space \(\mathcal R_r\) is
+nonempty and contractible. In particular this holds in dimension four.
+\end{theorem}
+\begin{proof}
+The space \(\mathcal R_0\) is a point. At each step the section proves
+nonemptiness, and the preceding proposition retracts \(\mathcal R_k\)
+onto a copy of \(\mathcal R_{k-1}\). If a contraction of
+\(\mathcal R_{k-1}\) is already given, first use \(H_k\) to move to the
+section and then apply the contraction there through the continuous
+section map. Concatenating these two homotopies contracts
+\(\mathcal R_k\). Induction gives a finite, continuous contraction of
+\(\mathcal R_r\). The conclusion concerns exactly the recursively defined
+space: no assertion that every realization of the final type admits
+this history has entered the proof.
+\end{proof}
+
+\paragraph{A second check of the section estimate.}\ours\
+The argument can be rederived without unit normals, which is useful for
+exact arithmetic. Take inward forms with nonzero gradients \(a_G\), put
+\[
+ \eta=\min\left(1,\ \min_{G\ne F}
+          \frac{\ell_G(b)}{2(1+|a_G\cdot a_F|)}\right),
+ \qquad x=b-\eta a_F.
+\]
+Then \(\ell_F(x)=-\eta\|a_F\|^2<0\), while
+\(\ell_G(x)\geq\ell_G(b)-\eta|a_G\cdot a_F|>0\).
+This independently checks the sign and the strict-slack bound. If the
+vertices and inward forms are rational, \(b,\eta,x\) are rational; no
+square root is required. These identities check the proof for every
+admissible step, independently of the finite examples computed elsewhere
+in this chapter. Numerical or exact examples do not establish equality
+with the full realization space.
+
+\begin{proposition}[Rational points in simplicial realization spaces \ours]
+Every nonempty realization space of a labelled simplicial polytope
+contains a rational realization. The same holds after normalizing a
+specified affinely independent vertex frame to a rational simplex, on
+any nonempty such chart.
+\end{proposition}
+\begin{proof}
+Start with a labelled simplicial realization. Each facet has exactly
+\(d\) affinely independent vertices, and its supporting affine form is
+strictly positive on every other vertex. These are finitely many open
+conditions on the vertex coordinates: affine independence and the signs
+of the appropriate determinants. They continue to hold in a sufficiently
+small neighbourhood. Every listed simplex facet therefore persists.
+
+For completeness, this persistence rules out extra facets. Every ridge
+of a listed simplex facet belongs to exactly two listed facets in the
+original simplicial boundary complex. In the perturbed convex hull those
+two facets still meet along this ridge, and a ridge of a convex polytope
+belongs to exactly two facets. Hence no facet adjacent across a ridge to
+a listed facet can be unlisted. The facet-adjacency graph of a convex
+polytope is connected, so every facet is listed. Each old labelled vertex
+remains a vertex because it is a vertex of a persisting simplex facet.
+Thus the combinatorial type is constant throughout that neighbourhood.
+
+Rational points are dense in the coordinate space, so choose all vertex
+coordinates rational within this neighbourhood. For a normalized chart,
+first apply the unique affine map sending the chosen vertex frame to the
+specified rational frame. Hold those frame coordinates fixed and perturb
+the remaining coordinates rationally within the same finite strict
+inequalities. This gives the normalized rational realization as well.
+\end{proof}
+
+\begin{corollary}[The arithmetic limit of a simplicial universality claim \ours]
+Stable equivalence over \(\mathbb Q\), generated by rational equivalences
+and stable projections with nonempty relatively open polyhedral fibers
+defined over the base, cannot identify a nonempty simplicial-polytope
+realization space with every primary basic semialgebraic set over
+\(\mathbb Z\) without an openness or comparable arithmetic restriction.
+\end{corollary}
+\begin{proof}
+Existence of a rational point is preserved by rational equivalences
+whose maps and inverses are defined on the spaces. It is also preserved
+in both directions by a stable projection. One direction follows by
+projection. For the other, over a rational base point the fiber is a
+nonempty relatively open polyhedron with rational linear equations and
+strict rational inequalities. Its affine hull has a rational point and
+a rational direction basis; density in that affine hull yields a rational
+point satisfying all strict inequalities.
+
+The primary basic set
+\(S=\{t\in\mathbb R:t^2-2=0,\ t>0\}\) is nonempty and has no rational
+point. The proposition supplies a rational point for every nonempty
+simplicial realization space, so such a space cannot be stably equivalent
+to \(S\) in this sense. By contrast, a nonempty open subset of Euclidean
+space always has rational points. This explains why the established and
+conjectural simplicial universality statements restrict to open primary
+sets. It imposes no corresponding obstruction on homotopy universality:
+this particular \(S\) already has the homotopy type of a point.
+\end{proof}
+
+\paragraph{The remaining obstruction and a bounded next step.}
+A fixed stacking history admits a global section and convex insertion
+fibers, so it cannot encode arbitrary topology. The unresolved universal
+claim needs mechanisms beyond this restricted construction. In the
+known approaches, recording complicated order types inside auxiliary
+configurations does not by itself ensure that a fixed simplicial
+four-dimensional face lattice forces those order types. The discussion
+after Conjecture~4 in \citet{adiprasitopadrol2017universality} identifies
+precisely this distinction using stacked vertex figures and contractions.
+The present proof does not address that enforcement problem.
+
+A further bounded run could take one explicitly labelled small final
+stacked four-polytope and determine, by exact inequalities, whether every
+realization in the chosen normalization permits a specified last-vertex
+deletion. A proof would identify its full realization space with the
+history-compatible space for that case; a counterexample would delimit
+the identification. This is a concrete extension of the certificate,
+not a proposal to settle fixed-dimensional universality by checking a
+finite list of examples.
+
+\subsection{Independent mathematical checks of editorial emendations}
+\label{checks:1985}
+
+This subsection checks corrections to established mathematics; it is not a second
+research development selected from class C or D. The original notebook formulas
+remain in the occurrence index. The labels \ours\ and \oursComputed\ mean that
+the proof or computation was supplied for this companion, not that the underlying
+mathematics is new. Exact code and output are in
+\texttt{code/check\_mathematics.py} and its JSON output. A coefficient-algebra
+implementation and direct application to functions are separate checks.
+
+\begin{proposition}[The corrected Novikov--Veselov commutator]\ours\
+Let \(D=\partial_z\), \(E=\partial_{\bar z}\), and let the smooth coefficients
+\(V,u,v\) satisfy \(Eu=3DV\), \(Dv=3EV\). Set
+\[
+ L=DE+V,\qquad P=D^3+E^3+uD+vE,\qquad B=Du+Ev.
+\]
+Here a coefficient without a derivative to its right denotes multiplication.
+Then
+\[
+ [P,L]+BL=M_{D^3V+E^3V+D(uV)+E(vV)}.
+\]
+For real \(V\), one may put \(v=\bar u\). Consequently the right hand side
+defines the stated fixed-energy evolution, with the boundary or normalization
+conditions on \(u\) still to be specified.
+\end{proposition}
+\begin{proof}
+Leibniz's rule gives the following coefficients, before imposing the auxiliary
+equations:
+\[
+\begin{array}{c|l}
+\text{derivative} & \text{coefficient in }[P,L]+BL\\\hline
+D^2&3DV-Eu\\
+E^2&3EV-Dv\\
+DE&B-Du-Ev\\
+D&3D^2V-DEu\\
+E&3E^2V-DEv\\
+1&D^3V+E^3V+uDV+vEV+BV.
+\end{array}
+\]
+All positive-order coefficients vanish; the scalar coefficient is the one
+claimed. This calculation also fixes the meaning of the notebook expression
+\((D u)V\): it must be \(D(uV)\), not \((Du)V\) alone. Independently, the code
+applies the two operators successively to two different test polynomials, for
+each of two polynomial potentials, constructing \(u,v\) by integration of the
+auxiliary equations. Every residual is exactly zero. This second check tests the
+implementation; the displayed algebra proves the identity for all smooth
+coefficients. The hierarchy itself is the prior result of
+\citet[\S II, equations (4)--(6)]{veselovnovikov1984explicit}.
+\end{proof}
+
+\begin{proposition}[An explicit counterexample to the unrestricted no-Lax wording]\ours\
+There is a smooth real potential \(U(x,t)\), independent of \(y\), for which
+\[
+ L=-\partial_x^2-\partial_y^2+U,\qquad
+ A=-4\partial_x^3+6U\partial_x+3U_x
+\]
+satisfy \(L_t=[A,L]\), but the potentials do not evolve by Euclidean motions.
+The example is not a genuinely two-dimensional decaying scattering potential;
+that extra hypothesis is precisely absent from the universal notebook claim.
+\end{proposition}
+\begin{proof}
+Put
+\[
+ r=e^{2x-8t},\quad s=e^{4x-64t},\quad
+ T=1+r+s+\tfrac19rs,\quad U=-2\partial_x^2\log T.
+\]
+Since \(T>0\) for real \(x,t\), the formula is smooth and real for all such
+parameters. To verify the equation without relying on a remembered soliton
+formula, use the four exponential terms of \(T\), with pairs
+\((k,\omega)=(0,0),(2,-8),(4,-64),(6,-72)\) and coefficients
+\(1,1,1,1/9\). In the bilinear expression
+\((D_x^4+D_xD_t)T\mathbin{\cdot}T\), each ordered pair contributes
+\((k_i-k_j)^4+(k_i-k_j)(\omega_i-\omega_j)\).
+Every unordered pair gives zero except \((0,3)\) and \((1,2)\). They have the
+same exponential \(rs\) and weighted coefficients \(864/9=96\) and \(-96\),
+respectively, so they cancel. Writing \(q=\log T\), the bilinear identity is
+\(q_{xt}+q_{xxxx}+6q_{xx}^2=0\); differentiation gives
+\(U_t=6UU_x-U_{xxx}\).
+
+A direct Leibniz expansion gives
+\([A,L]=M_{6UU_x-U_{xxx}}\), since \(A\) commutes with
+\(\partial_y^2\). Thus the Lax equation holds. To check that this is not a
+time-dependent translation, compare \(U_t/U_x\) at \(t=0\), first with
+\((r,s)=(1,1)\), then with \((r,s)=(2,4)\). The exact ratios are $-92/3$ and $-89524/4861$, respectively, and both denominators $U_x$ are nonzero. These values were also obtained independently from moment and cumulant formulas for the four exponential terms. A translation would give a
+ratio depending on \(t\) alone. A continuous Euclidean motion of a nonconstant
+potential independent of \(y\), remaining independent of \(y\), cannot rotate
+its direction of variation, so it reduces to this excluded translation case.
+The code independently verifies the rational PDE identity in \(r,s\) and the
+formal commutator by two implementations. This counterexample does not assert
+that the intended genuinely two-dimensional obstruction has been identified.
+\end{proof}
+
+\begin{lemma}[Leading Baker--Akhiezer coefficients]\ours\
+Use the notebook's exponential conventions and suppose locally that
+\[
+ \psi=e^{ik_1z}(1+\xi_1/k_1+O(k_1^{-2})),\qquad
+ \psi=c_2e^{ik_2\bar z}(1+O(k_2^{-1})),\quad c_2\ne0.
+\]
+For an operator \(L=DE+aE+b\) annihilating \(\psi\), cancellation of the
+leading terms requires
+\(a=-D\log c_2\), \(b=-iE\xi_1\).
+\end{lemma}
+\begin{proof}
+After dividing by \(e^{ik_1z}\), the constant term of \(DE\psi\) is
+\(iE\xi_1\); the term \(aE\psi\) begins at order \(k_1^{-1}\).
+At the other puncture the coefficient of \(ik_2e^{ik_2\bar z}\) is
+\(Dc_2+ac_2\). These two coefficients give the formulas. The recorded
+operator \(DE+A D+B\) instead has an uncancelled \(ik_1 A\) term at the first
+puncture. Symbolic differentiation of two truncated Laurent expansions gives
+the same cancellations independently. Existence and uniqueness from spectral
+data are supplied by the cited theorem of
+\citet[\S3, Lemmas 1--2]{dubrovinkrichevernovikov1976schrodinger}; this lemma
+only determines the necessary coefficients in the convention used here.
+\end{proof}
+
+\begin{proposition}[The hyperelliptic defect in products of differentials]\ours\
+Let \(X\) be a smooth compact connected complex hyperelliptic curve of genus \(g\ge2\).
+The multiplication map
+\(\operatorname{Sym}^2H^0(X,K_X)\to H^0(X,K_X^2)\) has image dimension
+\(2g-1\) and cokernel dimension \(g-2\).
+\end{proposition}
+\begin{proof}
+Choose a coordinate on the quotient so that infinity is unbranched, and write
+\(y^2=f(x)\) with \(f\) squarefree of degree \(2g+2\). The one-forms
+\(x^i dx/y\), \(0\le i\le g-1\), are a basis, by local regularity and
+Riemann--Roch. Their products span the independent forms
+\[
+ x^k\frac{dx^2}{y^2},\quad 0\le k\le 2g-2.
+\]
+The complementary forms are
+\[
+ x^j\frac{dx^2}{y},\quad 0\le j\le g-3,
+\]
+with the second list empty when \(g=2\). At a branch point use
+\(x-a=t^2\), \(y=t\) times a nonvanishing analytic factor: the two basic
+quadratic differentials have orders zero and one, respectively. At either
+point at infinity put \(s=1/x\). Their orders are \(2g-2-k\) and
+\(g-3-j\), so all listed forms are holomorphic. The two families have opposite
+parity under the hyperelliptic involution; inside each family their rational
+monomials are independent. There are \(3g-3=h^0(K_X^2)\) forms in total,
+so they form a basis. This proves both dimensions for every \(g\ge2\).
+Independently the code checks the orders, product exponents and dimensions for
+\(g=2,\ldots,9\), explicitly including the exceptional zero-cokernel case
+\(g=2\). The general nonhyperelliptic surjectivity statement is Max Noether's
+theorem, recalled in \citet[\S3.1]{matonevolpato2013determinantal}.
+\end{proof}
+
+\begin{lemma}[The sign of the torus Beltrami wedge]\ours\
+Write \(y=\Im\tau>0\), and use the deformation
+\(\tau_\eta=(\tau+\eta\bar\tau/y)/(1+\eta/y)\). At \(\eta=0\),
+\[
+ d\tau=-2i\,d\eta,\qquad
+ d\bar\eta\wedge d\eta=-\tfrac14d\tau\wedge d\bar\tau.
+\]
+\end{lemma}
+\begin{proof}
+Differentiate the quotient with the base \(\tau\) fixed; the derivative is
+\((\bar\tau-\tau)/y=-2i\). Conjugation and antisymmetry give the wedge
+identity. For an independent real-coordinate check, \(\eta=p+iq\) gives
+\((\delta\Re\tau,\delta\Im\tau)=(2q,-2p)\), with Jacobian determinant four.
+The coordinate identities \(d\bar\eta\wedge d\eta=2i\,dp\wedge dq\) and
+\(d\tau\wedge d\bar\tau=-2i\,d\Re\tau\wedge d\Im\tau\) give exactly
+the same minus sign. These are tangent identities at the base point.
+\end{proof}
+
+\begin{proposition}[The finite-dimensional determinant metric fixes the reciprocal]\ours\
+For a linear map \(T:E_1\to E_2\) of finite-dimensional Hermitian spaces, put
+\(\lambda_T=\det\ker T\otimes(\det\operatorname{coker}T)^{-1}\).
+Under the determinant-of-complex isomorphism
+\(\lambda_T\simeq\det E_1\otimes(\det E_2)^{-1}\), the norm induced from the
+fixed spaces is the cohomology norm divided by the product of the nonzero
+singular values of \(T\).
+\end{proposition}
+\begin{proof}
+Take orthonormal bases of \(\ker T\), its orthogonal complement, the image,
+and its orthogonal complement, with \(Te_i=\sigma_i f_i\), \(\sigma_i>0\).
+Complete the kernel basis by the \(e_i\), and the cokernel basis by the
+\(Te_i\), in a fixed determinant sign convention. The corresponding element
+of \(\det E_1\otimes(\det E_2)^{-1}\) contains the scalar
+\(\prod_i\sigma_i^{-1}\). The remaining bases are orthonormal, which proves
+the formula; signs have modulus one. If \(T\) is invertible, the canonical
+acyclic generator therefore maps to \((\det T)^{-1}\), whereas \(\det T\)
+belongs to the dual line. Empty products give the rank-zero case.
+
+The positive eigenvalues of \(T^*T\) are \(\sigma_i^2\), so the squared norm
+factor is \((\det{}'T^*T)^{-1}\). Two unrelated rational diagonal examples
+and the empty example are checked in the code. Replacing the product by a
+zeta determinant yields the direction of the spectral factor on the
+notebook's line; the analytic existence and smoothness theorem remains
+\citet[\S3]{quillen1985determinants}, who uses its dual.
+\end{proof}
+
+\begin{example}[Anomaly coefficients and modular-weight check]\oursComputed\
+For \(x=c_1(K_{X/S})\), the degree-two term of
+\[
+ e^{jx}\left(1-\frac{x}{2}+\frac{x^2}{12}\right)
+\]
+is \((6j^2-6j+1)x^2/12\). This is also obtained by multiplying the three
+terms by hand: \(j^2/2-j/2+1/12\). Thus \(c_1=1\), \(c_2=13\), and
+\(c_2-13c_1=0\). This is only the coefficient calculation; the analytic
+family-index theorem is cited in the occurrence index.
+
+For a modular substitution, the genus-one factors
+\(d^2\tau\), \((\Im\tau)^{-14}\), and \(|\eta(\tau)|^{-48}\) have
+absolute weights \(-4,28,-24\), whose sum is zero. The corresponding
+\(q\)-density has \((-\log|q|)^{-14}\). Separately, the torus formula
+\(C y^2|\eta(\tau)|^4\) for \(|dz|^2\), read in
+\citet[\S5.0.1, equation (5.1)]{kokotov2007polyhedral}, becomes
+\(C y|\eta(\tau)|^4\) in the unit-area metric: its Laplacian is multiplied
+by \(y\), and \(\zeta_\Delta(0)=-1\). The latter follows from the flat
+two-dimensional heat expansion after subtracting the one-dimensional
+constant eigenspace. Area conventions cannot be changed in only one factor
+of the measure.
+\end{example}
+
+\paragraph{Scope of the second checks.}
+The Novikov--Veselov and KdV identities were rederived in coefficient form and
+by direct application. The KdV example also has a separate bilinear proof.
+The determinant reciprocal was checked by both a one-dimensional acyclic map
+and the singular-value argument. The Beltrami sign was checked in complex and
+real coordinates. The hyperelliptic dimension result was checked by local
+orders and Riemann--Roch, with finite examples used only to catch boundary
+mistakes. The stacking development has an independent exact facet-enumeration
+check and a separate proof audit recorded with its source files. No finite
+computation is presented as a proof of an unbounded universality assertion.
+
+\subsection{Adjacent-page supplement: Kontsevich and Morozov}
+\label{supp:1985-adjacent}
+These two pages are preserved as supplementary evidence only. Their records
+667--668 lie outside the requested core records 641--666; they are excluded
+from the year's core talk and occurrence counts and receive ADJ-prefixed
+identifiers. The manuscript heading on P001258 reads \(24/\mathrm{II}/85\),
+whereas catalogue record 667 gives 24 February 1987. P001259 reads
+24 February 1986, whereas record 668 also gives 24 February 1987.
+Neither conflict is silently repaired. Kontsevich's matching paper was
+submitted 3 December 1986 and published in 1987; Morozov explicitly reports
+Belavin--Knizhnik and Beilinson rather than claiming new results. The technical
+assessment below is independent of resolving these dates.
+
+\subsubsection{ADJ-667.1: A curve with a point and a formal parameter is not unmarked Teichmueller space}
+\noindent\textbf{Source.} P001258; M. L. Kontsevich.\par
+\noindent\textbf{Notebook.} Kontsevich's page calls \(M_g\) Teichm\"uller space and writes \(\widetilde M_g=(C,p,x)\), where \(x\) is a coordinate at \(p\).\par
+
+\noindent\textbf{Precise statement.} For \(g\ge2\), let \(\widehat{\mathcal M}_{g,1}\) parameterize smooth connected projective complex curves \(C\) of genus \(g\), a point \(p\), and a formal parameter \(x\in\widehat{\mathfrak m}_p\) with nonzero first derivative. It is the inverse limit of the finite-jet moduli spaces. Forgetting \(x\) gives pointed moduli \(\mathcal M_{g,1}\); forgetting both \(p,x\) gives \(\mathcal M_g\). A topological marking would instead place these constructions over Teichm\"uller space.\par
+
+\noindent\textbf{Reconstruction and limits.} The triple records no topological marking. We use a moduli stack or a local smooth cover rather than silently identify it with Teichm\"uller space. A formal parameter need not be a convergent analytic coordinate on a fixed disk.\par
+
+\noindent\textbf{Literature fate.} \citet[\S1]{kontsevich1987virasoro} explicitly constructs these finite-jet moduli and their inverse limit. The paper was submitted 3 December 1986 and published in issue 2 of 1987.\par
+
+\noindent\textbf{Present status.} As of November 2026: The objects are identifiable standard deformation-theoretic data (E). The notebook's two uses of the word Teichm\"uller require this distinction.\par
+
+\noindent\textbf{Assessment.} Class E; literal correctness: correct with missing hypotheses; publication match: exact; verification: read the result; development: none; confidence: high.\par
+
+\subsubsection{ADJ-667.2: Formal local vector fields and the curve-dependent global subalgebra}
+\noindent\textbf{Source.} P001258; M. L. Kontsevich.\par
+\noindent\textbf{Notebook.} The page defines \(\mathfrak g=\mathbb C((x))\partial_x\), \(\mathfrak k=\mathbb C[[x]]\partial_x\), and \(\gamma\) as Laurent expansions of vector fields on \(C\) with a pole only at \(p\).\par
+
+\noindent\textbf{Precise statement.} Set \(\gamma_{C,p,x}=H^0(C,T_C(*p))\subset\mathbb C((x))\partial_x\) by Laurent expansion. Its elements are algebraic vector fields on \(C\setminus\{p\}\), meromorphic on \(C\) with finite pole order at \(p\). The local subalgebra \(\mathfrak k\) consists of fields regular on the formal disk, while \(\mathfrak k_0=x\mathbb C[[x]]\partial_x\) consists of fields fixing its marked origin.\par
+
+\noindent\textbf{Reconstruction and limits.} The space \(\gamma\) depends on the curve and parameter; \(\mathfrak k\) does not. The marginal phrase \ru{всю C!!} cannot mean holomorphic extension through \(p\): for \(g\ge2\), \(H^0(C,T_C)=0\), whereas meromorphic fields with allowed pole order are essential here. Editorial check of the marginal whole-curve interpretation \ours.\par
+
+\noindent\textbf{Literature fate.} These subalgebras and the global punctured-curve condition are defined in \citet[\S1]{kontsevich1987virasoro}.\par
+
+\noindent\textbf{Present status.} As of November 2026: The finite-pole global subalgebra is exactly identified (E). The ambiguous marginal instruction is retained as provenance rather than imposed as a false extra condition.\par
+
+\noindent\textbf{Assessment.} Class E; literal correctness: correct with missing hypotheses; publication match: exact; verification: read the result; development: annotated; confidence: high.\par
+
+\subsubsection{ADJ-667.3: Virasoro uniformization: the infinitesimal action and stabilizer}
+\noindent\textbf{Source.} P001258; M. L. Kontsevich.\par
+\noindent\textbf{Notebook.} Theorem1 says \(\mathfrak g\) acts on \(\widetilde M_g\), with stabilizer \(\gamma\), so it is locally the homogeneous space \(\mathfrak g/\gamma\).\par
+
+\noindent\textbf{Precise statement.} For the moduli of smooth genus-\(g\ge2\) pointed curves with a formal parameter, the Lie algebra \(\operatorname{Der}\mathbb C((x))\) acts infinitesimally. At \((C,p,x)\), evaluation of that action is surjective and its kernel is \(H^0(C,T_C(*p))\). Thus \(T_{(C,p,x)}\widehat{\mathcal M}_{g,1}\cong\mathbb C((x))\partial_x/\gamma_{C,p,x}\), in the formal inverse-limit sense.\par
+
+\noindent\textbf{Reconstruction and limits.} This is an infinitesimal uniformization theorem. It does not assert the existence of an ordinary global Lie group, a single fixed subgroup for all curves, or a global homogeneous-space presentation. The completed formal setting and genus hypothesis are supplied.\par
+
+\noindent\textbf{Literature fate.} Exact match to \citet[\S1, proposition and preceding tangent formula]{kontsevich1987virasoro}. The paper credits independent results of Beilinson and Schechtman. Publication in 1987 follows either the manuscript's 1985 heading or the catalogue's February 1987 date; the latter conflict is not resolved by the mathematics.\par
+
+\noindent\textbf{Present status.} As of November 2026: Published soon after by the speaker (A), with the precise infinitesimal meaning verified in the primary paper.\par
+
+\noindent\textbf{Assessment.} Class A; literal correctness: correct with missing hypotheses; publication match: exact; verification: read the result; development: none; confidence: high.\par
+
+\subsubsection{ADJ-667.4: A meromorphic lift of a one-parameter deformation}
+\noindent\textbf{Source.} P001258; M. L. Kontsevich.\par
+\noindent\textbf{Notebook.} For a one-parameter family the notebook chooses a connection with poles only at the section \(p\), locally \(\nabla_t=\partial_t+F(x,t)\partial_x\).\par
+
+\noindent\textbf{Precise statement.} Locally on a smooth one-dimensional base, a family of smooth projective curves with section admits a lift of the base tangent vector to a relative meromorphic vector field after allowing a sufficiently high finite pole order along that section. In a formal trivialization it has the written form. Two such lifts differ by a relative vertical meromorphic field; at a fixed fiber their difference belongs to \(\gamma_{C,p,x}\).\par
+
+\noindent\textbf{Reconstruction and limits.} Allowing a sufficiently large pole divisor kills the relevant first cohomology by Serre vanishing, giving local existence. This is a noncanonical local lift, not a globally chosen holomorphic connection. Its ambiguity explains the quotient by \(\gamma\). The notebook neither fixes a pole order nor proves uniqueness. Editorial local-lift argument from vanishing of the first cohomology after a sufficiently large pole divisor \ours.\par
+
+\noindent\textbf{Literature fate.} This is the deformation-theoretic interpretation of \citet[\S1]{kontsevich1987virasoro}; the article states the equivalent Kodaira--Spencer and Laurent-field description rather than this exact local connection formula.\par
+
+\noindent\textbf{Present status.} As of November 2026: The construction is explained within the established infinitesimal uniformization. It is E as deformation-theoretic machinery, with a partial publication match rather than a claim of a separately stated theorem.\par
+
+\noindent\textbf{Assessment.} Class E; literal correctness: correct with missing hypotheses; publication match: partial; verification: read the result; development: annotated; confidence: high.\par
+
+\subsubsection{ADJ-667.5: The erroneous g/k tangent quotient and the two forgetting maps}
+\noindent\textbf{Source.} P001258; M. L. Kontsevich.\par
+\noindent\textbf{Notebook.} One line says \(T\widetilde M_g=\mathfrak g/\mathfrak k\), but the following display divides instead by fields extending to \(C\setminus\{p\}\).\par
+
+\noindent\textbf{Precise statement.} The tangent space with full formal parameter is \(\mathfrak g/\gamma\). The tangent space of unpointed moduli is \(\mathfrak g/(\gamma+\mathfrak k)\cong H^1(C,T_C)\), of complex dimension \(3g-3\). The tangent space of pointed moduli is \(\mathfrak g/(\gamma+\mathfrak k_0)\cong H^1(C,T_C(-p))\), of dimension \(3g-2\). The intermediate quotient \(\mathfrak g/\mathfrak k\) is merely the space of formal principal parts; it is not any of these complete tangent spaces.\par
+
+\noindent\textbf{Reconstruction and limits.} These formulas follow from the two-open-set formal gluing calculation: changes of the trivialization on the punctured curve contribute \(\gamma\), while those on the disk contribute \(\mathfrak k\) or \(\mathfrak k_0\) depending on whether its center is remembered. They also distinguish \(\operatorname{Der}\mathbb C[[x]]\) from the Lie algebra \(x\mathbb C[[x]]\partial_x\) of formal coordinate changes fixing the point. Editorial formal-gluing derivation of the two forgetting-map tangent quotients \ours; the full-parameter uniformization theorem is due to Kontsevich.\par
+
+\noindent\textbf{Literature fate.} \citet[\S1]{kontsevich1987virasoro} gives the full-parameter tangent formula and notes that regular formal fields act transitively along the fibers of forgetting the point and parameter. The two finite-dimensional cohomology quotients are the explicit editorial reconstruction.\par
+
+\noindent\textbf{Present status.} As of November 2026: The first written quotient is false (E correction); the next display contains the intended curve-dependent stabilizer. No open deformation problem remains.\par
+
+\noindent\textbf{Assessment.} Class E; literal correctness: false as written; publication match: exact; verification: read the result; development: annotated; confidence: high.\par
+
+\subsubsection{ADJ-667.6: The central extension lifts to determinant-of-cohomology lines}
+\noindent\textbf{Source.} P001258; M. L. Kontsevich.\par
+\noindent\textbf{Notebook.} The final lines say that the Virasoro central extension acts in the determinant bundle \(d_k\) pulled back from \(M_g\) to \(\widetilde M_g\).\par
+
+\noindent\textbf{Precise statement.} For an integer \(k\), let \(\lambda_k(C)=\det H^0(C,K_C^k)\otimes\det H^1(C,K_C^k)^{-1}\). The infinitesimal Laurent-vector-field action lifts to a Virasoro central extension acting by first-order differential operators on the pullback of \(\lambda_k\) to curves with a formal parameter. Relative to the determinant extension for \(k=0\) (equivalently \(k=1\)), its cocycle class is multiplied by \(6k^2-6k+1\). The numerical central charge changes with central-generator and dual-line conventions.\par
+
+\noindent\textbf{Reconstruction and limits.} The notebook does not define \(d_k\); identifying it with \(\lambda_k\) is the exact source-based reconstruction. A Lie algebra action on sections with nontrivial central action is not an ordinary action of the center-free algebra on the base. No particular scalar central charge is assigned without declaring the cocycle normalization.\par
+
+\noindent\textbf{Literature fate.} \citet[\S\S2--3]{kontsevich1987virasoro} constructs the determinant extension on the Laurent-space Grassmannian and pulls it back to the curve moduli. Section3 supplies the coefficient and the corresponding cancellation corollary.\par
+
+\noindent\textbf{Present status.} As of November 2026: Published by the speaker in 1987 (A). The determinant-line action is verified directly; no unrelated later Kontsevich-model claim is attached to the page.\par
+
+\noindent\textbf{Assessment.} Class A; literal correctness: correct with missing hypotheses; publication match: exact; verification: read the result; development: none; confidence: high.\par
+
+\subsubsection{ADJ-668.1: The critical bosonic measure and the exponent13}
+\noindent\textbf{Source.} P001259; Morozov.\par
+\noindent\textbf{Notebook.} Morozov, under ``Consequences of the Belavin--Knizhnik theorem'', summarizes Beilinson's talk and writes a sum over genera with measure \(|d\mu_p|^2/(\det\operatorname{Im}T)^{13}\), multiplied by a vertex factor \(K\{V\}\).\par
+
+\noindent\textbf{Precise statement.} For a smooth compact Riemann surface of fixed genus \(p\ge2\), the gauge-fixed critical bosonic vacuum measure can be expressed locally as \(|\mu_p|^2/(\det\operatorname{Im}\tau)^{13}\), where \(\tau\) is the period matrix in a symplectic marking and \(\mu_p\) is the corresponding holomorphic Mumford form, a section of the determinant-line combination \(\lambda_2\otimes\lambda_1^{-13}\). Insertions require the associated normalized matter/ghost correlation factor and their integration data.\par
+
+\noindent\textbf{Reconstruction and limits.} This is a fixed-genus determinant identity with specified zero modes. The infinite genus sum and integration near degenerating curves are not proved convergent. Genus 0 and 1 have automorphisms and additional special zero-mode conventions, so they are not covered by silently repeating the same formula. The scan confirms the exponent13.\par
+
+\noindent\textbf{Literature fate.} \citet[\S\S2--5, especially (2.19), (3.4), and (5.1)]{belavinknizhnik1986complex} proves the determinant-line/holomorphy statement and discusses degeneration poles. The paper cites its own Landau Institute 1985 preprint; the full article was submitted 18 February 1986 and published August 1986.\par
+
+\noindent\textbf{Present status.} As of November 2026: Exposition of already circulating work (E), explicitly credited in the notebook. The recorded theorem does not justify a finite total string partition function.\par
+
+\noindent\textbf{Assessment.} Class E; literal correctness: correct with missing hypotheses; publication match: exact; verification: read the result; development: none; confidence: high.\par
+
+\subsubsection{ADJ-668.2: World sheets, topology, and replacing external circles by punctures}
+\noindent\textbf{Source.} P001259; Morozov.\par
+\noindent\textbf{Notebook.} Two sketches show a propagating loop and a surface capped at two points. The text says that interactions are accounted for by different topologies, and that it is technically convenient to begin and end at points.\par
+
+\noindent\textbf{Precise statement.} In the perturbative world-sheet description of closed strings, the genus labels the loop order, while punctures and their assigned states describe external insertions. Turning an external cylindrical end into a puncture requires a local coordinate and a state/vertex prescription. This is a formal sewing description of amplitudes, not a topological theorem that arbitrary prescribed boundary-loop data equal a point delta function.\par
+
+\noindent\textbf{Reconstruction and limits.} The caption abbreviation is retained without a forced expansion. The diagrams specify the physical construction but not a measure, sewing theorem, or convergence statement. The point insertion model below is one chosen Fourier representation.\par
+
+\noindent\textbf{Literature fate.} The earlier surface-sum and insertion formulas are in \citet[eqs.~(1)--(3),(26)--(31)]{polyakov1981quantum}; the fixed-genus consequences appear in \citet[\S6]{belavinknizhnik1986complex}.\par
+
+\noindent\textbf{Present status.} As of November 2026: Known formal perturbative interpretation (E); no new precise topological or analytic question is posed.\par
+
+\noindent\textbf{Assessment.} Class E; literal correctness: not determinable; publication match: thematic only; verification: read the result; development: none; confidence: high.\par
+
+\subsubsection{ADJ-668.3: Fourier-transforming target point constraints into exponential vertices}
+\noindent\textbf{Source.} P001259; Morozov.\par
+\noindent\textbf{Notebook.} The page first calls \(V_\alpha\) delta functions, then writes \(V_\alpha(p)=\int e^{ip_\alpha\cdot X(\xi)}d^2\xi\).\par
+
+\noindent\textbf{Precise statement.} For a fixed smooth map, Fourier transformation of \(\delta^{(d)}(X(\xi)-y)\) in the target point \(y\), with convention \(\int e^{ip\cdot y}\delta(X-y)dy\), gives \(e^{ip\cdot X(\xi)}\). In the quantum free-boson theory this exponential needs normal ordering. An integrated closed-string vertex must also be a coordinate-invariant world-sheet density; in conformal coordinates the usual on-shell scalar vertex has conformal weights \((1,1)\) before integration against \(d^2z\).\par
+
+\noindent\textbf{Reconstruction and limits.} The elementary Fourier identity is exact for a smooth map. Its promotion to an integrated physical vertex requires a normalization of the action, a momentum/mass-shell condition, regularization, and the ghost prescription. None is specified by the bare coordinate integral. Editorial Fourier identity in the stated sign convention \oursComputed; the quantum vertex construction is prior literature.\par
+
+\noindent\textbf{Literature fate.} \citet[eqs.~(26)--(31)]{polyakov1981quantum} gives the vertex construction; \citet[\S6, (6.21)--(6.26)]{belavinknizhnik1986complex} computes the resulting tachyon factors with momentum conservation and mass-shell conditions.\par
+
+\noindent\textbf{Present status.} As of November 2026: Established construction (E), with the distinction between a classical Fourier identity and a renormalized quantum vertex retained.\par
+
+\noindent\textbf{Assessment.} Class E; literal correctness: correct with missing hypotheses; publication match: exact; verification: read the result; development: annotated; confidence: high.\par
+
+\subsubsection{ADJ-668.4: A target delta derivative is not a world-sheet derivative vertex}
+\noindent\textbf{Source.} P001259; Morozov.\par
+\noindent\textbf{Notebook.} The sentence about derivatives of delta functions is followed by \(\int\partial X^\mu e^{ip\cdot X}\,d^2\xi\).\par
+
+\noindent\textbf{Precise statement.} Fourier transformation of a target-coordinate derivative \(\partial_{y^\mu}\delta(X-y)\) gives a factor \(-ip_\mu e^{ip\cdot X}\) under the preceding convention. It does not give \(\partial X^\mu\). World-sheet derivatives of the free field produce oscillator or descendant insertions. For a closed-string tensor vertex a typical full density includes both \(\partial X^\mu\) and \(\bar\partial X^\nu\), appropriate polarization and on-shell conditions; the isolated chiral factor has an uncontracted world-sheet index.\par
+
+\noindent\textbf{Reconstruction and limits.} The notebook does not say which delta variable is differentiated. If it means the same target point whose Fourier transform was just taken, the indicated implication is false. If it means a different state construction, that is missing data, not a justification for silently adding the antiholomorphic factor. Editorial target-delta derivative calculation \oursComputed.\par
+
+\noindent\textbf{Literature fate.} The distinction is an elementary Fourier calculation, checked against the exponential-insertion setup in \citet[eqs.~(26)--(31)]{polyakov1981quantum}.\par
+
+\noindent\textbf{Present status.} As of November 2026: E with a faithful mathematical gap; no general new vertex-operator theorem is inferred from the incomplete line.\par
+
+\noindent\textbf{Assessment.} Class E; literal correctness: false as written; publication match: partial; verification: read the result; development: annotated; confidence: high.\par
+
+\subsubsection{ADJ-668.5: Gaussian integration with sources, determinant powers, and the zero mode}
+\noindent\textbf{Source.} P001259; Morozov.\par
+\noindent\textbf{Notebook.} Integrating over \(X\) is said to give \((\det\Delta_0)^{-13}\) times products of exponentials \(p_\alpha p_\beta G_{\mathrm{reg}}(\xi_\alpha,\xi_\beta)\). The preceding action has a positive exponent.\par
+
+\noindent\textbf{Precise statement.} Fix a closed connected surface and a nonnegative scalar Laplacian \(\Delta\). For 26 real mean-zero fields with action \(S=\frac12\langle X,\Delta X\rangle\), a finite-mode Gaussian integral with sources \(\sum_a p_a\delta_{z_a}\) equals a normalization times \((\det{}'\Delta)^{-13}\exp[-\frac12\sum_{a,b}p_a\cdot p_b\,G(z_a,z_b)]\), before diagonal regularization, where \(G=\Delta^{-1}\) on mean-zero functions. Integrating the constant target mode separately gives \((2\pi)^{26}\delta^{(26)}(\sum_a p_a)\). The infinite-dimensional determinant requires zeta regularization.\par
+
+\noindent\textbf{Reconstruction and limits.} The sign and factor 1/2 are stated for this explicit action and covariance convention; another convention for \(G\) changes their appearance. A positive Euclidean exponential of positive energy is divergent. The prime, momentum-conservation delta, and contractions of target indices are missing from the notebook's shorthand. Derivative vertices require additional differentiated Green-function contractions. Editorial finite-mode Gaussian completion of the square and zero-mode check \oursComputed; the string-theory application is the cited published calculation.\par
+
+\noindent\textbf{Literature fate.} \citet[\S6, (6.21)--(6.24)]{belavinknizhnik1986complex} performs this Gaussian source calculation and explicitly uses momentum conservation. The finite-mode completion-of-the-square identity provides the normalization check.\par
+
+\noindent\textbf{Present status.} As of November 2026: Established Gaussian calculation (E). The result read is a regularized fixed-surface building block, not a rigorous value for the total genus sum.\par
+
+\noindent\textbf{Assessment.} Class E; literal correctness: false as written; publication match: exact; verification: read the result; development: annotated; confidence: high.\par
+
+\subsubsection{ADJ-668.6: The Green-function diagonal and Wick ordering}
+\noindent\textbf{Source.} P001259; Morozov.\par
+\noindent\textbf{Notebook.} The final line defines \(G_{\mathrm{reg}}\) as a Green function smoothed when the two points coincide.\par
+
+\noindent\textbf{Precise statement.} The two-dimensional scalar covariance has a logarithmic diagonal singularity. For a mollified mean-zero Gaussian field \(X_\varepsilon\), define a point exponential at finite cutoff by \(:e^{ip\cdot X_\varepsilon(z)}:=\exp(ip\cdot X_\varepsilon(z)+\frac12|p|^2\mathbb E[X_\varepsilon^1(z)^2])\). At pairwise distinct points, its normalized correlation has limit \(\exp[-\sum_{a<b}p_a\cdot p_bG(z_a,z_b)]\). Integrated collisions, local metric factors, and alternative diagonal finite parts require additional prescriptions.\par
+
+\noindent\textbf{Reconstruction and limits.} Here the components have identical scalar covariance and are independent. This formula identifies one precise diagonal subtraction. Merely replacing the diagonal by an arbitrary smooth value does not select the physical normalization or prove integrability when insertion points collide. Editorial Wick-subtraction and off-diagonal contraction calculation \oursComputed; normal ordering itself is established machinery.\par
+
+\noindent\textbf{Literature fate.} \citet[\S6, between (6.24) and (6.26)]{belavinknizhnik1986complex} explicitly regularizes the diagonal and then imposes the mass-shell condition; \citet[\S3]{dotsenkofateev1984conformal} supplies the corresponding normal-ordered free-boson contraction framework.\par
+
+\noindent\textbf{Present status.} As of November 2026: Known renormalized Gaussian building block (E). No unqualified convergence theorem is extracted from the notebook's word ``smoothed''.\par
+
+\noindent\textbf{Assessment.} Class E; literal correctness: correct with missing hypotheses; publication match: partial; verification: read the result; development: annotated; confidence: high.\par
+

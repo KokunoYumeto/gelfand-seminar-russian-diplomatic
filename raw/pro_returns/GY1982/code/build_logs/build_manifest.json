@@ -1,0 +1,83 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "build_chapter.py",
+        "GY1982"
+      ],
+      "log": "01_builder.txt",
+      "returncode": 0,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "code/chapter_checks.py",
+        "."
+      ],
+      "log": "02_semantic_checks.txt",
+      "returncode": 0,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1982_test.tex"
+      ],
+      "log": "05_xelatex_first.txt",
+      "returncode": 0,
+      "elapsed_seconds": 5.763
+    },
+    {
+      "command": [
+        "bibtex",
+        "GY1982_test"
+      ],
+      "log": "06_bibtex.txt",
+      "returncode": 0,
+      "elapsed_seconds": 0.015
+    },
+    {
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1982_test.tex"
+      ],
+      "log": "07_xelatex_second.txt",
+      "returncode": 0,
+      "elapsed_seconds": 6.428
+    },
+    {
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1982_test.tex"
+      ],
+      "log": "08_xelatex_final.txt",
+      "returncode": 0,
+      "elapsed_seconds": 6.033
+    }
+  ],
+  "supplied_files": {
+    "build_chapter.py": {
+      "sha256": "e68acb2619dbb3f4ea14af9e147f43c97fc776b285ae261d23bd50465b1877f8",
+      "identical_to_supplied": true
+    },
+    "gelfand_companion.sty": {
+      "sha256": "cf2df459ec0b4206dc995b5494b5737afe232f0c6587096616387e4ac1fd2145",
+      "identical_to_supplied": true
+    }
+  },
+  "format_workaround": "Created or reused a local XeLaTeX format; no system files changed.",
+  "tex_programs": {
+    "xelatex": "XeTeX 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian)",
+    "bibtex": "BibTeX 0.99d (TeX Live 2025/dev/Debian)"
+  },
+  "unresolved_diagnostics": [],
+  "overfull_boxes": []
+}

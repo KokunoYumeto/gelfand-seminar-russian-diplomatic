@@ -1,0 +1,228 @@
+\subsection{Haefliger's modular-group coinvariant equation: a complete continuous result}
+\label{dev:1981-haefliger}
+
+The question in 1981-555.1 is exact smooth solvability on the projective circle
+\(X=\mathbb {RP}^{1}=\mathbb R\cup\{\infty\}\): for every real
+\(f\in C^\infty(X)\), do there exist real \(u,v\in C^\infty(X)\) such that
+\[
+ f=u-u\circ T+v-v\circ S,
+ \qquad T(x)=x+1,\qquad S(x)=-1/x?
+\]
+Both maps extend smoothly across the apparent affine-coordinate singularities.
+The notebook calls exact solvability unknown and asserts density of the image
+in the \(C^\infty\) topology. Those are two separate assertions. In particular,
+density in a Fr\'echet space does not imply surjectivity.
+
+\paragraph{Literature and the scope of this development.}
+The search documented in the research log located Haefliger's 1980 paper on
+minimal leaves, and the later invariant-functional framework of
+\citet[abstract]{abouqatebelkacimi2000invariant}. The latter's
+compact-group result does not cover this noncompact discrete group action.
+Neither lead supplied a verified theorem answering the displayed smooth
+equation. The subject connection with minimal leaves is recorded in the notes;
+no historical explanation of the question's subsequent neglect is inferred.
+The following result is a bounded contribution proved here, with no claim of
+historical priority. It solves the exact equation on continuous functions. It
+does not prove a regularity theorem for its solutions.
+
+\begin{lemma}[No invariant probability measure]\ours
+There is no Borel probability measure on \(X\) invariant under both \(T\)
+and \(S\).
+\end{lemma}
+\begin{proof}
+If \(\nu\) is \(T\)-invariant, the pairwise disjoint Borel sets
+\([k,k+1)\), \(k\in\mathbb Z\), have the same measure. Finiteness forces
+each measure to be zero, and countable additivity then gives
+\(\nu(\mathbb R)=0\). Thus \(\nu=\delta_\infty\). Since
+\(S(\infty)=0\), this probability is not \(S\)-invariant.
+\end{proof}
+
+\begin{lemma}[A uniform defect of invariance]\ours
+Let \(\mathcal M(X)\) be the real finite signed regular Borel measures, with
+total-variation norm \(\|\cdot\|_{\rm TV}\), and let \(g_*\mu\) denote
+pushforward. There is a number \(\epsilon>0\) such that every
+\(\mu\in\mathcal M(X)\) satisfies
+\[
+ \|\mu-T_*\mu\|_{\rm TV}+\|\mu-S_*\mu\|_{\rm TV}
+ \ \geq\ \epsilon\|\mu\|_{\rm TV}.
+ \tag{H1}
+\]
+\end{lemma}
+\begin{proof}
+The probabilities on compact \(X\) form a weak-* compact subset of
+\(C(X)^*\). Pushforward by a homeomorphism is weak-* continuous and the
+total-variation norm is weak-* lower semicontinuous. Consequently
+\[
+ \epsilon:=\inf_{\nu\ \mathrm{probability}}
+ \bigl(\|\nu-T_*\nu\|_{\rm TV}+\|\nu-S_*\nu\|_{\rm TV}\bigr)
+\]
+is attained. If it were zero, a minimizer would contradict the preceding
+lemma. Thus \(\epsilon>0\).
+
+For signed measures \(\alpha,\beta\),
+\(\||\alpha|-|\beta|\|_{\rm TV}\leq\|\alpha-\beta\|_{\rm TV}\).
+Indeed, taking Radon--Nikodym derivatives with respect to
+\(|\alpha|+|\beta|\) reduces this assertion to
+\(\bigl||a|-|b|\bigr|\leq|a-b|\) and integration. A homeomorphism also
+satisfies \(|g_*\mu|=g_*|\mu|\). Apply the positive-measure estimate to
+\(|\mu|/\|\mu\|_{\rm TV}\), when \(\mu\ne0\), and use these two facts
+for \(g=T,S\). The zero measure causes no exception.
+\end{proof}
+
+\begin{theorem}[Exact solvability for continuous functions]\ours
+For every real \(f\in C(X)\), there are real \(u,v\in C(X)\) with
+\[
+ f=u-u\circ T+v-v\circ S.
+ \tag{H2}
+\]
+If \(0<\epsilon'<\epsilon\), the solutions can be chosen to satisfy
+\[
+ \max(\|u\|_\infty,\|v\|_\infty)
+ \leq \frac{2}{\epsilon'}\|f\|_\infty.
+ \tag{H3}
+\]
+Here \(\epsilon\) is the positive constant in (H1); the theorem does not
+claim an explicit numerical value for it or a linear choice of solutions.
+\end{theorem}
+\begin{proof}
+Equip \(E=C(X)\oplus C(X)\) with the maximum norm and define the bounded
+operator \(D:E\to C(X)\) by the right side of (H2). Under the Riesz
+identification \(C(X)^*=\mathcal M(X)\), its adjoint is
+\[
+ D^*\mu=(\mu-T_*\mu,\mu-S_*\mu).
+\]
+The dual norm on \(E^*\) is the sum of the two total-variation norms.
+Thus (H1) states precisely that \(D^*\) is bounded below by \(\epsilon\).
+
+Let \(B_E\) be the closed unit ball and let
+\(K=\overline{D(B_E)}\), with norm closure. For every \(\mu\),
+\[
+ \sup_{h\in K}\langle\mu,h\rangle
+ =\|D^*\mu\|\geq\epsilon\|\mu\|_{\rm TV}.
+\]
+The Hahn--Banach separation theorem for closed convex sets implies
+\(\epsilon' B_{C(X)}\subset K\) for every \(0<\epsilon'<\epsilon\).
+To see the strict-inequality point explicitly, a hypothetical separating
+functional for an element of \(\epsilon' B_{C(X)}\setminus K\) would
+have supremum on \(K\) at least \(\epsilon\|\mu\|\), while its value
+on that element is at most \(\epsilon'\|\mu\|\), a contradiction.
+
+Set \(r_0=f\). Given \(r_j\ne0\), the inclusion just proved permits
+a pair \(z_j\in E\) with
+\[
+ \|z_j\|_E\leq\|r_j\|_\infty/\epsilon',\qquad
+ \|r_j-Dz_j\|_\infty\leq\tfrac12\|r_j\|_\infty.
+\]
+Put \(r_{j+1}=r_j-Dz_j\); if a residual is zero, take all subsequent
+pairs zero. Then \(\|r_j\|_\infty\leq2^{-j}\|f\|_\infty\) and
+\(\sum_j\|z_j\|_E\leq2\|f\|_\infty/\epsilon'\). Completeness gives
+\(z=\sum_j z_j=(u,v)\in E\), and continuity of \(D\) gives
+\(Dz=f\). This also proves (H3).
+\end{proof}
+
+\begin{proposition}[An exact reduction of the smooth question]\ours
+For \(C_gw=w\circ g\), put \(A=(I+C_S)/2\). A smooth function \(f\)
+has a smooth decomposition (H2) if and only if
+\[
+ Af\in\operatorname{ran}\bigl(A(I-C_T):C^\infty(X)\to
+ C^\infty(X)^S\bigr),
+ \tag{H4}
+\]
+where \(C^\infty(X)^S\) denotes the \(S\)-invariant functions.
+\end{proposition}
+\begin{proof}
+Since \(S^2=I\) on \(\mathbb {RP}^{1}\), \(A\) is a projection and
+\(A(I-C_S)=0\). Applying it to (H2) proves necessity. Conversely, choose
+\(u\) with \(A(I-C_T)u=Af\). The remainder
+\(r=f-(I-C_T)u\) satisfies \(Ar=0\), hence \(C_Sr=-r\).
+Putting \(v=r/2\) gives \((I-C_S)v=r\) and proves sufficiency.
+\end{proof}
+
+\paragraph{Second check and remaining obstruction.}
+An independent audit re-derived the measure argument and checked all norms.
+It also gave a separate functional-analytic check: (H1) makes
+\(\operatorname{ran}D^*\) norm closed and \(\ker D^*=0\); the Banach
+closed-range theorem makes \(\operatorname{ran}D\) closed, while the
+annihilator identity makes it dense, so \(D\) is onto. This agrees with
+the constructive Hahn--Banach argument above. The use of total variation
+of a signed measure is essential: mere absence of invariant signed
+measures would show density, not a quantitative lower bound or
+surjectivity.
+
+The proof controls only uniform norms. Uniformly convergent series of
+continuous solutions need not have bounded derivatives, and smoothing
+does not commute with the two nonlinear coordinate actions in a way that
+this argument estimates. In the smooth setting the dual obstructions are
+distributions, not only measures. The notebook's claim of smooth density,
+even if independently established, would still leave a closed-range or
+regularity estimate to prove. Thus the strongest verified result in this
+development is exact \(C^0\) solvability; the strongest formulation of the
+original problem remains exact \(C^\infty\) solvability, retained as an
+unresolved question rather than promoted to a theorem.
+
+One further bounded investigation can target (H4): establish a tame
+estimate for the averaged parabolic difference operator near the fixed
+point \(\infty\), with a finite and explicitly controlled derivative
+loss, or construct an obstruction to such an estimate. That is a precise
+analytic task. The present argument supplies neither outcome, and the
+absence of a verified resolution in this search is not evidence that no
+resolution exists.
+
+\subsection{Independent finite checks of two source emendations}
+
+These checks support annotations 1981-548.1--2 and 1981-546.15; they are not
+additional open problems. The partition theorem itself is the known identity
+in \citet[Chapter I, Section 1, (1.7)--(1.7')]{macdonald1995symmetric}.
+
+\begin{example}[Exact partition enumeration]\oursComputed
+The supplied Python program enumerates partitions in every rectangle
+\(0\leq m,n\leq6\) in two ways: weakly decreasing row lengths, and
+\(n\)-element subsets of \(\{0,\ldots,m+n-1\}\), inverted as beta numbers.
+Both enumerations agree and contain \(\binom{m+n}{n}\) partitions for each
+rectangle. For all 3431 partitions across these 49 rectangles, the two
+complementary exponent sets are disjoint and fill that interval. A separate
+run on \(0\leq m,n\leq4\), with 251 partitions, agrees. The negative control
+\(m=n=1\), \(\lambda=(1)\), makes the written generating-function left side
+\(t+t^2\), whereas the required right side is \(1+t\). The corrected inverse
+argument and conjugation give \(1+t\). These finite checks detect the source
+error; they are not the proof for arbitrary rectangles.
+\end{example}
+
+\begin{proposition}[The simplex edge-length Jacobian]\ours
+Order the independent Gram entries by diagonals first and then off-diagonals.
+Write \(s_{ij}=\ell_{ij}^2\) for all \(n(n+1)/2\) edges of a labelled
+\(n\)-simplex, with vertex zero distinguished. The absolute Jacobians are
+\[
+ \left|\det\frac{\partial(g_{ij})_{1\leq i\leq j\leq n}}
+                         {\partial(s_{ij})_{0\leq i<j\leq n}}\right|
+ =2^{-n(n-1)/2},
+ \qquad
+ \left|\det\frac{\partial(g_{ij})}{\partial(\ell_{ij})}\right|
+ =2^n\prod_{0\leq i<j\leq n}\ell_{ij}.
+\]
+Consequently the density in equation (23) needs the product of lengths if
+its differentials are length differentials.
+\end{proposition}
+\begin{proof}
+The diagonal formula is \(g_{ii}=s_{0i}\). Each off-diagonal coordinate is
+\(g_{ij}=(s_{0i}+s_{0j}-s_{ij})/2\). In the stated ordering the Jacobian is
+block triangular, with diagonal blocks the identity and
+\(-\tfrac12 I_{n(n-1)/2}\). This proves the first identity. The change from
+lengths to squared lengths has diagonal Jacobian entries \(2\ell_{ij}\).
+Their product gives the second identity. Finally
+\(\det g=(n!\operatorname{vol}\sigma)^2\), so multiplying the invariant
+matrix density by this Jacobian gives, up to a fixed constant,
+\(\operatorname{vol}(\sigma)^{-(n+1)}\prod\ell_{ij}\,d\ell_{ij}\).
+\end{proof}
+
+\begin{example}[Second check of the Jacobian]\oursComputed
+Independent symbolic differentiation of the full coordinate map in dimensions
+\(n=1,2,3,4,5\) gives signed squared-length Jacobians
+\(1,-1/2,-1/8,1/64,1/1024\), respectively. Division of the absolute
+length-coordinate determinant by the product of all edge lengths gives
+\(2,4,8,16,32\). An independent positive-definite test uses based orthonormal
+edge vectors, whose pairwise squared distances are one or two, and recovers
+the identity Gram matrix exactly in every dimension. For a single edge,
+\(g=\ell^2\) gives \(g^{-1}dg=2\,d\ell/\ell\), while the written formula
+would give \(d\ell/\ell^2\). The complete code and its output are included.
+\end{example}

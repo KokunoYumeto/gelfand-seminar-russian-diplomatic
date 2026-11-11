@@ -1,0 +1,115 @@
+\SourcePage{GELFAND-P000476}{unlabelled}
+\uuline{В. М. Бухштабер.} (продолжение).
+
+\[
+\begin{gathered}
+A\overset{\text{аддит.}}{=}\Lambda[[X]],\qquad
+X_n\text{ — аддит. образующие}\\
+X_n\cdot X_m=C_{n+m}^n X_{n+m}
+\end{gathered}
+\]
+\Unclear{GELFAND-P000476}{additive-equality}{Под «аддит.» две короткие параллельные черты, читается знак равенства.}
+
+\[
+\begin{gathered}
+\operatorname{Ext}_A^{2,*}(\Lambda,\Lambda)\\[-.4ex]
+\rotatebox[origin=c]{90}{$=$}\\[-.4ex]
+\operatorname{Ker}d_3^*/\operatorname{Im}d_2^*
+\end{gathered}
+\qquad\text{в терминах }B\text{-конструкции}
+\]
+
+$1^\circ$.
+\[
+d_3^*\colon\overline A^*\otimes\overline A^*
+\longrightarrow\overline A^*\otimes\overline A^*\otimes\overline A^*
+\]
+
+\[
+A^*=\operatorname{Hom}_{\Lambda}^{c}(\Lambda[[X]],\Lambda)
+\overset{\text{адд.}}{\simeq}\Lambda[x]
+\]
+\Unclear{GELFAND-P000476}{top-dual-hom}{У $\operatorname{Hom}$ верхний индекс читается $c$, нижний — $\Lambda$.}
+
+\uuline{компактное} (ненулев. знач. на конечн. числе).
+\SourceFigure{GELFAND-P000476}{compact-annotation}{Пояснение «компактное» написано под $\operatorname{Hom}$ и соединено с ним штрихом.}
+
+\[
+\begin{gathered}
+\Delta\colon A^*\longrightarrow A^*\otimes A^*\\
+\Delta x_n\longrightarrow x_n\otimes1+1\otimes x_n+\sum d_{i,j}x_i\otimes x_j^*
+\end{gathered}
+\]
+\Unclear{GELFAND-P000476}{top-delta-star}{После $x_j$ видна звёздочка. В следующей формуле для $\Delta x_n$ звёздочки нет.}
+
+\[
+\begin{aligned}
+(\Delta x_n,x_i\otimes x_j)&=d_{i,j}\\[-.4ex]
+\qquad\rotatebox[origin=c]{90}{$=$}&\\[-.4ex]
+(x_n,x_i\cdot x_j)&=(x_n,C_{i+j}^{i}x_{i+j})=C_{i+j}^{i}\delta_{n,i+j}
+\end{aligned}
+\]
+\SourceFigure{GELFAND-P000476}{pairing-layout}{Две строки скалярного спаривания соединены вертикальным знаком равенства.}
+
+\[
+\Delta x_n=x_n\otimes1+1\otimes x_n+\sum C_n^i x_i\otimes x_{n-i}
+\]
+И положим\quad $x_n=x^n$
+\[
+\begin{gathered}
+\Delta x^n=(x\otimes1+1\otimes x)^n\\
+d_3^*\colon \overline{\Lambda[x,y]}\longrightarrow\overline{\Lambda[x,y,z]}
+\end{gathered}
+\]
+
+\[
+d_3\Biggl(\underset{
+  \substack{\rotatebox[origin=c]{90}{$=$}\\ \sum h_{i,j}x^iy^j}
+}{h(x,y)}\Biggr)=\sum h_{ij}(\overline\Delta x^i)z^j
+-\sum h_{i,j}x^i\overline\Delta y^j=
+\]
+\Unclear{GELFAND-P000476}{middle-differential-star}{В вычислении перед $h(x,y)$ стоит $d_3$ без звёздочки. В предыдущей строке написано $d_3^*$.}
+
+\[
+\overline\Delta x^n=
+\underset{\substack{
+ \rotatebox[origin=c]{90}{$=$}\\
+ (\Delta(x))^n\\
+ \rotatebox[origin=c]{90}{$=$}\\
+ (x+y)^n
+}}{\Delta x^n}-x^n-y^n.
+\]
+\SourceFigure{GELFAND-P000476}{coproduct-identifications}{Под $\Delta x^n$ вертикальными знаками равенства соединены $(\Delta(x))^n$ и $(x+y)^n$.}
+
+\[
+=h(x+y,z)-\mbox{\sout{\ensuremath{h(x,z)}}}-h(y,z)
+-h(x,y+z)+h(x,y)+\mbox{\sout{\ensuremath{h(x,z)}}}.
+\]
+\SourceFigure{GELFAND-P000476}{cancelled-cocycle-terms}{Оба вхождения $h(x,z)$ перечёркнуты. Знаки минус и плюс перед ними видны.}
+
+\uuline{\mbox{$\operatorname{Ker}d_3^*$}:}
+\[
+\boxed{h(x+y,z)+h(x,y)=h(x,y+z)+h(y,z)}
+\]
+Эти циклы обозн. $L$.
+\SourceFigure{GELFAND-P000476}{kernel-relation-box}{Равенство заключено в прямоугольную рамку.}
+
+Это и есть лазаровское соотношение.
+\Unclear{GELFAND-P000476}{lazard-name}{Перед «соотношение» читается «лазаровское».}
+
+\[
+\underline{\operatorname{Im}d_2^*}=\Lambda\{d_2^*x^n\}
+\]
+\[
+0\longrightarrow\operatorname{Im}d_2^*\longrightarrow L
+\longrightarrow\operatorname{Ext}_A^{2,n}(\Lambda,\Lambda)\longrightarrow0
+\]
+
+\uline{Счёт группы \mbox{$\operatorname{Ext}$}.}
+
+В ур-ии не фигурирует $\Lambda$. Поэтому дост. счит. 2 случая:
+
+1)\quad $\Lambda$ — $Z_p$-модуль ($p$ — простое)
+
+2)\quad $\Lambda=Q$
+

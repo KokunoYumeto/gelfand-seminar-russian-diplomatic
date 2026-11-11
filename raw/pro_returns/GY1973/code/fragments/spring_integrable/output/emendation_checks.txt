@@ -1,0 +1,86 @@
+Critical emendation checks; no new research theorem or C/D contribution is claimed.
+lax_commutator: PASS
+{
+  "result": "{0: -6*u(x, z, t)*Derivative(u(x, z, t), x) + Derivative(u(x, z, t), (x, 3))}",
+  "checked_by": [
+    "formal composition",
+    "direct action on generic test function"
+  ],
+  "pass": true
+}
+kp_compatibility: PASS
+{
+  "commutator": "{0: -lambda*Derivative(u(x, z, t), x) - 3*u(x, z, t)*Derivative(u(x, z, t), x)/2 - Derivative(u(x, z, t), (x, 3))/4 + Derivative(w(x, z, t), (x, 2)), 1: 2*Derivative(w(x, z, t), x)}",
+  "w_x": "-3*beta*Derivative(u(x, z, t), z)/4",
+  "beta_w_z": "alpha*Derivative(u(x, z, t), t) + lambda*Derivative(u(x, z, t), x) + 3*u(x, z, t)*Derivative(u(x, z, t), x)/2 + Derivative(u(x, z, t), (x, 3))/4",
+  "eliminated_equation": "4*alpha*Derivative(u(x, z, t), t, x) + 3*beta**2*Derivative(u(x, z, t), (z, 2)) + 4*lambda*Derivative(u(x, z, t), (x, 2)) + 6*u(x, z, t)*Derivative(u(x, z, t), (x, 2)) + 6*Derivative(u(x, z, t), x)**2 + Derivative(u(x, z, t), (x, 4))",
+  "pass": true
+}
+one_soliton: PASS
+{
+  "substitution": "r=exp(2*k*(x-k**2*t-h)), q=8*k**2*r/(1+r)**2",
+  "coefficient6_residual": "0",
+  "coefficient1_residual": "640*k**5*r**2*(r - 1)/(r + 1)**5",
+  "explicit_bad_residual_k_5_over_4_r_2": "15625/486",
+  "pass": true
+}
+traceless_matrix: PASS
+{
+  "charpoly": "-a**2 - b*c + mu**2",
+  "determinant": "-a**2 - b*c",
+  "eigenvalue_square": "a**2 + b*c",
+  "pass": true
+}
+miura_identity: PASS
+{
+  "identity": "KdV(v_x+v^2)=(D_x+2v)mKdV(v)",
+  "pass": true
+}
+circle_doublets: PASS
+{
+  "eigenvalues": [
+    0,
+    1,
+    1,
+    4,
+    4,
+    9,
+    9,
+    16,
+    16,
+    25,
+    25,
+    36,
+    36,
+    49,
+    49,
+    64,
+    64
+  ],
+  "adjacent_gaps": [
+    1,
+    0,
+    3,
+    0,
+    5,
+    0,
+    7,
+    0,
+    9,
+    0,
+    11,
+    0,
+    13,
+    0,
+    15,
+    0
+  ],
+  "universal_positive_lower_bound": false,
+  "pass": true
+}
+whitham_fast_phase: PASS
+{
+  "leading_term": "f_theta2*(-k_phase**2 + omega**2)",
+  "epsilon_survives": false,
+  "pass": true
+}

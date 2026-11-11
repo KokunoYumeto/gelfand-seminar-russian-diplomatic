@@ -1,0 +1,250 @@
+\subsection{A certified finite development of the Fuchs--Perchik question}
+\label{dev:perchik}
+
+\paragraph{The question supported by the notebook.}
+On \GSpage{P000655}, Fuchs asks whether nonzero Euler characteristics occur
+for arbitrarily large \(m\). The product and the expansion on
+\GSpage{P000655}--\GSpage{P000656} make this a definite coefficient question,
+not just a request to compute a Lie algebra's cohomology. We write \(E(m)\)
+for the coefficients to avoid the notebook's switching between
+\(\chi_m\) and \(\chi_m^*\). Put
+\[
+ S_\ell=\{-\ell-2,-\ell,\ldots,\ell+2\},\qquad
+ P(t,x)=\prod_{\ell=1}^{\infty}\prod_{s\in S_\ell}(1-t^\ell x^s),
+\]
+and define the formal Laurent series
+\begin{equation}\label{eq:perchikseries}
+ F(t)=\frac12\operatorname{CT}_x
+ \bigl[(1-t^{-1}x^{-1})(1-t^{-1}x)
+       (1-x^{-2})(1-x^2)P(t,x)\bigr]
+ =\sum_{m\geq-1}E(m)t^{2m}.
+\end{equation}
+Here \(\operatorname{CT}_x\) extracts the coefficient of \(x^0\);
+the product is expanded first in nonnegative powers of \(t\) in \(P\),
+then multiplied by the displayed finite prefactor. This prescription,
+including the two negative-weight factors, is essential.
+
+\begin{question}[The notebook question, precisely normalized]
+For every integer \(M\geq0\), is there an integer \(m>M\) with
+\(E(m)\ne0\)? Equivalently, is \(F(t)\) not a Laurent polynomial?
+\end{question}
+
+\paragraph{The modern target and its limits.}
+Let \(\mathfrak h_2\) be the topological complex Lie algebra of formal
+Hamiltonian vector fields on the symplectic plane, represented by
+\(\mathbb C[[p,q]]/\mathbb C\) with the Poisson bracket. Its quadratic
+Hamiltonians form \(\mathfrak{sl}_2\). Use continuous cochains, trivial
+coefficients, and input weight \(d-2\) for a Hamiltonian of polynomial
+degree \(d\). Then the modern interpretation is
+\[
+ E(m)=\sum_q(-1)^q
+ \dim H^q(\mathfrak h_2,\mathfrak{sl}_2)_{2m}.
+\]
+The target adopted here is infinite nonvanishing of these \emph{relative}
+Euler characteristics at fixed symplectic dimension two. Infinite
+nonvanishing of cohomology alone would be weaker: even and odd Betti
+numbers might cancel. Passing to a stable symplectic rank, deleting the
+constant vector fields, or retaining only positive-degree Hamiltonians
+changes the question. No quantitative asymptotic, eventual nonvanishing,
+or sign law is asserted.
+
+\paragraph{What the literature establishes.}
+The coefficient formula is Perchik's theorem, published in 1976
+\citep{perchik1976cohomology}. Harvard's dissertation list dates his
+dissertation of the same title to 1975 \citep{perchik1975dissertation}.
+That establishes earlier work,
+not a precise public-circulation date; the seminar records its discussion
+on 12 April 1976. \citet[Theorem~2.1 and the table on Russian pp.~68--69]
+{mohammadzadehfuchs2014cohomology} restate the formula, compute through
+\(m=129\), and explicitly retain the infinite-nonvanishing question.
+Their absolute/relative cohomology comparison excludes weight zero.
+As of 10 November 2026, the targeted searches documented with this chapter
+located no later resolution of this exact fixed-rank coefficient question.
+This is a bounded literature finding, not a proof that no resolution exists.
+
+\paragraph{Why a finite development is useful.}
+The notebook's missing star would turn a nontrivial question into an
+identically zero absolute Euler-characteristic calculation. Its general
+product row also has an uncertain middle exponent. A reproducible expansion
+therefore tests a mathematically decisive normalization. The contribution
+here is a cutoff proof, two independent exact algorithms, an audited finite
+extension of the notebook's table, and explicit bounds on what those data
+prove. These are proofs and computations supplied for this companion;
+no priority claim is made for the elementary lemmas or numerical values.
+
+\begin{lemma}[Well-definedness, integrality, and parity]\ours\quad
+For every integer \(N\geq0\), all coefficients of \(F\) through
+\(t^N\) are determined by retaining \(P\) through degree \(N+2\)
+and including only factors with \(1\leq\ell\leq N+2\).
+The series \(F\) has integer coefficients, no powers below \(-2\),
+and no odd powers.
+\end{lemma}
+\begin{proof}
+Each factor in \(P\) has positive \(t\)-degree in its nonconstant term.
+Thus a coefficient through degree \(L\) uses only factors with
+\(\ell\leq L\); these are finitely many, each with finitely many terms.
+The finite prefactor has lowest \(t\)-degree \(-2\), so \(L=N+2\)
+suffices. Terms discarded beyond \(L\) cannot return to a degree at most
+\(N\).
+
+Set \(R=(1-t^{-1}x^{-1})(1-t^{-1}x)P\). Each coefficient of \(R\)
+is an integer Laurent polynomial invariant under \(x\mapsto x^{-1}\).
+Writing such a coefficient as \(Q(x)=\sum_k a_kx^k\), with
+\(a_{-k}=a_k\), gives
+\[
+ \tfrac12\operatorname{CT}_x[(1-x^{-2})(1-x^2)Q]
+   =\tfrac12(2a_0-a_2-a_{-2})=a_0-a_2\in\mathbb Z.
+\]
+Every monomial \(t^n x^k\) in \(P\) satisfies \(n\equiv k\pmod2\),
+because \(s\equiv\ell\pmod2\) in each factor. The negative-weight
+factors and the two Weyl factors preserve this congruence. Taking the
+constant term therefore kills every odd \(t\)-degree. Finally, the only
+negative \(t\)-degrees come from the two factors of degree \(-1\).
+\end{proof}
+
+\begin{remark}[Why this is the relative Euler series]\ours\quad
+This interpretation can be checked independently at the level of characters.
+As an \(\mathfrak{sl}_2\)-module, the weight-\(\ell\) Hamiltonians are
+\(\operatorname{Sym}^{\ell+2}\mathbb C^2\), whose weights are \(S_\ell\).
+The relative exterior complex removes the entire quadratic component and
+retains \(\operatorname{Sym}^{1}\mathbb C^2\) in weight \(-1\) and
+the components in positive weights. Its alternating character is \(R\).
+For an irreducible character
+\(x^d+x^{d-2}+\cdots+x^{-d}\), the difference between its coefficients
+of \(x^0\) and \(x^2\) is one for \(d=0\) and zero otherwise.
+Thus the operation in the proof selects the invariant multiplicity.
+The chain groups at a fixed input weight are finite: at most two
+negative-weight generators can occur, and the number and weights of
+positive-weight generators are bounded by the total weight plus two.
+Euler--Poincare therefore applies weight by weight. This derivation also
+explains why an unrestricted exterior product containing the zero-weight
+Cartan direction would give the factor \(1-1\), not the desired series.
+\end{remark}
+
+\begin{proposition}[Two exact coefficient algorithms]\ours\quad
+Write \(P(t,x)=\sum_{n\geq0}P_n(x)t^n\), with \(P_0=1\), and put
+\[
+ B_r(x)=-\sum_{d\mid r}d\sum_{s\in S_d}x^{sr/d}.
+\]
+Then, for \(n\geq1\),
+\begin{equation}\label{eq:perchikrecurrence}
+ nP_n(x)=\sum_{r=1}^n B_r(x)P_{n-r}(x).
+\end{equation}
+Independently, multiplying each factor \(1-t^\ell x^s\), with descending
+updates in \(n\), computes the same coefficients using integer additions
+and subtractions only. Both methods terminate at any prescribed cutoff.
+\end{proposition}
+\begin{proof}
+The positive product has constant term one. Its formal logarithmic
+derivative in \(\mathbb Q[x,x^{-1}][[t]]\) is
+\[
+ \frac{t\partial_t P}{P}
+ =-\sum_{\ell\geq1}\sum_{s\in S_\ell}
+       \frac{\ell t^\ell x^s}{1-t^\ell x^s}
+ =-\sum_{\ell\geq1}\sum_{s\in S_\ell}\sum_{j\geq1}
+       \ell t^{\ell j}x^{sj}
+ =\sum_{r\geq1}B_r(x)t^r.
+\]
+All coefficient rearrangements are finite at a fixed \(t\)-degree.
+Multiplying by \(P\) and comparing the coefficient of \(t^n\) proves
+\eqref{eq:perchikrecurrence}; division by \(n\) determines \(P_n\)
+uniquely in characteristic zero. For the other algorithm, if \(D_{n,k}\)
+is the coefficient before one factor is applied, the new coefficient is
+\(D_{n,k}-D_{n-\ell,k-s}\). Descending \(n\) ensures that the second
+term still belongs to the old product. Induction over factors proves the
+algorithm. The cutoff lemma proves termination and prevents omitted
+factors from changing any requested coefficient. Integrality of all
+divisions in the recurrence follows also from its agreement with the
+integer product; the implementation checks every remainder directly.
+\end{proof}
+
+\paragraph{Independent checks of the argument.}
+The cutoff was re-derived from exterior degrees: the negative component
+has dimension two, hence can lower a positive weight by at most two.
+The invariant-multiplicity argument above independently checks the
+factor \(1/2\) and both Weyl factors. The recurrence was checked by
+direct factor multiplication, rather than by another implementation of
+the same recurrence. In particular, agreement is checked for every
+Laurent coefficient of every \(P_n\), not just for their final constant
+terms. These checks found no mathematical discrepancy between the two
+algorithms.
+
+\begin{proposition}[Finite output through \(m=150\)]\oursComputed\quad
+The series in \eqref{eq:perchikseries}, computed with exact integers by
+both algorithms through positive-product degree \(302\), has
+\(135\) nonzero coefficients among \(E(1),\ldots,E(150)\), and
+\[
+ \sum_{m=1}^{150}|E(m)|=9\,701\,705\,312.
+\]
+In particular,
+\[
+ E(35)=10,\quad E(86)=-22\,044,\quad
+ E(129)=7\,151\,485,\quad E(150)=1\,408\,548\,898.
+\]
+\end{proposition}
+\begin{proof}
+The executable certificate is \texttt{code/perchik\_series.py}; the complete
+coefficient table and verification output are in
+\texttt{computations/m150/}. The two algorithms agree for all Laurent
+coefficients through \(n=302\), including \(137\,561\) checked integer
+divisions in the recurrence. Reflection, parity, and the support bound
+\(|k|\leq3n\) are checked for every nonzero coefficient. Separate runs
+at cutoffs \(82\) and \(182\) produce identical overlapping output.
+The notebook's displayed terms, including \(10t^{70}\), are recovered.
+The companion verification script records the prefix comparisons and
+the sums in the statement.
+\end{proof}
+
+\begin{center}
+\begin{tabular}{rr@{\qquad}rr@{\qquad}rr}
+\toprule
+\(m\)&\(E(m)\)&\(m\)&\(E(m)\)&\(m\)&\(E(m)\)\\
+\midrule
+130&41831534&137&-67794447&144&-30506945\\
+131&79675254&138&-188663902&145&321390415\\
+132&113436381&139&-311827536&146&732255863\\
+133&133851464&140&-412439649&147&1137936570\\
+134&131414489&141&-459062275&148&1450364576\\
+135&98557132&142&-423731634&149&1571713579\\
+136&31149174&143&-282894462&150&1408548898\\
+\bottomrule
+\end{tabular}
+\end{center}
+This table is generated by the supplied program; it is not a transcription
+of a literature table. It extends the notebook's range, not a claim about
+the largest range ever computed.
+
+\begin{corollary}[Exactly what nonzero Euler characteristics prove]\ours\quad
+For the relative continuous cohomology above,
+\[
+ \sum_{m=1}^{150}\sum_q
+    \dim H^q(\mathfrak h_2,\mathfrak{sl}_2)_{2m}
+       \geq9\,701\,705\,312.
+\]
+At least \(135\) distinct positive weights in this range carry nonzero
+relative cohomology. Also
+\(\sum_{m=-1}^{35}|E(m)|=57\), recovering the notebook's finite
+lower-bound count with the relative interpretation.
+\end{corollary}
+\begin{proof}
+For each finite weight complex, Euler--Poincare and the triangle
+inequality give \(|E(m)|\leq\sum_q\dim H^q_{2m}\). Sum this inequality
+over the stated ranges. Distinct weights give distinct graded summands.
+No inference is made at a weight whose Euler characteristic vanishes.
+\end{proof}
+
+\paragraph{The remaining obstruction and the next bounded step.}
+The equality of two exact algorithms certifies a finite prefix. It cannot
+exclude a later vanishing tail, prove infinitely many sign changes,
+recover the degrees of the cohomology classes, or identify representatives.
+The obstacle is cancellation in a two-variable exterior product after
+projection to invariants; the large unsigned chain dimensions do not
+provide a lower bound on its signed constant term. The checked literature
+shows continuing computation rather than abandonment; it does not
+establish a sociological explanation for the absence of a general proof.
+A further bounded run could compute a longer independently certified
+prefix or construct and reduce the relative differential at one selected
+weight with \(E(m)=0\), thereby detecting cancellations invisible to Euler
+characteristics. A resolution of GP-1975-20 needs an argument excluding
+eventual cancellation for unbounded \(m\); extending the table alone
+does not supply that argument.

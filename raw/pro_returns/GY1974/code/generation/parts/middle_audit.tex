@@ -1,0 +1,110 @@
+\subsection{Checking the two logarithmic integrals on P000564}
+This is a verification of recorded identities, not the development of a newly open problem. The scan itself supplies the positive sign in the first identity and the negative sign in the second. The two expressions therefore need separate checks.
+
+\begin{proposition}[The Basel sign]\ours
+The improper integral satisfies
+\[
+ \int_0^1\frac{\log(1-t)}{t}\,dt=-\frac{\pi^2}{6}.
+\]
+\end{proposition}
+\begin{proof}
+For \(0\le t<1\), \(-\log(1-t)=\sum_{n\ge1}t^n/n\). Since all terms are nonnegative, monotone convergence permits integration after division by \(t\), giving \(\sum_{n\ge1}1/n^2=\pi^2/6\). This is the classical dilogarithm identity, recorded in \citet[Eqs.~25.12.1--2]{nist2026polylogarithms}. The notebook's sign is impossible even before evaluation, since its integrand is negative.
+\end{proof}
+
+For the next calculation let
+\[
+ L(x)=\operatorname{Li}_2(x)+\tfrac12\log x\log(1-x),\qquad0<x<1,
+\]
+and extend to \(x<0\) by \(L(x)=-L(x/(x-1))\), with \(L(0)=0\). We use the classical reflection and five-term identities, in the normalization of \citet[Chapter II, \S1.A, pp.~23--24]{zagier2007dilogarithm}:
+\[
+ L(x)+L(1-x)=\frac{\pi^2}{6},
+\]
+\[
+ L(x)+L(y)=L(xy)+L\!\left(\frac{x(1-y)}{1-xy}\right)
+                    +L\!\left(\frac{y(1-x)}{1-xy}\right),\quad0<x,y<1.
+\]
+These real equalities have no ambiguity modulo a period. They follow as well by differentiating both sides and evaluating a boundary value; the logarithms remain real in the specified domain.
+
+\begin{proposition}[The symmetric golden-ratio integral]\ours
+Set \(a=\sqrt5-2\). Then
+\[
+ \int_{-a}^{a}\left(\frac{\log|s|}{1-s}
+                   +\frac{\log|1-s|}{s}\right)\,ds=-\frac{\pi^2}{6}.
+\]
+\end{proposition}
+\begin{proof}
+On \((-1,0)\cup(0,1)\), direct differentiation of the real dilogarithm gives
+\[
+ -2L'(s)=\frac{\log|s|}{1-s}+\frac{\log|1-s|}{s}.
+\]
+The logarithmic singularity at zero is integrable, and \(L\) is continuous there. Let \(t=(\sqrt5-1)/2\), so \(t^2=1-t\), \(a=t^3=2t-1\), \(1-a=2t^2\), and \(1+a=2t\). The five-term identity with \(x=t,y=t^2\) reduces to
+\[
+ L(t)+L(t^2)=L(a)+L(1/2)+L(t^2/2).
+\]
+Reflection gives the left side \(\pi^2/6\), and \(L(1/2)=\pi^2/12\). Thus \(L(a)+L(t^2/2)=\pi^2/12\). The negative-argument rule gives
+\(L(-a)=-L(a/(1+a))=-L(t^2/2)\). Integrating the derivative now yields
+\(-2[L(a)-L(-a)]=-\pi^2/6\), as asserted.
+\end{proof}
+
+\begin{remark}[Independent computational check]\oursComputed
+The included standard-library script \texttt{check\_dilogarithm.py} first evaluates the absolutely convergent series
+\[
+ \log a\log\frac{1+a}{1-a}
+       -4\sum_{j\ge0}\frac{a^{2j+1}}{(2j+1)^2},
+\]
+obtained by integrating the even part of the integrand. At90-decimal precision it gives
+\[
+ -1.6449340668482264364724151666460251892189499012067984\ldots.
+\]
+After \(N\) terms the series tail is bounded by
+\(4a^{2N+1}/((1-a^2)(2N+1)^2)\); at \(N=180\) this is below \(1.51\cdot10^{-231}\). This bound controls truncation, not decimal rounding.
+An independent composite-Simpson calculation after \(s=a e^{-v}\), \(0\le v\le80\), gives errors relative to the double-precision value of \(-\pi^2/6\) of \(-7.37\cdot10^{-13}\) and \(-4.66\cdot10^{-14}\) for20000 and40000 subintervals respectively. The numerical agreement checks the signs and endpoints; the proof above establishes the exact identity. A second algebraic check verifies separately each golden-ratio substitution in the five-term equation. Neither check found an error in the second displayed integral.
+\end{remark}
+
+\subsection{Haar normalization in the planar lattice calculation}
+The following calculation audits the hypotheses of the formulas on P000573--P000574. It is a classical finite-dimensional integration, not an advance on an open gauge-theory problem. The character-expansion version and the difference between a disk and a torus are given in \citet[AppendixA]{hirasawa2020complex}; the lattice variables and loop observable already occur in \citet[\S\S II--III]{wilson1974confinement}.
+
+\begin{proposition}[Free planar boundary and one-plaquette factors]\ours
+Consider a rectangular planar square lattice with \(A\) plaquettes, normalized Haar measure on every link, and no fixed boundary holonomy. Let \(\beta\in\mathbb R\). For \(U(1)\) and plaquette weight \(e^{\beta\cos\theta}\),
+\[
+ Z_A(\beta)=I_0(\beta)^A,
+ \qquad
+ I_m(\beta)=\frac1{2\pi}\int_{-\pi}^{\pi}
+       e^{\beta\cos\theta}\cos(m\theta)\,d\theta.
+\]
+For a simple oriented Wilson loop enclosing \(a\) plaquettes,
+\[
+ \langle W(C)\rangle=
+    \left(\frac{I_1(\beta)}{I_0(\beta)}\right)^a.
+\]
+For \(SU(2)\) with the fundamental trace and one-plaquette weight
+\(e^{\beta\operatorname{tr}U}\), the corresponding one-plaquette factor is
+\[
+ z_{SU(2)}(\beta)=\frac{I_1(2\beta)}{\beta},
+ \qquad z_{SU(2)}(0)=1.
+\]
+\end{proposition}
+\begin{proof}
+A spanning-tree change of link variables uses left and right invariance of normalized Haar measure. On a planar rectangular disk the remaining variables may be chosen as independent plaquette holonomies. This can also be seen by peeling successive boundary plaquettes: integrate their free outer link, and Haar invariance makes the resulting factor independent of the other links. All remaining tree integrations equal1. Thus the partition integral is the \(A\)-th power of its one-plaquette integral, with no extra gauge-volume factor.
+
+For \(U(1)\), normalized Haar measure is \(d\theta/(2\pi)\), giving \(I_0\). The product of oriented plaquette holonomies inside a simple loop equals its boundary holonomy. The independent expectations inside the loop each equal \(I_1/I_0\), proving the loop formula.
+
+For \(SU(2)\), a conjugacy class has eigenvalues \(e^{\pm i\theta}\), \(0\le\theta\le\pi\). Its fundamental trace is \(2\cos\theta\), and normalized Haar integration of a class function uses \((2/\pi)\sin^2\theta\,d\theta\). Hence
+\[
+ z_{SU(2)}(\beta)
+ =\frac2\pi\int_0^\pi e^{2\beta\cos\theta}\sin^2\theta\,d\theta
+ =I_0(2\beta)-I_2(2\beta)
+ =\frac{I_1(2\beta)}{\beta}.
+\]
+For the last identity, integrate the derivative of
+\(\sin\theta\,e^{2\beta\cos\theta}\) from0 to\(\pi\); its boundary values vanish. The limit at0 follows directly from the original normalized Haar integral.
+\end{proof}
+
+\begin{remark}[What the notebook normalization can mean]\ours
+The sign convention \(E=+\sum\cos\theta\) replaces \(\beta\) by \(-\beta\). Since \(I_0\) is even, the partition function is unchanged, while the loop expectation acquires \((-1)^a\). Thus its magnitude still satisfies the displayed area law. If \(V\) counts the sites of an \(N\)-by-\(N\) array, then \(A=(N-1)^2\), and \(\log Z=V\log I_0\) is only an asymptotic relation. Identifying opposite boundary edges changes the independent-plaquette argument and requires a global constraint. Finally, the different small-coupling expansions
+\[
+ I_0(\beta)=1+\frac{\beta^2}{4}+O(\beta^4),\qquad
+ \frac{I_1(2\beta)}{\beta}=1+\frac{\beta^2}{2}+O(\beta^4)
+\]
+already distinguish the Abelian formula from the stated fundamental-trace \(SU(2)\) convention. The exact \(U(1)\) pressure \(\log I_0(\beta)\) is analytic for every finite real \(\beta\); the neighboring general phase-transition discussion cannot be a proof of a finite-coupling transition in that example.
+\end{remark}

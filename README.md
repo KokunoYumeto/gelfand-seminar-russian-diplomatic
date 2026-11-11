@@ -60,6 +60,8 @@ The current editable LaTeX is the LaTeX ZIP attached to the current release. The
 
 Критический комментарий будет опубликован в папке `companion/` этого репозитория. / The critical companion will be published in the `companion/` folder of this repository.
 
+Главы критического комментария в том виде, в каком их вернула модель GPT-6 Astra (ChatGPT, режим Pro), с промптами, вложениями и скриптами, лежат в папке [`raw/`](raw/README.md) как необработанные результаты. / The chapters of the critical companion as returned by GPT-6 Astra (ChatGPT Pro mode), with their prompts, attachments and scripts, are in [`raw/`](raw/README.md) as raw research outputs.
+
 | Материал / Material | Русский / Russian | English | Исходники / Sources |
 |---|---|---|---|
 | Главы 1–34 / Chapters 1–34 | [PDF · 3110 стр.](https://raw.githubusercontent.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/refs/tags/readers-a4-2026-11-10-frames0001-1527-r38/readers/chapters01-34-complete-first1527-r38/gelfand-russian-chapters01-34-complete-first1527.pdf) | [PDF · 3112 pages](https://raw.githubusercontent.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/refs/tags/readers-a4-2026-11-10-frames0001-1527-r38/readers/chapters01-34-complete-first1527-r38/gelfand-english-chapters01-34-complete-first1527.pdf) | [LaTeX ZIP](https://github.com/KokunoYumeto/gelfand-seminar-russian-diplomatic/releases/download/readers-a4-2026-11-10-frames0001-1527-r38/gelfand-chapters01-34-cumulative-and-standalone-latex.zip?raw=1) |

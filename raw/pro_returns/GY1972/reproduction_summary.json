@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "files_compared": 11,
+  "byte_for_byte_comparison": [
+    {
+      "file": "GY1972_talks.json",
+      "identical": true,
+      "sha256": "345f806dd4d5e60226cd6ee3b5b7ede12c61bfea175986dca1f2d199b86ec501"
+    },
+    {
+      "file": "GY1972_items.json",
+      "identical": true,
+      "sha256": "3a90bd66ea9b1f805822b77c42edd1e66f41978de09b1b115cb7da4eba166728"
+    },
+    {
+      "file": "GY1972_problems.json",
+      "identical": true,
+      "sha256": "4b057315d9401c2c572a3677cde1927a200061a04c5eb832ecad8bd993682185"
+    },
+    {
+      "file": "GY1972_overview.tex",
+      "identical": true,
+      "sha256": "b622c0d677f997759d3b8b7613fc5a361a3316aa0ef22bd762fc9b25ed128dde"
+    },
+    {
+      "file": "GY1972_development.tex",
+      "identical": true,
+      "sha256": "0f150e49e3af4270ed951fef6fd7a3df45be8bbdc8ccf957852d85e7a541ba90"
+    },
+    {
+      "file": "GY1972_corrections.csv",
+      "identical": true,
+      "sha256": "4a50792e108a08e3a23f9281ae71a5ba6ed9f381c850171e601b1452702095f2"
+    },
+    {
+      "file": "GY1972_references.bib",
+      "identical": true,
+      "sha256": "a39cf3a921ba3ccd14f225a7c59c65bdee17aa28b121b4cb2e0e1efb8de65221"
+    },
+    {
+      "file": "GY1972_report.md",
+      "identical": true,
+      "sha256": "133e06b3bd4be6a7ab64a726a048bd27bf25f2a5f827b607d8526a3657c7fb8a"
+    },
+    {
+      "file": "GY1972_chapter.tex",
+      "identical": true,
+      "sha256": "89b0dd85ddea590a58cd2d5d84e83ea482792ec3c61d249868dd9ed730c9abc8"
+    },
+    {
+      "file": "GY1972_test.tex",
+      "identical": true,
+      "sha256": "59f347b6a64e13b5996777902fd675ca52f470797576e1e13793f6067703aa35"
+    },
+    {
+      "file": "assembly_metrics.json",
+      "identical": true,
+      "sha256": "58a5b3d4955174cb3bd0917fb51388f3047408c144318cca475c6de33b61042a"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python code/assemble.py TEMP_DIRECTORY",
+      "returncode": 0,
+      "stdout": "{\n  \"records\": 28,\n  \"talks\": 27,\n  \"headings\": 1,\n  \"items\": 272,\n  \"classes\": {\n    \"A\": 25,\n    \"B\": 14,\n    \"C\": 1,\n    \"D\": 0,\n    \"E\": 219,\n    \"F\": 13\n  },\n  \"problems\": 11,\n  \"references\": 73,\n  \"corrections\": 112\n}\n"
+    },
+    {
+      "command": "python build_chapter.py GY1972",
+      "returncode": 0,
+      "stdout": "GY1972: 28 talks, 272 items (A 25, B 14, C 1, E 219, F 13), 11 problems, 73 references, 112 corrections\n"
+    }
+  ]
+}

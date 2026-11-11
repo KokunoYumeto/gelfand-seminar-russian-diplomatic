@@ -1,0 +1,25 @@
+numpy=2.3.5; scipy=1.17.0; sympy=1.14.0
+Random projector checks: seeds 1982 and 2026; n=1,2,3,6,9; 4 samples each.
+max projector formula error=6.973e-16
+max real/complex norm discrepancy=5.551e-16
+max scalar bound excess=4.506e-16
+swap sharp example gap with D=iI=0.707106781187
+Coordinatewise example (not a counterexample to existential approximation):
+n=2, each distance=0.707106781187, span gap=1.000000000000
+n=3, each distance=0.577350269190, span gap=1.000000000000
+n=7, each distance=0.377964473009, span gap=1.000000000000
+n=11, each distance=0.301511344578, span gap=1.000000000000
+Fourier block counterexamples: exact theorem uses all odd m>=3; finite numerical checks follow.
+m=3, n=6, rigorous lower bound=0.854312835963, norm(V entrywise-squared)=0.577350269190
+m=5, n=10, rigorous lower bound=0.873421751538, norm(V entrywise-squared)=0.447213595500
+m=7, n=14, rigorous lower bound=0.882521859769, norm(V entrywise-squared)=0.377964473009
+m=11, n=22, rigorous lower bound=0.891899370322, norm(V entrywise-squared)=0.301511344578
+limiting universal lower bound cos(pi/8)=0.923879532511
+Optional numerical minimization for m=3: feasible values are upper bounds only.
+seed=1981; feasible gap=0.866026105015; optimizer success=False; not a certified optimum
+seed=2026; feasible gap=0.866026014767; optimizer success=False; not a certified optimum
+Symbolic vector-calculus principal-symbol multiplication:
+All-positive matrix square = diag(q, 2vv^T-qI3); corrected matrix square = -qI4: exact PASS.
+Shift-residue coefficient checked by direct differentiation of the finite Pochhammer product:
+42 exact checks k=0..6, mu=1..6: coefficient=(-1)^mu/[mu binom(k+mu,k)], multiplied by t^(k+mu): PASS.
+All assertions passed. Numerical checks corroborate the independently proved statements; they do not establish a uniform upper bound.

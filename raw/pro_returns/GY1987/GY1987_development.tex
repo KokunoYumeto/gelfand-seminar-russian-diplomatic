@@ -1,0 +1,524 @@
+\subsection{Joint spectra of stochastic matrices: a bounded development of GP-1987-21}
+\label{dev:stochastic}
+
+\paragraph{The source question and its scope.}
+In item \hyperref[item:1987-728.4]{1987-728.4}, Gelfand asks for the
+\ru{набор соб. значений в \(\mathbb C^n\)} and emphasizes that projection onto
+one coordinate may conceal its geometry. The scan of P001418 supports a
+question about all eigenvalues of a real nonnegative row-stochastic matrix.
+It does not impose symmetry, double stochasticity, irreducibility, a specified
+zero pattern, or a prescribed Jordan form. Those are different problems.
+The strongest precise formulation supported by the page is to describe,
+for each positive integer \(n\), the permutation-invariant set of lists
+for which there exists a matrix \(P\) satisfying
+\[
+ \Sigma_n=\left\{(\lambda_1,\ldots,\lambda_n)\in\mathbb C^n:
+ \begin{array}{l}
+ \det(tI-P)=\prod_{j=1}^n(t-\lambda_j),\\
+ P\in\mathbb R^{n\times n},\quad
+ P_{ij}\geq0,\quad P\mathbf1=\mathbf1
+ \end{array}\right\}.
+\]
+Multiplicities are retained. This is a reconstruction of a shorthand
+question, not a conjectured theorem attributed to the speaker.
+
+\paragraph{State of the art and the bounded contribution.}
+The order-three characterization predates the seminar:
+\citet{loewylondon1978inverse} appeared in 1978; its attribution and
+explicit alternatives are recorded in \citet[p.~506]{ranteng2024patterns}.
+The latter paper additionally classifies prescribed order-three zero patterns
+and appeared in July 2024 (received May 2023).
+\citet[Theorems~3.9--3.12 and Sections~4--5, 8]{johnsonpaparella2025perron}
+establish geometric properties of joint stochastic spectra and polyhedral
+families from fixed diagonalizing matrices; their preprint first circulated
+on 12 September 2024 and the journal paper appeared in 2025.
+Their nearly complete geometric picture in order four does not solve
+all orders. As of 11 November 2026, the sources checked provide no general
+structural solution in orders at least five. The distinction between
+diagonalizable and unrestricted realization is substantive;
+\citet[Section~2 and Proposition~1]{croninlaffey2018diagonalizable}
+first circulated in January 2017 and appeared in July 2018.
+
+For a fixed \(n\), polynomial feasibility already makes membership
+decidable for algebraic input. Thus \emph{open} does not mean that there is
+no finite decision procedure. What remains is an explicit, usable
+description of the joint region, its boundary and realizing matrices.
+The contribution here is a self-contained, checked low-dimensional atlas
+and precise obstructions to extrapolating necessary tests.
+None of the results below is claimed to be new.
+
+\begin{proposition}[Geometry and a finite formulation \ours]
+\label{prop:stochastic-geometry}
+For every fixed \(n\), \(\Sigma_n\) is compact and semialgebraic in
+\(\mathbb R^{2n}\). It is invariant under coordinate permutations and
+complex conjugation, and star-shaped at \((1,\ldots,1)\).
+The set
+\[
+ \widehat\Sigma_n=\{(\lambda_2,\ldots,\lambda_n):
+                         (1,\lambda_2,\ldots,\lambda_n)\in\Sigma_n\}
+\]
+is star-shaped at the origin.
+\end{proposition}
+\begin{proof}
+The stochastic matrices form a compact product of \(n\) probability
+simplices. Every eigenvalue has modulus at most one: if \(Pv=\lambda v\)
+and \(|v_i|=\max_j|v_j|>0\), then
+\(|\lambda v_i|\leq\sum_jP_{ij}|v_j|\leq|v_i|\).
+For a convergent sequence of lists in \(\Sigma_n\), choose corresponding
+matrices and a convergent subsequence of these matrices. Continuity of
+characteristic-polynomial coefficients shows that the limiting matrix
+realizes the limiting list. Thus \(\Sigma_n\) is closed and bounded,
+without requiring a continuously chosen ordering of eigenvalues.
+
+Writing \(\lambda_j=x_j+iy_j\), equality of coefficients in
+\(\det(tI-P)=\prod_j(t-x_j-iy_j)\) is a finite system of real
+polynomial equalities. Append \(P_{ij}\geq0\) and
+\(\sum_jP_{ij}=1\). Projecting onto the \(x,y\) coordinates and applying
+real quantifier elimination gives semialgebraicity and a decision
+algorithm for effectively encoded algebraic input.
+The background theorem is the standard one treated in
+\citet[Chapters~2, 13--14]{basupollackroy2006algorithms};
+we do not reprove that theorem or claim an efficient complexity bound.
+
+Permutation invariance follows from the characteristic polynomial;
+conjugation invariance follows from its real coefficients.
+For \(0\leq s\leq1\), \((1-s)I+sP\) is stochastic with eigenvalues
+\(1-s+s\lambda_j\), proving the first star-shapedness assertion.
+Put \(J=\mathbf1\mathbf1^{\mathsf T}/n\) and \(Q=sP+(1-s)J\).
+On the invariant line spanned by \(\mathbf1\), \(Q\) is the identity.
+On the quotient by that line, it induces \(s\) times the map induced
+by \(P\), because \(J\) has image in the line.
+In a basis beginning with \(\mathbf1\), its characteristic polynomial
+is therefore \((t-1)\prod_{j=2}^n(t-s\lambda_j)\).
+This also covers repeated eigenvalues and nondiagonalizable matrices.
+\end{proof}
+
+\begin{lemma}[Power-sum inequalities \ours]
+\label{lem:jll}
+For a list in \(\Sigma_n\), put \(s_k=\sum_j\lambda_j^k\).
+Then
+\[
+ s_k\geq0,\qquad s_k^m\leq n^{m-1}s_{km}
+ \quad(k,m\in\mathbb N).
+\]
+The list contains \(1\) and is closed under conjugation.
+\end{lemma}
+\begin{proof}
+The last assertions follow from reality and \(P\mathbf1=\mathbf1\).
+Let \(B=P^k\geq0\). Then \(s_k=\operatorname{tr}B\geq0\).
+The term in \((B^m)_{ii}\) that remains at \(i\) at every step is
+\(B_{ii}^m\); every other term is nonnegative. Consequently
+\(\sum_iB_{ii}^m\leq\operatorname{tr}(B^m)=s_{km}\).
+The power-mean inequality gives
+\((\sum_iB_{ii})^m\leq n^{m-1}\sum_iB_{ii}^m\).
+Combining the inequalities proves the claim, including \(m=1\).
+\end{proof}
+These are the classical Johnson--Loewy--London inequalities, independently
+derived here; the historical references are discussed in
+\citet[Section~1.1]{croninlaffey2018diagonalizable}.
+
+\begin{theorem}[The complete two- and three-state regions \ours]
+\label{thm:lowdim-stochastic}
+A two-element multiset is the spectrum of a real row-stochastic
+\(2\times2\) matrix exactly when it is \(\{1,r\}\), \(-1\leq r\leq1\).
+A three-element multiset is the spectrum of a real row-stochastic
+\(3\times3\) matrix exactly when it has one of the forms
+\[
+\begin{array}{ll}
+\{1,r,s\},&r,s\in[-1,1],\quad 1+r+s\geq0;\\[2pt]
+\{1,a+ib,a-ib\},& b\ne0,\quad -\tfrac12\leq a\leq1,\quad
+ |b|\leq(1-a)/\sqrt3 .
+\end{array}
+\]
+Weak inequalities retain every boundary case. The second line describes
+the triangle with vertices \(1,-1/2\pm i\sqrt3/2\), with its intersection
+with the real axis omitted because \(b\ne0\).
+\end{theorem}
+\begin{proof}
+In dimension two, reality and the eigenvalue \(1\) force the other
+eigenvalue to be real, and the modulus bound gives necessity.
+The matrix
+\[
+ C(r)=\frac12\begin{pmatrix}1+r&1-r\\1-r&1+r\end{pmatrix}
+\]
+is nonnegative and row-stochastic for \(-1\leq r\leq1\).
+Its eigenvectors \((1,1)\), \((1,-1)\) have eigenvalues \(1,r\).
+
+In dimension three, the remaining pair is either real or conjugate.
+For a real pair, the modulus and trace conditions are necessary.
+For a conjugate pair, the trace gives \(a\geq-1/2\), and the
+modulus bound gives \(a\leq1\).
+Lemma~\ref{lem:jll} with \(k=1,m=2,n=3\) gives
+\[
+ (1+2a)^2\leq3\{1+2(a^2-b^2)\}
+ \quad\Longleftrightarrow\quad 3b^2\leq(1-a)^2 .
+\]
+These are the claimed necessary inequalities.
+
+For real-pair sufficiency, if one member is nonnegative, rename it
+\(r\in[0,1]\) and write the other as \(s\in[-1,1]\). Then
+\[
+ P=\begin{pmatrix}
+ (1+s)/2&(1-s)/2&0\\
+ (1-s)/2&(1+s)/2&0\\
+ 1-r&0&r
+ \end{pmatrix}
+\]
+is nonnegative and stochastic; block triangularity gives eigenvalues
+\(1,s,r\). If both are negative, write \(r=-u,s=-v\), where
+\(u,v>0\) and \(u+v\leq1\). The matrix
+\[
+ P=\begin{pmatrix}
+ 0&1&0\\0&0&1\\uv&u+v-uv&1-u-v
+ \end{pmatrix}
+\]
+is stochastic and nonnegative, since
+\(u+v-uv=u(1-v)+v\geq0\). Its characteristic polynomial is
+\[
+ t^3-(1-u-v)t^2-(u+v-uv)t-uv=(t-1)(t+u)(t+v).
+\]
+Zero eigenvalues were covered by the first construction.
+
+For a conjugate pair, set
+\[
+ p_0=\frac{1+2a}{3},\qquad
+ p_1=\frac{1-a}{3}+\frac{b}{\sqrt3},\qquad
+ p_2=\frac{1-a}{3}-\frac{b}{\sqrt3}.
+\]
+The inequalities make these nonnegative with sum one.
+For \(\omega=e^{2\pi i/3}\), the circulant
+\[
+ P=\begin{pmatrix}p_0&p_1&p_2\\p_2&p_0&p_1\\p_1&p_2&p_0\end{pmatrix}
+\]
+has eigenvectors \((1,1,1)\), \((1,\omega,\omega^2)\),
+\((1,\omega^2,\omega)\), with eigenvalues
+\(1,p_0+p_1\omega+p_2\omega^2,p_0+p_1\omega^2+p_2\omega\).
+These are \(1,a+ib,a-ib\), completing the sufficiency proof.
+\end{proof}
+
+\begin{example}[Two insufficient tests \ours]
+Each of \(-3/4\) and \(1\) occurs in a stochastic three-state
+spectrum: use \(C(-3/4)\oplus(1)\).
+Yet \(\{1,-3/4,-3/4\}\) cannot be a joint spectrum because its
+trace is \(-1/2\). A product of marginal regions is therefore too large.
+Even the modulus, conjugation and all nonnegative power-sum tests
+can be insufficient. The list \(\{1,i/\sqrt2,-i/\sqrt2\}\) has
+\(s_{2m+1}=1\), \(s_{2m}=1+2(-1/2)^m\geq0\), but
+\(s_1^2=1>3s_2=0\). Both exclusions are exact.
+\end{example}
+
+\begin{proposition}[An order-five obstruction surviving all JLL tests \ours]
+\label{prop:five-obstruction}
+The list \(\Lambda=\{1,1,-2/3,-2/3,-2/3\}\) satisfies every
+power-sum and JLL inequality for \(n=5\), together with the Perron and
+conjugation conditions. It is nevertheless not the spectrum of any
+nonnegative \(5\times5\) matrix, and hence is not in \(\Sigma_5\).
+\end{proposition}
+\begin{proof}
+Put \(q=2/3\), so \(s_k=2+3(-q)^k\).
+For even \(k\), apply the power-mean inequality to
+\(1,1,q^k,q^k,q^k\), obtaining
+\(s_k^m\leq5^{m-1}s_{km}\).
+For odd \(k\), \(0\leq s_k\leq2\), since \(q^k\leq2/3\).
+If \(m\) is odd, \(s_{km}\geq s_k\), so
+\(s_k^m\leq2^{m-1}s_k\leq5^{m-1}s_{km}\).
+If \(m\) is even, \(s_{km}\geq2\), so
+\(s_k^m\leq2^m\leq5^{m-1}s_{km}\).
+This proves all inequalities for every positive \(k,m\).
+
+Suppose a nonnegative matrix realizes the list. Put it in Frobenius
+block-triangular form, with irreducible nonnegative diagonal blocks,
+including one-by-one blocks. Each block has its nonnegative spectral
+radius as an eigenvalue. The only nonnegative member of \(\Lambda\)
+is \(1\), so each block must contain a copy of \(1\).
+The Perron eigenvalue of an irreducible block is simple; there must
+therefore be exactly two blocks, each using one copy.
+One block receives at least two of the three negative eigenvalues.
+Its trace is at most \(1-4/3=-1/3\), impossible for a nonnegative block.
+\end{proof}
+This is the classical list recorded in
+\citet[Section~2]{croninlaffey2018diagonalizable}.
+The all-\(k,m\) check and block proof are supplied to make the
+obstruction independently verifiable, without claiming novelty.
+
+\paragraph{Independent verification \oursComputed.}
+The script \path{code/verify_development.py} checks the characteristic
+polynomials symbolically and then checks the constructions using a
+separate exact three-by-three determinant formula on rational grids.
+It also tests independently generated stochastic matrices against the
+inequalities and checks the order-five example with exact fractions
+over a finite exponent range. The finite tests are diagnostic;
+the universally quantified claims are proved above.
+The output is \path{logs/development_checks.json}.
+An independent derivation of the triangular bound uses
+\(\operatorname{tr}P^2=\sum_iP_{ii}^2+
+2\sum_{i<j}P_{ij}P_{ji}\), followed by Cauchy--Schwarz.
+The Fourier eigenvector proof checks the converse separately from
+the characteristic-polynomial calculation. Both checks agree,
+including boundary cases and reducible real-pair realizations.
+
+\paragraph{What remains and what another run could accomplish.}
+The bottleneck is joint compatibility: one nonnegative matrix must
+realize all roots. Reducibility and repeated Perron roots constrain
+how roots can be grouped. Projection to one eigenvalue, all power-sum
+inequalities, or one fixed diagonalizing basis loses information.
+The calculation does not resolve the general \(n\geq5\) region.
+There is no evidence that this question was abandoned: the checked
+2024--2025 papers show continued work.
+A bounded next run could construct an exact atlas for one specified
+family of four-state zero patterns, compare it with the known
+order-four characterization and the constructions in
+\citet[Section~8]{johnsonpaparella2025perron}, and certify every
+boundary piece by a realizing matrix or polynomial obstruction.
+That would provide a reusable companion/website contribution.
+Its novelty would have to be established by that comparison.
+
+\subsection{A Poisson-pencil repair for the Neumann calculation}
+\label{dev:poisson-repair}
+
+This annotation of item \hyperref[item:1987-716.6]{1987-716.6}
+records a failure found by the independent check. With
+\(\varepsilon_{123}=1\), the second printed table on P001391 has
+\(\{M_i,M_j\}=\varepsilon_{ijk}a_kM_k\),
+\(\{M_i,p_j\}=\varepsilon_{ijk}a_kp_k\), and
+\(\{p_i,p_j\}=\varepsilon_{ijk}M_k\).
+Its cyclic Jacobi expression at \((M_1,p_1,p_2)\) is
+\((a_3-a_2)M_2\), so it is not a Poisson bracket for general
+diagonal \(A\). Reversing time cannot repair this defect.
+The scan confirms the printed coefficients. The following is a
+consistent algebraic emendation, not a claim to recover a uniquely
+intended historical formula.
+
+\begin{proposition}[A compatible repaired bracket \ours]
+For arbitrary real \(a_1,a_2,a_3\), the table
+\[
+ \{M_i,M_j\}_2=\varepsilon_{ijk}a_kM_k,\qquad
+ \{M_i,p_j\}_2=\varepsilon_{ijk}a_jp_k,\qquad
+ \{p_i,p_j\}_2=-\varepsilon_{ijk}M_k
+\]
+defines a linear Poisson bracket. It is compatible with the standard
+\(\mathfrak e(3)^*\) bracket
+\(\{M_i,M_j\}_1=\varepsilon_{ijk}M_k\),
+\(\{M_i,p_j\}_1=\varepsilon_{ijk}p_k\),
+\(\{p_i,p_j\}_1=0\).
+With \(F=p^2/2\), the repaired bracket gives
+\(\dot p=M\times p\), \(\dot M=(Ap)\times p\), exactly the
+first bracket's vector field for
+\(H=(M^2+p^{\mathsf T}Ap)/2\).
+\end{proposition}
+\begin{proof}
+Let \(E_{ij}\) denote the skew matrix with entry \(1\) in position
+\((i,j)\), entry \(-1\) in position \((j,i)\), and all other entries
+zero. For any diagonal \(4\times4\) matrix \(D\), the product
+\(X*Y=XDY\) is associative. Its commutator
+\([X,Y]_D=XDY-YDX\) is consequently a Lie bracket.
+Skew matrices are closed under this bracket since \(D^{\mathsf T}=D\).
+Choose the basis
+\[
+ m_1=-E_{23},\quad m_2=-E_{31},\quad m_3=-E_{12},\qquad
+ q_i=E_{i4}\quad(1\leq i\leq3).
+\]
+For \(D=\operatorname{diag}(a_1,a_2,a_3,-1)\), direct matrix
+multiplication gives precisely the three displayed structure-constant
+formulas. The associated Lie--Poisson bracket on the dual therefore
+satisfies Jacobi, including when \(D\) is singular.
+For \(D_0=\operatorname{diag}(1,1,1,0)\), the same basis gives the
+first bracket. Every linear combination is again the commutator for
+the corresponding linear combination of \(D,D_0\), proving compatibility.
+Finally, contracting the repaired table with
+\(\partial F/\partial p_j=p_j\) gives the two stated vector fields.
+Contracting the first table with the derivatives of \(H\) gives the
+same fields, independently checking their signs.
+\end{proof}
+
+\paragraph{Second check \oursComputed.}
+The coordinate computation in the early-record verification script
+tests every coordinate Jacobi identity for the repaired bracket and
+the full pencil, and checks equality of the Hamiltonian fields.
+The associative-matrix construction above is an independent proof
+of those identities. Its agreement with the symbolic output confirms
+the emendation; the failed original table is retained in that output.
+
+\subsection{The complete attainable range in the tensor-angle exercise}
+\label{dev:tensor-angles}
+
+This is an elementary annotation of item
+\hyperref[item:1987-737.11]{1987-737.11} and GP-1987-29, classified E;
+no priority claim is made. The preamble on P001435 explicitly asks
+which values the invariants in all the exercises can take. On P001436,
+the tensor exercise specifies a Euclidean space \(L\) and compares
+\(a\otimes L\) with \(L\otimes b\) in \(L^{\otimes3}\).
+We reconstruct the finite-dimensional setting of that part of the
+sheet, require \(a,b\ne0\), and normalize them to unit length;
+scaling does not change either subspace. The same proof applies to
+complex Hilbert spaces, although the source says Euclidean.
+
+\begin{theorem}[Principal cosines for two tensor subspaces \ours]
+Let \(L\) be a real Euclidean or complex Hilbert space of dimension
+\(d\geq2\). As unit tensors \(a,b\in L\otimes L\) vary, the ordered
+principal cosines \(s_1\geq\cdots\geq s_d\geq0\) between
+\(a\otimes L\) and \(L\otimes b\) are exactly the lists satisfying
+\[
+                  \sum_{j=1}^d s_j\leq1.
+\]
+For \(d=1\), the sole possible list is \((1)\).
+\end{theorem}
+\begin{proof}
+In an orthonormal basis write
+\(a=\sum_{i,j}A_{ij}e_i\otimes e_j\) and
+\(b=\sum_{j,k}B_{jk}e_j\otimes e_k\), so
+\(\|A\|_F=\|B\|_F=1\).
+The maps \(Uu=a\otimes u\), \(Vv=v\otimes b\) are isometries.
+With the complex inner product conjugate-linear in its first entry,
+\[
+ (U^*V)_{ki}=\langle a\otimes e_k,e_i\otimes b\rangle
+            =\sum_j\overline{A_{ij}}B_{jk}.
+\]
+Thus the cross-Gram matrix is \((\overline A B)^{\mathsf T}\),
+and its singular values are the principal cosines. The trace norm
+inequality
+\(\|\overline A B\|_*\leq\|A\|_F\|B\|_F=1\)
+gives necessity. To check this inequality directly, choose a unitary
+matrix from a singular value decomposition so that its trace pairing
+with \(\overline A B\) is the sum of the singular values, and apply
+Cauchy--Schwarz to the matrix entries. Left or right multiplication
+by a unitary matrix preserves the Frobenius norm.
+
+Conversely, put \(T=\sum_js_j\leq1\), and let \(r\) be the number
+of positive entries. All the following matrices are real, so their
+constructions work over either field. If \(T=0\), take
+\(A_{11}=B_{22}=1\), with all other entries zero;
+both matrices have norm one and \(AB=0\).
+If \(0<r<d\), set
+\[
+ A_{ii}=\sqrt{s_i/T},\qquad B_{ii}=\sqrt{Ts_i}
+ \quad(1\leq i\leq r),\qquad
+ B_{r+1,1}=\sqrt{1-T^2},
+\]
+and set all other entries to zero. The additional entry lies in a
+row annihilated by \(A\), so
+\(AB=\operatorname{diag}(s_1,\ldots,s_d)\).
+Moreover, \(\|A\|_F^2=1\) and
+\(\|B\|_F^2=T^2+(1-T^2)=1\).
+
+It remains to consider \(r=d\). On the open probability simplex
+\(x_j>0\), \(\sum_jx_j=1\), define
+\(f(x)=\sum_js_j^2/x_j\). Cauchy--Schwarz gives \(f(x)\geq T^2\),
+with equality at \(x_j=s_j/T\).
+If \(T=1\), use this minimizing point. If \(T<1\), the minimum
+is below one, whereas \(f(x)\) tends to infinity along a segment
+approaching a face, since every \(s_j>0\).
+Continuity supplies a point with \(f(x)=1\).
+Now take \(A_{jj}=\sqrt{x_j}\) and
+\(B_{jj}=s_j/\sqrt{x_j}\). Both Frobenius norms equal one, and
+\(AB=\operatorname{diag}(s_j)\), as required.
+When \(d=1\), both tensor subspaces are the entire one-dimensional
+ambient space; their principal cosine is one.
+\end{proof}
+
+\paragraph{Independent verification and scope \oursComputed.}
+The cross-Gram formula was re-derived entry by entry and checked
+against explicit tensor embeddings, including complex coefficients.
+An independent mathematical review checked all rank cases and the
+simplex-continuity argument. The script
+\path{code/verify_development.py} tests both real and complex
+random tensors, rank-deficient constructions, and the exceptional
+case \(d=1\); its output records the observed residuals.
+This resolves the stated finite-dimensional attainable-range exercise.
+It does not classify simultaneous invariants of several unrelated
+subspaces or the Hilbert-space cases on the next part of the sheet.
+
+\subsection{Homology spheres and twisted cohomology: checking a literal error}
+\label{dev:twisted-h1}
+
+This is an annotation of P001475, not an extra class-C or class-D
+research problem. The source passes from the Hessian at a flat
+\(\mathrm{SU}(2)\) connection to all local systems and asserts an
+equivalence with integral first-homology vanishing.
+At a specified irreducible flat connection with holonomy \(\rho\),
+the relevant infinitesimal space is \(H^1(M;\operatorname{ad}\rho)\).
+Ordinary and twisted homology cannot be interchanged.
+Already \citet[p.~287]{atiyah1988invariants} requires perturbations
+to obtain simple zeros in the homology-sphere construction.
+The next two checks disprove both directions of the literal
+equivalence over characteristic zero.
+
+\begin{lemma}[Averaging one-cocycles \ours]
+For a finite group \(G\) acting linearly on a real or complex vector
+space \(V\), every one-cocycle \(c:G\to V\) is principal.
+\end{lemma}
+\begin{proof}
+The identity is \(c(gh)=c(g)+g c(h)\).
+Put \(S=\sum_{h\in G}c(h)\); summing gives
+\(S=|G|c(g)+gS\). Thus \(c(g)=w-gw\) for \(w=S/|G|\).
+The characteristic-zero hypothesis permits division by \(|G|\).
+\end{proof}
+
+\begin{example}[Twisted vanishing misses integral torsion \ours]
+The closed connected orientable manifold \(M=\mathbb{RP}^3=L(2,1)\)
+has \(\pi_1M=\mathbb Z/2\) and \(H_1(M;\mathbb Z)=\mathbb Z/2\).
+It is not an integral homology sphere. Nevertheless every
+finite-dimensional real or complex local system \(E\) satisfies
+\[
+ H^1(M;E)=H^1(\pi_1M;E)=0
+\]
+by averaging. The equality in degree one follows because the simply
+connected universal cover gives an exact lifted cellular resolution
+through the degrees needed for \(H^1\).
+The ordinary homology calculation is also the cellular one in
+\citet[Examples~2.42--2.43]{hatcher2002algebraic}.
+\end{example}
+
+\begin{proposition}[A homology sphere with a degenerate irreducible connection \ours]
+There is a closed connected orientable integral homology
+three-sphere \(M\) and an irreducible representation
+\(\rho:\pi_1M\to\mathrm{SU}(2)\) such that
+\(\dim_{\mathbb R}H^1(M;\operatorname{ad}\rho)=3\).
+\end{proposition}
+\begin{proof}
+Let \(G=2I\subset\mathrm{SU}(2)\) be the binary icosahedral group
+and \(Y=S^3/G\), with the free orientation-preserving action by
+left multiplication on unit quaternions.
+The order-\(120\) group has presentation
+\(\langle a,b\mid a^5=b^3=(ab)^2\rangle\).
+Its abelianization vanishes: taking the two relators as rows gives the integer
+matrix \(\left(\begin{smallmatrix}5&-3\\-2&1\end{smallmatrix}\right)\),
+of determinant \(-1\).
+This presentation and calculation are recorded in
+\citet[Example~2.38]{hatcher2002algebraic}.
+Hence \(H_1(Y;\mathbb Z)=0\); orientability, connectedness and
+Poincare duality give the integral homology of \(S^3\).
+
+Set \(M=Y\#Y\). Van Kampen gives \(\pi_1M=G*G\);
+abelianization and duality again give the integral homology of \(S^3\).
+Define \(\rho\) to be the inclusion into \(\mathrm{SU}(2)\) on each
+free factor. Its image is nonabelian and acts irreducibly on
+\(\mathbb C^2\). For \(V=\mathfrak{su}_2\) with the adjoint action,
+\(V^G=0\): the icosahedral rotation group has no common fixed axis.
+
+A one-cocycle on \(G*G\) is uniquely determined by its restrictions
+to the two free factors; extend by the cocycle identity along reduced
+words. Averaging makes these restrictions
+\(w_1-gw_1\) and \(w_2-gw_2\).
+Since \(V^G=0\), the \(w_i\) are unique. Thus
+\(Z^1(G*G;V)\cong V\oplus V\); principal cocycles form its diagonal
+copy of \(V\). Consequently
+\[
+ H^1(M;\operatorname{ad}\rho)\cong
+ (V\oplus V)/\operatorname{diag}V\cong V.
+\]
+The associated \(\mathrm{SU}(2)\) principal bundle is trivial, as
+required in the source: over a three-dimensional CW complex a section
+exists because \(\pi_0,\pi_1,\pi_2\) of \(\mathrm{SU}(2)\cong S^3\)
+all vanish. This verifies the bundle and irreducibility conditions.
+\end{proof}
+
+\paragraph{Independent second check.}
+Decompose \(M\) into two punctured copies of \(Y\) intersecting
+in a collar of \(S^2\). With these coefficients each piece has
+\(H^0=0\) and \(H^1=0\), while the intersection has \(H^0=V\)
+and \(H^1=0\). Twisted Mayer--Vietoris gives
+\(H^1(M;V)\cong V\) again. Puncturing does not change the
+fundamental group or degree-one local-system cohomology.
+This agrees with the cocycle quotient and computes the exact dimension;
+it is stronger than merely exhibiting a family of representations.

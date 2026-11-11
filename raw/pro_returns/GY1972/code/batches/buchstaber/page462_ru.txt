@@ -1,0 +1,102 @@
+\SourcePage{GELFAND-P000462}{unlabelled}
+Соотн. Лазара:
+\[
+\uwave{\mbox{$h(x,y)+h(x+y,z)=h(y,z)+h(x,y+z).$}}\qquad(*)
+\]
+Дост. брать однор. многочлены $h$.
+
+У Лазара: методы теории чисел.
+
+\uwave{Задача:}\quad найти все решения $(*)$ [однор. многочл.] над нек-рым кольцом $K$.
+
+Все решения — \uwave{группа \mbox{$L$}},\quad Всё над кольцом $K$
+\[
+L\longrightarrow\operatorname{Ext}_{K[x]}^{2,n}(K,K)\longrightarrow0.
+\]
+Введём в $K[x]$ структ. Хопфа: мульт. гомоморфизм
+\[
+\begin{gathered}
+\Delta:K[x]\longrightarrow K[x]\otimes_K K[x]\qquad\text{(косложение).}\\
+x\longrightarrow x\otimes1+1\otimes x
+\end{gathered}
+\]
+У алг. Хопфа есть когомологии. Алг. градуир. $\Rightarrow$ когом. биградуир.
+Отсюда $2$ индекса у $\operatorname{Ext}$.
+
+Далее:
+\[
+\begin{aligned}
+ &\quad\text{слева и справа}\quad (x+y+z)^n-x^n-y^n-z^n\\[-.2ex]
+ &\qquad\downarrow\\[-.2ex]
+ 0&\longrightarrow
+ \{c((x+y)^n-x^n-y^n),\,a\in K\}
+ \longrightarrow L\longrightarrow
+ \operatorname{Ext}_{K[x]}^{2,n}(K,K)\longrightarrow0.
+\end{aligned}
+\]
+\SourceFigure{GELFAND-P000462}{sequence-arrow}{Стрелка от приписки направлена вниз к первому члену последовательности.}
+
+\Unclear{GELFAND-P000462}{family-coefficient}{Перед скобками предположительно $c$. Отдельно написано $a\in K$. Оба знака густо наведены.}
+
+\begin{center}
+\rule[.5ex]{17mm}{.35pt}\enspace$\cdot$\enspace\rule[.5ex]{22mm}{.35pt}
+\end{center}
+
+\uuline{\mbox{$n=2$}}.\quad
+$\overset{\text{\sout{\ldots}}}{\text{Многочл.}}$ $2$-й степени
+\uuline{\mbox{$cxy$}}.
+\Unclear{GELFAND-P000462}{cancel-n2}{Знак над «Многочл.» зачёркнут и не разобран.}
+
+\uuline{\mbox{$n=3$}}\quad $h(x,y)=C_1x^2y+C_2xy^2$
+\[
+\widetilde\Lambda=\mathbb Z+\mathbb Z_3.
+\]
+\Unclear{GELFAND-P000462}{cubic-quotient}{Читается $\widetilde\Lambda=\mathbb Z+\mathbb Z_3$.}
+
+$1$ реш. по лемме Лазара: $c((x+y)^n-x^n-y^n)$
+
+$h(x,y)=x^2y+xy^2$\qquad для всех колец
+
+$h(x,y)=x^2y$\qquad для колец, явл. $\mathbb Z_3$-модулями
+\Unclear{GELFAND-P000462}{cubic-module-claim}{В этой строке у $\mathbb Z$ нижний индекс $3$.}
+
+\noindent\hspace*{1.7em}$x^2y$
+
+\begin{center}
+\rule[.5ex]{26mm}{.35pt}\enspace$\cdot$\enspace\rule[.5ex]{27mm}{.35pt}
+\end{center}
+Рассм. комодули над алг. Хопфа $A$ — это аб. гр. $N$, для к-рой есть отобр. $N\longrightarrow A\otimes N$ с ест. усл.
+\begin{center}
+\rule[.5ex]{25mm}{.35pt}\enspace$\cdot$\enspace\rule[.5ex]{29mm}{.35pt}
+\end{center}
+
+Надо прав. подобр. резольвенту: будут все циклы без границ (миним. резольвента). \sout{по}
+\Unclear{GELFAND-P000462}{cancel-after-resolution}{Под зачёркиванием после скобки предположительно «по».}
+
+\begin{center}
+\rule[.5ex]{26mm}{.35pt}\enspace$\cdot$\enspace\rule[.5ex]{29mm}{.35pt}
+\end{center}
+
+\sout{Н\ldots}
+\Unclear{GELFAND-P000462}{cancel-heading-fragment}{В начале зачёркнутого заголовка видна «Н».}
+
+\Incomplete{GELFAND-P000462}{cancel-heading-remainder}{Остальная часть зачёркнутого заголовка не разобрана.}
+
+\uuline{Подсчёт группы \mbox{$\operatorname{Ext}^2$}.}
+
+$1^\circ$. $K$ — \sout{\ldots} комодуль над алг. Хопфа $K[x]$.
+\Unclear{GELFAND-P000462}{cancel-comodule}{Между тире после $K$ и «комодуль» зачёркнут густой прямоугольный знак.}
+
+\hfill\sout{\ldots}\quad $x\longrightarrow x\otimes1+1\otimes x$\par
+\Unclear{GELFAND-P000462}{coproduct-mark}{Перед $x$ в приписке виден густо перечёркнутый знак.}
+
+\[
+K\longrightarrow K\otimes K[x]\quad
+\text{\sout{\mbox{$\gets$}\ldots}}
+\]
+\Unclear{GELFAND-P000462}{cancel-after-tensor-fragment}{Начало зачёркнутой приписки похоже на $\gets$.}
+
+\Incomplete{GELFAND-P000462}{cancel-after-tensor-remainder}{Остальные штрихи после $K[x]$ не разобраны.}
+
+$1\longrightarrow1\otimes1$\qquad и дальше по линейности.
+

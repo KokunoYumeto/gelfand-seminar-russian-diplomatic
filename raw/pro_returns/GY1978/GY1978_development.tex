@@ -1,0 +1,390 @@
+The subsections below are critical audits of recorded formulas and missing hypotheses. They are not Stage~2 developments of class C or D problems, and no novelty claim is attached to the classical results used in them. Each proof or computation supplied here is marked, and the independent checks and their limits are stated explicitly.
+
+\subsection{The Gaussian-tail example: a finite remainder before surreal interpretation}
+\label{audit:gaussian}
+Item 1978-446.20 proposes an asymptotic application, but its literal formula is false. This is a correction to a recorded example, not a newly discovered open problem. The following elementary calculation supplies a complete check of the corrected expansion; its content is classical. The separate question of assigning a surreal value to an integral must be answered by a specified extension operator, for example within the precise scope of \citet[Thms.~78 and 85]{costinehrlich2024integration}.
+
+\begin{proposition}[Gaussian tail with signed remainder]\ours{}
+For every real \(x>0\) and integer \(N\ge1\), with \((-1)!!=1\),
+\begin{align*}
+I(x)&:=\int_x^\infty e^{-t^2}\,dt\\
+&=\frac{e^{-x^2}}{2x}\sum_{n=0}^{N-1}
+ \frac{(-1)^n(2n-1)!!}{2^n x^{2n}}+R_N(x),\\
+R_N(x)&=\frac{(-1)^N(2N-1)!!}{2^N}
+       \int_x^\infty t^{-2N}e^{-t^2}\,dt,
+\end{align*}
+and
+\[
+0<(-1)^N R_N(x)<
+\frac{e^{-x^2}}{2x}\frac{(2N-1)!!}{2^N x^{2N}}.
+\]
+\end{proposition}
+\begin{proof}
+Let \(J_k(x)=\int_x^\infty t^{-2k}e^{-t^2}\,dt\). Integration by parts, using
+\(e^{-t^2}dt=-d(e^{-t^2})/(2t)\), gives the exact identity
+\[
+J_k(x)=\frac{e^{-x^2}}{2x^{2k+1}}-\frac{2k+1}{2}J_{k+1}(x).
+\]
+All integrals converge for \(x>0\); the boundary term at infinity vanishes. Iterating from \(k=0\) through \(N-1\) proves the formula. Every \(J_k\) is positive, and the same identity with \(k=N\) gives
+\(0<J_N(x)<e^{-x^2}/(2x^{2N+1})\). Multiplication by the positive coefficient gives the strict bound.
+\end{proof}
+
+\paragraph{Independent check.}
+Writing \(I=e^{-x^2}F/(2x)\) in \(I'=-e^{-x^2}\) gives
+\(F'-(2x+x^{-1})F=-2x\). Matching powers in \(F=\sum c_nx^{-2n}\) gives
+\(c_0=1\), \(c_n=-(2n-1)c_{n-1}/2\), independently reproducing the coefficients above. The supplied script \texttt{code/check\_independent.py} verifies the truncated differential-equation residual exactly for eight orders and checks signed remainder bounds at four positive real arguments and five truncation orders with 80-digit arithmetic. These finite tests corroborate the proof; they are not used to infer its universal quantifiers.
+
+At any fixed real \(x\), the terms of the infinite asymptotic series eventually increase, since their absolute successive ratio is \((2n+1)/(2x^2)\). At a positive infinite surreal \(x\), its real-coefficient power series in \(x^{-1}\) is summable in Conway's sense. These are different notions of summation. Neither observation makes the notebook's missing exponential prefactor, signs and powers correct. The modern resurgent-extension theory is a later implementation of the broad idea, with hypotheses not present in the notebook. A further research run would need to specify a new function class or extension axiom before there were a bounded open problem to investigate.
+
+\subsection{Omnific fractions and two elementary boundary checks}
+The strongest defensible reading of item 1978-446.22 is the known quotient theorem for omnific integers, not the false assertion that every surreal is rational over \(\mathbb Z\).
+
+\begin{proposition}[Normal-form verification of the quotient theorem]\ours{}
+Let \(\mathbf{Oz}\) have the standard normal-form characterization: all exponents are nonnegative and the constant coefficient, if present, is an ordinary integer. Then every surreal is a quotient of two members of \(\mathbf{Oz}\).
+\end{proposition}
+\begin{proof}
+For nonzero \(x=\sum_{\alpha<\beta}r_\alpha\omega^{b_\alpha}\), the support is a set. By the simplest-separator theorem choose \(a>0\) with \(a>-b_\alpha\) for every \(\alpha<\beta\). All exponents of \(m=\omega^a x\) are strictly positive. The same holds for \(n=\omega^a\); hence \(m,n\in\mathbf{Oz}\), \(n\ne0\), and \(x=m/n\). For zero take \(0/1\). This proves the quotient assertion from the stated standard characterization; it does not claim a new proof of the equivalence of that characterization with Conway's simplicity definition.
+\end{proof}
+
+The normal-form multiplication is independently checked by cancellation of \(\omega^a\omega^{-a}=1\); shifting every exponent back by \(-a\) recovers exactly the original support and coefficients. This check requires set-sized support, which is why that hypothesis is explicit. The historical result belongs to \citet[Chap.~5]{conway1976numbers}; the normal-form theorem was read in \citet[Thm.~2.4]{kuhlmannmatusinski2015classes}.
+
+Two shorter checks resolve additional ambiguities. First, the apparent integer criterion \(|x]-x|=1\) fails for the ordinary integer \(x=3\) and its earlier truncation \(x]=0\). A choice of a particular predecessor would be additional data absent from the notes. Second, the final exponential formula admits \(x=1\), the earlier option zero and \(n=1\), for which its reciprocal denominator is \(E_1(-1)=0\). The missing restrictions cannot be repaired by punctuation alone. These are local counterexamples to literal readings; neither is evidence of an undeveloped research problem.
+
+
+\subsection{A strict audit of the projected-area formula}
+
+This is a check of the literal minimum-area assertion in occurrence
+1978-447.25, not a proposed solution of a newly identified open problem.
+The source's phrase \ru{Для не слишком закрученных контуров} supplies no
+defined contour class.  The unrestricted equality is false even arbitrarily
+close to a planar circle.  The valid Hamilton--Jacobi identity in occurrence
+1978-447.24 does not remove this obstruction.
+
+For a closed oriented curve \(C\subset\mathbb R^4\), set
+\(\sigma_{ij}=\oint_C x_i\,dx_j\), \(i<j\), regard \(\sigma\) as a
+two-form with the independent-component Euclidean norm, and write
+\(\sigma_\pm=(\sigma\pm *\sigma)/2\).  Our normalization is
+\(A_\pm(C)=\sqrt2\,|\sigma_\pm|\).  Both profiles have value \(\pi\)
+on a positively oriented unit circle in the first coordinate plane.
+The closed-form/comass inequality giving area lower bounds is classical;
+see \citet[Introduction, pp.~48--49]{harveylawson1982calibrated}.
+
+\begin{proposition}[A strict gap near a circle]\ours{}
+For \(\epsilon\ne0\), let
+\[
+C_\epsilon(t)=(\cos t,\sin t,\epsilon\cos 2t,0),\qquad 0\le t\le2\pi.
+\]
+This is a smooth embedded closed curve, and
+\(A_+(C_\epsilon)=A_-(C_\epsilon)=\pi\).
+Every oriented Lipschitz spanning disk has area at least
+\[
+\pi\sqrt{1+\epsilon^2}>\pi.
+\]
+The same bound holds for compactly supported integral two-currents with
+boundary the multiplicity-one oriented curve \(C_\epsilon\), with area
+interpreted as mass.  Such disks exist and have finite area.
+\end{proposition}
+
+\begin{proof}
+Projection to the first two coordinates is the standard unit circle, so
+\(C_\epsilon\) is embedded.  Orthogonality of the elementary trigonometric
+functions gives \(\sigma_{12}=\pi\) and all other projected areas zero.
+Thus \(\sigma_\pm=(\pi/2)(dx_1\wedge dx_2\pm dx_3\wedge dx_4)\),
+and both normalized norms equal \(\pi\).
+
+Write \((x,y,z,w)\) for the four coordinates.  Nearest-point projection
+\(P\) onto the closed convex cylinder
+\(\{x^2+y^2\le1\}\times\mathbb R^2\) is 1-Lipschitz and fixes the
+boundary curve.  Composing a spanning disk with \(P\) cannot increase
+its two-dimensional area.  Equivalently, push-forward under \(P\)
+does not increase the mass of a compactly supported two-current and
+preserves its prescribed boundary.
+
+On the cylinder consider the exact two-form
+\[
+\Omega_\delta=dx\wedge dy-\delta\,d(xy)\wedge dz
+             =d\bigl(x\,dy-\delta xy\,dz\bigr).
+\]
+It is supported in the three-dimensional \((x,y,z)\) directions.  Its
+comass is the norm of its three-dimensional Hodge-dual vector:
+\[
+\|\Omega_\delta\|_{\mathrm{comass}}
+ =\sqrt{1+\delta^2(x^2+y^2)}\le\sqrt{1+\delta^2}.
+\]
+The same comass holds in \(\mathbb R^4\), since adding a direction in
+which the form vanishes cannot increase its value on a unit simple
+two-vector.  On the boundary,
+\[
+\oint_{C_\epsilon}x\,dy=\pi,\qquad
+\oint_{C_\epsilon}xy\,dz
+ =\int_0^{2\pi}\frac{\sin2t}{2}(-2\epsilon\sin2t)\,dt
+ =-\epsilon\pi.
+\]
+Stokes' theorem and the comass bound therefore give, for every projected
+spanning disk or current \(S\),
+\[
+\operatorname{Area}(S)\ge
+\frac{\left|\int_S\Omega_\delta\right|}{\sqrt{1+\delta^2}}
+=\frac{\pi|1+\delta\epsilon|}{\sqrt{1+\delta^2}}.
+\]
+Choose \(\delta=\epsilon\).  Projection did not increase area, so the
+same lower bound holds for the original filling.
+
+For completeness, the graph
+\((x,y)\mapsto(x,y,\epsilon(x^2-y^2),0)\), \(x^2+y^2\le1\),
+is a smooth finite-area spanning disk.  No minimizing-disk existence,
+regularity, or equality-case theorem is needed for the strict gap.
+\end{proof}
+
+\begin{remark}[Scope and independent check]\ours{}
+For each fixed finite \(k\), \(C_\epsilon\) tends to the planar circle
+in \(C^k\) as \(\epsilon\to0\).  Consequently, an unspecified condition
+of being sufficiently close to that circle cannot by itself validate the
+projected-area equality.  The flux was checked independently by expanding
+\(xy\) and \(dz\) in trigonometric functions; the comass was checked
+both as a three-dimensional Hodge-dual norm and as the nonzero singular
+value of the corresponding skew matrix.  These checks agree.
+This argument does not contradict the source's first-order identity:
+the derivative of \(A_\pm\) has a complementary-plane component even
+when the boundary lies in \(\mathbb R^3\).
+\end{remark}
+
+
+\subsection{Critical algebraic audit: the printed spin-one density}
+
+This section audits the literal assertion in P000818 (14) and P000819
+(16), items 1978-454.17, 1978-454.19 and 1978-454.22. It is a completed
+critical check, not a Stage~2 development of a class C or D problem.
+The notes give
+\[
+ h=X^2-2X,\qquad X=\sum_{a=1}^3S^a\otimes S^a,
+ \qquad [S^a,S^b]=\varepsilon_{abc}S^c,
+\]
+and specify the real three-dimensional standard/adjoint representation of
+\(SO(3)\). They then ask for parameters fitting this density into the
+factorization scheme. We test precisely the analytic, regular,
+difference-form construction used by the surrounding transfer-matrix
+argument. A coefficient or generator-normalization error changes this
+test and cannot be silently repaired.
+
+The necessary condition used below is commonly called the Reshetikhin
+condition; see \citet[Sec.~2, eqs.~(1)--(6)]{zhang2025bootstrap}, first posted
+in April 2025, in the version dated 6 February 2026 checked here. We give
+the coefficient argument completely, so its application does not depend
+on an unchecked attribution of sufficiency.
+
+\begin{lemma}[The cubic necessary condition; derivation checked here]\ours{}
+Let \(V\) be a finite-dimensional complex vector space and let
+\(\check R(u)\in\operatorname{End}(V\otimes V)\) be analytic at zero,
+with \(\check R(0)=I\), satisfying the braided difference equation
+\[
+ \check R_{12}(u)\check R_{23}(u+v)\check R_{12}(v)
+ =\check R_{23}(v)\check R_{12}(u+v)\check R_{23}(u).
+\]
+Put \(h=\check R'(0)\). There exists
+\(Q\in\operatorname{End}(V\otimes V)\) such that
+\[
+ [h_{12}+h_{23},[h_{12},h_{23}]]=Q_{23}-Q_{12}.
+\]
+\end{lemma}
+\begin{proof}
+Write \(r_2=\check R''(0)\). Substituting \(v=-u\) and comparing
+the coefficient of \(u^2\) gives
+\((r_2-h^2)_{12}=(r_2-h^2)_{23}\).
+For an operator T, equality \(T_{12}=T_{23}\) implies that T is scalar:
+taking the partial trace over the third tensor factor first gives
+\(T=I\otimes U\), and substitution gives
+\(U\otimes I=I\otimes U\), forcing U scalar. Thus
+\(r_2=h^2+cI\). Multiplying \(\check R(u)\) by
+\(1-cu^2/2\) preserves the equation, regularity and h, and makes
+\(r_2=h^2\). We may therefore write
+\[
+ \check R(u)=I+uh+\tfrac12u^2h^2+\tfrac16u^3r_3+O(u^4).
+\]
+Set \(A=h_{12}\), \(B=h_{23}\), \(C=(r_3)_{12}\),
+\(D=(r_3)_{23}\). Twice the coefficient of \(u^2v\) on the left is
+\[
+ D+2AB^2+B^2A+A^2B+A^3+2ABA,
+\]
+and on the right it is
+\[
+ C+BA^2+2A^2B+B^3+AB^2+2BAB.
+\]
+Their equality, using
+\[
+ [A+B,[A,B]]=A^2B-2ABA+BA^2+2BAB-B^2A-AB^2,
+\]
+gives the asserted identity with \(Q=r_3-h^3\).
+\end{proof}
+
+\begin{proposition}[An exact obstruction in the recorded convention]\oursComputed{}
+Let
+\[
+ S^1=\begin{pmatrix}0&0&0\\0&0&-1\\0&1&0\end{pmatrix},\quad
+ S^2=\begin{pmatrix}0&0&1\\0&0&0\\-1&0&0\end{pmatrix},\quad
+ S^3=\begin{pmatrix}0&-1&0\\1&0&0\\0&0&0\end{pmatrix}.
+\]
+These satisfy the recorded commutator relations. For
+\(h_t=X^2+tX\) on \(V=\mathbb C^3\), in the basis
+\(e_0,e_1,e_2\),
+\[
+ \langle001|[h_{t,12}+h_{t,23},[h_{t,12},h_{t,23}]]|212\rangle
+ =t(t-1)(t+1).
+\]
+Consequently the printed density, \(t=-2\), fails the lemma.
+\end{proposition}
+\begin{proof}
+Let P be the flip and let
+\(K(e_i\otimes e_j)=\delta_{ij}\Omega\),
+\(\Omega=\sum_{a=0}^2e_a\otimes e_a\).
+Multiplying the displayed matrices gives \(X=K-P\).
+Since \(P^2=I\), \(K^2=3K\), and \(PK=KP=K\),
+\[
+ X^2=I+K,\qquad h_t=I+(t+1)K-tP.
+\]
+The identity term has no effect on the double commutator. Write
+\(a=t+1\), \(c=-t\), and use the two-site operator \(aK+cP\).
+Its action is explicitly
+\[
+ (aK+cP)|ij\rangle=a\delta_{ij}\sum_b|bb\rangle+c|ji\rangle.
+\]
+For A and B acting on sites 12 and 23 respectively, successive use of
+this formula gives the complete six-term calculation
+\[
+\begin{array}{c|rrrrrr}
+ W&A^2B&ABA&BA^2&BAB&B^2A&AB^2\\\hline
+ \langle001|W|212\rangle&ac(3a+2c)&a^2c&0&0&0&0.
+\end{array}
+\]
+Inserting the coefficients \(1,-2,1,2,-1,-1\) from the preceding
+commutator expansion yields \(ac(a+2c)=t(t-1)(t+1)\).
+For any two-site Q,
+\[
+ \langle001|Q_{23}|212\rangle=0,
+ \qquad \langle001|Q_{12}|212\rangle=0,
+\]
+because the first, respectively third, site would have to be unchanged.
+At \(t=-2\) the computed entry is \(-6\), a contradiction.
+\end{proof}
+
+\begin{corollary}[Scope of the negative result]\ours{}
+No analytic regular difference-form braided R-matrix has first derivative
+\(\alpha(X^2-2X)+\beta I\) for \(\alpha\ne0\). In particular, no family
+of such matrices can specialize to the printed density with a nonzero
+Hamiltonian scale.
+\end{corollary}
+\begin{proof}
+Adding a scalar leaves the double commutator unchanged, while scaling h
+by \(\alpha\) scales it by \(\alpha^3\). Its forbidden matrix entry is
+therefore \(-6\alpha^3\ne0\).
+\end{proof}
+
+\paragraph{Independent checks and the published neighbouring model.}
+The supplied \texttt{check\_spin1.py} and output use exact SymPy matrices.
+They check the three commutators, the spectra of X and h, and the
+polynomial witness. A second calculation in that script uses
+Levi--Civita entries and explicit index contractions, without Kronecker
+matrix products, and again obtains \(-6\). The independently authored
+\texttt{check\_independent.py} constructs permutation and contraction
+tensors directly and obtains the same polynomial
+\(t(t-1)(t+1)\). As controls, the full necessary-condition residual is
+zero at \(t=-1,0,1\), and nonzero at \(t=-2,2\); these passing controls
+are not used to assert sufficiency. The six-term calculation above
+provides an independently readable finite proof of the witness.
+
+Hermitian generators are \(J^a=iS^a\), so
+\(\sum_aJ^a\otimes J^a=-X\). The familiar isotropic spin-one density
+\(J\cdot J-(J\cdot J)^2\) is therefore \(-X-X^2\), an overall multiple
+of \(h_1\), not of \(h_{-2}\). The anisotropic construction of
+\citet{zamolodchikovfateev1980spin} was published in 1980; the explicit
+Hamiltonian and this isotropic limit are read in
+\citet[Sec.~5, eqs.~(52)--(55)]{bytsko2003xxz}, first circulated as a
+preprint in December 2001 and published in 2003. This is the precise
+reason for calling that literature a partial match to the notebook's
+question. The original coefficient intended by the speaker remains
+unidentified. The calculation excludes the stated regular
+difference-form construction; it does not classify other possible
+meanings of integrability.
+
+There is no residual class C or D problem produced by this audit. A
+further bounded source investigation could search an independent record
+of the February 1979 talk for a normalization or coefficient correction.
+That would resolve the historical identification, not a surviving
+anisotropic spin-one existence problem.
+
+
+\subsection{The contact sign and two vertex-model checks}
+These are critical annotations to expository or underspecified items, not developments of new C/D problems.
+
+\begin{proposition}[The literal contact formula fails Jacobi]\oursComputed{}
+In one coordinate pair put \(X=\partial_x\), \(Y_\varepsilon=\partial_y+\varepsilon x\partial_z\), \(Z=\partial_z\), and
+\[
+ B_\varepsilon(f,g)=fZg-gZf+Xf\,Y_\varepsilon g-Xg\,Y_\varepsilon f.
+\]
+The notebook's choice \(\varepsilon=1\) is not a Lie bracket. In fact, for the convention
+\(J(f,g,h)=B(f,B(g,h))+B(g,B(h,f))+B(h,B(f,g))\),
+\[
+ J_\varepsilon(f,g,h)=(1+\varepsilon)
+ \det\begin{pmatrix}f_x&f_y&f_z\\g_x&g_y&g_z\\h_x&h_y&h_z\end{pmatrix}.
+\]
+\end{proposition}
+\begin{proof}
+The three brackets at \(\varepsilon=1\) are
+\(B(x,y)=1\), \(B(y,z)=y\), \(B(z,x)=-2x\). Thus the three nested terms are \(1,2,-1\), with sum \(2\). This already refutes Jacobi. For the displayed general identity, expand
+\[
+ B_\varepsilon(f,g)=f_xg_y-f_yg_x+
+ \varepsilon x(f_xg_z-f_zg_x)+fg_z-gf_z.
+\]
+In the cyclic nested expression the second-derivative terms cancel in pairs, as do the undifferentiated-function terms. The six remaining first-derivative products are exactly the determinant above, each with coefficient \(1+\varepsilon\). The supplied symbolic script performs this expansion for arbitrary differentiable functions, not just a finite set of examples.
+\end{proof}
+
+\begin{proposition}[A consistent contact convention]\ours{}
+On \(\mathbb R^{2n+1}\), the same bracket formula with
+\(Y_i=\partial_{y_i}-x_i\partial_z\) is the contact bracket for
+\(\alpha=dz+\sum_i x_i\,dy_i\).
+\end{proposition}
+\begin{proof}
+The Reeb field is \(Z=\partial_z\). Define
+\[
+ V_f=fZ+\sum_i\bigl((X_if)Y_i-(Y_if)X_i\bigr).
+\]
+Direct substitution gives \(\alpha(V_f)=f\) and
+\(\iota_{V_f}d\alpha=(Zf)\alpha-df\), hence
+\(\mathcal L_{V_f}\alpha=(Zf)\alpha\). Thus \(V_f\) is a contact vector field, uniquely determined by its \(\alpha\)-component \(f\). The commutator of contact fields is contact, and
+\[
+ \alpha([V_f,V_g])=V_f(g)-(Zf)g=B_{-1}(f,g).
+\]
+Uniqueness implies \([V_f,V_g]=V_{B_{-1}(f,g)}\). Injectivity of \(f\mapsto V_f\) transfers the vector-field Jacobi identity to the corrected bracket. This proves the result in every dimension, independently of the three-variable symbolic expansion.
+\end{proof}
+
+\paragraph{Second checks.}
+The file \texttt{check\_contact.py} verifies the generic-function identity, the coordinate triple, and two unrelated polynomial triples. Its output records the nesting convention explicitly; the alternative convention \([[f,g],h]+\text{cyclic}\) changes the sign. A separate reviewer re-derived the coordinate and polynomial checks and obtained the same obstruction. This is a faithful mathematical error in P000835, where both plus signs are visible, rather than a transcription error. The contact theory itself is classical \citep[Sec.~4]{kirillov1976local}.
+
+\begin{example}[Why the free-energy assertion needs hypotheses]\ours{}
+Let \(V\) have dimension \(N\ge2\), let \(L\) generic oriented lines each cross every other line once, and take \(R(u)=I_{V\otimes V}\). Order both sets of endpoints by their lines. Every local crossing preserves both colors, so the boundary operator is \(I_{V^{\otimes L}}\). Compatible matrix entries are \(1\), incompatible ones are \(0\), and the trace is \(N^L\). Therefore \(\log\operatorname{tr}Z=L\log N\), even though there are \(\binom L2\) vertices and the three-line identity holds. This proves that a universal nonzero \(L^2\) law and unrestricted index independence do not follow from the notebook's stated assumptions. More generally, replacing \(R(u)\) by \(c(u)R(u)\) preserves the Yang--Baxter relation but multiplies the tensor by \(\prod_{a>b}c(\lambda_a-\lambda_b)\). Thus even a pairwise leading term requires a specified normalization. These observations do not refute the thermodynamic formulas for particular models in \citet[Secs.~10.17 and 11.4]{baxter1982exactly}.
+\end{example}
+
+\begin{proposition}[An explicit witness for the three-line identity]\ours{}
+For any vector space \(V\), the family \(R(u)=uI+cP\), where \(P(v\otimes w)=w\otimes v\), satisfies the additive-parameter Yang--Baxter identity used in item 1978-460.14.
+\end{proposition}
+\begin{proof}
+Set \(A=P_{12}\), \(B=P_{13}\), \(C=P_{23}\). In the permutation action on \(V^{\otimes3}\),
+\(AB=BC=CA\), \(AC=BA=CB\), and \(ABC=CBA\).
+Expand \((uI+cA)((u+v)I+cB)(vI+cC)\) and the product in the reverse order. The coefficients of \(c^0,c^1,c^3\) agree directly. At order \(c^2\), the left side is
+\(vAB+(u+v)AC+uBC=(u+v)(AB+AC)\), and the right side is
+\(uCB+(u+v)CA+vBA=(u+v)(AC+AB)\). This proves the identity without restriction on the dimension. For \(\dim V\ge2\) and \(c\ne0\) the family is non-scalar and is invertible for generic \(u\).
+\end{proof}
+The example is a supplied verification, not a claim that this formula appears in the notebook. The speaker's already published nontrivial relativistic solutions are in \citet[Sec.~3]{zamolodchikovzamolodchikov1978on}. The independent check \texttt{check\_vertex.py} verifies the symbolic \(8\times8\) identity for \(V=\mathbb C^2\) and the permutation relations separately.
+
+\begin{proposition}[What the displayed Ising factor encodes]\ours{}
+For four successive face spins \(a,b,c,d\in\{\pm1\}\), set
+\((i,j,k,\ell)=(ab,bc,cd,da)\). Then \(ijk\ell=1\), and every parity-even quadruple has exactly two such face-spin lifts, related by simultaneous reversal. The notebook's factor
+\[
+ \frac{1+ijk\ell}{2}\exp\!\left[-\frac\beta2(i+j+k+\ell)\right]
+\]
+therefore enforces the face-spin compatibility at a vertex and assigns half the energy of each incident bond there.
+\end{proposition}
+\begin{proof}
+Multiplying the four bond products gives \(a^2b^2c^2d^2=1\). Conversely choose \(a\) arbitrarily, put \(b=ai\), \(c=aij\), and \(d=aijk\). The last equation \(da=\ell\) is equivalent to the parity condition, so exactly the two choices of \(a\) give the two lifts. On a connected simply connected face complex, the analogous reconstruction along paths is independent of the path because elementary cycle products are one. Every internal bond meets two vertices, so its two half-exponents add to \(-\beta s_e\). Boundary bonds require the missing half-factor, and a torus requires additional trivial products on noncontractible cycles. Thus no unqualified finite-volume equality with every periodic vertex sector has been assumed.
+\end{proof}
+The supplied code independently enumerates all sixteen local face-spin assignments and verifies eight admissible bond tuples, each with multiplicity two. The same correspondence is classical \citep[Secs.~10.3 and 11.5]{baxter1982exactly}. This local encoding does not supply an angle-dependent integrable family or prove the notebook's sweeping asymptotic claims.

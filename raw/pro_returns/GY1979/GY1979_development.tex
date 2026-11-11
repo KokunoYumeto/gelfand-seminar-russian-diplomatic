@@ -1,0 +1,231 @@
+\subsection{Berezin's normal-form question: an algorithmic answer and the limit of the Jordan analogy}
+\label{dev:berezin-normal}
+
+\paragraph{What is being asked.}
+On P000861--P000862 Berezin passes from diagonalization of an even supermatrix with distinct body eigenvalues to \ru{Аналоги жорд. клеток здесь неизвестны} and asks for an analogue of normal forms. The strongest precise reading is conjugacy of the even algebra
+\[
+ \mathcal A=M_{p|q}(\Lambda_N)_{\bar0},\qquad
+ \Lambda_N=\bigwedge_{\mathbb C}(\xi_1,\ldots,\xi_N),
+\]
+under its invertible even elements, for fixed finite \(p,q,N\). The diagonal blocks have even coefficients and the off-diagonal blocks odd coefficients. We do not extend the notebook to an infinite Grassmann algebra, nor require eigenvalue and block-size data alone to classify every matrix. This subsection gives a retrospective resolution and explanatory examples for GP-1979-01, not a newly announced open problem.
+
+\paragraph{Verified literature and chronology.}
+\citet[Theorems~1.1 and~1.3; \S1.4]{sergeichuk2000canonical} supplies canonical representatives under the units of a finite-dimensional complex matrix algebra. Its bibliography identifies the 1999 Bielefeld preprint 99-070; the journal publication is 2000 and the arXiv deposit 2007. The reduction below makes its application here explicit. The meaning of ``wild'' used below is containment of simultaneous similarity of arbitrary matrix pairs; see \citet[\S1 and Theorem~1.1]{belitskiisergeichuk2003complexity}, published in 2003, with an author copy deposited in 2007. Neither term implies the nonexistence of canonical-form algorithms. No claim is made that these publications identify a direct historical response to Berezin's seminar question.
+
+\begin{proposition}[Reduction to an ordinary matrix-algebra action \ours]
+Let \(\mathcal A\) be a finite-dimensional unital complex algebra. Internal conjugacy in \(\mathcal A\) is exactly similarity of its left regular matrices under the units of the matrix algebra \(\Gamma=L(\mathcal A)\). Thus the cited canonical-form theorem applies to the notebook's finite supermatrix problem.
+\end{proposition}
+\begin{proof}
+Choose a complex basis of \(\mathcal A\) and let \(L_a(x)=ax\). The map \(a\mapsto L_a\) is an injective unital algebra homomorphism, since \(L_a(1)=a\). If \(a\) is a unit then \(L_a\) is invertible. Conversely, if \(L_a\) is invertible, there is \(b\) with \(ab=1\); injectivity of \(L_a\) and \(a(ba-1)=0\) give \(ba=1\). Consequently \(\Gamma^\times=L(\mathcal A^\times)\), and
+\[
+ L_bL_aL_b^{-1}=L_{bab^{-1}}.
+\]
+Both implications of the conjugacy equivalence follow by injectivity. The algebra of even supermatrices is finite dimensional and closed under its ordinary matrix multiplication with Grassmann coefficients, so it satisfies the hypothesis. Fixing a basis and applying the cited matrix-algebra reduction and canonical algorithm gives representatives; this is an existence and reduction argument, not an implementation of that algorithm in the accompanying code.
+\end{proof}
+
+\paragraph{A tractable repeated-eigenvalue case.}
+For the pure even subcase \(q=0\), \((\Lambda_2)_{\bar0}=\mathbb C[\varepsilon]/(\varepsilon^2)\), with \(\varepsilon=\xi_1\xi_2\). This already contains nontrivial repeated-body phenomena.
+
+\begin{proposition}[Semisimple body over the dual numbers \ours]
+Let \(A=A_0+\varepsilon A_1\in M_n(\mathbb C[\varepsilon]/(\varepsilon^2))\), and suppose \(A_0\) is diagonalizable. Write its distinct eigenvalues as \(\lambda_1,\ldots,\lambda_s\), with multiplicities \(m_i\). Up to ordering the eigenvalue groups and Jordan blocks, a complete normal form is
+\[
+ \bigoplus_{i=1}^s\bigl(\lambda_i I_{m_i}+\varepsilon J_i\bigr),
+\]
+where \(J_i\) is the ordinary Jordan form of the restriction of \(A_1\) to the \(\lambda_i\)-eigenspace, after projection along the other eigenspaces. These Jordan forms, together with the eigenvalues, are complete invariants in this subcase.
+\end{proposition}
+\begin{proof}
+A constant change of basis puts \(A_0=D=\bigoplus\lambda_iI_{m_i}\). For any matrix \(S\), exact multiplication in the dual numbers gives
+\[
+ (I+\varepsilon S)(D+\varepsilon A_1)(I-\varepsilon S)
+ =D+\varepsilon(A_1+[S,D]).
+\]
+In the \((i,j)\)-block, \([S,D]_{ij}=(\lambda_j-\lambda_i)S_{ij}\). Choose \(S_{ij}=-(A_1)_{ij}/(\lambda_j-\lambda_i)\) when \(i\ne j\), and \(S_{ii}=0\). The off-diagonal blocks disappear. Constant block-diagonal changes then put the surviving blocks into ordinary Jordan form. For completeness, any similarity between two such matrices has body commuting with \(D\), after the same ordering of distinct eigenvalues. Its body is therefore block diagonal. Its nilpotent part changes the first-order coefficient only by a commutator with \(D\), whose diagonal blocks are zero. Hence each surviving block changes only by the corresponding constant similarity. Conversely those block similarities provide an equivalence.
+\end{proof}
+
+\begin{example}[A diagonal body need not suffice for diagonalization \ours]
+The matrix \(\varepsilon J_2(0)\) has zero, hence diagonalizable, body but is not diagonalizable over the dual numbers. If an invertible \(P=P_0+\varepsilon P_1\) diagonalized it, comparison of the \(\varepsilon\)-coefficient would diagonalize the nonzero nilpotent matrix \(J_2(0)\) over \(\mathbb C\). A diagonal nilpotent matrix is zero, a contradiction. This does not contradict the notebook's theorem, which requires \emph{distinct} body eigenvalues.
+\end{example}
+
+\begin{proposition}[Arbitrary matrix pairs occur already with three generators \ours]
+For every \(n\), define
+\[
+ A(X,Y)=\lambda I_n+\xi_1\xi_2X+\xi_1\xi_3Y
+ \quad\hbox{in }M_n((\Lambda_3)_{\bar0}).
+\]
+Then \(A(X,Y)\) and \(A(X',Y')\) are similar by an invertible matrix over \((\Lambda_3)_{\bar0}\) if and only if the ordinary pairs \((X,Y)\) and \((X',Y')\) are simultaneously similar.
+\end{proposition}
+\begin{proof}
+The positive-degree ideal \(J\) of \((\Lambda_3)_{\bar0}\) is spanned by the three degree-two monomials and has \(J^2=0\). Any invertible matrix is \(P=P_0+R\), with \(P_0\in GL_n(\mathbb C)\) and \(R\in M_n(J)\). In \(PAP^{-1}\), the terms involving both \(R\) and \(A-\lambda I\) vanish, and conjugation of \(\lambda I\) changes nothing. Comparison of the independent coefficients \(\xi_1\xi_2\) and \(\xi_1\xi_3\) gives \(X'=P_0XP_0^{-1}\) and \(Y'=P_0YP_0^{-1}\). Conversely that constant matrix conjugates the two Grassmann matrices.
+\end{proof}
+
+\paragraph{What is settled and what remains.}
+As of 10 November 2026, the finite algorithmic interpretation has the preceding answer; it should not be advertised as open. A short uniform Jordan-block list is a different demand and faces the explicit matrix-pair reduction. No impossibility of every conceivable canonical parametrization is claimed. One further bounded run could implement the reduced-algebra algorithm for a chosen \((p,q,N)\), or classify a specified small rank and body type. It could not justify a general ``no normal forms'' statement from wildness. The dual-number proof was checked a second way by expanding the three factors coefficient by coefficient, and the exact rational off-block computation in \texttt{code/verify\_berezin.py} agrees. The pair reduction was independently checked through the equivalent intertwining equation \(PA(X,Y)=A(X',Y')P\): its two degree-two equations are exactly \(P_0X=X'P_0\) and \(P_0Y=Y'P_0\).
+
+\subsection{Berezin's even commutant problem: all coefficients and a complete four-generator case}
+\label{dev:berezin-commutant}
+
+\paragraph{Notebook formulation, scope, and literature limit.}
+P000862 asks to describe every \(B=(b_{ik})\), \(b_{ik}\in\Lambda_{\bar0}\), satisfying \(AB=BA\) for a given \(n\times n\) matrix with \(a_{ik}\in\Lambda_{\bar1}\). It explicitly mentions four generators and says that independent entries can be handled. No additional differential equation, instanton constraint, gauge quotient, or prescribed format of the answer is given. We therefore fix \(\mathbb K=\mathbb R\) or \(\mathbb C\), finite \(N\), and arbitrary odd coefficients; the object is the actual even centralizer, with ordinary matrix multiplication. An all-odd \(n\times n\) coefficient matrix here must not be confused with an even \((p|q)\) supermatrix from the preceding problem.
+
+The search record distinguishes this exact question from general polynomial-identity results and from centralizers of ordinary matrices. No primary source giving the following complete \(n=2,N=4\) stratification was located. That negative retrieval result is \emph{not} a priority claim or evidence that the finite equation was globally unsolved. Coefficient expansion already solves its effective finite-dimensional content by elementary linear algebra; the occurrence is therefore classified E. The bounded explanatory contribution is to give that expansion, prove a uniform description in the stated small case, and supply independently checked code. This is the precise scope of development for GP-1979-02. A stronger compact structural account for arbitrary \(n,N\) is not specified by the notebook, and we do not invent its requirements or declare it open. The historical attribution of Berezin's intended form of an answer was not recovered.
+
+\begin{proposition}[Exact finite coefficient description \ours]
+For increasing subsets \(I\subseteq\{1,\ldots,N\}\), put \(\xi_I=\prod_{i\in I}\xi_i\), and write
+\[
+ A=\sum_{|I|\ {\rm odd}}\xi_I A_I,\qquad
+ B=\sum_{|J|\ {\rm even}}\xi_J B_J,
+ \qquad A_I,B_J\in M_n(\mathbb K).
+\]
+For disjoint \(I,J\), let \(\epsilon(I,J)=(-1)^{\#\{(i,j)\in I\times J:i>j\}}\). Then the entire even commutant is the kernel of the linear map with equations
+\begin{equation}
+ \sum_{\substack{I\sqcup J=K\\|I|\ {\rm odd},\ |J|\ {\rm even}}}
+ \epsilon(I,J)[A_I,B_J]=0
+ \quad\text{for each odd subset }K.
+ \label{eq:commutant-coefficients}
+\end{equation}
+For \(N\geq1\), there are \(2^{N-1}n^2\) scalar unknowns and the same number of scalar equations before redundancies. Solving this system gives a basis, and multiplication of basis elements gives the full algebra multiplication table.
+\end{proposition}
+\begin{proof}
+Repeated generators give zero. For disjoint sets, sorting the product gives the displayed sign. Since \(|J|\) is even, \(\xi_J\xi_I=\xi_I\xi_J\). The coefficient of \(\xi_K\) in \(AB-BA\) is therefore exactly the left side of \eqref{eq:commutant-coefficients}. Linear independence of the exterior monomials proves necessity and sufficiency, with no genericity assumption. The kernel is closed under multiplication because \([A,BC]=[A,B]C+B[A,C]\), and contains the identity. Coordinates of the products in a kernel basis determine its algebra structure.
+\end{proof}
+
+\begin{remark}[Two useful boundary cases \ours]
+For \(N=1\), \(A=\xi_1X\), and the commutant is the ordinary centralizer of \(X\). For \(N=2\), write \(A=\xi_1X+\xi_2Y\). Then
+\[
+ C_{\bar0}(A)=\{B_0+\xi_1\xi_2D:[X,B_0]=[Y,B_0]=0,
+ \ D\in M_n(\mathbb K)\}.
+\]
+Its dimension is \(\dim Z(X,Y)+n^2\), and its positive-degree ideal is square zero. These are direct specializations, not asymptotic estimates.
+\end{remark}
+
+\paragraph{Four generators and matrix size two.}
+Here \(M_2((\Lambda_4)_{\bar0})\) has dimension 32. Subtracting any odd scalar matrix \(sI_2\) from \(A\) does not change its even commutant. Thus replace every coefficient \(A_I\) by its traceless part. The division by two is legitimate over \(\mathbb R\) and \(\mathbb C\). Write
+\[
+ A=\sum_{i=1}^4\xi_i X_i+\sum_{i<j<k}\xi_i\xi_j\xi_k Z_{ijk},
+ \qquad X_i,Z_{ijk}\in\mathfrak{sl}_2(\mathbb K),
+\]
+and let \(r=\dim_{\mathbb K}\operatorname{span}(X_1,X_2,X_3,X_4)\). An invertible linear change of the four Grassmann generators preserves the problem. In the descriptions below the generators have been changed to an adapted basis, and the cubic coefficients have been transformed by the same exterior-algebra automorphism. Put
+\[
+ H=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad
+ E=\begin{pmatrix}0&1\\0&0\end{pmatrix},\quad
+ F=\begin{pmatrix}0&0\\1&0\end{pmatrix},\qquad
+ B=B_0+\sum_{i<j}\xi_i\xi_jB_{ij}+\xi_1\xi_2\xi_3\xi_4D.
+\]
+
+\begin{theorem}[All even commutants for \(n=2,N=4\) \ours]
+For every odd \(A\) as above, \(D\) is arbitrary and the remaining coefficients are exactly as follows.
+\begin{enumerate}[label=(\roman*)]
+\item If \(r=3\), choose the linear part \(\xi_1H+\xi_2E+\xi_3F\). Then \(B_0=cI_2\), the three coefficients \(B_{14},B_{24},B_{34}\) are arbitrary scalar matrices, and \(B_{12},B_{13},B_{23}\) are arbitrary subject only to
+\[
+ [H,B_{23}]-[E,B_{13}]+[F,B_{12}]=0.
+\]
+The dimension is 17, independently of the cubic part.
+\item If \(r=2\), choose the linear part \(\xi_1X+\xi_2Y\), with \(X,Y\) independent in \(\mathfrak{sl}_2\). Then \(B_0\) and \(B_{34}\) are scalar, \(B_{12}\) is arbitrary, and the only other conditions are
+\[
+ [X,B_{23}]=[Y,B_{13}],\qquad [X,B_{24}]=[Y,B_{14}].
+\]
+The dimension is 20, independently of the cubic part.
+\item If \(r=1\), choose the linear part \(\xi_1X\), \(X\ne0\). Then \(B_0=cI_2+dX\), the coefficients \(B_{12},B_{13},B_{14}\) are arbitrary, and
+\[
+ B_{jk}=dZ_{1jk}+u_{jk}I_2+v_{jk}X\quad(2\leq j<k\leq4),
+ \qquad d[Z_{234},X]=0.
+\]
+The dimension is 24 if \([Z_{234},X]=0\), and 23 otherwise. This includes nilpotent \(X\).
+\item If \(r=0\), every \(B_{ij}\) is arbitrary and \(B_0\) is in the joint ordinary centralizer of the cubic coefficients. The dimension is
+\[
+ 28+\dim Z(Z_{123},Z_{124},Z_{134},Z_{234}),
+\]
+namely 32, 30, or 29 according as the span of the traceless cubic coefficients has dimension zero, one, or at least two.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The degree-one equations are \([X_i,B_0]=0\). The degree-three equations are
+\begin{equation}
+ [X_i,B_{jk}]-[X_j,B_{ik}]+[X_k,B_{ij}]+[Z_{ijk},B_0]=0
+ \quad(i<j<k).
+ \label{eq:four-generator-equations}
+\end{equation}
+No term can involve \(D\), since its product with an odd positive-degree monomial has degree greater than four. These are all the equations.
+
+We first record elementary matrix facts used in the case analysis. Every nonzero traceless two-by-two matrix \(X\) is nonscalar and cyclic; choose a vector \(v\) with \(v,Xv\) independent. A commuting matrix is determined by its value \(av+bXv\) at \(v\), and is \(aI_2+bX\). Thus the centralizer of \(X\) is \(\mathbb K I_2+\mathbb K X\), and two independent traceless matrices have joint centralizer \(\mathbb K I_2\). Moreover the trace pairing on \(M_2(\mathbb K)\) is nondegenerate and
+\[
+ \operatorname{tr}(T[X,U])=\operatorname{tr}([T,X]U).
+\]
+Consequently the orthogonal complement of \([X,M_2]+[Y,M_2]\) is the joint centralizer of \(X,Y\). For independent traceless \(X,Y\), the image is therefore the three-dimensional traceless space.
+
+When \(r\geq2\), the first equations force \(B_0=cI_2\), so the cubic term in \eqref{eq:four-generator-equations} vanishes. For \(r=3\), a change of generator basis puts the three independent coefficients into the prescribed \(H,E,F\) basis. The equations involving the fourth generator are
+\[
+ [H,B_{24}]=[E,B_{14}],\quad
+ [H,B_{34}]=[F,B_{14}],\quad
+ [E,B_{34}]=[F,B_{24}].
+\]
+Subtract scalar parts and write
+\[
+ B_{14}=aH+bE+cF,\quad B_{24}=dH+eE+fF,
+ \quad B_{34}=gH+hE+iF.
+\]
+Using \([H,E]=2E\), \([H,F]=-2F\), \([E,F]=H\), the first two equations give \(c=f=b=h=0\) and \(e=i=-a\); the third gives \(d=g=a=0\). Hence all three traceless parts vanish. The remaining equation on \(B_{12},B_{13},B_{23}\) maps a 12-dimensional space onto \(\mathfrak{sl}_2\): commutators with \(H\) give \(E,F\), and with \(E\) give \(H\). Its kernel has dimension nine. The total is \(1+3+9+4=17\).
+
+For \(r=2\), the equations involving \(B_{34}\) say that it commutes with \(X\) and \(Y\), hence is scalar. Each displayed equation for a pair of other coefficients is a surjective map \(M_2\oplus M_2\to\mathfrak{sl}_2\), by the trace-pairing argument. Each solution space has dimension \(8-3=5\). Together with arbitrary \(B_{12}\) and \(D\), this gives \(1+1+4+5+5+4=20\).
+
+For \(r=1\), the degree-one equation says \(B_0=cI_2+dX\). If \(1<j<k\), equation \eqref{eq:four-generator-equations} becomes \([X,B_{jk}-dZ_{1jk}]=0\), giving the asserted expression. The triple \(234\) gives \(d[Z_{234},X]=0\). The three \(B_{1j}\) contribute 12 parameters, the other pairs contribute six, and \(D\) contributes four. The constant term contributes two parameters when the last commutator vanishes and one otherwise. This proves the two dimensions and necessity and sufficiency of the parametrization.
+
+For \(r=0\), equations \eqref{eq:four-generator-equations} reduce to commutation of \(B_0\) with every cubic coefficient. The other seven even coefficients are free, contributing 28 parameters. The elementary centralizer facts give dimensions four, two, and one for the possible joint centralizers. In every case we have used all and only the coefficient equations, so the list is exhaustive.
+\end{proof}
+
+\paragraph{Independent verification and exact output.}
+\oursComputed\ The accompanying program uses two separately implemented constructions: exterior products by adjacent swaps of ordered tuples, followed by exact SymPy nullspaces; and bitmask coefficient signs, followed by independent Gaussian elimination with rational \texttt{Fraction} arithmetic. It checks 36 cases, including both semisimple and nilpotent rank-one coefficients, every dimension stratum, nonzero cubic terms, and invertible changes of the four generators. Every nullspace basis vector is substituted into the original product \(AB-BA\). All 1,706 ordered basis products in three representative commutants are checked for closure. The dimensions from both constructions agree in every case. The tests for \(N=1,2,3\) and the scalar \(n=1,N=4\) case also agree with direct formulas. The complete inputs and results, with fixed seed 19791015, are in \texttt{code/verify\_berezin\_output.json}. These finite computations check signs and degeneracies; the theorem's universal validity comes from its proof.
+
+The proof was re-derived from \eqref{eq:four-generator-equations}, independently of the rank computations: in particular the rank-one transverse cubic term removes exactly one constant parameter, whereas cubic terms cannot affect either \(r\geq2\) stratum. This check rules out extending the generic dimension 17 to all four-generator matrices. No conjecture is used in the theorem.
+
+\paragraph{Exact obstruction and a next bounded question.}
+There is no obstruction to computing a specified finite commutant by \eqref{eq:commutant-coefficients}. The remaining structural task is to describe its parameter strata and multiplication uniformly as matrix size grows; the simplification \(Z(X,Y)=\mathbb K I_2\) for every independent traceless pair is special to size two and fails in higher rank. A realistic next run would fix \(n=3,N=4\), first assume the degree-one coefficients have scalar joint centralizer, and study the ranks of the explicit map
+\[
+ (B_{ij})_{i<j}\longmapsto
+ \bigl([X_i,B_{jk}]-[X_j,B_{ik}]+[X_k,B_{ij}]\bigr)_{i<j<k}.
+\]
+Its domain and codomain have dimensions 54 and 36. Rank loci are determinantal algebraic sets, but a finite sample of ranks would not classify them. The same run could check Berezin's posthumous writings and specialist bibliographies for an exact historical attribution. The present result establishes neither new instanton data nor a general Yang--Mills statement; the notebook does not provide hypotheses permitting that inference.
+
+\subsection{The surface energy representation: checking a documented proof failure}
+\label{dev:energy-diagnostic}
+
+\paragraph{Question and the bounded diagnostic.}
+Item 1979-470.7 and GP-1979-06 concern irreducibility of the ordinary energy representation of a current group on a two-dimensional base. The precise all-parameter question is the one in the item: a connected smooth Riemannian surface, a compact semisimple group, a positive density and an invariant positive inner product. \citet[Theorem~6.2]{wallach1987gauge} gives a parameter-restricted theorem, not that unrestricted assertion. The later all-dimensional claim in \citet{shimada2005irreducibility} has a documented flaw: \citet[p.~1, revised version of 15 January 2011]{hasebe2010white} identifies the false nonabelian differential identity used in Lemma~4.6. The following explicit diagnostic confirms that flaw. It does not prove reducibility, repair the argument, or claim a new discovery.
+
+\begin{example}[The logarithmic derivative of an exponential \ours]
+There is a smooth compactly supported map \(\Phi:\mathbb R^2\to\mathfrak{su}(2)\) for which
+\[
+ d\Phi\ne\beta(\exp\Phi),\qquad
+ \beta(\psi)=d\psi\,\psi^{-1}.
+\]
+The failure persists locally on any smooth surface containing a coordinate disk.
+\end{example}
+\begin{proof}
+Put
+\[
+ X=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+ Y=\begin{pmatrix}i&0\\0&-i\end{pmatrix}.
+\]
+Both matrices are traceless and anti-Hermitian, \(X^2=Y^2=-I\), and \(XY=-YX\). First take \(\Phi(x,y)=xX+yY\) near \(p=(\pi/2,0)\). With \(r=(x^2+y^2)^{1/2}\), the exponential is
+\[
+ e^{\Phi}=\cos r\,I+\frac{\sin r}{r}(xX+yY),
+\]
+where the apparent singularity at zero is removable. Along \(y=0\), for positive \(x\), direct differentiation and multiplication give
+\begin{align*}
+ \bigl(\partial_y e^{\Phi}\bigr)e^{-\Phi}
+ &=\frac{\sin x}{x}Y(\cos x\,I-\sin x\,X)\\
+ &=\frac{\sin(2x)}{2x}Y+\frac{\sin^2x}{x}XY.
+\end{align*}
+At \(p\), this is \((2/\pi)XY\), whereas \(\partial_y\Phi=Y\). The two matrices are different: \(Y\) is nonzero diagonal and \(XY\) is off diagonal. Now multiply \(xX+yY\) by a smooth compactly supported bump function that is identically one near \(p\). This leaves the value and all derivatives used above unchanged and makes \(\Phi\) compactly supported. Its exponential lies in \(SU(2)\) everywhere and is the identity off that compact support. The same local construction in a surface coordinate disk, extended by zero, proves the last assertion.
+\end{proof}
+
+\paragraph{Independent check and the remaining obstruction.}
+\oursComputed\ A second derivation uses
+\[
+ (d e^{\Phi})e^{-\Phi}
+ =\int_0^1 e^{t\Phi}(d\Phi)e^{-t\Phi}\,dt,
+\]
+obtained by differentiating the exponential power series and integrating the resulting ordered products. For \(\Phi=xX\) and the tangent \(Y\), conjugation gives \(\cos(2tx)Y+\sin(2tx)XY\); integration reproduces both coefficients above. The symbolic program \texttt{code/verify\_energy\_identity.py} differentiates the two-by-two exponential directly and, independently, integrates the conjugated tangent matrix. It checks the points \(x=\pi/2\) and \(x=\pi/4\), the Lie-algebra hypotheses, and the expansion \(Y+xXY+O(x^2)\) at zero. All checks agree; the exact output is included.
+
+The valid derivative has commutator corrections. Any attempted repair of the cited proof must control those terms in its actual limiting argument; replacing them by zero is invalid even for the compact semisimple group \(SU(2)\). A further bounded run could re-examine that specific estimate with the integral derivative, or seek an explicit intertwiner in a specified surface/coupling case. Neither task is completed here, and the checked literature does not justify an all-parameter resolution as of November 2026. This subsection is an annotation supporting the unresolved-status assessment, not a theorem about the representation's commutant.

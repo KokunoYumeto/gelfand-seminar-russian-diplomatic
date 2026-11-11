@@ -1,0 +1,113 @@
+% Critical checks of source formulas, not Stage 2 research developments.
+\subsection{The sign distribution and its moments}
+The conventions change between P000503 and P000505. We use the latter: for an odd
+prime \(p\), put \(N=p^m\) and, for \(0\le a<N\), set
+\[
+ \mu(a+N\mathbb Z_p)=\begin{cases}-1,&2a<N,\\+1,&2a>N.\end{cases}
+\]
+The following verifies the notebook formula and its normalization; it is not a
+claim to a new theorem on \(p\)-adic integration. The underlying regularization is
+part of \citet[\S8.4]{manin1973periods}.
+
+\begin{proposition}[Moment correction for items 1973-303.14 and 1973-304.2--3]\ours\quad
+These values define a bounded clopen distribution. With Bernoulli numbers
+\(B_j\) defined by \(t/(e^t-1)=\sum_{j\ge0}B_jt^j/j!\), its polynomial moments are
+\[
+ I_k:=\int_{\mathbb Z_p}x^k\,d\mu
+   =\frac{(4-2^{1-k})B_{k+1}}{k+1},\qquad k\ge0.
+\]
+Moreover \(\int_{\mathbb Z_p^\times}x^k\,d\mu=(1-p^k)I_k\).
+\end{proposition}
+\begin{proof}
+Write \(p=2r+1\). Among the children \(a+jN\), \(0\le j<p\), the first \(r\)
+lie below \(pN/2\), the last \(r\) lie above it, and the middle child lies below
+exactly when \(a<N/2\). The first and last children cancel in the sum; the middle
+child has the parent's sign. Thus the distribution compatibility equation holds
+at every level, including level zero. Every residue-ball value has absolute value one, so every clopen value has absolute value at most one by the non-Archimedean triangle inequality.
+Uniform approximation by locally constant functions therefore defines its
+integral on continuous \(\mathbb Q_p\)-valued functions.
+
+For the polynomial \(x^k\), the canonical residue-tag sum is
+\[
+ S_k(N)=\sum_{a=0}^{N-1}a^k-2\sum_{a=0}^{(N-1)/2}a^k,
+\]
+with the convention \(a^0=1\), also at \(a=0\). Let
+\(B_j(X)\) be the Bernoulli polynomial. Its elementary difference identity
+\(B_{k+1}(X+1)-B_{k+1}(X)=(k+1)X^k\) gives the exact rational identity
+\[
+ S_k(N)=\frac{B_{k+1}(N)-2B_{k+1}((N+1)/2)+B_{k+1}(0)}{k+1}.
+\]
+As \(m\to\infty\), \(N=p^m\to0\) in \(\mathbb Q_p\). Polynomial continuity yields
+\[
+ I_k=\frac{2(B_{k+1}-B_{k+1}(1/2))}{k+1}.
+\]
+The Bernoulli duplication identity gives
+\(B_{k+1}(1/2)=(2^{-k}-1)B_{k+1}\), which proves the displayed result.
+In particular \(I_0=-1\), \(I_1=1/4\), \(I_3=-1/32\), and \(I_{2r}=0\) for
+\(r\ge1\). These values alone already distinguish the source's convention from
+several possible Bernoulli-index corrections.
+
+Finally \(\mu(pU)=\mu(U)\) for each residue ball \(U\): the defining inequality
+is unchanged when both its numerator and modulus are multiplied by \(p\).
+Taking finite sums and then limits gives
+\(\int_{p\mathbb Z_p}x^k\,d\mu=p^kI_k\); subtracting from the total proves the
+unit formula. The opposite convention on P000503 negates every moment.
+\end{proof}
+
+\subsection{Dependence on tags for the invariant distribution}
+\begin{proposition}[Item 1973-303.16]\ours\quad
+The translation-invariant distribution of total mass one on \(\mathbb Z_p\)
+does not have a tag-independent Riemann integral of \(x\).
+\end{proposition}
+\begin{proof}
+On level \(m\) it gives each residue ball mass \(p^{-m}\). With canonical tags,
+\[
+ p^{-m}\sum_{a=0}^{p^m-1}a=(p^m-1)/2\longrightarrow-1/2.
+\]
+Change the tag in just the ball \(p^m\mathbb Z_p\) from \(0\) to \(p^m\). This
+adds \(p^mp^{-m}=1\) at every level and changes the limit to \(1/2\). Both
+partitions have mesh tending to zero; only their tags differ. This does not
+contradict integration with a separately fixed representative convention.
+\end{proof}
+
+\subsection{Two checks on categorical realization}
+\begin{example}[A nondegenerate simplex with a degenerate face, item 1973-308.5]\ours\quad
+In the nerve of the group \(C_2=\{1,g\}\), the two-simplex \((g,g)\) is
+nondegenerate, since degeneracies insert an identity arrow. Its middle face is
+\(g^2=1\), the degenerate one-simplex at the unique vertex. Thus the disputed
+sentence on P000515 is false even for the elementary group example on P000516.
+The usual realization quotient still attaches a cell for every nondegenerate
+simplex; its attaching map may identify part of its boundary with lower cells.
+\end{example}
+
+\begin{proposition}[Two Q-construction checks, items 1973-311.11--12]\ours\quad
+Let \(A\) be a unital ring and \(P(A)\) its exact category of finitely generated
+projective modules. The map \(BGL_n(A)\to BQP(A)\) obtained by viewing
+\(A^n\) and its automorphisms in \(QP(A)\) is nullhomotopic. Direct sum with
+\(A\) induces a map \(BQP(A)\to BQP(A)\) homotopic to the identity.
+\end{proposition}
+\begin{proof}
+For the first assertion, a Q-morphism \(0\to A^n\) is represented by
+\(0\xleftarrow{\mathrm{id}}0\rightarrowtail A^n\). Postcomposing it with any
+automorphism of \(A^n\) gives the same Q-morphism. Hence these arrows form a
+natural transformation from the constant zero functor on the one-object
+category \(GL_n(A)\) to the automorphism functor. Natural transformations realize
+to homotopies, by \citet[\S1, Proposition~2]{quillen1973higher}.
+
+For the second assertion, let \(S(X)=X\oplus A\), and define S on a span by
+summing the identity of A on both arrows. The admissible inclusion
+\(X\hookrightarrow X\oplus A\) gives a Q-morphism represented by
+\(X\xleftarrow{\mathrm{id}}X\rightarrowtail X\oplus A\). To verify naturality
+for \(X\xleftarrow{p}E\xrightarrow{i}Y\), pull back
+\(p\oplus1:E\oplus A\to X\oplus A\) along the inclusion of X. This pullback
+is E, so either composite is represented by
+\(X\xleftarrow{p}E\xrightarrow{(i,0)}Y\oplus A\). Thus these components give
+\(\mathrm{id}\Rightarrow S\), proving the required homotopy.
+
+The first natural transformation only concerns the automorphism subcategory.
+It does not extend to a contraction of Q: pulling a general admissible
+epimorphism back along zero can have a nonzero kernel. Neither assertion replaces
+the substantive comparison theorem
+\(\Omega BQP(A)\simeq K_0(A)\times BGL(A)^+\), checked in
+\citet[Corollary~IV.7.2]{weibel2013kbook}.
+\end{proof}

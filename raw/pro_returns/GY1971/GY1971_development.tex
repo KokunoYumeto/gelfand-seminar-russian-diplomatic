@@ -1,0 +1,194 @@
+The work below is an editorial verification of three precise statements in the
+notebook.  It makes no claim of a new general theorem or of a solution to an
+unresolved problem in the problem index.  Results proved here are explicitly
+marked; historical identities retain their attribution.  The decision about
+research development of the class C and D items is recorded in the overview
+and report.
+
+\subsection{The grading check for Atiyah's de Rham example}
+\label{verification:grading}
+
+On \GSpage{P000373}, the notes use \(d+\delta\) on differential forms as an
+example in the discussion of spectral flow and an obstruction to an invariant
+metric.  The full de Rham operator needs to be distinguished from the odd
+signature operator.  The following elementary check concerns the full operator
+and does not change the general spectral-flow/index theorem recorded in the
+preceding pages.
+The general index identification used below is
+\citet[\S7, Theorem 7.4 and pp.94--95]{atiyahpatodisinger1976spectral3}.
+
+\begin{proposition}[Vanishing for a graded loop]\ours{}
+Let \(D_t\), \(0\leq t\leq1\), be a smooth family of self-adjoint first-order
+elliptic operators on a fixed Hermitian vector bundle over a closed smooth
+manifold.  Regard them as operators on a fixed Hilbert space with the same
+Sobolev domain.  Suppose \(D_1=UD_0U^{-1}\), where \(U\) is the unitary gluing
+operator, and suppose a fixed unitary involution \(\Gamma\) preserves the
+domains, commutes with \(U\), and satisfies
+\[
+\Gamma D_t\Gamma=-D_t\qquad(0\leq t\leq1).
+\]
+Then the spectral flow of the resulting closed family is zero.  In particular,
+the full de Rham family \(d+\delta_{g_t}\), glued by the action of a
+diffeomorphism and identified with a fixed Hilbert space in a
+degree-preserving way, has zero spectral flow.
+\end{proposition}
+
+\begin{proof}
+Spectral flow is unchanged by a unitary conjugacy of the closed family, and
+replacing every operator by its negative reverses the oriented crossing
+count.  These properties follow first for a family with isolated regular
+crossings, and then for arbitrary families by perturbation and homotopy
+invariance.  For a closed family the dimensions of the endpoint kernels
+agree, so no endpoint correction survives.  Consequently,
+\[
+\operatorname{sf}(D_t)=\operatorname{sf}(\Gamma D_t\Gamma)
+=\operatorname{sf}(-D_t)=-\operatorname{sf}(D_t).
+\]
+The spectral flow is an integer, so it is zero.
+
+For the last assertion, let \(\Gamma\) act by \((-1)^k\) on forms of degree
+\(k\).  Both \(d\) and \(\delta_{g_t}\) reverse this parity, and a
+diffeomorphism preserves degree.  The positive changes of density and of the
+fibre metric used to identify the varying \(L^2\) spaces are block diagonal
+by degree and hence commute with \(\Gamma\).  All the required identities
+therefore hold after those identifications.
+\end{proof}
+
+\paragraph{Independent check and scope.}
+For geometric bundle gluing, the same conclusion can be checked by the
+suspended operator.  On the mapping torus use a unitary connection along the circle which preserves
+\(\Gamma\), and put \(P=\nabla_t+D_t\).  Integration by parts gives
+\(P^*=-\nabla_t+D_t\), while
+\(\Gamma P\Gamma=\nabla_t-D_t=-P^*\).  Unitary conjugation preserves index
+and the adjoint changes its sign, whence \(\operatorname{ind}P=0\).  This is
+an independent algebraic check of the vanishing once the historical
+spectral-flow/index identification is used.  It explains why an unspecified
+reference to \(d+\delta\) cannot, by itself, supply a nonzero obstruction.
+It does not assert that every natural self-adjoint elliptic family has zero
+spectral flow, nor does it identify a signature grading that the notes do not
+specify.
+
+\subsection{An exact finite audit of Dyson's coefficient formula}
+\label{verification:dyson}
+
+The product printed on \GSpage{P000445} needs the normalization
+\[
+\Delta(q)=q\prod_{m=1}^{\infty}(1-q^m)^{24}
+=\sum_{n=1}^{\infty}\tau(n)q^n.
+\]
+The leading \(q\) is already necessary on comparison of constant terms:
+the unshifted product has constant coefficient one and the displayed series
+has constant coefficient zero.  This is a mathematical emendation of the
+notebook formula, not an inference about an invisible pen stroke.
+The historical all-coefficient formula is
+\citet[pp.636--637, equations (1)--(3)]{dyson1972missed}.
+
+\begin{proposition}[Finite coefficient agreement]\oursComputed{}
+For every integer \(1\leq n\leq100\), the coefficient of \(q^n\) in the
+corrected product agrees exactly with
+\[
+\sum_{\substack{
+ (a,b,c,d,e)\equiv(1,2,3,4,0)\pmod5\\
+ a+b+c+d+e=0\\a^2+b^2+c^2+d^2+e^2=10n}}
+\frac{\displaystyle\prod_{1\leq i<j\leq5}(v_i-v_j)}{1!2!3!4!},
+\qquad v=(a,b,c,d,e).
+\]
+This assertion reports a finite exact computation and is not a proof of the
+all-\(n\) identity.
+\end{proposition}
+
+\paragraph{Algorithms and exhaustiveness.}
+The file \texttt{code/check\_dyson.py} first multiplies the finite binomial
+expansions of \((1-q^m)^{24}\), retaining terms only through the requested
+degree.  Factors with larger \(m\) cannot change those coefficients.  A second
+algorithm computes the coefficients \(a_n\) of the unshifted product from
+its formal logarithmic derivative:
+\[
+a_0=1,\qquad
+n a_n=-24\sum_{j=1}^{n}\sigma_1(j)a_{n-j},\qquad
+\tau(n)=a_{n-1}.
+\]
+The third algorithm enumerates the first four lattice coordinates with the
+specified residues and sets the fifth equal to the negative of their sum.
+For a run through \(N\), every coordinate is bounded in absolute value by
+\(\lfloor\sqrt{10N}\rfloor\); the squared-length condition then selects
+the coefficient.  Thus the enumeration omits no qualifying tuple.  All
+arithmetic is integral, including explicit divisibility checks for the
+denominator \(1!2!3!4!=288\).
+
+\begin{center}
+\begin{tabular}{r r r r}
+\toprule
+\(n\) & \(\tau(n)\) & \(n\) & \(\tau(n)\)\\
+\midrule
+1&1&7&-16744\\
+2&-24&8&84480\\
+3&252&9&-113643\\
+4&-1472&10&-115920\\
+5&4830&11&534612\\
+6&-6048&12&-370944\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Second check and limitation.}
+The complete comparison was run separately with \(N=32\) and \(N=100\);
+all three arrays agreed in both runs.  The two output files in
+\texttt{audit/} record every checked coefficient and the number of contributing
+lattice tuples.  Agreement also checks the residue ordering and the sign of
+the ten-factor Vandermonde as copied.  The verification supports the
+normalization correction; it does not convert finite evidence into an
+identity for every integer, and it has no bearing on the separate question
+about the exponent \(26\).
+An independent review also checked the labelled residue classes, the absence
+of a factorial permutation divisor, the enumeration bound, and the recurrence;
+it found no error.
+
+\subsection{Recovering the eighty-million lattice bound}
+\label{verification:mass}
+
+The numerical remark on \GSpage{P000398} becomes identifiable after restoring
+positive definiteness, integrality and evenness.  For positive-definite even
+unimodular lattices of rank \(n=8k>0\), the classical mass formula is
+\[
+m_n=\sum_{[L]}\frac{1}{|\operatorname{Aut}(L)|}
+=\frac{|B_{n/2}|}{n}\prod_{j=1}^{n/2-1}\frac{|B_{2j}|}{4j},
+\]
+where \(t/(e^t-1)=\sum_{j\geq0}B_jt^j/j!\).
+The formula and comparison bound are recorded by
+\citet[\S\S2, 6]{king2003mass}.
+
+\begin{proposition}[Exact mass evaluation]\oursComputed{}
+Evaluation in rational arithmetic gives
+\[
+m_{32}=40309232.93560208\ldots,\qquad
+\lceil 2m_{32}\rceil=80618466.
+\]
+Thus the mass formula alone proves that there are at least \(80618466\)
+isometry classes in this genus.  It does not give their exact number.
+\end{proposition}
+
+\begin{proof}
+The program \texttt{code/check\_mass.py} evaluates the displayed historical
+formula using exact fractions; its full numerator and denominator are retained
+in \texttt{audit/mass\_check.json}.  Every positive-rank lattice admits the two
+distinct isometries \(I\) and \(-I\), so each summand of the mass is at most
+\(1/2\).  The number of summands is therefore at least \(2m_{32}\), and
+integrality gives the ceiling.
+\end{proof}
+
+\paragraph{Independent arithmetic check.}
+The Bernoulli numbers were computed both from
+\(\sum_{j=0}^{r}\binom{r+1}{j}B_j=0\) for \(r\geq1\), with \(B_0=1\),
+and from
+\(B_r=\sum_{j=0}^{r}(-1)^j j!S(r,j)/(j+1)\), where \(S(r,j)\) are Stirling
+numbers of the second kind.  All values through \(B_{30}\) agreed.
+As normalization checks, the same computation gives
+\(m_8=1/696729600\) and
+\[
+m_{16}=\frac{1}{2(696729600)^2}+\frac{1}{2^{15}16!},
+\]
+the reciprocal-automorphism sum for \(E_8\oplus E_8\) and \(D_{16}^{+}\).
+All checks passed.  This recovers the notebook's rough magnitude; the later
+stronger lower bound belongs to the cited literature and is not recomputed
+here.

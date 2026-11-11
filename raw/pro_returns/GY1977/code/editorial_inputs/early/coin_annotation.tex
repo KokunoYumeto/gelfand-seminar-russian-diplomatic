@@ -1,0 +1,75 @@
+\subsection{An annotation on the thirteen-coin convention}
+
+This is a check of an expository puzzle (1977-424.2), not a proposed new
+solution to a class C or D research question.  The classical subject appears
+in \citet{dyson1946pennies}; the publisher record was checked, but the proof
+below is a self-contained reconstruction.  The difference between identifying
+a counterfeit and determining its sign is essential to the notebook's number.
+
+\begin{proposition}[Identity only, with equal pan counts]\ours
+Suppose exactly one of \(m\) coins has a different mass, either heavier or
+lighter, and all other coins have a common mass.  No genuine coin is supplied
+externally.  Every weighing compares equal numbers of coins on an ideal
+three-outcome balance.  For \(N\geq1\), the largest \(m\) whose counterfeit
+identity can always be determined in at most \(N\) weighings is
+\((3^N-1)/2\).  Its sign need not always be determined.
+\end{proposition}
+
+\begin{proof}
+For the upper bound let the first weighing compare \(a\) coins against
+\(a\), leaving \(b=m-2a\) aside.  Either unbalanced branch contains
+\(2a\) possible signed counterfeits.  They must be distinguished by
+\(N-1\) subsequent ternary observations, so
+\(2a\leq3^{N-1}\).  Since the left side is even,
+\(2a\leq3^{N-1}-1\).  On the balanced branch the \(b\) unweighed coins
+have unknown signs.  For any fixed coin, its two signs can follow the same
+history only if that coin is never weighed on that history; until its first
+weighing both signs produce balance, whereas its first appearance produces
+opposite imbalances.  Consequently only the all-balance history can fail to
+determine the sign, and it can represent at most one identity.  At least
+\(2b-1\) terminal histories are therefore necessary when \(b>0\).
+Hence \(b\leq(3^{N-1}+1)/2\); the same bound is trivial if \(b=0\).
+Adding gives \(m\leq(3^N-1)/2\).  The argument permits adaptive choices
+of the subsequent weighings.
+
+For attainment, use the alphabet \(\{-1,0,1\}\), in cyclic order
+\(-1\to0\to1\to-1\).  For every nonconstant word of length \(N\),
+find its first unequal adjacent pair.  Retain the word precisely when that
+pair follows the cyclic order.  Negation reverses the order, so exactly one
+of each opposite pair is retained.  There are
+\(M=(3^N-3)/2\) retained words.  Cyclically permuting all three alphabet
+symbols preserves the selection rule, so each coordinate takes each symbol
+equally often among the retained words.  Their coordinate sums are therefore
+zero.  Add the all-zero word, giving \(M+1=(3^N-1)/2\) columns.
+
+Assign one column to each coin.  In weighing \(j\), put entries \(-1\)
+on the left, \(1\) on the right, and leave entries \(0\) aside.  Every
+weighing has equal pan counts.  A heavy counterfeit produces its column as
+the outcome word, with right-heavy denoted \(1\); a light one produces the
+negative column.  Distinct nonzero columns are never opposites, so these
+histories identify their coins and signs.  The all-zero history identifies
+the last coin, with either sign.  For \(N=1\) the retained set is empty and
+the single coin is identified without weighing, as required.
+\end{proof}
+
+\begin{remark}[If the sign is required]\ours
+When both identity and sign must be recovered, the balanced first branch
+must distinguish all \(2b\) states, hence
+\(b\leq(3^{N-1}-1)/2\).  Together with the same unbalanced-branch bound
+this gives \(m\leq(3^N-3)/2\).  The nonzero retained columns above attain
+that bound for \(N\geq2\).  Thus three weighings permit 12 coins with
+both outputs, or 13 with identity alone.  This distinction, not a numerical
+misprint, accounts for the notebook's 13.
+\end{remark}
+
+\begin{example}[Exhaustive finite checks]\oursComputed
+The accompanying \texttt{coin\_check.py} generates the columns and computes
+actual left and right pan masses, independently of the signed-column
+formula.  For \(N=1,\ldots,6\), it checks respectively
+\(1,4,13,40,121,364\) coins.  Every coordinate balances, and every outcome
+determines a unique coin.  The only two-state collision is the sign of the
+zero-column coin.  In the three-weighing case all 26 signed hypotheses were
+enumerated, yielding 25 histories and no collision between distinct
+identities.  The proof establishes the general statement; finite enumeration
+only checks the implementation and the notebook's small case.
+\end{example}

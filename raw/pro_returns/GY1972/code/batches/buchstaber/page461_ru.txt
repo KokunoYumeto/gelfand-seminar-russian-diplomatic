@@ -1,0 +1,90 @@
+\SourcePage{GELFAND-P000461}{unlabelled}
+\underline{Рассм. теперь общий случай}: $A$ не обяз. $\mathbb Q$-модуль.
+
+Рассм. ряд $F(x,y)=x+y+\sum a_{i,j}x^iy^j$
+
+$a_{i,j}$ — алг. независ. переменные.
+
+Рассм. $\mathbb Z[a_{i,j}]$,\quad $\deg a_{i,j}=i+j-1$
+
+Из него получ. форм. группа
+\[
+\begin{gathered}
+F(F(x,y),z)=x+y+z+\sum a_{i,j,k}x^iy^jz^k,\quad
+a_{i,j,k}\in\mathbb Z[a_{i,j}].\\
+F(x,F(y,z))=x+y+z+\sum a'_{i,j,k}x^iy^jz^k
+\qquad a'_{i,j,k}\in\mathbb Z[a_{i,j}]
+\end{gathered}
+\]
+Рассм. в $\overset{\mathbb Z[a_{i,j}]}{\text{\sout{\ldots}}}$ идеал
+$J$, порожд. однор. элем. $\{a_{i,j,k}-a'_{i,j,k}\}$
+и элементами $\{a_{i,j}-a_{j,i}^{\text{\sout{\ldots}}}\}$.
+\Incomplete{GELFAND-P000461}{ideal-cancel}{Над зачёркнутой записью вписано $\mathbb Z[a_{i,j}]$. Прежняя запись не разобрана.}
+
+\Unclear{GELFAND-P000461}{comm-coefficient}{Над вторым коэффициентом $a_{j,i}$ остались зачёркнутые штрихи.}
+
+Теперь заменим $a_{i,j}$ в $F(x,y)$ на $a_{i,j}\bmod J$ —
+\sout{\ldots} получим ряд $F\in\Lambda[[x,y]]$.
+\Incomplete{GELFAND-P000461}{cancel-before-series}{Запись перед «получим» зачёркнута и не разобрана.}
+
+\[
+\Lambda=\mathbb Z[a_{i,j}]/J
+\]
+Это универс. группа. (ясно).
+
+\underline{Теор. Лазара}, $\Lambda$ — кольцо полиномов от образующих по одной в каждой размерности:
+\[
+\Lambda=\mathbb Z[a_i],\quad i\ge1,\quad\deg a_i=i.
+\]
+\Unclear{GELFAND-P000461}{one-generator-overwrite}{В слове «одной» предпоследняя буква густо наведена.}
+
+По \underline{лемме Лазара}:
+\SourceFigure{GELFAND-P000461}{rational-identity-divider}{Две пары черт с точками расположены над и под равенством.
+[diagram: consult scan]}
+
+\underline{1.}\quad Сколько мульт. образующих имеет $\Lambda$?
+
+Рассм. $\widetilde\Lambda=\Lambda/(\text{разложимым элементам})$.
+\Unclear{GELFAND-P000461}{decomposable-word}{Слово в знаменателе предположительно «разложимым».}
+
+\SourceFigure{GELFAND-P000461}{indecomposable-ideal-link}{Короткая вертикальная черта соединяет первое кольцо с пояснением.
+[diagram: consult scan]}
+
+\noindent
+\begin{tabular}{@{}p{.44\linewidth}@{\hspace{2mm}}||@{\hspace{2mm}}p{.49\linewidth}@{}}
+\raggedright Имеем: $\widetilde\Lambda=\sum_{i\ge0}\widetilde\Lambda_i$;\par
+умножение — нулевое, кроме случая, когда один из \sout{\ldots} $0$-й элем. &
+\raggedright Разлож. элем. — элем. вида $a\cdot b$, где $a$ и $b$ \({}^{\ast}\)\par
+\({}^{\ast}\) необратимы. Берется идеал, ими порождённый, и $\widetilde\Lambda$ — факторкольцо.\par
+Градуировка $\Rightarrow$ обратимы только элем. $0$-й степ.\par
+Отсюда идеал этот — образ идеала разл. эл. из $\mathbb Z[a_{i,j}]$.\tabularnewline
+\end{tabular}
+\SourceFigure{GELFAND-P000461}{margin-layout}{Две вертикальные черты отделяют правую приписку.}
+
+\Unclear{GELFAND-P000461}{graded-sum-glyph}{Слева от равенства, вероятно, $\widetilde\Lambda$ со слитной тильдой. Возможное чтение — $\chi$.}
+
+\Incomplete{GELFAND-P000461}{pi-degree-zero}{Короткая запись после «из» зачёркнута и не разобрана.}
+
+\Unclear{GELFAND-P000461}{margin-nonunits}{В правой приписке читается «необратимы».}
+
+\Unclear{GELFAND-P000461}{margin-verb}{После «необратимы» читается «Берется».}
+
+$\widetilde\Lambda_n$ — абелева гр. по слож. с образующ. — обр. мульт. гр. $\Lambda$ в размерности $n$.
+\[
+F(F(x,y),z)=F(x,y)+z+\sum a_{i,j}\,\text{\sout{\ldots}}\,(x+y)^i z^j
+\]
+\Incomplete{GELFAND-P000461}{cancel-exponent}{Запись перед $(x+y)^i$ зачёркнута и не разобрана.}
+
+\SourceFigure{GELFAND-P000461}{product-insertion}{В обведённую выноску над строкой вписано «разных $a_{i,j}$».
+[diagram: consult scan]}
+
+\[
+F(x,F(y,z))=x+F(y,z)+\sum a_{i,j}x^i(y+z)^j
+\]
+$\widetilde\Lambda$ получ. из своб. аб. группы, порожд. $a_{i,j}$, профакториз. по соотн. \ldots
+
+Пусть $h(x,y)=\sum h_{i,j}x^iy^j=F(x,y)-x-y$.
+\[
+h(x,0)=0,\quad h(0,y)=0.
+\]
+

@@ -1,0 +1,226 @@
+\subsection{Independent mathematical checks of editorial emendations}
+\label{checks:1985}
+
+This subsection checks corrections to established mathematics; it is not a second
+research development selected from class C or D. The original notebook formulas
+remain in the occurrence index. The labels \ours\ and \oursComputed\ mean that
+the proof or computation was supplied for this companion, not that the underlying
+mathematics is new. Exact code and output are in
+\texttt{code/check\_mathematics.py} and its JSON output. A coefficient-algebra
+implementation and direct application to functions are separate checks.
+
+\begin{proposition}[The corrected Novikov--Veselov commutator]\ours\
+Let \(D=\partial_z\), \(E=\partial_{\bar z}\), and let the smooth coefficients
+\(V,u,v\) satisfy \(Eu=3DV\), \(Dv=3EV\). Set
+\[
+ L=DE+V,\qquad P=D^3+E^3+uD+vE,\qquad B=Du+Ev.
+\]
+Here a coefficient without a derivative to its right denotes multiplication.
+Then
+\[
+ [P,L]+BL=M_{D^3V+E^3V+D(uV)+E(vV)}.
+\]
+For real \(V\), one may put \(v=\bar u\). Consequently the right hand side
+defines the stated fixed-energy evolution, with the boundary or normalization
+conditions on \(u\) still to be specified.
+\end{proposition}
+\begin{proof}
+Leibniz's rule gives the following coefficients, before imposing the auxiliary
+equations:
+\[
+\begin{array}{c|l}
+\text{derivative} & \text{coefficient in }[P,L]+BL\\\hline
+D^2&3DV-Eu\\
+E^2&3EV-Dv\\
+DE&B-Du-Ev\\
+D&3D^2V-DEu\\
+E&3E^2V-DEv\\
+1&D^3V+E^3V+uDV+vEV+BV.
+\end{array}
+\]
+All positive-order coefficients vanish; the scalar coefficient is the one
+claimed. This calculation also fixes the meaning of the notebook expression
+\((D u)V\): it must be \(D(uV)\), not \((Du)V\) alone. Independently, the code
+applies the two operators successively to two different test polynomials, for
+each of two polynomial potentials, constructing \(u,v\) by integration of the
+auxiliary equations. Every residual is exactly zero. This second check tests the
+implementation; the displayed algebra proves the identity for all smooth
+coefficients. The hierarchy itself is the prior result of
+\citet[\S II, equations (4)--(6)]{veselovnovikov1984explicit}.
+\end{proof}
+
+\begin{proposition}[An explicit counterexample to the unrestricted no-Lax wording]\ours\
+There is a smooth real potential \(U(x,t)\), independent of \(y\), for which
+\[
+ L=-\partial_x^2-\partial_y^2+U,\qquad
+ A=-4\partial_x^3+6U\partial_x+3U_x
+\]
+satisfy \(L_t=[A,L]\), but the potentials do not evolve by Euclidean motions.
+The example is not a genuinely two-dimensional decaying scattering potential;
+that extra hypothesis is precisely absent from the universal notebook claim.
+\end{proposition}
+\begin{proof}
+Put
+\[
+ r=e^{2x-8t},\quad s=e^{4x-64t},\quad
+ T=1+r+s+\tfrac19rs,\quad U=-2\partial_x^2\log T.
+\]
+Since \(T>0\) for real \(x,t\), the formula is smooth and real for all such
+parameters. To verify the equation without relying on a remembered soliton
+formula, use the four exponential terms of \(T\), with pairs
+\((k,\omega)=(0,0),(2,-8),(4,-64),(6,-72)\) and coefficients
+\(1,1,1,1/9\). In the bilinear expression
+\((D_x^4+D_xD_t)T\mathbin{\cdot}T\), each ordered pair contributes
+\((k_i-k_j)^4+(k_i-k_j)(\omega_i-\omega_j)\).
+Every unordered pair gives zero except \((0,3)\) and \((1,2)\). They have the
+same exponential \(rs\) and weighted coefficients \(864/9=96\) and \(-96\),
+respectively, so they cancel. Writing \(q=\log T\), the bilinear identity is
+\(q_{xt}+q_{xxxx}+6q_{xx}^2=0\); differentiation gives
+\(U_t=6UU_x-U_{xxx}\).
+
+A direct Leibniz expansion gives
+\([A,L]=M_{6UU_x-U_{xxx}}\), since \(A\) commutes with
+\(\partial_y^2\). Thus the Lax equation holds. To check that this is not a
+time-dependent translation, compare \(U_t/U_x\) at \(t=0\), first with
+\((r,s)=(1,1)\), then with \((r,s)=(2,4)\). The exact ratios are $-92/3$ and $-89524/4861$, respectively, and both denominators $U_x$ are nonzero. These values were also obtained independently from moment and cumulant formulas for the four exponential terms. A translation would give a
+ratio depending on \(t\) alone. A continuous Euclidean motion of a nonconstant
+potential independent of \(y\), remaining independent of \(y\), cannot rotate
+its direction of variation, so it reduces to this excluded translation case.
+The code independently verifies the rational PDE identity in \(r,s\) and the
+formal commutator by two implementations. This counterexample does not assert
+that the intended genuinely two-dimensional obstruction has been identified.
+\end{proof}
+
+\begin{lemma}[Leading Baker--Akhiezer coefficients]\ours\
+Use the notebook's exponential conventions and suppose locally that
+\[
+ \psi=e^{ik_1z}(1+\xi_1/k_1+O(k_1^{-2})),\qquad
+ \psi=c_2e^{ik_2\bar z}(1+O(k_2^{-1})),\quad c_2\ne0.
+\]
+For an operator \(L=DE+aE+b\) annihilating \(\psi\), cancellation of the
+leading terms requires
+\(a=-D\log c_2\), \(b=-iE\xi_1\).
+\end{lemma}
+\begin{proof}
+After dividing by \(e^{ik_1z}\), the constant term of \(DE\psi\) is
+\(iE\xi_1\); the term \(aE\psi\) begins at order \(k_1^{-1}\).
+At the other puncture the coefficient of \(ik_2e^{ik_2\bar z}\) is
+\(Dc_2+ac_2\). These two coefficients give the formulas. The recorded
+operator \(DE+A D+B\) instead has an uncancelled \(ik_1 A\) term at the first
+puncture. Symbolic differentiation of two truncated Laurent expansions gives
+the same cancellations independently. Existence and uniqueness from spectral
+data are supplied by the cited theorem of
+\citet[\S3, Lemmas 1--2]{dubrovinkrichevernovikov1976schrodinger}; this lemma
+only determines the necessary coefficients in the convention used here.
+\end{proof}
+
+\begin{proposition}[The hyperelliptic defect in products of differentials]\ours\
+Let \(X\) be a smooth compact connected complex hyperelliptic curve of genus \(g\ge2\).
+The multiplication map
+\(\operatorname{Sym}^2H^0(X,K_X)\to H^0(X,K_X^2)\) has image dimension
+\(2g-1\) and cokernel dimension \(g-2\).
+\end{proposition}
+\begin{proof}
+Choose a coordinate on the quotient so that infinity is unbranched, and write
+\(y^2=f(x)\) with \(f\) squarefree of degree \(2g+2\). The one-forms
+\(x^i dx/y\), \(0\le i\le g-1\), are a basis, by local regularity and
+Riemann--Roch. Their products span the independent forms
+\[
+ x^k\frac{dx^2}{y^2},\quad 0\le k\le 2g-2.
+\]
+The complementary forms are
+\[
+ x^j\frac{dx^2}{y},\quad 0\le j\le g-3,
+\]
+with the second list empty when \(g=2\). At a branch point use
+\(x-a=t^2\), \(y=t\) times a nonvanishing analytic factor: the two basic
+quadratic differentials have orders zero and one, respectively. At either
+point at infinity put \(s=1/x\). Their orders are \(2g-2-k\) and
+\(g-3-j\), so all listed forms are holomorphic. The two families have opposite
+parity under the hyperelliptic involution; inside each family their rational
+monomials are independent. There are \(3g-3=h^0(K_X^2)\) forms in total,
+so they form a basis. This proves both dimensions for every \(g\ge2\).
+Independently the code checks the orders, product exponents and dimensions for
+\(g=2,\ldots,9\), explicitly including the exceptional zero-cokernel case
+\(g=2\). The general nonhyperelliptic surjectivity statement is Max Noether's
+theorem, recalled in \citet[\S3.1]{matonevolpato2013determinantal}.
+\end{proof}
+
+\begin{lemma}[The sign of the torus Beltrami wedge]\ours\
+Write \(y=\Im\tau>0\), and use the deformation
+\(\tau_\eta=(\tau+\eta\bar\tau/y)/(1+\eta/y)\). At \(\eta=0\),
+\[
+ d\tau=-2i\,d\eta,\qquad
+ d\bar\eta\wedge d\eta=-\tfrac14d\tau\wedge d\bar\tau.
+\]
+\end{lemma}
+\begin{proof}
+Differentiate the quotient with the base \(\tau\) fixed; the derivative is
+\((\bar\tau-\tau)/y=-2i\). Conjugation and antisymmetry give the wedge
+identity. For an independent real-coordinate check, \(\eta=p+iq\) gives
+\((\delta\Re\tau,\delta\Im\tau)=(2q,-2p)\), with Jacobian determinant four.
+The coordinate identities \(d\bar\eta\wedge d\eta=2i\,dp\wedge dq\) and
+\(d\tau\wedge d\bar\tau=-2i\,d\Re\tau\wedge d\Im\tau\) give exactly
+the same minus sign. These are tangent identities at the base point.
+\end{proof}
+
+\begin{proposition}[The finite-dimensional determinant metric fixes the reciprocal]\ours\
+For a linear map \(T:E_1\to E_2\) of finite-dimensional Hermitian spaces, put
+\(\lambda_T=\det\ker T\otimes(\det\operatorname{coker}T)^{-1}\).
+Under the determinant-of-complex isomorphism
+\(\lambda_T\simeq\det E_1\otimes(\det E_2)^{-1}\), the norm induced from the
+fixed spaces is the cohomology norm divided by the product of the nonzero
+singular values of \(T\).
+\end{proposition}
+\begin{proof}
+Take orthonormal bases of \(\ker T\), its orthogonal complement, the image,
+and its orthogonal complement, with \(Te_i=\sigma_i f_i\), \(\sigma_i>0\).
+Complete the kernel basis by the \(e_i\), and the cokernel basis by the
+\(Te_i\), in a fixed determinant sign convention. The corresponding element
+of \(\det E_1\otimes(\det E_2)^{-1}\) contains the scalar
+\(\prod_i\sigma_i^{-1}\). The remaining bases are orthonormal, which proves
+the formula; signs have modulus one. If \(T\) is invertible, the canonical
+acyclic generator therefore maps to \((\det T)^{-1}\), whereas \(\det T\)
+belongs to the dual line. Empty products give the rank-zero case.
+
+The positive eigenvalues of \(T^*T\) are \(\sigma_i^2\), so the squared norm
+factor is \((\det{}'T^*T)^{-1}\). Two unrelated rational diagonal examples
+and the empty example are checked in the code. Replacing the product by a
+zeta determinant yields the direction of the spectral factor on the
+notebook's line; the analytic existence and smoothness theorem remains
+\citet[\S3]{quillen1985determinants}, who uses its dual.
+\end{proof}
+
+\begin{example}[Anomaly coefficients and modular-weight check]\oursComputed\
+For \(x=c_1(K_{X/S})\), the degree-two term of
+\[
+ e^{jx}\left(1-\frac{x}{2}+\frac{x^2}{12}\right)
+\]
+is \((6j^2-6j+1)x^2/12\). This is also obtained by multiplying the three
+terms by hand: \(j^2/2-j/2+1/12\). Thus \(c_1=1\), \(c_2=13\), and
+\(c_2-13c_1=0\). This is only the coefficient calculation; the analytic
+family-index theorem is cited in the occurrence index.
+
+For a modular substitution, the genus-one factors
+\(d^2\tau\), \((\Im\tau)^{-14}\), and \(|\eta(\tau)|^{-48}\) have
+absolute weights \(-4,28,-24\), whose sum is zero. The corresponding
+\(q\)-density has \((-\log|q|)^{-14}\). Separately, the torus formula
+\(C y^2|\eta(\tau)|^4\) for \(|dz|^2\), read in
+\citet[\S5.0.1, equation (5.1)]{kokotov2007polyhedral}, becomes
+\(C y|\eta(\tau)|^4\) in the unit-area metric: its Laplacian is multiplied
+by \(y\), and \(\zeta_\Delta(0)=-1\). The latter follows from the flat
+two-dimensional heat expansion after subtracting the one-dimensional
+constant eigenspace. Area conventions cannot be changed in only one factor
+of the measure.
+\end{example}
+
+\paragraph{Scope of the second checks.}
+The Novikov--Veselov and KdV identities were rederived in coefficient form and
+by direct application. The KdV example also has a separate bilinear proof.
+The determinant reciprocal was checked by both a one-dimensional acyclic map
+and the singular-value argument. The Beltrami sign was checked in complex and
+real coordinates. The hyperelliptic dimension result was checked by local
+orders and Riemann--Roch, with finite examples used only to catch boundary
+mistakes. The stacking development has an independent exact facet-enumeration
+check and a separate proof audit recorded with its source files. No finite
+computation is presented as a proof of an unbounded universality assertion.

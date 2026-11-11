@@ -1,0 +1,40 @@
+\subsection{Verification of the Jantzen emendations}
+
+This subsection checks two annotations to record 540. It does not claim a new solution of a C/D problem: the unrestricted direction question has the published negative answer in \citet[\S8.4]{williamson2016local}. The checks below provide independently reproducible evidence that the hypotheses and grading in the companion have not merely been copied from an abstract.
+
+\begin{example}[Why moving lifts matter]\ours
+Let \(A=\mathbb Q[t]_{(t)}\), and give \(A^2\) the symmetric bilinear form with matrix
+\[
+ S(t)=\begin{pmatrix}1&t\\t&t^2+t^3\end{pmatrix}.
+\]
+Its elementary divisors have orders \(0,3\). The class of \(e_2\) in \(A^2/tA^2\) therefore belongs to the third Jantzen-type step. The constant lift \(e_2\) has pairing \((t,t^2+t^3)\), whose order is only one. The moving lift \(e_2-te_1\) instead has pairing \((0,t^3)\), as required. This supplies an explicit reason why the literal fixed-vector definition on P000997 is incomplete. Direct multiplication and the determinant \(\det S(t)=t^3\) independently check the calculation.
+\end{example}
+
+\begin{example}[Exact reproduction of the type-A3 direction counterexample]\oursComputed
+The file \texttt{verify\_annotations.py} builds the contravariant form from the matrix-unit relations
+\[
+ [E_{ij},E_{kl}]=\delta_{jk}E_{il}-\delta_{li}E_{kj}
+\]
+on a PBW basis of the weight space of highest weight \(-\alpha_1-\alpha_3\), lowered by \(2\alpha_1+3\alpha_2+2\alpha_3\). There are thirteen basis monomials. All arithmetic is exact. Dynkin coordinates of the highest weight are \((-2,2,-2)\); the three deformation directions are displayed below.
+\[
+\begin{array}{c|c|c}
+\gamma(h_1),\gamma(h_2),\gamma(h_3)&
+(\dim \operatorname{gr}^0,\dim \operatorname{gr}^1,
+ \dim \operatorname{gr}^2,\dim \operatorname{gr}^3)&
+(N(1),N(2),N(3),N(4))\\\hline
+(1,1,1)&(7,3,2,1)&(6,9,10,10)\\
+(1,-2,3)&(7,2,4,0)&(6,10,10,10)\\
+(3,-2,1)&(7,2,4,0)&(6,10,10,10)
+\end{array}
+\]
+Here \(N(k)\) is the nullity, over \(\mathbb Q\), of multiplication by the form matrix modulo \(t^k\). Every positive-coroot value of each direction is nonzero. The two non-dominant directions satisfy \(\gamma(h_1+2h_2+h_3)=0\); the third row independently checks the reflected choice.
+
+Two different exact procedures agree. First, elimination over rational power series modulo \(t^5\) gives elementary-divisor orders. Second, fraction-free integer row elimination gives the ranks of the block matrices modulo \(t,t^2,t^3,t^4\). If the elementary-divisor orders are \(a_1,\ldots,a_{13}\), then
+\[
+ N(k)=\sum_{r=1}^{13}\min(k,a_r),\qquad
+ \dim\operatorname{gr}^j=\#\{r:a_r=j\}.
+\]
+Stabilization between \(k=3\) and \(k=4\) also rules out hidden higher orders. The saved \texttt{verification\_output.json} and \texttt{verification\_run.log} record the full results. They reproduce the published counterexample and do not constitute a priority claim.
+\end{example}
+
+The same executable independently checks the signs in the Cauchy determinant at sizes 1 through 5, including a repeated-row edge case; the differentiated Rayleigh equation and its inverse transformation; an explicit nondegenerate binary-cubic Kirillov pairing; and all 511 finite surreal sign sequences of length at most eight by both canonical dyadic cuts and the corrected halving formula. These finite checks support particular emendations. They are not presented as proofs of an unbounded numerical conjecture.

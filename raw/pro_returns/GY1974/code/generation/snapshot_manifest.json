@@ -1,0 +1,836 @@
+{
+  "snapshot_utc": "2026-11-10T00:10:07+00:00",
+  "source_contract": "Edited part snapshots are authoritative; drafting generators are optional historical inputs.",
+  "pending_final_inserts": [],
+  "excluded": [
+    "source scans and source/reference PDFs",
+    "page previews and PNGs",
+    "TeX caches, downloaded runtimes, failed compilation output",
+    "Python bytecode"
+  ],
+  "files": [
+    {
+      "source": "parts/middle_code/check_dilogarithm.out",
+      "destination": "../check_dilogarithm.out",
+      "bytes": 678,
+      "source_sha256": "29b66d371cef41349e333196e5909e806a90742e559d7161b6490a6874e7bd2f",
+      "packaged_sha256": "29b66d371cef41349e333196e5909e806a90742e559d7161b6490a6874e7bd2f",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_code/check_dilogarithm.py",
+      "destination": "../check_dilogarithm.py",
+      "bytes": 1210,
+      "source_sha256": "a7b8255fe75c3c46d4c4f1f620d9d6e471fb43f8582efb0aeb003983c87d0463",
+      "packaged_sha256": "a7b8255fe75c3c46d4c4f1f620d9d6e471fb43f8582efb0aeb003983c87d0463",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/root_code/check_spectral_compatibility.py",
+      "destination": "../check_spectral_compatibility.py",
+      "bytes": 3728,
+      "source_sha256": "be8d37bc8b2a44ebf4f61c670f91a886ee2f720ed61ae26ddbc49cbea7d71ba2",
+      "packaged_sha256": "be8d37bc8b2a44ebf4f61c670f91a886ee2f720ed61ae26ddbc49cbea7d71ba2",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/root_code/check_spectral_compatibility.txt",
+      "destination": "../check_spectral_compatibility.txt",
+      "bytes": 1464,
+      "source_sha256": "c0d848a5ea8c0760a8c2e6b4cce838695d6f41928528736004cdbb18c84b5d36",
+      "packaged_sha256": "c0d848a5ea8c0760a8c2e6b4cce838695d6f41928528736004cdbb18c84b5d36",
+      "path_rewrites": []
+    },
+    {
+      "source": "texruntime/README.md",
+      "destination": "../environment/README.md",
+      "bytes": 2647,
+      "source_sha256": "ef0694a19f80682ea7a810adf94ab747c97197ab621d0d26f890b8254322bf60",
+      "packaged_sha256": "bb67fdc18d37103e37c6bcd51e5af4b2619fcdd1b52bce1b6806340867d0b2e3",
+      "path_rewrites": [
+        {
+          "from": "/workspace/scratch/6e3047ad1856/work/texruntime/env.sh",
+          "to": "code/environment/env.sh",
+          "occurrences": 1
+        },
+        {
+          "from": "/workspace/scratch/6e3047ad1856/work/texruntime/build_format.sh",
+          "to": "code/environment/build_format.sh",
+          "occurrences": 1
+        },
+        {
+          "from": "/workspace/scratch/6e3047ad1856/work/texruntime/",
+          "to": ".texruntime/",
+          "occurrences": 1
+        },
+        {
+          "from": "/workspace/scratch/6e3047ad1856/work/kit//:",
+          "to": "\"$(pwd)/code/generation/kit//:\"",
+          "occurrences": 1
+        },
+        {
+          "from": "only in work/kit rather than",
+          "to": "only in code/generation/kit rather than",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "source": "texruntime/build_format.sh",
+      "destination": "../environment/build_format.sh",
+      "bytes": 264,
+      "source_sha256": "925c914249c287e4cd7d1ff80f7b18b8753231774300c5e5de6c7d465387da50",
+      "packaged_sha256": "cdcbe8121656c165e56f1b456f22f606f32e5f030e4a72caba02aa82305cc4e2",
+      "path_rewrites": [
+        {
+          "from": "source /workspace/scratch/6e3047ad1856/work/texruntime/env.sh",
+          "to": "source \"$(cd -- \"$(dirname -- \"${BASH_SOURCE[0]}\")\" && pwd)/env.sh\"",
+          "occurrences": 1
+        },
+        {
+          "from": "/usr/bin/xetex",
+          "to": "xetex",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "source": "texruntime/env.sh",
+      "destination": "../environment/env.sh",
+      "bytes": 654,
+      "source_sha256": "447384ea3e75402ad0d76589a3753af5178b196f9dbcdc95b22427f47ae036fb",
+      "packaged_sha256": "cc3e1bc56664fc756c2e1b1c122245d4fd2faa6727b41859261ca5c755cccfef",
+      "path_rewrites": [
+        {
+          "from": "GY_TEX_RUNTIME=/workspace/scratch/6e3047ad1856/work/texruntime",
+          "to": "GY_TEX_RUNTIME=\"$(cd -- \"$(dirname -- \"${BASH_SOURCE[0]}\")/../..\" && pwd)/.texruntime\"",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "source": "parts/early_code/exact_checks.json",
+      "destination": "../exact_checks.json",
+      "bytes": 2521,
+      "source_sha256": "9a59c0c030b01971dcc00ac66c638099b3cd21c7d152fdcc8b25ba4f4031d15a",
+      "packaged_sha256": "9a59c0c030b01971dcc00ac66c638099b3cd21c7d152fdcc8b25ba4f4031d15a",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_code/exact_checks.py",
+      "destination": "../exact_checks.py",
+      "bytes": 5255,
+      "source_sha256": "4c93b28c6037cf72e7a478250e8e2c571607463c116a66b179d339af2425f916",
+      "packaged_sha256": "4c93b28c6037cf72e7a478250e8e2c571607463c116a66b179d339af2425f916",
+      "path_rewrites": []
+    },
+    {
+      "source": "upload/GY1974_kit(1).zip::kit/CHAPTER_FORMAT.md",
+      "destination": "../kit_original/CHAPTER_FORMAT.md",
+      "bytes": 6212,
+      "source_sha256": "9a36cc64df393abe06ff833b815ada34b76967d731d21855e3c4b027eb5fe0ca",
+      "packaged_sha256": "9a36cc64df393abe06ff833b815ada34b76967d731d21855e3c4b027eb5fe0ca",
+      "path_rewrites": []
+    },
+    {
+      "source": "upload/GY1974_kit(1).zip::kit/build_chapter.py",
+      "destination": "../kit_original/build_chapter.py",
+      "bytes": 11285,
+      "source_sha256": "e68acb2619dbb3f4ea14af9e147f43c97fc776b285ae261d23bd50465b1877f8",
+      "packaged_sha256": "e68acb2619dbb3f4ea14af9e147f43c97fc776b285ae261d23bd50465b1877f8",
+      "path_rewrites": []
+    },
+    {
+      "source": "upload/GY1974_kit(1).zip::kit/gelfand_companion.sty",
+      "destination": "../kit_original/gelfand_companion.sty",
+      "bytes": 4393,
+      "source_sha256": "cf2df459ec0b4206dc995b5494b5737afe232f0c6587096616387e4ac1fd2145",
+      "packaged_sha256": "cf2df459ec0b4206dc995b5494b5737afe232f0c6587096616387e4ac1fd2145",
+      "path_rewrites": []
+    },
+    {
+      "source": "assemble_chapter.py",
+      "destination": "assemble_chapter.py",
+      "bytes": 9748,
+      "source_sha256": "f5d24ea41fbecc440f27027c047b159e227e2f9465d10510e7a0018071aac946",
+      "packaged_sha256": "f5d24ea41fbecc440f27027c047b159e227e2f9465d10510e7a0018071aac946",
+      "path_rewrites": []
+    },
+    {
+      "source": "check_bib_keys.py",
+      "destination": "check_bib_keys.py",
+      "bytes": 1965,
+      "source_sha256": "2aa4039082378a195e7a406a3a607af0cf36b9cf571690320f4ba9aac9e4fdb0",
+      "packaged_sha256": "2aa4039082378a195e7a406a3a607af0cf36b9cf571690320f4ba9aac9e4fdb0",
+      "path_rewrites": []
+    },
+    {
+      "source": "upload/GY1974_prompt(1).md",
+      "destination": "inputs/GY1974_prompt.md",
+      "bytes": 9641,
+      "source_sha256": "90b8e614f429c0c122b36fa5e80d7aa33e216e5c135095344e1cf0100a9001a8",
+      "packaged_sha256": "90b8e614f429c0c122b36fa5e80d7aa33e216e5c135095344e1cf0100a9001a8",
+      "path_rewrites": []
+    },
+    {
+      "source": "upload/GY1974_talks(1).md",
+      "destination": "inputs/GY1974_talks.md",
+      "bytes": 4182,
+      "source_sha256": "6e7d75bbf75894bec82695ab2bd6023477d43e738dd1190aae07f969993790e0",
+      "packaged_sha256": "6e7d75bbf75894bec82695ab2bd6023477d43e738dd1190aae07f969993790e0",
+      "path_rewrites": []
+    },
+    {
+      "source": "kit/CHAPTER_FORMAT.md",
+      "destination": "kit/CHAPTER_FORMAT.md",
+      "bytes": 6212,
+      "source_sha256": "9a36cc64df393abe06ff833b815ada34b76967d731d21855e3c4b027eb5fe0ca",
+      "packaged_sha256": "9a36cc64df393abe06ff833b815ada34b76967d731d21855e3c4b027eb5fe0ca",
+      "path_rewrites": []
+    },
+    {
+      "source": "kit/build_chapter.py",
+      "destination": "kit/build_chapter.py",
+      "bytes": 11285,
+      "source_sha256": "e68acb2619dbb3f4ea14af9e147f43c97fc776b285ae261d23bd50465b1877f8",
+      "packaged_sha256": "e68acb2619dbb3f4ea14af9e147f43c97fc776b285ae261d23bd50465b1877f8",
+      "path_rewrites": []
+    },
+    {
+      "source": "kit/gelfand_companion.sty",
+      "destination": "kit/gelfand_companion.sty",
+      "bytes": 4393,
+      "source_sha256": "cf2df459ec0b4206dc995b5494b5737afe232f0c6587096616387e4ac1fd2145",
+      "packaged_sha256": "cf2df459ec0b4206dc995b5494b5737afe232f0c6587096616387e4ac1fd2145",
+      "path_rewrites": []
+    },
+    {
+      "source": "layout_edits.json",
+      "destination": "layout_edits.json",
+      "bytes": 5240,
+      "source_sha256": "d716329c14d4597ec51fc0f144d7b44c3187f1bcb4f43962be1dbf2b4d4ce762",
+      "packaged_sha256": "d716329c14d4597ec51fc0f144d7b44c3187f1bcb4f43962be1dbf2b4d4ce762",
+      "path_rewrites": []
+    },
+    {
+      "source": "overview_template.tex",
+      "destination": "overview_template.tex",
+      "bytes": 4626,
+      "source_sha256": "238c284da73c6fd3a9caa643d173a1a14c9a6fbff013022fdbca95ced137ce59",
+      "packaged_sha256": "238c284da73c6fd3a9caa643d173a1a14c9a6fbff013022fdbca95ced137ce59",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_audit.tex",
+      "destination": "parts/early_audit.tex",
+      "bytes": 8907,
+      "source_sha256": "ccf1b2b5738207ca2c30e84826298239f519d023394126099c709bdc433ea024",
+      "packaged_sha256": "ccf1b2b5738207ca2c30e84826298239f519d023394126099c709bdc433ea024",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_boundary.json",
+      "destination": "parts/early_boundary.json",
+      "bytes": 26226,
+      "source_sha256": "ab8e602546c331605b22f20b02716406bd27e84977ed946a0573bcf3ae74ebd9",
+      "packaged_sha256": "ab8e602546c331605b22f20b02716406bd27e84977ed946a0573bcf3ae74ebd9",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_boundary.md",
+      "destination": "parts/early_boundary.md",
+      "bytes": 22584,
+      "source_sha256": "3fbcf4532cb3ea425514c48ce3c75f73dfa798f0b379169270bfcc530a924b0f",
+      "packaged_sha256": "3fbcf4532cb3ea425514c48ce3c75f73dfa798f0b379169270bfcc530a924b0f",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_boundary.tex",
+      "destination": "parts/early_boundary.tex",
+      "bytes": 21999,
+      "source_sha256": "23d6543db0544206fbb78c1ff5d1fdf36232eef06a6cb095a68f6da65c6f33ab",
+      "packaged_sha256": "23d6543db0544206fbb78c1ff5d1fdf36232eef06a6cb095a68f6da65c6f33ab",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_code/build_bib.py",
+      "destination": "parts/early_code/build_bib.py",
+      "bytes": 11437,
+      "source_sha256": "5105f0a08cb43fd3fec3ef67b4516c80e3356e4a3520729a6773fa085b935706",
+      "packaged_sha256": "323045f25afdd7c80fa344bea52a34ed98c54ca491d3bb35bf349b025535ecc7",
+      "path_rewrites": [
+        {
+          "from": "Path(__file__).resolve().parents[3]",
+          "to": "Path(__file__).resolve().parents[2]",
+          "occurrences": 1
+        },
+        {
+          "from": "root/'work/parts",
+          "to": "root/'parts",
+          "occurrences": 2
+        },
+        {
+          "from": "root/'work/references_cumulative.bib'",
+          "to": "root/'references_cumulative.bib'",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "source": "parts/early_code/build_boundary.py",
+      "destination": "parts/early_code/build_boundary.py",
+      "bytes": 22429,
+      "source_sha256": "db98a08bc5342b6c44985c9f8a04e7053a195c4c229b2f2a448b783ee4c6a6d5",
+      "packaged_sha256": "392c4765fc765dbf81a925702da88973835c1a24a66c037831c975fba4cf62a0",
+      "path_rewrites": [
+        {
+          "from": "Path(__file__).resolve().parents[3]",
+          "to": "Path(__file__).resolve().parents[2]",
+          "occurrences": 1
+        },
+        {
+          "from": "root/'work/parts",
+          "to": "root/'parts",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "source": "parts/early_code/build_early.py",
+      "destination": "parts/early_code/build_early.py",
+      "bytes": 99918,
+      "source_sha256": "7e8699f4c05d6f5b472a66caa7fa5d4f9e42e6d6f2ed0dfb13b6a401d3cb2c78",
+      "packaged_sha256": "0c0cc658934e3d74fab630d7295145ba046c53175f1ef8b1f4aff9d37e871386",
+      "path_rewrites": [
+        {
+          "from": "Path(__file__).resolve().parents[3]",
+          "to": "Path(__file__).resolve().parents[2]",
+          "occurrences": 1
+        },
+        {
+          "from": "ROOT/'work'/'parts'",
+          "to": "ROOT/'parts'",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "source": "parts/early_code/build_research.py",
+      "destination": "parts/early_code/build_research.py",
+      "bytes": 22315,
+      "source_sha256": "58c269110b7a4838642a780726a2dab37c0b03077a136ad926cc732e55a3c65f",
+      "packaged_sha256": "d9b81fda48017abaaf6594893d6beb66fbf8c2c1467b7bbf47b7ea8a1c288497",
+      "path_rewrites": [
+        {
+          "from": "Path(__file__).resolve().parents[3]",
+          "to": "Path(__file__).resolve().parents[2]",
+          "occurrences": 1
+        },
+        {
+          "from": "root/'work/parts",
+          "to": "root/'parts",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "source": "parts/early_code/exact_checks.json",
+      "destination": "parts/early_code/exact_checks.json",
+      "bytes": 2521,
+      "source_sha256": "9a59c0c030b01971dcc00ac66c638099b3cd21c7d152fdcc8b25ba4f4031d15a",
+      "packaged_sha256": "9a59c0c030b01971dcc00ac66c638099b3cd21c7d152fdcc8b25ba4f4031d15a",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_code/exact_checks.py",
+      "destination": "parts/early_code/exact_checks.py",
+      "bytes": 5255,
+      "source_sha256": "4c93b28c6037cf72e7a478250e8e2c571607463c116a66b179d339af2425f916",
+      "packaged_sha256": "4c93b28c6037cf72e7a478250e8e2c571607463c116a66b179d339af2425f916",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_code/validate_early.py",
+      "destination": "parts/early_code/validate_early.py",
+      "bytes": 3091,
+      "source_sha256": "298d25d56dc1b02e2d106c1c55eb4a6819e815047de9dac1bc9135946ba01a6c",
+      "packaged_sha256": "3d77aefd8a21d88512d842c1ffd1afe9992b25a5b94d1af54e36cd33f65e329f",
+      "path_rewrites": [
+        {
+          "from": "Path(__file__).resolve().parents[3]",
+          "to": "Path(__file__).resolve().parents[2]",
+          "occurrences": 1
+        },
+        {
+          "from": "root/'work/parts",
+          "to": "root/'parts",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "source": "parts/early_code/validation.json",
+      "destination": "parts/early_code/validation.json",
+      "bytes": 428,
+      "source_sha256": "cf76063597d0d04c05b219d140c7768d727ac2a32428751b66ef6c77fb6e9e2c",
+      "packaged_sha256": "cf76063597d0d04c05b219d140c7768d727ac2a32428751b66ef6c77fb6e9e2c",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_corrections.csv",
+      "destination": "parts/early_corrections.csv",
+      "bytes": 11973,
+      "source_sha256": "a7b8bbceb869c74d696ee08e01e5722e0764f221ec54257b978530d8b7617170",
+      "packaged_sha256": "a7b8bbceb869c74d696ee08e01e5722e0764f221ec54257b978530d8b7617170",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_items.json",
+      "destination": "parts/early_items.json",
+      "bytes": 115928,
+      "source_sha256": "22bd4c9cb96e5b0210ca6bd4dc7d59825f5c38e59f7493cae8b621d47ab8f787",
+      "packaged_sha256": "22bd4c9cb96e5b0210ca6bd4dc7d59825f5c38e59f7493cae8b621d47ab8f787",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_problems.json",
+      "destination": "parts/early_problems.json",
+      "bytes": 3297,
+      "source_sha256": "dab0c1a7f520f6daf43fe1941bd9a9438575a03c880b6773b58c3e5dc1739d42",
+      "packaged_sha256": "dab0c1a7f520f6daf43fe1941bd9a9438575a03c880b6773b58c3e5dc1739d42",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_references.bib",
+      "destination": "parts/early_references.bib",
+      "bytes": 20400,
+      "source_sha256": "2d87d78f1f216cf045513070462b1235446e361f8b1285a12efb32fc1cc484b5",
+      "packaged_sha256": "2d87d78f1f216cf045513070462b1235446e361f8b1285a12efb32fc1cc484b5",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_research.md",
+      "destination": "parts/early_research.md",
+      "bytes": 51228,
+      "source_sha256": "d633f238d392a43670aeea255a7b52edb5c34206f9138f00c5892b213202a97f",
+      "packaged_sha256": "d633f238d392a43670aeea255a7b52edb5c34206f9138f00c5892b213202a97f",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/early_talks.json",
+      "destination": "parts/early_talks.json",
+      "bytes": 7338,
+      "source_sha256": "98cef7c2bd4e99f9742663baba41ac0de2f2e226a6b29bce16c8ae5667838297",
+      "packaged_sha256": "98cef7c2bd4e99f9742663baba41ac0de2f2e226a6b29bce16c8ae5667838297",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/extra_corrections.csv",
+      "destination": "parts/extra_corrections.csv",
+      "bytes": 1737,
+      "source_sha256": "74e4fcd51ff1dddaebbf5d10be696ce2ca2b9445e30c01e474216944fc406e26",
+      "packaged_sha256": "74e4fcd51ff1dddaebbf5d10be696ce2ca2b9445e30c01e474216944fc406e26",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/extra_items.json",
+      "destination": "parts/extra_items.json",
+      "bytes": 28264,
+      "source_sha256": "0553ac04cb184aa6174ac029f235b262b50ca307c03f539e626b411cc2d25f02",
+      "packaged_sha256": "0553ac04cb184aa6174ac029f235b262b50ca307c03f539e626b411cc2d25f02",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/extra_problems.json",
+      "destination": "parts/extra_problems.json",
+      "bytes": 3,
+      "source_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "packaged_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/extra_references.bib",
+      "destination": "parts/extra_references.bib",
+      "bytes": 2939,
+      "source_sha256": "7f72b0431a1e4e00cc678495e5975ccbcd6d5759d64f986286289e5fa2b8f9ce",
+      "packaged_sha256": "7f72b0431a1e4e00cc678495e5975ccbcd6d5759d64f986286289e5fa2b8f9ce",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/extra_research.md",
+      "destination": "parts/extra_research.md",
+      "bytes": 3063,
+      "source_sha256": "cbf07c6171da5b17d32dde0bbbd8b404dce84effd480a0178fba8ab8bcd22526",
+      "packaged_sha256": "cbf07c6171da5b17d32dde0bbbd8b404dce84effd480a0178fba8ab8bcd22526",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/extra_talks.json",
+      "destination": "parts/extra_talks.json",
+      "bytes": 858,
+      "source_sha256": "2b736a7d9c305c184ebf04cc0967d322240e57980a4e3d831d817b89043b0d57",
+      "packaged_sha256": "2b736a7d9c305c184ebf04cc0967d322240e57980a4e3d831d817b89043b0d57",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_area_map.json",
+      "destination": "parts/late_area_map.json",
+      "bytes": 4844,
+      "source_sha256": "bc3ed89ad5eec96d30c184ca4197fea2074ec4675fb8c08182316551c142a254",
+      "packaged_sha256": "bc3ed89ad5eec96d30c184ca4197fea2074ec4675fb8c08182316551c142a254",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_audit.tex",
+      "destination": "parts/late_audit.tex",
+      "bytes": 5530,
+      "source_sha256": "cda31c5101e4dd85a2b9f3d4fdada7d24cdae04ede2d8b49ea57bf95319e0a99",
+      "packaged_sha256": "cda31c5101e4dd85a2b9f3d4fdada7d24cdae04ede2d8b49ea57bf95319e0a99",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_code/copy_fonts.py",
+      "destination": "parts/late_code/copy_fonts.py",
+      "bytes": 1969,
+      "source_sha256": "3053c8a49d8beff80ffc86fb3abe0158bd0051882f73c95ed7f11e29ea60facd",
+      "packaged_sha256": "9300cfbfd215aa3b0a1ae7a21da3982b5f2588fb0d00a1fa82a3d6d2ec809086",
+      "path_rewrites": [
+        {
+          "from": "workspace=Path('/workspace/scratch/6e3047ad1856')",
+          "to": "workspace=Path(__file__).resolve().parents[2]",
+          "occurrences": 1
+        },
+        {
+          "from": "source=Path('/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf')",
+          "to": "source=workspace.parents[1]/'fonts'",
+          "occurrences": 1
+        },
+        {
+          "from": "workspace/'work/GY1974/fonts'",
+          "to": "workspace/'GY1974/fonts'",
+          "occurrences": 1
+        },
+        {
+          "from": "workspace/'work/parts/",
+          "to": "workspace/'parts/",
+          "occurrences": 2
+        }
+      ]
+    },
+    {
+      "source": "parts/late_code/font_copy_and_csv_check.json",
+      "destination": "parts/late_code/font_copy_and_csv_check.json",
+      "bytes": 1556,
+      "source_sha256": "4d8dd6867c23a1f2ac7984a06d6d66a136ed3826a2497993c1337fffda65abb4",
+      "packaged_sha256": "4d8dd6867c23a1f2ac7984a06d6d66a136ed3826a2497993c1337fffda65abb4",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_code/make_late.py",
+      "destination": "parts/late_code/make_late.py",
+      "bytes": 110549,
+      "source_sha256": "aa9e6df6952e032305b6ac6b1560efe997a34b4c72d67ab298aef4612c2a3dc1",
+      "packaged_sha256": "aa9e6df6952e032305b6ac6b1560efe997a34b4c72d67ab298aef4612c2a3dc1",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_code/make_late_bib.py",
+      "destination": "parts/late_code/make_late_bib.py",
+      "bytes": 11042,
+      "source_sha256": "627ed8b4e59e66ddb58610c3803fa13b1ce8ab48c56e0e873ff9932817a2e1c9",
+      "packaged_sha256": "627ed8b4e59e66ddb58610c3803fa13b1ce8ab48c56e0e873ff9932817a2e1c9",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_code/validate_late.py",
+      "destination": "parts/late_code/validate_late.py",
+      "bytes": 4889,
+      "source_sha256": "d7b52224f427790a7b5b02f524df04613844f56197e6fc3ee12bb79d4158f166",
+      "packaged_sha256": "d7b52224f427790a7b5b02f524df04613844f56197e6fc3ee12bb79d4158f166",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_code/validation_output.json",
+      "destination": "parts/late_code/validation_output.json",
+      "bytes": 1301,
+      "source_sha256": "eb2c3eb1d59e5066bbaa487263448d185d5415ebe03f00196d9a4751b7209bb4",
+      "packaged_sha256": "eb2c3eb1d59e5066bbaa487263448d185d5415ebe03f00196d9a4751b7209bb4",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_corrections.csv",
+      "destination": "parts/late_corrections.csv",
+      "bytes": 9871,
+      "source_sha256": "954200c359b642077aba6cab6ebfb9a6585d3d37e06aaa7e9014b5d4d482d18c",
+      "packaged_sha256": "954200c359b642077aba6cab6ebfb9a6585d3d37e06aaa7e9014b5d4d482d18c",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_items.json",
+      "destination": "parts/late_items.json",
+      "bytes": 133388,
+      "source_sha256": "b03a175302655aa2f31f4dfb805e277c65e245ce561bca370d7046c8a488426b",
+      "packaged_sha256": "b03a175302655aa2f31f4dfb805e277c65e245ce561bca370d7046c8a488426b",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_problems.json",
+      "destination": "parts/late_problems.json",
+      "bytes": 927,
+      "source_sha256": "c2de6d183fe8888bb778e4672c47459c4434fa9db191087b7b999f1f83fb9ea6",
+      "packaged_sha256": "c2de6d183fe8888bb778e4672c47459c4434fa9db191087b7b999f1f83fb9ea6",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_references.bib",
+      "destination": "parts/late_references.bib",
+      "bytes": 11448,
+      "source_sha256": "605b47312dacf7bdb00066fd2f6c2abce94515300735171d73f2ebf78b9ec3b0",
+      "packaged_sha256": "605b47312dacf7bdb00066fd2f6c2abce94515300735171d73f2ebf78b9ec3b0",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_research.md",
+      "destination": "parts/late_research.md",
+      "bytes": 27500,
+      "source_sha256": "27b963f9ff8cab96a618ce8a9d0943f4c1c3131638de8877522a0a0461933d30",
+      "packaged_sha256": "27b963f9ff8cab96a618ce8a9d0943f4c1c3131638de8877522a0a0461933d30",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/late_talks.json",
+      "destination": "parts/late_talks.json",
+      "bytes": 6674,
+      "source_sha256": "9317a0fcee00d9e118004ac368166a2c6271ac783e3eb4e4e8111a304b074311",
+      "packaged_sha256": "9317a0fcee00d9e118004ac368166a2c6271ac783e3eb4e4e8111a304b074311",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_audit.tex",
+      "destination": "parts/middle_audit.tex",
+      "bytes": 7303,
+      "source_sha256": "ab1aee93bf207fe4f7d76b8222dd42860e6f8665ee0705e1d14c88b6b55ef789",
+      "packaged_sha256": "ab1aee93bf207fe4f7d76b8222dd42860e6f8665ee0705e1d14c88b6b55ef789",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_code/audit_csv_tex.py",
+      "destination": "parts/middle_code/audit_csv_tex.py",
+      "bytes": 8986,
+      "source_sha256": "22aa5d91da85783d214e00f4a834e1afa277cafaa568ce491a2b8edf5ddc5d76",
+      "packaged_sha256": "b00b1621111519a880059c3a41514e197ca93e5735779368f5a85be0c36441ee",
+      "path_rewrites": [
+        {
+          "from": "Path(__file__).resolve().parents[3]",
+          "to": "Path(__file__).resolve().parents[2]",
+          "occurrences": 1
+        },
+        {
+          "from": "ROOT / 'work' / 'parts'",
+          "to": "ROOT / 'parts'",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "source": "parts/middle_code/build_middle.py",
+      "destination": "parts/middle_code/build_middle.py",
+      "bytes": 109795,
+      "source_sha256": "e9212b1f0cbb82c704f592d52fcabcd80ab8ccc8e5f7647be9f34e0269900210",
+      "packaged_sha256": "e9212b1f0cbb82c704f592d52fcabcd80ab8ccc8e5f7647be9f34e0269900210",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_code/check_dilogarithm.out",
+      "destination": "parts/middle_code/check_dilogarithm.out",
+      "bytes": 678,
+      "source_sha256": "29b66d371cef41349e333196e5909e806a90742e559d7161b6490a6874e7bd2f",
+      "packaged_sha256": "29b66d371cef41349e333196e5909e806a90742e559d7161b6490a6874e7bd2f",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_code/check_dilogarithm.py",
+      "destination": "parts/middle_code/check_dilogarithm.py",
+      "bytes": 1210,
+      "source_sha256": "a7b8255fe75c3c46d4c4f1f620d9d6e471fb43f8582efb0aeb003983c87d0463",
+      "packaged_sha256": "a7b8255fe75c3c46d4c4f1f620d9d6e471fb43f8582efb0aeb003983c87d0463",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_code/compile_middle.py",
+      "destination": "parts/middle_code/compile_middle.py",
+      "bytes": 1839,
+      "source_sha256": "9a7cc7b239ee8b02be72ed1d5ece7f92a959b533318a7e3f6981c0ece25b899d",
+      "packaged_sha256": "9a7cc7b239ee8b02be72ed1d5ece7f92a959b533318a7e3f6981c0ece25b899d",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_code/finalize_bibliography.py",
+      "destination": "parts/middle_code/finalize_bibliography.py",
+      "bytes": 3027,
+      "source_sha256": "cf102d9f6d6607712c56e089e9d46c50965a673a4ec6409c625a2a00652eec46",
+      "packaged_sha256": "cf102d9f6d6607712c56e089e9d46c50965a673a4ec6409c625a2a00652eec46",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_corrections.csv",
+      "destination": "parts/middle_corrections.csv",
+      "bytes": 8240,
+      "source_sha256": "8a95834debec5f205e2b58c54d3456dfb588d19cb97981256a00152ac0951cd7",
+      "packaged_sha256": "8a95834debec5f205e2b58c54d3456dfb588d19cb97981256a00152ac0951cd7",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_items.json",
+      "destination": "parts/middle_items.json",
+      "bytes": 121043,
+      "source_sha256": "3603331f80367da7b1080b8b52a642e3b66b03c27300682a2288aa71ed78e809",
+      "packaged_sha256": "3603331f80367da7b1080b8b52a642e3b66b03c27300682a2288aa71ed78e809",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_problems.json",
+      "destination": "parts/middle_problems.json",
+      "bytes": 4794,
+      "source_sha256": "ae6566f6f9441c3ebcf27b815d753ee99fea5ec15c8949bb05a72af7399416ad",
+      "packaged_sha256": "ae6566f6f9441c3ebcf27b815d753ee99fea5ec15c8949bb05a72af7399416ad",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_references.bib",
+      "destination": "parts/middle_references.bib",
+      "bytes": 16782,
+      "source_sha256": "95b2df7c3248ee08fb8cc24b1c079e1419ceb89ed7722103ede6d98d549a38fa",
+      "packaged_sha256": "95b2df7c3248ee08fb8cc24b1c079e1419ceb89ed7722103ede6d98d549a38fa",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_research.md",
+      "destination": "parts/middle_research.md",
+      "bytes": 27614,
+      "source_sha256": "01f28eaafbedde2abfcace2298d90cb5b19a365130f92b63aff7ee32d3b7d898",
+      "packaged_sha256": "01f28eaafbedde2abfcace2298d90cb5b19a365130f92b63aff7ee32d3b7d898",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/middle_talks.json",
+      "destination": "parts/middle_talks.json",
+      "bytes": 6950,
+      "source_sha256": "8a90588b6164c78428f434cd527ac97bf7f579a8fdca7a6babbb31359344b45f",
+      "packaged_sha256": "8a90588b6164c78428f434cd527ac97bf7f579a8fdca7a6babbb31359344b45f",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/root_audit.tex",
+      "destination": "parts/root_audit.tex",
+      "bytes": 7296,
+      "source_sha256": "cd731642489e364fde5fd3a11ca1a1f975f92967d595dee29a2b277dce29a0dc",
+      "packaged_sha256": "cd731642489e364fde5fd3a11ca1a1f975f92967d595dee29a2b277dce29a0dc",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/root_code/build_extra.py",
+      "destination": "parts/root_code/build_extra.py",
+      "bytes": 21728,
+      "source_sha256": "d873f72d5d11f8c36f32b9d36a75754419edec1eb1c3423b6ec79f8cc01a6664",
+      "packaged_sha256": "d873f72d5d11f8c36f32b9d36a75754419edec1eb1c3423b6ec79f8cc01a6664",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/root_code/check_spectral_compatibility.py",
+      "destination": "parts/root_code/check_spectral_compatibility.py",
+      "bytes": 3728,
+      "source_sha256": "be8d37bc8b2a44ebf4f61c670f91a886ee2f720ed61ae26ddbc49cbea7d71ba2",
+      "packaged_sha256": "be8d37bc8b2a44ebf4f61c670f91a886ee2f720ed61ae26ddbc49cbea7d71ba2",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/root_code/check_spectral_compatibility.txt",
+      "destination": "parts/root_code/check_spectral_compatibility.txt",
+      "bytes": 1464,
+      "source_sha256": "c0d848a5ea8c0760a8c2e6b4cce838695d6f41928528736004cdbb18c84b5d36",
+      "packaged_sha256": "c0d848a5ea8c0760a8c2e6b4cce838695d6f41928528736004cdbb18c84b5d36",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/root_references.bib",
+      "destination": "parts/root_references.bib",
+      "bytes": 1399,
+      "source_sha256": "f3ec88f53358a1ad88abc0f89ac8c1e65250f584e8b0758c5df0e0aa7a40666f",
+      "packaged_sha256": "f3ec88f53358a1ad88abc0f89ac8c1e65250f584e8b0758c5df0e0aa7a40666f",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/root_research.md",
+      "destination": "parts/root_research.md",
+      "bytes": 4648,
+      "source_sha256": "bb95f19c9de89dfaef4a3ec8b5b9d2c79c51fa400b0ad45f3ff684fcde90d01d",
+      "packaged_sha256": "bb95f19c9de89dfaef4a3ec8b5b9d2c79c51fa400b0ad45f3ff684fcde90d01d",
+      "path_rewrites": []
+    },
+    {
+      "source": "parts/root_source_catalogue.bib",
+      "destination": "parts/root_source_catalogue.bib",
+      "bytes": 608,
+      "source_sha256": "038e5db4de917fbc1ea2c05393216959646c7a585cb4ad91562d31dd13f2b8f8",
+      "packaged_sha256": "038e5db4de917fbc1ea2c05393216959646c7a585cb4ad91562d31dd13f2b8f8",
+      "path_rewrites": []
+    },
+    {
+      "source": "previous_index.md",
+      "destination": "previous_index.md",
+      "bytes": 156221,
+      "source_sha256": "58f600a562492827cbc3cd610e0ecb353ef1b64bde27adb6830c2d0406f1be9c",
+      "packaged_sha256": "58f600a562492827cbc3cd610e0ecb353ef1b64bde27adb6830c2d0406f1be9c",
+      "path_rewrites": []
+    },
+    {
+      "source": "references_cumulative.bib",
+      "destination": "references_cumulative.bib",
+      "bytes": 328809,
+      "source_sha256": "ff13153816de1b7232d102db8a1143e557189fe25aab818a78802bbc9f2313d3",
+      "packaged_sha256": "ff13153816de1b7232d102db8a1143e557189fe25aab818a78802bbc9f2313d3",
+      "path_rewrites": []
+    },
+    {
+      "source": "render_development.py",
+      "destination": "render_development.py",
+      "bytes": 1722,
+      "source_sha256": "9bd4c962759a100247188e9c62dcf0b8d749ef848c0b7916565d91e53f9481bd",
+      "packaged_sha256": "9bd4c962759a100247188e9c62dcf0b8d749ef848c0b7916565d91e53f9481bd",
+      "path_rewrites": []
+    },
+    {
+      "source": "render_frontmatter.py",
+      "destination": "render_frontmatter.py",
+      "bytes": 1802,
+      "source_sha256": "ef431ca27968c966c1e41c20bd10ce790d227559bd3c72ae5204fb5cc1886963",
+      "packaged_sha256": "ef431ca27968c966c1e41c20bd10ce790d227559bd3c72ae5204fb5cc1886963",
+      "path_rewrites": []
+    },
+    {
+      "source": "report_references.md",
+      "destination": "report_references.md",
+      "bytes": 6748,
+      "source_sha256": "2c74beab257a909bdf7827c8bc81005b84224d5a0a4a28960eee481fb8e4df04",
+      "packaged_sha256": "2c74beab257a909bdf7827c8bc81005b84224d5a0a4a28960eee481fb8e4df04",
+      "path_rewrites": []
+    },
+    {
+      "source": "report_template.md",
+      "destination": "report_template.md",
+      "bytes": 18154,
+      "source_sha256": "d16f16ecb954d77da0c7217e09e9781f45f15cb1b2d445d364d02c6ca2a0e6f4",
+      "packaged_sha256": "d16f16ecb954d77da0c7217e09e9781f45f15cb1b2d445d364d02c6ca2a0e6f4",
+      "path_rewrites": []
+    },
+    {
+      "source": "validation_report.md",
+      "destination": "validation_report.md",
+      "bytes": 1965,
+      "source_sha256": "1935e8971e82396cc88fdca3300a039acc70c325edc1e7715b9de04c8896b101",
+      "packaged_sha256": "1935e8971e82396cc88fdca3300a039acc70c325edc1e7715b9de04c8896b101",
+      "path_rewrites": []
+    }
+  ]
+}

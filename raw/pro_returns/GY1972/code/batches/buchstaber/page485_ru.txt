@@ -1,0 +1,105 @@
+\SourcePage{GELFAND-P000485}{unlabelled}
+Рассм. $e_{\bar v}(z)=e^{\frac1h\bar v z}$ (когерентные сост. или пуасс. векторы).
+
+\sout{\mbox{$f\ldots$}}
+\Unclear{GELFAND-P000485}{upper-erasure}{В зачёркнутой записи видна буква $f$. Остальное не разобрано.}
+
+Рассм. теперь
+\[
+\begin{aligned}
+\hat f\longleftrightarrow f(v,\bar v)
+&=\frac{(\hat f e_{\bar v},e_v)}{(e_{\bar v},e_v)}
+\quad\text{(распространение)}={}\\
+&=\operatorname{Sp}(\hat fP_v).
+\end{aligned}
+\]
+\SourceFigure{GELFAND-P000485}{coherent-subscripts}{В обеих строках дроби у первого $e$ индекс $\bar v$, у второго $e$ индекс $v$.}
+
+($P_v$ — ортог. проект. на $e_v$)
+\[
+\hat f=\int\mathring f(v,\bar v)P_v\,dv\,d\bar v
+\qquad\text{(распр. антивик. символов).}
+\]
+
+\uwave{Двойственность:}
+
+1.
+\[
+\begin{array}{llll}
+\text{вик.} & \uparrow & \text{оп.}\longrightarrow\text{символ}\\
+\text{антивик.} && \text{симв.}\longrightarrow\text{оператор}
+\end{array}
+\]
+\SourceFigure{GELFAND-P000485}{duality-vertical-mark}{Перед «оп.» густо наведена стрелка вверх к волнистому подчёркиванию. Её связь с двумя строками не установлена.}
+
+2.
+\[
+\begin{aligned}
+\hat f\text{ — огр.}&\Longrightarrow f\text{ огр.}\\
+\mathring f\text{ — огр.}&\Longrightarrow\hat f\text{ огр.}
+\end{aligned}
+\]
+
+3.
+\[
+\begin{aligned}
+\hat f\text{ комп.}&\Longrightarrow f\to0\\
+\mathring f\to0&\Longrightarrow\hat f\text{ комп.}
+\end{aligned}
+\]
+\Unclear{GELFAND-P000485}{decay-arrow}{Стрелка к $0$ во второй строке густо наведена. Условно набрана $\to$.}
+
+4. Ядерность (анал.)
+\[
+\operatorname{Sp}\hat f
+ =\frac1{h^n}\int f(z,\bar z)\,dz\,d\bar z
+ =\frac1{h^n}\int\mathring f(z,\bar z)\,dz\,d\bar z.
+\]
+
+\uline{Ф-ла перехода:}
+\[
+f(z,\bar z)=\frac1{h^n}\int\mathring f(v,\bar v)
+ e^{-\frac1h(z-v)(\bar z-\bar v)}\,dv\,d\bar v.
+\]
+При $h/2$ получается символ Вейля.
+(Замеч. Гельфанда:
+$\overset{\text{\scriptsize (это символы)}}{\text{Пуанкаре}}$.)
+\SourceFigure{GELFAND-P000485}{poincare-insert}{«это символы» вписано сверху перед «Пуанкаре».}
+
+\uuline{Общая конструкция.}
+
+$H$ — гильб. пр-во, $M$ — мн-во с мерой, $\alpha\in M$, мера $d\alpha$.
+
+$e_\alpha$ — переполн. сист., если
+\[
+(f,f)=\int |(f,e_\alpha)|^2\,d\alpha.
+\]
+Рассм. тогда соответствие:
+\[
+\hat A\longrightarrow\frac{(\hat A e_\alpha,e_\alpha)}{(e_\alpha,e_\alpha)}
+ =\underset{\substack{\vert\!\vert\\\operatorname{Sp}(\hat A\hat P_\alpha)}}{A(\alpha)}
+ \qquad\text{(ковар. символ)}.
+\]
+\SourceFigure{GELFAND-P000485}{covariant-trace}{Под $A(\alpha)$ стоят два штриха и запись следа.}
+
+контравар. символ.
+\[
+\hat A=\int\mathring A(\alpha)\hat P_\alpha\,d\alpha.
+\]
+Раньше: $e_\alpha=e^{\bar v z}$, $\alpha=(v,\bar v)$.
+
+Все теор. справедливы.
+
+\uline{Другой способ:}
+
+$H\hookrightarrow L^2(M)$, $\hat T$ — ортог. проектор $L^2(M)$ в $H$.
+\Unclear{GELFAND-P000485}{embedding-overwrite}{Густо наведённый знак между $H$ и $L^2(M)$ условно прочитан как стрелка включения вправо.}
+
+\[
+(\hat Bf)(\alpha)=\mathring A(\alpha)f(\alpha)
+\quad\text{— оператор в }L^2(M).
+\]
+Тогда
+\begingroup\color{black}\GelfandFitDiagram{[diagram: consult scan]}\endgroup
+\SourceFigure{GELFAND-P000485}{compression-bracket}{Формула обведена снизу и с боков.}
+

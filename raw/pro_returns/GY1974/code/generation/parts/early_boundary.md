@@ -1,0 +1,263 @@
+## Boundary audit: P000550 and P000552–P000553
+
+These are 26 prior-index audit rows, not new current-year record assignments. All three scans were inspected in full, including overwritten formulas and the returning-loop diagram. P000552 explicitly dates the Koblenz talk 1 April 1974. The catalogue ranges overlap; P000551 alone holds the five331/332 source items. Status: November2026.
+
+### 1973-330.6 — Polynomial-exponential solutions and Bargmann potentials
+
+Page: P000550. Classification: E. Verification: read the result.
+
+The notes assert that arbitrary interpolation parameters produce a fundamental pair \(P(x,\zeta)e^{i\zeta x}\), \(Q(x,\zeta)e^{-i\zeta x}\) for a Sturm--Liouville equation with a Bargmann potential. A valid reflectionless construction requires admissible scattering data and a nonsingular interpolation system; an arbitrary complex choice need not give a real nonsingular potential, nor a fundamental pair at the Wronskian zeros.
+
+The construction belongs to established reflectionless inverse scattering. \citet[\S3, Theorem~1]{shabat2014interpolation} gives a precise interpolation theorem and explicitly recalls the 1974 Gelfand discussion on p.~305. Its general equation may have spectral-parameter-dependent potential; the real Bargmann specialization needs further conditions. This is a partial match, not validation of “arbitrary”.
+
+Bib keys: shabat2014interpolation, shabat1973kdv.
+
+### 1973-330.7 — The interpolation problem and its missing normalization
+
+Page: P000550. Classification: F. Verification: read the result.
+
+The recorded conditions are \(P/Q=c_j e^{2i\zeta_jx}\) at finitely many nodes and \(P/Q\to1\) at infinity. The node count is overwritten as \(2n\,?\,1\); the degrees, admissibility, and rank condition are absent. Therefore the literal system does not determine a general existence or uniqueness theorem.
+
+\citet[\S3, equations (44)--(49), Theorem~1]{shabat2014interpolation} specifies degrees \(m,n\), \(m+n+1\) nodes, normalization of the product of leading coefficients, and nondegeneracy. Its conventions do not identify the overwritten count or repair the notebook automatically. No open problem is extracted from this incomplete formulation.
+
+Bib keys: shabat2014interpolation.
+
+### 1973-330.8 — The polynomial Wronskian and the absent leading factor
+
+Page: P000550. Classification: E. Verification: read the result.
+
+The notes write \(P_xQ-Q_xP-2i\zeta PQ=\prod_j(\zeta-\zeta_j)\). Differentiating the interpolation equations does give zeros of the left side at the nodes. But if \(P,Q\) have degrees \(m,n\) and leading product \(pq\), its leading coefficient is \(-2ipq\), not automatically one. Its negative exponential sign is consistent with \(Pe^{-i\zeta x},Qe^{i\zeta x}\), opposite to the earlier displayed pair.
+
+\citet[Theorem~1, equation (50)]{shabat2014interpolation} proves the corresponding Wronskian factorization with an explicit leading constant \(-2\) in its real spectral convention. The degree, normalization and exponential signs must be chosen consistently. This is a mathematical normalization audit, not a confident reconstruction of the overwritten spectral letters.
+
+Bib keys: shabat2014interpolation.
+
+### 1973-330.9 — Cubic time evolution of the interpolation data
+
+Page: P000550. Classification: E. Verification: read the result.
+
+The source evolves \(c_j(t)=c_j(0)e^{2i\zeta_j^3t}\). The structural assertion is that the scattering or interpolation coefficients evolve exponentially with a cubic spectral exponent under a KdV flow. The numerical factor and sign depend on the scaling of time, the Schrödinger operator and the chosen scattering functions.
+
+\citet[equations (13), (18)]{shabat1973kdv} obtains linear cubic evolution of the scattering kernel; the paper was received 13 December 1972, presented 18 December 1972, and published in 1973. The cubic law is known before the source discussion; the notebook coefficient is not claimed to match another convention without conversion.
+
+Bib keys: shabat1973kdv.
+
+### 1973-330.10 — The incomplete third-order auxiliary equation
+
+Page: P000550. Classification: F. Verification: read the result.
+
+The line reads \((4\partial_t+\partial_x^3-3q\partial_x)P=(\ )Q=0\). The second parenthesis is empty, and acting on polynomial factors after removing exponentials shifts every \(\partial_x\) to \(\partial_x\pm i\zeta\). A full Lax auxiliary equation also depends on its zeroth-order term and the normalization of the eigenfunctions.
+
+The cubic auxiliary-operator mechanism is established in \citet{shabat1973kdv} and in \citet[\S2, equation (33)]{shabat2014interpolation}. Neither supplies an exact missing notebook operator under the unresolved conventions. This remains an incomplete formula, not an open mathematical problem.
+
+Bib keys: shabat1973kdv, shabat2014interpolation.
+
+### 1973-330.11 — Logarithmic derivatives, the spectral shift and the Miura sign
+
+Page: P000550. Classification: E. Verification: read the result.
+
+For \(-y_{xx}+Vy=\zeta^2y\), the logarithmic derivative \(f=y_x/y\) satisfies \(f_x+f^2=V-\zeta^2\), away from zeros. The notebook omits this shift and pairs \(4f_t+f_{xxx}+3(f^2+\zeta^2)f_x=0\) with a plus-sign KdV equation for \(f_x+f^2\). These coefficients do not form the standard Miura identity. One consistent convention is \[4V_t+V_{xxx}-6VV_x=(\partial_x+2f)\bigl(4f_t+f_{xxx}-6(f^2+\zeta^2)f_x\bigr),\quad V=f_x+f^2+\zeta^2.\]
+
+The Riccati and factorization mechanism is classical; compare \citet[equations (2), (18)]{shabat2014interpolation}. The displayed identity is an editorial direct algebraic check \oursComputed, offered as a consistent convention rather than a palaeographic emendation of every sign on the page.
+
+Bib keys: shabat2014interpolation.
+
+### 1973-333.1 — The sign of the Laplace--Beltrami operator
+
+Page: P000552. Classification: E. Verification: read the result.
+
+On a closed smooth Riemannian manifold, the coordinate expression \(|g|^{-1/2}\partial_i(|g|^{1/2}g^{ij}\partial_j)\) is nonpositive on functions. To retain the written nonnegative eigenvalues \(\lambda_j\) and heat trace \(\sum e^{-t\lambda_j}\), define \(L=-\operatorname{div}\nabla\ge0\). The scan has heavy cancellation before the coordinate expression; an intended minus cannot be read confidently.
+
+The sign convention and spectral expansion are standard. \citet[\S1]{mckeansinger1967curvature} uses a nonpositive Laplacian and correspondingly opposite heat-exponential sign; the mathematical correction is convention consistency, not an invented visible glyph.
+
+Bib keys: mckeansinger1967curvature.
+
+### 1973-333.2 — Heat-kernel expansion and trace
+
+Page: P000552. Classification: E. Verification: read the result.
+
+For a real orthonormal eigenbasis of \(L\ge0\), \(K(t,x,y)=\sum_j e^{-t\lambda_j}\varphi_j(x)\varphi_j(y)\) and \(\operatorname{Tr}(e^{-tL})=\int_MK(t,x,x)dV\), for \(t>0\). A complex orthonormal basis requires conjugation in the second factor.
+
+This is established spectral theory for a smooth compact manifold; \citet[\S1 and heat-kernel construction]{mckeansinger1967curvature} and \citet[introduction]{gilkey1979recursion} state the same framework. No novelty or extra assertion about termwise convergence at \(t=0\) is intended.
+
+Bib keys: mckeansinger1967curvature, gilkey1979recursion.
+
+### 1973-333.3 — The small-time heat-trace expansion
+
+Page: P000552. Classification: E. Verification: read the result.
+
+For a closed smooth \(n\)-manifold, \(\operatorname{Tr}(e^{-tL})\sim(4\pi t)^{-n/2}\sum_{j\ge0}a_jt^j\) as \(t\downarrow0\), with \(a_0=\operatorname{vol}M\). This is an asymptotic expansion to each finite order, not an asserted convergent series. Complex-time versions require sectors inside \(\operatorname{Re}t>0\).
+
+The notes attribute the expansion to Minakshisundaram (1949). The established result and its local-invariant interpretation are checked through \citet[introduction]{gilkey1979recursion}; \citet{mckeansinger1967curvature} predates the talk. These later explanatory sources are not used to change the historical priority.
+
+Bib keys: mckeansinger1967curvature, gilkey1979recursion.
+
+### 1973-333.4 — Curvature contractions
+
+Page: P000552. Classification: E. Verification: read the result.
+
+With a fixed curvature-sign convention, \(\operatorname{Ric}\) is a metric contraction of \(\operatorname{Rm}\), and \(\operatorname{Scal}=g^{ij}\operatorname{Ric}_{ij}\). Norms mean full metric contractions; \(|\operatorname{Rm}|^2=\sum R_{ijkl}^2\) holds in an orthonormal frame at the point. Several indices in the scan are overwritten and cannot be recovered uniquely.
+
+These are standard tensor definitions. \citet[\S7]{mckeansinger1967curvature} and \citet[\S1]{gilkey1979recursion} provide the invariant contraction framework. The coordinate-free reconstruction avoids inventing unreadable indices.
+
+Bib keys: mckeansinger1967curvature, gilkey1979recursion.
+
+### 1973-333.5 — The integrated scalar-curvature coefficient
+
+Page: P000552. Classification: E. Verification: read the result.
+
+For the scalar nonnegative Laplacian on a smooth closed manifold, with the usual geometric scalar-curvature convention, \(a_1=\frac16\int_M\operatorname{Scal}\,dV\). It is an integrated coefficient, not the pointwise heat coefficient itself.
+
+The formula is established before the talk; \citet[\S1, equation (5a), and \S4]{mckeansinger1967curvature} computes the scalar-curvature term. Sign conventions must be translated consistently with the Laplacian and curvature tensor.
+
+Bib keys: mckeansinger1967curvature.
+
+### 1973-333.6 — The quadratic integrated heat coefficient
+
+Page: P000552. Classification: E. Verification: read the result.
+
+Under the same closed-manifold hypotheses, \[a_2=\frac1{360}\int_M\bigl(2|\operatorname{Rm}|^2-2|\operatorname{Ric}|^2+5\operatorname{Scal}^2\bigr)dV.\] A local formula also contains a divergence term whose integral vanishes on a closed manifold; boundary problems require additional coefficients.
+
+The three curvature terms match the established result of \citet[\S7]{mckeansinger1967curvature}; \citet[introduction and \S4]{gilkey1979recursion} supplies an independent recurrence derivation. The source integral needs its volume element, but no change to the written numerical coefficients.
+
+Bib keys: mckeansinger1967curvature, gilkey1979recursion.
+
+### 1973-333.7 — The missing off-diagonal Gaussian
+
+Page: P000552. Classification: E. Verification: read the result.
+
+Near the diagonal, in a normal neighborhood and as \(t\downarrow0\), the heat parametrix has the form \[K(t,x,y)\sim(4\pi t)^{-n/2}e^{-d_g(x,y)^2/(4t)}\sum_{j\ge0}u_j(x,y)t^j.\] The notebook displays the power series without the Gaussian. That abbreviated formula is valid on the diagonal, but is false as a literal off-diagonal expansion.
+
+The local parametrix is classical; see the heat-kernel construction in \citet{mckeansinger1967curvature}. \citet[introduction, p.~202]{gilkey1979recursion} explicitly states off-diagonal rapid decay. The omitted exponential is an emendation of mathematical content.
+
+Bib keys: mckeansinger1967curvature, gilkey1979recursion.
+
+### 1973-333.8 — Sakai and the fourth heat coefficient
+
+Page: P000552. Classification: E. Verification: indirect.
+
+The source calls \(a_3\) the fourth coefficient, counting \(a_0\) first, and attributes a computation to Sakai. No formula for \(a_3\) is recorded, so the item is an attribution, not an occurrence of every term in the general cubic-curvature expression.
+
+\citet{sakai1971eigenvalues}, Tohoku Math. J.23(4),589--603, appeared in1971. Publisher issue metadata were opened; the attribution is explicitly confirmed by \citet[introduction]{gilkey1979recursion}. The full Sakai formula was not independently read in this audit.
+
+Bib keys: sakai1971eigenvalues, gilkey1979recursion.
+
+### 1973-333.9 — Koblenz’s claimed independent fourth-coefficient computation
+
+Page: P000552. Classification: F. Verification: unresolved lead.
+
+The speaker, named Yura Koblenz from Leningrad, is said to have computed \(a_3\) independently of Sakai. There is no formula, manuscript title, date of independent discovery or method in the notebook.
+
+Targeted searches for Koblenz, heat coefficients and Laplace asymptotics did not identify an exact primary publication. Sakai’s known computation does not prove or disprove the claim of independence. The attribution remains unverified, rather than classified as a new open mathematical question.
+
+Bib keys: .
+
+### 1973-333.10 — The lattice-point and Riemann-zero analogy
+
+Page: P000552. Classification: F. Verification: read the result.
+
+Gelfand writes a circle lattice-point main term \(\pi r^2\) plus a schematic oscillatory sum and identifies the frequencies with zeros of the Riemann zeta function, “modulo the Riemann hypothesis”. The summation variables, coefficients and scaling are overwritten or undefined. The literal expression is not a verified lattice-point formula.
+
+No precise claim is recovered from this analogy. \citet[introduction]{colindeverdiere1973geodesicsii} distinguishes exact Poisson formulas on flat tori from general geodesic trace asymptotics, but this does not identify the notebook’s asserted zeta-zero formula. It remains F, with no transfer of an unrelated modern theorem.
+
+Bib keys: colindeverdiere1973geodesicsii.
+
+### 1973-333.11 — Closed billiard paths and oscillatory spectral density
+
+Page: P000552-P000553. Classification: E. Verification: indirect.
+
+Shnirelman identifies oscillation lengths with closed billiard trajectories in a ball; the continuation displays \(f(\lambda)=f_0(\lambda)+\sum c_k\lambda^{\alpha_k}\sin(\ell_k\lambda+\omega_k)\). The variable must be a frequency for \(\ell_k\lambda\) to be the usual phase. Amplitudes, smoothing, boundary conditions, repeated trajectories and degeneracies are not specified.
+
+The named Balian--Bloch1972 paper is a strong historical match, but its publisher page returned403 and the exact formula was not read. \citet[introduction]{colindeverdiere1973geodesicsii} explicitly cites their bounded-domain Green-function method and gives a related closed-manifold theorem under nondegeneracy conditions. The match to the literal billiard formula remains partial.
+
+Bib keys: balianbloch1972oscillations, colindeverdiere1973geodesicsii.
+
+### 1973-333.12 — Cauchy smoothing and convergence
+
+Page: P000552. Classification: E. Verification: read the result.
+
+The notes convolve the spectral measure with \(\varepsilon/(\lambda^2+\varepsilon^2)\). A normalized Cauchy kernel has an extra factor \(1/\pi\). One must also specify a finite spectral cutoff or a convergent regularization: for frequencies of \(\sqrt L\) in dimension \(n\ge2\), the positive tail \(\sum_j\varepsilon/\lambda_j^2\) diverges by Weyl growth. If \(\lambda_j\) denotes eigenvalues of \(L\), the bare sum instead converges in dimensions below4. A rapidly decreasing test function always defines a suitable smoothed spectral measure.
+
+Smoothing is an established spectral method, not a theorem guaranteeing convergence of this unspecific formula. The Weyl-law framework is in \citet[\S1]{mckeansinger1967curvature}; the oscillatory context is in \citet{colindeverdiere1973geodesicsii}. The convergence distinction is an editorial check of the displayed kernel.
+
+Bib keys: mckeansinger1967curvature, colindeverdiere1973geodesicsii.
+
+### 1973-333.13 — The heat trace is not the displayed oscillatory trace
+
+Page: P000553. Classification: E. Verification: read the result.
+
+The scan literally equates \(\sum e^{i\lambda_jz}\) with \(\operatorname{Tr}(e^{-z\Delta})\). For eigenvalues \(\mu_j\) of \(L\ge0\), the heat trace is \(\sum e^{-z\mu_j}\), holomorphic for \(\operatorname{Re}z>0\). If \(\lambda_j=\sqrt{\mu_j}\), the half-wave sum is \(\operatorname{Tr}(e^{iz\sqrt L})\), holomorphic for \(\operatorname{Im}z>0\) and distributionally defined on the real axis. These are different operators and domains.
+
+The later half-wave equation on the page supports a frequency interpretation, but does not repair the earlier equality literally. Compare the complex-time heat analysis of \citet{colindeverdiere1973geodesicsii} and the later spectral-trace paper \citet{duistermaatguillemin1975spectrum}; the latter was received20October1974 and publishedFebruary1975.
+
+Bib keys: colindeverdiere1973geodesicsii, duistermaatguillemin1975spectrum.
+
+### 1973-333.14 — The unspecified general spectral-gap question
+
+Page: P000553. Classification: F. Verification: read the result.
+
+The “twin problem” asks for \(\lambda_{k+1}-\lambda_k>c\lambda_k^{-\nu}\) for “general operators”. No operator class, multiplicity convention, generic topology, constants or frequency convention is fixed. Read universally with multiplicities, it is false even for the circle.
+
+The adjacent circle and torus examples show why a qualified formulation is essential. Neither the wave-trace theorem nor the near-flat torus theorem proves a lower bound for an unspecified generic class. The item remains F; no modern universal gap conjecture is silently substituted.
+
+Bib keys: shnirelman1975multiplicity.
+
+### 1973-333.15 — Exact spectral doublets on the circle
+
+Page: P000553. Classification: E. Verification: read the result.
+
+On a circle of length \(\ell\), the scalar Laplacian has eigenvalues \((2\pi m/\ell)^2\), each of multiplicity2 for \(m\ge1\). The half-wave eigenvalues are \(2\pi m/\ell\) with the same multiplicity. Every smooth metric on a circle is isometric to one specified by its total length, so metric perturbation preserves this doublet structure.
+
+This elementary Fourier computation proves the particular counterexample to the unqualified lower-gap assertion. The notebook’s wider phrase about stable asymptotic double multiplicity should not be extended to an arbitrary operator perturbation without specifying its class. The nearby torus analogy is treated independently by \citet{shnirelman1975multiplicity}.
+
+Bib keys: shnirelman1975multiplicity.
+
+### 1973-333.16 — Shnirelman’s all-index close-neighbor theorem
+
+Page: P000553. Classification: B. Verification: read the result.
+
+Let a smooth Riemannian metric on \(T^2\) be sufficiently close to a flat metric, and let \(\lambda_k\) be the ordered eigenvalues of \(\sqrt{-\Delta_g}\), with multiplicities. Then, for every \(N\), there is \(C_N>0\) such that for every \(k>1\), \[\min(\lambda_{k+1}-\lambda_k,\lambda_k-\lambda_{k-1})<C_N k^{-N}.\] The closeness is enough for the invariant-torus construction used in the proof; no explicit norm threshold is supplied in the two-page announcement.
+
+\citet[Theorem and Lemmas1--3, pp.~265--266]{shnirelman1975multiplicity} states exactly this all-index result, explicitly strengthening Lazutkin’s positive-density subsequence theorem. It was received by the Moscow Mathematical Society7May1974 and published1975, after the1April1974 notebook meeting. Both primary pages were read. This is B relative to Koblenz’s main talk, with Shnirelman’s intervention explicitly preserved.
+
+Bib keys: shnirelman1975multiplicity.
+
+### 1973-333.17 — The tentative three-torus comparison
+
+Page: P000553. Classification: F. Verification: read the result.
+
+The source says that in \(T^3\) “apparently” the preceding behavior no longer holds. It specifies neither a metric nor the quantifier of the alleged negation. Flat tori still have symmetry-related multiplicities, so the phrase cannot be read as an assertion about every three-torus metric.
+
+\citet{shnirelman1975multiplicity} proves a two-dimensional theorem and does not supply the proposed three-dimensional negation. No exact primary theorem matching this tentative sentence was verified. It remains F rather than an eligible open problem.
+
+Bib keys: shnirelman1975multiplicity.
+
+### 1973-333.18 — Half-wave propagation and its trace
+
+Page: P000553. Classification: E. Verification: read the result.
+
+With \(L=-\Delta_g\ge0\), the Cauchy problem \(u_t=i\sqrt L\,u\), \(u(0)=\delta_x\), has distribution kernel \(U(t,y,x)\) of \(e^{it\sqrt L}\). Its distributional trace is \(\int_M U(t,x,x)dV=\sum_k e^{it\sqrt{\mu_k}}\). The sum is not generally pointwise convergent for real \(t\).
+
+The spectral construction is classical before the meeting. Its microlocal analysis uses the real-principal propagation framework of \citet[\S6.1]{duistermaathormander1972fourierii}; the later \citet{duistermaatguillemin1975spectrum} formalizes the trace relation. The source uses the same letter for energy eigenvalues and their square roots, requiring this distinction.
+
+Bib keys: duistermaathormander1972fourierii, duistermaatguillemin1975spectrum.
+
+### 1973-333.19 — Unit-speed singularity propagation and caustics
+
+Page: P000553. Classification: E. Verification: read the result.
+
+The page places kernel singularities at \(|x-y|=t\), draws a returning loop, and mentions bifurcations. On a Riemannian manifold the precise statement is propagation along the geodesic Hamilton flow of \(|\xi|_g\), at unit speed in the base. The equality \(d_g(x,y)=|t|\) describes the short-time normal-neighborhood front, not all returning geodesics or caustics globally.
+
+\citet[Theorem6.1.1]{duistermaathormander1972fourierii} establishes propagation of wave-front singularities along real-principal bicharacteristics before the talk. The sketch does not define an additional classification of bifurcations. Its loop is accounted for as a propagation/return diagram, not a separate unknown theorem.
+
+Bib keys: duistermaathormander1972fourierii.
+
+### 1973-333.20 — Closed-geodesic contributions to a wave trace
+
+Page: P000553. Classification: E. Verification: read the result.
+
+Restricting the propagator to the diagonal and integrating selects fixed points of geodesic flow, hence closed geodesics. The singular support of the half-wave trace is contained in zero together with signed lengths of closed geodesics. Identifying a nonzero singular coefficient or a full expansion requires clean/nondegenerate fixed-point hypotheses and control of cancellations.
+
+\citet[introduction and main theorem]{colindeverdiere1973geodesicsii} gives a pre-talk closed-manifold oscillatory spectral/geodesic relation under explicit nondegeneracy hypotheses. \citet{duistermaatguillemin1975spectrum}, receivedOctober1974 and publishedFebruary1975, is a later general trace-theoretic continuation; only its publisher metadata were checked here. These are related to, but not an exact theorem for, the notebook’s unspecified billiard amplitudes.
+
+Bib keys: colindeverdiere1973geodesicsii, duistermaatguillemin1975spectrum.

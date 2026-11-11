@@ -1,0 +1,103 @@
+{
+  "result": "PASS",
+  "pdf_pages": 161,
+  "pdf_sha256": "2d226616420eb5a7c982cf7dcc1142690147aa1fa08329f2191e64e00b511be2",
+  "compiled_commands": [
+    {
+      "stage": "typesetting",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/1eb0e8a5924e/work/code/repair_typesetting.py",
+        "/workspace/scratch/1eb0e8a5924e/delivery/GY1977"
+      ],
+      "returncode": 0
+    },
+    {
+      "stage": "builder",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "build_chapter.py",
+        "GY1977"
+      ],
+      "returncode": 0
+    },
+    {
+      "stage": "xelatex_1",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/1eb0e8a5924e/work/tex_runtime/run_tex.py",
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1977_test.tex"
+      ],
+      "returncode": 0
+    },
+    {
+      "stage": "bibtex",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/1eb0e8a5924e/work/tex_runtime/run_tex.py",
+        "bibtex",
+        "GY1977_test"
+      ],
+      "returncode": 0
+    },
+    {
+      "stage": "xelatex_2",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/1eb0e8a5924e/work/tex_runtime/run_tex.py",
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1977_test.tex"
+      ],
+      "returncode": 0
+    },
+    {
+      "stage": "xelatex_3",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/1eb0e8a5924e/work/tex_runtime/run_tex.py",
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1977_test.tex"
+      ],
+      "returncode": 0
+    }
+  ],
+  "diagnostics": {
+    "LaTeX_errors": 0,
+    "LaTeX_warnings": 0,
+    "package_warnings": 0,
+    "overfull_boxes": 0,
+    "missing_glyphs": 0,
+    "undefined_references_or_citations": 0,
+    "BibTeX_warnings": 0,
+    "BibTeX_errors": 0
+  },
+  "font_count": 22,
+  "all_fonts_embedded": true,
+  "paper": "A4",
+  "encrypted": false,
+  "all_occurrence_ids_found": true,
+  "occurrence_count": 305,
+  "printed_bibliography_entries": 88,
+  "overview_pages": [
+    1,
+    2
+  ],
+  "records": 28,
+  "problems": 13,
+  "source_page_locators": 94,
+  "supplied_kit_unchanged": {
+    "build_chapter.py": true,
+    "gelfand_companion.sty": true,
+    "CHAPTER_FORMAT.md": true
+  },
+  "typography_repairs": "Canonical text and development only; see repair_typesetting.py and output/typesetting_repairs.json.",
+  "visual_review": "See visual_review.md, visual_review.json, and qa/ contact sheets.",
+  "errors": []
+}

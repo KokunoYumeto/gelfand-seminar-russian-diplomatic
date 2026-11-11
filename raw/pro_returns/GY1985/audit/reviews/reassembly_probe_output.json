@@ -1,0 +1,99 @@
+{
+  "purpose": "Isolated reassembly from a copy of final authoring fragments; no source changes",
+  "commands": [
+    {
+      "script": "assemble.py",
+      "exit_code": 0,
+      "output": "{\n  \"records\": 26,\n  \"items\": 260,\n  \"problems\": 11,\n  \"references\": 81,\n  \"corrections\": 172,\n  \"by_class\": {\n    \"A\": 4,\n    \"B\": 14,\n    \"C\": 2,\n    \"D\": 0,\n    \"E\": 217,\n    \"F\": 23\n  },\n  \"by_record\": {\n    \"641\": 11,\n    \"642\": 7,\n    \"643\": 7,\n    \"644\": 8,\n    \"646\": 3,\n    \"645\": 8,\n    \"647\": 1,\n    \"648\": 14,\n    \"649\": 9,\n    \"650\": 11,\n    \"651\": 11,\n    \"653\": 3,\n    \"652\": 7,\n    \"654\": 10,\n    \"655\": 6,\n    \"656\": 6,\n    \"657\": 13,\n    \"658\": 18,\n    \"659\": 14,\n    \"660\": 13,\n    \"661\": 8,\n    \"662\": 20,\n    \"663\": 15,\n    \"664\": 16,\n    \"665\": 0,\n    \"666\": 21\n  },\n  \"by_primary_speaker\": {\n    \"A. A. Beilinson\": 35,\n    \"A. M. Vershik\": 18,\n    \"A. V. Zelevinsky\": 23,\n    \"B. L. Feigin\": 94,\n    \"D. B. Fuchs\": 18,\n    \"I. M. Gelfand\": 1,\n    \"M. M. Kapranov\": 11,\n    \"M.-F. Vigneras\": 3,\n    \"S. P. Novikov\": 15,\n    \"V. G. Knizhnik\": 16,\n    \"V. I. Arnold\": 7,\n    \"Werner Müller\": 10,\n    \"Yu. S. Ryzhikova\": 9\n  },\n  \"by_area\": {\n    \"Algebraic geometry, twistor constructions, integrable operators\": 26,\n    \"Abelian integrals and singularities\": 7,\n    \"Combinatorics and Schubert calculus\": 15,\n    \"Representations of local reductive groups\": 11,\n    \"Automorphic representations and arithmetic\": 14,\n    \"Spectral geometry and singular elliptic operators\": 10,\n    \"Convex geometry and realization spaces\": 19,\n    \"Subspace lattices and representations\": 9,\n    \"String geometry, determinant lines, and moduli\": 65,\n    \"Virasoro, affine algebras, and boson--fermion constructions\": 84\n  },\n  \"area_records\": {\n    \"Algebraic geometry, twistor constructions, integrable operators\": [\n      641,\n      663\n    ],\n    \"Abelian integrals and singularities\": [\n      642\n    ],\n    \"Combinatorics and Schubert calculus\": [\n      643,\n      661\n    ],\n    \"Representations of local reductive groups\": [\n      644,\n      646\n    ],\n    \"Automorphic representations and arithmetic\": [\n      648\n    ],\n    \"Spectral geometry and singular elliptic operators\": [\n      654\n    ],\n    \"Convex geometry and realization spaces\": [\n      647,\n      658\n    ],\n    \"Subspace lattices and representations\": [\n      653,\n      656\n    ],\n    \"String geometry, determinant lines, and moduli\": [\n      645,\n      649,\n      650,\n      664,\n      666\n    ],\n    \"Virasoro, affine algebras, and boson--fermion constructions\": [\n      651,\n      652,\n      655,\n      657,\n      659,\n      660,\n      662\n    ]\n  },\n  \"literal_correctness\": {\n    \"correct with missing hypotheses\": 144,\n    \"false as written\": 66,\n    \"not determinable\": 30,\n    \"correct\": 20\n  },\n  \"verification\": {\n    \"read the result\": 224,\n    \"unresolved lead\": 10,\n    \"indirect\": 10,\n    \"publisher metadata checked\": 16\n  },\n  \"correction_type\": {\n    \"translation\": 2,\n    \"ambiguity\": 40,\n    \"faithful_error\": 106,\n    \"provenance\": 24\n  },\n  \"talk_kind\": {\n    \"talk\": 25,\n    \"heading\": 1\n  },\n  \"developed_items\": [\n    \"1985-658.10\"\n  ],\n  \"adjacent_items\": 12\n}\n"
+    },
+    {
+      "script": "write_report.py",
+      "exit_code": 0,
+      "output": "{\n  \"report_words\": 3113,\n  \"core_items\": 260,\n  \"references\": 81,\n  \"adjacent_items\": 12\n}\n"
+    },
+    {
+      "script": "build_chapter.py",
+      "exit_code": 0,
+      "output": "GY1985: 26 talks, 260 items (A 4, B 14, C 2, E 217, F 23), 11 problems, 81 references, 172 corrections\n"
+    }
+  ],
+  "comparisons": {
+    "GY1985_talks.json": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "be4b10e7af7bb9d71ec40cd58d44ec5bbdf7e834653124404456d6d15501143f",
+      "final_sha256": "be4b10e7af7bb9d71ec40cd58d44ec5bbdf7e834653124404456d6d15501143f"
+    },
+    "GY1985_items.json": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "ed960860b3de0f80382d4210cc93cc5169ff9f15b690aefcdd651ddd9e6e2ada",
+      "final_sha256": "ed960860b3de0f80382d4210cc93cc5169ff9f15b690aefcdd651ddd9e6e2ada"
+    },
+    "GY1985_problems.json": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "e0214a9f1984e4818b108566ffb259411345af79d3187a34b1b60dfe056c2d1d",
+      "final_sha256": "e0214a9f1984e4818b108566ffb259411345af79d3187a34b1b60dfe056c2d1d"
+    },
+    "GY1985_corrections.csv": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "67533df647a96832b0c24d73dff98646b7b9431f85998f21beefc44ff9f4d928",
+      "final_sha256": "67533df647a96832b0c24d73dff98646b7b9431f85998f21beefc44ff9f4d928"
+    },
+    "GY1985_references.bib": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "57d3ac7a5233fce44b6fc14e16d0bda2388f09eed2468dffe9b6c6c96fc08a2b",
+      "final_sha256": "57d3ac7a5233fce44b6fc14e16d0bda2388f09eed2468dffe9b6c6c96fc08a2b"
+    },
+    "GY1985_development.tex": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "07df54d74301a8dfcaf32b35618c5552fd2f129fea1a17035f41e3b4e55e7422",
+      "final_sha256": "07df54d74301a8dfcaf32b35618c5552fd2f129fea1a17035f41e3b4e55e7422"
+    },
+    "GY1985_overview.tex": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "162beb379316b043e717410e1e1d12598751dc1a1a85b3c8dbf54fbc3b04df7a",
+      "final_sha256": "162beb379316b043e717410e1e1d12598751dc1a1a85b3c8dbf54fbc3b04df7a"
+    },
+    "GY1985_adjacent_items.json": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "e8e107cebde7eaf14e4ff18fe60d67f5c0e8f990c61f3b255db747694aab8833",
+      "final_sha256": "e8e107cebde7eaf14e4ff18fe60d67f5c0e8f990c61f3b255db747694aab8833"
+    },
+    "GY1985_report.md": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "44ae693afff081bfe0477a038b7e9bd8ffa9e0e6bc445244fd08788c0e2f6c80",
+      "final_sha256": "44ae693afff081bfe0477a038b7e9bd8ffa9e0e6bc445244fd08788c0e2f6c80"
+    },
+    "GY1985_chapter.tex": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "68fdca496cd59b42b6ef3d9384902ed6f60953b33cbe1cc442008a6bf78179e0",
+      "final_sha256": "68fdca496cd59b42b6ef3d9384902ed6f60953b33cbe1cc442008a6bf78179e0"
+    },
+    "GY1985_test.tex": {
+      "generated_exists": true,
+      "final_exists": true,
+      "equal": true,
+      "generated_sha256": "e1b153d591a115ac993450f455ff17c5eb4c69a9ca90b99a8a9a8b8cb9b19628",
+      "final_sha256": "e1b153d591a115ac993450f455ff17c5eb4c69a9ca90b99a8a9a8b8cb9b19628"
+    }
+  }
+}

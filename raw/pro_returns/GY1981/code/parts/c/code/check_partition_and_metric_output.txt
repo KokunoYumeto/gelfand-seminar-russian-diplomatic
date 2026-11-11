@@ -1,0 +1,16 @@
+PARTITION IDENTITY: two independent exact enumerations
+All m,n in 0..4: 25 rectangles, 251 partitions; PASS
+All m,n in 0..6: 49 rectangles, 3431 partitions; PASS
+Negative control: m=n=1, lambda=(1): written lhs=t+t^2, rhs=1+t; FAIL as required
+Corrected lhs=t+1; PASS
+
+GRAM COORDINATE JACOBIAN: independent symbolic matrices
+n=1, edges=1: det(dg/ds)=1; |det(dg/dl)|/product(l)=2; PASS
+n=2, edges=3: det(dg/ds)=-1/2; |det(dg/dl)|/product(l)=4; PASS
+n=3, edges=6: det(dg/ds)=-1/8; |det(dg/dl)|/product(l)=8; PASS
+n=4, edges=10: det(dg/ds)=1/64; |det(dg/dl)|/product(l)=16; PASS
+n=5, edges=15: det(dg/ds)=1/1024; |det(dg/dl)|/product(l)=32; PASS
+One-dimensional invariant density: g=l^2, g^(-1) dg=2 dl/l; PASS
+The written volume^(-2) dl scales as dl/l^2 and fails the one-edge invariant-measure check.
+
+All exact checks passed. Finite enumeration is not a proof for unbounded m,n.

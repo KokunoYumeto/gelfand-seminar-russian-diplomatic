@@ -1,0 +1,55 @@
+{
+  "default_book_class": "",
+  "private_format_directory": "/workspace/scratch/34467c98be4a/GY1987_work/tex_build_runtime",
+  "existing_distribution": "/usr/share/texlive/texmf-dist",
+  "commands": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "build_chapter.py",
+        "GY1987"
+      ],
+      "returncode": 0,
+      "output": "logs/build.log"
+    },
+    {
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1987_test.tex"
+      ],
+      "returncode": 0,
+      "output": "logs/xelatex_pass1_console.log"
+    },
+    {
+      "command": [
+        "bibtex",
+        "GY1987_test"
+      ],
+      "returncode": 0,
+      "output": "logs/bibtex_console.log"
+    },
+    {
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1987_test.tex"
+      ],
+      "returncode": 0,
+      "output": "logs/xelatex_pass2_console.log"
+    },
+    {
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1987_test.tex"
+      ],
+      "returncode": 0,
+      "output": "logs/xelatex_pass3_console.log"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,66 @@
+--- kit_original/build_chapter.py
++++ build_chapter.py
+@@ -100,7 +100,7 @@
+         if k not in p:
+             errors.append(f"problem {p.get('id')}: missing key {k}")
+     for o in p.get("occurrences") or []:
+-        if o.startswith(f"{YEAR}-") and o not in ids:
++        if (o.startswith(f"{YEAR}-") or o.startswith(f"{YEAR + 1}-")) and o not in ids:
+             errors.append(f"problem {p.get('id')}: occurrence {o} is not an item of this year")
+     for k in p.get("refs") or []:
+         if k not in bibkeys:
+@@ -109,7 +109,13 @@
+ if len(problem_ids) != len(set(problem_ids)):
+     errors.append('duplicate problem IDs')
+ for record, record_items in per_rec.items():
+-    expected = [f'{YEAR}-{record}.{n}' for n in range(1, len(record_items) + 1)]
++    record_year = int(record_items[0]['id'].split('-')[0])
++    expected = [f'{record_year}-{record}.{n}' for n in range(1, len(record_items) + 1)]
++    talk_date = str(recs[record].get('date', ''))
++    if re.fullmatch(r'\d{4}-\d{2}-\d{2}', talk_date):
++        academic_year = int(talk_date[:4]) - (int(talk_date[5:7]) < 8)
++        if record_year != academic_year:
++            errors.append(f'record {record}: academic-year ID does not match date')
+     if [x['id'] for x in record_items] != expected:
+         errors.append(f'record {record}: item numbers are not consecutive')
+ for x in items:
+@@ -117,7 +123,8 @@
+         errors.append(f"item {x['id']}: missing problem {x['problem']}")
+ cited = set(re.findall(r"\\cite[pt]?\*?(?:\[[^\]]*\])*\{([^}]*)\}", overview + development +
+                        json.dumps(items, ensure_ascii=False).replace("\\\\", "\\") +
+-                       json.dumps(talks, ensure_ascii=False).replace("\\\\", "\\")))
++                       json.dumps(talks, ensure_ascii=False).replace("\\\\", "\\") +
++                       json.dumps(problems, ensure_ascii=False).replace("\\\\", "\\") + text("corrections.csv")))
+ for group in cited:
+     for k in group.split(","):
+         if k.strip() and k.strip() not in bibkeys:
+@@ -203,7 +210,7 @@
+     "\\usepackage[a4paper,margin=22mm,headheight=15pt]{geometry}\n"
+     "\\usepackage{gelfand_companion}\n"
+     "\\setlength{\\emergencystretch}{2em}\n"
+-    f"\\hypersetup{{pdftitle={{Gelfand Seminar {YEAR}--{(YEAR + 1) % 100:02d}: A Critical Companion}}}}\n"
++    f"\\hypersetup{{pdftitle={{Gelfand Seminar: {title}}}}}\n"
+     "\\begin{document}\n"
+     f"\\input{{{TAG}_chapter.tex}}\n\\bibliographystyle{{plainnat}}\n\\bibliography{{{TAG}_references}}\n"
+     "\\end{document}\n", encoding="utf-8")
+--- kit_original/gelfand_companion.sty
++++ gelfand_companion.sty
+@@ -22,6 +22,9 @@
+ \RequirePackage{enumitem}
+ \RequirePackage{needspace}
+ \RequirePackage{etoolbox}
++% Permit natural ragged-right breaks in long scholarly headings.
++\patchcmd{\section}{\normalfont\Large\bfseries}{\normalfont\Large\bfseries\raggedright}{}{}
++\patchcmd{\subsection}{\normalfont\large\bfseries}{\normalfont\large\bfseries\raggedright}{}{}
+ \widowpenalty=10000
+ \clubpenalty=10000
+ \RequirePackage[authoryear,round]{natbib}
+@@ -66,7 +69,7 @@
+ \newtheorem{example}[theorem]{Example}
+ \theoremstyle{remark}
+ \newtheorem{remark}[theorem]{Remark}
+-% \ours marks a statement proved, computed or constructed in this companion (not in the literature)
++% \ours marks a proof supplied in this companion; any novelty claim is stated separately.
+ \newcommand{\ours}{\textup{[proved here]}}
+ % \oursComputed marks a computation made for this companion
+ \newcommand{\oursComputed}{\textup{[computed here]}}
