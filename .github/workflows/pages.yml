@@ -1,0 +1,52 @@
+# GitHub Pages for the Gelfand seminar site (site-build/): the notebook text and the critical companion.
+#
+# The site is built outside GitHub (site-build/build/run_all.py; it needs the locked release assets, pandoc and the
+# companion data) and handed over as a release asset site-YYYY-MM-DD[-n].tar.gz on a release whose tag starts with
+# "site-". This workflow is run on main with that tag:
+#     gh workflow run pages.yml --ref main -f tag=site-YYYY-MM-DD
+# It deploys the tarball as the Pages artifact and then deletes the site release and its tag, so no built site is kept
+# in the repository or its releases. Each deploy replaces the previous one; taking a work down is a rebuild without
+# it (site-build/data/works.json) and a new deploy. The readers releases of the transcription are never touched.
+# Repository setting: Settings > Pages > Source = "GitHub Actions".
+name: Publish the site
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag that holds site-*.tar.gz
+        required: true
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: startsWith(inputs.tag, 'site-')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ inputs.tag }}
+    steps:
+      - name: Download the built site
+        run: |
+          gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p 'site-*.tar.gz' -D dl
+          mkdir site
+          tar -xzf dl/site-*.tar.gz -C site
+          test -f site/index.html && test -f site/404.html && test -f site/en/index.html && test -f site/ru/index.html
+          echo "$(find site -type f | wc -l) files, $(du -sh site | cut -f1)"
+          du -s site/* | sort -rn | head -8
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+          retention-days: 1
+      - id: deploy
+        uses: actions/deploy-pages@v4
+      - name: Delete the site release, so the built site is not kept
+        if: success()
+        run: gh release delete "$TAG" -R "$GITHUB_REPOSITORY" --yes --cleanup-tag
