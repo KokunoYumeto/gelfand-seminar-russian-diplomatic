@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-12",
+  "execution": "Pure JavaScript V8; no shell or filesystem required",
+  "tests": [
+    {
+      "name": "congruence counterexample",
+      "pass": true,
+      "evidence": "det=1; trace=11; T=I mod3; real spectral radius>1"
+    },
+    {
+      "name": "critical orbit z^2+i",
+      "pass": true,
+      "evidence": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "cube shifted face polynomial through dimension8",
+      "pass": true,
+      "evidence": "Coefficientwise F(t-1)=(1+t)^d for d=0,...,8; exact integers"
+    },
+    {
+      "name": "Pauli factor2",
+      "pass": true,
+      "evidence": [
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -2
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "matrix coefficients h21/e21 at m21",
+      "pass": true,
+      "evidence": {
+        "h21": 2,
+        "e21": 1
+      }
+    },
+    {
+      "name": "labelled equal power-sum factors",
+      "pass": true,
+      "evidence": {
+        "p11_to_m11": 2,
+        "p21_to_m21": 1
+      }
+    },
+    {
+      "name": "zero Kostka entry",
+      "pass": true,
+      "evidence": "The only content(2) filling of a two-box column repeats1, violating strict columns; K_(11),(2)=0"
+    },
+    {
+      "name": "first Riccati coefficients",
+      "pass": true,
+      "evidence": "Coefficients of u and u_prime cancel for chi1=-u/2,chi2=u_prime/4"
+    },
+    {
+      "name": "oscillator commutator on monomials",
+      "pass": true,
+      "evidence": "[D^2,-z^2]z^n=(-4n-2)z^n for n=0,...,8; formula holds algebraically for all n"
+    },
+    {
+      "name": "complex skew-Hermitian parity counterexample",
+      "pass": true,
+      "evidence": {
+        "family": "D_t=it on C",
+        "parameters": [
+          -1,
+          0,
+          1
+        ],
+        "complexKernelDimensions": [
+          0,
+          1,
+          0
+        ]
+      }
+    }
+  ],
+  "total": 10,
+  "passed": true
+}

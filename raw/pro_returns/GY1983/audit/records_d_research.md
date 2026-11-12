@@ -1,0 +1,25 @@
+# Records 631–639 evidence audit
+
+Status date: 12 November 2026. Whole source transcriptions were read. P001186–P001198 were visually inspected before the execution outage; the physical Serre/Margulis ordering and later mathematical signs were assessed against those images. The correction ledger preserves the exact extent of individual image evidence. The catalogue is a locator, not authority for a mathematical claim.
+
+## Searches and verification
+
+The accompanying query manifest records the actual queries and opened references retained by the root research workflow. Search results led to primary papers; bibliographic entries state exact verification depth. Full pages and papers are not reproduced in this archive. Entry-level annote fields distinguish read results, metadata-only openings, indirect primary reuse and inaccessible originals.
+
+The Ising search covered critical magnetization fields, sharpness, finite-range universality, weak perturbations, four-dimensional Gaussian limits and epsilon expansions. Camia–Garban–Newman Theorem 1.3, Corollary 1.6 and Appendix A were read for the nearest-neighbour field. Duminil-Copin–Tassion Theorem 2.1(3) is the Ising sharpness result; their Theorem 1.1 is a different percolation statement. Their historical account identifies the general Ising sharpness proof as Aizenman–Barsky–Fernandez 1987. The 2025 Cava–Giuliani–Greenblatt Theorem 1.1 concerns boundary correlations under weak perturbations. The September 2026 bulk-Ising manuscript returned by search remained inaccessible at the tree, blob and raw repository URLs. It is an unverified lead, never evidence of a theorem. None of these checks establishes the full arbitrary-strength reconstruction of GP-1983-91.
+
+Fixed-point and tree-action sources distinguish a bounded orbit in Hilbert space from an arbitrary metric-space action. Bekka–de la Harpe–Valette Lemma 2.2.7 and Proposition 2.2.9 were read. The Margulis 1981 original could not be directly read; Cornulier–Kar's primary introduction and reference 15 verify the historical connection, with irreducibility, higher real rank and the lattice hypotheses retained.
+
+Lipschitz and quasiconformal sources distinguish existence of Lipschitz structures from a particular measurable metric and its missing classical curvature tensor. Sullivan's Georgia 1977 lecture was published in 1979 and survives as a January 1978 preprint; it is not the unrelated IHES volume 50 reference. Teleman and Sullivan–Teleman 1983 precede the report. Connes–Sullivan–Teleman 1994 was received 26 July and revised 11 November 1993; its full primary PDF, Theorems 1.1 and 3.2, was read. The Radon identity is independently proved in the development; the Gelfand–Graev–Vilenkin book preview confirms bibliographic and chapter context, not a read original proof.
+
+Enumerative and ADE checks require a general genus-2k curve for the Catalan number of pencils, binary polyhedral lifts inside SU(2), complex dimension two for the invariant quotient, and the Cartan intersection form rather than an unqualified Coxeter matrix. Borcherds's Theorem 1.1 was read, but the notebook's short Monster remark is too vague for an exact theorem match. Groupoid attribution remains unassigned.
+
+Adler–van Moerbeke's 1982 and 1987 texts were read. The July 1984 paper was identified indirectly from the 1987 source and not upgraded to a read original. The bare local Laurent-parameter criterion lacks the global completion hypotheses needed for an abelian variety. The explicit rational-curve counterexample is labelled an editorial annotation.
+
+Drinfeld's full 1983 three-page paper and Semenov-Tian-Shansky's 1983 Theorem 13 were read. The double-coset leaf theorem is not in Drinfeld's note. Semenov-Tian-Shansky 1985 Theorems 6–7 provide the close action/reduction/leaf continuation. Weinstein's 1985 primary survey was read, especially section 5; his 1983 original remained unread. The full dual-pair conditions and local leaf correspondence must not be replaced by an unrestricted global statement. Etingof–Kazhdan's quantization result is a later formal-algebraic development, not an analytic strict quantization theorem.
+
+Singer's 1985 families/anomaly paper was read in sections 2,4,7. The Atiyah–Singer 1984 note was verified at bibliography/metadata level only. The based gauge quotient models its gauge-group classifying space, while the family index is a map, and the complex chiral determinant retains information absent from D*D.
+
+## Bounded development and limitations
+
+The covariance argument, Radon weak-derivative passage, Laurent full-parameter family and coisotropic counterexample received independent review by other research agents. Source and output of finite V8 checks are retained. There is no proof-assistant certification or claim that numerical agreement proves a limiting theorem. The supplied chapter builder, XeLaTeX, BibTeX, PDF rendering and final scan rereads were unavailable after the outage. The recovery renderer is explicitly separate from the supplied builder.

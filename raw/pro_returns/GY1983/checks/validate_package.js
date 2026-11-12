@@ -1,0 +1,12 @@
+const fs=require("fs"),path=require("path"),base=path.resolve(__dirname,"..");
+const read=n=>JSON.parse(fs.readFileSync(path.join(base,n),"utf8"));
+const items=read("GY1983_items.json"),talks=read("GY1983_talks.json"),problems=read("GY1983_problems.json");
+const bib=fs.readFileSync(path.join(base,"GY1983_references.bib"),"utf8");
+const keys=[...bib.matchAll(/@\w+\s*\{\s*([^,\s]+)\s*,/g)].map(m=>m[1]),set=new Set(keys);
+const duplicate_item_ids=items.map(i=>i.id).filter((x,j,a)=>a.indexOf(x)!==j);
+const missing_reference_keys=[...new Set(items.flatMap(i=>i.refs||[]).filter(k=>!set.has(k)))];
+const classes=items.reduce((a,i)=>(a[i.class]=(a[i.class]||0)+1,a),{});
+const incomplete_problem_occurrences=items.filter(i=>i.problem&&!problems.find(p=>p.id===i.problem&&p.occurrences.includes(i.id))).map(i=>i.id);
+const result={records:talks.length,items:items.length,problems:problems.length,references:set.size,classes,duplicate_item_ids,missing_reference_keys,incomplete_problem_occurrences};
+result.passed=talks.length===42&&items.length===413&&problems.length===21&&!duplicate_item_ids.length&&!missing_reference_keys.length&&!incomplete_problem_occurrences.length;
+console.log(JSON.stringify(result,null,2));if(!result.passed)process.exitCode=1;

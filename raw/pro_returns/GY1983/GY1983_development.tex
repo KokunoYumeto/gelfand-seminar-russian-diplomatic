@@ -1,0 +1,246 @@
+\subsection{A bounded development of the magnetization normalization question}
+\label{dev:ising}
+
+The source of this development is item 1983-631.6 (GP-1983-91), read together with the block-limit conjecture 1983-631.5. The notebook asks for a joint limiting law independent of the starting model but gives neither a class of interactions nor a normalization convention. The strongest literal assertion, independence across arbitrary models without an amplitude adjustment, is not a well-posed universality statement. A defensible modern question fixes zero field, translation invariance, square symmetry, finite range, ferromagnetic pair interactions with a connected interaction graph, and a critical state on \(\mathbb Z^2\). It then asks for the critical magnetization field after a model-dependent multiplicative normalization.
+
+For the nearest-neighbour square-lattice model, \citet[Theorem 1.3, Corollary 1.6, and Appendix A]{camia2015magnetization} constructs the field and block limits. The preprint circulated in May 2012; journal publication followed in 2015. \citet[Theorem 1.1]{cavagiulianigreenblatt2025boundary} treats boundary spin correlations for sufficiently weak finite-range perturbations in the half-plane. This is a different observable and a restricted perturbative regime. A September 2026 manuscript entitled \emph{Conformal universality of bulk Ising correlations under weak interactions} was returned by the current search. Its primary repository could not be opened in this run, so its proof is not verified here; it is recorded as an unresolved lead, not silently omitted or promoted to an established theorem. Its advertised weak-perturbation scope would still not cover arbitrary-strength finite-range ferromagnetic interactions. The residual question indexed here is precisely that broader bulk-field statement, not the already established nearest-neighbour limit.
+
+The bounded contribution below is conditional and elementary. It identifies what a two-point estimate would imply, and exactly what it would fail to imply. No new universality theorem or priority claim is made.
+
+\begin{proposition}[Covariance scaling from a uniform power-law tail]\ours
+Let \(d\ge1\), \(0<\eta<d\), and let \((X_x)_{x\in\mathbb Z^d}\) be a stationary real mean-zero field with finite second moments. Write
+\(\rho(h)=\mathbb E[X_0X_h]\).
+Assume, for some \(A>0\) and \(C<\infty\),
+\[
+ \lim_{R\to\infty}\ \sup_{|h|\ge R}
+ \left|\frac{\rho(h)}{A|h|^{-\eta}}-1\right|=0,
+ \qquad
+ |\rho(h)|\le C(1+|h|)^{-\eta}.
+\]
+For bounded Jordan-measurable sets \(B,C_0\subset\mathbb R^d\), put
+\(S_L(B)=\sum_{x/L\in B}X_x\).
+Then
+\[
+ L^{-2d+\eta}\operatorname{Cov}(S_L(B),S_L(C_0))
+ \longrightarrow A\int_B\int_{C_0}|u-v|^{-\eta}\,du\,dv.
+ \tag{D1}
+\]
+If \(B\) has positive volume, the only power normalization \(L^{-\alpha}S_L(B)\) whose variance has a finite strictly positive limit is
+\(\alpha=d-\eta/2\).
+\end{proposition}
+\begin{proof}
+All lattice points involved lie in a fixed box of side \(O(L)\). There is a constant \(K\), depending only on the dimension and that box, such that
+\[
+ \sum_{|h|\le r}(1+|h|)^{-\eta}\le K(1+r)^{d-\eta}.
+\]
+One proves this by counting lattice points in unit shells, or in dyadic annuli; \(d-\eta>0\) makes the resulting geometric sum finite. Thus the part of the normalized covariance sum with \(|x-y|\le\delta L\) is at most
+\[
+ K' L^{-d+\eta}(1+\delta L)^{d-\eta}
+ \le K''\bigl(L^{-(d-\eta)}+\delta^{d-\eta}\bigr).
+ \tag{D2}
+\]
+Absolute values were used, so no positivity assumption on each covariance is needed. The same near-diagonal estimate holds for the continuum integral by integrating \(|w|^{-\eta}\) in a ball.
+
+For \(|x-y|>\delta L\), uniform tail asymptotics replace \(L^\eta\rho(x-y)\) by
+\(A|x/L-y/L|^{-\eta}\), with an error tending to zero uniformly on this bounded region. After multiplication by \(L^{-2d}\), the sum is a Riemann sum. The integrand away from the diagonal is bounded, and its discontinuities are contained in the boundaries of \(B\), \(C_0\), and the surface \(|u-v|=\delta\), which have measure zero. The off-diagonal sum therefore converges to its integral. Take \(L\to\infty\), use (D2), and then let \(\delta\downarrow0\).
+
+For \(B=C_0\) of positive volume, the limiting integral is finite and strictly positive. Hence
+\[
+ \operatorname{Var}(L^{-\alpha}S_L(B))
+ \sim A I_B L^{2d-\eta-2\alpha},
+ \qquad I_B=\int_B\int_B|u-v|^{-\eta}\,du\,dv>0,
+\]
+which proves the last assertion.
+\end{proof}
+
+For \(d=2,\eta=1/4\), the exponent is \(15/8\). The amplitude \(A\) remains in every limiting covariance; multiplying the field by \(A^{-1/2}\) removes it. This is a necessary normalization at the covariance level. The proposition does not prove tightness, non-Gaussianity, higher correlations, moment determinacy, or convergence in distribution. In particular, divergent second moments alone would not rule out a weak limit without uniform-integrability information. These are the substantive obstructions to promoting a two-point calculation to the notebook's law-level universality claim.
+
+\begin{remark}[Reproducible numerical check]\oursComputed
+The accompanying program evaluates
+\[
+ \rho_\eta(h)=(1+|h|^2)^{-\eta/2},
+ \qquad
+ L^{-4+\eta}\sum_{a,b=-(L-1)}^{L-1}
+ (L-|a|)(L-|b|)\rho_\eta(a,b).
+ \tag{D3}
+\]
+For the unit square, the continuum target is independently reduced to
+\[
+ 8\int_0^1 (1+t^2)^{-\eta/2}
+ \left(\frac1{2-\eta}-\frac{1+t}{3-\eta}
+             +\frac{t}{4-\eta}\right)\,dt.
+ \tag{D4}
+\]
+To obtain (D4), write the difference-vector integral as
+\(4\int_0^1\int_0^1(1-u)(1-v)(u^2+v^2)^{-\eta/2}\,du\,dv\),
+split into two triangles, and set \(v=ut\) in one triangle.
+The computation uses several exponents, a direct four-index summation at small \(L\), and two quadrature resolutions. Numerical agreement is a check of normalization and implementation; convergence for all \(L\) rests on the proof.
+\end{remark}
+
+The independent review re-derived the lattice-shell estimate, the singular-diagonal bound, and the exponent. It also checked that the result is stated only about covariances and that no weak-convergence assertion follows from the variance calculation alone. A further bounded research run could verify a candidate perturbative bulk theorem against its exact hypotheses and derive uniform-integrability estimates for block observables in that family. It could not responsibly settle arbitrary-strength universality from the calculation above. The notebook does not record why the problem was dropped; no sociological explanation is inferred.
+
+\subsection{The slice-area problem: finite measure, Sobolev regularity, and the constant}
+\label{dev:slices}
+
+Items 1984-635.8--9 refer to a question labelled unfinished in the notes. The earlier index contains the related occurrence 1965-86.2, where the directional averaging was itself underdetermined; it has no earlier problem ID. The present source makes the averaging question much clearer. This is an annotation of class E material, not a manufactured C/D research problem. The classical integral-transform source is \citet[Chapter I, Section 1.5]{gelfandgraevvilenkin1966integral}. The proof below supplies the exact convention and the finite-measure extension without claiming novelty.
+
+\begin{theorem}[Directional slice energy for a measurable set]\ours
+Let \(E\subset\mathbb R^3\) be Lebesgue measurable with \(|E|<\infty\). Define its plane-slice area almost everywhere by
+\[
+ S_\theta(t)=\int_{\theta^\perp}1_E(t\theta+y)\,dy,
+ \qquad \theta\in S^2.
+\]
+For almost every \(\theta\), this function has an \(H^1(\mathbb R)\) representative and is locally absolutely continuous. With surface measure \(d\theta\) of total mass \(4\pi\),
+\[
+ \frac1{4\pi}\int_{S^2}\int_{\mathbb R}|S_\theta'(t)|^2\,dt\,d\theta
+       =2\pi |E|.
+ \tag{D5}
+\]
+The derivative is the weak derivative, which equals the classical derivative almost everywhere for that representative.
+\end{theorem}
+\begin{proof}
+Use \(\widehat f(\xi)=\int e^{-ix\cdot\xi}f(x)\,dx\), so Plancherel in \(\mathbb R^n\) reads
+\(\int|\widehat f|^2=(2\pi)^n\int|f|^2\).
+For a Schwartz function \(f\), Fubini gives the Fourier-slice formula
+\(\widehat{Rf}(\theta,\sigma)=\widehat f(\sigma\theta)\).
+Consequently
+\[
+ \begin{split}
+ \int_{S^2}\int_{\mathbb R}|\partial_tRf|^2\,dt\,d\theta
+ &=\frac1{2\pi}\int_{S^2}\int_{\mathbb R}
+                  \sigma^2|\widehat f(\sigma\theta)|^2\,d\sigma\,d\theta\\
+ &=\frac1{\pi}\int_{\mathbb R^3}|\widehat f(\xi)|^2\,d\xi
+ =8\pi^2\|f\|_2^2.
+ \end{split}
+ \tag{D6}
+\]
+The factor two in the second equality is essential: positive and negative radial parameters cover each nonzero frequency twice.
+
+There is also an unweighted estimate. Polar coordinates give
+\[
+ \int_{S^2}\int_{\mathbb R}|\widehat f(\sigma\theta)|^2\,d\sigma\,d\theta
+ =2\int_{\mathbb R^3}\frac{|\widehat f(\xi)|^2}{|\xi|^2}\,d\xi.
+\]
+On \(|\xi|\le1\), use \(|\widehat f|\le\|f\|_1\); the weight \(|\xi|^{-2}\) is locally integrable in dimension three. On \(|\xi|>1\), use Plancherel and \(|\xi|^{-2}\le1\). This bounds \(\|Rf\|_{L^2(S^2\times\mathbb R)}\) by a constant times \(\|f\|_1+\|f\|_2\).
+
+Choose Schwartz \(f_j\to1_E\) in both \(L^1\) and \(L^2\). The last estimate and (D6) imply convergence of \(Rf_j\) and \(\partial_tRf_j\) in their respective \(L^2(S^2\times\mathbb R)\) spaces. On the other hand, for every direction for which slices are defined,
+\[
+ \int_{\mathbb R}|R(f_j-1_E)(\theta,t)|\,dt
+       \le\|f_j-1_E\|_1 .
+\]
+Integration over \(S^2\) identifies the \(L^2\) limit with the slice function in \(L^1\), hence as a distribution. Integration by parts against compactly supported smooth test functions identifies the second limit as its weak \(t\)-derivative. Fubini for this Sobolev norm now yields
+\(S_\theta\in H^1(\mathbb R)\) for almost every \(\theta\). Passing to the norm limit in (D6), using \(\|1_E\|_2^2=|E|\), and dividing by \(4\pi\) proves (D5).
+\end{proof}
+
+\begin{example}[Independent check on a ball]\ours
+For a radius-\(R\) ball,
+\(S_\theta(t)=\pi(R^2-t^2)_+\), independently of \(\theta\).
+It is continuous at \(t=\pm R\), so its weak derivative has no delta contribution and equals
+\(-2\pi t\,1_{\{|t|<R\}}\). Therefore
+\[
+ \int_{\mathbb R}|S_\theta'(t)|^2\,dt
+ =4\pi^2\int_{-R}^{R}t^2\,dt
+ =\frac{8\pi^2R^3}{3}
+ =2\pi\,\frac{4\pi R^3}{3}.
+\]
+This independently rules out the notebook's \(\pi V\) under normalized directional averaging.
+\end{example}
+
+The finite-volume hypothesis cannot be omitted: \(\mathbb R^3\) has infinite plane-slice area everywhere. Even with finite volume, the theorem gives almost every direction and almost every slice parameter, not pointwise differentiability of the raw slice area for all parameters. Null-set changes of \(E\) can alter exceptional plane sections without changing its volume or the Sobolev class. The independent check kept this distinction, re-derived the Fourier normalization, and tested multiple radii directly.
+
+\subsection{A Laurent family does not force compact abelian completion}
+\label{dev:laurent}
+
+The reconstruction tested here is the bare implication in item 1984-637.6. \citet[p.84]{adler1982kowalewski} already distinguishes a necessary pole-family test from an unproved sufficiency statement. Its framework contains more geometric information than a parameter count. We test exactly the count-only assertion with the compact-abelian definition used immediately before it in the notebook.
+
+\begin{proposition}[A polynomial one-degree-of-freedom counterexample]\ours
+A polynomial Hamiltonian system on \(\mathbb C^2\) can have a one-parameter family of Laurent solutions with a fixed movable pole, even with both chosen canonical coordinates having poles, while its generic energy curve has no smooth projective abelian completion.
+\end{proposition}
+\begin{proof}
+For \(\{q,p\}=1\), take \(H=pq^2\). Hamilton's equations are
+\[
+ \dot q=q^2,\qquad \dot p=-2pq.
+\]
+For arbitrary \(h,t_0\in\mathbb C\),
+\[
+ q(t)=-\frac1{t-t_0},\qquad p(t)=h(t-t_0)^2
+ \tag{D7}
+\]
+solves both equations and has energy \(h\). Fixing the pole at \(t_0=0\) leaves one freely variable parameter, equal to \(n-1\) for phase-space dimension \(n=2\).
+If poles in every coordinate are desired, take
+\[
+ Q=q+p,\qquad P=q+2p .
+\]
+The change has determinant one and
+\(\{Q,P\}=2\{q,p\}+\{p,q\}=1\).
+Its inverse is \(q=2Q-P,\ p=P-Q\); the polynomial Hamiltonian becomes
+\((P-Q)(2Q-P)^2\), while
+\[
+ Q=-t^{-1}+ht^2,\qquad P=-t^{-1}+2ht^2.
+\]
+Both coordinates now have a genuine pole for every \(h\).
+
+For \(h\ne0\), the energy curve \(pq^2=h\) is isomorphic to
+\(\mathbb C^*\) via \(q\mapsto(q,h/q^2)\). Its function field is
+\(\mathbb C(q)\); therefore its smooth projective completion has genus zero and is \(\mathbb P^1\). An abelian variety of dimension one has genus one, so no such abelian completion exists.
+\end{proof}
+
+This is not a counterexample to ordinary Liouville integrability: one autonomous Hamiltonian is the required integral in two-dimensional phase space. The curve is isomorphic to the algebraic group \(\mathbb C^*\), but the vector field \(q^2\partial_q\) is not invariant under its multiplicative translations. Thus no linear-flow assertion on a generalized abelian group is being made. The exact failure is the passage from local Laurent families to a compact abelian invariant variety. The independent review checked the symplectic coordinate change and the function-field obstruction separately from substitution into the ODE. A plausible next investigation would impose and test explicit completeness and boundary-extension conditions; no unrestricted improved converse is claimed here.
+
+\subsection{The quantifier missing from the coisotropic-invariants criterion}
+\label{dev:coisotropic}
+
+Item 1984-639.19 is a near-term publication match with a false literal converse. The sufficient direction is \citet[Theorem 6]{semenov1985dressing}. We reproduce its short mechanism in the notebook's notation and give an explicit counterexample to necessity for a single action.
+
+\begin{proposition}[Sufficient condition for invariant functions]\ours
+Let a connected Poisson--Lie group \(G\) act Poissonly on \(M\), and let \(H\subset G\) be a connected Lie subgroup. If its annihilator
+\(\mathfrak h^\perp\subset\mathfrak g^*\) is closed under the dual Lie bracket, then \(C^\infty(M)^H\) is closed under the Poisson bracket.
+\end{proposition}
+\begin{proof}
+For \(f,g\) invariant under \(H\), define the orbit differentials at \(x\) by
+\(\alpha_f=d_e[u\mapsto f(u\cdot x)]\) and similarly for \(g\).
+They annihilate \(\mathfrak h\). The differentiated Poisson-action identity gives, with a consistent infinitesimal sign convention,
+\[
+ X_M\{f,g\}-\{X_Mf,g\}-\{f,X_Mg\}
+       =\langle[\alpha_f,\alpha_g]_*,X\rangle .
+\]
+For \(X\in\mathfrak h\), the last pairing is zero by the annihilator hypothesis, and the two middle terms vanish by invariance. Thus all infinitesimal \(H\)-derivatives of \(\{f,g\}\) vanish. Connectedness of \(H\) gives global \(H\)-invariance.
+\end{proof}
+
+\begin{example}[Necessity fails for a fixed action]\ours
+Take the additive group \(G=\mathbb R^3\), with coordinates \(x,y,z\) and
+\[
+ \pi_G=z\,\partial_x\wedge\partial_y .
+\]
+It is Poisson: the only nonzero coordinate bracket is \(\{x,y\}=z\), and \(z\) is a Casimir, so the Jacobi identities hold. It is multiplicative because its coefficients are linear and addition has identity derivative. At the Lie-bialgebra level, \(\mathfrak g\) is abelian and \(\mathfrak g^*\) is Heisenberg:
+\[
+ [dx,dy]_*=dz,\qquad [dx,dz]_*=[dy,dz]_*=0.
+\]
+Let \(H\) be the \(z\)-axis. It is a closed connected subgroup, but
+\(\mathfrak h^\perp=\operatorname{span}\{dx,dy\}\) is not a Lie subalgebra.
+
+Now let \(G\) act trivially on any Poisson manifold \(M\), for instance the symplectic plane. The action map is projection \(G\times M\to M\), hence Poisson. All functions on \(M\) are \(H\)-invariant and form a Poisson algebra. This checks every hypothesis while disproving the necessity asserted for an arbitrary single action.
+\end{example}
+
+The example also shows why merely adding connectedness would not repair the converse. One must change the quantifier over actions or use an action rich enough to test all annihilator covectors, as in the regular homogeneous-quotient problem. The independent review checked both the multiplicativity of the linear tensor and the dual Heisenberg bracket. No new general reduction theorem is asserted.
+
+\subsection{Two elementary symbol checks used in the correction ledger}
+\label{dev:symbols}
+
+\begin{remark}[Matrix and vector-calculus repairs]\oursComputed
+For commuting symbols \(a,b\), the notebook's matrix
+\[
+ \begin{pmatrix}a&ib\\-ib&a\end{pmatrix}^{\!2}
+ =
+ \begin{pmatrix}a^2+b^2&2iab\\-2iab&a^2+b^2\end{pmatrix}.
+\]
+Replacing its lower-right entry by \(-a\) removes the off-diagonal terms. Separately, for a scalar \(f\) and a three-vector field \(v\), the operator
+\[
+ Q(f,v)=(-\operatorname{div}v,\nabla f+\operatorname{curl}v)
+\]
+satisfies \(Q^2=-\Delta I_4\), by
+\(\operatorname{div}\operatorname{curl}=0\),
+\(\operatorname{curl}\nabla=0\), and
+\(\operatorname{curl}^2=\nabla\operatorname{div}-\Delta\).
+These are four fibre components over \(\mathbb R^3\). The program independently multiplies the \(4\times4\) symbol at several vectors of commuting differential symbols and compares it with \(-|k|^2I_4\). These checks justify the local emendations and are not research novelty claims.
+\end{remark}

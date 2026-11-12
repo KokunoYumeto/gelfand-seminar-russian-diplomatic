@@ -43,9 +43,13 @@ Dates are those on which the return was received (UTC).
 | `pro_returns/GY1980/` | 1980–81 | 246 | 11 Nov 2026 | no |
 | `pro_returns/GY1981/` | 1981–82 | 210 | 11 Nov 2026 | no |
 | `pro_returns/GY1982/` | 1982–83 | 335 | 11 Nov 2026 | no |
+| `pro_returns/GY1983/` | 1983–84, 1984–85 | 413 | 12 Nov 2026 | no |
 | `pro_returns/GY1985/` | 1985–86 | 260 | 11 Nov 2026 | no |
 | `pro_returns/GY1987/` | 1987–88 | 287 | 11 Nov 2026 | no |
+| `pro_returns/GY1988/` | 1988–89 | 160 | 12 Nov 2026 | no |
 | `prompts/<year>/` | The prompt of each year (`PROMPT.md`), the list of its attachments (`ATTACHMENTS.md`) and our own attached files not published elsewhere in this repository (`attached/`) | | 9–11 Nov 2026 | — |
 | `tools/` | The script that builds each year's package (`make_year_package.py`), the prompt template (`PROMPT_TEMPLATE.md`) and the chapter kit (`kit/`: the chapter format, the LaTeX style, the scripts that build and check a chapter and the global reader, and its earlier versions) | | 9–11 Nov 2026 | — |
 
 "Items" is the number of entries in each chapter's `<year>_items.json`, as returned.
+GY1983 came back without a compiled PDF, and GY1988 as a condensed text fallback without a chapter file; the
+`RETURN_NOTES.md` in each of the two folders says how it was received and checked.
