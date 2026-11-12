@@ -1,0 +1,678 @@
+\subsection{Integral information in the formal-diffeomorphism question}
+\label{dev:1977-jets}
+
+\paragraph{The question and its scope.}
+The last line of \GSpage{P000773}, independently checked against the image, asks
+\ru{посчитать когомологии группы} \(\operatorname{Diff}_1(\mathbb Z)\).
+The preceding page defines the inverse limit of jet groups and the displayed
+series \(t+a_1t^2+a_2t^3+\cdots\). Neither the coefficient module nor the
+cochain theory is specified. The strongest literal formulation is therefore a
+request for a computation, with these two parameters still to be supplied.
+It is not an assertion that discrete group cohomology, continuous cohomology,
+and Lie-algebra cohomology coincide.
+
+For a bounded development we explicitly choose the integral counterpart of
+the finite-jet interpretation. Put
+\[
+ J=\{t+a_1t^2+a_2t^3+\cdots:a_i\in\mathbb Z\},\qquad
+ J_N=J/\{f:f(t)\equiv t\pmod {t^{N+1}}\}\quad(N\geq2).
+\]
+Multiplication is composition, \(J\) has its coefficientwise topology, and
+\(J_N\) is discrete. For a trivial discrete coefficient group \(A\), let
+\[
+ C^r_{\mathrm{jet}}(J;A)
+   =\bigcup_N\operatorname{Map}(J_N^r,A),\qquad
+ H^r_{\mathrm{jet}}(J;A)=H^r(C^\bullet_{\mathrm{jet}}(J;A)).
+\]
+Inflation makes these unions literal subgroups of the cochains on \(J\).
+Every cochain in this definition depends on a common finite jet of all its
+arguments. This is an editorial choice supported by the preceding inverse-limit
+discussion, not a coefficient convention recoverable from the question itself.
+
+\paragraph{What the later literature establishes.}
+\citet[Theorems~1.2 and~1.5; Proposition~4.4]{babenkobogatyi2008substitutions}
+identify the closed-commutator quotient with
+\(\mathbb Z^2\oplus(\mathbb Z/2)^2\), and identify finite-jet real cohomology
+with the continuous cohomology of \(L_1\). Their manuscript was received on
+24 November 2006 and published in 2008. Thus the real version has a direct
+later solution. \citet[Introduction and Theorem~1.0.2 of the preprint]{pavezcornejo2025abelianization}
+extends the topological abelianization calculation to deeper substitution
+subgroups. That work first circulated on 19 July 2024 and appeared in 2025;
+its commutator notation explicitly denotes a closure. Neither statement
+supplies a computation of the unrestricted discrete integral cohomology ring.
+As of 10 November 2026, the sources checked here do not establish that stronger
+computation. This is a limit of the verified match, not a proof of its absence
+from all literature.
+
+The development below proves two elementary consequences for the chosen
+integral cochain theory. They are supplied here for the companion, with no
+claim of research priority. They also expose precisely why replacing the
+group by its Lie algebra would lose information.
+
+\begin{lemma}[Finite-jet cochains and coefficient sequences]\ours{}
+Filtered inflation gives
+\(H^r_{\mathrm{jet}}(J;A)=\varinjlim_N H^r(J_N;A)\).
+A short exact sequence of discrete trivial coefficient groups induces a
+short exact sequence of these cochain complexes and hence its usual long
+exact cohomology sequence.
+\end{lemma}
+\begin{proof}
+Any finite list of cochains is inflated from one sufficiently large \(J_N\).
+Consequently a cocycle condition or a coboundary equation in the union holds
+at a finite stage. This proves the asserted equality of cohomology and the
+filtered colimit. If \(B\to C\) is surjective and a \(C\)-valued cochain
+factors through \(J_N^r\), choose a lift of each of its values in \(B\).
+The resulting lift still factors through \(J_N^r\). Exactness at the other
+terms is pointwise. The connecting homomorphisms follow from the ordinary
+cochain argument.
+\end{proof}
+
+Write the first coefficients as
+\[
+ f(t)=t+at^2+bt^3+ct^4+dt^5+et^6+ht^7+\cdots.
+\]
+For clarity \(h\) here is a coefficient, not another group element. The
+explicit quotient in \citet[Proposition~2.1]{babenkobogatyi2008substitutions}
+has coordinates
+\[
+ x=a,\qquad y=b-a^2,\qquad
+ \varepsilon_1=c+d+\frac{b(b+1)}2\pmod2,\qquad
+ \varepsilon_2=h+db+d\pmod2.                 \tag{J1}
+\]
+The formula involves integer-valued expressions and depends only on the
+seventh jet. Its kernel is the closed commutator subgroup by
+\citet[Proposition~2.9, pp.~249--250]{babenkobogatyi2008substitutions}.
+The literature input in the next proposition is
+exactly this theorem; no claim about the algebraic, unclosed commutator is
+needed.
+
+\begin{proposition}[First cohomology and all torsion in degree two]\ours{}
+With the definitions and trivial coefficients above,
+\[
+ H^1_{\mathrm{jet}}(J;\mathbb Z)=\mathbb Zx\oplus\mathbb Zy,
+ \qquad
+ \operatorname{Tor}H^2_{\mathrm{jet}}(J;\mathbb Z)
+       \cong(\mathbb Z/2)^2.                 \tag{J2}
+\]
+The two torsion generators are represented by
+\[
+ B_i(f,g)=\frac{E_i(f)+E_i(g)-E_i(f\circ g)}2,
+ \qquad i=1,2,                             \tag{J3}
+\]
+where \(E_i\in\{0,1\}\) is the standard lift of \(\varepsilon_i\).
+\end{proposition}
+\begin{proof}
+Degree-one cocycles with trivial coefficients are homomorphisms; the
+finite-jet condition is equivalent to continuity to a discrete target.
+Their kernels are closed and contain every commutator, hence contain its
+closure. Conversely every homomorphism from
+\(A_0=\mathbb Z^2\oplus(\mathbb Z/2)^2\) is continuous after composition
+with (J1), since that quotient map already factors through a finite jet.
+Therefore
+\[
+ H^1_{\mathrm{jet}}(J;D)=\operatorname{Hom}(A_0,D)
+\]
+for each discrete trivial group \(D\). Taking \(D=\mathbb Z\) gives the
+first assertion.
+
+Apply the lemma to \(0\to\mathbb Z\to\mathbb Q\to\mathbb Q/\mathbb Z\to0\).
+The relevant part of the exact sequence is
+\[
+ \operatorname{Hom}(A_0,\mathbb Q)\longrightarrow
+ \operatorname{Hom}(A_0,\mathbb Q/\mathbb Z)\longrightarrow
+ H^2_{\mathrm{jet}}(J;\mathbb Z)\longrightarrow
+ H^2_{\mathrm{jet}}(J;\mathbb Q).
+\]
+The first map is surjective on the two free coordinates, while its image
+on the two order-two coordinates is zero. Its cokernel is exactly
+\((\mathbb Z/2)^2\), which therefore injects into integral degree two as
+the kernel of the coefficient map to \(\mathbb Q\). Rational cochains
+form a complex of rational vector spaces, so their cohomology is
+torsion-free. All integral torsion lies in that kernel; conversely the
+kernel just found is finite, so it consists entirely of torsion. This
+proves the second assertion, including the absence of odd torsion and of
+elements of order four or higher in this degree and cochain theory.
+
+Under \(\operatorname{Hom}(A_0,\mathbb Q/\mathbb Z)\), the torsion
+coordinates are the characters \(\varepsilon_i/2\). Their connecting
+cocycles are exactly (J3). Additivity modulo two makes (J3) integral, and
+\(\delta^2=0\) gives \(\delta B_i=0\). Also \(2B_i=\delta E_i\).
+Neither character lifts to a rational homomorphism on the torsion summand,
+and they are independent there. Their two classes thus have exact order
+two and generate the kernel calculated above.
+\end{proof}
+
+\begin{proposition}[An integral primitive for the degree-one product]\ours{}
+For \(w(f)=c-3ab+2a^3\), the inhomogeneous coboundary is
+\[
+ (\delta w)(f,g)=x(f)y(g).                  \tag{J4}
+\]
+In particular \([x]\smile[y]=0\) over \(\mathbb Z\), both for finite-jet
+cochains and in the ordinary cohomology of the underlying discrete group.
+The latter assertion concerns these particular classes only.
+\end{proposition}
+\begin{proof}
+For \(g(t)=t+At^2+Bt^3+Ct^4+\cdots\), direct substitution gives
+\[
+ a(f\circ g)=a+A,\quad
+ b(f\circ g)=b+B+2aA,\quad
+ c(f\circ g)=c+C+aA^2+2aB+3bA.
+\]
+Substitute these three identities in
+\(\delta w(f,g)=w(g)-w(f\circ g)+w(f)\).
+The cubic and mixed terms cancel, leaving \(a(B-A^2)\), as required.
+All functions used depend on the fourth jet, so the equation holds in
+both cochain complexes claimed.
+\end{proof}
+
+There is a second algebraic check. Put
+\(z=c-a^3-2a(b-a^2)\). The fourth-jet composition law in the integer
+coordinates \((x,y,z)\) is
+\[
+ (x,y,z)(X,Y,Z)=(x+X,y+Y,z+Z+yX).
+\]
+The coordinate change has an integer inverse, so this quotient is the
+integer Heisenberg group. Since \(w=z-xy\), its displayed law reproduces
+(J4), independently of the direct expansion. The degree-one squares also
+vanish: for an integer homomorphism \(u\),
+\(\delta\binom{u}{2}=-u\smile u\). Together with graded commutativity,
+this checks that every product of two classes in the first group of (J2)
+is zero.
+
+\paragraph{Checks and their exact force.}
+\texttt{code/check\_jets.py} uses symbolic substitution for (J4), a separate
+integer-convolution implementation for composition, 1,500 deterministically
+seeded triples with coefficients between \(-50\) and \(50\), and exhaustive
+residue checks of the two parity characters (1,024 and 4,096 pairs).
+All identities, including the two cocycle equations, passed. The proof of
+the torsion assertion was checked a second way with
+\(0\to\mathbb Z\xrightarrow{\,2\,}\mathbb Z\to\mathbb F_2\to0\):
+\(H^1_{\mathrm{jet}}(J;\mathbb F_2)\) has dimension four, the reduction of
+integral degree one has dimension two, and the resulting Bockstein image
+has dimension two. The rational-coefficient argument is still needed to
+exclude higher and odd torsion; the modulo-two check alone cannot do that.
+The computational output is included. A separate review re-derived the
+cup-product sign and checked the exact-sequence proof against the published
+kernel statement; it found no mathematical defect. It did sharpen the
+locator from the displayed quotient map to Proposition~2.9, which proves
+that its kernel is the closed commutator. These checks concern formulas and
+logical implications, not an independent proof of that published classification.
+
+\paragraph{What remains, and a bounded next step.}
+These results determine degree one, the torsion in degree two, and its two
+explicit cocycles. They do not determine the torsion-free integral part of
+degree two, higher integral groups or their products. They also do not
+identify finite-jet cohomology with arbitrary continuous or discrete
+cohomology. The remaining obstacle is control of integral inflation maps
+along the central extensions \(J_{N+1}\to J_N\); rational Lie-algebra
+comparison discards precisely that arithmetic information. A further
+bounded run could construct integral resolutions for several successive
+jet quotients, compute their degree-two inflation maps, and decide which
+integral lattices and denominators survive. A finite range would be
+evidence for a stabilization assertion, not a proof of one. Nothing in
+the notebook or the sources checked establishes why the original speaker
+did not pursue the full integral question; the documented topology and
+coefficient distinctions explain a mathematical obstacle without inventing
+a historical motive.
+
+\subsection{Verification annotation: the Laplace spectrum on the positive Witt algebra}
+\label{dev:1977-laplacian-check}
+This is a check of a published class-A thread, not a newly selected open
+problem. On \GSpage{P000784--P000785}, take
+\([e_i,e_j]=(j-i)e_{i+j}\) for \(i,j\geq1\), declare the increasing wedge
+monomials orthonormal, and write
+\(\Delta_q=d_q^{\mathsf T}d_q+d_{q+1}d_{q+1}^{\mathsf T}\).
+Each weight space is finite-dimensional. The corrected spectral statement
+is given by \citet[Theorem~2, p.~324]{fuchswilmarth2010laplacian}; the following checks locate a
+specific error in the notebook's assertion about distinct eigenvalues.
+
+\begin{example}[A collision of the displayed spectral labels]\oursComputed{}
+The two gap-three partitions of weight 25
+\[
+ (1,10,14),\qquad(3,7,15)
+\]
+both have
+\[
+ E(I)=\sum_s\binom{i_s}{3}-\sum_{s<t}i_si_t=320.
+\]
+For the first, \(120+364-(10+14+140)=320\); for the second,
+\(1+35+455-(21+45+105)=320\). Thus partitions cannot count
+distinct spectral values. Under the corrected multiplicity rule their
+contributions are four and eight, and must be added.
+\end{example}
+
+\begin{remark}[Exact finite checks]\oursComputed{}
+\texttt{code/check\_laplacian.py} constructs the Chevalley--Eilenberg
+boundary with its alternating signs, checks \(d^2=0\), and factors exact
+integer characteristic polynomials for every degree of weights 1--22 and
+25. A separately implemented gap-partition enumeration gives exactly the
+same eigenvalues and total multiplicities, including multiplicity 12 at
+eigenvalue 320 in weight 25. It also expands
+\[
+ \prod_{i<j}(z_i-z_j)^3\prod_i z_i^a,\qquad a=1,2,
+\]
+as alternating polynomials and checks both boundary and adjoint boundary
+vanish for exterior degrees 1--4. No numerical eigenvalue rounding is
+used. The second check, partition enumeration, shares no boundary-matrix
+code with the first. These computations confirm a finite range and the
+explicit correction; they do not replace the all-weight published theorem.
+An independent reviewer also built the weight-25 boundaries with a different
+sign algorithm and computed exact ranks of \(\Delta-320I\). The nullities
+in exterior degrees 3, 4, 5 and 6 are respectively 2, 5, 4 and 1, totaling
+12. Its separate enumeration checks every weight through 25, including
+23 and 24, before identifying the first collision. The review code and
+output are included.
+\end{remark}
+
+\subsection{Verification annotation: the literal KP normalization}
+\label{dev:1977-kp-check}
+Items 1977-434.3--1977-434.5 belong to the published rational-KP thread
+\citep[Theorem~3 and its corollaries]{krichever1978rational}. The following
+calculation makes the editorial choice of signs and momenta explicit. It
+does not claim an error in a published theorem stated with other conventions.
+
+\begin{proposition}[Pole equations in the notebook's convention]\ours{}
+Let the functions \(q_i(y,t)\), \(1\leq i\leq N\), be smooth and pairwise
+distinct on an open parameter domain, and put
+\[
+ u(x,y,t)=-2\sum_{i=1}^N(x-q_i(y,t))^{-2}.
+\]
+As an identity of meromorphic functions of \(x\),
+\[
+ 3u_{yy}+(4u_t+6uu_x+u_{xxx})_x=0
+\]
+holds if and only if, for every \(i\),
+\[
+ q_{i,yy}=-8\sum_{j\ne i}(q_i-q_j)^{-3},\qquad
+ q_{i,t}=\frac34q_{i,y}^{\,2}-3\sum_{j\ne i}(q_i-q_j)^{-2}.
+ \tag{K1}
+\]
+\end{proposition}
+\begin{proof}
+At a fixed pole write \(s=x-q_i\) and
+\(u=-2s^{-2}+R_0+R_1s+O(s^2)\), where
+\[
+ R_0=-2\sum_{j\ne i}(q_i-q_j)^{-2},\qquad
+ R_1=4\sum_{j\ne i}(q_i-q_j)^{-3}.
+\]
+The leading sixth-order terms cancel. The only remaining negative powers
+in the differential equation have coefficients
+\[
+ [s^{-4}]=48q_{i,t}-72R_0-36q_{i,y}^{\,2},\qquad
+ [s^{-3}]=-24R_1-12q_{i,yy}.
+\]
+Their vanishing is exactly (K1). Conversely, if (K1) holds, the left-hand
+side is a rational function of \(x\) with no finite poles. It tends to
+zero at infinity, so it is identically zero. The distinct-pole hypothesis
+is used in the expansion and is not omitted at collisions.
+\end{proof}
+
+\begin{proposition}[Compatible canonical Hamiltonians]\ours{}
+With canonical coordinates \((q_i,p_i)\) on the distinct-position locus,
+define
+\[
+ H=\frac12\sum_i p_i^2-4\sum_{i<j}(q_i-q_j)^{-2},\qquad
+ K=\frac14\sum_i p_i^3-3\sum_{i<j}(p_i+p_j)(q_i-q_j)^{-2}.
+ \tag{K2}
+\]
+Then \(\{H,K\}=0\). Taking the \(H\)-flow as \(y\) and the \(K\)-flow
+as \(t\) gives \(p_i=q_{i,y}\) and (K1), hence the displayed rational KP
+solution locally away from collisions.
+\end{proposition}
+\begin{proof}
+Write \(d_{ij}=q_i-q_j\). Direct differentiation in
+\(\{H,K\}=\sum_i(H_{q_i}K_{p_i}-H_{p_i}K_{q_i})\) cancels the
+\(p_i^2\) terms. The remaining momentum terms are
+\(-6\sum_{i\ne j}p_ip_jd_{ij}^{-3}=0\), by exchanging \(i,j\).
+What remains is
+\[
+ -24\sum_i\sum_{j\ne i}\sum_{k\ne i}d_{ij}^{-3}d_{ik}^{-2}.
+\]
+Terms with \(j=k\) cancel in pairs. Group the others by unordered triples
+and set \(a=q_i-q_j\), \(b=q_j-q_k\), \(c=q_k-q_i\), so
+\(a+b+c=0\). Multiplication of a triple's sum by \(a^3b^3c^3\) gives
+\[
+ a^3(b-c)+b^3(c-a)+c^3(a-b)=0.
+\]
+This last polynomial vanishes upon substituting \(c=-a-b\). Thus the
+bracket is zero. Hamilton's equations give
+\(q_{i,y}=p_i\), \(p_{i,y}=-8\sum_{j\ne i}d_{ij}^{-3}\), and the
+second formula in (K1) for \(q_{i,t}\). Commuting smooth vector fields have
+local compatible flows on this open locus; no global continuation through
+a collision is claimed.
+\end{proof}
+
+\begin{remark}[The lower coefficient in the third-order operator]\oursComputed{}
+Let \(D=\partial_x\), \(L=D^2+u\) and
+\(M=D^3+\frac32uD+w\). The coefficient of \(D\) in
+\([\partial_y-L,\partial_t+M]\) vanishes precisely when
+\(w_x=\frac34(u_{xx}+u_y)\). The remaining scalar equation is
+\[
+ u_t+w_y-w_{xx}+u_{xxx}+\frac32uu_x=0.
+\]
+Differentiating it in \(x\) and eliminating derivatives of \(w\) gives
+the notebook's KP equation. Locally one may choose the function of
+\((y,t)\) arising on integrating \(w_x\) to satisfy this scalar equation;
+global boundary or periodicity conditions must be supplied separately.
+Using \(\partial_t-M\) instead reverses the KP time convention. Thus the
+final coefficient in \(M\) cannot in general be the same \(u\) as in \(L\).
+\end{remark}
+
+The Laurent expansion was derived independently by the record editor and
+the chapter editor. \texttt{code/check\_kp.py} reproduces it symbolically,
+constructs differential-operator composition by the Leibniz rule, and
+checks the coefficient elimination. The triple cancellation in the
+Hamiltonian proof is checked as a polynomial identity, with independent
+exact evaluations of the full Poisson bracket. These checks found the
+same normalization. They do not assert a classification beyond the
+explicit pole ansatz and local distinct-position domain just proved.
+
+
+% No new C/D theorem is claimed for records419--427.
+\subsection{An annotation on the thirteen-coin convention}
+
+This is a check of an expository puzzle (1977-424.2), not a proposed new
+solution to a class C or D research question.  The classical subject appears
+in \citet{dyson1946pennies}; the publisher record was checked, but the proof
+below is a self-contained reconstruction.  The difference between identifying
+a counterfeit and determining its sign is essential to the notebook's number.
+
+\begin{proposition}[Identity only, with equal pan counts]\ours{}
+Suppose exactly one of \(m\) coins has a different mass, either heavier or
+lighter, and all other coins have a common mass.  No genuine coin is supplied
+externally.  Every weighing compares equal numbers of coins on an ideal
+three-outcome balance.  For \(N\geq1\), the largest \(m\) whose counterfeit
+identity can always be determined in at most \(N\) weighings is
+\((3^N-1)/2\).  Its sign need not always be determined.
+\end{proposition}
+
+\begin{proof}
+For the upper bound let the first weighing compare \(a\) coins against
+\(a\), leaving \(b=m-2a\) aside.  Either unbalanced branch contains
+\(2a\) possible signed counterfeits.  They must be distinguished by
+\(N-1\) subsequent ternary observations, so
+\(2a\leq3^{N-1}\).  Since the left side is even,
+\(2a\leq3^{N-1}-1\).  On the balanced branch the \(b\) unweighed coins
+have unknown signs.  For any fixed coin, its two signs can follow the same
+history only if that coin is never weighed on that history; until its first
+weighing both signs produce balance, whereas its first appearance produces
+opposite imbalances.  Consequently only the all-balance history can fail to
+determine the sign, and it can represent at most one identity.  At least
+\(2b-1\) terminal histories are therefore necessary when \(b>0\).
+Hence \(b\leq(3^{N-1}+1)/2\); the same bound is trivial if \(b=0\).
+Adding gives \(m\leq(3^N-1)/2\).  The argument permits adaptive choices
+of the subsequent weighings.
+
+For attainment, use the alphabet \(\{-1,0,1\}\), in cyclic order
+\(-1\to0\to1\to-1\).  For every nonconstant word of length \(N\),
+find its first unequal adjacent pair.  Retain the word precisely when that
+pair follows the cyclic order.  Negation reverses the order, so exactly one
+of each opposite pair is retained.  There are
+\(M=(3^N-3)/2\) retained words.  Cyclically permuting all three alphabet
+symbols preserves the selection rule, so each coordinate takes each symbol
+equally often among the retained words.  Their coordinate sums are therefore
+zero.  Add the all-zero word, giving \(M+1=(3^N-1)/2\) columns.
+
+Assign one column to each coin.  In weighing \(j\), put entries \(-1\)
+on the left, \(1\) on the right, and leave entries \(0\) aside.  Every
+weighing has equal pan counts.  A heavy counterfeit produces its column as
+the outcome word, with right-heavy denoted \(1\); a light one produces the
+negative column.  Distinct nonzero columns are never opposites, so these
+histories identify their coins and signs.  The all-zero history identifies
+the last coin, with either sign.  For \(N=1\) the retained set is empty and
+the single coin is identified without weighing, as required.
+\end{proof}
+
+\begin{remark}[If the sign is required]\ours{}
+When both identity and sign must be recovered, the balanced first branch
+must distinguish all \(2b\) states, hence
+\(b\leq(3^{N-1}-1)/2\).  Together with the same unbalanced-branch bound
+this gives \(m\leq(3^N-3)/2\).  The nonzero retained columns above attain
+that bound for \(N\geq2\).  Thus three weighings permit 12 coins with
+both outputs, or 13 with identity alone.  This distinction, not a numerical
+misprint, accounts for the notebook's 13.
+\end{remark}
+
+\begin{example}[Exhaustive finite checks]\oursComputed{}
+The accompanying \texttt{coin\_check.py} generates the columns and computes
+actual left and right pan masses, independently of the signed-column
+formula.  For \(N=1,\ldots,6\), it checks respectively
+\(1,4,13,40,121,364\) coins.  Every coordinate balances, and every outcome
+determines a unique coin.  The only two-state collision is the sign of the
+zero-column coin.  In the three-weighing case all 26 signed hypotheses were
+enumerated, yielding 25 histories and no collision between distinct
+identities.  The proof establishes the general statement; finite enumeration
+only checks the implementation and the notebook's small case.
+\end{example}
+
+
+% No independent C/D result is claimed by this record editor.
+% Items 434.3--434.5 contain normalized KP verification annotations; the assembler independently checks them.
+% Item 436.5 remains an annotated partial result: breathers are already explicitly present in the notebook.
+% The chapter assembler supplies any selected deep development separately.
+
+
+\subsection{Independent checks of the spectral and algebraic formulas}
+
+The following computations explain emendations in occurrences
+1977-442.4, 1977-442.6--.7, 1977-443.9 and 1977-443.12--.14, and two later
+algebraic formulas. They are checks made for this companion, with no claim
+of historical novelty. The relevant published subjects are described by
+\citet{calogerodegasperis1976inverse,calogerodegasperis1978extension,calogero1978motion}; only their publisher metadata and abstracts or
+editorial footnotes were available for the present comparison. Thus the
+proofs below verify the displayed notebook equations independently of a
+claim to have read their full published normalization conventions.
+
+\begin{proposition}[Transmission phase in the notebook convention]\oursComputed{}
+Let \(u\in C(\mathbb R)\cap L^1(\mathbb R)\) be real. Use the
+notebook's physical scattering normalization for
+\(\psi''=(u-k^2)\psi\): at negative infinity,
+\(\psi\sim T(k)e^{-ikx}\), and at positive infinity,
+\(\psi\sim e^{-ikx}+R(k)e^{ikx}\). With
+\(T=|T|e^{2i\varphi}\) and the branch \(\varphi\to 0\) as
+\(k\to+\infty\), its leading high-energy phase is
+\[
+ \varphi(k)=-\frac{1}{4k}\int_{\mathbb R}u(x)\,dx+o(k^{-1}).
+\]
+Consequently, the source's coefficient \(-c_0/2\), where
+\(c_0=\int u\), is incompatible with its own factor 2 in the phase of T.
+\end{proposition}
+\begin{proof}
+Normalize the left Jost solution f by \(f\sim e^{-ikx}\) at negative
+infinity. Its Volterra equation is
+\[
+ f(x)=e^{-ikx}+\frac1k\int_{-\infty}^x
+          \sin(k(x-y))u(y)f(y)\,dy.
+\]
+For real \(k>0\), Gronwall's inequality gives
+\(\sup_x|f(x)|\le\exp(\|u\|_1/k)\) and
+\(\sup_x|f(x)-e^{-ikx}|\le
+\|u\|_1\exp(\|u\|_1/k)/k\).
+Splitting the sine into exponentials shows that the coefficient of
+\(e^{-ikx}\) at positive infinity is
+\[
+ A(k)=1-\frac1{2ik}\int_{\mathbb R}e^{iky}u(y)f(y)\,dy
+     =1+\frac{i c_0}{2k}+O(k^{-2}).
+\]
+The error bound follows from the uniform estimate and integrability
+of u. For all sufficiently large k, \(A(k)\ne0\).
+The physical solution is \(\psi=f/A\), so \(T=A^{-1}\), and
+\(\log T=-i c_0/(2k)+O(k^{-2})\). Taking half the imaginary part
+on the branch near1 proves the formula. No convergence of a full
+asymptotic series is asserted.
+
+An independent exact check uses
+\(u=-2r^2\operatorname{sech}^2(rx)\), \(r>0\), and
+\[
+ \psi=e^{-ikx}\frac{ik+r\tanh(rx)}{ik+r},\qquad
+ T(k)=\frac{k+ir}{k-ir}.
+\]
+Direct differentiation gives \(\psi''=(u-k^2)\psi\). Its multiplying
+factor tends to 1 at positive infinity and to
+\((ik-r)/(ik+r)=(k+ir)/(k-ir)=T(k)\) at negative infinity,
+so it has exactly the stated physical normalization, with \(R=0\).
+Here \(c_0=-4r\) and \(\varphi=\arctan(r/k)=r/k+O(k^{-3})\),
+again giving \(-c_0/4\). The symbolic residual and expansion are
+recorded in the accompanying verification output. An independent
+review caught an earlier reciprocal error in the stated boundary
+normalization; these explicit endpoint checks correct it without
+altering the final coefficient \(-c_0/4\).
+\end{proof}
+
+\begin{proposition}[Weights of the integrated recursion moments]\oursComputed{}
+Let \(u\in\mathcal S(\mathbb R)\), and for
+\(f\in\mathcal S(\mathbb R)\) define
+\[
+ L_u f=f''-4uf+2u'\int_x^\infty f(s)\,ds,\qquad
+ S_u=xu'+2u,\qquad c_n[u]=\int_{\mathbb R}L_u^n S_u\,dx,
+\]
+The upper-tail primitive of a Schwartz function is bounded; its
+product with \(u'\) is Schwartz. Thus L preserves this space,
+all the displayed iterates and integrals exist, and the boundary
+terms used below vanish.
+For \(u_\lambda(x)=\lambda^2u(\lambda x)\), \(\lambda>0\),
+\[
+ c_n[u_\lambda]=\lambda^{2n+1}c_n[u].
+\]
+Thus a pure scaling flow \(u_t=b(xu_x+2u)\), for constant \(b\in\mathbb R\),
+has \(\dot c_n=(2n+1)bc_n\), rather than \(nbc_n\).
+\end{proposition}
+\begin{proof}
+If \(h_\lambda(x)=\lambda^a h(\lambda x)\), then its upper-tail
+primitive has weight \(a-1\). Each of the three terms in
+\(L_{u_\lambda}h_\lambda\) therefore has weight \(a+2\). Since
+\(S_{u_\lambda}(x)=\lambda^2S_u(\lambda x)\), induction gives
+weight \(2n+2\) before integration and \(2n+1\) afterwards.
+The scaling-flow solution is obtained by \(\lambda=e^{bt}\).
+
+Independently, integration by parts gives \(c_0=\int u\).
+Put \(U(x)=\int_x^\infty u(s)\,ds\). Then
+\(\int_x^\infty S_u=U-xu\), and the formula for L gives
+\(c_1=-3\int u^2\). For example, on
+\(u_\lambda=\lambda^2e^{-\lambda^2x^2}\), the two quantities are
+\(\lambda\sqrt\pi\) and \(-3\lambda^3\sqrt{\pi/2}\).
+These exact integrals independently test weights 1 and 3, already
+refuting the source's proposed weights 0 and 1.
+\end{proof}
+
+\begin{proposition}[The sign in the Bianchi quadrilateral]\oursComputed{}
+Let \(p,q\in\mathbb C\) be constants, and let U,A,B be
+complex-valued \(C^1\) functions on a real interval I. Suppose the
+two lower B\"acklund edges satisfy
+\[
+ U_x+A_x=-\tfrac12(A-U)(4p+A-U),
+\]
+and the same equation with \((A,p)\) replaced by \((B,q)\).
+On any subinterval where the displayed denominator is nonzero,
+the compatible upper value is the \(C^1\) function
+\[
+ C=U-\frac{(p+q)(A-B)}{p-q+\tfrac12(A-B)}.
+\]
+In particular, the denominator uses \(A-B\), with the same order
+as the numerator in these conventions.
+\end{proposition}
+\begin{proof}
+The upper edges require
+\[
+ A_x+C_x=-\tfrac12(C-A)(4q+C-A),\qquad
+ B_x+C_x=-\tfrac12(C-B)(4p+C-B).
+\]
+Subtracting them and eliminating \(A_x-B_x\) by the two lower
+edges gives a linear equation for C. Solving it yields the displayed
+formula. This elimination is one check.
+
+For a second check, differentiate that rational formula using the two
+lower equations, leaving \(U_x\) arbitrary. Substitution into either
+upper equation gives zero identically. The symbolic verification file
+performs these as two separate residual calculations. The computation
+only concerns this local differential quadrilateral; it neither fills
+in missing scattering norming data nor proves a global permutability
+statement at zeros of the denominator.
+\end{proof}
+
+\begin{proposition}[The Hermite interaction matrix]\oursComputed{}
+Let \(\bar x_1,\ldots,\bar x_n\) be the distinct zeros of the
+physicists' Hermite polynomial \(H_n\), and put
+\[
+ A_{jk}=-\frac1{(\bar x_j-\bar x_k)^2}\quad(j\ne k),\qquad
+ A_{jj}=\sum_{k\ne j}\frac1{(\bar x_j-\bar x_k)^2}.
+\]
+For the source's root dynamics
+\[
+ \ddot x_j=-x_j+\sum_{k\ne j}
+       \frac{1+2\dot x_j\dot x_k}{x_j-x_k},
+\]
+the equilibrium linearization is
+\(\ddot\varepsilon+(I+A)\varepsilon=0\).
+Moreover, \(\operatorname{Spec}(A)=\{0,1,\ldots,n-1\}\), with
+each eigenvalue simple.
+\end{proposition}
+\begin{proof}
+The derivative of each inverse difference contributes
+\(-(\varepsilon_j-\varepsilon_k)/(\bar x_j-\bar x_k)^2\).
+The velocity products have zero linear part at a stationary point.
+The independent term \(-x_j\) contributes \(-\varepsilon_j\),
+giving the stated matrix \(I+A\).
+
+For the spectrum, use the notebook polynomial equation
+\[
+ \Psi_{tt}+\tfrac12\Psi_{xx}-x\Psi_x+n\Psi=0,
+ \qquad
+ \Psi=2^{-n}\sum_{m=0}^n c_m(t)H_{n-m}(x),\quad c_0=1.
+\]
+The Hermite differential equation gives
+\(\ddot c_m+mc_m=0\) for \(1\le m\le n\).
+At a polynomial with distinct roots, the differential of the
+root-to-coefficient map is invertible: a variation has
+\(\delta\Psi(\bar x_j)=-\Psi'(\bar x_j)\delta x_j\), and
+evaluation at n distinct points is invertible on polynomials of
+degree at most \(n-1\). Therefore \(I+A\) is conjugate to
+\(\operatorname{diag}(1,\ldots,n)\).
+
+As a second explicit check, for n=3 the roots are
+\(-\sqrt{3/2},0,\sqrt{3/2}\) and
+\[
+ A=\begin{pmatrix}
+ 5/6&-2/3&-1/6\\
+ -2/3&4/3&-2/3\\
+ -1/6&-2/3&5/6
+ \end{pmatrix},\qquad
+ \det(\lambda I-A)=\lambda(\lambda-1)(\lambda-2).
+\]
+The verification code independently differentiates the full nonlinear
+force and obtains its Jacobian \(-I-A\). It also checks the Hermite
+mode identity exactly for all 36 pairs \(1\le m\le n\le8\).
+Already n=1 shows why the identity cannot be omitted: A is zero but
+the single root satisfies \(\ddot x=-x\).
+\end{proof}
+
+\begin{remark}[Two later algebraic checks]\oursComputed{}
+For occurrence 1977-457.18, take the ordinary \(\mathfrak{sl}_2\)
+relations and define
+\[
+ \varepsilon_{3r}=\tfrac12ht^r,\quad
+ \varepsilon_{3r+1}=et^r,\quad
+ \varepsilon_{3r-1}=\tfrac12ft^r.
+\]
+Matrix commutators verify all nine residue cases of
+\([\varepsilon_i,\varepsilon_j]=a_{ij}\varepsilon_{i+j}\),
+where \(a_{ij}\in\{-1,0,1\}\) is congruent to \(j-i\) modulo 3.
+Separately, the 27 residue triples satisfy Jacobi directly. The
+nonhomogeneous ideal \((t-1)\mathfrak{sl}_2[t,t^{-1}]\) explains why
+the classification convention is graded simplicity, as already stated
+in \citet[Introduction]{kac1968graded}.
+
+For occurrence 1977-457.25, left Grassmann differentiation satisfies
+\(\{\partial_{\theta^a},\theta^b\}=\delta_a^b\), while distinct
+odd multiplications or derivatives anticommute. Hence the two cross
+terms in the notebook's Q and \(\bar Q\) each contribute
+\(-i\sigma^m\partial_m\), giving
+\(\{Q_\alpha,\bar Q_{\dot\beta}\}=-2i\sigma^m_{\alpha\dot\beta}
+\partial_m\); the same-chirality brackets vanish. Independently,
+the code realizes multiplication and differentiation as exact 16-by-16
+matrices on the exterior algebra of four generators and checks all 12
+anticommutator pairs with four independent commuting derivative
+symbols. These calculations validate the surviving manuscript signs;
+they do not resolve the illegible cancelled mark or supply the missing
+Lorentz action on the spinor coordinates.
+\end{remark}

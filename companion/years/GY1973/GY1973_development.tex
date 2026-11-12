@@ -1,0 +1,356 @@
+\noindent\textbf{Stage-2 selection and the scope of this appendix.}
+No class-C or class-D item justified a bounded research development in this run.
+The following elementary proofs support the critical edition of already identified
+material. They verify source readings and reconstructions, with no historical
+novelty claim. The item records retain development status \textit{annotated};
+none is reclassified as an open problem to justify this appendix.
+
+
+% Critical checks of source formulas, not Stage 2 research developments.
+\subsection{The sign distribution and its moments}
+The conventions change between P000503 and P000505. We use the latter: for an odd
+prime \(p\), put \(N=p^m\) and, for \(0\le a<N\), set
+\[
+ \mu(a+N\mathbb Z_p)=\begin{cases}-1,&2a<N,\\+1,&2a>N.\end{cases}
+\]
+The following verifies the notebook formula and its normalization; it is not a
+claim to a new theorem on \(p\)-adic integration. The underlying regularization is
+part of \citet[\S8.4]{manin1973periods}.
+
+\begin{proposition}[Moment correction for items 1973-303.14 and 1973-304.2--3]\ours\quad
+These values define a bounded clopen distribution. With Bernoulli numbers
+\(B_j\) defined by \(t/(e^t-1)=\sum_{j\ge0}B_jt^j/j!\), its polynomial moments are
+\[
+ I_k:=\int_{\mathbb Z_p}x^k\,d\mu
+   =\frac{(4-2^{1-k})B_{k+1}}{k+1},\qquad k\ge0.
+\]
+Moreover \(\int_{\mathbb Z_p^\times}x^k\,d\mu=(1-p^k)I_k\).
+\end{proposition}
+\begin{proof}
+Write \(p=2r+1\). Among the children \(a+jN\), \(0\le j<p\), the first \(r\)
+lie below \(pN/2\), the last \(r\) lie above it, and the middle child lies below
+exactly when \(a<N/2\). The first and last children cancel in the sum; the middle
+child has the parent's sign. Thus the distribution compatibility equation holds
+at every level, including level zero. Every residue-ball value has absolute value one, so every clopen value has absolute value at most one by the non-Archimedean triangle inequality.
+Uniform approximation by locally constant functions therefore defines its
+integral on continuous \(\mathbb Q_p\)-valued functions.
+
+For the polynomial \(x^k\), the canonical residue-tag sum is
+\[
+ S_k(N)=\sum_{a=0}^{N-1}a^k-2\sum_{a=0}^{(N-1)/2}a^k,
+\]
+with the convention \(a^0=1\), also at \(a=0\). Let
+\(B_j(X)\) be the Bernoulli polynomial. Its elementary difference identity
+\(B_{k+1}(X+1)-B_{k+1}(X)=(k+1)X^k\) gives the exact rational identity
+\[
+ S_k(N)=\frac{B_{k+1}(N)-2B_{k+1}((N+1)/2)+B_{k+1}(0)}{k+1}.
+\]
+As \(m\to\infty\), \(N=p^m\to0\) in \(\mathbb Q_p\). Polynomial continuity yields
+\[
+ I_k=\frac{2(B_{k+1}-B_{k+1}(1/2))}{k+1}.
+\]
+The Bernoulli duplication identity gives
+\(B_{k+1}(1/2)=(2^{-k}-1)B_{k+1}\), which proves the displayed result.
+In particular \(I_0=-1\), \(I_1=1/4\), \(I_3=-1/32\), and \(I_{2r}=0\) for
+\(r\ge1\). These values alone already distinguish the source's convention from
+several possible Bernoulli-index corrections.
+
+Finally \(\mu(pU)=\mu(U)\) for each residue ball \(U\): the defining inequality
+is unchanged when both its numerator and modulus are multiplied by \(p\).
+Taking finite sums and then limits gives
+\(\int_{p\mathbb Z_p}x^k\,d\mu=p^kI_k\); subtracting from the total proves the
+unit formula. The opposite convention on P000503 negates every moment.
+\end{proof}
+
+\paragraph{Independent verification of the moment calculation.}
+\oursComputed\ The accompanying \texttt{code/independent\_checks.py} derives
+Bernoulli numbers recursively using exact rational arithmetic. It checks the
+finite-sum identity for \(p=3,5,7\), \(k=0,\ldots,9\), and \(m=1,\ldots,4\):
+all 120 comparisons agree exactly. The recorded \(p\)-adic error valuations
+are descriptive checks; the proof of the limit is polynomial continuity,
+not extrapolation from those cases. The sign convention, duplication
+identity and unit restriction were independently rederived, with the same
+formula and the values \(-1,1/4,-1/32\) at \(k=0,1,3\).
+
+
+\subsection{Dependence on tags for the invariant distribution}
+\begin{proposition}[Item 1973-303.16]\ours\quad
+The translation-invariant distribution of total mass one on \(\mathbb Z_p\)
+does not have a tag-independent Riemann integral of \(x\).
+\end{proposition}
+\begin{proof}
+On level \(m\) it gives each residue ball mass \(p^{-m}\). With canonical tags,
+\[
+ p^{-m}\sum_{a=0}^{p^m-1}a=(p^m-1)/2\longrightarrow-1/2.
+\]
+Change the tag in just the ball \(p^m\mathbb Z_p\) from \(0\) to \(p^m\). This
+adds \(p^mp^{-m}=1\) at every level and changes the limit to \(1/2\). Both
+partitions have mesh tending to zero; only their tags differ. This does not
+contradict integration with a separately fixed representative convention.
+\end{proof}
+
+\subsection{Two checks on categorical realization}
+\begin{example}[A nondegenerate simplex with a degenerate face, item 1973-308.5]\ours\quad
+In the nerve of the group \(C_2=\{1,g\}\), the two-simplex \((g,g)\) is
+nondegenerate, since degeneracies insert an identity arrow. Its middle face is
+\(g^2=1\), the degenerate one-simplex at the unique vertex. Thus the disputed
+sentence on P000515 is false even for the elementary group example on P000516.
+The usual realization quotient still attaches a cell for every nondegenerate
+simplex; its attaching map may identify part of its boundary with lower cells.
+\end{example}
+
+\begin{proposition}[Two Q-construction checks, items 1973-311.11--12]\ours\quad
+Let \(A\) be a unital ring and \(P(A)\) its exact category of finitely generated
+projective modules. The map \(BGL_n(A)\to BQP(A)\) obtained by viewing
+\(A^n\) and its automorphisms in \(QP(A)\) is nullhomotopic. Direct sum with
+\(A\) induces a map \(BQP(A)\to BQP(A)\) homotopic to the identity.
+\end{proposition}
+\begin{proof}
+For the first assertion, a Q-morphism \(0\to A^n\) is represented by
+\(0\xleftarrow{\mathrm{id}}0\rightarrowtail A^n\). Postcomposing it with any
+automorphism of \(A^n\) gives the same Q-morphism. Hence these arrows form a
+natural transformation from the constant zero functor on the one-object
+category \(GL_n(A)\) to the automorphism functor. Natural transformations realize
+to homotopies, by \citet[\S1, Proposition~2]{quillen1973higher}.
+
+For the second assertion, let \(S(X)=X\oplus A\), and define S on a span by
+summing the identity of A on both arrows. The admissible inclusion
+\(X\hookrightarrow X\oplus A\) gives a Q-morphism represented by
+\(X\xleftarrow{\mathrm{id}}X\rightarrowtail X\oplus A\). To verify naturality
+for \(X\xleftarrow{p}E\xrightarrow{i}Y\), pull back
+\(p\oplus1:E\oplus A\to X\oplus A\) along the inclusion of X. This pullback
+is E, so either composite is represented by
+\(X\xleftarrow{p}E\xrightarrow{(i,0)}Y\oplus A\). Thus these components give
+\(\mathrm{id}\Rightarrow S\), proving the required homotopy.
+
+The first natural transformation only concerns the automorphism subcategory.
+It does not extend to a contraction of Q: pulling a general admissible
+epimorphism back along zero can have a nonzero kernel. Neither assertion replaces
+the substantive comparison theorem
+\(\Omega BQP(A)\simeq K_0(A)\times BGL(A)^+\), checked in
+\citet[Corollary~IV.7.2]{weibel2013kbook}.
+\end{proof}
+
+\subsection{Critical verification of the conic example (1973-322.9)}
+\label{sec:conic-verification-1973}
+
+This is a verification appendix to the settled complex formulation indexed as
+GP-1973-32. It is not a Stage~2 contribution to a C or D problem. The explicit
+certificates below are proved here to resolve a consequential ambiguity in the
+notes; no historical priority or novelty is claimed.
+
+\paragraph{What the source supports.}
+P000535 first gives an example explicitly over \(\mathbb R\), with the
+unimodular triple \((x,y,1-x^2-y^2)\) and the comment that degree obstructs its
+reduction. After an undefined winding symbol and the definition of symplectic
+\(K_1\), the page asks about \(z_1^2+z_2^2=1\), entire functions, and entire
+functions of exponential growth. The two resulting functions are required to
+have \ru{не имеют общ. делит.}, literally no common divisor. The parenthesis
+\ru{в полиномах нет, в непр. ф-ях есть} says that polynomials do not suffice
+but continuous functions do. These words and the equation are legible in the
+scan; the coefficient field is not explicitly restated.
+
+The strongest coherent existence question furnished by the displayed formulas
+is the following, once the algebra is specified. Put
+\[
+ c=x^2+y^2-1,
+ \qquad g_1=x+cf_1,\qquad g_2=y+cf_2.
+\]
+Can \(f_1,f_2\) be chosen so that \(g_1,g_2\) generate the unit ideal in the
+chosen function algebra? This is stronger than the literal common-divisor
+condition. In \(\mathbb C[x,y]\), taking \(f_1=f_2=0\) already leaves the
+relatively prime pair \(x,y\), although that pair has a common zero. The
+stable-rank context is the reason for reconstructing unimodularity. It is not
+an independent reading of an unrecorded condition. The initial triple really
+is unimodular, since \(x\cdot x+y\cdot y-c=1\).
+
+\paragraph{The verified literature and its scope.}
+The real obstruction is an old one: Vaserstein's 1971 Theorem~8 and its proof
+use the same sphere triple to establish the full polynomial stable rank over
+subfields of \(\mathbb R\) \citep[Russian p.~27]{vaserstein1971stable}.
+For unrestricted holomorphic functions, Brudnyi's theorem gives
+\[
+ \operatorname{sr}\mathcal O(X)
+   =\left\lfloor\frac{\dim_{\mathbb C}X}{2}\right\rfloor+1
+\]
+for finite-dimensional Stein spaces, and therefore
+\(\operatorname{sr}\mathcal O(\mathbb C^2)=2\)
+\citep[Theorem~1.1]{brudnyi2019stein}. Its preprint circulated in March 2018;
+the journal article appeared in January 2019. This theorem applies to every
+unimodular triple of entire functions on \(\mathbb C^2\), but supplies no
+exponential-growth restriction. The following particular example needs neither
+that general theorem nor a new open-problem designation.
+
+\begin{proposition}[A polynomial certificate over the complex numbers]\ours\quad
+Let \(c=x^2+y^2-1\) and set
+\[
+ f_1=\frac12,\qquad
+ f_2=\frac{i(x+2)-y}{2},\qquad
+ a=x+cf_1,\qquad b=y+cf_2.
+\]
+Then \(a,b\) generate the unit ideal in \(\mathbb C[x,y]\). More precisely,
+with
+\[
+ s=x+1-iy,\qquad
+ A=s(a+1)-a-2,\qquad B=\frac{i s^2}{2},
+\]
+one has \(Aa+Bb=1\) identically.
+\end{proposition}
+
+\begin{proof}
+Put \(t=x+1+iy\). Direct expansion gives
+\[
+ ts=(x+1)^2+y^2=2(a+1),
+ \qquad
+ b=\frac{t^2}{2i}+ita.
+\]
+For completeness, the second identity follows by expanding its right side:
+its coefficient of \(i\), after grouping over \(\mathbb Q[x,y]\), is
+\(i((x+1)a-((x+1)^2-y^2)/2)\), and its remaining part is
+\((x+1)y-ya\); substituting \(a=x+c/2\) gives
+\(y+c(i(x+2)-y)/2\). Hence
+\[
+ Bb=\frac{s^2t^2}{4}-\frac{s^2t a}{2}
+    =(a+1)^2-s(a+1)a.
+\]
+Combining this with \(Aa=s(a+1)a-a^2-2a\) proves
+\[
+ Aa+Bb=(a+1)^2-a^2-2a=1.
+\]
+Every coefficient belongs to \(\mathbb Q(i)\), so this is an exact polynomial
+identity. In particular \(a,b\) have no simultaneous zero anywhere in
+\(\mathbb C^2\).
+\end{proof}
+
+\begin{corollary}[Entire and exponential-type formulations]\ours\quad
+The complex conic triple is reducible in the polynomial algebra, in
+\(\mathcal O(\mathbb C^2)\), and in the algebra
+\[
+ \mathcal E(\mathbb C^2)=
+ \{f\in\mathcal O(\mathbb C^2):
+   \exists C,T>0\ \forall z\in\mathbb C^2,   |f(z)|\le C e^{T(|z_1|+|z_2|)}\}.
+\]
+The reduction and its Bezout coefficients can all be taken to be polynomials.
+\end{corollary}
+
+\begin{proof}
+The certificate persists under either inclusion of polynomial algebras.
+Every polynomial \(p\) satisfies
+\(|p(z)|\le C_\epsilon e^{\epsilon(|z_1|+|z_2|)}\) for every
+\(\epsilon>0\), because a fixed power of \(1+r\) times
+\(e^{-\epsilon r}\) is bounded on \([0,\infty)\). The algebra
+\(\mathcal E\) is closed under addition and multiplication, with the
+constants and types allowed to depend on the function. Thus both generators
+and the explicit Bezout coefficients lie in it.
+\end{proof}
+
+\begin{proposition}[An entire certificate keeping the first coordinate]\ours\quad
+There is also a solution with \(f_1=0\). Define
+\[
+ h(w)=\exp\!\left(\frac{i\pi(w-1)}2\right),\qquad
+ F(w)=\frac{h(w)-w}{w^2-1},
+\]
+where the two removable values are filled in. Then
+\[
+ f_2(x,y)=F(y),\qquad
+ g_1=x,\qquad g_2=h(y)+x^2F(y),
+\]
+and
+\[
+ -\frac{xF(y)}{h(y)}\,g_1+\frac1{h(y)}\,g_2=1.
+\]
+All the displayed entire functions belong to \(\mathcal E(\mathbb C^2)\).
+\end{proposition}
+
+\begin{proof}
+The values \(h(1)=1\) and \(h(-1)=-1\) show that the numerator of \(F\)
+vanishes at both roots of the denominator. Both roots are simple, and the
+removable values obtained by differentiation are
+\[
+ F(1)=\frac{i\pi}{4}-\frac12,\qquad
+ F(-1)=\frac{i\pi}{4}+\frac12.
+\]
+Consequently \(F\) is entire and
+\[
+ cF(y)=x^2F(y)+h(y)-y.
+\]
+This is precisely the required form for \(g_2=y+cf_2\). The function \(h\)
+never vanishes. Substitution proves the Bezout identity for all \((x,y)\),
+including \(y=\pm1\) by removability.
+
+Here is a uniform growth check, not only a pointwise asymptotic argument.
+Write \(\alpha=\pi/2\). For every \(w\),
+\(|h(w)|,|h(w)^{-1}|\le e^{\alpha|w|}\). If \(|w|\ge2\), then
+\[
+ |w^2-1|\ge |w|^2-1\ge\tfrac34|w|^2,
+ \qquad
+ |F(w)|\le\frac{4(e^{\alpha|w|}+|w|)}{3|w|^2}.
+\]
+On \(|w|\le2\), the removable extension is bounded by compactness. Therefore
+some finite \(K\) satisfies \(|F(w)|\le K e^{\alpha|w|}\) for all \(w\),
+and \(|F(w)/h(w)|\le K e^{2\alpha|w|}\). Using
+\(r\le e^r\) and \(r^2\le2e^r\) for \(r\ge0\) gives, for example,
+\[
+ \begin{split}
+ |g_2(x,y)|&\le(1+2K)e^{|x|+\alpha|y|},\\
+ |xF(y)/h(y)|&\le K e^{|x|+\pi|y|},\\
+ |1/h(y)|&\le e^{\alpha|y|}.
+ \end{split}
+\]
+Together with the bounds for \(g_1,f_1,f_2\), these imply a common estimate
+\(C e^{(\pi+1)(|x|+|y|)}\) after increasing \(C\). No optimal type is
+claimed.
+\end{proof}
+
+\begin{proposition}[The real-valued interpretation has the opposite answer]\ours\quad
+Let \(D^2=\{(x,y)\in\mathbb R^2:x^2+y^2\le1\}\). For continuous
+real-valued \(f_1,f_2\) on \(D^2\), the pair
+\[
+ (x+(x^2+y^2-1)f_1,\ y+(x^2+y^2-1)f_2)
+\]
+has a zero in \(D^2\). In particular there is no such reduction over
+\(\mathbb R[x,y]\).
+\end{proposition}
+
+\begin{proof}
+If this pair were nowhere zero, dividing it by its Euclidean norm would give
+a continuous map \(r:D^2\to S^1\). On \(S^1\) the factor
+\(x^2+y^2-1\) is zero, so \(r\) restricts to the identity. The composite
+\(S^1\hookrightarrow D^2\xrightarrow{r}S^1\) would induce the identity on
+\(H_1(S^1;\mathbb Z)=\mathbb Z\), but it factors through
+\(H_1(D^2;\mathbb Z)=0\). This contradiction proves the assertion. Changing
+\(c\) to \(-c\), as in the preceding notebook example, only changes the
+signs of the coefficient functions.
+\end{proof}
+
+\paragraph{Independent checks.}
+\oursComputed\ The accompanying \texttt{check\_conic.py} uses exact pairs of
+rational numbers for coefficients in \(\mathbb Q(i)\), expands both
+intermediate identities, and verifies that every coefficient of
+\(Aa+Bb-1\) is zero. Its recorded output gives degrees
+\(0,1,2,3,3,2\) for \(f_1,f_2,a,b,A,B\). Independently, a second checker
+uses exact Gaussian-rational evaluation on a \(6\times6\) Cartesian grid.
+The difference polynomial has degree at most five in each variable, so this
+grid check is an exact interpolation proof, not merely numerical evidence;
+four further complex points also pass. The two algebraic identities were
+also rederived independently by hand.
+
+For the alternative entire construction, eight selected complex points,
+including both removable values, give maximum floating-point residuals
+\(2.220\times10^{-16}\) for the row identity and
+\(4.965\times10^{-16}\) for the Bezout identity. These are only implementation
+checks. The proof of removability and the uniform growth estimate above,
+independently rechecked, supplies the all-point justification. The scripts and
+outputs are included with the chapter.
+
+\paragraph{What remains uncertain.}
+There is no remaining existence obstruction for the complex question just
+formulated. The unanswered issue is documentary: the notes do not define the
+index, clarify the coefficient field after the real example, or explain what
+meaning of common divisor was intended. The complex polynomial certificate
+invalidates the parenthesis under unrestricted complex coefficients; the real
+degree argument invalidates its continuous-function half if all functions
+remain real-valued. Neither fact licenses a reconstruction of the speaker's
+missing restrictions. No assertion that a new open mathematical problem has
+been solved, and no recommendation for a further research run, follows from
+this critical verification.

@@ -1,0 +1,266 @@
+\subsection{GP-1965-08: a rational coordinate field in the first Weyl division ring}
+\label{dev:weyl-coordinate}
+
+\paragraph{Question, provenance and scope.}
+The definite question in occurrence \hyperref[item:1967-145.3]{1967-145.3},
+repeating 1965-80.10, is to describe the automorphisms of the fraction division
+ring of the first Weyl algebra. Work throughout over \(\mathbb C\), with
+\[
+ A_1=\mathbb C\langle p,q\rangle/(pq-qp-1),\qquad
+ D_1=\operatorname{Frac}A_1=\mathbb C(q)(p;\partial_q).
+\]
+All automorphisms fix \(\mathbb C\) pointwise. The notebook contrasts the
+known polynomial automorphisms with the unknown division-ring case. It does
+not assert that every division-ring automorphism preserves
+\(K=\mathbb C(q)\), and it does not formulate the endomorphism version of the
+Dixmier conjecture. Those are different questions.
+
+The bounded problem addressed here is to describe
+\[
+ N_K=\{\phi\in\operatorname{Aut}_{\mathbb C}D_1:\phi(K)=K\}
+ \quad\hbox{and}\quad
+ U_q=\{\phi\in\operatorname{Aut}_{\mathbb C}D_1:\phi(q)=q\}.
+\]
+The equality \(\phi(K)=K\), rather than mere containment, matters. The
+strongest result proved below is an exact description of both groups and of
+their intersection with \(\operatorname{Aut}A_1\). This is a complete
+verification of a known special case, not a new solution of the full
+classification problem. The normalizer formula is explicitly recorded by
+\citet[\S5.3.3, final Remark, printed p.~66]{dumas2011invariants}, who refers
+to \citet{alevdumas1998invariants}. The formal-series embedding used below is
+in \citet[\S5.2.2, pp.~59--60]{dumas2011invariants}. The proofs are included
+to make the reduction independently checkable; the marker \ours\ identifies
+work re-derived here, without a novelty claim.
+
+\paragraph{What the literature does and does not supply.}
+\citet[Theorem~8.10]{dixmier1968weyl} describes the polynomial automorphism
+group of \(A_1\). Passing to fractions extends every such automorphism, but
+also admits rational shears and inner automorphisms that need not preserve
+the polynomial algebra. Dumas separates actions extending from the algebra
+from general actions on its fraction field; his printed p.~66 gives the
+exact coordinate-field stabilizer while explicitly leaving the full group
+undetermined. The current-status audit accompanying occurrence 1967-145.3
+does not identify a later complete classification. The obstruction below
+explains the logical gap in this particular argument; it is not offered as
+a historical explanation of why other mathematicians have not solved the
+problem.
+
+\begin{lemma}[The coordinate centralizer]\ours\ \label{lem:coordinate-centralizer}
+The centralizer of \(q\) in \(D_1\) is exactly \(K=\mathbb C(q)\).
+\end{lemma}
+\begin{proof}
+Here is a formal construction that also justifies the use of negative
+powers of \(p\). Let \(\mathcal S\) consist of series
+\(T=\sum_{j\leq m}a_j(q)p^j\), with \(m\in\mathbb Z\) and
+\(a_j\in K\). Exponents are bounded above and can be unbounded below.
+Define multiplication by the generalized Leibniz rule
+\[
+ (ap^i)(bp^j)=\sum_{k\geq0}\binom{i}{k}a\,\partial_q^k(b)\,p^{i+j-k},
+ \qquad i,j\in\mathbb Z.
+\]
+For a fixed output exponent only finitely many terms contribute: if the
+input orders are at most \(m,n\), a contribution to exponent \(\ell\)
+requires \(i+j\geq\ell\), hence \(i\geq\ell-n\) and
+\(j\geq\ell-m\). Thus there is no analytic convergence assertion.
+
+For completeness, associativity follows coefficient by coefficient from
+Leibniz' rule and the identity
+\[
+ \sum_{t=0}^{v}\binom jt\binom i{u+v-t}\binom{u+v-t}u
+ =\binom iu\binom{i+j-u}v
+ \qquad(u,v\geq0).
+\]
+Indeed, both sides are the coefficient of
+\(a\,\partial_q^u(b)\,\partial_q^v(c)\) in the two products of
+\(ap^i,bp^j,cp^k\). The identity is the generalized Vandermonde identity
+after factoring out \(\binom iu\), and holds for negative as well as
+nonnegative integers \(i,j\). Finite coefficient sums justify its use for
+series.
+
+Every nonzero series is invertible. If its leading term is \(a_mp^m\),
+factor it as \(a_mp^m(1+R)\), where \(R\) has order at most \(-1\).
+The series \(\sum_{k\geq0}(-R)^k\) is well defined coefficientwise and is
+a two-sided inverse of \(1+R\). The monomial inverse is
+\(p^{-m}a_m^{-1}\). Consequently \(\mathcal S\) is a division ring.
+The rule \(pf=fp+f'\) embeds \(K[p;\partial_q]\) into \(\mathcal S\);
+uniqueness of the polynomial expansion makes this embedding injective.
+Its Ore fraction division ring therefore embeds as well.
+
+Since \(q'=1\) and \(q^{(k)}=0\) for \(k\geq2\), the same rule gives
+\[
+ [p^j,q]=jp^{j-1}\quad\hbox{for every }j\in\mathbb Z,
+ \qquad
+ [T,q]=\sum_{j\leq m}j a_j(q)p^{j-1}.
+\]
+The exponents \(j-1\) are distinct. In characteristic zero the last
+series vanishes only if \(a_j=0\) for every \(j\ne0\). Thus an element
+of \(D_1\) commuting with \(q\) lies in \(K\). The reverse inclusion
+is immediate.
+\end{proof}
+
+\begin{proposition}[All automorphisms fixing the coordinate]\ours\ 
+\label{prop:rational-shear}
+The map \(r\mapsto u_r\), where
+\[
+ u_r(q)=q,\qquad u_r(p)=p+r(q),\qquad r\in K,
+\]
+identifies the additive group of \(K\) with \(U_q\).
+\end{proposition}
+\begin{proof}
+If \(\phi(q)=q\), then
+\([\phi(p)-p,q]=\phi([p,q])-[p,q]=0\). The preceding lemma gives
+\(\phi(p)=p+r(q)\). Conversely, replacing \(p\) by \(p+r\) and fixing
+\(K\) preserves the relation \(pf-fp=f'\). It defines an automorphism of
+\(K[p;\partial_q]\), with inverse obtained by replacing \(r\) by
+\(-r\), and hence an automorphism of its fraction division ring.
+Finally \(u_ru_s=u_{r+s}\); distinct functions have distinct images of
+\(p\).
+\end{proof}
+
+\begin{lemma}[The automorphisms of the coefficient field]\ours\ 
+Every \(\mathbb C\)-automorphism of \(K\) sends \(q\) to
+\[
+ \theta(q)=\frac{aq+b}{cq+d},\qquad ad-bc\ne0.
+\]
+\end{lemma}
+\begin{proof}
+Let its image be a nonconstant rational function \(\theta\), with
+rational inverse substitution \(\psi\). A nonconstant rational function
+defines a morphism of \(\mathbb P^1\) of degree equal to the common degree
+of a coprime pair of homogeneous defining polynomials. Degrees multiply
+under composition: composing the two homogeneous pairs gives the product
+degree and has no common projective zero, because neither original pair
+has one. Since \(\psi\circ\theta\) is the identity, both degrees are one.
+The degree-one expressions are precisely the displayed fractions with
+nonzero determinant. Conversely such a fraction has a degree-one rational
+inverse and defines a field automorphism.
+\end{proof}
+
+\begin{proposition}[Normalizer of a rational coordinate field]\ours\ 
+\label{prop:coordinate-normalizer}
+The elements of \(N_K\) are exactly
+\[
+ \phi_{\theta,r}(q)=\theta(q),\qquad
+ \phi_{\theta,r}(p)=\frac{1}{\theta'(q)}p+r(q),
+ \quad \theta(q)=\frac{aq+b}{cq+d},\quad ad-bc\ne0,\quad r\in K.
+\]
+Restriction gives a split exact sequence
+\[
+ 1\longrightarrow (K,+)\longrightarrow N_K
+ \longrightarrow\operatorname{Aut}_{\mathbb C}K\longrightarrow1.
+\]
+With \(\sigma_\theta=\phi_{\theta,0}\), its action on rational shears is
+\(\sigma_\theta u_r\sigma_\theta^{-1}=u_{\theta'\,(r\circ\theta)}\).
+\end{proposition}
+\begin{proof}
+Restriction to \(K\) is a field automorphism, so the preceding lemma
+determines \(\phi(q)=\theta(q)\). Because \(\theta'\ne0\),
+\([\theta'^{-1}p,\theta]=1\). Hence
+\(\phi(p)-\theta'^{-1}p\) commutes with \(\theta(q)\). Since
+\(\mathbb C(\theta(q))=K\), commuting with \(\theta(q)\) is equivalent
+to commuting with \(q\), and Lemma~\ref{lem:coordinate-centralizer}
+gives the required rational remainder \(r\).
+
+Conversely, substitution on \(K\), together with
+\(p\mapsto\theta'^{-1}p+r\), respects the Ore relation: for \(f\in K\),
+\[
+ [\theta'^{-1}p+r,f(\theta(q))]
+   =\theta'^{-1}\partial_q(f(\theta(q)))=f'(\theta(q)).
+\]
+The image of a nonzero polynomial of order \(m\) has nonzero leading
+coefficient \(f_m(\theta)\theta'^{-m}\), so the resulting homomorphism
+of the Ore polynomial ring is injective and extends to its fractions.
+It is onto: \(q=\theta^{-1}(\phi(q))\) lies in the generated division
+ring, and then \(p=\theta'(q)(\phi(p)-r(q))\) does too.
+
+Writing \(\psi=\theta^{-1}\), an explicit inverse is
+\[
+ \phi_{\theta,r}^{-1}(q)=\psi(q),\qquad
+ \phi_{\theta,r}^{-1}(p)=\frac{1}{\psi'(q)}p
+                       -\frac{r(\psi(q))}{\psi'(q)}.
+\]
+The order of the coefficient and \(p\) in these expressions is essential.
+The chain rule checks both compositions. The same chain rule shows that
+the coefficient-field automorphism lifts with \(r=0\) give a section.
+Conjugating \(u_r\) by this section yields
+\(p\mapsto p+\theta'(q)r(\theta(q))\), proving the last formula.
+The exact sequence uses composition of field automorphisms; if rational
+maps are written as functions, substitution reverses their displayed
+composition order. This convention prevents an accidental sign or order
+error in a semidirect-product formula.
+\end{proof}
+
+\begin{corollary}[The polynomial boundary]\ours\ \label{cor:polynomial-boundary}
+An automorphism \(\phi_{\theta,r}\) in
+Proposition~\ref{prop:coordinate-normalizer} restricts to an automorphism
+of \(A_1\) if and only if
+\[
+ \theta(q)=aq+b\quad(a\ne0),\qquad r(q)\in\mathbb C[q].
+\]
+In particular, a shear fixing \(q\) preserves \(A_1\) exactly when its
+shear function is polynomial.
+\end{corollary}
+\begin{proof}
+The PBW expansion in \(A_1=\mathbb C[q][p;\partial_q]\), together with
+the unique formal expansion above, gives
+\(A_1\cap K=\mathbb C[q]\). If \(\phi\) and \(\phi^{-1}\) preserve
+\(A_1\), both \(\theta(q)\) and \(\theta^{-1}(q)\) are polynomials.
+Their degrees multiply to one, so \(\theta\) is affine. Its derivative
+is the nonzero constant \(a\). Subtracting \(a^{-1}p\) from
+\(\phi(p)\) then shows that \(r\in A_1\cap K=\mathbb C[q]\).
+Conversely affine substitution and a polynomial shear have polynomial
+inverse formulas as displayed above, so they preserve \(A_1\) in both
+directions.
+\end{proof}
+
+\begin{example}[A denominator changes the ambient problem]\ours\ 
+The rational shear \(q\mapsto q,\ p\mapsto p+1/q\) is an automorphism
+of \(D_1\), with inverse \(p\mapsto p-1/q\), and does not preserve
+\(A_1\). Its hypotheses are explicit: \(q\ne0\) as an element of the
+division ring, so \(q^{-1}\) exists there; the PBW intersection above
+shows that it is not an element of the polynomial algebra. Similarly
+\(q\mapsto-1/q,\ p\mapsto q^2p\) is a normalizer automorphism.
+These examples exhibit the precise limitation of transferring the
+polynomial generation theorem to the division ring.
+\end{example}
+
+\begin{remark}[Independent computation]\oursComputed\ 
+The accompanying \path{code/verify_weyl.py} performs exact symbolic
+checks, with no floating-point tolerances. It tests the negative-power
+commutator identity in the formal Leibniz algebra, verifies both orders of
+the inverse formula for several affine and nonaffine M\"obius maps and
+several polynomial and rational shears, and checks the commutator by
+applying the resulting first-order differential operators to independent
+rational test functions. The output gives the parameter families and
+number of checks. These finite checks detect ordering and sign errors;
+they are not a substitute for the coefficientwise and chain-rule proofs
+above. A second independent algebraic review is recorded in
+\path{audit/proof_review.md}; its findings are incorporated into this
+version.
+\end{remark}
+
+\paragraph{The obstruction still present.}
+For a general \(\phi\in\operatorname{Aut}D_1\), put
+\(Q=\phi(q)\), \(P=\phi(p)\). Necessarily \([P,Q]=1\) and the
+division subring generated by \(P,Q\) is \(D_1\). The image
+\(\mathbb C(Q)\) is self-centralizing, because centralizers are transported
+by automorphisms. Our proof classifies the possibilities only after
+\(\mathbb C(Q)=\mathbb C(q)\) is known. In general there is no reason
+for that equality. The full problem requires controlling the orbit of
+rational coordinate subfields, not merely their stabilizer. Moreover,
+finding two elements with commutator one alone does not certify that they
+generate the division ring; that further assertion cannot be inserted
+without proof.
+
+\paragraph{A precise next bounded task.}
+One further research run could fix an explicit pair of rational
+expressions \(P,Q\), verify \([P,Q]=1\), supply inverse expressions for
+\(p,q\) to certify generation, and then determine whether its coordinate
+field can be carried to \(\mathbb C(q)\) by a stated finite composition
+of rational shears, Fourier exchange and inner conjugations. A finite
+degree or denominator bound would make such a computation reproducible.
+Success for that bounded family would give a factorization certificate
+for those examples. It would not prove that the chosen transformations
+generate every automorphism, nor convert a finite search with no
+factorization into a counterexample. This is the exact limit of the
+development undertaken here.

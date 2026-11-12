@@ -1,0 +1,258 @@
+\subsection{The four-unitary free energy: a controlled local calculation}
+\label{dev:1982-migdal}
+
+\paragraph{The question actually recorded.}
+Item \hyperref[item:1982-565.6]{1982-565.6}, problem
+\hyperref[prob:GP-1982-02]{GP-1982-02}, is introduced on
+\GSpage{P001040}, equation~(19), by \ru{Надо вычислить}.
+Both the Russian transcription and an independent inspection of the scan show
+a negative sign in the exponential, an ordered sum over \(\mu,\nu\), and an
+inserted \(N^{-2}\log\). The notes ask for the limit; they do not supply a
+proof of its existence, a domain for the coupling, or a normalization of Haar
+measure. We make the last choice explicit by taking probability Haar measure.
+The strongest formulation directly supported by the page is: evaluate the
+displayed large-matrix limit on its domain of existence. No continuum-limit
+claim follows simply from writing this integral.
+
+For fixed \(d\geq2\), independent Haar matrices \(U_1,\ldots,U_d\in U(N)\),
+and real \(\beta\), put
+\begin{align}
+ S_{d,N}(U)&=\sum_{\mu,\nu=1}^{d}
+       \operatorname{Tr}(U_\mu U_\nu U_\mu^*U_\nu^*),\label{eq:1982-S}\\
+ F_{d,N}(\beta)&=\frac1{N^2}\log
+       \mathbb E\exp\{-\beta N S_{d,N}\}.\label{eq:1982-F}
+\end{align}
+The notebook case is \(d=4\). The general \(d\) notation is our extension
+for checking coefficients. Pairing \((\mu,\nu)\) with \((\nu,\mu)\) makes
+\(S_{d,N}\) real. The diagonal terms give \(dN\), exactly. Thus removing
+them adds \(d\beta\) to \(F_{d,N}\); reversing the action sign replaces
+\(\beta\) by \(-\beta\). These changes cannot be suppressed when comparing
+formulas. In particular, the usual positive plaquette coupling corresponds
+to negative \(\beta\) in \eqref{eq:1982-F}.
+
+\paragraph{What later work establishes.}
+The reduced lattice model itself predates this seminar:
+\citet{eguchikawai1982reduction} was published on 19~April~1982.
+That identification does not evaluate the four-matrix integral.
+For our exact mathematical normalization,
+\citet[Theorem~0.1]{collinsguionnetmaurel2009asymptotics}
+is decisive: for a fixed self-adjoint noncommutative polynomial potential in
+finitely many independent Haar unitaries, the normalized logarithmic integral
+has a large-\(N\) limit for sufficiently small real coupling; that limit is
+analytic near zero and its Taylor coefficients are the limits of the formal
+finite-\(N\) coefficients. There are no external matrices here, so the
+boundedness and joint-moment assumptions on those matrices are vacuous.
+Take the potential to be the negative of the ordered commutator sum in
+\eqref{eq:1982-S}. The preprint first circulated on 8~August~2006; publication
+followed in 2009.
+
+The distinction between an unmodified reduced model and a valid reduction
+of an extended gauge theory remains material. Center symmetry and the precise
+quenching prescription are discussed in
+\citet[Secs.~II--III]{neuberger2020quenched}; neither quenching nor twisting
+is present in the notebook's integral. The mathematical local convergence
+theorem therefore applies directly to the displayed integral, while a
+physical equivalence requires separate hypotheses. The search behind this
+chapter located no verified all-coupling evaluation of this exact four-unitary
+integral. This is a bounded literature finding as of November~2026, not a
+proof that no such evaluation exists. The sources and failed leads are
+recorded in the research audit.
+The checked sources do not establish that the exact integral was abandoned.
+They do explain why its evaluation and its use as a reduction of QCD are
+different research tasks: the latter depends on symmetry and on the chosen
+reduction prescription, while the former still involves four interacting
+unitary matrices.
+
+\paragraph{The stronger target and the scope of this development.}
+A plausible stronger formulation is existence and determination of
+\(F_4(\beta)=\lim_{N\to\infty}F_{4,N}(\beta)\) for every real \(\beta\),
+including any points where it fails to be differentiable. This is our
+formulation of the global target; it is not a theorem asserted by the notes
+or established in this chapter. We supply exact finite-\(N\) coefficients,
+elementary global bounds, and the rigorously justified local expansion.
+These are reproducible bounded deductions, not claims of a new solution
+of the model or of priority for the coefficient formulas.
+
+\begin{proposition}[Normalization, convexity, and compactness \ours]
+For every \(d,N\) and every real \(\beta\), \(F_{d,N}\) is well-defined,
+real analytic, convex, and \(d^2\)-Lipschitz. It satisfies
+\[
+ -d\beta-d(d-1)|\beta|\ \leq\ F_{d,N}(\beta)
+ \ \leq\ -d\beta+d(d-1)|\beta|.
+\]
+Every sequence of matrix sizes tending to infinity has a subsequence along
+which \(F_{d,N}\) converges uniformly on every compact real interval to a
+convex \(d^2\)-Lipschitz function vanishing at zero.
+\end{proposition}
+\begin{proof}
+Each commutator is unitary, hence its trace has absolute value at most \(N\).
+The off-diagonal sum is real and has absolute value at most \(d(d-1)N\).
+Applying these pointwise bounds inside the positive integral proves the
+inequalities. At any real coupling the integrand is bounded on a compact
+group, so differentiation under the integral is legitimate to every order.
+The partition function is entire in complex coupling and strictly positive
+on the real axis, hence its logarithm is analytic in a neighborhood of each
+real point. It need not have an entire logarithm. With expectation under
+the tilted probability measure denoted by \(\mathbb E_\beta\),
+\[
+ F_{d,N}'(\beta)=-\frac1N\mathbb E_\beta S_{d,N},\qquad
+ F_{d,N}''(\beta)=\operatorname{Var}_\beta(S_{d,N})\geq0.
+\]
+The bound \(|S_{d,N}|\leq d^2N\) gives the Lipschitz constant.
+Arzel\`a--Ascoli on each interval \([-k,k]\), followed by a diagonal
+subsequence, gives compact convergence. Convexity and the Lipschitz bound
+pass to that limit. This argument gives subsequences only, not uniqueness
+of the limiting free energy.
+\end{proof}
+
+\begin{lemma}[One plaquette and two adjacent plaquettes \ours]
+Let \(U,V,W\) be independent probability-Haar matrices in \(U(N)\),
+\(N\geq2\). Write \(C(U,V)=\operatorname{Tr}(UVU^*V^*)\) and
+\(X(U,V)=C(U,V)+\overline{C(U,V)}\). Then
+\begin{align*}
+ \mathbb E C(U,V)&=N^{-1},&
+ \mathbb E C(U,V)^2&=\frac4{N^2-1},&
+ \mathbb E|C(U,V)|^2&=\frac{N^2}{N^2-1},\\
+ \operatorname{Var}X(U,V)&=
+       \frac{2(N^2+4)}{N^2-1}-\frac4{N^2},&
+ \operatorname{Cov}(X(U,V),X(U,W))&=\frac4{N^2}.
+\end{align*}
+Plaquettes involving disjoint pairs of matrices are independent.
+\end{lemma}
+\begin{proof}
+The first Haar identity is
+\(\mathbb E_U UAU^*=N^{-1}\operatorname{Tr}(A)I\).
+For fixed matrices \(A,B,C,D\), the second identity gives
+\begin{align*}
+ &\mathbb E_U\bigl[\operatorname{Tr}(UAU^*B)
+                    \operatorname{Tr}(UCU^*D)\bigr]\\
+ &\quad=\frac{\operatorname{Tr}A\operatorname{Tr}B
+                    \operatorname{Tr}C\operatorname{Tr}D
+                    +\operatorname{Tr}(AC)\operatorname{Tr}(BD)}{N^2-1}\\
+ &\qquad\ -\frac{\operatorname{Tr}(AC)\operatorname{Tr}B\operatorname{Tr}D
+                    +\operatorname{Tr}A\operatorname{Tr}C\operatorname{Tr}(BD)}
+                    {N(N^2-1)}.
+\end{align*}
+This is the degree-two specialization of
+\citet[Corollary~2.4]{collinssniady2006integration}; it also follows by
+projecting \(A\otimes C\) onto the span of the identity and the tensor flip,
+then solving the two equations obtained by taking its trace and flip-trace.
+The determinant of those two equations is \(N^2(N^2-1)\), explaining
+the restriction \(N\geq2\).
+
+Put \(t=\operatorname{Tr}V\) and \(s=\operatorname{Tr}(V^2)\).
+Schur orthogonality, using
+\(t^2=\chi_{(2)}+\chi_{(1,1)}\) and
+\(s=\chi_{(2)}-\chi_{(1,1)}\), yields
+\[
+ \mathbb E|t|^2=1,\quad \mathbb E|t|^4=2,\quad
+ \mathbb E|s|^2=2,\quad \mathbb E(s\overline t^{\,2})=0.
+\]
+Both degree-two characters exist and are distinct for \(N\geq2\).
+First condition on \(V\). Substituting \(A=C=V\), \(B=D=V^*\)
+into the second identity gives
+\[
+ \mathbb E_U C(U,V)^2
+ =\frac{|t|^4+|s|^2}{N^2-1}
+   -\frac{s\overline t^{\,2}+\overline s t^2}{N(N^2-1)}.
+\]
+For the absolute square, use
+\(\overline{C(U,V)}=\operatorname{Tr}(UV^*U^*V)\); the result is
+\[
+ \mathbb E_U|C(U,V)|^2
+     =\frac{|t|^4+N^2-2|t|^2}{N^2-1}.
+\]
+Averaging the displayed formulas proves the three moments and hence the
+variance. Finally, conditioning on the shared matrix \(U\), the two
+plaquettes are independent and each has conditional mean
+\(2|\operatorname{Tr}U|^2/N\). Their covariance is consequently
+\(4\operatorname{Var}(|\operatorname{Tr}U|^2)/N^2=4/N^2\).
+Independence of disjoint pairs is immediate from product Haar measure.
+\end{proof}
+
+\begin{proposition}[Exact first and second derivatives \ours]
+For \(d\geq2\) and \(N\geq2\),
+\begin{align}
+ F_{d,N}'(0)&=-d-\frac{d(d-1)}{N^2},\label{eq:1982-first}\\
+ F_{d,N}''(0)&=d(d-1)\left\{
+      \frac{N^2+4}{N^2-1}+\frac{4d-10}{N^2}\right\}.
+       \label{eq:1982-second}
+\end{align}
+For \(N=1\), the exact answer instead is
+\(F_{d,1}(\beta)=-d^2\beta\).
+\end{proposition}
+\begin{proof}
+The mean of \(S_{d,N}\) is
+\(dN+d(d-1)/N\), which gives \eqref{eq:1982-first}.
+There are \(m=d(d-1)/2\) unordered plaquettes and
+\(a=d\binom{d-1}{2}\) unordered pairs of distinct plaquettes sharing a matrix.
+The constant diagonal terms contribute no variance. The preceding lemma and
+the factor of two for covariance terms in a variance give
+\begin{align*}
+ \operatorname{Var}S_{d,N}
+ &=m\left\{\frac{2(N^2+4)}{N^2-1}-\frac4{N^2}\right\}
+       +2a\frac4{N^2}\\
+ &=d(d-1)\left\{\frac{N^2+4}{N^2-1}+\frac{4d-10}{N^2}\right\}.
+\end{align*}
+Since \(F_{d,N}''(0)=\operatorname{Var}S_{d,N}\), the formula follows.
+At \(N=1\) every scalar commutator is one, so the integral is
+\(\exp(-\beta d^2)\). No substitution into the singular \(N\geq2\)
+formula is permissible.
+\end{proof}
+
+\begin{corollary}[The justified local answer for the notebook convention \ours]
+There is an \(\varepsilon>0\) such that the large-\(N\) free energy in
+the notebook exists for real \(|\beta|<\varepsilon\), has an analytic
+extension near zero, and
+\[
+                 F_4(\beta)=-4\beta+6\beta^2+O(\beta^3).
+\]
+More generally \(F_d(\beta)=-d\beta+\tfrac12d(d-1)\beta^2+O(\beta^3)\)
+locally. The error here is a statement about the analytic limiting function,
+not a uniform finite-\(N\) error inferred from a finite computation.
+\end{corollary}
+\begin{proof}
+Apply the local unitary-integral theorem stated above, then take the limits
+of \eqref{eq:1982-first} and \eqref{eq:1982-second}.
+The theorem, rather than the numerical or symbolic checks, justifies the
+identification of these limits with derivatives of \(F_d\).
+\end{proof}
+
+\begin{remark}[Verification \oursComputed]
+The independent calculation in \nolinkurl{code/haar_check.py} expands products of traces
+into matrix indices and applies the degree-one and degree-two Weingarten
+formulas directly. It counts free index loops with a union--find algorithm.
+This does not use the conditional-covariance argument of the proof. Six
+basic mixed moments agree as rational functions of the symbolic integer
+\(N\geq2\); summing all 584 ordered plaquette pairs for
+\(d=2,3,4,5\) independently reproduces \eqref{eq:1982-second}.
+Additional exact rational evaluations use \(N=2,3,4,7,11\).
+For the four-matrix model the second derivatives at \(N=2,3,4\) are
+\(50,55/2,41/2\), respectively, and tend to \(12\).
+The separate scalar check gives zero second derivative at \(N=1\).
+The check confirms the finite-rank restriction and both coefficients;
+it makes no inference from finite samples to a global analytic limit.
+An independent review also rederived the single-plaquette moments from
+\(\mathbb E\chi_\rho([U,V])=1/\dim\rho\): Schur averaging first in
+\(U\) gives \(|\chi_\rho(V)|^2/\dim\rho\), and averaging in \(V\)
+gives the identity. Applying it to the symmetric and alternating squares,
+and to the decomposition of the fundamental representation tensored with
+its dual, reproduces the same second moments for every \(N\geq2\).
+That review separately checked the adjacent-pair count and the exact scope
+of the cited local-limit theorem; it found no mathematical correction.
+The source, symbolic output, and machine-readable rational results are
+included in the archive.
+\end{remark}
+
+\paragraph{What remains and what another run could do.}
+Neither the two coefficients nor subsequential compactness select a global
+large-\(N\) branch. The remaining obstacle is control of the interacting
+unitary ensemble outside the small-potential region, including competing
+states and any transition points. A complete physical reduction is an
+additional question. One further bounded run could calculate higher connected
+Haar cumulants, provide explicit certified bounds on a small-coupling interval,
+and compare conventions against the original lattice strong-coupling series.
+The precise next calculation is the third and fourth Taylor coefficients of
+the same ordered-sum integral with their finite-\(N\) corrections, followed by
+a justified limiting argument. It would enlarge the controlled local answer;
+there is no basis here for promising an all-coupling solution.
