@@ -279,12 +279,15 @@ def footer(lang, extra=""):
             f'<a href="{BASE}data/">{E(u(lang, "data"))}</a></p></div></footer>\n')
 
 
+MATHJAX_MACROS = {"relax": ""}     # g3_notebook.MJ_DEFINED: formulas using other macros MathJax lacks are figures
+
+
 def scripts(math=False):
     s = f'<script src="{BASE}assets/site.js?v={ASSET_V}"></script>'
     if math:
         cfg = {"loader": {"load": ["ui/lazy", "[tex]/mathtools", "[tex]/textmacros"]},
                "tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processEnvironments": True,
-                       "tags": "none", "packages": {"[+]": ["mathtools", "textmacros"]}},
+                       "tags": "none", "packages": {"[+]": ["mathtools", "textmacros"]}, "macros": MATHJAX_MACROS},
                "options": {"lazyMargin": "600px", "menuOptions": {"settings": {"assistiveMml": False}}},
                "chtml": {"fontURL": f"{BASE}assets/mathjax/output/chtml/fonts/woff-v2"}}
         s = (f'<script>window.MathJax={json.dumps(cfg, ensure_ascii=False)};</script>'
@@ -293,10 +296,12 @@ def scripts(math=False):
 
 
 def page(lang, title, crumbs, other, stat, body, math=False, desc="", works_ids=(), kind="page", noindex=False,
-         footer_extra=""):
-    return (head(lang, title, desc, noindex, works_ids)
+         footer_extra="", index=True, extra_head=""):
+    pf = f' data-pagefind-body data-pagefind-filter="section:{E(u(lang, "section_" + kind))}"' if index else ""
+    return (head(lang, title, desc, noindex, works_ids).replace("</head>", extra_head + "</head>")
             + f'<body data-base="{BASE}" data-lang="{lang}" data-page-kind="{kind}">'
-            + header(lang, crumbs, other) + status(stat) + f'<div class="page">{body}</div>'
+            + header(lang, crumbs, other) + status(stat)
+            + f'<div class="page"{pf}>{body}</div>'
             + footer(lang, footer_extra) + scripts(math) + "</body></html>\n")
 
 
@@ -484,7 +489,8 @@ def notebook_column(lang, n):
         pg = REG["pages"].get(str(p), {})
         scans = pg.get("scans") or []
         win = "" if (not talk_pages or p in talk_pages) else f' <span class="win">({E(u(lang, "pages_window"))})</span>'
-        links = [f'<a href="{E(s)}">{E(u(lang, "scan"))} ↗</a>' for s in scans[:1]]
+        links = [f'<a href="{nb_url(lang, p)}">{E(u(lang, "nb_text_link"))}</a>'] if nb_on(lang) else []
+        links += [f'<a href="{E(s)}">{E(u(lang, "scan"))} ↗</a>' for s in scans[:1]]
         links += [x for x in (reader_link(lang, "ru", p), reader_link(lang, "en", p)) if x]
         its = [i for i in PAGE_ITEMS.get(p, []) if str(ITEMS[i]["record"]) == str(n)]
         others = [i for i in PAGE_ITEMS.get(p, []) if str(ITEMS[i]["record"]) != str(n)]
@@ -497,7 +503,10 @@ def notebook_column(lang, n):
              + (f'<div>{E(u(lang, "items_on_page"))}: ' + ", ".join(f'<a href="#{E(i)}">{E(i)}</a>' for i in its)
                 + (", " if its and others else "")
                 + ", ".join(f'<a href="{item_url(lang, i)}">{E(i)}</a>' for i in others[:12]) + "</div>"
-                if its or others else ""))
+                if its or others else "")
+             + (f'<details class="nbload" data-src="{BASE}data/pages/{lang}/{pid(p)}.json"><summary>'
+                f'{E(u(lang, "nb_show_text"))}</summary><div class="nbtext" lang="{lang}"></div></details>'
+                if nb_on(lang) and pid(p) in NB[lang] else ""))
         for t, row in corr_by_page.get(p, []):
             s += (f'<details class="view"><summary>{E(u(lang, "corrections_page"))}</summary><div class="body" lang="en">'
                   f'{fill(lang, row.get("place"), t, here)}<p class="lbl">{E(u(lang, "reads"))}</p>{fill(lang, row.get("transcription_reads"), t, here)}'
@@ -566,10 +575,11 @@ def talk_page(lang, n):
     pager = ('<nav class="pager">'
              + (f'<a href="{talk_url(lang, pv)}">← {E(u(lang, "prev"))}: {pv}</a>' if pv else "<span></span>")
              + (f'<a href="{talk_url(lang, nx)}">{E(u(lang, "next"))}: {nx} →</a>' if nx else "<span></span>") + "</nav>")
-    body.append(f'<div class="cols"><div>{"".join(main)}{pager}</div><aside>{notebook_column(lang, n)}</aside></div>')
+    body.append(f'<div class="cols"><div>{"".join(main)}{pager}</div><aside data-pagefind-ignore>'
+                f'{notebook_column(lang, n)}</aside></div>')
     crumbs = [(u(lang, "years"), url(lang)), (year_label(y), url(lang, "years", y)), (f'{u(lang, "record")} {n}', None)]
     return page(lang, f'{title} — {u(lang, "record")} {n} — {UI["site_name"][lang]}', crumbs, talk_url(other_lang(lang), n),
-                stat, "".join(body), math=bool(ents), works_ids=works_ids, kind="talk")
+                stat, "".join(body), math=bool(ents) or nb_on(lang), works_ids=works_ids, kind="talk")
 
 
 # ------------------------------------------------------------------ year page
@@ -823,6 +833,181 @@ def development_page(lang, t):
                 works_ids=[c["work"]], kind="development")
 
 
+# ------------------------------------------------------------------ notebook text (G3 pages, G4 figures)
+NB_DIR = IR / "notebook"
+NB = {l: rjson(NB_DIR / f"{l}.json") for l in LANGS if NOTES_ON[l] and (NB_DIR / f"{l}.json").exists()}
+FIGS_BUILT = rjson(NB_DIR / "figures_built.json", {}) if NB else {}
+FIG_RE = re.compile(r'<(div|span) class="fig fig-([a-z-]+)" data-fig="([0-9a-f]{16})"></\1>')
+INLINE_FIGS = ("math-inline", "tikz-inline")
+NB_CHAPTERS = sorted(REG["archive_chapters"], key=int)
+CHAPTER_OF_PAGE = {int(p): v["chapter"] for p, v in REG["pages"].items()}
+
+
+def nb_on(lang):
+    return lang in NB
+
+
+def nb_url(lang, p, anchor=True):
+    """The notebook text of page p (a number or 'P000659'), or of a passage 'P000659.2'."""
+    s = str(p)
+    n = int(re.match(r"P?0*(\d+)", s).group(1))
+    return url(lang, "notebook", str(CHAPTER_OF_PAGE[n]), anchor=(s if s.startswith("P") else pid(n)) if anchor else None)
+
+
+def resolve_nb_html(lang, html, p):
+    """Figures to their SVG (or a pointer to the scan and the PDF when one could not be typeset), crops to their files."""
+    def fig(m):
+        tag, kind, h = m.group(1), m.group(2), m.group(3)
+        b = FIGS_BUILT.get(h)
+        if b and b[0]:
+            w, hh, dp = b
+            style = f"width:{w / 11:.3f}em"
+            if kind in INLINE_FIGS:
+                style += f";height:{hh / 11:.3f}em" + (f";vertical-align:-{(dp + 1.5) / 11:.3f}em" if dp is not None else "")
+            return (f'<{tag} class="fig fig-{kind}"><img src="{BASE}assets/figures/{h}.svg" alt="{E(u(lang, "figure_alt"))}" '
+                    f'loading="lazy" style="{style}"></{tag}>')
+        rl = reader_link(lang, lang, p)
+        return f'<span class="fig-missing">[{E(u(lang, "figure_missing"))}{"; " + rl if rl else ""}]</span>'
+    html = FIG_RE.sub(fig, html)
+    return html.replace("@@CROPS@@", BASE + "assets/crops/")
+
+
+def nb_page_section(lang, p):
+    """One notebook page on its chapter page: header (number, written number, scan, PDF pages, records, items that cite
+    it, revision state) and the text."""
+    key = pid(p)
+    v = NB[lang].get(key) or {"label": "", "html": ""}
+    pg = REG["pages"][str(p)]
+    head_ = [f'<h2 class="pid" id="{key}">{key}</h2>']
+    meta = []
+    if v["label"] and v["label"] != "unlabelled":
+        meta.append(E(u(lang, "written_number", label=v["label"])))
+    meta += [f'<a href="{E(s)}">{E(u(lang, "scan"))} ↗</a>' for s in (pg.get("scans") or [])[:1]]
+    meta += [x for x in (reader_link(lang, l, p) for l in LANGS) if x]
+    recs = [r for r in pg["records"] if str(r) in RECS]
+    rows = [" · ".join(meta)]
+    if recs:
+        rows.append(f'{E(u(lang, "records_on_page"))}: ' + ", ".join(
+            f'<a href="{talk_url(lang, r)}" title="{E(rec_title(lang, r))}">{r}</a>' for r in recs))
+    its = [i for i in PAGE_ITEMS.get(p, []) if item_url(lang, i)]
+    if its:
+        rows.append(f'{E(u(lang, "items_on_page"))}: ' + ", ".join(f'<a href="{item_url(lang, i)}">{E(i)}</a>' for i in its))
+    rev = set()
+    for t in TAGS:
+        if p in STALE_SET.get(t, set()):
+            rev |= set(STALE_WHAT[t].get(str(p), []))
+    if rev:
+        rows.append(f'<span class="rev">{E(u(lang, "nb_revised", what=what_text(lang, rev)))}</span>')
+    nbh = "".join(f"<div>{r}</div>" for r in rows if r)
+    return (f'<section class="nbp" data-p="{key}">{"".join(head_)}<div class="nbhead" data-pagefind-ignore>{nbh}</div>'
+            f'<div class="nbtext" lang="{lang}">{resolve_nb_html(lang, v["html"], p)}</div></section>')
+
+
+def nb_years(pages):
+    ys = sorted({RECS[str(r)]["year"] for p in pages for r in REG["pages"][str(p)]["records"] if str(r) in RECS})
+    return ys
+
+
+def notebook_page(lang, ch):
+    pages = REG["archive_chapters"][ch]
+    ol = other_lang(lang)
+    i = NB_CHAPTERS.index(ch)
+    pv = NB_CHAPTERS[i - 1] if i > 0 else None
+    nx = NB_CHAPTERS[i + 1] if i + 1 < len(NB_CHAPTERS) else None
+    pager = ('<nav class="pager">'
+             + (f'<a href="{url(lang, "notebook", pv)}">← {E(u(lang, "nb_chapter", n=pv))}</a>' if pv else "<span></span>")
+             + (f'<a href="{url(lang, "notebook", nx)}">{E(u(lang, "nb_chapter", n=nx))} →</a>' if nx else "<span></span>")
+             + "</nav>")
+    ys = nb_years(pages)
+    modes = ""
+    if nb_on(ol):
+        modes = (f'<div class="nbmodes" role="group" aria-label="{E(u(lang, "nb_mode_label"))}" data-other="{ol}" '
+                 f'data-loading="{E(u(lang, "nb_loading"))}" data-pagefind-ignore>'
+                 f'<button type="button" data-mode="this" aria-pressed="true">{E(UI["lang_names"][lang])}</button>'
+                 f'<button type="button" data-mode="other" aria-pressed="false" lang="{ol}">{E(UI["lang_names"][ol])}</button>'
+                 f'<button type="button" data-mode="both" aria-pressed="false">{E(u(lang, "nb_mode_both"))}</button></div>')
+    body = (f'<h1>{E(u(lang, "nb_chapter_title", n=ch))}</h1>'
+            f'<p class="meta">{E(u(lang, "nb_pages", first=pid(pages[0]), last=pid(pages[-1])))} · '
+            + E(u(lang, "nb_years", years=", ".join(year_label(y) for y in ys))) + f'</p>{modes}'
+            + "".join(nb_page_section(lang, p) for p in pages) + pager)
+    crumbs = [(u(lang, "notebook"), url(lang, "notebook")), (u(lang, "nb_chapter", n=ch), None)]
+    return page(lang, f'{u(lang, "nb_chapter_title", n=ch)} — {UI["site_name"][lang]}', crumbs,
+                url(ol, "notebook", ch) if nb_on(ol) else url(ol), E(u(lang, "status_notebook", date=fdate(lang, REL_DATE),
+                                                                      release=REL_SHORT)),
+                body, math=True, works_ids=[f"notes-{lang}"], kind="notebook")
+
+
+def notebook_index(lang):
+    rows = []
+    for ch in NB_CHAPTERS:
+        pages = REG["archive_chapters"][ch]
+        rows.append(f'<tr><td><a href="{url(lang, "notebook", ch)}">{E(u(lang, "nb_chapter", n=ch))}</a></td>'
+                    f'<td>{pid(pages[0])}–{pid(pages[-1])} <span class="lbl">({len(pages)})</span></td>'
+                    f'<td>{", ".join(year_label(y) for y in nb_years(pages))}</td></tr>')
+    body = (f'<h1>{E(u(lang, "notebook"))}</h1><p>{E(u(lang, "notebook_index_text"))}</p>'
+            f'<table class="list"><tr><th>{E(u(lang, "nb_chapters_col"))}</th><th>{E(u(lang, "nb_pages_col"))}</th>'
+            f'<th>{E(u(lang, "nb_years_col"))}</th></tr>' + "".join(rows) + "</table>")
+    return page(lang, f'{u(lang, "notebook")} — {UI["site_name"][lang]}', [(u(lang, "notebook"), None)],
+                url(other_lang(lang), "notebook"), E(u(lang, "status_notebook", date=fdate(lang, REL_DATE), release=REL_SHORT)),
+                body, kind="notebook-index")
+
+
+def nb_shards(out):
+    """/data/pages/{l}/P000659.json: the text of one page, for the talk pages' notebook column and the other-language
+    view of the notebook pages."""
+    n = 0
+    for lang in NB:
+        d = out / "data" / "pages" / lang
+        if d.exists():
+            shutil.rmtree(d)
+        d.mkdir(parents=True, exist_ok=True)
+        for key, v in NB[lang].items():
+            p = int(key[1:])
+            wjson(d / f"{key}.json", {"page": key, "label": v["label"], "chapter": CHAPTER_OF_PAGE[p],
+                                     "html": resolve_nb_html(lang, v["html"], p)}, indent=None)
+            n += 1
+    return n
+
+
+def copy_crops(out):
+    """The scan crops the marked readings show (the PNG details of the release's figures/ folder)."""
+    dest = out / "assets" / "crops"
+    want = set()
+    for lang in NB:
+        for v in NB[lang].values():
+            want |= set(re.findall(r"@@CROPS@@([^\"'\s>]+)", v["html"]))
+    src = latex_dir() / "figures"
+    dest.mkdir(parents=True, exist_ok=True)
+    have = {f.name for f in dest.glob("*")}
+    missing = []
+    for name in sorted(want):
+        f = src / name
+        if not f.exists():
+            missing.append(name)
+            continue
+        if name not in have or (dest / name).stat().st_size != f.stat().st_size:
+            shutil.copy(f, dest / name)
+    for name in have - want:
+        (dest / name).unlink()
+    if missing:
+        log(f"WARNING: {len(missing)} scan crops named in the text are not in the release: {missing[:5]}")
+    return len(want) - len(missing), missing
+
+
+def search_page(lang):
+    """Pagefind (G9 builds the index into /pagefind/; one index per language, chosen by the page's lang)."""
+    js = (f'<script src="{BASE}pagefind/pagefind-ui.js"></script><script>(function(){{'
+          f'var el=document.getElementById("search");'
+          f'if(!window.PagefindUI){{el.textContent=el.dataset.na;return;}}'
+          f'var ui=new PagefindUI({{element:"#search",showSubResults:true,showImages:false,bundlePath:"{BASE}pagefind/"}});'
+          f'var q=new URLSearchParams(location.search).get("q");if(q)ui.triggerSearch(q);}})();</script>')
+    body = (f'<h1>{E(u(lang, "search"))}</h1><p>{E(u(lang, "search_text"))}</p>'
+            f'<div id="search" data-na="{E(u(lang, "search_unavailable"))}"></div>')
+    return page(lang, f'{u(lang, "search")} — {UI["site_name"][lang]}', [(u(lang, "search"), None)], url(other_lang(lang), "search"),
+                general_status(lang), body + js, kind="search", index=False,
+                extra_head=f'<link rel="stylesheet" href="{BASE}pagefind/pagefind-ui.css">')
+
+
 # ------------------------------------------------------------------ home, root, resolver, 404
 DATA_FILES_LIST = ["items", "talks", "problems", "references", "pages", "records", "corrections"]
 
@@ -843,8 +1028,10 @@ def home_page(lang):
     readers = " · ".join(f'<a href="{BASE}readers/{READERS[l]}">{E(u(lang, "reader_" + l))}</a>' for l in LANGS if NOTES_ON[l])
     data = ", ".join(f'{k} (<a href="{BASE}data/{k}.csv">CSV</a>, <a href="{BASE}data/{k}.json">JSON</a>)' for k in DATA_FILES_LIST)
     body = (f'<h1>{E(UI["site_name"][lang])}</h1><p>{E(u(lang, "tagline"))}</p>'
-            f'<p class="kv"><a href="{url(lang, "problems")}">{E(u(lang, "problems"))}</a> · <a href="{url(lang, "speakers")}">{E(u(lang, "speakers"))}</a>'
-            f' · <a href="{url(lang, "references")}">{E(u(lang, "references"))}</a></p>'
+            f'<p class="kv">' + (f'<a href="{url(lang, "notebook")}">{E(u(lang, "notebook"))}</a> · ' if nb_on(lang) else "")
+            + f'<a href="{url(lang, "problems")}">{E(u(lang, "problems"))}</a> · <a href="{url(lang, "speakers")}">{E(u(lang, "speakers"))}</a>'
+            f' · <a href="{url(lang, "references")}">{E(u(lang, "references"))}</a>'
+            f' · <a href="{url(lang, "search")}">{E(u(lang, "search"))}</a></p>'
             f'<h2>{E(u(lang, "years"))}</h2><table class="list yeargrid"><tr><th>{E(u(lang, "years_table_year"))}</th>'
             f'<th class="num">{E(u(lang, "years_table_records"))}</th><th class="num hide-sm">{E(u(lang, "years_table_pages"))}</th>'
             f'<th>{E(u(lang, "years_table_companion"))}</th><th class="num">{E(u(lang, "years_table_items"))}</th>'
@@ -1054,7 +1241,7 @@ def data_files(out, speakers_map):
             dates[dd].append(int(n))
     wjson(d / "resolve.json", {"records": sorted(int(n) for n in RECS), "items": {i: x["record"] for i, x in ITEMS.items()},
                                "problems": sorted(PROBLEMS), "pages": pages_min, "years": [v["year"] for v in YEARS],
-                               "dates": dates, "speakers": speakers_map, "notebook": False}, indent=None)
+                               "dates": dates, "speakers": speakers_map, "notebook": bool(NB)}, indent=None)
     idx = ["<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Data</title>",
            f'<link rel="stylesheet" href="{BASE}assets/site.css"></head><body><div class="page narrow"><h1>Data</h1><ul>']
     for f in sorted(d.iterdir()):
@@ -1130,6 +1317,17 @@ def main():
         for t in TAGS:
             wtext(out / lang / "development" / slug(t) / "index.html", development_page(lang, t))
             counts["development"] += 1
+        if nb_on(lang):
+            wtext(out / lang / "notebook" / "index.html", notebook_index(lang))
+            for ch in NB_CHAPTERS:
+                wtext(out / lang / "notebook" / ch / "index.html", notebook_page(lang, ch))
+                counts["notebook"] += 1
+        wtext(out / lang / "search" / "index.html", search_page(lang))
+    if NB:
+        counts["page shards"] = nb_shards(out)
+        counts["scan crops"], _missing = copy_crops(out)
+        fig_dir = out / "assets" / "figures"
+        counts["figures"] = len(list(fig_dir.glob("*.svg"))) if fig_dir.exists() else 0
     wtext(out / "index.html", root_page())
     wtext(out / "r" / "index.html", resolver_page())
     wtext(out / "404.html", notfound_page())

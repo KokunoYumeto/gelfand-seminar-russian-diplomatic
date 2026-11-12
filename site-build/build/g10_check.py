@@ -12,6 +12,11 @@
              the commentary was written (G7), and on the year page; the commentary-language notice on Russian pages
              with commentary; the stub notice exactly on the years and talks without a companion chapter
   ids        no duplicate ids on a page; <html lang> is the page's language
+  notebook   every notebook page has its anchor on its archive chapter's page and its shard in /data/pages/, in both
+             languages; the passages and marked readings on the pages equal G3's; G3's parity report is empty
+  outside    a sample of 50 outside links (MCCME record pages, DOIs and URLs of the bibliography) answers
+             (GELFAND_SKIP_OUTSIDE=1 skips it, e.g. offline)
+  size       the site's size by folder (reports/g10_size.tsv), under GitHub Pages' 1 GB
   public     no local paths, e-mail addresses or forbidden terms in the site or in the repository files this build
              publishes (companion/, site-build/, .github/)
 
@@ -24,12 +29,16 @@ import os
 import re
 import subprocess
 import sys
+import urllib.error
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import lxml.html
 
 sys.path.insert(0, str(Path(__file__).parent))
-from common import DATA, REPO, REPORTS, SB, YEARS_DIR, chapter_tags, parse_pages, pid, report, rjson, site_dir  # noqa
+from common import (DATA, IR, REPO, REPORTS, SB, YEARS_DIR, chapter_tags, parse_pages, pid, report, rjson,  # noqa
+                    site_dir)
 from sync_companion import forbidden_patterns, scan_text  # noqa: E402
 
 BASE = os.environ.get("GELFAND_BASE", "/gelfand-seminar-russian-diplomatic/")
@@ -292,14 +301,116 @@ def main():
            f"{n_stale_entries} talk entries and {n_stale_items} items (both languages); stubs and language notices; "
            f"{len(notice_bad)} problems")
 
+    # ---------------------------------------------------------------- notebook text (G3, G4)
+    nb_ir = IR / "notebook"
+    if (nb_ir / "ru.json").exists():
+        reg = rjson(IR / "registry.json")
+        nb_bad, cnt = [], collections.Counter()
+        for l in ("ru", "en"):
+            ir = rjson(nb_ir / f"{l}.json")
+            for ch, plist in reg["archive_chapters"].items():
+                rel = f"{l}/notebook/{ch}/index.html"
+                if rel not in docs:
+                    nb_bad.append((l, f"chapter {ch}", "no notebook page"))
+                    continue
+                s, doc = docs[rel]
+                for p in plist:
+                    key = f"P{int(p):06d}"
+                    if key not in ids[rel]:
+                        nb_bad.append((l, key, f"no anchor on {rel}"))
+                    if not (OUT / "data" / "pages" / l / f"{key}.json").exists():
+                        nb_bad.append((l, key, "no page shard"))
+                cnt[(l, "pages")] += len(plist)
+                cnt[(l, "passages")] += len(doc.xpath("//div[contains(concat(' ',@class,' '),' passage ') and @id]"))
+                cnt[(l, "readings")] += len(doc.xpath("//*[contains(concat(' ',@class,' '),' mr ')]"))
+                cnt[(l, "figures")] += len(doc.xpath("//*[contains(concat(' ',@class,' '),' fig ')]/img"))
+                cnt[(l, "figures missing")] += len(doc.find_class("fig-missing"))
+            want_p = sum(len(v["passages"]) for v in ir.values())
+            want_r = sum(len(v["readings"]) for v in ir.values())
+            if cnt[(l, "passages")] != want_p:
+                nb_bad.append((l, "passages", f"{cnt[(l, 'passages')]} on the pages, {want_p} in G3"))
+            if cnt[(l, "readings")] != want_r:
+                nb_bad.append((l, "marked readings", f"{cnt[(l, 'readings')]} on the pages, {want_r} in G3"))
+        parity = REPORTS / "g3_parity.tsv"
+        n_par = max(0, len(parity.read_text(encoding="utf-8").splitlines()) - 1) if parity.exists() else -1
+        if n_par != 0:
+            nb_bad.append(("ru/en", "parity", f"{n_par} differences in reports/g3_parity.tsv"))
+        failed = REPORTS / "g4_failed.tsv"
+        n_fail = max(0, len(failed.read_text(encoding="utf-8").splitlines()) - 1) if failed.exists() else -1
+        report("g10_notebook", nb_bad, ["lang", "what", "problem"])
+        result("notebook", not nb_bad,
+               "; ".join(f"{l}: {cnt[(l, 'pages')]} pages, {cnt[(l, 'passages')]} passages, {cnt[(l, 'readings')]} "
+                         f"marked readings, {cnt[(l, 'figures')]} figures ({cnt[(l, 'figures missing')]} not typeset)"
+                         for l in ("ru", "en"))
+               + f"; parity differences {n_par}; figures without SVG {n_fail} (reports/g4_failed.tsv); "
+                 f"{len(nb_bad)} problems")
+
+    # ---------------------------------------------------------------- outside links (a sample)
+    if os.environ.get("GELFAND_SKIP_OUTSIDE") != "1":
+        urls = [r["mccme_url"] for r in data["records"]][::max(1, len(data["records"]) // 25)][:25]
+        refs = [(r.get("doi") and "https://doi.org/" + r["doi"]) or r.get("url") for r in data["references"]]
+        refs = [x for x in refs if x and x.startswith("http")]
+        urls += refs[::max(1, len(refs) // 25)][:25]
+        out_rows = []
+
+        def probe(u):
+            req = urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0 (compatible; site-link-check/1.0)"})
+            try:
+                with urllib.request.urlopen(req, timeout=25) as r:
+                    return (u, r.status, r.geturl()[:120])
+            except urllib.error.HTTPError as e:
+                return (u, e.code, "")
+            except Exception as e:  # noqa: BLE001
+                return (u, "error", str(e)[:120])
+        with ThreadPoolExecutor(max_workers=8) as ex:
+            out_rows = list(ex.map(probe, urls))
+        report("g10_outside_links", out_rows, ["url", "status", "final url or error"])
+        gone = [r for r in out_rows if r[1] in (404, 410)]
+        errs = [r for r in out_rows if r[1] == "error"]
+        refused = [r for r in out_rows if isinstance(r[1], int) and r[1] in (401, 403, 429)]
+        okn = [r for r in out_rows if isinstance(r[1], int) and r[1] < 400]
+        result("outside", not gone and len(errs) <= 5,
+               f"{len(urls)} sampled (MCCME record pages and bibliography DOIs/URLs): {len(okn)} answer, "
+               f"{len(refused)} refuse automated clients, {len(gone)} gone, {len(errs)} errors or timeouts")
+
+    # ---------------------------------------------------------------- size
+    by_top = collections.Counter()
+    n_all = 0
+    big = []
+    for f in OUT.rglob("*"):
+        if f.is_file():
+            sz = f.stat().st_size
+            top = f.relative_to(OUT).parts[0] if len(f.relative_to(OUT).parts) > 1 else "(root)"
+            if top in ("ru", "en") and len(f.relative_to(OUT).parts) > 2:
+                top = f"{top}/{f.relative_to(OUT).parts[1]}"
+            if top == "assets" and len(f.relative_to(OUT).parts) > 2:
+                top = f"assets/{f.relative_to(OUT).parts[1]}"
+            by_top[top] += sz
+            n_all += 1
+            big.append((sz, f.relative_to(OUT).as_posix()))
+    total = sum(by_top.values())
+    report("g10_size", sorted(((k, v) for k, v in by_top.items()), key=lambda kv: -kv[1])
+           + [("TOTAL", total), ("files", n_all)] + [("largest: " + p, s) for s, p in sorted(big, reverse=True)[:15]],
+           ["folder", "bytes"])
+    result("size", total < 1_000_000_000, f"{total / 1e6:.0f} MB in {n_all} files (GitHub Pages limit 1 GB); largest "
+           f"folders: " + ", ".join(f"{k} {v / 1e6:.0f} MB" for k, v in by_top.most_common(5)))
+
     # ---------------------------------------------------------------- public files
     pat = forbidden_patterns()
     hits = []
     n_files = 0
+    vendor_credits = 0
     for f in OUT.rglob("*"):
         if f.is_file() and f.suffix.lower() in TEXT_EXT:
             n_files += 1
-            hits += scan_text(f.read_text(encoding="utf-8", errors="replace"), "site/" + f.relative_to(OUT).as_posix(), pat)
+            rel_f = "site/" + f.relative_to(OUT).as_posix()
+            h = scan_text(f.read_text(encoding="utf-8", errors="replace"), rel_f, pat)
+            if rel_f.startswith("site/pagefind/"):
+                # Pagefind's generated UI credits its translators by name and e-mail address: third-party text
+                keep = [x for x in h if not re.fullmatch(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+", x[1])]
+                vendor_credits += len(h) - len(keep)
+                h = keep
+            hits += h
     pub = [REPO / "companion", SB, REPO / ".github"]
     for root in pub:
         if not root.exists():
@@ -313,7 +424,8 @@ def main():
                 hits += scan_text(f.read_text(encoding="utf-8", errors="replace"), relp, pat)
     report("g10_public_scan", hits, ["file", "match", "context"])
     result("public", not hits, f"{n_files} files scanned (site and the repository folders this build publishes); "
-           f"{len(hits)} hits")
+           f"{len(hits)} hits" + (f" (not counted: {vendor_credits} translator e-mail addresses in Pagefind's own "
+                                  f"generated UI script)" if vendor_credits else ""))
 
     report("g10_summary", RESULTS, ["check", "result", "detail"])
     ok = all(r[1] == "PASS" for r in RESULTS)
