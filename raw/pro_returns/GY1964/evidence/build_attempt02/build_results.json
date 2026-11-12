@@ -1,0 +1,69 @@
+{
+  "commands": [
+    {
+      "step": "builder",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "build_chapter.py",
+        "GY1964"
+      ],
+      "returncode": 0
+    },
+    {
+      "step": "xelatex_1",
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1964_test.tex"
+      ],
+      "returncode": 0
+    },
+    {
+      "step": "bibtex",
+      "command": [
+        "bibtex",
+        "GY1964_test"
+      ],
+      "returncode": 0
+    },
+    {
+      "step": "xelatex_2",
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1964_test.tex"
+      ],
+      "returncode": 0
+    },
+    {
+      "step": "xelatex_3",
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1964_test.tex"
+      ],
+      "returncode": 0
+    }
+  ],
+  "checks": {
+    "latex_errors": [],
+    "overfull_boxes": [
+      "Overfull \\hbox (44.91873pt too wide) in paragraph at lines 2078--2079",
+      "Overfull \\hbox (61.88956pt too wide) in paragraph at lines 3134--3134",
+      "Overfull \\hbox (16.88042pt too wide) in paragraph at lines 3359--3359"
+    ],
+    "missing_glyphs": [],
+    "undefined_references": [],
+    "font_warnings": [],
+    "bibliography_warnings": [
+      "Warning--there's a number but no volume in sakhnovich1959triangular",
+      "Warning--there's a number but no volume in segal1965erratum",
+      "Warning--there's a number but no volume in segal1965variete",
+      "Warning--there's a number but no series in serre1968congruence"
+    ],
+    "pdf_created": true
+  }
+}

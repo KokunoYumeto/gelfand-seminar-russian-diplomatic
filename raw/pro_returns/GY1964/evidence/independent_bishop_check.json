@@ -1,0 +1,85 @@
+{
+  "method": "integer Bareiss elimination plus Fraction polynomial arithmetic",
+  "endpoint_checks": [
+    {
+      "r": 1,
+      "q": 2,
+      "scaled_D0": "1",
+      "scaled_D1": "1",
+      "sign_change": false
+    },
+    {
+      "r": 2,
+      "q": 3,
+      "scaled_D0": "-2",
+      "scaled_D1": "-5",
+      "sign_change": false
+    },
+    {
+      "r": 3,
+      "q": 4,
+      "scaled_D0": "-12",
+      "scaled_D1": "-116",
+      "sign_change": false
+    },
+    {
+      "r": 3,
+      "q": 10,
+      "scaled_D0": "2729125459144601291980800000",
+      "scaled_D1": "177358234211126694661835980800000",
+      "sign_change": false
+    },
+    {
+      "r": 9,
+      "q": 16,
+      "scaled_D0": "-619562901954775265630055762305374632526345144146843000593668003332096000000000000000000000000000000",
+      "scaled_D1": "95617347018030033481535488325270944096715186031740869922609989771512859760429447354806862685929472000000000",
+      "sign_change": true
+    }
+  ],
+  "exact_integral_checks": [
+    {
+      "r": 1,
+      "q": 2,
+      "degree": 2,
+      "squared_error": "49/8832",
+      "matches": true
+    },
+    {
+      "r": 1,
+      "q": 2,
+      "degree": 4,
+      "squared_error": "2117561/24772369344",
+      "matches": true
+    },
+    {
+      "r": 1,
+      "q": 2,
+      "degree": 8,
+      "squared_error": "18688783016332604207191414313/33345567197885280321520448326636992",
+      "matches": true
+    },
+    {
+      "r": 1,
+      "q": 3,
+      "degree": 6,
+      "squared_error": "360418741622206464297991823/2502978037402711666595782954500",
+      "matches": true
+    },
+    {
+      "r": 2,
+      "q": 3,
+      "degree": 6,
+      "squared_error": "6757546051872846018926683/85033162953465879415997393748",
+      "matches": true
+    }
+  ],
+  "finite_irrational_transfer_certificate": {
+    "target": "x^2",
+    "beta": "1/2",
+    "delta_strict_upper_bound": "1/1690000",
+    "L2_error_strict_upper_bound": "1/50",
+    "checks": "exact rational inequalities passed"
+  },
+  "conclusion": "All independent finite checks agree. No all-parameter statement follows from finite checks."
+}

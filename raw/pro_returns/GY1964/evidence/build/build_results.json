@@ -1,0 +1,60 @@
+{
+  "commands": [
+    {
+      "step": "builder",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "build_chapter.py",
+        "GY1964"
+      ],
+      "returncode": 0
+    },
+    {
+      "step": "xelatex_1",
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1964_test.tex"
+      ],
+      "returncode": 0
+    },
+    {
+      "step": "bibtex",
+      "command": [
+        "bibtex",
+        "GY1964_test"
+      ],
+      "returncode": 0
+    },
+    {
+      "step": "xelatex_2",
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1964_test.tex"
+      ],
+      "returncode": 0
+    },
+    {
+      "step": "xelatex_3",
+      "command": [
+        "xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "GY1964_test.tex"
+      ],
+      "returncode": 0
+    }
+  ],
+  "checks": {
+    "latex_errors": [],
+    "overfull_boxes": [],
+    "missing_glyphs": [],
+    "undefined_references": [],
+    "font_warnings": [],
+    "bibliography_warnings": [],
+    "pdf_created": true
+  }
+}

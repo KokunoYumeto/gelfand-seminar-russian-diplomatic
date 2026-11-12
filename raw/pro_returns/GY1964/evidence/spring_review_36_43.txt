@@ -1,0 +1,170 @@
+SNAPSHOT_SHA256 235dfe15e2a7fa2a3efa1b3e0533556ef341ff6fd16dad099d489b9fc51550ca
+ITEM_COUNT 73
+
+## 1964-36.1 Ergodic eigenfunctions have constant modulus P000063
+NOTES: The notes give \(U_t f_\lambda=e^{i\lambda t}f_\lambda\) and \ru{пост. по mod (у эргод. системы)}.
+STATEMENT: Let \((X,\mu)\) be a probability space and \((T_t)\) an ergodic measure-preserving measurable flow. If \(0\ne f\in L^2(\mu)\) and \(f\circ T_t=e^{it\lambda}f\) for every \(t\), as equalities in \(L^2\), then \(|f|=c>0\) almost everywhere. More generally the same statement holds for an ergodic action and a unitary character.
+RECONSTRUCTION: The probability-space convention and almost-everywhere qualification make the shorthand precise.
+FATE: This is an immediate consequence of ergodicity: \(|f|\) is invariant. It is used explicitly, in the normalization \(|f|=1\), by \citet[p.~775]{stepin1966spectra}. That 1966 use is corroboration, not a claim that the elementary observation originated then.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-37.1 When is a universal enveloping algebra primitive? P000065
+NOTES: The notes ask when \(U(L)\) is primitive and explain this as admitting a faithful irreducible module; Harish-Chandra and Jacobson are named.
+STATEMENT: For a specified Lie algebra \(\mathfrak g\) over a field \(k\), determine whether \(U(\mathfrak g)\) has a faithful simple left module. For finite-dimensional complex \(\mathfrak g\), the Dixmier--Moeglin equivalence gives a precise criterion: the zero ideal is primitive if and only if the center of the quotient division ring of \(U(\mathfrak g)\) is \(\mathbb C\). The restriction on the field and dimension is essential to the stated scope.
+RECONSTRUCTION: Finite dimension, characteristic zero and the base field are not recorded; the complex finite-dimensional case is a reconstruction. No claim is made that all \(U(\mathfrak g)\) are primitive.
+FATE: \citet[p.~2020]{bell2017poisson} explicitly records the primitive--rational--locally-closed equivalence for enveloping algebras of finite-dimensional complex Lie algebras, crediting Dixmier (1977) and Moeglin (1980). Applied to the zero prime ideal, it yields the criterion stated here. This later primary account was read; the original proofs were not. \citet{ooms1974primitive} is a separate, inaccessible lead on solvable Lie algebras and is not needed to certify the criterion.
+PRESENT_STATUS: As of November 2026: the finite-dimensional complex problem belongs to an established primitive-ideal theory and admits the stated criterion. The notebook omits the field and dimension, so an unrestricted field-independent classification is not asserted.
+ASSESSMENT: {'class': 'B', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': 'GP-1964-S01'}
+
+## 1964-37.2 Two two-dimensional examples of primitive envelopes P000065
+NOTES: The nonabelian relation is \([e_1,e_2]=e_1\); its envelope is called primitive. The abelian two-generator envelope is said not to be primitive because a commutative primitive ring is a field.
+STATEMENT: Over \(\mathbb C\), the two-dimensional nonabelian Lie algebra \([x,h]=x\) has primitive enveloping algebra. In contrast \(U(\mathbb C^2)=\mathbb C[x,h]\) is not primitive: every simple module of a commutative ring is a residue field, and faithfulness forces the ring itself to be a field.
+RECONSTRUCTION: The faithful simple module is an editorial verification, not a reconstruction of an omitted notebook proof. The base field is fixed to \(\mathbb C\).
+FATE: The nonabelian case can be checked directly on \(\mathbb C[t]\): let \(h\) multiply by \(t\) and \(x f(t)=f(t+1)\), so \([x,h]=x\). A submodule is an ideal stable under translation, hence is zero or the whole ring; distinct finite translations are linearly independent over \(\mathbb C[t]\), giving faithfulness. This elementary verification agrees with the later primitive-ideal framework \citep[p.~2020]{bell2017poisson}.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-37.3 Associative simplicity does not eliminate Lie ideals P000065
+NOTES: Under the name Baxter the manuscript says \ru{Если A --- простая, то Ли-ид. тоже нет}, and repeats that absence of ordinary ideals implies absence of Lie ideals.
+STATEMENT: The literal assertion is false. In the simple associative algebra \(M_2(\mathbb C)\), the center \(\mathbb C I\) is a proper nonzero Lie ideal; so is \(\mathfrak{sl}_2(\mathbb C)\). Correct simplicity theorems concern specified commutator Lie algebras, quotients by their centers, or skew elements of an algebra with involution, with characteristic and small-dimension exceptions.
+RECONSTRUCTION: The corrected theorem is intentionally not guessed: the notebook omits the quotient or involution that would determine which result was intended.
+FATE: Baxter\textquotesingle s paper \citet[title and theorem scope]{baxter1956lie} concerns a special class of associative rings; its topic cannot validate the unrestricted sentence. The direct matrix counterexamples already settle the literal reading. No new open problem is inferred from the error.
+PRESENT_STATUS: As of November 2026: false literally; the intended Baxter theorem remains incompletely identified.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'false as written', 'publication_match': 'thematic only', 'verification': 'indirect', 'problem': ''}
+
+## 1964-37.4 Uniform nilpotence on a generating Lie algebra P000066
+NOTES: The Burnside/Kostrikin paragraph has finite generators \(X\), their Lie algebra \([X]\), and a corrected quantifier \(\exists n\) followed by \(e^n=0\). It concludes that the associative algebra is \ru{нильпот.}, glossed as every element being nilpotent.
+STATEMENT: The strongest recoverable question is: if a finitely generated associative algebra \(A\) over an unspecified field is generated by a finite set \(X\), and every element of the Lie subalgebra generated by \(X\) has a common associative nilpotence bound, what follows about \(A\)? Being nil (each element nilpotent) and being nilpotent (\(A^m=0\) for one \(m\)) are different conclusions.
+RECONSTRUCTION: The membership sign \(e\in[X]\) and universal quantification over \(e\) are interpretive expansions. The field, associativity and distinction between nil and nilpotent are not supplied by the notes.
+FATE: Searches on Latyshev, Kostrikin, the restricted Burnside problem, Lie-generated associative algebras and bounded nilpotence did not identify a theorem with precisely these assumptions and conclusion. A citation to a restricted-Burnside theorem alone would not supply the omitted characteristic and identity hypotheses.
+PRESENT_STATUS: As of November 2026: insufficiently specified for a reliable fate assignment; not classified as an undeveloped conjecture.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'not determinable', 'publication_match': 'none found', 'verification': 'unresolved lead', 'problem': ''}
+
+## 1964-38.1 Weyl algebras of different ranks P000066
+NOTES: The two rings are written \(P(x,d/dx)\) and \(P(x,d/dx,y,d/dy)\), followed by \ru{Изоморфны ли эти кольца?}.
+STATEMENT: Over a field \(k\) of characteristic zero, let \(A_n(k)=k\langle x_1,\ldots,x_n,\partial_1,\ldots,\partial_n\rangle/([x_i,x_j],[\partial_i,\partial_j],[\partial_i,x_j]-\delta_{ij})\). Are \(A_1(k)\) and \(A_2(k)\) isomorphic as \(k\)-algebras? They are not: more generally \(A_m(k)\cong A_n(k)\) implies \(m=n\).
+RECONSTRUCTION: The base field and preservation of it are made explicit. The scan decisively shows one canonical pair versus two.
+FATE: \citet[\S4, Lemma~5 and Theorem~2, pp.~11--14]{gelfandkirillov1966corps} distinguish the algebras \(R_{n,k}\), including Weyl algebras, by growth. The paper was received 19 January 1966 and published that year. In modern terms \(\operatorname{GKdim}A_n=2n\). This is unrelated in quantifiers to asking whether every endomorphism of one fixed \(A_n\) is an automorphism.
+PRESENT_STATUS: As of November 2026: solved negatively for isomorphism of distinct ranks; the same-year first index must not label this an open fixed-rank endomorphism conjecture.
+ASSESSMENT: {'class': 'A', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'read the result', 'problem': 'GP-1964-04'}
+
+## 1964-39.1 The circular orthogonal ensemble as U(N)/O(N) P000066
+NOTES: Symmetric unitary matrices satisfy \(U^T=U\), \(UU^*=I\), with action \(U\mapsto VUV^T\); the stabilizer at the identity is orthogonal. The eigenangle density has Vandermonde power one.
+STATEMENT: The pushforward of Haar measure under \(V\mapsto VV^T\) on \(U(N)\) is the invariant probability measure on \(U(N)/O(N)\). Its unordered eigenangles have joint density \(Z_{N,1}^{-1}\prod_{i<j}|e^{i\theta_i}-e^{i\theta_j}|\) relative to Lebesgue measure on \([0,2\pi)^N\), with the ordering convention absorbed in \(Z_{N,1}\).
+RECONSTRUCTION: 
+FATE: This is Dyson\textquotesingle s circular orthogonal ensemble, published in 1962 after receipt in September 1961; see \citet[the circular ensembles and eigenvalue measures]{dyson1962statisticalI}.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-39.2 Haar unitary eigenangles and quadratic repulsion P000066
+NOTES: For all unitary matrices the notes display Vandermonde power two and discuss integration over conjugacy classes. In the action formula the final \(V^*\) is crossed or omitted.
+STATEMENT: For Haar-distributed \(U\in U(N)\), the eigenangle density is \(Z_{N,2}^{-1}\prod_{i<j}|e^{i\theta_i}-e^{i\theta_j}|^2\). Haar invariance is under left and right multiplication; conjugation \(U\mapsto VUV^*\) is the action relevant to eigenvalue class integration.
+RECONSTRUCTION: Left invariance and conjugacy invariance are separated instead of treating the incomplete action as a new ensemble.
+FATE: The circular unitary ensemble and its eigenangle law are already in \citet[unitary ensemble]{dyson1962statisticalI}. Coinciding angles have vanishing density, the precise content of the recorded repulsion remark.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-39.3 Circular beta gap integrals and logarithmic interaction P000066-P000068
+NOTES: The forbidden arc is \((-\alpha,\alpha)\); the normalized probability is eventually written \(R_\beta=\Psi_\beta(\alpha)/\Psi_\beta(0)\). The first energy sign conflicts with the later Boltzmann factor.
+STATEMENT: For \(N\ge1,\beta>0,0\le\alpha<\pi\), define \(\Psi_{N,\beta}(\alpha)=\int_{[\alpha,2\pi-\alpha]^N}\prod_{i<j}|e^{i\theta_i}-e^{i\theta_j}|^\beta\,d\theta\). Then \(R_{N,\beta}(\alpha)=\Psi_{N,\beta}(\alpha)/\Psi_{N,\beta}(0)\) is the no-eigenangle probability. With energy \(W=-\sum_{i<j}\log|e^{i\theta_i}-e^{i\theta_j}|\), the density is proportional to \(e^{-\beta W}\).
+RECONSTRUCTION: The sign convention, product over pairs and normalization are supplied explicitly; \(\beta>0\) is a sufficient integrability range, not the maximal possible range.
+FATE: Dyson\textquotesingle s log-gas construction is exact at the finite integral level; see \citet[statistical-mechanical interpretation]{dyson1962statisticalI}. The source\textquotesingle s missing product and normalization are repaired by its own next page.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'false as written', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-39.4 Continuum density and local free-energy approximation P000067-P000068
+NOTES: The notes replace the point density by \(\sigma\), impose \(\int\sigma=N\), and write \(F=V+F_1\) with a logarithmic double integral and a local term \(\int\sigma f_\beta(\sigma)\). They label the construction a physical assumption.
+STATEMENT: The empirical measure is \(\sum_{j=1}^N\delta_{\theta_j}\), not an ordinary density. A continuum ansatz replaces it by \(\sigma(\theta)\,d\theta\), minimizes a logarithmic-energy functional under the mass and support constraints, and adds a local entropy correction. This does not give an exact finite-\(N\) theorem. If \(F=-\beta^{-1}\log\Psi\), then \(R=e^{-\beta(F_\alpha-F_0)}\).
+RECONSTRUCTION: The distinction between an empirical measure and a density, and between an ansatz and a theorem, is editorial. The source also permits its positive-sign exponential to define an opposite convention for \(F\); it cannot simultaneously be the usual minimized free energy without a sign change.
+FATE: The method is the 1962 Dyson asymptotic program, not an independently established exact identity. Later determinant asymptotics such as \citet[Introduction and the large-gap formulas]{ehrhardt2007dyson} separate leading energy, logarithmic terms and constants.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-39.5 The cosine-power expression is not an exact CUE gap probability P000067
+NOTES: The manuscript writes \(R_2(\alpha)=\exp(N^2\log\cos(\alpha/2))\) as an equality.
+STATEMENT: The equality \(R_{N,2}(\alpha)=\cos(\alpha/2)^{N^2}\) is false for the stated circular unitary ensemble. For \(N=1\), the eigenangle is uniform and \(R_{1,2}(\alpha)=1-\alpha/\pi\), which is not \(\cos(\alpha/2)\). The cosine-power captures a leading energy contribution in an appropriate large-\(N\) regime, not the complete finite probability.
+RECONSTRUCTION: The one-eigenvalue check is an editorial diagnosis. No unrecorded special ensemble is inserted to save the equality.
+FATE: The later asymptotic theory includes essential subleading powers and constants. \citet[Introduction]{ehrhardt2007dyson} verifies the distinction in the sine-kernel limit; it is not a proof of the notebook\textquotesingle s finite equality. The same expression returns in item 1964-42.1.
+PRESENT_STATUS: As of November 2026: the finite identity is disproved by \(N=1\); precise large-gap asymptotics are established.
+ASSESSMENT: {'class': 'B', 'literal_correctness': 'false as written', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-40.1 Frobenius fixed points and the cohomological counting program P000069
+NOTES: Reduction modulo \(p\) is denoted \(Z_p\). Over its algebraic closure, \(x\mapsto x^p\) fixes exactly the base field; a Lefschetz alternating trace is proposed to count rational points.
+STATEMENT: For a finite-type scheme \(X/\mathbb F_q\), \(X(\mathbb F_q)\) is the fixed-point set of the geometric Frobenius action on geometric points. The precise cohomological formula is \(\#X(\mathbb F_q)=\sum_i(-1)^i\operatorname{Tr}(\operatorname{Frob}_q\mid H^i_c(X_{\overline{\mathbb F}_q},\mathbb Q_\ell))\), with \(\ell\ne\operatorname{char}\mathbb F_q\) and compatible Frobenius convention.
+RECONSTRUCTION: Finite type, compact supports, \(\ell\)-adic coefficients and the Frobenius convention are later precise reconstruction, not statements supplied in the notes.
+FATE: The notebook describes the Weil--Grothendieck program rather than a usable topological Lefschetz theorem in the Zariski topology. The étale-site framework was circulating in the 1963--64 SGA seminar; the published source is \citet[Exposés I--IV, site and topos foundations]{sga4I1972}. The full trace formula requires additional étale-cohomological finiteness and trace theorems.
+PRESENT_STATUS: As of November 2026: the arithmetic trace formula is established; the recorded ordinary-topological analogy alone is insufficient.
+ASSESSMENT: {'class': 'B', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'publisher metadata checked', 'problem': ''}
+
+## 1964-40.2 Slice categories and relative products P000069-P000070
+NOTES: The objects over \(X\) are arrows \(U\to X\); a morphism is a commuting triangle. The universal property of products is explained, with open-set intersection and pairs having the same image as examples.
+STATEMENT: For a category \(\mathcal C\), the slice \(\mathcal C/X\) has objects \(U\to X\). If \(U\times_X V\) exists, it is the product of \(U\to X\) and \(V\to X\) in this slice. Its universal property gives uniqueness up to a unique isomorphism. For the poset of opens of a space, this is intersection.
+RECONSTRUCTION: 
+FATE: This is the categorical language used in SGA~4; see \citet[Exposé I]{sga4I1972} and the explicit modern site conventions of \citet[Tag 00VH]{stacks2026sites}. Publication in 1972 must not be mistaken for first circulation: the seminar dates to 1963--64.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-40.3 Covering families and Grothendieck topologies P000070-P000071
+NOTES: The axioms require identity coverings, composition of covering families and preservation under pullback. Existence of every pairwise product in the slice is recorded separately.
+STATEMENT: A pretopology on a category with the requisite fiber products is a collection of covering families containing isomorphisms and stable under base change and composition. It generates a Grothendieck topology of covering sieves. A general Grothendieck topology does not require all fiber products in the underlying category; the notes use a convenient stronger presentation.
+RECONSTRUCTION: The distinction between a pretopology of families and a topology of sieves is modern clarification.
+FATE: This is established pre-lecture Grothendieck-site theory, circulated in SGA~4 (1963--64) and published in \citet[Exposé II]{sga4I1972}. \citet[Tag 00VH and covering axioms]{stacks2026sites} supplies a checked current formulation.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-40.4 Sheaf descent and the point represented by a field P000071
+NOTES: A presheaf is a contravariant abelian-group-valued functor. Compatible sections over a covering glue uniquely. The notes add that a point can mean a field and then give Galois cohomology.
+STATEMENT: A sheaf \(F\) on a site with fiber products satisfies the equalizer condition \(F(U)\to\prod_iF(U_i)\rightrightarrows\prod_{i,j}F(U_i\times_U U_j)\). On the small étale site of \(\operatorname{Spec}k\), abelian sheaves correspond to discrete continuous modules for \(G_k=\operatorname{Gal}(k^{\mathrm{sep}}/k)\); sheaf cohomology identifies with continuous Galois cohomology.
+RECONSTRUCTION: The small étale topology and continuity of the Galois action are missing but decisive hypotheses.
+FATE: See \citet[Exposé II]{sga4I1972} for the foundations and \citet[Tags 00VL and 03QR]{stacks2026sites} for descent and the field case. The Zariski site of a one-point space would not produce this Galois information.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-41.1 Subjects proposed for study P000072
+NOTES: The list includes Lie groups and representations, sheaves and homological algebra, bundles, algebraic geometry, quantum mechanics, several-variable Cauchy theory and nuclear spaces with measures.
+STATEMENT: This is a curriculum proposal, not a theorem or a mathematically quantified research problem.
+RECONSTRUCTION: 
+FATE: No publication fate can be assigned to a list of study topics. Its value is evidence of the seminar\textquotesingle s program and links to records 39, 40, 48 and 49.
+PRESENT_STATUS: As of November 2026: historical planning evidence; no open mathematical status is applicable.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'not determinable', 'publication_match': 'none found', 'verification': 'indirect', 'problem': ''}
+
+## 1964-41.2 Dyson-type calculations on symmetric spaces P000072
+NOTES: Gelfand proposes investigating Dyson\textquotesingle s results for general symmetric spaces.
+STATEMENT: One precise direction is to push invariant measure on a specified compact symmetric space to a maximal flat and compute the Jacobian in restricted-root coordinates, then study eigenvalue or radial gap observables. A space, normalization, root multiplicities and observable must be specified before an exact theorem can be stated.
+RECONSTRUCTION: The restricted-root formulation and choice of radial observables are an explanatory modern realization, not an assertion that the notebook posed a complete classification problem.
+FATE: Dyson\textquotesingle s \(U(N)/O(N)\) example is already a compact symmetric space \citep{dyson1962statisticalI}. Later random-matrix symmetry classifications systematically use symmetric spaces \citep[the symmetry-class correspondence]{altlandzirnbauer1997}. This matches the direction, not a single universal gap formula.
+PRESENT_STATUS: As of November 2026: extensively developed as a framework; the short suggestion is too broad to carry an unresolved problem label.
+ASSESSMENT: {'class': 'B', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-42.1 Repeated cosine-power claim and an unnamed replacement model P000072
+NOTES: The speaker says the cosine-power result has not been proved for the original model but another similar model gives it exactly. That replacement model is not specified.
+STATEMENT: For the original finite circular unitary ensemble, the asserted exact identity is false as in item 1964-39.5. No exact alternative statement can be recovered without the replacement ensemble and its probability measure.
+RECONSTRUCTION: 
+FATE: Dyson\textquotesingle s asymptotic program and subsequent sine-kernel work explain the leading exponential, but do not identify the unrecorded substitute ensemble \citep[Introduction]{ehrhardt2007dyson}. The two claims must be separated: a false literal finite-CUE equality and an unidentifiable possible exact identity for another model.
+PRESENT_STATUS: As of November 2026: the original equality is false; the unnamed model remains unidentified. This is not evidence of an open exact-CUE problem.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'not determinable', 'publication_match': 'thematic only', 'verification': 'read the result', 'problem': ''}
+
+## 1964-42.2 Nearest-neighbor spacing from the empty-interval probability P000072
+NOTES: A translation-invariant two-endpoint expression is written as \(S(\theta_2-\theta_1)\), and the spacing density is related to a second derivative of the empty-interval probability.
+STATEMENT: For a stationary simple point process on \(\mathbb R\) of intensity \(\rho>0\), let \(E(s)=\Pr\{N(0,s)=0\}\). Under the usual differentiability assumptions, the density \(p(s)\) of the forward nearest-neighbor distance under the Palm law is \(p(s)=E^{\prime\prime}(s)/\rho\). At unit intensity this is \(p=E^{\prime\prime}\). If the gap is parameterized by a half-width, chain-rule factors must also be included.
+RECONSTRUCTION: The Palm nearest-neighbor law, intensity and differentiability hypotheses identify precisely which spacing distribution is meant.
+FATE: This is the standard gap-to-spacing mechanism in Dyson\textquotesingle s statistical theory \citep[spacing distributions]{dyson1962statisticalIII}. The notebook omits the density normalization; a two-point correlation function is not in general a nearest-neighbor density.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'indirect', 'problem': ''}
+
+## 1964-42.3 Even sine-kernel determinant and the large-gap exponent P000073
+NOTES: The finite matrix is \(\delta_{pq}-\pi^{-1}\int_{-\alpha}^{\alpha}\cos(p\theta)\cos(q\theta)\,d\theta\), with half-integer \(p,q\). The scan shows an asymptotic factor \(t^{17/8}e^{-t^2/4-t/2}\) and \(t=\alpha n\).
+STATEMENT: For \(K_+(x,y)=\sin(x-y)/(\pi(x-y))+\sin(x+y)/(\pi(x+y))\) on \(L^2(0,s)\), the established asymptotic is \(\log\det(I-K_+)=-s^2/4-s/2-(1/8)\log s+c_++o(1)\) as \(s\to\infty\). Thus the power in this standard normalization is \(-1/8\), not \(17/8\).
+RECONSTRUCTION: The continuum kernel is identified separately from the finite matrix. The power is a faithful manuscript error, while the exact \(m,n,t\) normalization remains an ambiguity; no silent rescaling is made.
+FATE: \citet[Introduction, formulas for \(K_\pm\)]{ehrhardt2007dyson} proves the large-gap constant as well as the displayed terms (preprint April 2006; publication 2007). The finite cosine matrix is a precursor of this even kernel. The manuscript relation between \(2m\) and \(n\) is itself uncertain (equality or inequality); the natural continuum scaling of the matrix uses \(m\alpha\). The source\textquotesingle s \(t=\alpha n\) is therefore not silently identified with the standard \(s\).
+PRESENT_STATUS: As of November 2026: the standard even-kernel asymptotic is established; the manuscript power and unexplained scaling cannot be used literally.
+ASSESSMENT: {'class': 'B', 'literal_correctness': 'false as written', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-43.1 Continuous spectral component for a dyadic torsion-group action P000072
+NOTES: The group is the dyadic rationals modulo one; the generators satisfy \(T_{1/2^{k+1}}^2=T_{1/2^k}\). The notes describe rearrangements of interval pieces and claim a continuous spectral component.
+STATEMENT: There is an ergodic probability-preserving action of the discrete Prüfer group \(\mathbb Z[1/2]/\mathbb Z\) whose Koopman representation has a nonzero continuous spectral component, although each individual group element has finite order. Continuous means non-atomic spectral measure on the compact dual group, not continuous time and not necessarily Lebesgue measure.
+RECONSTRUCTION: The discrete topology on the group, joint spectral measure and distinction between continuous and absolutely continuous spectrum are made explicit.
+FATE: \citet[\S2, pp.~774--776]{stepin1966spectra} constructs precisely this group action on a circle times a two-point space. Its even subspace has discrete spectrum; its odd subspace has simple singular continuous spectrum. The paper was presented 23 November 1965 and published in 1966.
+PRESENT_STATUS: As of November 2026: the announced construction and its singular-continuous refinement are established.
+ASSESSMENT: {'class': 'A', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}

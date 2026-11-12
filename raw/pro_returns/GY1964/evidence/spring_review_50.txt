@@ -1,0 +1,194 @@
+SNAPSHOT_SHA256 02ba6638b29f8c23d73cadc2cce2c571e08aae8b387ecd13dcdacff89f873c7a
+ITEM_COUNT 73
+
+## 1964-50.1 The invariant-subspace problem on complex Hilbert space P000084; P000088
+NOTES: The notes explicitly require a closed invariant subspace different from zero and the whole complex Hilbert space. On P000088 this is reformulated as whether the lattice can consist only of \(\{0,H\}\).
+STATEMENT: For every bounded linear operator \(T\) on a separable infinite-dimensional complex Hilbert space \(H\), must there be a closed subspace \(M\) with \(0\ne M\ne H\) and \(TM\subseteq M\)? Equivalently, can every nonzero vector be cyclic for one such \(T\)?
+RECONSTRUCTION: 
+FATE: The 1964 de Branges--Rovnyak announcement was retracted in 1965, as explicitly identified by Rovnyak\textquotesingle s author bibliography \citep{debrangesrovnyak1964existence,debrangesrovnyak1965correction}. The primary preprint \citet[abstract and Introduction, pp.~1--2]{marcoux2026generators}, dated 21 August 2026, still calls the precisely scoped Hilbert problem unsolved. Targeted searches through 12 November found claimed solutions and partial results; no generally accepted general solution was verified. A claim in a preprint is not treated as an established theorem.
+PRESENT_STATUS: As of 12 November 2026: no generally accepted solution was verified in the literature checked. This qualified status concerns bounded operators on complex infinite-dimensional Hilbert space, not arbitrary Banach spaces or special classes.
+ASSESSMENT: {'class': 'C', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'read the result', 'problem': 'GP-1964-02'}
+
+## 1964-50.2 Normal and self-adjoint operators have invariant subspaces P000084
+NOTES: The normal and Hermitian cases are described as known.
+STATEMENT: Every normal bounded operator on a complex Hilbert space of dimension greater than one has a nonzero proper closed invariant subspace. A nontrivial spectral projection gives a reducing subspace; when the operator is scalar, any one-dimensional subspace suffices. Self-adjoint operators are included.
+RECONSTRUCTION: The dimension restriction and the scalar exceptional argument prevent the shorthand from being applied to a one-dimensional space.
+FATE: This is classical spectral theory, already treated as established background in the contemporary polynomially compact discussion \citep[p.~433]{halmos1966polynomial}. It does not require compactness or an eigenvalue in the nonscalar continuous-spectrum case.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.3 Compact operators and the Aronszajn--Smith theorem P000084
+NOTES: Completely continuous operators are attributed to von Neumann, followed by Aronszajn and Smith.
+STATEMENT: Every compact bounded linear operator on an infinite-dimensional complex Banach space has a nonzero proper closed invariant subspace. In particular this holds on complex Hilbert space; for finite dimension greater than one, ordinary eigenvector theory supplies the result.
+RECONSTRUCTION: 
+FATE: \citet{aronszajnsmith1954} published the Banach-space theorem in 1954. The later primary account \citet[Introduction]{chamizo2020bishop} explicitly records the earlier unpublished von Neumann Hilbert-space result. The accessible Aronszajn--Smith record verified publication metadata; the complete original proof was not read.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'publisher metadata checked', 'problem': ''}
+
+## 1964-50.4 Subnormality and the unilateral shift P000084
+NOTES: Subnormal means having a normal extension on a larger Hilbert space. The unilateral shift becomes normal after negative-index basis vectors are added; finite-dimensional subnormal operators are normal.
+STATEMENT: An operator \(T\in B(H)\) is subnormal if \(H\) is an invariant subspace of a Hilbert space \(K\) for a normal \(N\in B(K)\), and \(T=N|_H\). The unilateral shift on \(\ell^2(\mathbb N_0)\) is the restriction of the bilateral unitary shift on \(\ell^2(\mathbb Z)\). Finite-dimensional subnormal operators are normal. Taking adjoints need not preserve subnormality.
+RECONSTRUCTION: Invariance of the embedded space is essential: a compression of a normal operator to an arbitrary subspace would not be the stated notion.
+FATE: This is the established Halmos--Bram theory. The definition and intrinsic positivity criteria are recalled and extended by \citet[p.~99]{lambert1984subnormal}; Bram\textquotesingle s original 1955 paper is identified in its bibliography \citep{bram1955subnormal}.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.5 Invariant subspaces for subnormal operators P000084
+NOTES: After defining subnormality, the notes say that its invariant-subspace question is still unsolved.
+STATEMENT: Does every subnormal bounded operator on a complex Hilbert space of dimension greater than one possess a nonzero proper closed invariant subspace? The answer is affirmative.
+RECONSTRUCTION: 
+FATE: \citet[abstract and pp.~310--333]{brown1978subnormal} proved the affirmative result, published in September 1978 after receipt on 21 July 1978. The publisher abstract was opened and explicitly states this result; the full subscription article was not read. The 1965 unsolved label is historically appropriate but cannot be retained as a current status.
+PRESENT_STATUS: As of November 2026: solved affirmatively by Brown in 1978; this special-class problem is distinct from item 1964-50.1.
+ASSESSMENT: {'class': 'B', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'publisher metadata checked', 'problem': ''}
+
+## 1964-50.6 Hyponormality is necessary but not sufficient for subnormality P000084
+NOTES: The overwritten qualification after \(T^*T-TT^*\ge0\) reads necessary and sufficient; the scan leaves the horizontal sign slightly ambiguous.
+STATEMENT: Subnormality implies hyponormality \(T^*T-TT^*\ge0\), but the converse is false. The bounded unilateral shift with weights \(1,1,2,2,\ldots\) is hyponormal since the weights are nondecreasing. If it were subnormal, its moment measure would have moments \(\gamma_0=\gamma_1=\gamma_2=1\), forcing concentration at \(1\), contrary to \(\gamma_3=4\).
+RECONSTRUCTION: The minus sign is the mathematically coherent reading. The weighted-shift counterexample and moment argument are editorial verification; they are not attributed to the speaker.
+FATE: The full Bram--Halmos positivity conditions involve all finite arrays of vectors and powers, not just the first commutator; see \citet[Introduction and criterion]{lambert1984subnormal}. The recorded biconditional is a faithful mathematical error. The explicit shift supplies a short diagnostic counterexample, independently of the uncertain overwritten punctuation.
+PRESENT_STATUS: As of November 2026: the single positivity condition is insufficient; complete intrinsic subnormality criteria are established.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'false as written', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.7 Polynomially compact operators have invariant subspaces P000084-P000087
+NOTES: The case \(T^2\) compact is attributed to Robinson and Bernstein using predicate calculus. Halmos then proves the general case \(p(T)\) compact for a nonzero polynomial.
+STATEMENT: If \(H\) is an infinite-dimensional complex Hilbert space, \(T\in B(H)\), and \(p\in\mathbb C[z]\setminus\{0\}\) has \(p(T)\) compact, then \(T\) has a nonzero proper closed invariant subspace. The case \(p(T)=0\) is included.
+RECONSTRUCTION: Infinite dimension and a nonzero polynomial are explicit. In finite dimension greater than one the conclusion is elementary; in dimension one it fails.
+FATE: \citet[Theorem~1.1]{bernsteinrobinson1966} published the nonstandard-analysis proof in 1966; their paper was received 5 July 1964 and revised 10 December 1964. \citet[pp.~433--437]{halmos1966polynomial} gave the elementary proof, received 10 October 1964. Thus both arguments circulated before this May 1965 lecture although publication followed it. The coauthor is Allen R. Bernstein, not seminar participant I. N. Bernstein.
+PRESENT_STATUS: As of November 2026: established; the notebook is an early oral record of the subsequently published elementary proof.
+ASSESSMENT: {'class': 'A', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.8 Cyclic Hessenberg matrices and small subdiagonal products P000084-P000085
+NOTES: Gram--Schmidt on \(e,Te,T^2e,\ldots\) gives a matrix with one nonzero subdiagonal. Products along its lowest diagonal tend to zero by compactness of \(p(T)\).
+STATEMENT: If one nonzero cyclic vector has linearly independent iterates, Gram--Schmidt gives \(a_{mn}=\langle Te_n,e_m\rangle=0\) for \(m>n+1\). For \(k\ge1\), \((T^k)_{n+k,n}=\prod_{j=1}^k a_{n+j,n+j-1}\). If \(p\) has degree \(k\), nonzero leading coefficient, and \(p(T)\) is compact, these products tend to zero, so some increasing subsequence of subdiagonal entries tends to zero.
+RECONSTRUCTION: The leading coefficient, consistent row-column convention and exceptional finite-dimensional orbit are made explicit.
+FATE: This is the reduction on \citet[pp.~433--434]{halmos1966polynomial}. A noncyclic orbit closure or a finite dependence already yields an invariant subspace. P000085 reverses the matrix indices in one definition; maintaining the convention from P000084 repairs the argument.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'A', 'literal_correctness': 'false as written', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.9 Almost invariant finite compressions and polynomials P000085-P000086
+NOTES: The small subdiagonal entry is used to compress \(T\) to initial finite-dimensional spans. Bounded vector sequences are compared modulo norm convergence to zero, with a special warning about constant terms.
+STATEMENT: Let \(P_n\) be finite-rank orthogonal projections with \(P_n\to I\) strongly and \(\|(I-P_n)TP_n\|\to0\). For every polynomial \(p\) and bounded \(x_n\) with \(\|(I-P_n)x_n\|\to0\), one has \(\|p(T)x_n-p(P_nTP_n)x_n\|\to0\). On \(P_nH\), the compression admits a complete invariant flag.
+RECONSTRUCTION: The norm of the escaping corner, boundedness of the vector sequence, and asymptotic membership in \(P_nH\) are the exact sufficient hypotheses.
+FATE: The approximation lemma is in \citet[p.~435]{halmos1966polynomial}. The source\textquotesingle s two differently placed \(P_n\) factors explain its warning at exponent zero; dropping them silently would create a false formula for arbitrary bounded sequences.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'A', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.10 Adjacent flags and weak limits in the compactness argument P000086-P000087
+NOTES: Two adjacent projections from each finite-dimensional invariant flag are chosen at a norm threshold. Their weak limits define spaces on which they converge strongly to the identity; compactness provides a nonzero limiting vector.
+STATEMENT: For adjacent projections \(Q_n^-\le Q_n^+\), with rank-one difference and asymptotically invariant ranges, choose weak-operator limits \(Q^\pm\). The subspaces \(M^\pm=\ker(I-Q^\pm)=\{x:Q_n^\pm x\to x\}\) are closed and invariant. The compact polynomial and a correct threshold selection give \(M^-\ne H\), \(M^+\ne0\); rank-one adjacency excludes \(M^-=0\) and \(M^+=H\) simultaneously.
+RECONSTRUCTION: The weak limits are positive contractions. The mathematical mechanism is reconstructed from the exact publication; no unrecorded monotonicity of the displayed norms is assumed.
+FATE: This is the closing argument of \citet[pp.~435--437]{halmos1966polynomial}. Weak limits of projections need not be projections. The notebook\textquotesingle s missing terminal vector and conflicting threshold directions are not reproduced as a proof; the published selection supplies their precise repair.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'A', 'literal_correctness': 'false as written', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.11 An entire function giving a compact operator reduces to a polynomial P000088
+NOTES: The notes state that if \(p\) is entire and \(p(T)\) compact, the polynomial result immediately gives an invariant subspace.
+STATEMENT: Let \(f\) be a nonzero entire function and \(T\in B(H)\) on an infinite-dimensional complex Hilbert space. If \(f(T)\) is compact, factor the finitely many zeros in a compact neighborhood of \(\sigma(T)\): \(f=p g\), where \(p\) is polynomial and \(g(T)\) is invertible. Then \(p(T)=g(T)^{-1}f(T)\) is compact, so the polynomial theorem applies.
+RECONSTRUCTION: The finite-zero factorization takes place near the compact spectrum, not over all of \(\mathbb C\). The analytic functional calculus supplies invertibility of the zero-free factor.
+FATE: This functional-calculus consequence uses the theorem of \citet{bernsteinrobinson1966,halmos1966polynomial}. The zero entire function must be excluded: allowing it would make the assumption hold for every bounded operator and simply restate the unsolved general problem.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'A', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.12 The de Branges--Rovnyak compact-defect assertion P000088
+NOTES: After noting the error in their general announcement, the manuscript claims a consequence under \(\|T\|<1\) or \(\|T\|\le1\) and compact \(I-T^*T\). The scan does not securely distinguish the two norm signs.
+STATEMENT: If \(\|T\|<1\), then \(I-T^*T\ge(1-\|T\|^2)I\); on infinite-dimensional \(H\), this operator cannot be compact. The strict reading is vacuous. The weak reading is a materially different assertion about a contraction with compact defect and requires a separate theorem; it is not certified by the retracted general proof.
+RECONSTRUCTION: The coercivity argument diagnoses the strict reading without choosing an uncertain glyph. No current open problem is manufactured from the weak reading.
+FATE: Rovnyak\textquotesingle s author bibliography identifies the 1964 announcement and its 1965 retraction \citep{debrangesrovnyak1964existence,debrangesrovnyak1965correction}. It does not verify the exact compact-defect corollary. The general retraction and the unresolved norm sign are kept separate.
+PRESENT_STATUS: As of November 2026: the strict hypothesis is impossible in the intended infinite-dimensional setting; an exact source for the non-strict compact-defect assertion was not verified.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'not determinable', 'publication_match': 'thematic only', 'verification': 'publisher metadata checked', 'problem': ''}
+
+## 1964-50.13 Trace-class imaginary parts and triangular models P000088
+NOTES: Sakhnovich, Livshits and Brodskii are named for \(A+iB\), with \(A\) self-adjoint and \(B\) small in some sense, for example nuclear.
+STATEMENT: One precise realization is the following. Let \(T=A+iB\) be bounded on a separable complex Hilbert space, with \(A=A^*\), \(B=B^*\), and \(B\) trace class. The restriction of \(T\) to the orthogonal complement of its maximal reducing self-adjoint part is unitarily equivalent to the corresponding non-self-adjoint part of a Liv\v{s}ic triangular model. The additional reducing component is self-adjoint. Here nuclear means trace class; small operator norm is not a substitute for this hypothesis.
+RECONSTRUCTION: The bounded separable Hilbert-space setting and the canonical self-adjoint real and imaginary parts are supplied explicitly. The nuclear example in the source identifies this established theorem, but its unspecified additional classes are not reconstructed. The stronger Hilbert--Schmidt criterion is reported by a later survey; its attribution was not independently confirmed in the cited 1959 original.
+FATE: \citet[Introduction, p.~145; \S11, Theorem~4, pp.~180--181]{livsic1954spectral} gives the triangular-model theorem for trace-class imaginary part. Its introduction dates the preliminary announcements to two 1952 notes. \citet[Introduction and theorem, pp.~180--181]{sakhnovich1959triangular} recalls this nuclear case and constructs a triangular representation under an explicit invariant-subspace interpolation condition. The latter paper was received 6 December 1957 and published in 1959. The broader survey discussion \citep[\S7, pp.~57--59]{dymkatsnelson2007schur} is kept distinct from the original results actually read.
+PRESENT_STATUS: As of November 2026: the nuclear example is an established pre-seminar result. The match is partial because the notebook does not identify its further small-imaginary-part classes or a particular theorem of each named author.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.14 Contractions with neither forward nor adjoint powers strongly stable P000088
+NOTES: Both arrows in \(T^n\not\to0\), \((T^*)^n\not\to0\) are crossed; the norm condition is \(\|T\|\le1\). The result is attributed to Nagy and Foias.
+STATEMENT: If \(T\) is a contraction on a complex Hilbert space with \(\dim H>1\), and neither \(T^n\) nor \((T^*)^n\) converges strongly to zero, then \(T\) has a nonzero proper closed invariant subspace.
+RECONSTRUCTION: Strong nonconvergence means failure for at least one vector for each sequence; it does not require every vector to have a nonzero limiting norm.
+FATE: This is exactly \citet[\S6, Theorem~3 and Remark~(ii), p.~314]{sznagyfoias1964ix}; footnote~29 handles the unitary case and dimension restriction. The paper was received 1 May 1964 and published in 1964. Its 1965 correction explicitly says that the error in Proposition~5.4 does not affect this theorem or its proof \citep[p.~193]{sznagyfoias1965corrections}.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.15 Donoghue lattice of finite initial spans P000088
+NOTES: The lattice \(\{0,1,2,\ldots,\infty\}\) is attributed to Donoghue (1957). The upper-diagonal weights begin \(1/2,1/4\), followed by an uncertain \(1/8\) or \(1/6\).
+STATEMENT: On \(\ell^2(\mathbb N_0)\), the backward weighted shift \(Be_0=0\), \(Be_n=2^{-n}e_{n-1}\) for \(n\ge1\) is compact and quasinilpotent, and its closed invariant subspaces are exactly \(0\), \(\operatorname{span}\{e_0,\ldots,e_{m-1}\}\) for \(m\ge1\), and the whole space.
+RECONSTRUCTION: The geometric weight sequence is a literature-supported interpretation, not a confident decipherment of its overwritten third entry. The endpoints are the zero and whole subspaces.
+FATE: \citet[Examples~1--2, pp.~1031--1033]{donoghue1957lattice} proves the forward-shift tail lattice and its adjoint version. A scalar multiple yields the notebook\textquotesingle s normalization. The 1957 date is correct; the paper was received 25 June 1956.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.16 Weight conditions for the Donoghue invariant-subspace lattice P000088
+NOTES: The exact conditions on the superdiagonal numbers that give precisely the Donoghue chain are said to be unknown.
+STATEMENT: For a bounded sequence of nonzero weights \((w_n)_{n\ge1}\), determine criteria expressed in the weights for the backward shift \(Be_n=w_ne_{n-1}\), \(Be_0=0\), to have only finite initial spans and the whole space as closed invariant subspaces. Equivalently its forward-shift adjoint must be unicellular, with only coordinate tails.
+RECONSTRUCTION: Nonzero bounded weights and the Hilbert adjoint equivalence supply a precise classification question. The broad request for conditions is not silently replaced by an unverified demand for a novel universal closed-form criterion.
+FATE: \citet[Theorem~1 and subsequent counterexamples]{nikolskii1967weighted} gives weight conditions and examples delimiting them. \citet[\S1; Lemmas~2.1--2.2]{harrison1971unicellularity} develops further criteria. The opened abstract of \citet{yakubovich1985weighted} proves that positive moduli monotonically decreasing to zero suffice on \(\ell^p\), \(1\le p<\infty\); Hilbert adjoints give the backward form. \citet[p.~232]{latapokhriyalsingh2023powers} also credits Nikol\textquotesingle skii\textquotesingle s 1967 and 1968 work with additional necessary and sufficient conditions. The 1968 original was verified only at metadata level \citep{nikolskii1968basicity}; its exact scope is not guessed.
+PRESENT_STATUS: As of November 2026: developed and answered in substantial verified weight classes. The generality of a complete explicit characterization for arbitrary bounded nonmonotone weights was not ascertained in this audit. That verification gap is not classified as an established open problem.
+ASSESSMENT: {'class': 'B', 'literal_correctness': 'correct', 'publication_match': 'partial', 'verification': 'read the result', 'problem': 'GP-1964-S03'}
+
+## 1964-50.17 An invariant-subspace chain indexed by all integers P000088
+NOTES: The question whether there is an operator with the structure of all integers is followed by unknown.
+STATEMENT: There is a bounded operator on \(\ell^2(\mathbb Z)\) with full invariant-subspace lattice \(\{0,H\}\cup\{M_m:m\in\mathbb Z\}\), where \(M_m=\overline{\operatorname{span}}\{e_j:j\ge -m\}\). In particular take \(Se_j=\exp(-2|2j+1|)e_{j+1}\). The \(M_m\) increase strictly, have intersection zero and dense union. The literal ordered set \(\mathbb Z\) needs the endpoints \(0,H\).
+RECONSTRUCTION: The endpoints and reversal of indexing are editorial. The concrete choice of Domar\textquotesingle s weights and the unitary conversion were checked independently in this audit; no novelty is claimed.
+FATE: \citet[Theorem~2, pp.~134--135; definitions p.~133]{domar1981translation} supplies an exact construction through weighted translation. Set \(w_n=\exp(-2n|n|)\). Then \(\log w\) is convex for \(n\le0\), concave for \(n\ge0\), \(\sum_{n\ne0}w_n^{1/n}=2\sum_{n\ge1}e^{-2n}<\infty\), and its quadratic limits are \(2>\log3\) at minus infinity and \(-2<-\log3\) at plus infinity. The unitary map \(c\mapsto(w_nc_n)\) turns right translation into the displayed shift. Domar proves that all invariant subspaces are the standard tails. Received 9 June 1980; published 1981.
+PRESENT_STATUS: As of November 2026: the completed integer-chain existence question is solved affirmatively by the established bilateral weighted-shift construction. The literal omission of least and greatest lattice elements is only a shorthand defect.
+ASSESSMENT: {'class': 'B', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': 'GP-1964-S04'}
+
+## 1964-50.18 Volterra integration and a continuous chain P000088
+NOTES: The interval \([0,1]\) is represented by \((Vf)(x)=\int_0^x f(y)\,dy\), with the result dated to the 1950s.
+STATEMENT: On \(L^2(0,1)\), the nonzero proper closed invariant subspaces of the Volterra operator are precisely \(M_a=\{f:f=0\ \text{a.e. on }(0,a)\}\), \(0<a<1\). With \(M_0=H\), \(M_1=0\), these form a continuous totally ordered lattice, reverse-ordered by \(a\), hence order-isomorphic to \([0,1]\).
+RECONSTRUCTION: The direction of inclusion and the endpoint subspaces are supplied; the Hilbert case is \(p=2\).
+FATE: \citet[Example~3, pp.~1033--1034]{donoghue1957lattice} gives the theorem and proof, including \(L^p\), \(1\le p<\infty\), and an appropriate continuous-function version. The existence assertion was established well before the seminar.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.19 A measure-Volterra lattice is not determined by the support as written P000088
+NOTES: A measure on the whole real line is drawn, \((Af)(x)=\int_0^x f(y)\,d\mu(y)\), and the lattice is conjectured to be isomorphic to \(\operatorname{supp}\mu\). The normalization resembles total mass one but is not secure.
+STATEMENT: The literal conjecture is false even for an atomless probability measure: take \(d\mu=\tfrac12\mathbf1_{[-1,1]}dx\), interpreting the integral from zero in the oriented sense for negative \(x\). The subspaces supported on \([-1,0]\) and \([0,1]\) are closed, nonzero, proper and invariant, since every integration interval stays on its side of zero. They are incomparable, whereas \(\operatorname{supp}\mu=[-1,1]\) is linearly ordered.
+RECONSTRUCTION: The counterexample has no atoms, so endpoint conventions cannot explain away the failure. Its total mass is one. The boundedness of this particular integral operator follows directly from Cauchy--Schwarz.
+FATE: A repaired one-sided statement is classical: a positive continuous probability density on \([a,b]\), with lower integration limit \(a\), is transformed by its cumulative distribution into ordinary Volterra integration. The latter lattice is given by \citet[Example~3]{donoghue1957lattice}. This does not validate the two-sided source formula, and no general unresolved measure classification is inferred from that false conjecture.
+PRESENT_STATUS: As of November 2026: false under the literal two-sided formulation; the indicated regular one-sided repair is established.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'false as written', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-50.20 Bishop operators as possible invariant-subspace counterexamples P000089
+NOTES: The weighted composition operator is specialized to \(Tf(x)=x f(x+\alpha\bmod1)\), irrational \(\alpha\). It is proposed as having no invariant subspace, equivalently every vector cyclic.
+STATEMENT: For irrational \(\alpha\in(0,1)\), let \(T_\alpha f(x)=x f(\{x+\alpha\})\) on complex \(L^2(0,1)\). Does every such operator have a nonzero proper closed invariant subspace? The source\textquotesingle s contrary suggestion is false for many parameters, but the universal affirmative question is a distinct remaining problem. The equivalence with cyclicity requires every nonzero vector, not the zero vector.
+RECONSTRUCTION: 
+FATE: Davie\textquotesingle s 1974 theorem covers non-Liouville parameters; \citet[Theorem~3.7]{chamizo2020bishop} extends this to convergent denominators satisfying \(\log q_{j+1}=O(q_j/(\log q_j)^3)\), and hence includes some Liouville numbers. The same paper proves biquasitriangularity and norm approximation by nilpotent operators, neither of which alone produces an invariant subspace. \citet[Introduction]{behani2023bishop} explicitly retains the all-irrational question.
+PRESENT_STATUS: As of November 2026: the checked established results cover the stated arithmetic class, not every irrational parameter. No established all-parameter resolution was verified; the original no-subspace suggestion is already disproved for non-Liouville parameters.
+ASSESSMENT: {'class': 'C', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': 'GP-1964-05'}
+
+## 1964-50.21 Cyclic vectors for irrational Bishop operators P000089
+NOTES: After conjecturing that every vector is cyclic, the speaker says that not even one cyclic vector is known.
+STATEMENT: For each irrational \(\alpha\in(0,1)\), does there exist \(f\in L^2(0,1)\) with \(\overline{\operatorname{span}}\{T_\alpha^n f:n\ge0\}=L^2(0,1)\)? A stronger concrete question asks when the constant function \(1\) is cyclic. Existence of one cyclic vector is far weaker than every nonzero vector being cyclic.
+RECONSTRUCTION: 
+FATE: \citet[Theorems~4.4--4.5, 4.9 and 4.16]{behani2023bishop} establishes rational cyclicity, a co-meager set of cyclic irrational parameters, and sufficient continued-fraction conditions. The preprint circulated in July 2022 and the paper appeared in 2023. Its Question~5.4 asks for an explicit approximation threshold. The chapter gives a bounded rational-fibre certificate and continuity estimate, not an all-irrational proof. A 2026 preprint lead was inaccessible and is not used as an established result.
+PRESENT_STATUS: As of November 2026: cyclicity is established for a co-meager parameter set and explicit sufficient classes in the checked work; universal irrational cyclicity was not verified. The historical absence of any known vector is obsolete.
+ASSESSMENT: {'class': 'C', 'literal_correctness': 'correct', 'publication_match': 'partial', 'verification': 'read the result', 'problem': 'GP-1964-06'}
+
+## 1964-50.22 The unspecified Ornstein cyclicity example P000089
+NOTES: An operator on \(L^2(0,1)\) is attributed to Ornstein, with every vector in \(L^{2+\varepsilon}\) cyclic. A nonsingular transformation without invariant measure is mentioned, but no operator is written.
+STATEMENT: At minimum the cyclicity assertion must concern nonzero vectors and specify whether \(\varepsilon>0\) is fixed or varies. The operator, weight, transformation, and intended class of invariant measures are absent. A nonsingular transformation alone does not specify a bounded weighted-composition operator with the asserted cyclicity.
+RECONSTRUCTION: 
+FATE: Targeted searches on Ornstein, cyclic vectors, \(L^{2+\varepsilon}\), nonsingular transformations and invariant measures did not produce an opened primary theorem with these exact hypotheses. This anecdote is not identified with unrelated Ornstein results in ergodic theory, and no claimed counterexample to the Hilbert invariant-subspace problem is extracted from it.
+PRESENT_STATUS: As of November 2026: insufficiently specified and not securely identified; retained with explicit search limits.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'not determinable', 'publication_match': 'none found', 'verification': 'unresolved lead', 'problem': ''}
+
+## 1964-50.23 Why invariant subspaces, and what could replace them? P000089
+NOTES: Gelfand asks why invariant subspaces are needed and what could replace them.
+STATEMENT: This is a methodological question about structural invariants and operator models, not a quantified mathematical conjecture. Spectral measures, characteristic functions, similarity invariants and invariant-subspace lattices answer different versions of it.
+RECONSTRUCTION: 
+FATE: The next intervention gives one concrete contemporary response through analytic characteristic functions. No solved/open status is meaningful for the unrestricted methodological question itself.
+PRESENT_STATUS: As of November 2026: historical methodological discussion, not an independently unresolved theorem.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'not determinable', 'publication_match': 'none found', 'verification': 'indirect', 'problem': ''}
+
+## 1964-50.24 Analytic characteristic functions and the contraction model P000089
+NOTES: An English-speaking visitor with an uncertain F-name describes an analytic contraction from \(E\) to \(E_*\), Hardy boundary functions and analogues of Jordan blocks. The final finite-dimensional affine-map sentence does not specify the equivalence relation.
+STATEMENT: For a completely nonunitary contraction \(T\), its characteristic function \(\Theta_T(z):\mathcal D_T\to\mathcal D_{T^*}\) is analytic and contractive for \(|z|<1\). It determines \(T\) up to unitary equivalence, modulo constant unitary identifications of the defect spaces. The standard model uses \([H^2(\mathcal D_{T^*})\oplus\overline{\Delta L^2(\mathcal D_T)}]\ominus\{\Theta_T f\oplus\Delta f:f\in H^2(\mathcal D_T)\}\), with \(\Delta=(I-\Theta_T^*\Theta_T)^{1/2}\).
+RECONSTRUCTION: The missing upper Fourier-integral limit is \(2\pi\); the positive exponent \(e^{int}\), \(n\ge1\), correctly kills negative Fourier coefficients. Complete nonunitarity and the defect-space constraints are essential. The separate finite-dimensional affine-map/Jordan analogy remains underdetermined.
+FATE: \citet[Theorem~1, p.~50; Theorem~3, p.~58]{sznagyfoias1964viii} gives the model and complete unitary invariant; it was received April 1963, revised December 1963 and published in 1964. \citet[Theorem~1 and formulas (3.16)--(3.17), pp.~294--295]{sznagyfoias1964ix} gives the factorization/invariant-subspace correspondence. This is an exact mathematical match, but not independent proof of the visitor\textquotesingle s identity.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}

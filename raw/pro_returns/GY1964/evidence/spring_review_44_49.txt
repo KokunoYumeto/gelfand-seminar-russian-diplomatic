@@ -1,0 +1,226 @@
+SNAPSHOT_SHA256 02ba6638b29f8c23d73cadc2cce2c571e08aae8b387ecd13dcdacff89f873c7a
+ITEM_COUNT 73
+
+## 1964-44.1 Central section volumes determine an origin-symmetric body P000074
+NOTES: The body is explicitly centrally symmetric. In three dimensions the notes replace it by \(\rho^2/2\) on \(S^2\) and invoke spherical harmonics to invert integration over great circles.
+STATEMENT: If \(K,L\subset\mathbb R^n\), \(n\ge2\), are origin-symmetric star bodies with positive continuous radial functions and \(\operatorname{vol}_{n-1}(K\cap u^\perp)=\operatorname{vol}_{n-1}(L\cap u^\perp)\) for all \(u\in S^{n-1}\), then \(K=L\). The section function is the spherical Radon transform of \(\rho_K^{n-1}/(n-1)\); the transform is injective on even functions. In \(n=3\), its spherical-harmonic multiplier at degree \(2j\) is \(2\pi P_{2j}(0)\ne0\), while odd degrees are killed.
+RECONSTRUCTION: Origin symmetry, continuous star bodies and the \((n-1)\)-dimensional measure generalize the explicit three-dimensional argument. Convexity is sufficient but not needed.
+FATE: The great-circle transform is classical Funk theory, originating before the seminar \citep{funk1913flachen}. The modern geometric formulation is documented by \citet[section functions and geometric tomography]{gardner2026tomography}. The original Funk publication metadata was checked; the general-dimensional formulation is a modern reconstruction.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'publisher metadata checked', 'problem': ''}
+
+## 1964-44.2 Do all projection areas determine a convex body? P000074
+NOTES: The final question asks whether the areas of all shadows determine the convex body, followed only by \ru{Сводится}.
+STATEMENT: The brightness function \(b_K(u)=\operatorname{vol}_{n-1}(K\mid u^\perp)\) determines an origin-symmetric convex body \(K\subset\mathbb R^n\) uniquely among such bodies. Without a fixed center, translation is invisible; without central symmetry, uniqueness fails, already because \(K\) and \(-K\) have the same brightness.
+RECONSTRUCTION: The inherited central-symmetry assumption is made explicit; if the last line is read independently for arbitrary convex bodies, its affirmative answer is false.
+FATE: Aleksandrov\textquotesingle s projection theorem dates to 1937; the precise symmetric uniqueness statement and date are given by \citet[Reconstruction from brightness functions; reference to Theorem~3.3.1]{gardner2026tomography}. This is an old theorem under the symmetry convention of the preceding paragraph, not an unresolved projection problem.
+PRESENT_STATUS: As of November 2026: affirmative with origin symmetry, negative as an unrestricted uniqueness claim.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-45.1 Dvoretzky almost-Euclidean sections P000073
+NOTES: For every \(\varepsilon,k\), a sufficiently high-dimensional centrally symmetric convex body has a \(k\)-dimensional section that is nearly a ball.
+STATEMENT: For every \(k\ge1\) and \(\varepsilon>0\), there is \(N(k,\varepsilon)\) such that every real normed space of dimension at least \(N\) has a \(k\)-dimensional subspace \(E\), a Euclidean norm \(|\cdot|\) on \(E\), and \(a>0\) with \(a|x|\le\|x\|\le(1+\varepsilon)a|x|\) for all \(x\in E\). The corresponding ellipsoid comparison is affine, not a demand for a round section in an arbitrarily fixed ambient metric.
+RECONSTRUCTION: The norm comparison fixes the quantitative meaning of nearly a ball and allows a suitable Euclidean structure.
+FATE: Dvoretzky\textquotesingle s result appeared in the proceedings of the 1960 Jerusalem symposium, published in 1961. \citet[p.~297, stated theorem]{figiel1976dvoretzky} gives a later short proof and identifies that original publication.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-45.2 A sphere-bundle and low-harmonic vanishing proposal P000073
+NOTES: The fiber consists of a unit vector in a \(k\)-plane. The notes claim that, for large \(n\), some fiber kills the first \(\ell\) nonconstant spherical components, then state a broader unitary-representation version. A condition on outer-to-inner radii is left unfinished; weaker and stronger appear in adjacent comments.
+STATEMENT: The incidence space \(M_{n,k}=\{(E,v):E\in G_k(\mathbb R^n),v\in E,|v|=1\}\) has fiber \(S^{k-1}\). A precise possible question concerns simultaneous vanishing of specified nonconstant harmonic projections of the restriction of a norm to one fiber. The notebook does not specify the representation, parity, regularity, dimension bounds or extra convex-body condition needed to turn its universal sentence into a theorem.
+RECONSTRUCTION: The corrected fiber dimension is certain. A conjectural completion of the harmonic assertion would be editorial invention and is not supplied.
+FATE: \citet[Theorem~1]{gromov1967banach}, received September 1966 and published 1967, proves results on normed spaces whose subspaces are mutually isometric. Its theorem is not the exact harmonic-vanishing assertion recorded here. Searches of the paper and the Dvoretzky/Grassmannian literature did not establish an exact match.
+PRESENT_STATUS: As of November 2026: the program is recognizable, but this particular theorem announcement remains unidentified; no claim of an orphan open problem is made.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'not determinable', 'publication_match': 'thematic only', 'verification': 'read the result', 'problem': ''}
+
+## 1964-46.1 Hermitian matrix Brownian motion and eigenvalue diffusion P000073
+NOTES: The notes say only that the Hermitian matrix entries are Gaussian random variables and then \ru{Брауновское дв-ние}.
+STATEMENT: A standard realization takes independent real Brownian diagonal entries of variance \(dt\) and independent complex off-diagonal entries with real and imaginary variances \(dt/2\), reflected by Hermitian symmetry. Starting with distinct eigenvalues, its eigenvalues satisfy \(d\lambda_i=dB_i+\sum_{j\ne i}(\lambda_i-\lambda_j)^{-1}dt\) up to, and in fact without, collision. Other entry normalizations rescale time.
+RECONSTRUCTION: The independent increments, variances and stochastic equation are the modern reconstruction. A single Gaussian matrix does not determine a time process.
+FATE: Dyson\textquotesingle s Brownian-motion model was published in 1962 \citep{dyson1962brownian}. The title and metadata match this interpretation, but the short fragment itself does not distinguish free matrix Brownian motion from a Gaussian stationary Ornstein--Uhlenbeck variant.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'indirect', 'problem': ''}
+
+## 1964-46.2 Angles between two k-dimensional subspaces P000073
+NOTES: The question is simply what an angle between two \(k\)-dimensional subspaces in \(n\) dimensions means.
+STATEMENT: For subspaces \(E,F\) of a Euclidean or complex Hermitian space, with orthonormal column matrices \(Q_E,Q_F\), the singular values of \(Q_E^*Q_F\) are \(\cos\theta_1,\ldots,\cos\theta_r\), where \(r=\min(\dim E,\dim F)\) and \(0\le\theta_1\le\cdots\le\theta_r\le\pi/2\). These principal angles, including forced zeros from intersections, describe the relative position up to ambient isometry.
+RECONSTRUCTION: The notes ask for an angle; the answer is generally a list of principal angles. The complex version and matrix expression are added for precision.
+FATE: The theory goes back to \citet[\S\S IV--V; introduction, pp.~104--105]{jordan1875geometrie}, presented in May 1875. The singular-value expression is modern notation for this established collection of invariants.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-47.1 Finite-interval characteristic function and resolvent trace P000074
+NOTES: For \(L=-d^2/dx^2+q\) on \([0,\pi]\) with Neumann ends, \(\psi(0,\lambda)=1\), \(\psi_x(0,\lambda)=0\), and \(w(\lambda)=\psi_x(\pi,\lambda)\). The finite-matrix identity \(d\log w/d\lambda=-\operatorname{Tr}(L-\lambda)^{-1}\) is proposed.
+STATEMENT: For real \(q\in L^1(0,\pi)\) and the self-adjoint Neumann realization, \(w\) is entire, with zeros exactly the simple eigenvalues. Outside the spectrum, \(w^{\prime}(\lambda)/w(\lambda)=-\operatorname{Tr}(L-\lambda)^{-1}\). The derivative on \(w\) is with respect to \(\lambda\); the derivative on \(\psi\) is spatial. Multiplying \(w\) by a nonzero constant leaves the identity unchanged.
+RECONSTRUCTION: Integrability, real potential, operator domain and the two different derivatives are made explicit.
+FATE: This is classical one-dimensional spectral theory. The determinant-to-solution method belongs to the pre-seminar scattering and inverse-spectral framework of \citet[\S\S1--2]{faddeev1959inverse}; the finite-interval formula itself follows from the Green kernel and Lagrange identity. It is not a newly announced 1965 result.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-47.2 Half-line Jost function as a relative determinant P000074-P000075
+NOTES: On the half-line, with \(y(0)=0\) and rapidly decaying \(q\), the resolvent has no ordinary trace. A free part is subtracted; the outgoing solution satisfies \(f(x,k)\sim e^{ikx}\), and \(W(\lambda)=f(0,\sqrt\lambda)\).
+STATEMENT: For real \(q\) with \(\int_0^\infty(1+x)|q(x)|\,dx<\infty\), take the Dirichlet Schrödinger operator \(H\), free operator \(H_0\), and \(k^2=z\) with \(\operatorname{Im}k>0\). The normalized perturbation determinant is the Jost value \(D(z)=f(0,k)\); off both spectra, \(-d\log D/dz=\operatorname{Tr}((H-z)^{-1}-(H_0-z)^{-1})\). The difference, not the individual resolvent, is trace class.
+RECONSTRUCTION: The relative normalization \(D=1\) for \(q=0\) and a sufficient short-range hypothesis are supplied. The scribbled diagonal asymptotic alone does not justify trace class.
+FATE: \citet[Theorem~1, p.~13]{buslaevfaddeev1960traces} gives the relative-resolvent/logarithmic-Jost-derivative identity before the seminar; the note was received 17 December 1959 and published in 1960. Jost solutions are developed in \citet[\S1 and \S6]{faddeev1959inverse}. The precise Fredholm-determinant equality under weaker \(L^1\) conditions is also verified in \citet[Theorem~1.1]{gesztesy2007jost}.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-47.3 Resolvent sheets and free Green kernels P000075
+NOTES: The notes discuss square-root branching in one dimension and logarithmic branching in two, and say one must leave the Hilbert-space setting to see a multivalued resolvent.
+STATEMENT: The bounded-operator resolvent \((H-z)^{-1}\) is single-valued and analytic on its resolvent set. For the free one-dimensional operator, its outgoing kernel is \(i e^{ik|x-y|}/(2k)\), \(k^2=z,\operatorname{Im}k>0\), so the kernel has a continuation in the square-root parameter. In two dimensions the outgoing Hankel kernel has logarithmic branching. Continuation across continuous spectrum requires specified weighted spaces or compactly supported test functions.
+RECONSTRUCTION: The distinction between the physical resolvent and continued kernels is essential; no general meromorphic continuation is asserted for every decaying potential.
+FATE: This interpretation agrees with the analytic scattering framework in \citet[\S\S1--2]{faddeev1959inverse}. It corrects a possible literal reading that an abstract Hilbert-space resolvent is multivalued on its ordinary domain.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-47.4 Whole-line Jost Wronskian P000075
+NOTES: Two solutions behave like \(e^{ikx}\) at plus infinity and \(e^{-ikx}\) at minus infinity. Their Wronskian \(f_1^{\prime} f_2-f_1 f_2^{\prime}\) is called the determinant.
+STATEMENT: For real short-range \(q\) on \(\mathbb R\), let \(f_\pm(x,k)\sim e^{\pm ikx}\) at \(\pm\infty\), with \(\operatorname{Im}k>0\). The Wronskian \(W(k)=f_+^{\prime} f_- - f_+f_-^{\prime}\) is independent of \(x\); its zeros in the upper half-plane give bound states, with the usual threshold caveat at \(k=0\). The free Wronskian is \(2ik\), so a relative determinant uses \(W(k)/(2ik)\).
+RECONSTRUCTION: The short-range assumption may be taken as \(\int_{\mathbb R}(1+|x|)|q|<\infty\). The normalization and threshold exception are editorial additions.
+FATE: The construction belongs to the pre-1965 inverse-scattering theory; \citet[whole-line extensions in the introduction and supplementary remarks]{faddeev1959inverse} distinguishes these extensions from the main half-line problem. The unnormalized Wronskian is a characteristic function, not automatically a normalized Fredholm determinant.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-47.5 Argument principle and analytically regularized spectral sums P000075-P000076
+NOTES: The notes integrate \(h(\lambda)W^{\prime}(\lambda)/W(\lambda)\), deform the contour, and use \(h=\lambda^s\). The real-axis expression is followed by the annotation that the integral is a jump.
+STATEMENT: If \(W\) is meromorphic and nonzero on a closed contour and \(h\) is analytic inside it, \((2\pi i)^{-1}\oint hW^{\prime}/W\) equals the zero sum minus the pole sum, with multiplicities. A deformation onto a cut must retain both boundary values, its orientation and the factor \((2\pi i)^{-1}\). For spectral zeta or trace identities, convergence, subtraction of asymptotic terms and continuation must be proved separately.
+RECONSTRUCTION: The argument-principle statement is exact; its application to an unspecified spectral determinant and branch of \(\lambda^s\) remains conditional.
+FATE: \citet[\S2, pp.~14--15]{buslaevfaddeev1960traces} carries out contour deformation, asymptotic subtraction and Mellin continuation in the singular Sturm--Liouville setting. Its finite-interval discussion on p.~16 uses Dirichlet ends, so it is not silently identified with the notebook\textquotesingle s Neumann expression. This is pre-seminar trace theory, not a universal ordinary-integral identity.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-47.6 An unidentified boundary term in a Neumann regularized trace P000076
+NOTES: The scan reads \(\sum_n(\lambda_n-n^2-c_0)=\tfrac14(y^{\prime}(0)-y^{\prime}(\pi))\). No function \(y\) on that right side is defined.
+STATEMENT: A standard comparison, for a sufficiently smooth real potential and Neumann eigenvalues numbered \(\lambda_0,\lambda_1,\ldots\), is \(\sum_{n=0}^\infty(\lambda_n-n^2-\bar q)=(q(0)+q(\pi))/4-\bar q/2\), where \(\bar q=\pi^{-1}\int_0^\pi q\). This is a different, specified statement; it cannot identify the written \(y^{\prime}\)-difference without an additional definition.
+RECONSTRUCTION: The comparison formula is supplied to expose the ambiguity; it is not silently substituted into the transcription.
+FATE: The Gelfand--Levitan trace identity dates to 1953, followed by Gelfand\textquotesingle s 1956 treatment \citep{gelfand1956identities}. The recorded boundary expression is therefore classified as an unidentified or corrupted instance of established trace theory, not a new spectral formula.
+PRESENT_STATUS: As of November 2026: the regularized-trace theory is established, but this exact boundary expression cannot be recovered from the notes.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'not determinable', 'publication_match': 'thematic only', 'verification': 'publisher metadata checked', 'problem': ''}
+
+## 1964-47.7 Formal diagonal kernels and boundary contributions P000076
+NOTES: The distributional kernel \(-\delta^{\prime\prime}(x-y)+q(x)\delta(x-y)\) is restricted formally to the diagonal. The notes write \(\delta(0)=0\), then discuss a boundary coefficient \(1/4\).
+STATEMENT: The distribution \(\delta(x-y)\) has no pointwise diagonal value \(\delta(0)\), and multiplication by a nonzero potential is not trace class on \(L^2\). A valid regularized trace must first specify a spectral, heat-kernel or resolvent subtraction and account for its endpoint terms. The displayed manipulations are heuristic motivation, not legitimate distributional equalities.
+RECONSTRUCTION: The source\textquotesingle s distinction between periodic and endpoint problems is retained as motivation, while the regularization is not invented.
+FATE: The endpoint effects belong to established regularized-trace formulas \citep{gelfand1956identities,buslaevfaddeev1960traces}. Their rigorous existence does not validate the intermediate assertion \(\delta(0)=0\).
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'false as written', 'publication_match': 'partial', 'verification': 'publisher metadata checked', 'problem': ''}
+
+## 1964-47.8 When does a commutator have trace zero? P000076
+NOTES: Gelfand writes \(\operatorname{Sp}(AB-BA)=0\) and labels it a problem, without operator-ideal assumptions.
+STATEMENT: For bounded operators on a Hilbert space, \(\operatorname{Tr}(AB)=\operatorname{Tr}(BA)\) when both products are trace class (in particular if one factor is trace class). Merely requiring \([A,B]\) to be trace class is insufficient: for the unilateral shift \(S\) on \(\ell^2(\mathbb N_0)\), \([S^*,S]=P_{e_0}\) has trace one.
+RECONSTRUCTION: The two distinct hypotheses are separated. The rank-one shift example is an explicit diagnosis of the unrestricted formulation.
+FATE: The question depends completely on the trace domain. Nonzero traces of trace-class commutators became a substantial theory; \citet[Introduction]{heltonhowe1975traces} develops trace formulas for almost commuting operators and relates them to symbols and index theory. This is a later development, not evidence for the unrestricted zero-trace assertion.
+PRESENT_STATUS: As of November 2026: vanishing is established in the standard trace-cyclicity domain and false under the weaker trace-class-commutator assumption.
+ASSESSMENT: {'class': 'B', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': 'GP-1964-S02'}
+
+## 1964-48.1 Product Cauchy formula and analytic polyhedra P000076-P000077
+NOTES: A bicylinder \(D_z\times D_w\) has the iterated Cauchy formula. Weil domains are cut out by holomorphic \(\chi_i(z,w)\in D_i\).
+STATEMENT: If \(D_1,D_2\subset\mathbb C\) have piecewise smooth positively oriented boundaries and \(f\) is holomorphic near \(\overline{D_1\times D_2}\), then \(f(z,w)=(2\pi i)^{-2}\int_{\partial D_1\times\partial D_2}f(\zeta,\eta)\,d\zeta\wedge d\eta/((\zeta-z)(\eta-w))\). More general analytic polyhedra are relatively compact sets defined by finitely many holomorphic inequalities. Two defining functions are genuine global coordinates only with an injective biholomorphic change of variables; otherwise multiplicities matter.
+RECONSTRUCTION: Boundary regularity, holomorphy near closure and the coordinate-map caveat are supplied.
+FATE: The product formula is classical, and the polyhedral extension is explained in the pre-seminar work \citet[\S17 and Corollary~18.2]{norguet1961formes}. The notes are expository at this stage.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-48.2 Hefer holomorphic difference decomposition P000077
+NOTES: The displayed lemma expresses \(f(z,w)-f(\zeta,\eta)\) as \((z-\zeta)P+(w-\eta)Q\), with holomorphic coefficients.
+STATEMENT: If \(D\subset\mathbb C^n\) is a domain of holomorphy and \(f\in\mathcal O(D)\), there exist \(H_j\in\mathcal O(D\times D)\) such that \(f(z)-f(\zeta)=\sum_j(z_j-\zeta_j)H_j(z,\zeta)\). On a convex domain one may take \(H_j=\int_0^1\partial_j f(\zeta+t(z-\zeta))\,dt\); the global Stein-domain statement uses holomorphic division along the diagonal.
+RECONSTRUCTION: The domain-of-holomorphy hypothesis is essential to the global assertion. The convex-domain integral is a transparent special-case realization.
+FATE: \citet{hefer1950zerlegung} published the decomposition in 1950. The use and existence of these coefficients for domains of holomorphy are also stated in the opened \citet[p.~78, following Corollary~18.2]{norguet1961formes}.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-48.3 Cauchy--Weil representation on the distinguished boundary P000077-P000078
+NOTES: The notes sum over pairs of boundary faces, with a determinant of Hefer coefficients divided by two defining-function differences. The indices in the written kernel are incomplete.
+STATEMENT: For a relatively compact analytic polyhedron \(P=\{|\chi_j|<1\}\subset D\subset\mathbb C^2\), with regular transverse boundary faces and \(D\) a domain of holomorphy, choose \(\chi_i(\zeta)-\chi_i(z)=\sum_{a=1}^2(\zeta_a-z_a)H_{ia}(\zeta,z)\). With the standard induced orientations on \(\Gamma_{ij}=\{|\chi_i|=|\chi_j|=1\}\cap\overline P\), a function holomorphic near \(\overline P\) has the Cauchy--Weil representation \((2\pi i)^{-2}\sum_{i<j}\int_{\Gamma_{ij}} f(\zeta)\det(H_{ia},H_{ja})\,d\zeta_1\wedge d\zeta_2/((\chi_i(\zeta)-\chi_i(z))(\chi_j(\zeta)-\chi_j(z)))\).
+RECONSTRUCTION: The determinant notation means the determinant of the two rows \((H_{i1},H_{i2})\), \((H_{j1},H_{j2})\); regularity and orientation are supplied. This is not a literal reproduction of the notebook\textquotesingle s mixed indices.
+FATE: The exact architecture of this kernel is already in \citet[\S17; Corollary~18.2]{norguet1961formes}, following Weil and Hefer. The construction is known before the 1965 seminar.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-48.4 Polyhedral approximation and decomposition by face integrals P000078
+NOTES: The notes say that domains of holomorphy can be approximated by Weil domains and that the formula decomposes a holomorphic function into terms extending to larger regions.
+STATEMENT: In a Stein domain, holomorphically convex compact sets admit relatively compact analytic-polyhedron neighborhoods. In a Cauchy--Weil representation, each face integral is holomorphic in any parameter region on which its coefficient functions are holomorphic and its denominator stays nonzero uniformly on the integration cycle. This gives controlled local extension/decomposition; it does not imply that every holomorphic function extends beyond its domain of holomorphy.
+RECONSTRUCTION: The relevant compact-set and nonvanishing conditions are the precise reconstruction of the broad approximation sentence.
+FATE: The polyhedral and ideal-theoretic foundations precede the seminar \citep{cartan1950ideaux}; \citet[Corollary~18.2]{norguet1961formes} provides the representation used here. The separate extensions of summands must not be confused with extension of their total across every boundary point.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-48.5 A continuous family of Weil defining functions P000078
+NOTES: The finite \(\chi_i\) are replaced by \(\chi(\alpha,z,w)\); a kernel containing \(P_1\partial_\alpha P_2-P_2\partial_\alpha P_1\) is sketched.
+STATEMENT: The fragment proposes a continuous-parameter analogue of the Cauchy--Weil sum. It does not fix the parameter cycle, differentiability in \(\alpha\), the integration manifold, denominator order or orientations needed for an integral representation theorem.
+RECONSTRUCTION: No missing denominator power or integration cycle is guessed.
+FATE: Integral formulas with continuously varying complex hyperplanes are part of Gindikin\textquotesingle s work, including \citet[formula~(2)]{gindikin1965radon}. That paper identifies the next, linear example; it does not justify every symbol in this more general unfinished kernel. Searches did not recover an exact formula with all the manuscript\textquotesingle s conventions.
+PRESENT_STATUS: As of November 2026: a recognizable method with an incomplete exact statement; no independent open problem is inferred.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'not determinable', 'publication_match': 'thematic only', 'verification': 'read the result', 'problem': ''}
+
+## 1964-48.6 Linear defining functions and the holomorphic Radon transform P000078
+NOTES: For linear \(\chi\), the notes connect the formulas with Radon transforms, particularly in a tube over a convex domain.
+STATEMENT: Let \(T_\Omega=\mathbb R^n+i\Omega\), where \(\Omega\) is open convex and contains no affine line. Under the smooth strictly convex assumptions of the initial construction, take a holomorphic \(f\) with sufficient rapid decay in the real directions on each horizontal slice. Its integrals over real \((n-1)\)-planes in suitable complex hyperplanes form a holomorphic Radon transform, with inversion by the specified oriented boundary integral in Gindikin\textquotesingle s formula~(2). The result requires these geometric and decay conditions.
+RECONSTRUCTION: The precise tube, rapid-decay hypothesis and initial boundary assumptions come from the paper, not from the shorthand notes.
+FATE: This is an exact match to \citet[pp.~237--239, formula~(2)]{gindikin1965radon}. The printed footnote records an announcement to the Moscow Mathematical Society on 23 February 1965, before this April seminar; the publication appeared in 1965. The article also discusses how its initial boundary regularity can be relaxed.
+PRESENT_STATUS: As of November 2026: established published work, with pre-seminar circulation distinguished from publication.
+ASSESSMENT: {'class': 'A', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-49.1 Review of sites, fiber products and sheaf descent P000079-P000080
+NOTES: The opening diagrams repeat products over an object, pullback of a cover, and compatibility of sections on double overlaps.
+STATEMENT: For a site presented by covering families and the required fiber products, a sheaf of abelian groups is a contravariant functor satisfying the equalizer condition for every covering. Products in the slice represent overlaps; the universal property fixes all restriction maps used in the Čech complex.
+RECONSTRUCTION: 
+FATE: This continues record~40 and follows the pre-seminar site formalism of SGA~4; see \citet[Exposé II]{sga4I1972} and \citet[Tags 00VH, 00VL]{stacks2026sites}.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-49.2 Čech cochains and the alternating differential P000080-P000081
+NOTES: The terms are products of sections on multiple intersections, with alternating restriction maps; the notes show the first degrees and \(d^2=0\).
+STATEMENT: For a cover \(\mathcal U=(U_i\to X)\), set \(\check C^q(\mathcal U,F)=\prod_{i_0,\ldots,i_q}F(U_{i_0}\times_X\cdots\times_XU_{i_q})\). The differential is the alternating sum of pullbacks along omission maps. Simplicial identities imply \(d^2=0\), and \(\check H^0(\mathcal U,F)=F(X)\) for a sheaf.
+RECONSTRUCTION: 
+FATE: This is classical Čech theory in the language of sites. The explicit construction and extension to complexes are given in \citet[Tags 01FP and 01GZ]{stacks2026cohomology}; the site version was part of the 1963--64 SGA program \citep{sga4I1972}.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-49.3 Refinement maps and direct-limit Čech cohomology P000081
+NOTES: A refinement is assigned a map of cochain complexes; cohomology over all covers is then considered.
+STATEMENT: A chosen refinement map induces a cochain map in the opposite direction on Čech complexes. Two choices subordinate to the same refinement induce chain-homotopic maps, hence the same cohomology map. For ordinary open covers, direct-limit Čech cohomology is \(\check H^q(X,F)=\varinjlim_\mathcal U\check H^q(\mathcal U,F)\). On a site, one must use a specified refinement category and smallness convention.
+RECONSTRUCTION: Independence of the chosen refinement and the size convention are supplied; the notes do not prove them.
+FATE: The refinement construction is explicitly checked in \citet[Tag 01FP, Refinements]{stacks2026cohomology}. Passing to hypercovers gives derived sheaf cohomology on sites \citep[Tag 01GZ, Theorem~25.10.1]{stacks2026cohomology}.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}
+
+## 1964-49.4 The direct-limit explanation of Čech exactness is false P000081-P000082
+NOTES: The source suggests that a long exact sequence exists for each cover but can fail after the passage over refinements.
+STATEMENT: Filtered colimits of abelian groups are exact, so a compatible filtered system of long exact sequences remains exact. The actual issue is earlier: an epimorphism of sheaves need not be surjective on sections of an overlap, so a short exact sequence of sheaves need not give a short exact sequence of fixed-cover Čech complexes. In higher degree, ordinary Čech cohomology on an arbitrary site need not equal derived sheaf cohomology.
+RECONSTRUCTION: This separates the faithful source error from the correct motivation for derived functors.
+FATE: The derived-functor remedy was available before this talk in \citet{grothendieck1957tohoku}. The precise hypercover comparison is \citet[Tag 01GZ, Theorem~25.10.1]{stacks2026cohomology}. Neither result supports blaming a filtered direct limit for loss of exactness.
+PRESENT_STATUS: As of November 2026: the exactness issue is settled under the stated category conventions; the manuscript explanation is false.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'false as written', 'publication_match': 'partial', 'verification': 'read the result', 'problem': ''}
+
+## 1964-49.5 Abelian sheaves, presheaves and exactness P000082
+NOTES: The notes contrast a category of sheaves with one of presheaves and discuss failure of exactness for an inclusion or section functor. A subscript resembling \(p\) is not securely identified as a stalk.
+STATEMENT: Abelian presheaves form an abelian category with kernels and cokernels computed objectwise. Abelian sheaves also form an abelian category; their kernels are computed as presheaf kernels, while cokernels are obtained by sheafifying presheaf cokernels. The inclusion into presheaves is left exact and generally not right exact. On a topological space, exactness of sheaves is tested on stalks.
+RECONSTRUCTION: The ambiguous subscript is left unresolved; the three functors---inclusion, sections and stalk---are distinguished.
+FATE: This is part of Grothendieck\textquotesingle s abelian-category foundation \citep{grothendieck1957tohoku}; site formulations appear in SGA~4 \citep[Exposé II]{sga4I1972}. The notebook must not be read as denying stalkwise exactness.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'publisher metadata checked', 'problem': ''}
+
+## 1964-49.6 The ideal sheaf of two points on the projective line P000082
+NOTES: The example takes two points of \(\mathbb P^1\), functions vanishing there, and an exact sequence whose global sections are not right exact.
+STATEMENT: For distinct \(p,q\in\mathbb P^1_\mathbb C\), let \(J=\mathcal I_{\{p,q\}}\cong\mathcal O(-2)\). The exact sequence \(0\to J\to\mathcal O\to\mathbb C_p\oplus\mathbb C_q\to0\) gives \(H^0(J)=0\), \(H^0(\mathcal O)=\mathbb C\), and the diagonal map \(\mathbb C\to\mathbb C^2\), which is not onto. Its cokernel is \(H^1(J)\cong\mathbb C\), since \(H^1(\mathcal O)=0\).
+RECONSTRUCTION: The points are assumed distinct and the ground field complex, matching the holomorphic formulation. The cohomology calculation completes the source\textquotesingle s example.
+FATE: The example concretely illustrates the derived-functor theory already established in \citet{grothendieck1957tohoku}. The line-bundle notation identifies the exact obstruction; it is not an open extension problem.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'publisher metadata checked', 'problem': ''}
+
+## 1964-49.7 An incomplete differential-form exact sequence P000082-P000083
+NOTES: A sequence beginning \(0\to C\to\Omega^0\to\Omega\to0\) is sketched without a secure definition of the final sheaf or differential.
+STATEMENT: On a smooth manifold, \(0\to\underline{\mathbb C}\to\mathcal A^0\xrightarrow{d}\mathcal Z^1\to0\) is locally exact, where \(\mathcal Z^1\) is the sheaf of closed smooth one-forms. The complete de Rham resolution instead continues through \(\mathcal A^1,\mathcal A^2,\ldots\). Replacing \(\mathcal Z^1\) by all one-forms and ending with zero is false in dimension greater than one.
+RECONSTRUCTION: The smooth de Rham example is a possible precise repair, explicitly not a decipherment of the unspecified final symbol.
+FATE: The Poincaré-lemma/de Rham interpretation is standard pre-seminar material, but the notebook does not decide whether \(\Omega\) means closed forms, an image sheaf or something else. The exact sequence is therefore not identified beyond this possible reconstruction.
+PRESENT_STATUS: As of November 2026: the proposed reconstruction is classical; the literal abbreviated sequence remains underdetermined.
+ASSESSMENT: {'class': 'F', 'literal_correctness': 'not determinable', 'publication_match': 'none found', 'verification': 'indirect', 'problem': ''}
+
+## 1964-49.8 Derived functors of sections and cohomology presheaves P000083
+NOTES: The final paragraph proposes right-derived functors of a left-exact functor from sheaves to presheaves, using injective resolutions to recover the long exact sequence.
+STATEMENT: For abelian sheaves on a site, choose an injective resolution \(F\to I^\bullet\). Then \(H^q(U,F)=H^q(I^\bullet(U))\), and \(U\mapsto H^q(U,F)\) is a cohomology presheaf. Global cohomology is the right-derived functor of \(\Gamma(X,-)\). A short exact sequence of sheaves yields the usual long exact cohomology sequence. The inclusion of sheaves into presheaves is a different left-exact functor, whose derived values encode these local section cohomologies.
+RECONSTRUCTION: Enough injectives, the precise functor and the distinction between a cohomology presheaf and a cohomology sheaf are stated explicitly.
+FATE: Grothendieck\textquotesingle s 1957 paper established this derived-functor organization before the talk \citep{grothendieck1957tohoku}. \citet[Tags 01FP and 01GZ]{stacks2026cohomology} makes clear how Čech and hypercover constructions compare with it.
+PRESENT_STATUS: As of November 2026: established with the hypotheses in the modern statement.
+ASSESSMENT: {'class': 'E', 'literal_correctness': 'correct with missing hypotheses', 'publication_match': 'exact', 'verification': 'read the result', 'problem': ''}

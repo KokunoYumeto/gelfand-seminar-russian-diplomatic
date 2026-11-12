@@ -16,7 +16,8 @@ these chapters will be published in `companion/`.
 - In these copies the first name of the user who ran the project is replaced by "user", local paths included, and
   e-mail addresses are replaced by "[e-mail address removed]". Nothing else in the files is changed. LaTeX auxiliary
   files, Python caches, font files and compiled binaries are not included, nor the copies of the attached notes that
-  some runs kept beside their work (`inputs/`, `sources/`). Each prompt's attachments are listed file by file in
+  some runs kept beside their work (`inputs/`, `sources/`, `code/parts/*/evidence/` in GY1986, `source_pages/` in
+  GY1964). Each prompt's attachments are listed file by file in
   `prompts/<year>/ATTACHMENTS.md`, with a link to each of our own files and the source of each scan.
 
 To the extent that we hold any rights in these AI-produced texts, they are dedicated to the public domain under CC0 1.0.
@@ -27,6 +28,7 @@ Dates are those on which the return was received (UTC).
 
 | Folder | Academic years | Items | Date | Reviewed |
 |---|---|---|---|---|
+| `pro_returns/GY1964/` | 1964–65 | 248 | 12 Nov 2026 | no |
 | `pro_returns/GY1965/` | 1965–66 | 298 | 9 Nov 2026 | no |
 | `pro_returns/GY1966/` | 1966–67 | 277 | 9 Nov 2026 | no |
 | `pro_returns/GY1967/` | 1967–68, 1968–69 | 320 | 9 Nov 2026 | no |
