@@ -1,0 +1,28 @@
+{
+  "winding": {
+    "real_expression": "(L1*y - L2*a*y + L2*b*x)/b",
+    "unit_shift": "L2",
+    "tau_shift": "L1",
+    "independent_lattice_coordinates": "u*L2+v*L1",
+    "assumption": "b=Im(tau)>0, L1,L2 real",
+    "status": "passed"
+  },
+  "antisymmetrizer": {
+    "scalar": "a11*b22/2 - a12*b21/2 - a21*b12/2 + a22*b11/2",
+    "independent_check": "trace(P*(A tensor B))",
+    "identity_case": "1; the manuscript coefficient 1/4 instead gives 1/2",
+    "status": "passed"
+  },
+  "hecke_evaluation": {
+    "correct_reduced_X": "(-T*q + T + q**2 - q + 1)/q",
+    "correct_exchange_residual": "0",
+    "positive_square_residual": "(T + 1)*(q - 1)*(q**2 + 1)",
+    "independent_matrix_parameters": [
+      "2",
+      "-2",
+      "3/2"
+    ],
+    "assumption": "q nonzero, (T-q)(T+1)=0",
+    "status": "passed"
+  }
+}

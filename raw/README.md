@@ -45,6 +45,7 @@ Dates are those on which the return was received (UTC).
 | `pro_returns/GY1982/` | 1982–83 | 335 | 11 Nov 2026 | no |
 | `pro_returns/GY1983/` | 1983–84, 1984–85 | 413 | 12 Nov 2026 | no |
 | `pro_returns/GY1985/` | 1985–86 | 260 | 11 Nov 2026 | no |
+| `pro_returns/GY1986/` | 1986–87 | 349 | 12 Nov 2026 | no |
 | `pro_returns/GY1987/` | 1987–88 | 287 | 11 Nov 2026 | no |
 | `pro_returns/GY1988/` | 1988–89 | 160 | 12 Nov 2026 | no |
 | `prompts/<year>/` | The prompt of each year (`PROMPT.md`), the list of its attachments (`ATTACHMENTS.md`) and our own attached files not published elsewhere in this repository (`attached/`) | | 9–11 Nov 2026 | — |

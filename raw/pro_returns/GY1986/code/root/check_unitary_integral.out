@@ -1,0 +1,18 @@
+SymPy 1.14.0 mpmath 1.3.0
+N=2 case 1 A= Matrix([[1, 2], [3, 5]]) moments m=0..4 ['1', '11/2', '91/3', '671/4', '4651/5'] PASS
+N=2 case 2 A= Matrix([[1, I], [2, -1]]) moments m=0..3 ['1', '1 + I/2', '1 + 4*I/3', '1/2 + 11*I/4'] PASS
+N=2 case 3 A= Matrix([[1, 2], [3, 4]]) moments m=0..3 ['1', '5', '25', '125'] PASS
+N=1 m=1..4 singular-Gram tests: PASS
+Gram N,m,shape,rank: 1 3 (6, 6) 1
+Gram N,m,shape,rank: 2 3 (6, 6) 5
+Gram N,m,shape,rank: 2 4 (24, 24) 14
+Gram N,m,shape,rank: 3 3 (6, 6) 6
+N=3 ordinary HCIZ comparison m= 0 moment= 1 PASS
+N=3 ordinary HCIZ comparison m= 1 moment= 2/3 PASS
+N=3 ordinary HCIZ comparison m= 2 moment= 47/6 PASS
+N=3 ordinary HCIZ comparison m= 3 moment= 13 PASS
+N=3 arbitrary-coefficient first/second-moment comparison: 14/3 77/3 PASS
+N=2 centered Taylor K= 8 absolute error 5.995980771528962418047511e-9 analytic bound 0.000002171370321567731168277409
+N=2 centered Taylor K= 12 absolute error 1.143139880432509591482555e-14 analytic bound 7.908545751630722495182871e-12
+N=2 centered Taylor K= 20 absolute error 2.257596380831467573520165e-27 analytic bound 3.765243529466795215504341e-24
+All exact comparisons passed, including m>N. Decimal bounds are illustrative evaluations of exact analytic inequalities.
