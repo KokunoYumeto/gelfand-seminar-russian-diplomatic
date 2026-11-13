@@ -256,12 +256,26 @@ def main():
             notice_bad.append((rel, f"{len(rg)} rights statements"))
     stale = rjson(OUT / "data" / "stale_pages.json")["chapters"]
     stale_set = {t: set(v.get("stale_pages", [])) for t, v in stale.items()}
+    # T8 review (13 Nov 2026): in the reviewed chapters only items with revision_check update/doubtful carry the item
+    # notice, and the talk notice names only the pages whose running text changed (g8_render.py)
+    t8 = rjson(DATA / "t8_review.json", {"chapters": [], "text_pages": {}})
+    t8_tags = set(t8["chapters"])
+    notice_set = {t: (v & set(t8["text_pages"].get(t, [])) if t in t8_tags else v) for t, v in stale_set.items()}
     item_pages = collections.defaultdict(set)
     for x in data["items"]:
         item_pages[(x["chapter"], str(x["record"]))] |= set(parse_pages(x["pages"]))
     n_stale_items = n_stale_entries = 0
     for x in data["items"]:
-        if not x["stale_pages"]:
+        if x["chapter"] in t8_tags:
+            want_badge = x.get("revision_check") in ("update", "doubtful")
+        else:
+            want_badge = bool(x["stale_pages"])
+        if not want_badge:
+            for l in ("ru", "en"):
+                s, doc = docs[f"{l}/talks/{x['record']}/index.html"]
+                sec = doc.xpath(f"//section[@id='{x['id']}']")
+                if sec and sec[0].xpath(".//span[contains(@class,'warn')]"):
+                    notice_bad.append((f"{l}/talks/{x['record']}/", f"item {x['id']} has a revised-text badge it should not have"))
             continue
         n_stale_items += 1
         for l in ("ru", "en"):
@@ -271,7 +285,7 @@ def main():
                 notice_bad.append((f"{l}/talks/{x['record']}/", f"item {x['id']} without its revised-text badge"))
     for tk in data["talks"]:
         t, n = tk["chapter"], str(tk["record"])
-        ps = (set(parse_pages(tk["pages"])) | item_pages[(t, n)]) & stale_set.get(t, set())
+        ps = (set(parse_pages(tk["pages"])) | item_pages[(t, n)]) & notice_set.get(t, set())
         if not ps:
             continue
         n_stale_entries += 1

@@ -99,6 +99,13 @@ YEARS = [y for y in REG["years"] if any(str(n) in RECS for n in y["records"])]
 YEAR_OF = {n: r["year"] for n, r in RECS.items()}
 STALE_SET = {t: set(STALE["chapters"].get(t, {}).get("stale_pages", [])) for t in TAGS}
 STALE_WHAT = {t: STALE["chapters"].get(t, {}).get("what_changed", {}) for t in TAGS}
+# T8 (13 Nov 2026): the items citing pages whose running text changed were checked against the revised text; only
+# the items whose cited text changed in substance (updated, or the revised reading in question) keep a notice, and
+# the talk notice names only the pages whose running text changed.  Chapters not in the review keep the G7 notice.
+T8 = rjson(DATA / "t8_review.json", {"chapters": [], "text_pages": {}, "items": {}})
+T8_TAGS = set(T8["chapters"])
+T8_TEXT = {t: set(T8["text_pages"].get(t, [])) & STALE_SET.get(t, set()) for t in TAGS}
+T8_ITEMS = T8["items"]
 PAGE_ITEMS = collections.defaultdict(list)
 for iid, x in ITEMS.items():
     for p in parse_pages(x.get("pages")):
@@ -348,6 +355,13 @@ def what_text(lang, cats):
 
 
 def stale_notice(lang, tag, pages):
+    if tag in T8_TAGS:
+        st = sorted(set(pages) & T8_TEXT.get(tag, set()))
+        if not st:
+            return ""
+        return (f'<div class="notice stale" data-stale-pages="{" ".join(pid(p) for p in st)}">'
+                + E(u(lang, "stale_reviewed", pages=fmt_ranges(st), written=fdate(lang, CH[tag]["written"]),
+                      release=REL_SHORT, date=fdate(lang, REL_DATE), checked=fdate(lang, T8["date"]))) + "</div>")
     st = sorted(set(pages) & STALE_SET.get(tag, set()))
     if not st:
         return ""
@@ -380,7 +394,14 @@ def item_badges(lang, x, talk_speaker):
     if x.get("development") == "developed in this chapter":
         b.append(f'<span class="b"><a href="{url(lang, "development", slug(x["chapter"]))}">{E(u(lang, "go_development"))}</a></span>')
     st = sorted(set(parse_pages(x.get("pages"))) & STALE_SET.get(x["chapter"], set()))
-    if st:
+    rev = T8_ITEMS.get(x["id"])
+    if x["chapter"] in T8_TAGS:
+        if rev:
+            ps = sorted(set(rev.get("pages") or []) or set(st))
+            key = "stale_item_updated" if rev["decision"] == "update" else "stale_item_doubtful"
+            msg = u(lang, key, pages=fmt_ranges(ps), checked=fdate(lang, T8["date"]))
+            b.append(f'<span class="b warn" title="{E(msg)}">{E(msg)}</span>')
+    elif st:
         b.append(f'<span class="b warn" title="{E(u(lang, "stale_item", pages=fmt_ranges(st)))}">'
                  f'{E(u(lang, "stale_item", pages=fmt_ranges(st)))}</span>')
     return '<div class="badges">' + " ".join(b) + "</div>"
@@ -610,8 +631,12 @@ def year_page(lang, y):
         body.append(f'<p class="meta">{E(u(lang, "chapter_written", years=years_text(lang, c["years"]), written=fdate(lang, c["written"])))}'
                     f' · <a href="{url(lang, "development", slug(t))}">{E(u(lang, "development"))}</a></p>')
         n_st, m_st = len(stl.get("stale_pages", [])), len(stl.get("pages", []))
+        yk = "stale_year_reviewed" if (n_st and t in T8_TAGS) else ("stale_year" if n_st else "stale_none_year")
         body.append(f'<div class="notice{" stale" if n_st else ""}">'
-                    + E(u(lang, "stale_year" if n_st else "stale_none_year", n=n_st, m=m_st, written=fdate(lang, c["written"])))
+                    + E(u(lang, yk, n=n_st, m=m_st, written=fdate(lang, c["written"]), k=len(T8_TEXT.get(t, ())),
+                          checked=fdate(lang, T8["date"]),
+                          u=sum(1 for i in chap_iids if T8_ITEMS.get(i, {}).get("decision") == "update"),
+                          d=sum(1 for i in chap_iids if T8_ITEMS.get(i, {}).get("decision") == "doubtful")))
                     + "</div>")
         body.append(lang_notice(lang))
         body.append(f'<div class="overview" lang="en">{fill(lang, COMP[t]["overview"], t)}</div>')
@@ -1153,14 +1178,17 @@ def data_files(out, speakers_map):
     rows = []
     hdr = ["id", "work", "chapter", "academic_year", "record", "pages", "kind", "title", "class", "literal_correctness",
            "publication_match", "verification", "development", "confidence", "problem", "speaker", "refs",
-           "stale_pages", "url", "notes", "statement", "reconstruction", "fate", "present_status", "worth"]
+           "stale_pages", "revision_check", "url", "notes", "statement", "reconstruction", "fate", "present_status",
+           "worth"]
     js = []
     for iid, x in ITEMS.items():
         t = x["chapter"]
         st = sorted(set(parse_pages(x.get("pages"))) & STALE_SET.get(t, set()))
         rec = dict((k, x.get(k)) for k in hdr if k in x)
         rec.update({"work": CH[t]["work"], "chapter": t, "academic_year": YEAR_OF.get(str(x["record"])),
-                    "stale_pages": [pid(p) for p in st], "url": site_url + f"en/talks/{x['record']}/#{iid}"})
+                    "stale_pages": [pid(p) for p in st], "url": site_url + f"en/talks/{x['record']}/#{iid}",
+                    "revision_check": (T8_ITEMS.get(iid, {}).get("decision") or
+                                       ("unaffected" if t in T8_TAGS and set(st) & T8_TEXT.get(t, set()) else ""))})
         js.append(rec)
         rows.append([rec.get(k) for k in hdr])
     wjson(d / "items.json", js, indent=None)
