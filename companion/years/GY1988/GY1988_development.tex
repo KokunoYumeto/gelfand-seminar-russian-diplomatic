@@ -1,0 +1,233 @@
+\subsection{GP-1988-20: a finite-model audit of the three-dimensional Ising programme}
+\label{dev:ising-audit}
+
+\paragraph{Source and reconstruction.}
+The closing instruction is
+\ru{Дальше надо реш. задачу в непр. пределе.}
+The notebook specifies neither a topology of convergence nor field
+normalization. \ours\ A precise stronger target is the following.
+Let $\mu_c$ be the free-boundary infinite-volume Gibbs measure of the
+zero-field nearest-neighbour ferromagnetic Ising model on $\mathbb Z^3$
+at its critical inverse temperature. Seek $c>0$ and
+$0<\Delta_\sigma<3/2$ such that
+\[
+ \Phi_a(f)=c\,a^{3-\Delta_\sigma}
+     \sum_{x\in\mathbb Z^3}\sigma_x f(ax),
+ \qquad f\in C_c^\infty(\mathbb R^3),
+\]
+converges in law as a random distribution along the full limit
+$a\downarrow0$ to a nonzero non-Gaussian field with conformally covariant
+noncoincident correlations. A corresponding centred energy field,
+its dimension $\Delta_\varepsilon$, and thermal relations require
+additional assertions. This is an editorial conjectural target, not
+a theorem proved here or a verbatim statement of the notes.
+
+\paragraph{The checked literature.}
+The Dotsenko--Polyakov chapter was bibliographically verified, but its
+full proof and coefficient conventions were not obtained
+\citep{dotsenkopolyakov1988fermion}.
+In two dimensions, \citet[Theorem 1.2]{chelkak2015spin} prove convergence
+of appropriately normalized critical square-grid spin correlations
+with plus boundary conditions in simply connected domains.
+Normalization, separated points and domain hypotheses matter.
+This does not establish the three-dimensional target.
+
+\citet[section 8.4]{duminilcopin2022hundred} explicitly distinguish
+bootstrap information from proving a lattice scaling limit.
+\citet[section 4]{kulske2025ising} supplies a later dated rigorous-status
+discussion. The September 2026 effective-string paper concerns a gapped
+bulk and low-energy interactions
+\citep[section 2]{lopesmatospenedones2026strings}.
+The January 2026 certified-exponent claim was identified, but its
+complete certification was not independently audited
+\citep{kai2026certified}. Even exponent certification requires a separate
+argument to establish field convergence. No checked primary proof of
+the target was found as of November 2026. This is a bounded search
+conclusion, not a proof of universal absence.
+
+\paragraph{Finite conventions.}
+Let $G=(V,E)$ be a finite loopless undirected graph, each edge counted
+once, with real temperature-independent couplings:
+\[
+ H(\sigma)=-\sum_{e=\{u,v\}}J_e\sigma_u\sigma_v,
+ \qquad
+ Z_G(\beta)=\sum_{\sigma\in\{\pm1\}^V}e^{-\beta H(\sigma)}.
+\]
+The notebook's simultaneous negative signs in the Hamiltonian and
+bond-sum exponent conflict with this ferromagnetic convention.
+Counting both edge orientations without one-half also changes the
+normalization.
+
+\begin{proposition}[Exact graph expansions]
+\ours\ Put $t_e=\tanh(\beta J_e)$, and let $\partial A$ denote the
+odd-degree vertices of $A\subseteq E$. Then
+\[
+ Z_G=2^{|V|}\prod_{e\in E}\cosh(\beta J_e)
+       \sum_{\partial A=\varnothing}\prod_{e\in A}t_e.
+\]
+For distinct $u,v$,
+\[
+ \langle\sigma_u\sigma_v\rangle=
+ \frac{\sum_{\partial A=\{u,v\}}\prod_{e\in A}t_e}
+      {\sum_{\partial A=\varnothing}\prod_{e\in A}t_e}.
+\]
+For unit couplings, $q=e^{-2\beta}$ and $c(G)$ connected components,
+\[
+ Z_G=2^{c(G)}e^{\beta|E|}
+       \sum_{D\in\mathcal B(G)}q^{|D|},
+ \qquad
+ \mathcal B(G)=\{\delta S:S\subseteq V\},
+\]
+where distinct cuts, rather than repeated vertex-set presentations,
+are summed.
+\end{proposition}
+
+\begin{proof}
+Expand each bond factor as
+$\cosh(\beta J_e)(1+t_e\sigma_u\sigma_v)$.
+The spin sum vanishes unless all vertex exponents are even; then it
+equals $2^{|V|}$. Inserting $\sigma_u\sigma_v$ changes exactly the two
+specified parity conditions. The denominator remains positive for
+signed real couplings, since $Z_G$ and the cosh factors are positive.
+
+For the last formula, a configuration has energy
+$-|E|+2|\delta S|$. Two configurations give the same cut exactly when
+their pointwise ratio is constant on each connected component.
+Each distinct cut has $2^{c(G)}$ preimages, including freedom at
+isolated vertices.
+\end{proof}
+
+For the four-cycle,
+\[
+ Z_{C_4}=2e^{4\beta}(1+6q^2+q^4)
+       =16\cosh^4\beta(1+\tanh^4\beta).
+\]
+At $\beta=0$ this is sixteen, whereas the bare distinct-cut sum is eight.
+The missing normalization is therefore detectable on four vertices.
+
+\paragraph{Boundary conditions.}
+For finite $\Lambda\subset\mathbb Z^3$ with plus exterior spins, let
+$E_\Lambda$ contain every bond having at least one endpoint in $\Lambda$,
+once. Then
+\[
+ e^{-\beta|E_\Lambda|}Z_\Lambda^+
+ =\sum_{S\subseteq\Lambda}e^{-2\beta|\delta S|}.
+\]
+Dual plaquettes form cellular boundaries. They may meet along edges and
+need not be embedded smooth surfaces. Free boundary conditions change
+the admissible interface description.
+
+\begin{proposition}[Local closure is insufficient on a torus]
+\ours\ On $(\mathbb Z/L\mathbb Z)^3$, $L\ge3$, let $D$ consist of bonds
+from $(L-1,y,z)$ to $(0,y,z)$. Every elementary plaquette meets $D$
+evenly, but $D$ is not a disagreement set of periodic spins.
+\end{proposition}
+
+\begin{proof}
+A plaquette crosses this seam zero or twice. An $x$-direction winding
+cycle crosses it once. Every cut intersects every cycle evenly,
+because crossing a cut changes side and a closed walk returns to its
+initial side. Thus the seam is locally closed but is not a cut.
+Three independent binary winding fluxes give eight cohomology sectors;
+periodic spin disagreements occupy the trivial sector.
+\end{proof}
+
+\begin{proposition}[Connected energy covariance]
+\ours\ Let $M=-H$ and $F=\log Z_G$. Then
+\[
+ F'=\langle M\rangle,\qquad F''=\operatorname{Var}(M)
+ =\sum_{e,f}J_eJ_f
+  \bigl(\langle s_es_f\rangle-\langle s_e\rangle\langle s_f\rangle\bigr),
+ \quad s_{\{u,v\}}=\sigma_u\sigma_v.
+\]
+With Boltzmann's constant one, heat capacity per vertex is
+$c_G=\beta^2F''/|V|$.
+
+For translation-invariant couplings and the translation-invariant
+finite-torus Gibbs measure, assign positive-direction bonds to their
+initial vertex, so $M=\sum_x\varepsilon_x$. Then
+\[
+ |V|^{-1}F''=\sum_x\operatorname{Cov}(\varepsilon_0,\varepsilon_x).
+\]
+\end{proposition}
+
+\begin{proof}
+Differentiate the finite partition sum and its logarithm. The quotient
+rule produces centring. Since $d\beta/dT=-\beta^2$ and $H=-M$,
+differentiating mean energy gives the heat capacity.
+Stationarity of both couplings and measure makes each displacement
+occur $|V|$ times in the double covariance sum.
+\end{proof}
+
+A raw two-point function cannot replace connected covariance without
+an explicit centring convention. An unsummed distance power cannot
+equal a spatial sum while retaining its free spatial variable.
+
+\begin{lemma}[Lattice shell growth]
+\ours\ For integer $d\ge1$, $\Delta\ge0$ and integer $R\ge2$, put
+\[
+ S_R=\sum_{1\le\|x\|_\infty\le R}\|x\|_\infty^{-2\Delta}.
+\]
+If $2\Delta<d$, then $S_R\asymp R^{d-2\Delta}$.
+If $2\Delta=d$, then $S_R\asymp\log R$.
+If $2\Delta>d$, the sum converges to a finite positive limit.
+\end{lemma}
+
+\begin{proof}
+The shell at radius $r$ contains
+$(2r+1)^d-(2r-1)^d$ points. This polynomial has positive coefficients
+and leading term $d2^d r^{d-1}$; consequently it is bounded above and
+below by positive constant multiples of that power for $r\ge1$.
+Comparison with $\sum_{r\le R}r^{d-1-2\Delta}$ gives all three cases.
+For $d=3$ and $2\Delta=3$ the exact expression is
+$24H_R+2H_R^{(3)}$.
+\end{proof}
+
+If an energy covariance has the proposed power law through correlation
+length $\xi$, with adequate tail and short-distance control, and
+$\xi\asymp|\beta-\beta_c|^{-\nu}$, the divergent case suggests
+$\alpha=\nu(d-2\Delta_\varepsilon)$.
+The additional assumption $\nu^{-1}=d-\Delta_\varepsilon$ gives the
+notebook's ratio. These are conditional implications.
+The marginal case permits logarithms; above it regular backgrounds
+matter. None follows merely from writing a quartic Grassmann action.
+
+\paragraph{Executed checks and independent review.}
+\oursComputed\ Before the outage, exact enumeration checked all 1,099
+labelled simple graphs with one to five vertices, unequal signed
+rational couplings and two-point numerators on three graphs, and twelve
+covariance examples at 70-digit precision. The cube has even-subgraph
+polynomial
+\[
+ 1+6t^4+16t^6+9t^8
+\]
+and distinct-cut polynomial
+\[
+ 1+8q^3+15q^4+24q^5+32q^6+24q^7+15q^8+8q^9+q^{12}.
+\]
+A separately written JavaScript recovery program actually reran the
+1,099 graph comparisons, cube polynomials, torus calculations and
+333 hyperdeterminant degree comparisons after filesystem execution
+became unavailable. Torus sides three and four have cut ranks 26 and 63,
+and locally closed dimensions 29 and 66. These are finite checks,
+not critical estimates.
+
+An independent reader checked the parity, cut-fibre, covariance and
+shell proofs. A separate hand calculation for a triangle disjoint from
+an edge and an isolated vertex gives
+\[
+ Z=8e^{4\beta}(1+q+3q^2+3q^3)
+  =64\cosh^4\beta(1+\tanh^3\beta),
+\]
+confirming the component factor. The reviewer requested the explicit
+stationarity qualification now included. Proposed further computations
+on six-vertex graphs and larger tori failed before process creation and
+are not counted as executed.
+
+The development supplies a reproducible audit of finite identities and
+of the gap in the continuum argument. It proves no uniform critical
+correlation bounds, tightness, uniqueness of a scaling limit or conformal
+covariance. Recovering the exact published fermionic coefficients and
+testing finite boxes with fixed boundaries and winding sectors would
+be a further bounded task; a critical-limit proof would still remain
+separate.

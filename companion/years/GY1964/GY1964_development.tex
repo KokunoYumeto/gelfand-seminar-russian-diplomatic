@@ -1,0 +1,366 @@
+\subsection{Bishop operators: exact finite certificates for the cyclicity question}
+\label{dev:bishop}
+
+\paragraph{The question supported by the notebook.}
+On P000089 the notes give, on complex \(L^2(0,1)\),
+\[
+ (B_\alpha f)(x)=x f(\{x+\alpha\}),\qquad
+ \alpha\in(0,1)\setminus\mathbb Q,
+\]
+where \(\{\cdot\}\) denotes fractional part.  The margin says
+\ru{Изучить подробно этот оператор}.  The text then juxtaposes the suggestion
+\ru{нет инв. подпр.}\ with the admission
+\ru{неизв. ни одного циклич. вектора}.  These are different quantifiers.
+For a bounded operator \(B\), absence of a nonzero proper closed invariant
+subspace is equivalent to \emph{every nonzero} vector being cyclic; existence
+of \emph{one} cyclic vector is much weaker.  Indeed, the closed linear span
+of the orbit of a nonzero vector is an invariant subspace, and conversely a
+vector inside a proper invariant subspace cannot be cyclic.  The zero vector
+must be excluded from the notebook's shorthand \(\forall\) assertion.
+
+The precise questions are therefore: for which irrational \(\alpha\) does
+\(B_\alpha\) have a nonzero proper closed invariant subspace, and for which
+does it possess a cyclic vector?  The stronger, plausible cyclicity question
+considered here asks whether the \emph{specific} vector \(1\) is cyclic for
+every irrational \(\alpha\).  This last universal formulation is an editorial
+research question, not a statement attributed to Halmos or Gelfand.
+No universal answer is claimed below.
+
+\paragraph{Verified literature and the scope of the development.}
+\citet[Theorem~3.7]{chamizo2020bishop}, first circulated on 19 December 2018
+and published in 2020, prove the existence of nontrivial hyperinvariant
+subspaces if the continued-fraction denominators satisfy
+\[
+ \log q_{n+1}=O\!\left(\frac{q_n}{(\log q_n)^3}\right).
+\]
+Their Theorem~4.1 supplies an obstruction to the particular Beurling-algebra
+method for sufficiently extreme approximability; it does not prove absence
+of invariant subspaces.  \citet[Theorems~4.4, 4.5, 4.9, 4.16]{behani2023bishop},
+first posted on 23 July 2022 and published in 2023, give the rational
+fibre-determinant criterion, rational cyclicity of holomorphic vectors
+nonzero at zero, generic irrational cyclicity, and a sufficient large-gap
+condition.  Locators here refer to the opened arXiv version.
+
+A search dated 12 November 2026 also found the abstract of
+\citet{ma2026rational}, which announces quantitative determinant and cyclicity
+results and specifically mentions \((r,q)=(9,16)\).  Its primary full-text
+and abstract endpoints did not open in this run.  It is marked
+\emph{unverified}; none of its announced theorems is used as an assumption.
+Its existence prevents a novelty claim for the same finite example or for
+the general programme of explicit gap estimates.  No all-irrational
+cyclicity or invariant-subspace theorem was verified in the sources checked
+through 12 November 2026.
+
+The bounded contribution is an exact-arithmetic certificate format, an
+independent proof of the transfer estimate, and a fully specified terminating
+procedure for a sufficient gap function.  The rational and generic
+cyclicity conclusions are established literature, re-proved here for the
+certificate's foundations.  The label \ours{} means that this companion
+supplies and checks a proof; it does not assert historical priority.
+
+\paragraph{Rational fibres and the endpoint determinant.}
+Fix relatively prime integers \(1\le r<q\), \(q\ge2\), and write
+\(a_i=(ir\bmod q)/q\), with indices read modulo \(q\).
+Splitting \([0,1)\) into the intervals \(a_i+[0,1/q)\) identifies
+\(L^2(0,1)\) unitarily with
+\(L^2((0,1/q);\mathbb C^q)\) by
+\[
+ (Uf)(t)_i=f(t+a_i),\qquad 0<t<1/q.
+\]
+Lebesgue measure is used on the base and the ordinary Euclidean norm on the
+fibres, so no normalization factor is missing.  In these coordinates,
+\[
+ (\mathcal B(t)v)_i=(t+a_i)v_{i+1},\qquad
+ \mathcal B(t)^q=m_q(t)I,
+ \quad m_q(t)=\prod_{j=0}^{q-1}\left(t+\frac jq\right).
+\]
+The continuous function \(m_q\) is strictly increasing on \([0,1/q]\).
+Let \(K_{r,q}(t)\) be the matrix whose column \(k\), \(0\le k<q\), is
+\(\mathcal B(t)^k\mathbf1\), and let \(D_{r,q}(t)=\det K_{r,q}(t)\).
+
+\begin{lemma}[A nonzero endpoint determinant]\ours{}
+\label{lem:bishop-endpoint}
+For the coprime pair above,
+\[
+ K_{r,q}(t)_{i,k}=\prod_{h=0}^{k-1}(t+a_{i+h}),\qquad
+ D_{r,q}(0)=(-1)^{(q-1)(q-2)/2}\prod_{j=1}^{q-1}a_j^{\,j}\ne0.
+\]
+An empty product is one.  Consequently \(D_{r,q}\) is a nonzero polynomial
+and has only finitely many zeros in the fundamental interval.
+\end{lemma}
+\begin{proof}
+The product formula follows by iterating the displayed weighted cyclic
+matrix.  Since \(a_0=0\) and every other \(a_i\) is positive, row zero at
+\(t=0\) is \((1,0,\ldots,0)\).  In row \(i\ge1\), the last possibly
+nonzero entry is column \(q-i\), equal to
+\(\prod_{j=i}^{q-1}a_j\).  Delete the first row and column and reverse the
+remaining \(q-1\) rows.  The resulting triangular matrix has these entries
+on its diagonal.  Reversal has sign
+\((-1)^{(q-1)(q-2)/2}\); multiplying the diagonal entries counts \(a_j\)
+exactly \(j\) times.  This proves the formula and all its consequences.
+\end{proof}
+
+\begin{proposition}[Rational cyclicity of the constant vector]\ours{}
+\label{prop:bishop-rational}
+The vector \(1\) is cyclic for \(B_{r/q}\) on complex \(L^2(0,1)\).
+\end{proposition}
+\begin{proof}
+Let \(\mathcal C\) be the closed span of \(B_{r/q}^n1\), \(n\ge0\),
+in the fibre representation.  For each \(0\le k<q\) it contains
+\(p(m_q(t))\mathcal B(t)^k\mathbf1\) for every polynomial \(p\), since
+\(B_{r/q}^{q\ell+k}1\) has precisely that form for \(p(z)=z^\ell\).
+The map \(m_q\) is a homeomorphism onto a compact real interval.
+Polynomial approximation therefore gives every continuous scalar
+coefficient \(h(t)\) times this bounded vector field.  Approximation of
+bounded measurable coefficients by continuous functions in the appropriate
+finite weighted \(L^2\) measure gives the same conclusion for bounded
+measurable \(h\).
+
+For arbitrary \(g\in L^2((0,1/q);\mathbb C^q)\), define
+\[
+ E_N=\{t:\|K_{r,q}(t)^{-1}\|\le N,\ \|g(t)\|\le N\},
+ \qquad g_N=\mathbf1_{E_N}g.
+\]
+The finitely many singular fibres can be discarded.  By the lemma,
+\(E_N\) exhausts the base up to a null set; hence \(g_N\to g\) in
+\(L^2\).  The components of
+\(\mathbf1_{E_N}K_{r,q}^{-1}g\) are bounded measurable functions.
+Expressing \(g_N\) in the columns of \(K_{r,q}\) puts \(g_N\) in
+\(\mathcal C\).  Closedness now gives \(g\in\mathcal C\).
+\end{proof}
+
+\paragraph{Why a uniformly invertible fibre matrix is the wrong requirement.}
+The proof needs almost-everywhere invertibility and truncation, not a
+positive lower bound for \(|D_{r,q}(t)|\) on the whole interval.  This
+distinction is testable without estimating any irrational orbit.
+
+\begin{example}[A singular interior fibre]\oursComputed{}
+\label{ex:bishop-singular}
+For \((r,q)=(9,16)\), exact arithmetic gives
+\(D_{9,16}(0)<0<D_{9,16}(1/16)\).  Thus at least one
+\(t\in(0,1/16)\) has \(D_{9,16}(t)=0\), although the constant vector
+is cyclic by Proposition~\ref{prop:bishop-rational}.
+\end{example}
+For reproducibility, use the integer matrix
+\[
+ C(y)_{i,k}=\prod_{h=0}^{k-1}\bigl(y+(9(i+h)\bmod16)\bigr),
+ \qquad \det C(y)=16^{120}D_{9,16}(y/16).
+\]
+The two exact determinants, including their integer signs, are in
+\nolinkurl{evidence/independent_bishop_check.json}.  The first computation
+used rational symbolic Gaussian elimination; the second used a separately
+implemented fraction-free integer Bareiss algorithm, with every division
+checked for exactness.  Both agree.  Continuity and the intermediate value
+theorem, rather than a plotted sample, establish the existence of the zero.
+No assertion is made about its uniqueness, multiplicity, or the location
+of zeros for all other coprime pairs.
+
+For small denominators the same program obtains, for example,
+\[
+ D_{1,2}(t)=\frac12,\quad
+ D_{1,3}(t)=-\frac{9t+4}{27},\quad
+ D_{2,3}(t)=-\frac{9t+2}{27}.
+\]
+Checks of the endpoint formula and matrix-power identity for all 31 coprime
+pairs with \(2\le q\le10\) passed.  Those checks are finite checks;
+Lemma~\ref{lem:bishop-endpoint} is the independent all-\(q\) proof.
+
+\paragraph{A quantitative transfer bound that accounts for wrap points.}
+For \(k\ge0\), put \(w_{\alpha,k}=B_\alpha^k1\).  Thus
+\(w_{\alpha,0}=1\) and
+\[
+ w_{\alpha,k}(x)=\prod_{j=0}^{k-1}\{x+j\alpha\}\quad(k\ge1).
+\]
+All factors lie in \([0,1]\).  Treating them as globally Lipschitz
+functions of \(\alpha\) would overlook their jumps at wrap points.
+
+\begin{lemma}[Finite-orbit continuity]\ours{}
+\label{lem:bishop-continuity}
+For all real \(\alpha,\beta\) and integers \(k\ge0\),
+\[
+ \|w_{\alpha,k}-w_{\beta,k}\|_2
+ \le |\alpha-\beta|^{1/2}\sum_{j=1}^{k-1}\sqrt j
+ \le \frac{k(k-1)}2|\alpha-\beta|^{1/2},
+\]
+where the sum and final bound are zero for \(k=0,1\).
+Consequently, if \(Q(z)=\sum_{k=0}^N c_kz^k\), then
+\[
+ \|Q(B_\alpha)1-Q(B_\beta)1\|_2
+ \le R(Q)|\alpha-\beta|^{1/2},\qquad
+ R(Q)=\sum_{k=0}^N|c_k|\frac{k(k-1)}2.
+\]
+\end{lemma}
+\begin{proof}
+For \(0\le d\le1\), a sawtooth translated by \(d\) changes by
+\(d\) on an interval of length \(1-d\) and by \(d-1\) on the remaining
+interval.  Its squared \(L^2\) difference is
+\((1-d)d^2+d(1-d)^2=d(1-d)\).  The same identity applies to a
+negative shift by replacing it by its absolute value modulo one.
+Translation invariance then gives
+\[
+ \|\{x+j\alpha\}-\{x+j\beta\}\|_2^2
+ \le j|\alpha-\beta|.
+\]
+For \(j|\alpha-\beta|\le1\), use the identity; for a larger difference,
+the identity is at most \(1/4\le j|\alpha-\beta|\).
+Expand the difference of the two products by telescoping.  Every other
+factor has absolute value at most one, so the triangle inequality in
+\(L^2\) gives the first bound.  For integers \(j\ge1\),
+\(\sqrt j\le j\), giving the second.  Another triangle inequality,
+now over the coefficients of \(Q\), proves the final claim.
+\end{proof}
+
+\begin{example}[A complete finite approximation certificate]\oursComputed{}
+\label{ex:bishop-certificate}
+Let
+\[
+\begin{split}
+ Q(z)=\frac{1}{1032182056}\bigl(&-24558043+609112200z
+       -604809944z^2\\
+       &+2030693280z^3-987436800z^4\bigr).
+\end{split}
+\]
+Direct piecewise polynomial integration gives
+\[
+ \|Q(B_{1/2})1-x^2\|_2^2
+ =\frac{2117561}{24772369344}<\frac1{10000},
+ \qquad R(Q)=\frac{1577688823}{129022757}<13.
+\]
+Therefore, for every real \(\alpha\),
+\[
+ |\alpha-\tfrac12|<\frac1{1690000}
+ \quad\Longrightarrow\quad \|Q(B_\alpha)1-x^2\|_2<\frac1{50}.
+\]
+This is a statement about this target and this accuracy, valid for rational
+and irrational parameters in the indicated neighbourhood.
+\end{example}
+Indeed, Lemma~\ref{lem:bishop-continuity} bounds the additional error by
+\(13/1300=1/100\), and the rational approximation error is strictly less
+than \(1/100\).  It does not follow from a single such certificate that
+\(1\) is cyclic for any fixed irrational parameter.
+
+The coefficients were obtained by exact least squares in the span of the
+first five orbit vectors.  One program used the normal equations and then
+integrated the squared residual independently.  A second program used only
+Python's rational-number arithmetic, rebuilt the orbit polynomials, and
+reintegrated both cells.  It obtained the identical rational number.
+The same two checks agree on all five certificates in the output:
+\begin{center}
+\begin{tabular}{@{}rrrcc@{}}
+\toprule
+\(r\)&\(q\)&Degree&\(L^2\) error for \(x^2\)&\(R(Q)\)\\
+\midrule
+1&2&2&0.07448495&0.02173913\\
+1&2&4&0.009245581&12.22799\\
+1&2&8&0.0007486373&332.0757\\
+1&3&6&0.01199983&91.78700\\
+2&3&6&0.008914569&58.38182\\
+\bottomrule
+\end{tabular}
+\end{center}
+These rounded values describe exact fractions saved with the code.  The
+tradeoff is visible: a smaller rational error can require a much larger
+coefficient sum, reducing the neighbourhood to which the certificate
+transfers.  Small residuals alone do not control irrational parameters.
+
+\paragraph{A terminating sufficient criterion, with all quantifiers stated.}
+The finite certificates can be organized into a theorem.  This produces an
+algorithmically computable function; no modest closed-form growth bound for
+it is asserted.
+
+\begin{theorem}[A computable continued-fraction gap rule]\ours{}
+\label{thm:bishop-gap}
+There is a total computable function \(\Psi:\{2,3,\ldots\}\to\mathbb N\)
+with the following property.  If an irrational \(\alpha\in(0,1)\), with
+continued-fraction convergents \(r_n/q_n\), satisfies
+\(q_{n+1}>\Psi(q_n)\) for infinitely many \(n\) with \(q_n\ge2\), then
+the vector \(1\) is cyclic for \(B_\alpha\) on complex \(L^2(0,1)\).
+\end{theorem}
+\begin{proof}
+For each fixed \(q\), each \(1\le r<q\) coprime to \(q\), and each
+\(1\le j\le q\), enumerate polynomials \(Q\in\mathbb Q[z]\) in a fixed
+effective order until
+\[
+ \|Q(B_{r/q})1-x^{j-1}\|_2^2<\frac1{4q^2}.
+ \tag{*}
+\]
+This is a decidable strict rational inequality: split \([0,1)\) at the
+points \(i/q\), express the orbit products as rational polynomials on
+each cell, and integrate their squared residual.  To specify the enumeration,
+at stage \(h=1,2,\ldots\) list degrees \(0,\ldots,h\) and all coefficient
+tuples \(c_k=a_k/b_k\), \(|a_k|\le h\), \(1\le b_k\le h\), in
+lexicographic order of the integer tuples; repetitions are harmless.
+Every rational polynomial eventually occurs.  The search terminates
+by Proposition~\ref{prop:bishop-rational}.  Since the target and the orbit
+vectors are real, take real parts of an approximating complex polynomial
+and then approximate its finitely many coefficients by rationals; the
+strict target error remains attainable.
+
+Call the first polynomial so found \(Q_{r,q,j}\), and define the positive
+rational number
+\[
+ A_q=\max_{\substack{1\le r<q,\ (r,q)=1\\1\le j\le q}}
+       \bigl(1+R(Q_{r,q,j})\bigr),
+ \qquad \Psi(q)=\lceil4q A_q^2\rceil.
+\]
+Only finitely many terminating searches occur for each input \(q\), so
+\(\Psi\) is total and computable.  The usual convergent inequality is
+\(|\alpha-r_n/q_n|<1/(q_nq_{n+1})\).  On the stipulated subsequence it
+therefore gives
+\[
+ |\alpha-r_n/q_n|<\frac1{4q_n^2 A_{q_n}^2}.
+\]
+Combining (*) with the continuity lemma yields, for every \(j\le q_n\),
+\[
+ \|Q_{r_n,q_n,j}(B_\alpha)1-x^{j-1}\|_2<\frac1{q_n}.
+\]
+The denominators on any infinite subsequence tend to infinity.  For each
+fixed \(j\), the monomial \(x^{j-1}\) thus belongs to the closed cyclic
+subspace.  Polynomials are dense in \(L^2(0,1)\), proving cyclicity.
+\end{proof}
+
+\begin{corollary}[The fixed-vector generic conclusion]\ours{}
+The set of irrational \(\alpha\in(0,1)\) for which \(1\) is cyclic for
+\(B_\alpha\) contains a dense \(G_\delta\) set.
+\end{corollary}
+\begin{proof}
+For each positive pair \(j,m\), take the union, over rational-coefficient
+polynomials \(Q\), of the open sets
+\(\{\alpha:\|Q(B_\alpha)1-x^{j-1}\|_2<1/m\}\).
+Openness follows from Lemma~\ref{lem:bishop-continuity}; each set in the
+countable family of unions contains every rational \(\alpha\in(0,1)\)
+by Proposition~\ref{prop:bishop-rational}, so is dense.  The Baire theorem
+and intersection with the irrational parameters give the conclusion.
+All monomials are approximable at the parameters in this intersection.
+\end{proof}
+
+\paragraph{Independent proof check and the remaining obstruction.}
+The fibre proof was re-derived using the direct cyclic matrix rather than
+the orbit-product recurrence; the factors and row-reversal sign agree.
+The continuity bound was checked separately by splitting at the sawtooth
+jump and obtaining \(d(1-d)\); a pointwise Lipschitz bound was rejected
+because it fails at that jump.  The gap proof was re-checked in the order
+fixed target, infinite convergent subsequence, denominator tending to
+infinity, and finally polynomial density.  The small cases \(k=0,1\) and
+\(q=2\) are covered explicitly.  The two independent exact programs agree
+on the determinant signs and every reported integral, including both
+numerator orders at denominator three.  No finite-denominator observation
+has been promoted into an all-denominator assertion.
+
+The certificate method lacks a quantitative bound on the degree and
+coefficient size needed as \(q\) grows.  Even a practical bound would only
+give a sufficient approximation class unless the final transfer argument
+were strengthened.  It also cannot turn existence of one cyclic vector
+into cyclicity of every nonzero vector or settle the invariant-subspace
+question.  Determining the full scope of arbitrary-weight classification
+criteria and addressing the unrestricted Hilbert invariant-subspace
+problem lie outside this bounded development; the ambiguous walk question
+does not yet specify a unique probability law.
+
+One further research run should first obtain and check the 2026 determinant
+preprint, compare its quantitative bounds with these exact certificates,
+and then optimize the rational approximation step with proved coefficient
+bounds.  It could supply a certified comparison on additional finite
+denominators and possibly a sharper sufficient arithmetic condition.
+Neither those computations nor this chapter justify a forecast of a
+universal irrational theorem.

@@ -33,6 +33,18 @@ ASSET_V = sha256_file(ASSETS / "site.css")[:6] + sha256_file(ASSETS / "site.js")
 READERS = {"ru": "gelfand-russian-chapters01-34-complete-first1527.pdf",
            "en": "gelfand-english-chapters01-34-complete-first1527.pdf"}
 KIND_ORDER = ["talk", "plan", "heading", "other"]
+# the companion reader (kit/build_global_reader.py --pdf): GELFAND_COMPANION_PDF names the PDF, copied to /readers/;
+# GELFAND_COMPANION_RELEASE the tag of the GitHub release that carries the same PDF (linked from the home page)
+COMPANION_PDF = "GelfandSeminar_companion.pdf"
+COMPANION_PDF_SRC = Path(os.environ["GELFAND_COMPANION_PDF"]) if os.environ.get("GELFAND_COMPANION_PDF") else None
+COMPANION_RELEASE = os.environ.get("GELFAND_COMPANION_RELEASE", "")
+
+
+def pdf_pages(p):
+    import subprocess
+    r = subprocess.run(["pdfinfo", str(p)], capture_output=True, text=True, encoding="latin-1")
+    m = re.search(r"^Pages:\s+(\d+)", r.stdout, re.M)
+    return int(m.group(1)) if m else None
 
 
 def u(lang, key, **kw):
@@ -317,7 +329,9 @@ def notebook_status(lang):
 
 def companion_status(lang, tag):
     c = CH[tag]
-    return E(u(lang, "status_companion", model=c["model"], written=fdate(lang, c["written"])))
+    note = (c.get("note") or {}).get(lang) or (c.get("note") or {}).get("en")   # how the chapter was received
+    return E(u(lang, "status_companion", model=c["model"], written=fdate(lang, c["written"]))
+             + (" " + note if note else ""))
 
 
 def general_status(lang):
@@ -1012,6 +1026,17 @@ def search_page(lang):
 DATA_FILES_LIST = ["items", "talks", "problems", "references", "pages", "records", "corrections"]
 
 
+def companion_pdf_block(lang):
+    if not COMPANION_PDF_SRC:
+        return ""
+    links = f'<a href="{BASE}readers/{COMPANION_PDF}">{E(u(lang, "companion_pdf_link"))}</a>'
+    if COMPANION_RELEASE:
+        links += f' · <a href="{REPO_URL}/releases/tag/{E(COMPANION_RELEASE)}">{E(u(lang, "companion_pdf_release"))}</a>'
+    n = pdf_pages(COMPANION_PDF_SRC)
+    return (f'<h2>{E(u(lang, "companion_pdf"))}</h2><p>{E(u(lang, "companion_pdf_text", pages=(f"{n:,}" if lang == "en" else str(n)) if n else "?"))}</p>'
+            f'<p>{links}</p>')
+
+
 def home_page(lang):
     rows = []
     for v in YEARS:
@@ -1038,10 +1063,14 @@ def home_page(lang):
             f'<th class="num hide-sm">{E(u(lang, "years_table_revised"))}</th></tr>' + "".join(rows) + "</table>"
             f'<p class="lbl">{E(u(lang, "class_legend"))}</p>'
             f'<h2>{E(u(lang, "readers"))}</h2><p>{E(u(lang, "readers_text", release=REL_SHORT))}</p><p>{readers}</p>'
+            + companion_pdf_block(lang) +
             f'<h2>{E(u(lang, "data"))}</h2><p>{E(u(lang, "data_text"))} {data}; <a href="{BASE}data/works.json">works.json</a>, '
             f'<a href="{BASE}data/years.json">years.json</a>, <a href="{BASE}data/stale_pages.json">stale_pages.json</a>.</p>'
             f'<h2>{E(u(lang, "about"))}</h2><p>{u(lang, "about_text", mccme=f"<a href={chr(34)}{MCCME_LIST}{chr(34)}>{E(MCCME_LIST)}</a>", repo=f"<a href={chr(34)}{REPO_URL}{chr(34)}>{E(REPO_URL)}</a>")}</p>'
-            f'<p>{E(u(lang, "companion_rights"))}</p>')
+            f'<p>{E(u(lang, "companion_rights"))}</p>'
+            f'<h2 id="credits">{E(u(lang, "credits"))}</h2><ul>'
+            + "".join(f"<li>{E(c)}</li>" for c in UI[lang].get("credits_items", UI["en"].get("credits_items", [])))
+            + "</ul>")
     return page(lang, UI["site_name"][lang], [(u(lang, "home"), None)], url(other_lang(lang)), general_status(lang), body,
                 desc=u(lang, "tagline"), kind="home")
 
@@ -1279,6 +1308,8 @@ def copy_assets(out):
         log("WARNING: GELFAND_MATHJAX not set and no MathJax in the site: formulas will not be typeset")
     r = out / "readers"
     r.mkdir(parents=True, exist_ok=True)
+    if COMPANION_PDF_SRC:
+        shutil.copy(COMPANION_PDF_SRC, r / COMPANION_PDF)
     for l in LANGS:
         f = release_dir() / READERS[l]
         if NOTES_ON[l]:

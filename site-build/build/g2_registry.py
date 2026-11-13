@@ -131,7 +131,8 @@ def main():
         w = wm[tag]
         talks = json.loads((YEARS_DIR / tag / f"{tag}_talks.json").read_text(encoding="utf-8"))
         chapters[tag] = {"tag": tag, "work": w["id"], "years": w["years"], "written": w["written"],
-                         "model": w["model"], "include": w["include"], "records": [t["record"] for t in talks]}
+                         "model": w["model"], "include": w["include"], "records": [t["record"] for t in talks],
+                         "note": w.get("note") or {}}
         for t in talks:
             n = t["record"]
             if n not in recs:

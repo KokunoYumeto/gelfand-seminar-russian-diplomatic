@@ -2,14 +2,17 @@
 \usepackage[a4paper,margin=22mm,headheight=15pt]{geometry}
 \usepackage{gelfand_companion}
 \setlength{\emergencystretch}{2em}
-\hypersetup{pdftitle={The Gelfand Seminar 1965--88: A Critical Companion}}
+\setlength{\emergencystretch}{3em}\tolerance=9999
+\makeatletter\renewcommand{\@pnumwidth}{3em}\renewcommand{\@tocrmarg}{4em plus 1fil}\patchcmd{\l@chapter}{1.5em}{2.2em}{}{}\renewcommand*{\l@section}{\@dottedtocline{1}{1.5em}{3.6em}}\renewcommand*{\l@subsection}{\@dottedtocline{2}{5.1em}{4.8em}}\makeatother
+\hypersetup{pdftitle={The Gelfand Seminar 1964--89: A Critical Companion}}
 \begin{document}
 \begin{titlepage}\centering\vspace*{6em}
 {\Huge The Gelfand Seminar\par}\vspace{1em}
-{\Large A critical companion, 1965–88\par}\vspace{2em}
+{\Large A critical companion, 1964–89\par}\vspace{2em}
 {\large The seminar notes of the Moscow Mathematical Society seminar of I.~M.~Gelfand, year by year: the talks, every mathematical statement with its later fate and present status, the open problems, and corrections to the transcription.\par}
 \end{titlepage}
 \tableofcontents
+\input{GY1964/GY1964_chapter.tex}
 \input{GY1965/GY1965_chapter.tex}
 \input{GY1966/GY1966_chapter.tex}
 \input{GY1967/GY1967_chapter.tex}
@@ -26,8 +29,11 @@
 \input{GY1980/GY1980_chapter.tex}
 \input{GY1981/GY1981_chapter.tex}
 \input{GY1982/GY1982_chapter.tex}
+\input{GY1983/GY1983_chapter.tex}
 \input{GY1985/GY1985_chapter.tex}
+\input{GY1986/GY1986_chapter.tex}
 \input{GY1987/GY1987_chapter.tex}
+\input{GY1988/GY1988_chapter.tex}
 \bibliographystyle{plainnat}
 \bibliography{companion_references}
 \end{document}

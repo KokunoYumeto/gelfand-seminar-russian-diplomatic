@@ -220,14 +220,15 @@ def fdate(lang, iso):
     m = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", iso[:10])
     if not m:
         m2 = re.fullmatch(r"(\d{4})-(\d{2})", iso[:7]) if len(iso) == 7 else None
-        if m2:
+        if m2 and 1 <= int(m2.group(2)) <= 12:   # not an academic year such as 1984-85
             y, mo = int(m2.group(1)), int(m2.group(2))
             return f"{MONTHS_EN[mo - 1]} {y}" if lang == "en" else f"{MONTHS_RU_NOM[mo - 1]} {y} г."
         return iso
     y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
     if not (1 <= mo <= 12):
         return iso
-    return f"{d} {MONTHS_EN[mo - 1]} {y}" if lang == "en" else f"{d} {MONTHS_RU[mo - 1]} {y} г."
+    rest = iso[10:]   # a remark after the date, e.g. ' (reconstructed)', is kept
+    return (f"{d} {MONTHS_EN[mo - 1]} {y}" if lang == "en" else f"{d} {MONTHS_RU[mo - 1]} {y} г.") + rest
 
 
 def year_label(y):

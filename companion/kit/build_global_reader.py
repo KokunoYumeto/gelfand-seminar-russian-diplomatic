@@ -65,6 +65,15 @@ main = [
     "\\usepackage[a4paper,margin=22mm,headheight=15pt]{geometry}",
     "\\usepackage{gelfand_companion}",
     "\\setlength{\\emergencystretch}{2em}",
+    # no line runs into the margin: a paragraph that cannot be set within the usual tolerance gets looser lines
+    # (long inline formulas and compounds in the later years' fields); 13 Nov 2026
+    "\\setlength{\\emergencystretch}{3em}\\tolerance=9999",
+    # table of contents: room for four-digit page numbers, and ragged entry lines (long titles break instead of
+    # running into the page number), and room for section numbers such as 10.36 and 10.36.10; 13 Nov 2026
+    "\\makeatletter\\renewcommand{\\@pnumwidth}{3em}\\renewcommand{\\@tocrmarg}{4em plus 1fil}"
+    "\\patchcmd{\\l@chapter}{1.5em}{2.2em}{}{}"
+    "\\renewcommand*{\\l@section}{\\@dottedtocline{1}{1.5em}{3.6em}}"
+    "\\renewcommand*{\\l@subsection}{\\@dottedtocline{2}{5.1em}{4.8em}}\\makeatother",
     f"\\hypersetup{{pdftitle={{The Gelfand Seminar {span}: A Critical Companion}}}}",
     "\\begin{document}",
     "\\begin{titlepage}\\centering\\vspace*{6em}",
